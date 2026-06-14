@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field",
+  "type": "registry:ui",
+  "title": "Grid",
+  "description": "A StyleX Grid component.",
+  "registryDependencies": ["box"],
+  "files": [
+    {
+      "file": "grid.tsx",
+      "type": "registry:ui",
+      "target": "@ui/Grid/grid.tsx"
+    },
+    {
+      "file": "grid.styles.ts",
+      "type": "registry:file",
+      "target": "@ui/Grid/grid.styles.ts"
+    }
+  ]
+}

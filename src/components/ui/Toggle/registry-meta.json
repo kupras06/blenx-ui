@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle",
+  "type": "registry:ui",
+  "title": "Toggle",
+  "description": "A StyleX Toggle component.",
+  "files": [
+    {
+      "file": "toggle.tsx",
+      "type": "registry:ui",
+      "target": "@ui/Toggle/toggle.tsx"
+    },
+    {
+      "file": "toggle.styles.ts",
+      "type": "registry:file",
+      "target": "@ui/Toggle/toggle.styles.ts"
+    }
+  ]
+}

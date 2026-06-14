@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "color-swatch",
+  "type": "registry:ui",
+  "title": "ColorSwatch",
+  "description": "A StyleX button component.",
+  "registryDependencies": ["box"],
+  "files": [
+    {
+      "file": "color-swatch.tsx",
+      "type": "registry:ui",
+      "target": "@ui/ColorSwatch/color-swatch.tsx"
+    },
+    {
+      "file": "color-swatch.styles.ts",
+      "type": "registry:file",
+      "target": "@ui/ColorSwatch/color-swatch.styles.ts"
+    }
+  ]
+}

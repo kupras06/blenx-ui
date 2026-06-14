@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge",
+  "type": "registry:ui",
+  "title": "Badge",
+  "description": "Badge component from Blenx UI.",
+  "files": [
+    {
+      "file": "badge.tsx",
+      "type": "registry:ui",
+      "target": "@ui/Badge/badge.tsx"
+    },
+    {
+      "file": "badge.styles.ts",
+      "type": "registry:file",
+      "target": "@ui/Badge/badge.styles.ts"
+    }
+  ]
+}
