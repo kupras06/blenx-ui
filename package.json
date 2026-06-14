@@ -11,6 +11,7 @@
     "format": "biome format",
     "lint": "biome lint",
     "check": "biome check",
+    "check:fix": "biome check --write",
     "registry:gen": "ts-node registry/build.ts",
     "registry:build": "bun registry:gen && shadcn build registry/registry.json --output public/reg && bun registry/clean.ts",
     "deploy": "bun run build && wrangler deploy"

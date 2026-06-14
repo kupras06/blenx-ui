@@ -1,15 +1,15 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "segmented-control",
-  "type": "registry:ui",
-  "title": "SegmentedControl",
-  "description": "A StyleX SegmentedControl component.",
-  "registryDependencies": ["toggle"],
-  "files": [
-    {
-      "file": "segmented-control.tsx",
-      "type": "registry:ui",
-      "target": "@ui/SegmentedControl/segmented-control.tsx"
-    }
-  ]
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "segmented-control",
+	"type": "registry:ui",
+	"title": "SegmentedControl",
+	"description": "A StyleX SegmentedControl component.",
+	"registryDependencies": ["toggle"],
+	"files": [
+		{
+			"file": "segmented-control.tsx",
+			"type": "registry:ui",
+			"target": "@ui/SegmentedControl/segmented-control.tsx"
+		}
+	]
 }

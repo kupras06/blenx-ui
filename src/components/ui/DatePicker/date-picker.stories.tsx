@@ -3,10 +3,10 @@ import { Stack } from "../Stack/stack";
 import { DatePicker } from "./date-picker";
 
 export function DefaultStory() {
-  const [date, setDate] = useState<Date | undefined>(new Date());
-  return (
-    <Stack gap="medium">
-      <DatePicker value={date} onChange={setDate} label="Pick a date" />
-    </Stack>
-  );
+	const [date, setDate] = useState<Date | undefined>(new Date());
+	return (
+		<Stack gap="medium">
+			<DatePicker value={date} onChange={setDate} label="Pick a date" />
+		</Stack>
+	);
 }

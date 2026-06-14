@@ -1,19 +1,19 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "input",
-  "type": "registry:ui",
-  "title": "Input",
-  "description": "A StyleX Input component.",
-  "files": [
-    {
-      "file": "input.tsx",
-      "type": "registry:ui",
-      "target": "@ui/Input/input.tsx"
-    },
-    {
-      "file": "input.styles.ts",
-      "type": "registry:file",
-      "target": "@ui/Input/input.styles.ts"
-    }
-  ]
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "input",
+	"type": "registry:ui",
+	"title": "Input",
+	"description": "A StyleX Input component.",
+	"files": [
+		{
+			"file": "input.tsx",
+			"type": "registry:ui",
+			"target": "@ui/Input/input.tsx"
+		},
+		{
+			"file": "input.styles.ts",
+			"type": "registry:file",
+			"target": "@ui/Input/input.styles.ts"
+		}
+	]
 }

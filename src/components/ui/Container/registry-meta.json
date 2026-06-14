@@ -1,20 +1,20 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "container",
-  "type": "registry:ui",
-  "title": "Container",
-  "description": "A StyleX Container component.",
-  "registryDependencies": ["box"],
-  "files": [
-    {
-      "file": "container.tsx",
-      "type": "registry:ui",
-      "target": "@ui/Container/container.tsx"
-    },
-    {
-      "file": "container.styles.ts",
-      "type": "registry:file",
-      "target": "@ui/Container/container.styles.ts"
-    }
-  ]
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "container",
+	"type": "registry:ui",
+	"title": "Container",
+	"description": "A StyleX Container component.",
+	"registryDependencies": ["box"],
+	"files": [
+		{
+			"file": "container.tsx",
+			"type": "registry:ui",
+			"target": "@ui/Container/container.tsx"
+		},
+		{
+			"file": "container.styles.ts",
+			"type": "registry:file",
+			"target": "@ui/Container/container.styles.ts"
+		}
+	]
 }

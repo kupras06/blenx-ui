@@ -1,20 +1,20 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "select",
-  "type": "registry:ui",
-  "title": "Select",
-  "description": "A StyleX Select component.",
-  "registryDependencies": ["field"],
-  "files": [
-    {
-      "file": "select.tsx",
-      "type": "registry:ui",
-      "target": "@ui/Select/select.tsx"
-    },
-    {
-      "file": "select.styles.ts",
-      "type": "registry:file",
-      "target": "@ui/Select/select.styles.ts"
-    }
-  ]
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "select",
+	"type": "registry:ui",
+	"title": "Select",
+	"description": "A StyleX Select component.",
+	"registryDependencies": ["field"],
+	"files": [
+		{
+			"file": "select.tsx",
+			"type": "registry:ui",
+			"target": "@ui/Select/select.tsx"
+		},
+		{
+			"file": "select.styles.ts",
+			"type": "registry:file",
+			"target": "@ui/Select/select.styles.ts"
+		}
+	]
 }

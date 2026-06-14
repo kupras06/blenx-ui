@@ -1,74 +1,80 @@
 import * as stylex from "@stylexjs/stylex";
-import { dataRuleQueries, fontSize, fontWeight, spacing, theme } from "@/lib/theme/theme.stylex";
+import {
+	dataRuleQueries,
+	fontSize,
+	fontWeight,
+	spacing,
+	theme,
+} from "@/lib/theme/theme.stylex";
 
 export const toggleStyles = stylex.create({
-  base: {
-    position: "relative",
-    display: "inline-flex",
-    flexShrink: 0,
-    alignItems: "center",
-    justifyContent: "center",
-    gap: spacing.small,
-    whiteSpace: "nowrap",
-    borderStyle: "solid",
-    borderWidth: 1,
-    borderRadius: theme.borderRadius,
-    fontWeight: fontWeight.medium,
-    fontSize: fontSize.small,
-    lineHeight: 1.4,
-    cursor: "pointer",
-    userSelect: "none",
-    outline: "none",
-    backgroundColor: "transparent",
-    transition: "box-shadow 0.15s ease",
-    ":focus-visible": {
-      boxShadow: `0 0 0 2px ${theme.focusRing}`,
-    },
-    ":disabled": {
-      pointerEvents: "none",
-      opacity: 0.64,
-    },
-  },
-  icon: {
-    flexShrink: 0,
-    width: spacing.medium,
-    height: spacing.medium,
-  },
-  default: {
-    borderColor: "transparent",
-    color: theme.contentPrimary,
-    backgroundColor: theme.backgroundSubtle,
-  },
-  defaultPressed: {
-    backgroundColor: theme.background,
-  },
-  outline: {
-    borderColor: {
-      default: theme.border,
-      [dataRuleQueries.dataPressed]: theme.borderStrong,
-    },
-    color: theme.contentPrimary,
-    backgroundColor: theme.backgroundSubtle,
-  },
-  outlinePressed: {
-    outlineWidth: "0px",
-    backgroundColor: theme.surfaceOverlay,
-  },
-  sm: {
-    height: spacing.large,
-    minWidth: spacing.large,
-    paddingLeft: spacing.small,
-    paddingRight: spacing.small,
-  },
-  defaultSize: {
-    height: spacing.large,
-    minWidth: 36,
-    paddingLeft: spacing.small,
-    paddingRight: spacing.small,
-  },
-  lg: {
-    height: spacing.xlarge,
-    paddingLeft: spacing.medium,
-    paddingRight: spacing.medium,
-  },
+	base: {
+		position: "relative",
+		display: "inline-flex",
+		flexShrink: 0,
+		alignItems: "center",
+		justifyContent: "center",
+		gap: spacing.small,
+		whiteSpace: "nowrap",
+		borderStyle: "solid",
+		borderWidth: 1,
+		borderRadius: theme.borderRadius,
+		fontWeight: fontWeight.medium,
+		fontSize: fontSize.small,
+		lineHeight: 1.4,
+		cursor: "pointer",
+		userSelect: "none",
+		outline: "none",
+		backgroundColor: "transparent",
+		transition: "box-shadow 0.15s ease",
+		":focus-visible": {
+			boxShadow: `0 0 0 2px ${theme.focusRing}`,
+		},
+		":disabled": {
+			pointerEvents: "none",
+			opacity: 0.64,
+		},
+	},
+	icon: {
+		flexShrink: 0,
+		width: spacing.medium,
+		height: spacing.medium,
+	},
+	default: {
+		borderColor: "transparent",
+		color: theme.contentPrimary,
+		backgroundColor: theme.backgroundSubtle,
+	},
+	defaultPressed: {
+		backgroundColor: theme.background,
+	},
+	outline: {
+		borderColor: {
+			default: theme.border,
+			[dataRuleQueries.dataPressed]: theme.borderStrong,
+		},
+		color: theme.contentPrimary,
+		backgroundColor: theme.backgroundSubtle,
+	},
+	outlinePressed: {
+		outlineWidth: "0px",
+		backgroundColor: theme.surfaceOverlay,
+	},
+	sm: {
+		height: spacing.large,
+		minWidth: spacing.large,
+		paddingLeft: spacing.small,
+		paddingRight: spacing.small,
+	},
+	defaultSize: {
+		height: spacing.large,
+		minWidth: 36,
+		paddingLeft: spacing.small,
+		paddingRight: spacing.small,
+	},
+	lg: {
+		height: spacing.xlarge,
+		paddingLeft: spacing.medium,
+		paddingRight: spacing.medium,
+	},
 });

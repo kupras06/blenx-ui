@@ -1,20 +1,20 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "separator",
-  "type": "registry:ui",
-  "title": "Separator",
-  "description": "A StyleX Separator component.",
-  "registryDependencies": ["field"],
-  "files": [
-    {
-      "file": "separator.tsx",
-      "type": "registry:ui",
-      "target": "@ui/Separator/separator.tsx"
-    },
-    {
-      "file": "separator.styles.ts",
-      "type": "registry:file",
-      "target": "@ui/Separator/separator.styles.ts"
-    }
-  ]
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "separator",
+	"type": "registry:ui",
+	"title": "Separator",
+	"description": "A StyleX Separator component.",
+	"registryDependencies": ["field"],
+	"files": [
+		{
+			"file": "separator.tsx",
+			"type": "registry:ui",
+			"target": "@ui/Separator/separator.tsx"
+		},
+		{
+			"file": "separator.styles.ts",
+			"type": "registry:file",
+			"target": "@ui/Separator/separator.styles.ts"
+		}
+	]
 }

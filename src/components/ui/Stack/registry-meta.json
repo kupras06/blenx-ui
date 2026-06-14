@@ -1,20 +1,20 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "stack",
-  "type": "registry:ui",
-  "title": "Stack",
-  "description": "A StyleX Stack component.",
-  "registryDependencies": ["box"],
-  "files": [
-    {
-      "file": "stack.tsx",
-      "type": "registry:ui",
-      "target": "@ui/Stack/stack.tsx"
-    },
-    {
-      "file": "stack.styles.ts",
-      "type": "registry:file",
-      "target": "@ui/Stack/stack.styles.ts"
-    }
-  ]
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "stack",
+	"type": "registry:ui",
+	"title": "Stack",
+	"description": "A StyleX Stack component.",
+	"registryDependencies": ["box"],
+	"files": [
+		{
+			"file": "stack.tsx",
+			"type": "registry:ui",
+			"target": "@ui/Stack/stack.tsx"
+		},
+		{
+			"file": "stack.styles.ts",
+			"type": "registry:file",
+			"target": "@ui/Stack/stack.styles.ts"
+		}
+	]
 }

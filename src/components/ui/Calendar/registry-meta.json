@@ -1,20 +1,20 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "calendar",
-  "type": "registry:ui",
-  "title": "Calendar",
-  "description": "A StyleX button component.",
-  "registryDependencies": ["button"],
-  "files": [
-    {
-      "file": "calendar.tsx",
-      "type": "registry:ui",
-      "target": "@ui/Calendar/calendar.tsx"
-    },
-    {
-      "file": "calendar.styles.ts",
-      "type": "registry:file",
-      "target": "@ui/Calendar/calendar.styles.ts"
-    }
-  ]
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "calendar",
+	"type": "registry:ui",
+	"title": "Calendar",
+	"description": "A StyleX button component.",
+	"registryDependencies": ["button"],
+	"files": [
+		{
+			"file": "calendar.tsx",
+			"type": "registry:ui",
+			"target": "@ui/Calendar/calendar.tsx"
+		},
+		{
+			"file": "calendar.styles.ts",
+			"type": "registry:file",
+			"target": "@ui/Calendar/calendar.styles.ts"
+		}
+	]
 }

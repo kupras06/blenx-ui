@@ -1,20 +1,20 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "surface",
-  "type": "registry:ui",
-  "title": "Surface",
-  "description": "A StyleX Surface component.",
-  "registryDependencies": ["box"],
-  "files": [
-    {
-      "file": "surface.tsx",
-      "type": "registry:ui",
-      "target": "@ui/Surface/surface.tsx"
-    },
-    {
-      "file": "surface.styles.ts",
-      "type": "registry:file",
-      "target": "@ui/Surface/surface.styles.ts"
-    }
-  ]
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "surface",
+	"type": "registry:ui",
+	"title": "Surface",
+	"description": "A StyleX Surface component.",
+	"registryDependencies": ["box"],
+	"files": [
+		{
+			"file": "surface.tsx",
+			"type": "registry:ui",
+			"target": "@ui/Surface/surface.tsx"
+		},
+		{
+			"file": "surface.styles.ts",
+			"type": "registry:file",
+			"target": "@ui/Surface/surface.styles.ts"
+		}
+	]
 }

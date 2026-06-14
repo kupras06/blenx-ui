@@ -26,10 +26,10 @@ const config = defineConfig({
 				"@/lib/theme/*": path.join(__dirname, "./src/lib/theme/*"),
 			},
 		}),
-		devtools(),
-		cloudflare({ viteEnvironment: { name: "ssr" } }),
 		tanstackStart(),
 		viteReact(),
+		devtools(),
+		cloudflare({ viteEnvironment: { name: "ssr" } }),
 	],
 });
 

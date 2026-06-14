@@ -1,20 +1,20 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "autocomplete",
-  "type": "registry:ui",
-  "title": "Autocomplete",
-  "description": "Autocomplete component from Blenx UI.",
-  "registryDependencies": ["input", "scroll-area"],
-  "files": [
-    {
-      "file": "autocomplete.tsx",
-      "type": "registry:ui",
-      "target": "@ui/Autocomplete/autocomplete.tsx"
-    },
-    {
-      "file": "autocomplete.styles.ts",
-      "type": "registry:file",
-      "target": "@ui/Autocomplete/autocomplete.styles.ts"
-    }
-  ]
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "autocomplete",
+	"type": "registry:ui",
+	"title": "Autocomplete",
+	"description": "Autocomplete component from Blenx UI.",
+	"registryDependencies": ["input", "scroll-area"],
+	"files": [
+		{
+			"file": "autocomplete.tsx",
+			"type": "registry:ui",
+			"target": "@ui/Autocomplete/autocomplete.tsx"
+		},
+		{
+			"file": "autocomplete.styles.ts",
+			"type": "registry:file",
+			"target": "@ui/Autocomplete/autocomplete.styles.ts"
+		}
+	]
 }

@@ -1,20 +1,20 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "card",
-  "type": "registry:ui",
-  "title": "Card",
-  "description": "A StyleX button component.",
-  "registryDependencies": ["box"],
-  "files": [
-    {
-      "file": "card.tsx",
-      "type": "registry:ui",
-      "target": "@ui/Card/card.tsx"
-    },
-    {
-      "file": "card.styles.ts",
-      "type": "registry:file",
-      "target": "@ui/Card/card.styles.ts"
-    }
-  ]
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "card",
+	"type": "registry:ui",
+	"title": "Card",
+	"description": "A StyleX button component.",
+	"registryDependencies": ["box"],
+	"files": [
+		{
+			"file": "card.tsx",
+			"type": "registry:ui",
+			"target": "@ui/Card/card.tsx"
+		},
+		{
+			"file": "card.styles.ts",
+			"type": "registry:file",
+			"target": "@ui/Card/card.styles.ts"
+		}
+	]
 }

@@ -1,11 +1,13 @@
 export { theme } from "./contract.stylex";
 export {
-  borderRadius,
-  spacing,
-  fontSize, mediaQueries,
-  fonts,
-  fontWeight,
-  letterSpacing,
-  lineHeight,
-  zIndex
+	borderRadius,
+	borderWidth,
+	fontSize,
+	fonts,
+	fontWeight,
+	letterSpacing,
+	lineHeight,
+	mediaQueries,
+	spacing,
+	zIndex,
 } from "./tokens.stylex";
