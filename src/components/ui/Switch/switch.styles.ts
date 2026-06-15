@@ -1,5 +1,6 @@
 import * as stylex from "@stylexjs/stylex";
-import { borderRadius, spacing, theme } from "@/lib/theme/theme.stylex";
+import { theme } from "@/lib/theme/contract.stylex";
+import { borderRadius, spacing } from "@/lib/theme/tokens.stylex";
 
 export const switchStyles = stylex.create({
 	root: {

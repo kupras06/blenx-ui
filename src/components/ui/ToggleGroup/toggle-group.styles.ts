@@ -1,5 +1,5 @@
 import * as stylex from "@stylexjs/stylex";
-import { borderRadius, spacing } from "@/lib/theme/theme.stylex";
+import { borderRadius, spacing } from "@/lib/theme/tokens.stylex";
 
 export const toggleGroupStyles = stylex.create({
 	groupBase: {

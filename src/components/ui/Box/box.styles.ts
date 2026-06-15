@@ -1,9 +1,10 @@
 import * as stylex from "@stylexjs/stylex";
-import { theme } from "@/lib/theme/theme.stylex";
+import { theme } from "@/lib/theme/contract.stylex";
 
 export const boxStyles = stylex.create({
 	root: {
 		boxSizing: "border-box",
+		borderRadius: theme.borderRadius,
 	},
 	withBorder: {
 		borderWidth: "1px",

@@ -1,10 +1,6 @@
 import * as stylex from "@stylexjs/stylex";
-import {
-	borderRadius,
-	fontSize,
-	spacing,
-	theme,
-} from "@/lib/theme/theme.stylex";
+import { theme } from "@/lib/theme/contract.stylex";
+import { borderRadius, fontSize, spacing } from "@/lib/theme/tokens.stylex";
 
 export const inputGroupStyles = stylex.create({
 	group: {

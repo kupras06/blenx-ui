@@ -1,4 +1,5 @@
-import { borderRadius, mediaQueries, theme } from "@/lib/theme/theme.stylex";
+import { theme } from "@/lib/theme/contract.stylex";
+import { borderRadius, mediaQueries } from "@/lib/theme/tokens.stylex";
 
 const colors = {
 	ink: "#243142",
@@ -102,7 +103,6 @@ const darkValues = {
 	sentimentWarningSubtle: "#3D3010",
 	sentimentInfo: "#74B9FF",
 	sentimentInfoSubtle: "#0D2A3D",
-
 	shadowSm: "0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2)",
 	shadowMd: "0 4px 12px rgba(0,0,0,0.35), 0 2px 4px rgba(0,0,0,0.2)",
 	shadowLg: "0 8px 24px rgba(0,0,0,0.4), 0 4px 8px rgba(0,0,0,0.25)",
@@ -118,7 +118,7 @@ export const appTheme = stylex.createTheme(theme, {
 	primary: themed(lightValues.primary, darkValues.primary),
 	primarySubtle: themed(lightValues.primarySubtle, darkValues.primarySubtle),
 	secondary: themed(lightValues.secondary, darkValues.secondary),
-
+	fontSize: themed("16px", "16px"),
 	background: themed(lightValues.background, darkValues.background),
 	backgroundSubtle: themed(
 		lightValues.backgroundSubtle,

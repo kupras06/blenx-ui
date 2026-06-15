@@ -1,5 +1,5 @@
 import * as stylex from "@stylexjs/stylex";
-import { theme } from "@/lib/theme/theme.stylex";
+import { theme } from "@/lib/theme/contract.stylex";
 
 export const surfaceVariantStyles = stylex.create({
 	default: {
@@ -20,7 +20,6 @@ export const surfaceVariantStyles = stylex.create({
 		backgroundColor: theme.surfaceSubtle,
 	},
 });
-
 export const surfaceInteractiveStyles = stylex.create({
 	base: {
 		cursor: "pointer",

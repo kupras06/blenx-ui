@@ -1,5 +1,6 @@
 import * as stylex from "@stylexjs/stylex";
-import { fontSize, spacing, theme } from "@/lib/theme/theme.stylex";
+import { theme } from "@/lib/theme/contract.stylex";
+import { fontSize, spacing } from "@/lib/theme/tokens.stylex";
 
 export const buttonSizes = stylex.create({
 	xsmall: {
@@ -146,7 +147,7 @@ export const buttonStyles = stylex.create({
 
 	spinner: {
 		position: "absolute",
-		cursor: "none",
+		pointerEvents: "none",
 	},
 	fullWidth: {
 		width: "100%",

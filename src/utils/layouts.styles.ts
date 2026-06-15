@@ -1,5 +1,5 @@
 import * as stylex from "@stylexjs/stylex";
-import { borderRadius, spacing } from "../lib/theme/contract.stylex";
+import { borderRadius, spacing } from "@/lib/theme/tokens.stylex";
 
 export const displayStyles = stylex.create({
 	block: { display: "block" },

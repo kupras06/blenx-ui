@@ -1,13 +1,6 @@
 import * as stylex from "@stylexjs/stylex";
-import {
-	borderRadius,
-	fontSize,
-	fontWeight,
-	letterSpacing,
-	spacing,
-	theme,
-	zIndex,
-} from "@/lib/theme/theme.stylex";
+import { theme } from "@/lib/theme/contract.stylex";
+import { borderRadius, fontSize, fontWeight, letterSpacing, spacing, zIndex } from "@/lib/theme/tokens.stylex";
 
 export const menuStyles = stylex.create({
 	trigger: {

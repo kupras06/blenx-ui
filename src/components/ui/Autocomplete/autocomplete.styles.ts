@@ -1,14 +1,6 @@
 import * as stylex from "@stylexjs/stylex";
-import {
-	borderRadius,
-	borderWidth,
-	fontSize,
-	fontWeight,
-	mediaQueries,
-	spacing,
-	theme,
-	zIndex,
-} from "@/lib/theme/theme.stylex";
+import { theme } from "@/lib/theme/contract.stylex";
+import { borderRadius, borderWidth, fontSize, fontWeight, mediaQueries, spacing, zIndex } from "@/lib/theme/tokens.stylex";
 
 export const autoCompleteInputSize = stylex.create({
 	sm: {
@@ -127,7 +119,7 @@ export const autoCompleteStyles = stylex.create({
 		backgroundColor: theme.surface,
 		boxShadow: theme.shadowLg,
 		transformOrigin: "var(--transform-origin)",
-		transitionProperty: "scale, opacity",
+		transitionProperty: "transform, opacity",
 		transitionDuration: "150ms",
 		// ":is([data-starting-style], [data-ending-style])": {
 		// 	opacity: 0,

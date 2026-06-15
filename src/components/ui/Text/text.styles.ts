@@ -1,12 +1,6 @@
 import * as stylex from "@stylexjs/stylex";
-import {
-	fontSize,
-	fonts,
-	fontWeight,
-	letterSpacing,
-	lineHeight,
-	theme,
-} from "@/lib/theme/theme.stylex";
+import { theme } from "@/lib/theme/contract.stylex";
+import { fontSize, fonts, fontWeight, letterSpacing, lineHeight } from "@/lib/theme/tokens.stylex";
 
 export const textTransformStyles = stylex.create({
 	uppercase: {

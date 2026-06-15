@@ -1,4 +1,5 @@
 import * as stylex from "@stylexjs/stylex";
+import "../app.css";
 import {
 	createRootRouteWithContext,
 	HeadContent,
@@ -7,8 +8,9 @@ import {
 } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import { Header } from "@/components/header";
+import { Box, Container, VStack } from "@/components/ui";
 import { appTheme } from "@/lib/app-theme.stylex";
-import { theme } from "@/lib/theme/theme.stylex";
+import { theme } from "@/lib/theme/contract.stylex";
 
 export const Route = createRootRouteWithContext()({
 	head: () => ({
@@ -57,22 +59,20 @@ function RootDocument() {
 		<html lang="en" {...stylex.props(appTheme)}>
 			<head>
 				<HeadContent />
-				<link rel="stylesheet" href="/virtual:stylex.css" />
-				<script type="module" src="/@id/virtual:stylex:runtime" />
+				{import.meta.env.DEV && (
+					<>
+						<link rel="stylesheet" href="/virtual:stylex.css" />
+						<script type="module" src="/@id/virtual:stylex:runtime" />
+					</>
+				)}
 			</head>
 			<body {...stylex.props(rootStyles.body)}>
-				<div
-					style={{
-						display: "flex",
-						flexDirection: "column",
-						minHeight: "100vh",
-					}}
-				>
+				<VStack>
 					<Header />
-					<main style={{ flex: 1 }}>
+					<Box render={<main />} grow>
 						<Outlet />
-					</main>
-				</div>
+					</Box>
+				</VStack>
 				<TanStackRouterDevtools position="bottom-left" />
 				<Scripts />
 			</body>

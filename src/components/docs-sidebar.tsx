@@ -1,14 +1,8 @@
 import * as stylex from "@stylexjs/stylex";
 import { Link, useLocation } from "@tanstack/react-router";
 import { Container, Text, VStack } from "@/components/ui";
-import {
-	borderRadius,
-	fontSize,
-	fontWeight,
-	lineHeight,
-	spacing,
-	theme,
-} from "@/lib/theme/theme.stylex";
+import { theme } from "@/lib/theme/contract.stylex";
+import { borderRadius, fontSize, fontWeight, lineHeight, spacing } from "@/lib/theme/tokens.stylex";
 
 interface SidebarSection {
 	title: string;

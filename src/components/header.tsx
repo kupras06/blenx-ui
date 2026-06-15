@@ -1,11 +1,8 @@
 import * as stylex from "@stylexjs/stylex";
 import { Link } from "@tanstack/react-router";
-import {
-	fontSize,
-	letterSpacing,
-	spacing,
-	theme,
-} from "@/lib/theme/theme.stylex";
+import { theme } from "@/lib/theme/contract.stylex";
+import { fontSize, letterSpacing, spacing } from "@/lib/theme/tokens.stylex";
+import { Separator, Text } from "./ui";
 
 const styles = stylex.create({
 	header: {
@@ -20,6 +17,7 @@ const styles = stylex.create({
 		display: "flex",
 		flexDirection: "row",
 		alignItems: "center",
+		marginBottom: spacing.small,
 		justifyContent: "space-between",
 	},
 	logo: {
@@ -50,7 +48,7 @@ function Header() {
 		<div {...stylex.props(styles.header)}>
 			<div {...stylex.props(styles.inner)}>
 				<Link to="/" {...stylex.props(styles.logo)}>
-					Blenx UI
+					<Text variant="h3">Blenx UI</Text>
 				</Link>
 				<a
 					href="https://github.com/blenx-dev/blenx-dev"
@@ -61,7 +59,7 @@ function Header() {
 					GitHub &rarr;
 				</a>
 			</div>
-			<hr {...stylex.props(styles.divider)} />
+			<Separator />
 		</div>
 	);
 }

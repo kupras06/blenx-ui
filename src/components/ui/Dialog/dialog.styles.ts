@@ -1,10 +1,6 @@
 import * as stylex from "@stylexjs/stylex";
-import {
-	borderRadius,
-	borderWidth,
-	spacing,
-	theme,
-} from "@/lib/theme/theme.stylex";
+import { theme } from "@/lib/theme/contract.stylex";
+import { borderRadius, borderWidth, spacing } from "@/lib/theme/tokens.stylex";
 
 export const dialogStyles = stylex.create({
 	backdrop: {
@@ -52,7 +48,7 @@ export const dialogStyles = stylex.create({
 		boxSizing: "border-box",
 		opacity: "calc(1 - var(--nested-dialogs))",
 		outline: "none",
-		transitionProperty: "scale, opacity, translate",
+		transitionProperty: "transform, opacity",
 		transitionDuration: "200ms",
 		transitionTimingFunction: "ease-in-out",
 		willChange: "transform",
@@ -78,7 +74,7 @@ export const dialogStyles = stylex.create({
 		gap: spacing.small,
 		padding: spacing.large,
 		boxSizing: "border-box",
-		":has([data-slot='dialog-popup']:has([data-slot='dialog-panel']))": {
+		"[data-has-panel]": {
 			paddingBottom: spacing.small,
 		},
 	},
@@ -116,16 +112,16 @@ export const dialogStyles = stylex.create({
 		lineHeight: 1.4,
 		color: theme.contentSecondary,
 	},
-	panelScrollFade: {},
+	panelScrollFade: { opacity: 1 },
 	panel: {
 		boxSizing: "border-box",
 		padding: spacing.large,
 		":has([data-slot='dialog-popup']:has([data-slot='dialog-header']))": {
 			paddingTop: spacing.xsmall,
 		},
-		":has([data-slot='dialog-popup']:has([data-slot='dialog-footer']:not(.border-t))":
-			{
-				paddingBottom: spacing.xsmall,
-			},
+		// ":has([data-slot='dialog-popup']:has([data-slot='dialog-footer']:not(.border-t))":
+		// 	{
+		// 		paddingBottom: spacing.xsmall,
+		// 	},
 	},
 });

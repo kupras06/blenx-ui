@@ -1,11 +1,6 @@
 import * as stylex from "@stylexjs/stylex";
-import {
-	borderRadius,
-	fontSize,
-	fontWeight,
-	spacing,
-	theme,
-} from "@/lib/theme/theme.stylex";
+import { theme } from "@/lib/theme/contract.stylex";
+import { borderRadius, fontSize, fontWeight, spacing } from "@/lib/theme/tokens.stylex";
 
 export const selectStyles = stylex.create({
 	label: {

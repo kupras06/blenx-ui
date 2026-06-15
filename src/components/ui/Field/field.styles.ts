@@ -1,5 +1,5 @@
 import * as stylex from "@stylexjs/stylex";
-import { fontSize } from "@/lib/theme/theme.stylex";
+import { fontSize } from "@/lib/theme/tokens.stylex";
 
 export const fieldStyles = stylex.create({
 	field: {

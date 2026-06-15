@@ -2,14 +2,8 @@ import * as stylex from "@stylexjs/stylex";
 import { createFileRoute } from "@tanstack/react-router";
 import { DocsLayout } from "@/components/docs-layout";
 import { Separator, Surface, Text, VStack } from "@/components/ui";
-import {
-	fontSize,
-	fonts,
-	fontWeight,
-	lineHeight,
-	spacing,
-	theme,
-} from "@/lib/theme/theme.stylex";
+import { theme } from "@/lib/theme/contract.stylex";
+import { fontSize, fonts, fontWeight, lineHeight, spacing } from "@/lib/theme/tokens.stylex";
 
 const styles = stylex.create({
 	code: {
@@ -169,7 +163,7 @@ function ThemingDoc() {
 								{...stylex.props(styles.code)}
 							>{`// styles/my-theme.stylex.ts
 import * as stylex from "@stylexjs/stylex";
-import { theme } from "@blenx-dev/theme/theme.stylex";
+import { theme } from "@blenx-dev/theme/contract.stylex";
 
 export const myTheme = stylex.createTheme(theme, {
   primary: "#6C63FF",
@@ -199,7 +193,7 @@ export const myTheme = stylex.createTheme(theme, {
 								{...stylex.props(styles.code)}
 							>{`// React — wrap your app root
 import * as stylex from "@stylexjs/stylex";
-import { myTheme } from "./styles/my-theme.stylex";
+import { myTheme } from "./styles/my-tokens.stylex";
 
 function App() {
   return (
@@ -215,7 +209,7 @@ function App() {
 									{...stylex.props(styles.code)}
 								>{`// Next.js — apply to the body or a layout wrapper
 // app/layout.tsx
-import { myTheme } from "@/styles/my-theme.stylex";
+import { myTheme } from "@/styles/my-tokens.stylex";
 
 export default function RootLayout({ children }) {
   return (
@@ -234,7 +228,7 @@ export default function RootLayout({ children }) {
 							<code
 								{...stylex.props(styles.code)}
 							>{`// Import the contract for createTheme
-import { theme } from "@blenx-dev/theme/theme.stylex";
+import { theme } from "@blenx-dev/theme/contract.stylex";
 
 // Or use the convenience re-exports
 import { theme, borderRadius, spacing, fontSize } from "@/lib/theme/tokens.stylex";`}</code>

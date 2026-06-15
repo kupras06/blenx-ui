@@ -1,6 +1,6 @@
 import * as stylex from "@stylexjs/stylex";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { fontSize, fonts, spacing } from "@/lib/theme/theme.stylex";
+import { fontSize, fonts, spacing } from "@/lib/theme/tokens.stylex";
 import { Box, Container, Grid, Separator, Surface, Text, VStack } from "@/ui";
 
 const styles = stylex.create({
@@ -58,31 +58,31 @@ export const Route = createFileRoute("/")({
 function HomeComponent() {
 	return (
 		<Container size="md">
-			<Box padding="medium">
-				<VStack gap="small">
-					<Text variant="h1">Blenx UI</Text>
-					<Text variant="body1" color="secondary">
-						A design system of React components built with Stylex and Base UI.
-						Distributed via the shadcn registry model.
-					</Text>
-				</VStack>
-			</Box>
+			<VStack>
+				<Box padding="medium">
+					<VStack gap="small">
+						<Text variant="h1">Blenx UI</Text>
+						<Text variant="body1" color="secondary">
+							A design system of React components built with Stylex and Base UI.
+							Distributed via the shadcn registry model.
+						</Text>
+					</VStack>
+				</Box>
 
-			<Surface variant="outline" padding="medium">
-				<VStack gap="small">
-					<Text variant="h4">Getting Started</Text>
-					<Text variant="body2" color="secondary">
-						Install individual components directly into your project.
-					</Text>
-					<Surface variant="sunken" padding="medium">
-						<code {...stylex.props(styles.code)}>
-							npx shadcn@latest add http://localhost:3001/reg/button.json
-						</code>
-					</Surface>
-				</VStack>
-			</Surface>
+				<Surface variant="outline" padding="medium">
+					<VStack gap="small">
+						<Text variant="h4">Getting Started</Text>
+						<Text variant="body2" color="secondary">
+							Install individual components directly into your project.
+						</Text>
+						<Surface variant="sunken" padding="medium">
+							<code {...stylex.props(styles.code)}>
+								npx shadcn@latest add http://localhost:3001/reg/button.json
+							</code>
+						</Surface>
+					</VStack>
+				</Surface>
 
-			<div {...stylex.props(styles.gettingStartedMargin)}>
 				<Surface variant="outline" padding="medium">
 					<VStack gap="small">
 						<Text variant="h4">Prerequisites</Text>
@@ -99,26 +99,30 @@ function HomeComponent() {
 						</ul>
 					</VStack>
 				</Surface>
-			</div>
 
-			<Separator tone="subtle" />
+				<Separator tone="subtle" />
 
-			<VStack gap="medium">
-				<Text variant="h2">Documentation</Text>
-				<Grid {...stylex.props(styles.grid)}>
-					{docLinks.map((link) => (
-						<Link key={link.to} to={link.to} {...stylex.props(styles.docLink)}>
-							<Surface variant="outline" padding="medium" interactive>
-								<VStack gap="xxsmall">
-									<Text variant="h5">{link.title}</Text>
-									<Text variant="body2" color="secondary">
-										{link.desc}
-									</Text>
-								</VStack>
-							</Surface>
-						</Link>
-					))}
-				</Grid>
+				<VStack gap="medium">
+					<Text variant="h2">Documentation</Text>
+					<Grid {...stylex.props(styles.grid)}>
+						{docLinks.map((link) => (
+							<Link
+								key={link.to}
+								to={link.to}
+								{...stylex.props(styles.docLink)}
+							>
+								<Surface variant="outline" padding="medium" interactive>
+									<VStack gap="xxsmall">
+										<Text variant="h5">{link.title}</Text>
+										<Text variant="body2" color="secondary">
+											{link.desc}
+										</Text>
+									</VStack>
+								</Surface>
+							</Link>
+						))}
+					</Grid>
+				</VStack>
 			</VStack>
 		</Container>
 	);

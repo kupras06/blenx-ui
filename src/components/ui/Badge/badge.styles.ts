@@ -1,5 +1,6 @@
 import * as stylex from "@stylexjs/stylex";
-import { spacing, theme } from "@/lib/theme/theme.stylex";
+import { theme } from "@/lib/theme/contract.stylex";
+import { spacing } from "@/lib/theme/tokens.stylex";
 export const badgeStyles = stylex.create({
 	root: {
 		display: "inline-block",

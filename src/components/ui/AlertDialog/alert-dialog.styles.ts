@@ -1,14 +1,6 @@
 import * as stylex from "@stylexjs/stylex";
-import {
-	borderWidth,
-	fontSize,
-	fontWeight,
-	lineHeight,
-	mediaQueries,
-	spacing,
-	theme,
-	zIndex,
-} from "@/lib/theme/theme.stylex";
+import { theme } from "@/lib/theme/contract.stylex";
+import { borderWidth, fontSize, fontWeight, lineHeight, mediaQueries, spacing, zIndex } from "@/lib/theme/tokens.stylex";
 export const alertDialogStyles = stylex.create({
 	backdrop: {
 		position: "fixed",
@@ -16,7 +8,7 @@ export const alertDialogStyles = stylex.create({
 		zIndex: zIndex.modal,
 		backgroundColor: "rgba(0, 0, 0, 0.32)",
 		backdropFilter: "blur(4px)",
-		transitionProperty: "opacity",
+		transitionProperty: "transform, opacity",
 		transitionDuration: "200ms",
 		opacity: {
 			default: "1",
@@ -55,7 +47,7 @@ export const alertDialogStyles = stylex.create({
 		opacity: "calc(1 - var(--nested-dialogs))",
 		outline: "none",
 		boxShadow: theme.shadowLg,
-		transitionProperty: "scale, opacity, translate",
+		transitionProperty: "opacity, translate",
 		transitionDuration: "200ms",
 		transitionTimingFunction: "ease-in-out",
 		willChange: "transform",
@@ -138,5 +130,7 @@ export const alertDialogStyles = stylex.create({
 		paddingTop: spacing.xsmall,
 		paddingBottom: spacing.xsmall,
 	},
-	panelScrollFade: {},
+	panelScrollFade: {
+		opacity: 1,
+	},
 });

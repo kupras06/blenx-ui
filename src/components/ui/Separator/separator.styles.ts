@@ -1,5 +1,6 @@
 import * as stylex from "@stylexjs/stylex";
-import { fontSize, fontWeight, spacing, theme } from "@/lib/theme/theme.stylex";
+import { theme } from "@/lib/theme/contract.stylex";
+import { fontSize, fontWeight, spacing } from "@/lib/theme/tokens.stylex";
 
 export const separatorStyles = stylex.create({
 	base: {

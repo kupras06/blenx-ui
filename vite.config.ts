@@ -8,29 +8,35 @@ import viteReact from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const config = defineConfig({
-	resolve: {
-		tsconfigPaths: true,
-	},
-	server: {
-		port: 3001,
-	},
-	plugins: [
-		stylex.vite({
-			useCSSLayers: true,
-			dev: process.env.NODE_ENV === "development",
-			runtimeInjection: process.env.NODE_ENV === "development",
-			aliases: {
-				"@/*": path.join(__dirname, "./src/*"),
-				"@/ui": path.join(__dirname, "./src/components/ui"),
-				"@/lib/theme/*": path.join(__dirname, "./src/lib/theme/*"),
-			},
-		}),
-		tanstackStart(),
-		viteReact(),
-		devtools(),
-		cloudflare({ viteEnvironment: { name: "ssr" } }),
-	],
+
+const config = defineConfig(({ command, mode }) => {
+	const isDev = mode === "development" || command === "serve";
+
+	return {
+		resolve: {
+			tsconfigPaths: true,
+		},
+		server: {
+			port: 3001,
+		},
+		plugins: [
+			stylex.vite({
+				useCSSLayers: true,
+				dev: isDev,
+				devMode: "full",
+				runtimeInjection: false,
+				aliases: {
+					"@/*": path.join(__dirname, "./src/*"),
+					"@/ui": path.join(__dirname, "./src/components/ui"),
+					"@/lib/theme/*": path.join(__dirname, "./src/lib/theme/*"),
+				},
+			}),
+			tanstackStart(),
+			viteReact(),
+			devtools(),
+			cloudflare({ viteEnvironment: { name: "ssr" } }),
+		],
+	};
 });
 
 export default config;
