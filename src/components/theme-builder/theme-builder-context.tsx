@@ -89,6 +89,10 @@ export const defaultTokens: ThemeTokens = {
 
 interface ThemeBuilderStore {
 	tokens: ThemeTokens;
+	selectedToken: keyof ThemeTokens | null;
+	sidebarOpen: boolean;
+	setSelectedToken: (key: keyof ThemeTokens | null) => void;
+	toggleSidebar: () => void;
 	updateToken: (key: keyof ThemeTokens, value: string | number) => void;
 	updateTokenDebounced: (
 		key: keyof ThemeTokens,
@@ -102,6 +106,13 @@ const debounceTimers = new Map<string, ReturnType<typeof setTimeout>>();
 function createThemeBuilderStore() {
 	return create<ThemeBuilderStore>((set) => ({
 		tokens: { ...defaultTokens },
+		selectedToken: null,
+		sidebarOpen: true,
+
+		setSelectedToken: (key) => set({ selectedToken: key }),
+
+		toggleSidebar: () =>
+			set((state) => ({ sidebarOpen: !state.sidebarOpen })),
 
 		updateToken: (key, value) => {
 			const timer = debounceTimers.get(key);
