@@ -14,31 +14,28 @@ function InstallationDoc() {
 			<div {...stylex.props(docStyles.page)}>
 				<Text variant="h1">Installation</Text>
 
-				<div {...stylex.props(docStyles.section)}>
-					<VStack gap="medium">
-						<Text variant="h2">Prerequisites</Text>
-						<ul {...stylex.props(docStyles.list)}>
-							<li>
-								<Text variant="body2">React 19+</Text>
-							</li>
-							<li>
-								<Text variant="body2">@stylexjs/stylex</Text>
-							</li>
-							<li>
-								<Text variant="body2">@base-ui/react</Text>
-							</li>
-							<li>
-								<Text variant="body2">
-									A JS bundler with Stylex plugin support (Vite, Next.js,
-									Webpack)
-								</Text>
-							</li>
-							<li>
-								<Text variant="body2">shadcn CLI v4+</Text>
-							</li>
-						</ul>
-					</VStack>
-				</div>
+				<VStack gap="medium">
+					<Text variant="h2">Prerequisites</Text>
+					<ul {...stylex.props(docStyles.list)}>
+						<li>
+							<Text variant="body2">React 19+</Text>
+						</li>
+						<li>
+							<Text variant="body2">@stylexjs/stylex</Text>
+						</li>
+						<li>
+							<Text variant="body2">@base-ui/react</Text>
+						</li>
+						<li>
+							<Text variant="body2">
+								A JS bundler with Stylex plugin support (Vite, Next.js, Webpack)
+							</Text>
+						</li>
+						<li>
+							<Text variant="body2">shadcn CLI v4+</Text>
+						</li>
+					</ul>
+				</VStack>
 
 				<Separator tone="subtle" />
 

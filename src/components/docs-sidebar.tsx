@@ -33,16 +33,13 @@ const sections: SidebarSection[] = [
 ];
 
 const styles = stylex.create({
-	sidebar: {
-		position: "sticky",
-		top: 80,
-		alignSelf: "flex-start",
-		flexShrink: 0,
-		overflowY: "auto",
-		maxHeight: "100vh",
-	},
 	link: {
 		textDecoration: "none",
+	},
+	innerNav: {
+		display: "flex",
+		flexDirection: "column",
+		gap: "var(--space-4)",
 	},
 	linkList: {
 		display: "flex",
@@ -51,48 +48,45 @@ const styles = stylex.create({
 	},
 });
 
+
 function DocsSidebar() {
 	const { pathname } = useLocation();
 
 	return (
-		<Container size="xxs" style={styles.sidebar}>
-			<VStack render={<nav />}>
-				{sections.map((section) => (
-					<Box key={section.title}>
-						<Text variant="body2" weight="semibold">
-							{section.title}
-						</Text>
-						<VStack gap="xxsmall" paddingY="xxsmall">
-							{section.links.map((link) => {
-								const isActive =
-									link.to === "/docs"
-										? pathname === "/docs" || pathname === "/docs/"
-										: pathname.startsWith(link.to);
-								return (
-									<Surface
-										variant={isActive ? "sunken" : "default"}
-										radius="small"
-										paddingY="xxsmall"
-										paddingX="xsmall"
-										key={link.to}
-										render={
-											<Link {...stylex.props(styles.link)} to={link.to} />
-										}
+		<VStack gap="medium">
+			{sections.map((section) => (
+				<Box key={section.title}>
+					<Text variant="body2" weight="semibold">
+						{section.title}
+					</Text>
+					<VStack gap="xxsmall">
+						{section.links.map((link) => {
+							const isActive =
+								link.to === "/docs"
+									? pathname === "/docs" || pathname === "/docs/"
+									: pathname.startsWith(link.to);
+							return (
+								<Surface
+									variant={isActive ? "sunken" : "default"}
+									radius="small"
+									paddingY="xxsmall"
+									paddingX="xsmall"
+									key={link.to}
+									render={<Link {...stylex.props(styles.link)} to={link.to} />}
+								>
+									<Text
+										variant="body2"
+										color={isActive ? "primary" : "secondary"}
 									>
-										<Text
-											variant="body2"
-											color={isActive ? "primary" : "secondary"}
-										>
-											{link.label}
-										</Text>
-									</Surface>
-								);
-							})}
-						</VStack>
-					</Box>
-				))}
-			</VStack>
-		</Container>
+										{link.label}
+									</Text>
+								</Surface>
+							);
+						})}
+					</VStack>
+				</Box>
+			))}
+		</VStack>
 	);
 }
 

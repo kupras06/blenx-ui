@@ -1,8 +1,11 @@
+import { ListIcon, XIcon } from "@phosphor-icons/react";
 import * as stylex from "@stylexjs/stylex";
 import { Link } from "@tanstack/react-router";
+import { useMediaQuery } from "@uidotdev/usehooks";
 import { theme } from "@/lib/theme/contract.stylex";
 import { fontSize, letterSpacing, spacing } from "@/lib/theme/tokens.stylex";
-import { Separator, Text } from "./ui";
+import { useSidebarStore } from "@/stores/docs-sidebar";
+import { Button, Separator, Text } from "./ui";
 
 const styles = stylex.create({
 	header: {
@@ -28,6 +31,12 @@ const styles = stylex.create({
 		letterSpacing: letterSpacing.tight,
 		lineHeight: 1,
 	},
+	navLinks: {
+		display: "flex",
+		flexDirection: "row",
+		alignItems: "center",
+		gap: spacing["4"],
+	},
 	link: {
 		textDecoration: "none",
 		color: theme.contentSecondary,
@@ -42,7 +51,27 @@ const styles = stylex.create({
 		borderTopColor: theme.border,
 	},
 });
-
+function DocsRouteOption() {
+	const sidebarOpen = useSidebarStore((st) => st.isOpen);
+	const setOpen = useSidebarStore((st) => st.setOpen);
+	const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
+	if (isSmallDevice)
+		return (
+			<Button
+				size="icon"
+				variant="secondary"
+				onClick={() => setOpen(!sidebarOpen)}
+				aria-label="Toggle sidebar"
+			>
+				{sidebarOpen ? <XIcon /> : <ListIcon />}
+			</Button>
+		);
+	return (
+		<Link to="/docs" {...stylex.props(styles.link)}>
+			Docs
+		</Link>
+	);
+}
 function Header() {
 	return (
 		<div {...stylex.props(styles.header)}>
@@ -50,14 +79,17 @@ function Header() {
 				<Link to="/" {...stylex.props(styles.logo)}>
 					<Text variant="h3">Blenx UI</Text>
 				</Link>
-				<a
-					href="https://github.com/blenx-dev/blenx-dev"
-					target="_blank"
-					rel="noopener noreferrer"
-					{...stylex.props(styles.link)}
-				>
-					GitHub &rarr;
-				</a>
+				<div {...stylex.props(styles.navLinks)}>
+					<DocsRouteOption />
+					<a
+						href="https://github.com/blenx-dev/blenx-dev"
+						target="_blank"
+						rel="noopener noreferrer"
+						{...stylex.props(styles.link)}
+					>
+						GitHub &rarr;
+					</a>
+				</div>
 			</div>
 			<Separator />
 		</div>

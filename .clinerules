@@ -1,0 +1,72 @@
+# Cline Rules — StyleX Code Generation
+
+## StyleX Authoring Reference
+When working with StyleX in this project, always refer to `stylex-authoring.md` in the project root for the complete StyleX authoring guide.
+
+## Key StyleX Rules
+
+### 1. Style Creation
+- Use `stylex.create()` to define all styles
+- Use longhand properties and single-value shorthands over multi-value shorthands
+- Use `null` to unset properties
+- Length properties are in pixels by default
+
+### 2. Style Application
+- Apply styles using `{...stylex.props(styles.key)}` spread on elements
+- Do NOT use `style` or `className` props on elements with `stylex.props()`
+- Merge styles by passing multiple arguments: `stylex.props(styles.base, styles.active)`
+- Conditional styles: use `condition && styles.active` or `condition ? styles.primary : styles.secondary`
+
+### 3. Pseudo-classes
+- Nest pseudo-classes inside property values using object syntax with `default` key:
+  ```tsx
+  backgroundColor: {
+    default: 'lightblue',
+    ':hover': 'blue',
+  },
+  ```
+- Do NOT use pseudo-classes at the top level of a style object
+
+### 4. Pseudo-elements
+- Define as top-level keys: `'::placeholder': { color: 'gray' }`
+- Prefer actual HTML elements over `::before` and `::after`
+
+### 5. Media Queries
+- Nest media queries inside property values with `default` key:
+  ```tsx
+  padding: {
+    default: 8,
+    '@media (min-width: 768px)': 16,
+  },
+  ```
+- Do NOT use media queries at the top level of a style object
+- Use `stylex.defineConsts()` for shareable media query constants
+
+### 6. Variables and Constants
+- `stylex.defineVars()` → for values needing theming/runtime overrides
+- `stylex.defineConsts()` → for static values (breakpoints, z-indices, etc.)
+- Must be in `.stylex.ts` or `.stylex.js` files
+- Must be named exports only (no default exports, no other exports in the file)
+
+### 7. Themes
+- Use `stylex.createTheme(contract, values)` for theme variants
+- Themes can be created anywhere, unlike `defineVars`/`defineConsts`
+
+### 8. Dynamic Styles
+- Use arrow functions in `stylex.create()` for runtime values:
+  ```tsx
+  bar: (width: number) => ({ width }),
+  ```
+
+### 9. TypeScript
+- Use `StyleXStyles` for style props: `import type { StyleXStyles } from '@stylexjs/stylex'`
+- Use `StyleXStylesWithout` to exclude specific properties
+
+### 10. Antipatterns to Avoid
+- ❌ Don't import non-StyleX values into `stylex.create()` — use `defineVars`/`defineConsts` instead
+- ❌ Don't use `style` or `className` props on elements with `stylex.props()`
+- ❌ Don't put media queries or pseudo-classes at the top level of style objects
+- ❌ Don't use multi-value shorthands when single-value or longhand is available
+
+## UI Components in This Project
+This project uses UI components from `src/components/ui/` exported through `@/ui` alias. Use these components instead of raw HTML where possible for consistent theming. Available components: Box, Button, Card, Container, Dialog, Drawer, Field, Grid, Input, Menu, Popover, ScrollArea, Select, Separator, Spinner, Stack (HStack, VStack), Surface, Switch, Tabs, Text, Textarea, Toggle, ToggleGroup, and more.
