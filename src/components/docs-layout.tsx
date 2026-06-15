@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Box, Container, HStack } from "@/components/ui";
+import { Container, HStack, VStack } from "@/components/ui";
 import { DocsSidebar } from "./docs-sidebar";
 
 function DocsLayout({ children }: { children: ReactNode }) {
@@ -7,7 +7,9 @@ function DocsLayout({ children }: { children: ReactNode }) {
 		<Container paddingX="xlarge">
 			<HStack gap="xxlarge">
 				<DocsSidebar />
-				<Box grow>{children}</Box>
+				<VStack gap="medium" grow>
+					{children}
+				</VStack>
 			</HStack>
 		</Container>
 	);
