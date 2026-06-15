@@ -34,6 +34,8 @@ export type ThemeTokens = {
 	fontFamilyMono: string;
 	baseFontSize: string;
 	headingScale: number;
+	fontWeight: string;
+	shadowIntensity: string;
 	radius: string;
 	spacing: string;
 	shadowSm: string;
@@ -75,6 +77,8 @@ export const defaultTokens: ThemeTokens = {
 	fontFamilyMono: '"DM Mono", ui-monospace, SFMono-Regular, monospace',
 	baseFontSize: "16px",
 	headingScale: 1.25,
+	fontWeight: "400",
+	shadowIntensity: "medium",
 	radius: "medium",
 	spacing: "default",
 	shadowSm: "0 1px 3px rgba(36,49,66,0.08), 0 1px 2px rgba(36,49,66,0.04)",
