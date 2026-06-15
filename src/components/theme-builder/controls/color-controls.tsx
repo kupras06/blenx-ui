@@ -1,6 +1,6 @@
 import * as stylex from "@stylexjs/stylex";
-import { spacing } from "@/lib/theme/tokens.stylex";
 import { ColorPicker } from "@/components/ui";
+import { spacing } from "@/lib/theme/tokens.stylex";
 import { useThemeBuilder } from "../theme-builder-context";
 import { Section } from "./section";
 
@@ -28,7 +28,6 @@ const colorTokens = [
 
 export function ColorControls() {
 	const tokens = useThemeBuilder((s) => s.tokens);
-	const updateToken = useThemeBuilder((s) => s.updateToken);
 	const updateTokenDebounced = useThemeBuilder(
 		(s) => s.updateTokenDebounced,
 	);
@@ -42,7 +41,7 @@ export function ColorControls() {
 						label={label}
 						value={tokens[key as keyof typeof tokens]}
 						onChange={(color) => {
-							updateToken(key as keyof typeof tokens, color);
+							updateTokenDebounced(key as keyof typeof tokens, color);
 						}}
 					/>
 				))}
