@@ -1,6 +1,13 @@
 import * as stylex from "@stylexjs/stylex";
 import { theme } from "@/lib/theme/contract.stylex";
-import { borderRadius, duration, easing, fontSize, fontWeight, spacing } from "@/lib/theme/tokens.stylex";
+import {
+	borderRadius,
+	duration,
+	easing,
+	fontSize,
+	fontWeight,
+	spacing,
+} from "@/lib/theme/tokens.stylex";
 
 export const tabsStyles = stylex.create({
 	root: {

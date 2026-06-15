@@ -1,6 +1,14 @@
 import * as stylex from "@stylexjs/stylex";
 import { theme } from "@/lib/theme/contract.stylex";
-import { borderWidth, fontSize, fontWeight, lineHeight, mediaQueries, spacing, zIndex } from "@/lib/theme/tokens.stylex";
+import {
+	borderWidth,
+	fontSize,
+	fontWeight,
+	lineHeight,
+	mediaQueries,
+	spacing,
+	zIndex,
+} from "@/lib/theme/tokens.stylex";
 export const alertDialogStyles = stylex.create({
 	backdrop: {
 		position: "fixed",

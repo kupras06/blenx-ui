@@ -1,6 +1,11 @@
 import * as stylex from "@stylexjs/stylex";
 import { theme } from "@/lib/theme/contract.stylex";
-import { dataRuleQueries, fontSize, fontWeight, spacing } from "@/lib/theme/tokens.stylex";
+import {
+	dataRuleQueries,
+	fontSize,
+	fontWeight,
+	spacing,
+} from "@/lib/theme/tokens.stylex";
 
 export const toggleStyles = stylex.create({
 	base: {

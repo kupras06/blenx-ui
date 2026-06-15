@@ -165,6 +165,6 @@ export const textVarianttyles = stylex.create({
 		margin: 0,
 		backgroundColor: theme.backgroundSubtle,
 		padding: spacing["1"],
-		borderRadius: borderRadius["small"],
+		borderRadius: borderRadius.small,
 	},
 });

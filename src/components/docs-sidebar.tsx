@@ -1,6 +1,6 @@
 import * as stylex from "@stylexjs/stylex";
 import { Link, useLocation } from "@tanstack/react-router";
-import { Box, Container, Surface, Text, VStack } from "@/components/ui";
+import { Box, Surface, Text, VStack } from "@/components/ui";
 
 interface SidebarSection {
 	title: string;
@@ -47,7 +47,6 @@ const styles = stylex.create({
 		gap: 2,
 	},
 });
-
 
 function DocsSidebar() {
 	const { pathname } = useLocation();

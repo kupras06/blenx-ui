@@ -8,7 +8,7 @@ import {
 } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import { Header } from "@/components/header";
-import { Box, Container, VStack } from "@/components/ui";
+import { Box, VStack } from "@/components/ui";
 import { appTheme } from "@/lib/app-theme.stylex";
 import { theme } from "@/lib/theme/contract.stylex";
 

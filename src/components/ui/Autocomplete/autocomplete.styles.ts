@@ -1,6 +1,14 @@
 import * as stylex from "@stylexjs/stylex";
 import { theme } from "@/lib/theme/contract.stylex";
-import { borderRadius, borderWidth, fontSize, fontWeight, mediaQueries, spacing, zIndex } from "@/lib/theme/tokens.stylex";
+import {
+	borderRadius,
+	borderWidth,
+	fontSize,
+	fontWeight,
+	mediaQueries,
+	spacing,
+	zIndex,
+} from "@/lib/theme/tokens.stylex";
 
 export const autoCompleteInputSize = stylex.create({
 	sm: {

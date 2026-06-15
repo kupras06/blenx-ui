@@ -27,6 +27,7 @@
         "tailwindcss": "^4.1.18",
         "zod": "^4.3.6",
         "zustand": "^5.0.14",
+        "zustand-utils": "^2.1.1",
       },
       "devDependencies": {
         "@biomejs/biome": "2.4.5",
@@ -1349,6 +1350,8 @@
     "zod-to-json-schema": ["zod-to-json-schema@3.25.2", "", { "peerDependencies": { "zod": "^3.25.28 || ^4" } }, "sha512-O/PgfnpT1xKSDeQYSCfRI5Gy3hPf91mKVDuYLUHZJMiDFptvP41MSnWofm8dnCm0256ZNfZIM7DSzuSMAFnjHA=="],
 
     "zustand": ["zustand@5.0.14", "", { "peerDependencies": { "@types/react": ">=18.0.0", "immer": ">=9.0.6", "react": ">=18.0.0", "use-sync-external-store": ">=1.2.0" }, "optionalPeers": ["@types/react", "immer", "react", "use-sync-external-store"] }, "sha512-/8tAspM5LMPr28b3fwLYrtdj77ECpfZviaP75CMTnwO8ISyaE4GDIG/9rDDYq/cH9D2Xw2A2RXglLInmVBQB/g=="],
+
+    "zustand-utils": ["zustand-utils@2.1.1", "", { "dependencies": { "@babel/runtime": "^7", "fast-deep-equal": "^3", "use-sync-external-store": "^1.4.0" }, "peerDependencies": { "react": ">=19", "zustand": ">=5.0.2" } }, "sha512-8uIm/hpw3v0CjWneaulqpkJ82khJumhKFFXoggdQjbjLei28tK41j6KoZneBJ/KiKlJe+X0rg6YwbALY4y+I1Q=="],
 
     "@babel/helper-compilation-targets/lru-cache": ["lru-cache@5.1.1", "", { "dependencies": { "yallist": "^3.0.2" } }, "sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w=="],
 
