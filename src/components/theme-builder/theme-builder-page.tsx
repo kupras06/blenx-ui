@@ -1,6 +1,14 @@
 import * as stylex from "@stylexjs/stylex";
 import { spacing } from "@/lib/theme/tokens.stylex";
-import { ScrollArea, Text, VStack } from "@/components/ui";
+import {
+	ScrollArea,
+	Tabs,
+	TabsList,
+	TabsPanel,
+	TabsTab,
+	Text,
+	VStack,
+} from "@/components/ui";
 import { ThemeBuilderProvider } from "./theme-builder-context";
 import { ThemePreviewProvider } from "./theme-provider";
 import {
@@ -9,6 +17,7 @@ import {
 	NonColorControls,
 	PresetControls,
 } from "./controls";
+import { ComponentShowcase, ExampleDashboard } from "./preview";
 
 const styles = stylex.create({
 	layout: {
@@ -42,22 +51,20 @@ export function ThemeBuilderPage() {
 							<NonColorControls />
 						</VStack>
 					</ScrollArea>
-					<div {...stylex.props(styles.preview)}>
-						<Text variant="h3">Preview</Text>
-						<VStack padding="medium" gap="medium">
-							<Text variant="h1">Heading 1</Text>
-							<Text variant="h2">Heading 2</Text>
-							<Text variant="h3">Heading 3</Text>
-							<Text variant="body1">
-								Body text with primary color. Lorem ipsum dolor sit amet,
-								consectetur adipiscing elit. Sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua.
-							</Text>
-							<Text variant="body2" color="secondary">
-								Secondary body text for less emphasis.
-							</Text>
-						</VStack>
-					</div>
+					<ScrollArea {...stylex.props(styles.preview)}>
+						<Tabs defaultValue="showcase">
+							<TabsList>
+								<TabsTab value="showcase">Components</TabsTab>
+								<TabsTab value="dashboard">Dashboard</TabsTab>
+							</TabsList>
+							<TabsPanel value="showcase">
+								<ComponentShowcase />
+							</TabsPanel>
+							<TabsPanel value="dashboard">
+								<ExampleDashboard />
+							</TabsPanel>
+						</Tabs>
+					</ScrollArea>
 				</div>
 			</ThemePreviewProvider>
 		</ThemeBuilderProvider>

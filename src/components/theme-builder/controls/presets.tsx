@@ -1,6 +1,6 @@
 import * as stylex from "@stylexjs/stylex";
-import { spacing } from "@/lib/theme/tokens.stylex";
 import { Text } from "@/components/ui";
+import { spacing } from "@/lib/theme/tokens.stylex";
 import { useThemeBuilder } from "../theme-builder-context";
 import { presets } from "./presets-data";
 import { Section } from "./section";
@@ -64,22 +64,17 @@ export function PresetControls() {
 						<button
 							key={preset.name}
 							type="button"
-							{...stylex.props(
-								styles.card,
-								isActive && styles.cardActive,
-							)}
+							{...stylex.props(styles.card, isActive && styles.cardActive)}
 							onClick={() => {
-								for (const [key, value] of Object.entries(
-									preset.tokens,
-								)) {
-									updateToken(key as keyof typeof tokens, value!);
+								for (const [key, value] of Object.entries(preset.tokens)) {
+									updateToken(key as keyof typeof tokens, value);
 								}
 							}}
 						>
 							<div {...stylex.props(styles.swatchRow)}>
-								{preset.colors.map((color, i) => (
+								{preset.colors.map((color) => (
 									<span
-										key={i}
+										key={`${color}_`}
 										{...stylex.props(styles.swatch)}
 										style={{ backgroundColor: color }}
 									/>

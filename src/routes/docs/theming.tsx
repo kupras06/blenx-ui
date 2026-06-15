@@ -2,7 +2,7 @@ import * as stylex from "@stylexjs/stylex";
 import { createFileRoute } from "@tanstack/react-router";
 import { DocsLayout } from "@/components/docs-layout";
 import { Box, Separator, Surface, Text, VStack } from "@/components/ui";
-import { docStyles } from "./docs.styles";
+import { docStyles } from "../../utils/docs.styles";
 
 export const Route = createFileRoute("/docs/theming")({
 	component: ThemingDoc,

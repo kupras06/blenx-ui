@@ -1,6 +1,6 @@
 import { ListIcon, XIcon } from "@phosphor-icons/react";
 import * as stylex from "@stylexjs/stylex";
-import { Link, useLocation } from "@tanstack/react-router";
+import { ClientOnly, Link, useLocation } from "@tanstack/react-router";
 import { useMediaQuery } from "@uidotdev/usehooks";
 import { theme } from "@/lib/theme/contract.stylex";
 import { fontSize, letterSpacing, spacing } from "@/lib/theme/tokens.stylex";
@@ -91,7 +91,9 @@ function Header() {
 					<Text variant="h3">Blenx UI</Text>
 				</Link>
 				<div {...stylex.props(styles.navLinks)}>
-					<DocsRouteOption />
+					<ClientOnly>
+						<DocsRouteOption />
+					</ClientOnly>
 					<Link
 						to="/theme-builder"
 						{...stylex.props(
