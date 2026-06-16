@@ -2,6 +2,7 @@
 // Components
 export * from "./AlertDialog/alert-dialog";
 export * from "./Autocomplete/autocomplete";
+export * from "./Accordion/accordion";
 export * from "./Avatar/avatar";
 export * from "./Badge/badge";
 export * from "./Box/box";
