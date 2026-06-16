@@ -28,7 +28,6 @@ function useTabsContext(): TabsContextValue {
 	return React.useContext(TabsContext) ?? { variant: DEFAULT_VARIANT };
 }
 
-
 export function Tabs({
 	children,
 	style,

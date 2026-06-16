@@ -6,19 +6,19 @@ import { tableStyles } from "./table.styles";
 // ─── Types ───────────────────────────────────────────────────────────────────
 
 export interface Column<TData> {
-		/** Unique identifier for the column */
-		key: keyof TData;
-		/** Header label */
-		header: ReactNode;
-		/** Render function for the cell */
-		cell?: (row: TData) => ReactNode;
-		/** Optional custom width */
-		width?: string;
-		/** Optional text alignment */
-		align?: "left" | "center" | "right";
-		/** Extra props to spread onto each <td> for this column */
-		cellProps?: Record<string, unknown>;
-	}
+	/** Unique identifier for the column */
+	key: keyof TData;
+	/** Header label */
+	header: ReactNode;
+	/** Render function for the cell */
+	cell?: (row: TData) => ReactNode;
+	/** Optional custom width */
+	width?: string;
+	/** Optional text alignment */
+	align?: "left" | "center" | "right";
+	/** Extra props to spread onto each <td> for this column */
+	cellProps?: Record<string, unknown>;
+}
 
 export interface TableProps<TData> {
 	columnData: Column<TData>[];

@@ -32,10 +32,12 @@ export class PreviewErrorBoundary extends Component<Props, State> {
 						Preview Error
 					</Text>
 					<Text variant="body2" color="secondary">
-						{this.state.error?.message ?? "Something went wrong rendering the preview."}
+						{this.state.error?.message ??
+							"Something went wrong rendering the preview."}
 					</Text>
 					<Text variant="caption" color="disabled">
-						Check the console for details. Token changes may have caused a render failure.
+						Check the console for details. Token changes may have caused a
+						render failure.
 					</Text>
 				</VStack>
 			);

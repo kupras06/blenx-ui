@@ -1,6 +1,4 @@
 import * as stylex from "@stylexjs/stylex";
-import { theme } from "@/lib/theme/contract.stylex";
-import { borderRadius, fontSize, spacing } from "@/lib/theme/tokens.stylex";
 import {
 	Avatar,
 	AvatarFallback,
@@ -27,6 +25,8 @@ import {
 	VStack,
 } from "@/components/ui";
 import Breadcrumbs from "@/components/ui/Breadcrumbs/breadcrumbs";
+import { theme } from "@/lib/theme/contract.stylex";
+import { borderRadius, fontSize, spacing } from "@/lib/theme/tokens.stylex";
 
 const styles = stylex.create({
 	section: {

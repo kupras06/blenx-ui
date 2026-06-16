@@ -111,8 +111,7 @@ function createThemeBuilderStore() {
 
 		setSelectedToken: (key) => set({ selectedToken: key }),
 
-		toggleSidebar: () =>
-			set((state) => ({ sidebarOpen: !state.sidebarOpen })),
+		toggleSidebar: () => set((state) => ({ sidebarOpen: !state.sidebarOpen })),
 
 		updateToken: (key, value) => {
 			const timer = debounceTimers.get(key);

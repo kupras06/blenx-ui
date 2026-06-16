@@ -1,6 +1,6 @@
-import { fontSize, spacing, theme } from "@around-me/ui/theme/contract.stylex";
 import { FolderOpenIcon } from "@phosphor-icons/react";
 import * as stylex from "@stylexjs/stylex";
+import { fontSize, spacing, theme } from "@/lib/theme/theme.stylex";
 
 interface DataTableEmptyProps {
 	/** Custom message to display */
@@ -21,7 +21,7 @@ export function DataTableEmpty({
 	action,
 }: DataTableEmptyProps) {
 	return (
-		<div role="status" aria-label={message} {...stylex.props(styles.container)}>
+		<output aria-label={message} {...stylex.props(styles.container)}>
 			{icon && <div {...stylex.props(styles.iconWrap)}>{icon}</div>}
 			{!icon && (
 				<div {...stylex.props(styles.iconWrap)}>
@@ -30,7 +30,7 @@ export function DataTableEmpty({
 			)}
 			<p {...stylex.props(styles.message)}>{message}</p>
 			{action && <div {...stylex.props(styles.actionWrap)}>{action}</div>}
-		</div>
+		</output>
 	);
 }
 

@@ -1,9 +1,9 @@
 import * as stylex from "@stylexjs/stylex";
+import { Text } from "@/components/ui";
 import { theme } from "@/lib/theme/contract.stylex";
 import { borderRadius, fontSize, spacing } from "@/lib/theme/tokens.stylex";
-import { Text } from "@/components/ui";
-import { useThemeBuilder } from "../theme-builder-context";
 import { getComponentsForToken } from "../preview/component-token-map";
+import { useThemeBuilder } from "../theme-builder-context";
 
 const styles = stylex.create({
 	panel: {
@@ -30,7 +30,7 @@ const styles = stylex.create({
 		alignItems: "center",
 		padding: "2px 8px",
 		borderRadius: borderRadius.full,
-		backgroundColor: theme.primary + "15",
+		backgroundColor: `${theme.primary}15`,
 		color: theme.primary,
 		fontSize: fontSize.xsmall,
 		fontWeight: 500,
@@ -79,7 +79,8 @@ export function ImpactSummary() {
 			</Text>
 			<div style={{ marginTop: spacing["1"] }}>
 				<Text variant="caption" color="secondary">
-					Affects {components.length} component{components.length !== 1 ? "s" : ""}
+					Affects {components.length} component
+					{components.length !== 1 ? "s" : ""}
 				</Text>
 			</div>
 			<div {...stylex.props(styles.list)} style={{ marginTop: spacing["2"] }}>

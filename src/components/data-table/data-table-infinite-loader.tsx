@@ -1,6 +1,6 @@
-import { Button, Spinner } from "@around-me/ui";
-import { fontSize, spacing, theme } from "@around-me/ui/theme/contract.stylex";
 import * as stylex from "@stylexjs/stylex";
+import { fontSize, spacing, theme } from "@/lib/theme/theme.stylex";
+import { Button, Spinner } from "../ui";
 import type { InfiniteScrollConfig } from "./types";
 import { useInfiniteScroll } from "./use-infinite-scroll";
 
@@ -43,9 +43,8 @@ export function DataTableInfiniteLoader({
 
 	if (isAuto) {
 		return (
-			<div
+			<output
 				ref={sentinelRef}
-				role="status"
 				aria-label={isFetchingNextPage ? loadingText : noMoreText}
 				{...stylex.props(styles.sentinel)}
 			>
@@ -58,7 +57,7 @@ export function DataTableInfiniteLoader({
 				{!hasNextPage && !isFetchingNextPage && (
 					<span {...stylex.props(styles.noMore)}>{noMoreText}</span>
 				)}
-			</div>
+			</output>
 		);
 	}
 

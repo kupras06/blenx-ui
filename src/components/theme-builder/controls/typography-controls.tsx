@@ -90,7 +90,7 @@ export function TypographyControls() {
 					max="20"
 					step="1"
 					{...stylex.props(styles.slider)}
-					value={parseInt(tokens.baseFontSize)}
+					value={parseInt(tokens.baseFontSize, 10)}
 					onChange={(e: ChangeEvent<HTMLInputElement>) => {
 						updateToken("baseFontSize", `${e.target.value}px`);
 					}}

@@ -48,7 +48,6 @@ const displayTokens: Array<{ key: string; label: string }> = [
 	{ key: "borderRadius", label: "borderRadius" },
 ];
 
-
 export function TokenTable() {
 	const tokens = useThemeBuilder((s) => s.tokens);
 	const setSelectedToken = useThemeBuilder((s) => s.setSelectedToken);

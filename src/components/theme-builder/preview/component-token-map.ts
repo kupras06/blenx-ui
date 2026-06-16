@@ -1,4 +1,7 @@
-export const componentTokenMap: Record<string, Array<{ token: string; label: string }>> = {
+export const componentTokenMap: Record<
+	string,
+	Array<{ token: string; label: string }>
+> = {
 	Button: [
 		{ token: "primary", label: "Primary" },
 		{ token: "primarySubtle", label: "Primary Subtle" },

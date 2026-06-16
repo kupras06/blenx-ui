@@ -1,6 +1,6 @@
-import { Spinner } from "@around-me/ui";
-import { fontSize, theme } from "@around-me/ui/theme/contract.stylex";
 import * as stylex from "@stylexjs/stylex";
+import { fontSize, theme } from "@/lib/theme/theme.stylex";
+import { Spinner } from "../ui";
 import type { TableSize } from "./types";
 
 interface DataTableLoadingProps {
@@ -29,11 +29,7 @@ export function DataTableLoading({
 	const rowHeight = ROW_HEIGHTS[size];
 
 	return (
-		<div
-			{...stylex.props(styles.wrapper)}
-			role="status"
-			aria-label="Loading table data"
-		>
+		<output {...stylex.props(styles.wrapper)} aria-label="Loading table data">
 			<table {...stylex.props(styles.table)}>
 				<thead>
 					<tr>
@@ -77,7 +73,7 @@ export function DataTableLoading({
 				<Spinner />
 				<span {...stylex.props(styles.loadingText)}>Loading data...</span>
 			</div>
-		</div>
+		</output>
 	);
 }
 

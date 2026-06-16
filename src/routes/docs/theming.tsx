@@ -6,8 +6,6 @@ export const Route = createFileRoute("/docs/theming")({
 	component: ThemingDoc,
 });
 
-
-
 function ThemingDoc() {
 	return (
 		<DocsLayout>

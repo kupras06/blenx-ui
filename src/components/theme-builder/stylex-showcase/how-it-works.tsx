@@ -52,7 +52,6 @@ export const customTheme = stylex.createTheme(theme, {
   background: "#...",
 });`;
 
-
 export function HowItWorks() {
 	return (
 		<>
