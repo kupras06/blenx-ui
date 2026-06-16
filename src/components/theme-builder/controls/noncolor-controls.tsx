@@ -1,5 +1,11 @@
 import * as stylex from "@stylexjs/stylex";
-import { Accordion, SegmentedControl, Text } from "@/components/ui";
+import {
+	Accordion,
+	Box,
+	SegmentedControl,
+	Text,
+	VStack,
+} from "@/components/ui";
 import { spacing } from "@/lib/theme/tokens.stylex";
 import { useThemeBuilder } from "../theme-builder-context";
 
@@ -47,26 +53,32 @@ export function NonColorControls() {
 				<Accordion.Trigger>Design Tokens</Accordion.Trigger>
 			</Accordion.Header>
 			<Accordion.Panel>
-				<SegmentedControl
-					value={tokens.radius}
-					onValueChange={(value) => updateToken("radius", value)}
-					options={radiusOptions}
-				/>
-				<SegmentedControl
-					value={tokens.spacing}
-					onValueChange={(value) => updateToken("spacing", value)}
-					options={spacingOptions}
-				/>
-				<div {...stylex.props(styles.controlRow)}>
-					<div {...stylex.props(styles.currentValue)}>
-						<Text variant="body2">Shadow Intensity</Text>
-					</div>
-					<SegmentedControl
-						value={tokens.shadowIntensity}
-						onValueChange={(value) => updateToken("shadowIntensity", value)}
-						options={shadowOptions}
-					/>
-				</div>
+				<VStack>
+					<Box>
+						<Text variant="h5">Border Radius</Text>
+						<SegmentedControl
+							value={tokens.radius}
+							onValueChange={(value) => updateToken("radius", value)}
+							options={radiusOptions}
+						/>
+					</Box>
+					<Box>
+						<Text variant="h5">Spacing</Text>
+						<SegmentedControl
+							value={tokens.spacing}
+							onValueChange={(value) => updateToken("spacing", value)}
+							options={spacingOptions}
+						/>
+					</Box>
+					<Box>
+						<Text variant="h5">Shadow Intensity</Text>
+						<SegmentedControl
+							value={tokens.shadowIntensity}
+							onValueChange={(value) => updateToken("shadowIntensity", value)}
+							options={shadowOptions}
+						/>
+					</Box>
+				</VStack>
 			</Accordion.Panel>
 		</Accordion.Item>
 	);

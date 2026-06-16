@@ -1,36 +1,4 @@
-import { Accordion } from "@base-ui/react";
-import * as stylex from "@stylexjs/stylex";
-import { theme } from "@/lib/theme/contract.stylex";
-import { borderRadius, fontSize, spacing } from "@/lib/theme/tokens.stylex";
-
-const styles = stylex.create({
-	paragraph: {
-		fontSize: fontSize.small,
-		color: theme.contentSecondary,
-		lineHeight: 1.6,
-		marginBottom: spacing["2"],
-	},
-	codeBlock: {
-		backgroundColor: theme.backgroundSubtle,
-		borderRadius: borderRadius.small,
-		padding: spacing["2"],
-		fontFamily: '"DM Mono", monospace',
-		fontSize: fontSize.xsmall,
-		color: theme.contentPrimary,
-		overflowX: "auto",
-		whiteSpace: "pre",
-		lineHeight: 1.5,
-		marginBottom: spacing["2"],
-	},
-	inlineCode: {
-		fontFamily: '"DM Mono", monospace',
-		fontSize: fontSize.xsmall,
-		backgroundColor: theme.backgroundSubtle,
-		padding: "1px 4px",
-		borderRadius: borderRadius.xsmall,
-		color: theme.contentAccent,
-	},
-});
+import { Accordion, Box, Text } from "@/components/ui";
 
 const semanticCode = `// Semantic tokens (what you edit)
 export const theme = stylex.defineVars({
@@ -60,39 +28,70 @@ export function HowItWorks() {
 				<Accordion.Trigger>How It Works</Accordion.Trigger>
 			</Accordion.Header>
 			<Accordion.Panel>
-				<p {...stylex.props(styles.paragraph)}>
-					Blenx UI uses <span {...stylex.props(styles.inlineCode)}>StyleX</span>{" "}
+				<Text variant="p">
+					Blenx UI uses{" "}
+					<Text variant="code" color="accent">
+						StyleX
+					</Text>{" "}
 					for its design system. StyleX compiles CSS at build time, enabling
 					fast runtime performance with zero runtime CSS-in-JS overhead.
-				</p>
-				<p {...stylex.props(styles.paragraph)}>
-					<strong>Semantic tokens</strong> (like{" "}
-					<span {...stylex.props(styles.inlineCode)}>primary</span>,{" "}
-					<span {...stylex.props(styles.inlineCode)}>background</span>) define
-					the visual identity. These are declared with{" "}
-					<span {...stylex.props(styles.inlineCode)}>stylex.defineVars()</span>:
-				</p>
-				<pre {...stylex.props(styles.codeBlock)}>{semanticCode}</pre>
-				<p {...stylex.props(styles.paragraph)}>
-					<strong>Concrete tokens</strong> (like font sizes, spacing) are design
-					primitives that stay consistent across themes:
-				</p>
-				<pre {...stylex.props(styles.codeBlock)}>{concreteCode}</pre>
-				<p {...stylex.props(styles.paragraph)}>
+				</Text>
+				<Text variant="p">
+					<Text variant="body2" weight="bold">
+						Semantic tokens
+					</Text>{" "}
+					(like{" "}
+					<Text variant="code" color="accent">
+						primary
+					</Text>
+					,{" "}
+					<Text variant="code" color="accent">
+						background
+					</Text>
+					) define the visual identity. These are declared with{" "}
+					<Text variant="code" color="accent">
+						stylex.defineVars()
+					</Text>
+					:
+				</Text>
+				<Box paddingY="medium">
+					<Text variant="code">{semanticCode}</Text>
+				</Box>
+				<Text variant="p">
+					<Text variant="body2" weight="bold">
+						Concrete tokens
+					</Text>
+					(like font sizes, spacing) are design primitives that stay consistent
+					across themes:
+				</Text>
+				<Text variant="code" color="accent">
+					stylex.defineVars():
+					<Box paddingY="medium">
+						<Text variant="code">{concreteCode}</Text>
+					</Box>
+				</Text>
+				<Text variant="p">
 					When you customize tokens in the Theme Builder, the preview wraps
-					components in a <span {...stylex.props(styles.inlineCode)}>div</span>{" "}
+					components in a{" "}
+					<Text variant="code" color="accent">
+						div
+					</Text>{" "}
 					with inline CSS custom properties that override the semantic var
 					values. This avoids{" "}
-					<span {...stylex.props(styles.inlineCode)}>stylex.createTheme()</span>{" "}
+					<Text variant="code" color="accent">
+						stylex.createTheme()
+					</Text>{" "}
 					at runtime (which must be a static call per StyleX rules).
-				</p>
-				<p {...stylex.props(styles.paragraph)}>
+				</Text>
+				<Text variant="p">
 					To export your custom theme for use in your own project, use the
 					Export panel to generate a static{" "}
-					<span {...stylex.props(styles.inlineCode)}>stylex.createTheme()</span>{" "}
+					<Text variant="code" color="accent">
+						stylex.createTheme()
+					</Text>{" "}
 					call:
-				</p>
-				<pre {...stylex.props(styles.codeBlock)}>{runtimeCode}</pre>
+				</Text>
+				<Text variant="code">{runtimeCode}</Text>
 			</Accordion.Panel>
 		</Accordion.Item>
 	);

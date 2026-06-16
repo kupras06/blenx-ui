@@ -1,4 +1,3 @@
-import * as stylex from "@stylexjs/stylex";
 import { useCallback, useState } from "react";
 import {
 	Accordion,
@@ -10,36 +9,12 @@ import {
 	AlertDialogTrigger,
 	Button,
 	Separator,
+	Text,
 	VStack,
 } from "@/components/ui";
 import { theme } from "@/lib/theme/contract.stylex";
-import { borderRadius, fontSize, spacing } from "@/lib/theme/tokens.stylex";
 import { useThemeBuilder } from "../theme-builder-context";
 
-const styles = stylex.create({
-	buttonRow: {
-		display: "flex",
-		flexDirection: "column",
-		gap: spacing["2"],
-	},
-	copyFeedback: {
-		fontSize: fontSize.xsmall,
-		color: theme.sentimentPositive,
-		transition: "opacity 0.2s ease",
-	},
-	codePreview: {
-		fontFamily: '"DM Mono", monospace',
-		fontSize: fontSize.xsmall,
-		color: theme.contentSecondary,
-		backgroundColor: theme.backgroundSubtle,
-		borderRadius: borderRadius.small,
-		padding: spacing["2"],
-		overflowX: "auto",
-		whiteSpace: "pre",
-		lineHeight: 1.5,
-		maxHeight: 200,
-	},
-});
 
 export function ExportPanel() {
 	const tokens = useThemeBuilder((s) => s.tokens);
@@ -113,57 +88,56 @@ ${themeEntries.join("\n")}
 				<Accordion.Trigger>Export</Accordion.Trigger>
 			</Accordion.Header>
 			<Accordion.Panel>
-				<div {...stylex.props(styles.buttonRow)}>
-					<Button variant="outline" size="small" onClick={generateJSON}>
-						Export JSON
-					</Button>
-					<Button variant="outline" size="small" onClick={copyJSON}>
-						{copied === "json" ? "Copied!" : "Copy JSON"}
-					</Button>
-					<Button variant="outline" size="small" onClick={copyStyleX}>
-						{copied === "stylex" ? "Copied!" : "Copy StyleX Theme"}
-					</Button>
-				</div>
-
-				{copied === "stylex" && (
-					<div
-						{...stylex.props(styles.copyFeedback)}
-						style={{ marginTop: spacing["1"] }}
-					>
-						StyleX theme code copied to clipboard!
-					</div>
-				)}
-
-				<Separator style={{ marginBlock: spacing["2"] }} />
-
-				<AlertDialog open={showReset} onOpenChange={setShowReset}>
-					<AlertDialogTrigger>
-						<Button variant="danger" size="small" fullWidth>
-							Reset to Defaults
+				<VStack>
+					<VStack gap="small">
+						<Button variant="outline" size="small" onClick={generateJSON}>
+							Export JSON
 						</Button>
-					</AlertDialogTrigger>
-					<AlertDialogPopup>
-						<AlertDialogHeader>
-							<AlertDialogTitle>Reset Theme</AlertDialogTitle>
-							<AlertDialogDescription>
-								This will restore all tokens to their default values. This
-								action cannot be undone.
-							</AlertDialogDescription>
-						</AlertDialogHeader>
-						<VStack gap="small" padding="medium">
-							<Button variant="danger" fullWidth onClick={handleReset}>
-								Reset
-							</Button>
-							<Button
-								variant="ghost"
-								fullWidth
-								onClick={() => setShowReset(false)}
-							>
-								Cancel
-							</Button>
-						</VStack>
-					</AlertDialogPopup>
-				</AlertDialog>
+						<Button variant="outline" size="small" onClick={copyJSON}>
+							{copied === "json" ? "Copied!" : "Copy JSON"}
+						</Button>
+						<Button variant="outline" size="small" onClick={copyStyleX}>
+							{copied === "stylex" ? "Copied!" : "Copy StyleX Theme"}
+						</Button>
+					</VStack>
+
+					{copied === "stylex" && (
+						<Text color="accent">StyleX theme code copied to clipboard!</Text>
+					)}
+
+					<Separator />
+
+					<AlertDialog open={showReset} onOpenChange={setShowReset}>
+						<AlertDialogTrigger
+							render={
+								<Button variant="danger" size="small" fullWidth>
+									Reset to Defaults
+								</Button>
+							}
+						/>
+						<AlertDialogPopup>
+							<AlertDialogHeader>
+								<AlertDialogTitle>Reset Theme</AlertDialogTitle>
+								<AlertDialogDescription>
+									This will restore all tokens to their default values. This
+									action cannot be undone.
+								</AlertDialogDescription>
+							</AlertDialogHeader>
+							<VStack gap="small" padding="medium">
+								<Button variant="danger" fullWidth onClick={handleReset}>
+									Reset
+								</Button>
+								<Button
+									variant="ghost"
+									fullWidth
+									onClick={() => setShowReset(false)}
+								>
+									Cancel
+								</Button>
+							</VStack>
+						</AlertDialogPopup>
+					</AlertDialog>
+				</VStack>
 			</Accordion.Panel>
 		</Accordion.Item>
 	);

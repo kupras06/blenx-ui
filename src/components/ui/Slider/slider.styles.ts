@@ -27,6 +27,7 @@ export const sliderControlStyles = stylex.create({
 export const sliderTrackStyles = stylex.create({
 	horizontal: {
 		width: "100%",
+		height: 7,
 	},
 	vertical: {
 		height: "100%",
