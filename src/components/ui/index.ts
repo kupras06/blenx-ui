@@ -33,6 +33,7 @@ export * from "./SegmentedControl/segmented-control";
 export * from "./Select/select";
 export * from "./Separator/separator";
 export * from "./Spinner/spinner";
+export * from "./Splitter/splitter";
 export * from "./Stack/stack";
 export * from "./Surface/surface";
 export * from "./Switch/switch";

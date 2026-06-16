@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "splitter",
+	"type": "registry:ui",
+	"title": "Splitter",
+	"description": "A StyleX Splitter component.",
+	"files": [
+		{
+			"file": "splitter.tsx",
+			"type": "registry:ui",
+			"target": "@ui/Splitter/splitter.tsx"
+		},
+		{
+			"file": "splitter.styles.ts",
+			"type": "registry:file",
+			"target": "@ui/Splitter/splitter.styles.ts"
+		}
+	]
+}
