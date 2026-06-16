@@ -3,6 +3,7 @@ import {
 	Avatar,
 	AvatarFallback,
 	Badge,
+	Box,
 	Button,
 	Card,
 	CardBody,
@@ -17,6 +18,7 @@ import {
 	DialogHeader,
 	DialogTitle,
 	DialogTrigger,
+	HStack,
 	Input,
 	Select,
 	Switch,
@@ -121,16 +123,16 @@ export function ComponentShowcase() {
 	return (
 		<VStack gap="large">
 			{/* Buttons */}
-			<div {...stylex.props(styles.section)}>
-				<h3 {...stylex.props(styles.sectionTitle)}>Buttons</h3>
-				<div {...stylex.props(styles.row)}>
+			<VStack withBorder padding="small">
+				<Text variant="h3">Buttons</Text>
+				<HStack>
 					<Button variant="primary">Primary</Button>
 					<Button variant="secondary">Secondary</Button>
 					<Button variant="ghost">Ghost</Button>
 					<Button variant="outline">Outline</Button>
 					<Button variant="danger">Destructive</Button>
-				</div>
-				<div {...stylex.props(styles.row)}>
+				</HStack>
+				<HStack>
 					<Button variant="primary" loading>
 						Loading
 					</Button>
@@ -146,13 +148,13 @@ export function ComponentShowcase() {
 					<Button variant="primary" size="large">
 						Large
 					</Button>
-				</div>
-			</div>
+				</HStack>
+			</VStack>
 
 			{/* Forms */}
-			<div {...stylex.props(styles.section)}>
-				<h3 {...stylex.props(styles.sectionTitle)}>Forms</h3>
-				<div {...stylex.props(styles.formGroup)}>
+			<VStack withBorder padding="small">
+				<Text variant="h3">Forms</Text>
+				<VStack maxWidth={"sm"}>
 					<Input placeholder="Enter text..." size="default" />
 					<Textarea placeholder="Textarea..." rows={3} />
 					<Select.Root defaultValue="option1">
@@ -172,12 +174,12 @@ export function ComponentShowcase() {
 							</Select.Positioner>
 						</Select.Portal>
 					</Select.Root>
-				</div>
-				<div {...stylex.props(styles.row)}>
+				</VStack>
+				<HStack align="center">
 					<Switch defaultChecked />
 					<Text variant="body2">Toggle me</Text>
-				</div>
-				<div {...stylex.props(styles.radioGroup)}>
+				</HStack>
+				<HStack>
 					<label {...stylex.props(styles.radioLabel)}>
 						<input type="radio" name="showcase-radio" />
 						Option A
@@ -190,12 +192,12 @@ export function ComponentShowcase() {
 						<input type="radio" name="showcase-radio" />
 						Option C
 					</label>
-				</div>
-				<label {...stylex.props(styles.radioLabel)}>
+				</HStack>
+				<HStack>
 					<input type="checkbox" />
-					Check me
-				</label>
-			</div>
+					<Text variant="body2">Check me</Text>
+				</HStack>
+			</VStack>
 
 			{/* Navigation */}
 			<div {...stylex.props(styles.section)}>
@@ -227,9 +229,7 @@ export function ComponentShowcase() {
 					</div>
 				</div>
 				<div>
-					<Text variant="body2" style={{ marginBottom: spacing["2"] }}>
-						Progress
-					</Text>
+					<Text variant="body2">Progress</Text>
 					<div {...stylex.props(styles.progressOuter)}>
 						<div
 							{...stylex.props(styles.progressInner)}
@@ -242,7 +242,7 @@ export function ComponentShowcase() {
 			{/* Data Display */}
 			<div {...stylex.props(styles.section)}>
 				<h3 {...stylex.props(styles.sectionTitle)}>Data Display</h3>
-				<Card padding="medium" style={{ marginBottom: spacing["3"] }}>
+				<Card padding="medium">
 					<CardHeader>
 						<CardTitle>Card Title</CardTitle>
 						<CardDescription>Card description goes here.</CardDescription>
@@ -267,7 +267,7 @@ export function ComponentShowcase() {
 					<Badge variant="primary">Primary</Badge>
 					<Badge variant="secondary">Secondary</Badge>
 				</div>
-				<Avatar size="medium" style={{ marginTop: spacing["2"] }}>
+				<Avatar size="medium">
 					<AvatarFallback>JD</AvatarFallback>
 				</Avatar>
 			</div>

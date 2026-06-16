@@ -1,11 +1,10 @@
 import * as stylex from "@stylexjs/stylex";
 import type { BoxProps } from "../Box/box";
 import { Box } from "../Box/box";
-import { containerSizeStyles, containerStyles } from "./container.styles";
+import { containerStyles } from "./container.styles";
 
-type ContainerSize = keyof typeof containerSizeStyles;
 type Props = BoxProps & {
-	size?: ContainerSize;
+	size?: BoxProps["maxWidth"];
 	center?: boolean;
 	content?: "center" | "top";
 };
@@ -19,7 +18,6 @@ export function Container({
 }: Props) {
 	const applyCenter = center || content === "center";
 	const resolvedStyles = stylex.props(
-		size && containerSizeStyles[size],
 		applyCenter && containerStyles.center,
 		containerStyles.root,
 		style,

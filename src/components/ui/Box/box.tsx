@@ -12,13 +12,13 @@ import {
 	positionStyles,
 } from "@/utils/layouts.styles";
 import type { _BaseDivProps } from "@/utils/stylex.utils";
-import { boxStyles } from "./box.styles";
+import { boxSizeStyles, boxStyles } from "./box.styles";
 
 type BoxDisplay = keyof typeof displayStyles;
 type BoxSpacing = keyof typeof paddingXStyles;
 type BoxOverflow = keyof typeof overflowStyles;
 type BoxPosition = keyof typeof positionStyles;
-
+type BoxSize = keyof typeof boxSizeStyles;
 type BoxProps = _BaseDivProps & {
 	display?: BoxDisplay;
 
@@ -38,10 +38,12 @@ type BoxProps = _BaseDivProps & {
 
 	overflow?: BoxOverflow;
 	position?: BoxPosition;
-
+	maxWidth?: BoxSize | number;
 	style?: stylex.StyleXStyles;
 };
-
+const isBoxSize = (value: BoxSize | number): value is BoxSize => {
+	return typeof value !== "number";
+};
 function Box({
 	render,
 	display,
@@ -60,6 +62,7 @@ function Box({
 	radius,
 	style,
 	withBorder,
+	maxWidth,
 	...props
 }: BoxProps) {
 	const stylexProps = stylex.props(
@@ -82,6 +85,10 @@ function Box({
 		margin && marginYStyles[margin],
 		marginX && marginXStyles[marginX],
 		marginY && marginYStyles[marginY],
+		maxWidth && typeof maxWidth === "number"
+			? boxStyles.maxWidth(maxWidth)
+			: null,
+		maxWidth && isBoxSize(maxWidth) ? boxSizeStyles[maxWidth] : null,
 		style,
 	);
 	const mergedProps = mergeProps(props, stylexProps);
