@@ -16,6 +16,8 @@ export interface Column<TData> {
 	width?: string;
 	/** Optional text alignment */
 	align?: "left" | "center" | "right";
+	/** Extra props to spread onto each <td> for this column */
+	cellProps?: Record<string, unknown>;
 }
 
 export interface TableProps<TData> {
@@ -23,6 +25,16 @@ export interface TableProps<TData> {
 	rowData: TData[];
 	/** Optional stable row key (field name). Defaults to index. */
 	rowKey?: keyof TData & string;
+	/** Optional callback for per-row props (events, styles, attributes) */
+	getRowProps?: (
+		row: TData,
+		index: number,
+	) => {
+		onMouseEnter?: () => void;
+		onMouseLeave?: () => void;
+		style?: React.CSSProperties;
+		[key: string]: unknown;
+	};
 	/** Optional wrapper box style */
 	style?: StyleXStyles;
 	className?: string;
@@ -54,10 +66,11 @@ const cellAlignStyles = stylex.create({
  * />
  * ```
  */
-export function Table<TData extends Record<string, unknown>>({
+export function Table<TData>({
 	columnData,
 	rowData,
 	rowKey,
+	getRowProps,
 	style,
 	className,
 }: TableProps<TData>) {
@@ -83,11 +96,13 @@ export function Table<TData extends Record<string, unknown>>({
 				<tbody {...stylex.props(tableStyles.body)}>
 					{rowData.map((row, index) => {
 						const key = rowKey ? (row[rowKey] as string) : index.toString();
+						const rowProps = getRowProps?.(row, index);
 						return (
-							<tr key={key} {...stylex.props(tableStyles.row)}>
+							<tr key={key} {...rowProps} {...stylex.props(tableStyles.row)}>
 								{columnData.map((col) => (
 									<td
 										key={col.key}
+										{...col.cellProps}
 										{...stylex.props(
 											tableStyles.cell,
 											col.align && cellAlignStyles[col.align],

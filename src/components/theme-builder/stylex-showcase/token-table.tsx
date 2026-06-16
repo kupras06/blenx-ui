@@ -1,45 +1,19 @@
 import * as stylex from "@stylexjs/stylex";
+import type { Column } from "@/components/ui";
+import { Table } from "@/components/ui";
 import { theme } from "@/lib/theme/contract.stylex";
-import { fontSize, spacing } from "@/lib/theme/tokens.stylex";
+import { fontSize } from "@/lib/theme/tokens.stylex";
 import { componentTokenMap } from "../preview/component-token-map";
 import { useThemeBuilder } from "../theme-builder-context";
 
-const styles = stylex.create({
-	table: {
-		width: "100%",
-		borderCollapse: "collapse",
-		fontSize: fontSize.xsmall,
-	},
-	header: {
-		textAlign: "left",
-		padding: spacing["1"],
-		color: theme.contentSecondary,
-		fontWeight: 600,
-		borderBottomWidth: 1,
-		borderBottomStyle: "solid",
-		borderBottomColor: theme.borderSubtle,
-	},
-	cell: {
-		padding: spacing["1"],
-		color: theme.contentPrimary,
-		borderBottomWidth: 1,
-		borderBottomStyle: "solid",
-		borderBottomColor: theme.borderSubtle,
-		fontFamily: '"DM Mono", monospace',
-		fontSize: fontSize.xsmall,
-	},
-	code: {
-		color: theme.contentAccent,
-		fontFamily: '"DM Mono", monospace',
-		fontSize: fontSize.xsmall,
-	},
-	mono: {
-		fontFamily: '"DM Mono", monospace',
-		fontSize: fontSize.xsmall,
-	},
-});
+interface TokenRow {
+	key: string;
+	label: string;
+	value: string;
+	components: string;
+}
 
-const displayTokens: Array<{ key: keyof typeof theme; label: string }> = [
+const displayTokens: Array<{ key: string; label: string }> = [
 	{ key: "primary", label: "primary" },
 	{ key: "primarySubtle", label: "primarySubtle" },
 	{ key: "secondary", label: "secondary" },
@@ -76,58 +50,82 @@ const displayTokens: Array<{ key: keyof typeof theme; label: string }> = [
 	{ key: "borderRadius", label: "borderRadius" },
 ];
 
+const cellStyles = stylex.create({
+	code: {
+		color: theme.contentAccent,
+		fontFamily: '"DM Mono", monospace',
+		fontSize: fontSize.xsmall,
+	},
+	value: {
+		fontFamily: '"DM Mono", monospace',
+		fontSize: fontSize.xsmall,
+	},
+});
+
 export function TokenTable() {
 	const tokens = useThemeBuilder((s) => s.tokens);
 	const setSelectedToken = useThemeBuilder((s) => s.setSelectedToken);
 	const selectedToken = useThemeBuilder((s) => s.selectedToken);
 
+	const rowData: TokenRow[] = displayTokens.map(({ key, label }) => {
+		const value =
+			key === "fontSize"
+				? tokens.baseFontSize
+				: key === "borderRadius"
+					? tokens.radius
+					: (tokens[key as keyof typeof tokens]?.toString() ?? "-");
+
+		const components = Object.entries(componentTokenMap)
+			.filter(([, tokenList]) => tokenList.some((t) => t.token === key))
+			.map(([name]) => name)
+			.join(", ");
+
+		return { key, label, value, components: components || "-" };
+	});
+
+	const columns: Column<TokenRow>[] = [
+		{
+			key: "label",
+			header: "Token",
+			cell: (row) => (
+				<span {...stylex.props(cellStyles.code)}>{row.label}</span>
+			),
+			cellProps: { "data-token": true },
+		},
+		{
+			key: "value",
+			header: "Value",
+			cell: (row) => (
+				<span {...stylex.props(cellStyles.value)}>{row.value}</span>
+			),
+		},
+		{
+			key: "components",
+			header: "Components",
+			cell: (row) => (
+				<span {...stylex.props(cellStyles.value)}>{row.components}</span>
+			),
+		},
+	];
+
 	return (
-		<table {...stylex.props(styles.table)}>
-			<thead>
-				<tr>
-					<th {...stylex.props(styles.header)}>Token</th>
-					<th {...stylex.props(styles.header)}>Value</th>
-					<th {...stylex.props(styles.header)}>Components</th>
-				</tr>
-			</thead>
-			<tbody>
-				{displayTokens.map(({ key, label }) => {
-					const value =
-						key === "fontSize"
-							? tokens.baseFontSize
-							: key === "borderRadius"
-								? tokens.radius
-								: (tokens[key as keyof typeof tokens]?.toString() ?? "-");
-
-					const components = Object.entries(componentTokenMap)
-						.filter(([, tokenList]) => tokenList.some((t) => t.token === key))
-						.map(([name]) => name)
-						.join(", ");
-
-					const isSelected = selectedToken === key;
-					return (
-						<tr
-							key={key}
-							onMouseEnter={() => setSelectedToken(key as keyof typeof tokens)}
-							onMouseLeave={() => setSelectedToken(null)}
-							{...stylex.props(
-								isSelected && {
-									backgroundColor: theme.focusRing + "15",
-								},
-							)}
-							style={{ cursor: "pointer" }}
-						>
-							<td {...stylex.props(styles.cell, styles.code)} data-token={key}>
-								{label}
-							</td>
-							<td {...stylex.props(styles.cell)}>{value}</td>
-							<td {...stylex.props(styles.cell, styles.mono)}>
-								{components || "-"}
-							</td>
-						</tr>
-					);
-				})}
-			</tbody>
-		</table>
+		<Table
+			columnData={columns}
+			rowData={rowData}
+			rowKey="key"
+			getRowProps={(row) => {
+				const isSelected = selectedToken === row.key;
+				return {
+					onMouseEnter: () => setSelectedToken(row.key as keyof typeof tokens),
+					onMouseLeave: () => setSelectedToken(null),
+					style: {
+						cursor: "pointer",
+						...(isSelected && {
+							backgroundColor: `${theme.focusRing}15`,
+						}),
+					},
+				};
+			}}
+		/>
 	);
 }
