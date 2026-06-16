@@ -40,9 +40,9 @@ export function ColorControls({ noSection }: ColorControlsProps) {
 				<ColorPicker
 					key={key}
 					label={label}
-					value={tokens[key as keyof typeof tokens]}
+					value={tokens[key]}
 					onChange={(color) => {
-						updateTokenDebounced(key as keyof typeof tokens, color);
+						updateTokenDebounced(key, color);
 					}}
 				/>
 			))}

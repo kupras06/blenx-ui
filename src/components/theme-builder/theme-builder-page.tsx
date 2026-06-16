@@ -154,7 +154,6 @@ function SidebarContent() {
 
 function Sidebar({ compact }: { compact: boolean }) {
 	const sidebarOpen = useThemeBuilder((s) => s.sidebarOpen);
-	const toggleSidebar = useThemeBuilder((s) => s.toggleSidebar);
 
 	if (!compact) {
 		return (

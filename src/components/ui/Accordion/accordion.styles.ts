@@ -85,6 +85,7 @@ export const accordionStyles = stylex.create({
 		overflow: "hidden",
 		boxSizing: "border-box",
 		transitionProperty: "grid-template-rows, opacity",
+		padding: spacing.medium,
 		transitionDuration: duration.normal,
 		transitionTimingFunction: easing.standard,
 	},
