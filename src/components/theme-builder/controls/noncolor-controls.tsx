@@ -1,8 +1,7 @@
 import * as stylex from "@stylexjs/stylex";
-import { spacing } from "@/lib/theme/tokens.stylex";
 import { SegmentedControl, Text } from "@/components/ui";
+import { spacing } from "@/lib/theme/tokens.stylex";
 import { useThemeBuilder } from "../theme-builder-context";
-import { Section } from "./section";
 
 const styles = stylex.create({
 	controlRow: {
@@ -44,36 +43,26 @@ export function NonColorControls() {
 
 	return (
 		<>
-			<Section title="Radius">
-				<SegmentedControl
-					value={tokens.radius}
-					onValueChange={(value) => updateToken("radius", value)}
-					options={radiusOptions}
-				/>
-			</Section>
-
-			<Section title="Spacing">
-				<SegmentedControl
-					value={tokens.spacing}
-					onValueChange={(value) => updateToken("spacing", value)}
-					options={spacingOptions}
-				/>
-			</Section>
-
-			<Section title="Shadows" defaultOpen={false}>
-				<div {...stylex.props(styles.controlRow)}>
-					<div {...stylex.props(styles.currentValue)}>
-						<Text variant="body2">Shadow Intensity</Text>
-					</div>
-					<SegmentedControl
-						value={tokens.shadowIntensity}
-						onValueChange={(value) =>
-							updateToken("shadowIntensity", value)
-						}
-						options={shadowOptions}
-					/>
+			<SegmentedControl
+				value={tokens.radius}
+				onValueChange={(value) => updateToken("radius", value)}
+				options={radiusOptions}
+			/>
+			<SegmentedControl
+				value={tokens.spacing}
+				onValueChange={(value) => updateToken("spacing", value)}
+				options={spacingOptions}
+			/>
+			<div {...stylex.props(styles.controlRow)}>
+				<div {...stylex.props(styles.currentValue)}>
+					<Text variant="body2">Shadow Intensity</Text>
 				</div>
-			</Section>
+				<SegmentedControl
+					value={tokens.shadowIntensity}
+					onValueChange={(value) => updateToken("shadowIntensity", value)}
+					options={shadowOptions}
+				/>
+			</div>
 		</>
 	);
 }

@@ -13,7 +13,6 @@ import {
 } from "@/components/ui";
 import { theme } from "@/lib/theme/contract.stylex";
 import { borderRadius, fontSize, spacing } from "@/lib/theme/tokens.stylex";
-import { Section } from "../controls/section";
 import { useThemeBuilder } from "../theme-builder-context";
 
 const styles = stylex.create({
