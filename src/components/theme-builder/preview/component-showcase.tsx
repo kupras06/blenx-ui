@@ -1,5 +1,6 @@
 import * as stylex from "@stylexjs/stylex";
 import {
+	Alert,
 	Avatar,
 	AvatarFallback,
 	Badge,
@@ -59,33 +60,6 @@ const styles = stylex.create({
 		flexDirection: "column",
 		gap: spacing["2"],
 		marginBottom: spacing["3"],
-	},
-	alert: {
-		padding: spacing["3"],
-		borderRadius: borderRadius.medium,
-		fontSize: fontSize.small,
-		borderWidth: 1,
-		borderStyle: "solid",
-	},
-	alertInfo: {
-		backgroundColor: theme.sentimentInfoSubtle,
-		borderColor: theme.sentimentInfo,
-		color: theme.sentimentInfo,
-	},
-	alertSuccess: {
-		backgroundColor: theme.sentimentPositiveSubtle,
-		borderColor: theme.sentimentPositive,
-		color: theme.sentimentPositive,
-	},
-	alertWarning: {
-		backgroundColor: theme.sentimentWarningSubtle,
-		borderColor: theme.sentimentWarning,
-		color: theme.sentimentWarning,
-	},
-	alertError: {
-		backgroundColor: theme.sentimentNegativeSubtle,
-		borderColor: theme.sentimentNegative,
-		color: theme.sentimentNegative,
 	},
 	radioGroup: {
 		display: "flex",
@@ -215,18 +189,10 @@ export function ComponentShowcase() {
 			<div {...stylex.props(styles.section)}>
 				<h3 {...stylex.props(styles.sectionTitle)}>Feedback</h3>
 				<div {...stylex.props(styles.alertRow)}>
-					<div {...stylex.props(styles.alert, styles.alertInfo)}>
-						This is an info message.
-					</div>
-					<div {...stylex.props(styles.alert, styles.alertSuccess)}>
-						Operation completed successfully!
-					</div>
-					<div {...stylex.props(styles.alert, styles.alertWarning)}>
-						Please review your settings.
-					</div>
-					<div {...stylex.props(styles.alert, styles.alertError)}>
-						Something went wrong.
-					</div>
+					<Alert variant="info">This is an info message.</Alert>
+					<Alert variant="success">Operation completed successfully!</Alert>
+					<Alert variant="warning">Please review your settings.</Alert>
+					<Alert variant="error">Something went wrong.</Alert>
 				</div>
 				<div>
 					<Text variant="body2">Progress</Text>
