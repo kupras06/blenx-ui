@@ -1,47 +1,22 @@
 import * as stylex from "@stylexjs/stylex";
-import { Accordion, Box, Text } from "@/components/ui";
-import { spacing } from "@/lib/theme/tokens.stylex";
+import {
+	Accordion,
+	Box,
+	ColorSwatch,
+	Grid,
+	HStack,
+	Surface,
+	Text,
+} from "@/components/ui";
 import { useThemeBuilder } from "../theme-builder-context";
 import { presets } from "./presets-data";
 
 const styles = stylex.create({
-	grid: {
-		display: "grid",
-		gridTemplateColumns: "repeat(3, 1fr)",
-		gap: spacing["2"],
-	},
-	card: {
-		display: "flex",
-		flexDirection: "column",
-		alignItems: "center",
-		gap: spacing["1"],
-		padding: spacing["2"],
-		borderRadius: spacing["2"],
-		cursor: "pointer",
-		border: "1px solid transparent",
-		background: "none",
-		position: "relative",
-		transition: "border-color 0.15s ease",
-		":hover": {
-			borderColor: "var(--xrvdk6j)",
-		},
-	},
-	cardActive: {
-		borderColor: "var(--x1732vrt)",
-	},
-	swatchRow: {
-		display: "flex",
-		gap: spacing["1"],
-	},
 	swatch: {
 		width: 20,
 		height: 20,
 		borderRadius: 4,
 		border: "1px solid rgba(0,0,0,0.08)",
-	},
-	name: {
-		fontSize: "12px",
-		lineHeight: 1,
 	},
 });
 
@@ -56,36 +31,37 @@ export function PresetControls() {
 		})?.name ?? "Default";
 
 	const content = (
-		<div {...stylex.props(styles.grid)}>
+		<Grid columns={3}>
 			{presets.map((preset) => {
 				const isActive = preset.name === activePreset;
 				return (
-					<button
+					<Surface
+						render={
+							<button
+								type="button"
+								onClick={() => {
+									for (const [key, value] of Object.entries(preset.tokens)) {
+										updateToken(key as keyof typeof tokens, value);
+									}
+								}}
+							/>
+						}
+						padding="xsmall"
 						key={preset.name}
-						type="button"
-						{...stylex.props(styles.card, isActive && styles.cardActive)}
-						onClick={() => {
-							for (const [key, value] of Object.entries(preset.tokens)) {
-								updateToken(key as keyof typeof tokens, value);
-							}
-						}}
+						variant={isActive ? "sunken" : "outline"}
 					>
-						<div {...stylex.props(styles.swatchRow)}>
+						<HStack>
 							{preset.colors.map((color) => (
-								<span
-									key={`${color}_`}
-									{...stylex.props(styles.swatch)}
-									style={{ backgroundColor: color }}
-								/>
+								<ColorSwatch color={color} key={color} />
 							))}
-						</div>
-						<Text variant="caption" weight={isActive ? "semibold" : "regular"}>
+						</HStack>
+						<Text variant="body3" weight={isActive ? "semibold" : "regular"}>
 							{preset.name}
 						</Text>
-					</button>
+					</Surface>
 				);
 			})}
-		</div>
+		</Grid>
 	);
 	return (
 		<Accordion.Item value="presets">
