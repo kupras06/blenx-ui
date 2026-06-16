@@ -91,4 +91,4 @@ export const ProgressBar = {
 	Value: ProgressValue,
 };
 
-export { ProgressPrimitive as ProgressPrimitive };
+export { ProgressPrimitive };

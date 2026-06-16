@@ -189,22 +189,19 @@ export function ComponentShowcase() {
 				</Breadcrumbs>
 			</div>
 
-			{/* Feedback */}
-			<div {...stylex.props(styles.section)}>
-				<h3 {...stylex.props(styles.sectionTitle)}>Feedback</h3>
-				<div {...stylex.props(styles.alertRow)}>
-					<Alert variant="info">This is an info message.</Alert>
-					<Alert variant="success">Operation completed successfully!</Alert>
-					<Alert variant="warning">Please review your settings.</Alert>
-					<Alert variant="error">Something went wrong.</Alert>
-				</div>
+			<VStack withBorder padding="xxsmall">
+				<Text variant="h3">Feedback</Text>
+				<Alert variant="info">This is an info message.</Alert>
+				<Alert variant="success">Operation completed successfully!</Alert>
+				<Alert variant="warning">Please review your settings.</Alert>
+				<Alert variant="error">Something went wrong.</Alert>
 				<Progress value={60}>
 					<ProgressLabel>Progress</ProgressLabel>
 					<ProgressTrack>
 						<ProgressIndicator />
 					</ProgressTrack>
 				</Progress>
-			</div>
+			</VStack>
 
 			{/* Data Display */}
 			<VStack>
