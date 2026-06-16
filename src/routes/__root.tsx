@@ -1,3 +1,4 @@
+
 import * as stylex from "@stylexjs/stylex";
 import type { QueryClient } from "@tanstack/react-query";
 import { QueryClientProvider } from "@tanstack/react-query";
@@ -140,11 +141,13 @@ function RootDocument() {
 						}),
 					}}
 				/>
-				{import.meta.env.DEV && (
+				{import.meta.env.DEV ? (
 					<>
 						<link rel="stylesheet" href="/virtual:stylex.css" />
 						<script type="module" src="/@id/virtual:stylex:runtime" />
 					</>
+				) : (
+					<link rel="stylesheet" href="/assets/stylex.css" />
 				)}
 			</head>
 			<body {...stylex.props(rootStyles.body)}>
