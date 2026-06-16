@@ -33,7 +33,6 @@ export const splitterStyles = stylex.create({
 		justifyContent: "center",
 		flexShrink: 0,
 		backgroundColor: theme.borderSubtle,
-		width: 100,
 		transitionProperty: "background-color",
 		transitionDuration: duration.fast,
 		outline: "none",

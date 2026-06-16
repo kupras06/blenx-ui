@@ -494,8 +494,7 @@ export function SplitterHandle({
 	const panelSize = ctx.sizes[index] ?? 0;
 
 	return (
-		<div
-			role="separator"
+		<hr
 			tabIndex={handleDisabled || ctx.disabled ? -1 : 0}
 			aria-orientation={ctx.orientation}
 			aria-valuenow={Math.round(panelSize)}
