@@ -1,0 +1,8 @@
+{
+	"title": "Splitter",
+	"description": "A resizable split panel layout with pointer and keyboard support, collapsible panels, and localStorage persistence.",
+	"category": "Layout",
+	"status": "stable",
+	"keywords": ["splitter", "resize", "panel", "layout", "split", "resizable"],
+	"related": ["Box"]
+}

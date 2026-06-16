@@ -1,0 +1,12 @@
+{
+	"title": "Alert Dialog",
+	"description": "A confirmation or alert modal dialog for critical user interactions requiring acknowledgment.",
+	"category": "Overlay",
+	"status": "stable",
+	"keywords": ["dialog", "modal", "alert", "confirmation", "confirm"],
+	"related": ["Dialog", "Button", "ScrollArea"],
+	"accessibility": {
+		"keyboard": ["Escape"],
+		"aria": ["role", "aria-modal", "aria-labelledby", "aria-describedby"]
+	}
+}

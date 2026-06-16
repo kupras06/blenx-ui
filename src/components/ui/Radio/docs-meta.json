@@ -1,0 +1,12 @@
+{
+	"title": "Radio",
+	"description": "A radio button with RadioGroup wrapper for single-select option lists. Built on Base UI Radio primitive.",
+	"category": "Forms",
+	"status": "stable",
+	"keywords": ["radio", "radio group", "option", "select", "form"],
+	"related": ["Field", "InputGroup"],
+	"accessibility": {
+		"keyboard": ["ArrowUp", "ArrowDown"],
+		"aria": ["aria-checked", "aria-labelledby"]
+	}
+}

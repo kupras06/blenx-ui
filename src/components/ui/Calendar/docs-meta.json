@@ -1,0 +1,8 @@
+{
+	"title": "Calendar",
+	"description": "A date calendar component built on react-day-picker. Supports single, range, and multiple date selection modes.",
+	"category": "Forms",
+	"status": "stable",
+	"keywords": ["calendar", "date", "datepicker", "day", "month"],
+	"related": ["DatePicker", "Button"]
+}

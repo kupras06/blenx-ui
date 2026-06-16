@@ -1,0 +1,8 @@
+{
+	"title": "Container",
+	"description": "A centered layout wrapper that constrains content width with configurable max-width presets.",
+	"category": "Layout",
+	"status": "stable",
+	"keywords": ["container", "layout", "wrapper", "center", "max-width"],
+	"related": ["Box", "Stack"]
+}

@@ -1,0 +1,11 @@
+{
+	"title": "Breadcrumbs",
+	"description": "A breadcrumb navigation trail with ARIA support for hierarchical page navigation.",
+	"category": "Navigation",
+	"status": "stable",
+	"keywords": ["breadcrumbs", "navigation", "breadcrumb", "trail", "hierarchy"],
+	"related": [],
+	"accessibility": {
+		"aria": ["aria-label", "aria-current"]
+	}
+}

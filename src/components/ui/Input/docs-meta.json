@@ -1,0 +1,8 @@
+{
+	"title": "Input",
+	"description": "A text input component with size presets, error state styling, and auto-generated IDs. Built on Base UI Input primitive.",
+	"category": "Forms",
+	"status": "stable",
+	"keywords": ["input", "text", "form", "field", "text input"],
+	"related": ["Field", "InputGroup", "Autocomplete", "Combobox"]
+}

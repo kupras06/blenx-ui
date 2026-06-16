@@ -1,0 +1,12 @@
+{
+	"title": "Slider",
+	"description": "A range slider supporting single and multi-thumb values with orientation, min/max, and thumb alignment. Built on Base UI Slider.",
+	"category": "Forms",
+	"status": "stable",
+	"keywords": ["slider", "range", "input", "range slider", "thumb"],
+	"related": ["Field"],
+	"accessibility": {
+		"keyboard": ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"],
+		"aria": ["role", "aria-valuenow", "aria-valuemin", "aria-valuemax"]
+	}
+}

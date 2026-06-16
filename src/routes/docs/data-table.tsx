@@ -74,7 +74,11 @@ const FEATURES = [
 ];
 
 const PROPS = [
-	["columns", "ColumnDef<TData, unknown>[]", "Column definitions from @tanstack/react-table"],
+	[
+		"columns",
+		"ColumnDef<TData, unknown>[]",
+		"Column definitions from @tanstack/react-table",
+	],
 	["data", "TData[] | undefined", "Table data array"],
 	["mode", '"client" | "server" | "infinite"', "Defaults to client"],
 	["isLoading", "boolean", "Show skeleton loader"],
@@ -82,23 +86,47 @@ const PROPS = [
 	["isError", "boolean", "Show error state"],
 	["errorMessage", "string", "Custom error message"],
 	["pageCount", "number", "Total pages for server mode"],
-	["fetchNextPage", "() => void", "Function to fetch next page (infinite mode)"],
+	[
+		"fetchNextPage",
+		"() => void",
+		"Function to fetch next page (infinite mode)",
+	],
 	["hasNextPage", "boolean", "Whether more pages exist (infinite mode)"],
-	["isFetchingNextPage", "boolean", "Loading state for next page (infinite mode)"],
+	[
+		"isFetchingNextPage",
+		"boolean",
+		"Loading state for next page (infinite mode)",
+	],
 	["features", "TableFeatures", "Enable/disable specific features"],
 	["size", '"sm" | "md" | "lg"', "Row density"],
 	["infiniteScroll", "InfiniteScrollConfig", "Infinite scroll configuration"],
 	["columnPinning", "ColumnPinningOptions", "Columns to pin left/right"],
-	["slots", "TableSlots<TData>", "Custom nodes for toolbar, pagination, empty, loading, error"],
+	[
+		"slots",
+		"TableSlots<TData>",
+		"Custom nodes for toolbar, pagination, empty, loading, error",
+	],
 	["rowActions", "RowAction<TData>[]", "Per-row action definitions"],
 	["initialSorting", "SortingState", "Initial sort state"],
-	["initialPagination", "PaginationState", "Initial pagination (pageIndex, pageSize)"],
+	[
+		"initialPagination",
+		"PaginationState",
+		"Initial pagination (pageIndex, pageSize)",
+	],
 	["initialColumnFilters", "ColumnFiltersState", "Initial column filters"],
 	["initialGlobalFilter", "string", "Initial global search value"],
 	["initialColumnVisibility", "VisibilityState", "Initial column visibility"],
 	["initialRowSelection", "RowSelectionState", "Initial row selection"],
-	["callbacks", "TableCallbacks<TData>", "State change and row click callbacks"],
-	["tableOptions", "Partial<TableOptions<TData>>", "Passed directly to useReactTable"],
+	[
+		"callbacks",
+		"TableCallbacks<TData>",
+		"State change and row click callbacks",
+	],
+	[
+		"tableOptions",
+		"Partial<TableOptions<TData>>",
+		"Passed directly to useReactTable",
+	],
 ];
 
 const FEATURE_KEYS = [

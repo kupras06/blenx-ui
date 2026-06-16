@@ -1,0 +1,8 @@
+{
+	"title": "Grid",
+	"description": "A CSS Grid layout component with column presets, gap tokens, and alignment control. Includes a GridItem sub-component for spanning.",
+	"category": "Layout",
+	"status": "stable",
+	"keywords": ["grid", "layout", "columns", "css grid", "responsive"],
+	"related": ["Box", "Stack"]
+}

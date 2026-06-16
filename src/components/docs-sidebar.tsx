@@ -1,10 +1,18 @@
 import * as stylex from "@stylexjs/stylex";
 import { Link, useLocation } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { Box, Surface, Text, VStack } from "@/components/ui";
 
 interface SidebarSection {
 	title: string;
 	links: { to: string; label: string }[];
+}
+
+interface DocsManifest {
+	[key: string]: {
+		title: string;
+		category: string;
+	};
 }
 
 const sections: SidebarSection[] = [
@@ -50,10 +58,67 @@ const styles = stylex.create({
 		flexDirection: "column",
 		gap: 2,
 	},
+	componentLink: {
+		paddingLeft: "var(--space-3)",
+	},
 });
+
+const CATEGORY_ORDER = [
+	"Forms",
+	"Data Display",
+	"Overlay",
+	"Navigation",
+	"Feedback",
+	"Layout",
+	"Typography",
+	"Utility",
+];
 
 function DocsSidebar() {
 	const { pathname } = useLocation();
+	const [manifest, setManifest] = useState<DocsManifest | null>(null);
+
+	useEffect(() => {
+		fetch("/docs/components.json")
+			.then((res) => res.json())
+			.then(setManifest)
+			.catch(() => {});
+	}, []);
+
+	const groupedComponents =
+		manifest &&
+		CATEGORY_ORDER.reduce(
+			(groups, category) => {
+				const items = Object.entries(manifest)
+					.filter(
+						([, data]) => data.category === category && category !== "Utility",
+					)
+					.sort(([a], [b]) => a.localeCompare(b));
+
+				if (items.length > 0) {
+					groups.push({ category, items });
+				}
+				return groups;
+			},
+			[] as Array<{
+				category: string;
+				items: Array<[string, { title: string }]>;
+			}>,
+		);
+
+	const dynamicSections: SidebarSection[] = [];
+
+	if (groupedComponents) {
+		for (const group of groupedComponents) {
+			dynamicSections.push({
+				title: group.category,
+				links: group.items.map(([key, data]) => ({
+					to: `/components/${key}`,
+					label: data.title,
+				})),
+			});
+		}
+	}
 
 	return (
 		<VStack gap="medium">
@@ -68,6 +133,36 @@ function DocsSidebar() {
 								link.to === "/docs"
 									? pathname === "/docs" || pathname === "/docs/"
 									: pathname.startsWith(link.to);
+							return (
+								<Surface
+									variant={isActive ? "sunken" : "default"}
+									radius="small"
+									paddingY="xxsmall"
+									paddingX="xsmall"
+									key={link.to}
+									render={<Link {...stylex.props(styles.link)} to={link.to} />}
+								>
+									<Text
+										variant="body2"
+										color={isActive ? "primary" : "secondary"}
+									>
+										{link.label}
+									</Text>
+								</Surface>
+							);
+						})}
+					</VStack>
+				</Box>
+			))}
+
+			{dynamicSections.map((section) => (
+				<Box key={section.title}>
+					<Text variant="body2" weight="semibold">
+						{section.title}
+					</Text>
+					<VStack gap="xxsmall">
+						{section.links.map((link) => {
+							const isActive = pathname.startsWith(link.to);
 							return (
 								<Surface
 									variant={isActive ? "sunken" : "default"}

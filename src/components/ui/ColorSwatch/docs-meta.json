@@ -1,0 +1,8 @@
+{
+	"title": "Color Swatch",
+	"description": "A small inline color swatch square that displays a given color value.",
+	"category": "Data Display",
+	"status": "stable",
+	"keywords": ["color", "swatch", "preview", "color swatch"],
+	"related": ["ColorPicker"]
+}

@@ -1,0 +1,1044 @@
+{
+  "accordion": {
+    "title": "Accordion",
+    "description": "A collapsible accordion for showing and hiding content sections. Supports single and multiple item expansion.",
+    "category": "Data Display",
+    "status": "stable",
+    "keywords": [
+      "accordion",
+      "collapsible",
+      "expand",
+      "collapse"
+    ],
+    "related": [
+      "Tabs",
+      "Dialog"
+    ],
+    "accessibility": {
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "aria": [
+        "aria-expanded",
+        "aria-controls",
+        "aria-labelledby"
+      ]
+    },
+    "registryName": "accordion",
+    "demo": {
+      "source": "import { Text } from \"../Text/text\";\nimport { Accordion } from \"./accordion\";\n\nfunction AccordionDemo() {\n\treturn (\n\t\t<Accordion.Root>\n\t\t\t<Accordion.Item value=\"item-1\">\n\t\t\t\t<Accordion.Header>\n\t\t\t\t\t<Accordion.Trigger>What is Blenx UI?</Accordion.Trigger>\n\t\t\t\t</Accordion.Header>\n\t\t\t\t<Accordion.Panel>\n\t\t\t\t\t<Text variant=\"body2\">\n\t\t\t\t\t\tBlenx UI is a modern React component library built with StyleX and\n\t\t\t\t\t\tBase UI.\n\t\t\t\t\t</Text>\n\t\t\t\t</Accordion.Panel>\n\t\t\t</Accordion.Item>\n\t\t\t<Accordion.Item value=\"item-2\">\n\t\t\t\t<Accordion.Header>\n\t\t\t\t\t<Accordion.Trigger>How do I install it?</Accordion.Trigger>\n\t\t\t\t</Accordion.Header>\n\t\t\t\t<Accordion.Panel>\n\t\t\t\t\t<Text variant=\"body2\">\n\t\t\t\t\t\tInstall via the shadcn CLI with:{\" \"}\n\t\t\t\t\t\t<Text variant=\"code\">npx shadcn@latest add button</Text>\n\t\t\t\t\t</Text>\n\t\t\t\t</Accordion.Panel>\n\t\t\t</Accordion.Item>\n\t\t\t<Accordion.Item value=\"item-3\">\n\t\t\t\t<Accordion.Header>\n\t\t\t\t\t<Accordion.Trigger>Is it accessible?</Accordion.Trigger>\n\t\t\t\t</Accordion.Header>\n\t\t\t\t<Accordion.Panel>\n\t\t\t\t\t<Text variant=\"body2\">\n\t\t\t\t\t\tYes, all components are built on Base UI primitives with full ARIA\n\t\t\t\t\t\tsupport.\n\t\t\t\t\t</Text>\n\t\t\t\t</Accordion.Panel>\n\t\t\t</Accordion.Item>\n\t\t</Accordion.Root>\n\t);\n}\n\nexport { AccordionDemo as Demo };\n"
+    },
+    "examples": []
+  },
+  "alert": {
+    "title": "Alert",
+    "description": "A contextual feedback banner with four visual variants: info, success, warning, and error.",
+    "category": "Feedback",
+    "status": "stable",
+    "keywords": [
+      "alert",
+      "banner",
+      "feedback",
+      "info",
+      "success",
+      "warning",
+      "error"
+    ],
+    "related": [
+      "Text"
+    ],
+    "accessibility": {
+      "aria": [
+        "role",
+        "aria-live"
+      ]
+    },
+    "registryName": "alert",
+    "examples": []
+  },
+  "alertdialog": {
+    "title": "Alert Dialog",
+    "description": "A confirmation or alert modal dialog for critical user interactions requiring acknowledgment.",
+    "category": "Overlay",
+    "status": "stable",
+    "keywords": [
+      "dialog",
+      "modal",
+      "alert",
+      "confirmation",
+      "confirm"
+    ],
+    "related": [
+      "Dialog",
+      "Button",
+      "ScrollArea"
+    ],
+    "accessibility": {
+      "keyboard": [
+        "Escape"
+      ],
+      "aria": [
+        "role",
+        "aria-modal",
+        "aria-labelledby",
+        "aria-describedby"
+      ]
+    },
+    "registryName": "alert-dialog",
+    "examples": []
+  },
+  "autocomplete": {
+    "title": "Autocomplete",
+    "description": "A typeahead autocomplete input that filters suggestions as the user types. Built with Base UI Autocomplete.",
+    "category": "Forms",
+    "status": "stable",
+    "keywords": [
+      "autocomplete",
+      "typeahead",
+      "search",
+      "suggestions",
+      "filter"
+    ],
+    "related": [
+      "Input",
+      "ScrollArea",
+      "Field",
+      "Combobox"
+    ],
+    "registryName": "autocomplete",
+    "examples": []
+  },
+  "avatar": {
+    "title": "Avatar",
+    "description": "An avatar component with image and fallback support. Displays a user profile image or initials placeholder.",
+    "category": "Data Display",
+    "status": "stable",
+    "keywords": [
+      "avatar",
+      "profile",
+      "image",
+      "user",
+      "fallback"
+    ],
+    "related": [
+      "Badge"
+    ],
+    "registryName": "avatar",
+    "examples": []
+  },
+  "badge": {
+    "title": "Badge",
+    "description": "An inline badge or pill component with variant color presets for status, labels, and counts.",
+    "category": "Data Display",
+    "status": "stable",
+    "keywords": [
+      "badge",
+      "pill",
+      "chip",
+      "label",
+      "status",
+      "count"
+    ],
+    "related": [
+      "Text",
+      "Avatar"
+    ],
+    "registryName": "badge",
+    "demo": {
+      "source": "import * as stylex from \"@stylexjs/stylex\";\nimport { VStack } from \"../Stack/stack\";\nimport { Text } from \"../Text/text\";\nimport { Badge } from \"./badge\";\n\nconst styles = stylex.create({\n\tgrid: {\n\t\tdisplay: \"flex\",\n\t\tflexWrap: \"wrap\",\n\t\tgap: \"var(--space-2)\",\n\t\talignItems: \"center\",\n\t},\n});\n\nfunction BadgeDemo() {\n\treturn (\n\t\t<VStack gap=\"medium\">\n\t\t\t<Text variant=\"h6\">Variants</Text>\n\t\t\t<div {...stylex.props(styles.grid)}>\n\t\t\t\t<Badge variant=\"default\">Default</Badge>\n\t\t\t\t<Badge variant=\"primary\">Primary</Badge>\n\t\t\t\t<Badge variant=\"secondary\">Secondary</Badge>\n\t\t\t</div>\n\t\t</VStack>\n\t);\n}\n\nexport { BadgeDemo as Demo };\n"
+    },
+    "examples": []
+  },
+  "box": {
+    "title": "Box",
+    "description": "A low-level polymorphic layout primitive. The foundational building block for all layout components.",
+    "category": "Layout",
+    "status": "stable",
+    "keywords": [
+      "box",
+      "layout",
+      "div",
+      "polymorphic",
+      "primitive"
+    ],
+    "related": [
+      "Container",
+      "Grid",
+      "Stack",
+      "Surface"
+    ],
+    "registryName": "box",
+    "examples": []
+  },
+  "breadcrumbs": {
+    "title": "Breadcrumbs",
+    "description": "A breadcrumb navigation trail with ARIA support for hierarchical page navigation.",
+    "category": "Navigation",
+    "status": "stable",
+    "keywords": [
+      "breadcrumbs",
+      "navigation",
+      "breadcrumb",
+      "trail",
+      "hierarchy"
+    ],
+    "related": [],
+    "accessibility": {
+      "aria": [
+        "aria-label",
+        "aria-current"
+      ]
+    },
+    "registryName": "breadcrumbs",
+    "examples": []
+  },
+  "button": {
+    "title": "Button",
+    "description": "A polymorphic button component with loading state, variant and size presets, full-width mode, and custom border radius. Built on Base UI useRender.",
+    "category": "Forms",
+    "status": "stable",
+    "keywords": [
+      "button",
+      "action",
+      "click",
+      "submit",
+      "loading",
+      "variant"
+    ],
+    "related": [
+      "Spinner",
+      "IconButton",
+      "Toggle"
+    ],
+    "accessibility": {
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "aria": [
+        "aria-disabled",
+        "aria-label",
+        "aria-describedby"
+      ]
+    },
+    "registryName": "button",
+    "demo": {
+      "source": "import { CaretRightIcon, PlayIcon } from \"@phosphor-icons/react\";\nimport { HStack, Stack, VStack } from \"../Stack/stack\";\nimport { Text } from \"../Text/text\";\nimport { Button } from \"./button\";\n\nfunction ButtonDemo() {\n\treturn (\n\t\t<VStack gap=\"medium\">\n\t\t\t<Stack gap=\"small\">\n\t\t\t\t<Text variant=\"h6\">Variants</Text>\n\t\t\t\t<HStack wrap>\n\t\t\t\t\t<Button variant=\"primary\">Primary</Button>\n\t\t\t\t\t<Button variant=\"secondary\">Secondary</Button>\n\t\t\t\t\t<Button variant=\"outline\">Outline</Button>\n\t\t\t\t\t<Button variant=\"ghost\">Ghost</Button>\n\t\t\t\t\t<Button variant=\"link\">Link</Button>\n\t\t\t\t\t<Button variant=\"danger\">Danger</Button>\n\t\t\t\t</HStack>\n\t\t\t</Stack>\n\n\t\t\t<Stack gap=\"small\">\n\t\t\t\t<Text variant=\"h6\">Sizes</Text>\n\t\t\t\t<HStack wrap>\n\t\t\t\t\t<Button size=\"small\">Small</Button>\n\t\t\t\t\t<Button size=\"medium\">Medium</Button>\n\t\t\t\t\t<Button size=\"large\">Large</Button>\n\t\t\t\t</HStack>\n\t\t\t</Stack>\n\n\t\t\t<Stack gap=\"small\">\n\t\t\t\t<Text variant=\"h6\">With Icons</Text>\n\t\t\t\t<HStack wrap>\n\t\t\t\t\t<Button>\n\t\t\t\t\t\t<PlayIcon />\n\t\t\t\t\t\tPlay\n\t\t\t\t\t</Button>\n\t\t\t\t\t<Button variant=\"outline\">\n\t\t\t\t\t\tNext\n\t\t\t\t\t\t<CaretRightIcon />\n\t\t\t\t\t</Button>\n\t\t\t\t</HStack>\n\t\t\t</Stack>\n\t\t</VStack>\n\t);\n}\n\nexport { ButtonDemo as Demo };\n"
+    },
+    "examples": []
+  },
+  "calendar": {
+    "title": "Calendar",
+    "description": "A date calendar component built on react-day-picker. Supports single, range, and multiple date selection modes.",
+    "category": "Forms",
+    "status": "stable",
+    "keywords": [
+      "calendar",
+      "date",
+      "datepicker",
+      "day",
+      "month"
+    ],
+    "related": [
+      "DatePicker",
+      "Button"
+    ],
+    "registryName": "calendar",
+    "examples": []
+  },
+  "card": {
+    "title": "Card",
+    "description": "A content card container with header, body, footer, title, and description sub-components.",
+    "category": "Data Display",
+    "status": "stable",
+    "keywords": [
+      "card",
+      "container",
+      "panel",
+      "content",
+      "surface"
+    ],
+    "related": [
+      "Surface",
+      "Box"
+    ],
+    "registryName": "card",
+    "demo": {
+      "source": "import { Button } from \"../Button/button\";\nimport { Text } from \"../Text/text\";\nimport {\n\tCard,\n\tCardBody,\n\tCardDescription,\n\tCardFooter,\n\tCardHeader,\n\tCardTitle,\n} from \"./card\";\n\nfunction CardDemo() {\n\treturn (\n\t\t<Card>\n\t\t\t<CardHeader>\n\t\t\t\t<CardTitle>Getting Started</CardTitle>\n\t\t\t\t<CardDescription>\n\t\t\t\t\tLearn how to install and use Blenx UI components in your project.\n\t\t\t\t</CardDescription>\n\t\t\t</CardHeader>\n\t\t\t<CardBody>\n\t\t\t\t<Text variant=\"body2\">\n\t\t\t\t\tBlenx UI provides a set of accessible, styleable React components\n\t\t\t\t\tbuilt on Base UI primitives and styled with StyleX.\n\t\t\t\t</Text>\n\t\t\t</CardBody>\n\t\t\t<CardFooter>\n\t\t\t\t<Button variant=\"outline\" size=\"small\">\n\t\t\t\t\tRead docs\n\t\t\t\t</Button>\n\t\t\t\t<Button size=\"small\">Install</Button>\n\t\t\t</CardFooter>\n\t\t</Card>\n\t);\n}\n\nexport { CardDemo as Demo };\n"
+    },
+    "examples": []
+  },
+  "checkbox": {
+    "title": "Checkbox",
+    "description": "A checkbox input with checked, indeterminate, and disabled states. Includes a CheckboxGroup wrapper for grouping.",
+    "category": "Forms",
+    "status": "stable",
+    "keywords": [
+      "checkbox",
+      "check",
+      "input",
+      "form",
+      "selection",
+      "indeterminate"
+    ],
+    "related": [
+      "Field",
+      "CheckboxGroup"
+    ],
+    "accessibility": {
+      "keyboard": [
+        "Space"
+      ],
+      "aria": [
+        "aria-checked",
+        "aria-labelledby"
+      ]
+    },
+    "registryName": "checkbox",
+    "examples": []
+  },
+  "colorpicker": {
+    "title": "Color Picker",
+    "description": "A color picker inside a popover. Uses react-colorful with hex input and color swatch preview.",
+    "category": "Forms",
+    "status": "stable",
+    "keywords": [
+      "color",
+      "picker",
+      "color picker",
+      "hex",
+      "popover"
+    ],
+    "related": [
+      "ColorSwatch",
+      "Popover",
+      "Field",
+      "Button"
+    ],
+    "registryName": "color-picker",
+    "examples": []
+  },
+  "colorswatch": {
+    "title": "Color Swatch",
+    "description": "A small inline color swatch square that displays a given color value.",
+    "category": "Data Display",
+    "status": "stable",
+    "keywords": [
+      "color",
+      "swatch",
+      "preview",
+      "color swatch"
+    ],
+    "related": [
+      "ColorPicker"
+    ],
+    "registryName": "color-swatch",
+    "examples": []
+  },
+  "combobox": {
+    "title": "Combobox",
+    "description": "A combobox with single and multi-select (chip) support, built on Base UI Combobox with filtering and popup.",
+    "category": "Forms",
+    "status": "stable",
+    "keywords": [
+      "combobox",
+      "select",
+      "autocomplete",
+      "chips",
+      "multi-select"
+    ],
+    "related": [
+      "Input",
+      "ScrollArea",
+      "Field",
+      "Autocomplete"
+    ],
+    "registryName": "combobox",
+    "examples": []
+  },
+  "container": {
+    "title": "Container",
+    "description": "A centered layout wrapper that constrains content width with configurable max-width presets.",
+    "category": "Layout",
+    "status": "stable",
+    "keywords": [
+      "container",
+      "layout",
+      "wrapper",
+      "center",
+      "max-width"
+    ],
+    "related": [
+      "Box",
+      "Stack"
+    ],
+    "registryName": "container",
+    "examples": []
+  },
+  "datepicker": {
+    "title": "Date Picker",
+    "description": "A date picker built as a popover containing a calendar with formatted date display.",
+    "category": "Forms",
+    "status": "stable",
+    "keywords": [
+      "date",
+      "date picker",
+      "calendar",
+      "popover",
+      "form"
+    ],
+    "related": [
+      "Calendar",
+      "Popover",
+      "Field",
+      "Button"
+    ],
+    "registryName": "date-picker",
+    "examples": []
+  },
+  "dialog": {
+    "title": "Dialog",
+    "description": "A modal dialog with backdrop, header, footer, scroll panel, and mobile bottom sheet behavior.",
+    "category": "Overlay",
+    "status": "stable",
+    "keywords": [
+      "dialog",
+      "modal",
+      "popup",
+      "overlay",
+      "alert"
+    ],
+    "related": [
+      "AlertDialog",
+      "Button",
+      "ScrollArea",
+      "Drawer"
+    ],
+    "accessibility": {
+      "keyboard": [
+        "Escape"
+      ],
+      "aria": [
+        "role",
+        "aria-modal",
+        "aria-labelledby",
+        "aria-describedby"
+      ]
+    },
+    "registryName": "dialog",
+    "demo": {
+      "source": "import { Button } from \"../Button/button\";\nimport { HStack } from \"../Stack/stack\";\nimport { Text } from \"../Text/text\";\nimport {\n\tDialog,\n\tDialogClose,\n\tDialogContent,\n\tDialogDescription,\n\tDialogFooter,\n\tDialogHeader,\n\tDialogPanel,\n\tDialogTitle,\n\tDialogTrigger,\n} from \"./dialog\";\n\nfunction DialogDemo() {\n\treturn (\n\t\t<Dialog>\n\t\t\t<DialogTrigger render={<Button variant=\"outline\" />}>\n\t\t\t\tOpen Dialog\n\t\t\t</DialogTrigger>\n\t\t\t<DialogContent>\n\t\t\t\t<DialogHeader>\n\t\t\t\t\t<DialogTitle>Confirm Action</DialogTitle>\n\t\t\t\t\t<DialogDescription>\n\t\t\t\t\t\tAre you sure you want to proceed with this action?\n\t\t\t\t\t</DialogDescription>\n\t\t\t\t</DialogHeader>\n\t\t\t\t<DialogPanel>\n\t\t\t\t\t<Text variant=\"body2\">\n\t\t\t\t\t\tThis action cannot be undone. Please confirm your choice.\n\t\t\t\t\t</Text>\n\t\t\t\t</DialogPanel>\n\t\t\t\t<DialogFooter>\n\t\t\t\t\t<HStack gap=\"small\" justify=\"end\">\n\t\t\t\t\t\t<DialogClose render={<Button variant=\"ghost\" />}>\n\t\t\t\t\t\t\tCancel\n\t\t\t\t\t\t</DialogClose>\n\t\t\t\t\t\t<Button>Confirm</Button>\n\t\t\t\t\t</HStack>\n\t\t\t\t</DialogFooter>\n\t\t\t</DialogContent>\n\t\t</Dialog>\n\t);\n}\n\nexport { DialogDemo as Demo };\n"
+    },
+    "examples": []
+  },
+  "drawer": {
+    "title": "Drawer",
+    "description": "A swipeable drawer panel that slides in from any side. Supports nested menus, radio groups, and checkboxes.",
+    "category": "Overlay",
+    "status": "stable",
+    "keywords": [
+      "drawer",
+      "panel",
+      "slide",
+      "swipe",
+      "sidebar",
+      "menu"
+    ],
+    "related": [
+      "ScrollArea",
+      "Dialog",
+      "Button"
+    ],
+    "registryName": "drawer",
+    "examples": []
+  },
+  "field": {
+    "title": "Field",
+    "description": "A form field wrapper with accessible label, description, error, and validity wiring for form controls.",
+    "category": "Forms",
+    "status": "stable",
+    "keywords": [
+      "field",
+      "form",
+      "label",
+      "error",
+      "validation",
+      "input"
+    ],
+    "related": [
+      "Input",
+      "Select",
+      "Textarea",
+      "ColorPicker",
+      "DatePicker"
+    ],
+    "registryName": "field",
+    "examples": []
+  },
+  "grid": {
+    "title": "Grid",
+    "description": "A CSS Grid layout component with column presets, gap tokens, and alignment control. Includes a GridItem sub-component for spanning.",
+    "category": "Layout",
+    "status": "stable",
+    "keywords": [
+      "grid",
+      "layout",
+      "columns",
+      "css grid",
+      "responsive"
+    ],
+    "related": [
+      "Box",
+      "Stack"
+    ],
+    "registryName": "grid",
+    "examples": []
+  },
+  "input": {
+    "title": "Input",
+    "description": "A text input component with size presets, error state styling, and auto-generated IDs. Built on Base UI Input primitive.",
+    "category": "Forms",
+    "status": "stable",
+    "keywords": [
+      "input",
+      "text",
+      "form",
+      "field",
+      "text input"
+    ],
+    "related": [
+      "Field",
+      "InputGroup",
+      "Autocomplete",
+      "Combobox"
+    ],
+    "registryName": "input",
+    "demo": {
+      "source": "import * as stylex from \"@stylexjs/stylex\";\nimport { VStack } from \"../Stack/stack\";\nimport { Text } from \"../Text/text\";\nimport { Input } from \"./input\";\n\nconst styles = stylex.create({\n\tgrid: {\n\t\tdisplay: \"flex\",\n\t\tflexDirection: \"column\",\n\t\tgap: \"var(--space-3)\",\n\t\tmaxWidth: 320,\n\t},\n});\n\nfunction InputDemo() {\n\treturn (\n\t\t<VStack gap=\"medium\">\n\t\t\t<div {...stylex.props(styles.grid)}>\n\t\t\t\t<Text variant=\"h6\">Sizes</Text>\n\t\t\t\t<Input size=\"sm\" placeholder=\"Small input\" />\n\t\t\t\t<Input placeholder=\"Default input\" />\n\t\t\t\t<Input size=\"lg\" placeholder=\"Large input\" />\n\t\t\t</div>\n\n\t\t\t<div {...stylex.props(styles.grid)}>\n\t\t\t\t<Text variant=\"h6\">With Error</Text>\n\t\t\t\t<Input error=\"This field is required\" placeholder=\"Email address\" />\n\t\t\t</div>\n\t\t</VStack>\n\t);\n}\n\nexport { InputDemo as Demo };\n"
+    },
+    "examples": []
+  },
+  "inputgroup": {
+    "title": "Input Group",
+    "description": "A compound form control group with addon, label, input, textarea, menu, checkbox, and radio sub-components.",
+    "category": "Forms",
+    "status": "stable",
+    "keywords": [
+      "input group",
+      "fieldset",
+      "addon",
+      "form",
+      "group"
+    ],
+    "related": [
+      "Input",
+      "Field",
+      "Checkbox",
+      "Radio"
+    ],
+    "registryName": "input-group",
+    "examples": []
+  },
+  "menu": {
+    "title": "Menu",
+    "description": "A dropdown menu with items, separators, group labels, and shortcuts. Built on Base UI Menu.",
+    "category": "Navigation",
+    "status": "stable",
+    "keywords": [
+      "menu",
+      "dropdown",
+      "context menu",
+      "navigation"
+    ],
+    "related": [
+      "Button"
+    ],
+    "accessibility": {
+      "keyboard": [
+        "ArrowUp",
+        "ArrowDown",
+        "Enter",
+        "Escape"
+      ],
+      "aria": [
+        "role",
+        "aria-orientation"
+      ]
+    },
+    "registryName": "menu",
+    "examples": []
+  },
+  "popover": {
+    "title": "Popover",
+    "description": "A floating popover with trigger, positioning, arrow, backdrop, and accessible title/description.",
+    "category": "Overlay",
+    "status": "stable",
+    "keywords": [
+      "popover",
+      "tooltip",
+      "popup",
+      "floating",
+      "overlay"
+    ],
+    "related": [
+      "Button",
+      "ColorPicker",
+      "DatePicker"
+    ],
+    "accessibility": {
+      "keyboard": [
+        "Escape"
+      ],
+      "aria": [
+        "role",
+        "aria-labelledby",
+        "aria-describedby"
+      ]
+    },
+    "registryName": "popover",
+    "examples": []
+  },
+  "progress": {
+    "title": "Progress",
+    "description": "A progress bar with label, track, indicator, and value display. Built on Base UI Progress.",
+    "category": "Feedback",
+    "status": "stable",
+    "keywords": [
+      "progress",
+      "bar",
+      "loading",
+      "status",
+      "indicator"
+    ],
+    "related": [
+      "Spinner"
+    ],
+    "accessibility": {
+      "aria": [
+        "role",
+        "aria-valuenow",
+        "aria-valuemin",
+        "aria-valuemax"
+      ]
+    },
+    "registryName": "progress",
+    "examples": []
+  },
+  "radio": {
+    "title": "Radio",
+    "description": "A radio button with RadioGroup wrapper for single-select option lists. Built on Base UI Radio primitive.",
+    "category": "Forms",
+    "status": "stable",
+    "keywords": [
+      "radio",
+      "radio group",
+      "option",
+      "select",
+      "form"
+    ],
+    "related": [
+      "Field",
+      "InputGroup"
+    ],
+    "accessibility": {
+      "keyboard": [
+        "ArrowUp",
+        "ArrowDown"
+      ],
+      "aria": [
+        "aria-checked",
+        "aria-labelledby"
+      ]
+    },
+    "registryName": "radio",
+    "examples": []
+  },
+  "scrollarea": {
+    "title": "Scroll Area",
+    "description": "A custom scroll area with scroll fade, scrollbar gutter reservation, and fill mode. Built on Base UI ScrollArea.",
+    "category": "Utility",
+    "status": "stable",
+    "keywords": [
+      "scroll",
+      "scroll area",
+      "scrollbar",
+      "scroll fade"
+    ],
+    "related": [
+      "Dialog",
+      "AlertDialog",
+      "Drawer",
+      "Autocomplete",
+      "Combobox"
+    ],
+    "registryName": "scroll-area",
+    "examples": []
+  },
+  "segmentedcontrol": {
+    "title": "Segmented Control",
+    "description": "A convenience wrapper around ToggleGroup providing a single-select segmented control with options array.",
+    "category": "Forms",
+    "status": "stable",
+    "keywords": [
+      "segmented",
+      "control",
+      "toggle",
+      "segment",
+      "button group"
+    ],
+    "related": [
+      "ToggleGroup",
+      "Toggle"
+    ],
+    "registryName": "segmented-control",
+    "examples": []
+  },
+  "select": {
+    "title": "Select",
+    "description": "A fully compound select component with trigger, popup, list, items, groups, scroll arrows, and a convenience SelectWrapper for forms.",
+    "category": "Forms",
+    "status": "stable",
+    "keywords": [
+      "select",
+      "dropdown",
+      "combobox",
+      "listbox",
+      "form"
+    ],
+    "related": [
+      "Field",
+      "ScrollArea"
+    ],
+    "accessibility": {
+      "keyboard": [
+        "ArrowUp",
+        "ArrowDown",
+        "Enter",
+        "Escape"
+      ],
+      "aria": [
+        "role",
+        "aria-expanded",
+        "aria-labelledby"
+      ]
+    },
+    "registryName": "select",
+    "demo": {
+      "source": "import {\n\tSelectIcon,\n\tSelectItem,\n\tSelectList,\n\tSelectPopup,\n\tSelectPortal,\n\tSelectPositioner,\n\tSelectRoot,\n\tSelectTrigger,\n\tSelectValue,\n} from \"./select\";\n\nfunction SelectDemo() {\n\treturn (\n\t\t<SelectRoot defaultValue=\"apple\">\n\t\t\t<SelectTrigger>\n\t\t\t\t<SelectValue placeholder=\"Pick a fruit\" />\n\t\t\t\t<SelectIcon />\n\t\t\t</SelectTrigger>\n\t\t\t<SelectPortal>\n\t\t\t\t<SelectPositioner>\n\t\t\t\t\t<SelectPopup>\n\t\t\t\t\t\t<SelectList>\n\t\t\t\t\t\t\t<SelectItem value=\"apple\">Apple</SelectItem>\n\t\t\t\t\t\t\t<SelectItem value=\"banana\">Banana</SelectItem>\n\t\t\t\t\t\t\t<SelectItem value=\"orange\">Orange</SelectItem>\n\t\t\t\t\t\t</SelectList>\n\t\t\t\t\t</SelectPopup>\n\t\t\t\t</SelectPositioner>\n\t\t\t</SelectPortal>\n\t\t</SelectRoot>\n\t);\n}\n\nexport { SelectDemo as Demo };\n"
+    },
+    "examples": []
+  },
+  "separator": {
+    "title": "Separator",
+    "description": "A visual divider supporting horizontal and vertical orientations with subtle and strong tone variants. Optionally labeled.",
+    "category": "Layout",
+    "status": "stable",
+    "keywords": [
+      "separator",
+      "divider",
+      "line",
+      "rule",
+      "hr"
+    ],
+    "related": [
+      "ToggleGroup",
+      "Menu"
+    ],
+    "accessibility": {
+      "aria": [
+        "role",
+        "aria-orientation"
+      ]
+    },
+    "registryName": "separator",
+    "examples": []
+  },
+  "slider": {
+    "title": "Slider",
+    "description": "A range slider supporting single and multi-thumb values with orientation, min/max, and thumb alignment. Built on Base UI Slider.",
+    "category": "Forms",
+    "status": "stable",
+    "keywords": [
+      "slider",
+      "range",
+      "input",
+      "range slider",
+      "thumb"
+    ],
+    "related": [
+      "Field"
+    ],
+    "accessibility": {
+      "keyboard": [
+        "ArrowLeft",
+        "ArrowRight",
+        "ArrowUp",
+        "ArrowDown"
+      ],
+      "aria": [
+        "role",
+        "aria-valuenow",
+        "aria-valuemin",
+        "aria-valuemax"
+      ]
+    },
+    "registryName": "slider",
+    "examples": []
+  },
+  "spinner": {
+    "title": "Spinner",
+    "description": "A loading spinner with ARIA role and label for accessible loading state indication.",
+    "category": "Feedback",
+    "status": "stable",
+    "keywords": [
+      "spinner",
+      "loading",
+      "loader",
+      "progress",
+      "wait"
+    ],
+    "related": [
+      "Button",
+      "Progress"
+    ],
+    "accessibility": {
+      "aria": [
+        "role",
+        "aria-label"
+      ]
+    },
+    "registryName": "spinner",
+    "examples": []
+  },
+  "splitter": {
+    "title": "Splitter",
+    "description": "A resizable split panel layout with pointer and keyboard support, collapsible panels, and localStorage persistence.",
+    "category": "Layout",
+    "status": "stable",
+    "keywords": [
+      "splitter",
+      "resize",
+      "panel",
+      "layout",
+      "split",
+      "resizable"
+    ],
+    "related": [
+      "Box"
+    ],
+    "registryName": "splitter",
+    "examples": []
+  },
+  "stack": {
+    "title": "Stack",
+    "description": "A flexbox layout component with gap, alignment, and direction control. Includes VStack and HStack shorthands.",
+    "category": "Layout",
+    "status": "stable",
+    "keywords": [
+      "stack",
+      "flex",
+      "layout",
+      "vstack",
+      "hstack",
+      "flexbox"
+    ],
+    "related": [
+      "Box",
+      "Grid"
+    ],
+    "registryName": "stack",
+    "examples": []
+  },
+  "surface": {
+    "title": "Surface",
+    "description": "A background surface layer with variant presets for different visual depths. Supports interactive hover styles.",
+    "category": "Layout",
+    "status": "stable",
+    "keywords": [
+      "surface",
+      "background",
+      "container",
+      "elevation",
+      "card"
+    ],
+    "related": [
+      "Box",
+      "Card"
+    ],
+    "registryName": "surface",
+    "examples": []
+  },
+  "switch": {
+    "title": "Switch",
+    "description": "A toggle switch with thumb knob for on/off states. Built on Base UI Switch primitive.",
+    "category": "Forms",
+    "status": "stable",
+    "keywords": [
+      "switch",
+      "toggle",
+      "on/off",
+      "toggle switch"
+    ],
+    "related": [
+      "Field"
+    ],
+    "accessibility": {
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "aria": [
+        "aria-checked",
+        "aria-labelledby"
+      ]
+    },
+    "registryName": "switch",
+    "demo": {
+      "source": "import { HStack, VStack } from \"../Stack/stack\";\nimport { Text } from \"../Text/text\";\nimport { Switch } from \"./switch\";\n\nfunction SwitchDemo() {\n\treturn (\n\t\t<VStack gap=\"medium\">\n\t\t\t<HStack gap=\"medium\" align=\"center\">\n\t\t\t\t<Switch defaultChecked />\n\t\t\t\t<Text variant=\"body2\">Airplane Mode</Text>\n\t\t\t</HStack>\n\t\t\t<HStack gap=\"medium\" align=\"center\">\n\t\t\t\t<Switch />\n\t\t\t\t<Text variant=\"body2\">Wi-Fi</Text>\n\t\t\t</HStack>\n\t\t\t<HStack gap=\"medium\" align=\"center\">\n\t\t\t\t<Switch disabled />\n\t\t\t\t<Text variant=\"body2\" color=\"secondary\">\n\t\t\t\t\tBluetooth (disabled)\n\t\t\t\t</Text>\n\t\t\t</HStack>\n\t\t</VStack>\n\t);\n}\n\nexport { SwitchDemo as Demo };\n"
+    },
+    "examples": []
+  },
+  "table": {
+    "title": "Table",
+    "description": "A styled table component with column definitions, row data, cell alignment, and optional row event handlers.",
+    "category": "Data Display",
+    "status": "stable",
+    "keywords": [
+      "table",
+      "data",
+      "grid",
+      "rows",
+      "columns"
+    ],
+    "related": [],
+    "accessibility": {
+      "aria": [
+        "role",
+        "aria-colcount"
+      ]
+    },
+    "registryName": "table",
+    "demo": {
+      "source": "import { Badge } from \"../Badge/badge\";\nimport { VStack } from \"../Stack/stack\";\nimport { Table } from \"./table\";\n\ninterface User {\n\tid: string;\n\tname: string;\n\temail: string;\n\trole: string;\n\tstatus: \"active\" | \"inactive\";\n}\n\nconst users: User[] = [\n\t{\n\t\tid: \"1\",\n\t\tname: \"Alice Johnson\",\n\t\temail: \"alice@example.com\",\n\t\trole: \"Admin\",\n\t\tstatus: \"active\",\n\t},\n\t{\n\t\tid: \"2\",\n\t\tname: \"Bob Smith\",\n\t\temail: \"bob@example.com\",\n\t\trole: \"Editor\",\n\t\tstatus: \"active\",\n\t},\n\t{\n\t\tid: \"3\",\n\t\tname: \"Carol Davis\",\n\t\temail: \"carol@example.com\",\n\t\trole: \"Viewer\",\n\t\tstatus: \"inactive\",\n\t},\n];\n\nfunction TableDemo() {\n\tconst columns = [\n\t\t{ key: \"name\" as keyof User, header: \"Name\" },\n\t\t{ key: \"email\" as keyof User, header: \"Email\" },\n\t\t{ key: \"role\" as keyof User, header: \"Role\" },\n\t\t{\n\t\t\tkey: \"status\" as keyof User,\n\t\t\theader: \"Status\",\n\t\t\tcell: (row: User) => (\n\t\t\t\t<Badge variant={row.status === \"active\" ? \"primary\" : \"default\"}>\n\t\t\t\t\t{row.status}\n\t\t\t\t</Badge>\n\t\t\t),\n\t\t},\n\t];\n\n\treturn (\n\t\t<VStack gap=\"medium\">\n\t\t\t<Table columnData={columns} rowData={users} rowKey=\"id\" />\n\t\t</VStack>\n\t);\n}\n\nexport { TableDemo as Demo };\n"
+    },
+    "examples": []
+  },
+  "tabs": {
+    "title": "Tabs",
+    "description": "A tabbed navigation component with underline, ghost, and segmented variants. Built on Base UI Tabs.",
+    "category": "Navigation",
+    "status": "stable",
+    "keywords": [
+      "tabs",
+      "tab",
+      "navigation",
+      "panel",
+      "tabbed"
+    ],
+    "related": [
+      "Accordion",
+      "SegmentedControl"
+    ],
+    "accessibility": {
+      "keyboard": [
+        "ArrowLeft",
+        "ArrowRight",
+        "Home",
+        "End"
+      ],
+      "aria": [
+        "role",
+        "aria-orientation",
+        "aria-selected",
+        "aria-labelledby",
+        "role"
+      ]
+    },
+    "registryName": "tabs",
+    "demo": {
+      "source": "import { VStack } from \"../Stack/stack\";\nimport { Text } from \"../Text/text\";\nimport { Tabs, TabsList, TabsPanel, TabsTab } from \"./tabs\";\n\nfunction TabsDemo() {\n\treturn (\n\t\t<VStack gap=\"medium\">\n\t\t\t<Tabs defaultValue=\"tab1\">\n\t\t\t\t<TabsList>\n\t\t\t\t\t<TabsTab value=\"tab1\">Overview</TabsTab>\n\t\t\t\t\t<TabsTab value=\"tab2\">Usage</TabsTab>\n\t\t\t\t\t<TabsTab value=\"tab3\">API</TabsTab>\n\t\t\t\t</TabsList>\n\t\t\t\t<TabsPanel value=\"tab1\">\n\t\t\t\t\t<Text variant=\"body2\">\n\t\t\t\t\t\tWelcome to the component overview. Here you will find a summary of\n\t\t\t\t\t\tfeatures and capabilities.\n\t\t\t\t\t</Text>\n\t\t\t\t</TabsPanel>\n\t\t\t\t<TabsPanel value=\"tab2\">\n\t\t\t\t\t<Text variant=\"body2\">\n\t\t\t\t\t\tUsage examples and code snippets to help you integrate the component\n\t\t\t\t\t\tinto your project.\n\t\t\t\t\t</Text>\n\t\t\t\t</TabsPanel>\n\t\t\t\t<TabsPanel value=\"tab3\">\n\t\t\t\t\t<Text variant=\"body2\">\n\t\t\t\t\t\tDetailed API reference including props, types, and methods.\n\t\t\t\t\t</Text>\n\t\t\t\t</TabsPanel>\n\t\t\t</Tabs>\n\t\t</VStack>\n\t);\n}\n\nexport { TabsDemo as Demo };\n"
+    },
+    "examples": []
+  },
+  "text": {
+    "title": "Text",
+    "description": "A polymorphic typography component with variant presets for headings, body text, and code. Supports color, alignment, and weight.",
+    "category": "Typography",
+    "status": "stable",
+    "keywords": [
+      "text",
+      "typography",
+      "heading",
+      "paragraph",
+      "font"
+    ],
+    "related": [
+      "Badge"
+    ],
+    "registryName": "text",
+    "examples": []
+  },
+  "textarea": {
+    "title": "Textarea",
+    "description": "A multi-line text input with size presets and numeric row control. Built on Base UI Field.Control.",
+    "category": "Forms",
+    "status": "stable",
+    "keywords": [
+      "textarea",
+      "text",
+      "input",
+      "multiline",
+      "form"
+    ],
+    "related": [
+      "Field",
+      "InputGroup"
+    ],
+    "registryName": "textarea",
+    "examples": []
+  },
+  "toggle": {
+    "title": "Toggle",
+    "description": "A two-state toggle button with variant and size presets. Built on Base UI Toggle.",
+    "category": "Forms",
+    "status": "stable",
+    "keywords": [
+      "toggle",
+      "button",
+      "on/off",
+      "pressed",
+      "toggle button"
+    ],
+    "related": [
+      "ToggleGroup",
+      "SegmentedControl"
+    ],
+    "accessibility": {
+      "aria": [
+        "aria-pressed"
+      ]
+    },
+    "registryName": "toggle",
+    "examples": []
+  },
+  "togglegroup": {
+    "title": "Toggle Group",
+    "description": "A group of toggle buttons with variant, size, and orientation control. Built on Base UI ToggleGroup.",
+    "category": "Forms",
+    "status": "stable",
+    "keywords": [
+      "toggle group",
+      "button group",
+      "toggle",
+      "button bar"
+    ],
+    "related": [
+      "Toggle",
+      "SegmentedControl",
+      "Separator"
+    ],
+    "registryName": "toggle-group",
+    "examples": []
+  }
+}

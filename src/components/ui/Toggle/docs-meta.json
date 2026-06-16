@@ -1,0 +1,11 @@
+{
+	"title": "Toggle",
+	"description": "A two-state toggle button with variant and size presets. Built on Base UI Toggle.",
+	"category": "Forms",
+	"status": "stable",
+	"keywords": ["toggle", "button", "on/off", "pressed", "toggle button"],
+	"related": ["ToggleGroup", "SegmentedControl"],
+	"accessibility": {
+		"aria": ["aria-pressed"]
+	}
+}

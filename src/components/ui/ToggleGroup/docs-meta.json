@@ -1,0 +1,8 @@
+{
+	"title": "Toggle Group",
+	"description": "A group of toggle buttons with variant, size, and orientation control. Built on Base UI ToggleGroup.",
+	"category": "Forms",
+	"status": "stable",
+	"keywords": ["toggle group", "button group", "toggle", "button bar"],
+	"related": ["Toggle", "SegmentedControl", "Separator"]
+}

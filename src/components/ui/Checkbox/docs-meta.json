@@ -1,0 +1,19 @@
+{
+	"title": "Checkbox",
+	"description": "A checkbox input with checked, indeterminate, and disabled states. Includes a CheckboxGroup wrapper for grouping.",
+	"category": "Forms",
+	"status": "stable",
+	"keywords": [
+		"checkbox",
+		"check",
+		"input",
+		"form",
+		"selection",
+		"indeterminate"
+	],
+	"related": ["Field", "CheckboxGroup"],
+	"accessibility": {
+		"keyboard": ["Space"],
+		"aria": ["aria-checked", "aria-labelledby"]
+	}
+}

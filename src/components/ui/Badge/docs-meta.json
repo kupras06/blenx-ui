@@ -1,0 +1,8 @@
+{
+	"title": "Badge",
+	"description": "An inline badge or pill component with variant color presets for status, labels, and counts.",
+	"category": "Data Display",
+	"status": "stable",
+	"keywords": ["badge", "pill", "chip", "label", "status", "count"],
+	"related": ["Text", "Avatar"]
+}

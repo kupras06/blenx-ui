@@ -1,0 +1,12 @@
+{
+	"title": "Select",
+	"description": "A fully compound select component with trigger, popup, list, items, groups, scroll arrows, and a convenience SelectWrapper for forms.",
+	"category": "Forms",
+	"status": "stable",
+	"keywords": ["select", "dropdown", "combobox", "listbox", "form"],
+	"related": ["Field", "ScrollArea"],
+	"accessibility": {
+		"keyboard": ["ArrowUp", "ArrowDown", "Enter", "Escape"],
+		"aria": ["role", "aria-expanded", "aria-labelledby"]
+	}
+}

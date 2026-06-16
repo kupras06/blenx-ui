@@ -1,0 +1,8 @@
+{
+	"title": "Scroll Area",
+	"description": "A custom scroll area with scroll fade, scrollbar gutter reservation, and fill mode. Built on Base UI ScrollArea.",
+	"category": "Utility",
+	"status": "stable",
+	"keywords": ["scroll", "scroll area", "scrollbar", "scroll fade"],
+	"related": ["Dialog", "AlertDialog", "Drawer", "Autocomplete", "Combobox"]
+}

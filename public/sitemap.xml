@@ -8,12 +8,132 @@
     <loc>https://blenx-ui.vercel.app/docs/installation</loc>
   </url>
   <url>
+    <loc>https://blenx-ui.vercel.app/components/accordion</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/alert</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/alertdialog</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/autocomplete</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/avatar</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/badge</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/box</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/breadcrumbs</loc>
+  </url>
+  <url>
     <loc>https://blenx-ui.vercel.app/components/button</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/calendar</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/card</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/checkbox</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/colorpicker</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/colorswatch</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/combobox</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/container</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/datepicker</loc>
   </url>
   <url>
     <loc>https://blenx-ui.vercel.app/components/dialog</loc>
   </url>
   <url>
+    <loc>https://blenx-ui.vercel.app/components/drawer</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/field</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/grid</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/input</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/inputgroup</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/menu</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/popover</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/progress</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/radio</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/scrollarea</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/segmentedcontrol</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/select</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/separator</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/slider</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/spinner</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/splitter</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/stack</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/surface</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/switch</loc>
+  </url>
+  <url>
     <loc>https://blenx-ui.vercel.app/components/table</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/tabs</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/text</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/textarea</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/toggle</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/togglegroup</loc>
   </url>
 </urlset>
