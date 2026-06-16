@@ -46,50 +46,54 @@ const styles = stylex.create({
 	},
 });
 
-export function PresetControls() {
+interface PresetControlsProps {
+	noSection?: boolean;
+}
+
+export function PresetControls({ noSection }: PresetControlsProps) {
 	const tokens = useThemeBuilder((s) => s.tokens);
 	const updateToken = useThemeBuilder((s) => s.updateToken);
 
-	const activePreset = presets.find((p) => {
-		if (!p.tokens.primary) return p.name === "Default";
-		return p.tokens.primary === tokens.primary;
-	})?.name ?? "Default";
+	const activePreset =
+		presets.find((p) => {
+			if (!p.tokens.primary) return p.name === "Default";
+			return p.tokens.primary === tokens.primary;
+		})?.name ?? "Default";
 
-	return (
-		<Section title="Presets">
-			<div {...stylex.props(styles.grid)}>
-				{presets.map((preset) => {
-					const isActive = preset.name === activePreset;
-					return (
-						<button
-							key={preset.name}
-							type="button"
-							{...stylex.props(styles.card, isActive && styles.cardActive)}
-							onClick={() => {
-								for (const [key, value] of Object.entries(preset.tokens)) {
-									updateToken(key as keyof typeof tokens, value);
-								}
-							}}
-						>
-							<div {...stylex.props(styles.swatchRow)}>
-								{preset.colors.map((color) => (
-									<span
-										key={`${color}_`}
-										{...stylex.props(styles.swatch)}
-										style={{ backgroundColor: color }}
-									/>
-								))}
-							</div>
-							<Text
-								variant="caption"
-								weight={isActive ? "semibold" : "regular"}
-							>
-								{preset.name}
-							</Text>
-						</button>
-					);
-				})}
-			</div>
-		</Section>
+	const content = (
+		<div {...stylex.props(styles.grid)}>
+			{presets.map((preset) => {
+				const isActive = preset.name === activePreset;
+				return (
+					<button
+						key={preset.name}
+						type="button"
+						{...stylex.props(styles.card, isActive && styles.cardActive)}
+						onClick={() => {
+							for (const [key, value] of Object.entries(preset.tokens)) {
+								updateToken(key as keyof typeof tokens, value);
+							}
+						}}
+					>
+						<div {...stylex.props(styles.swatchRow)}>
+							{preset.colors.map((color) => (
+								<span
+									key={`${color}_`}
+									{...stylex.props(styles.swatch)}
+									style={{ backgroundColor: color }}
+								/>
+							))}
+						</div>
+						<Text variant="caption" weight={isActive ? "semibold" : "regular"}>
+							{preset.name}
+						</Text>
+					</button>
+				);
+			})}
+		</div>
 	);
+
+	if (noSection) return content;
+
+	return <Section title="Presets">{content}</Section>;
 }

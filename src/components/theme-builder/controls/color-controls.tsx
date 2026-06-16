@@ -26,26 +26,30 @@ const colorTokens = [
 	{ key: "contentSecondary", label: "Text Secondary" },
 ] as const;
 
-export function ColorControls() {
+interface ColorControlsProps {
+	noSection?: boolean;
+}
+
+export function ColorControls({ noSection }: ColorControlsProps) {
 	const tokens = useThemeBuilder((s) => s.tokens);
-	const updateTokenDebounced = useThemeBuilder(
-		(s) => s.updateTokenDebounced,
+	const updateTokenDebounced = useThemeBuilder((s) => s.updateTokenDebounced);
+
+	const content = (
+		<div {...stylex.props(styles.group)}>
+			{colorTokens.map(({ key, label }) => (
+				<ColorPicker
+					key={key}
+					label={label}
+					value={tokens[key as keyof typeof tokens]}
+					onChange={(color) => {
+						updateTokenDebounced(key as keyof typeof tokens, color);
+					}}
+				/>
+			))}
+		</div>
 	);
 
-	return (
-		<Section title="Colors">
-			<div {...stylex.props(styles.group)}>
-				{colorTokens.map(({ key, label }) => (
-					<ColorPicker
-						key={key}
-						label={label}
-						value={tokens[key as keyof typeof tokens]}
-						onChange={(color) => {
-							updateTokenDebounced(key as keyof typeof tokens, color);
-						}}
-					/>
-				))}
-			</div>
-		</Section>
-	);
+	if (noSection) return content;
+
+	return <Section title="Colors">{content}</Section>;
 }

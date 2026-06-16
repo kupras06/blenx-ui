@@ -1,7 +1,5 @@
-import { useCallback, useState } from "react";
 import * as stylex from "@stylexjs/stylex";
-import { theme } from "@/lib/theme/contract.stylex";
-import { borderRadius, fontSize, spacing } from "@/lib/theme/tokens.stylex";
+import { useCallback, useState } from "react";
 import {
 	AlertDialog,
 	AlertDialogDescription,
@@ -13,8 +11,10 @@ import {
 	Separator,
 	VStack,
 } from "@/components/ui";
-import { useThemeBuilder } from "../theme-builder-context";
+import { theme } from "@/lib/theme/contract.stylex";
+import { borderRadius, fontSize, spacing } from "@/lib/theme/tokens.stylex";
 import { Section } from "../controls/section";
+import { useThemeBuilder } from "../theme-builder-context";
 
 const styles = stylex.create({
 	buttonRow: {
@@ -41,7 +41,11 @@ const styles = stylex.create({
 	},
 });
 
-export function ExportPanel() {
+interface ExportPanelProps {
+	noSection?: boolean;
+}
+
+export function ExportPanel({ noSection }: ExportPanelProps) {
 	const tokens = useThemeBuilder((s) => s.tokens);
 	const resetTokens = useThemeBuilder((s) => s.resetTokens);
 	const [copied, setCopied] = useState("");
@@ -107,30 +111,25 @@ ${themeEntries.join("\n")}
 		setShowReset(false);
 	}, [resetTokens]);
 
-	return (
-		<Section title="Export">
+	const content = (
+		<>
 			<div {...stylex.props(styles.buttonRow)}>
 				<Button variant="outline" size="small" onClick={generateJSON}>
 					Export JSON
 				</Button>
-				<Button
-					variant="outline"
-					size="small"
-					onClick={copyJSON}
-				>
+				<Button variant="outline" size="small" onClick={copyJSON}>
 					{copied === "json" ? "Copied!" : "Copy JSON"}
 				</Button>
-				<Button
-					variant="outline"
-					size="small"
-					onClick={copyStyleX}
-				>
+				<Button variant="outline" size="small" onClick={copyStyleX}>
 					{copied === "stylex" ? "Copied!" : "Copy StyleX Theme"}
 				</Button>
 			</div>
 
 			{copied === "stylex" && (
-				<div {...stylex.props(styles.copyFeedback)} style={{ marginTop: spacing["1"] }}>
+				<div
+					{...stylex.props(styles.copyFeedback)}
+					style={{ marginTop: spacing["1"] }}
+				>
 					StyleX theme code copied to clipboard!
 				</div>
 			)}
@@ -139,32 +138,36 @@ ${themeEntries.join("\n")}
 
 			<AlertDialog open={showReset} onOpenChange={setShowReset}>
 				<AlertDialogTrigger>
-				<Button variant="danger" size="small" fullWidth>
-					Reset to Defaults
-				</Button>
-			</AlertDialogTrigger>
-			<AlertDialogPopup>
-				<AlertDialogHeader>
-					<AlertDialogTitle>Reset Theme</AlertDialogTitle>
-					<AlertDialogDescription>
-						This will restore all tokens to their default values. This action
-						cannot be undone.
-					</AlertDialogDescription>
-				</AlertDialogHeader>
-				<VStack gap="small" padding="medium">
-					<Button variant="danger" fullWidth onClick={handleReset}>
-						Reset
+					<Button variant="danger" size="small" fullWidth>
+						Reset to Defaults
 					</Button>
-					<Button
-						variant="ghost"
-						fullWidth
-						onClick={() => setShowReset(false)}
-					>
-						Cancel
-					</Button>
-				</VStack>
-			</AlertDialogPopup>
+				</AlertDialogTrigger>
+				<AlertDialogPopup>
+					<AlertDialogHeader>
+						<AlertDialogTitle>Reset Theme</AlertDialogTitle>
+						<AlertDialogDescription>
+							This will restore all tokens to their default values. This action
+							cannot be undone.
+						</AlertDialogDescription>
+					</AlertDialogHeader>
+					<VStack gap="small" padding="medium">
+						<Button variant="danger" fullWidth onClick={handleReset}>
+							Reset
+						</Button>
+						<Button
+							variant="ghost"
+							fullWidth
+							onClick={() => setShowReset(false)}
+						>
+							Cancel
+						</Button>
+					</VStack>
+				</AlertDialogPopup>
 			</AlertDialog>
-		</Section>
+		</>
 	);
+
+	if (noSection) return content;
+
+	return <Section title="Export">{content}</Section>;
 }

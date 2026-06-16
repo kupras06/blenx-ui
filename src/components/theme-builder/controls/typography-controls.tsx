@@ -1,7 +1,7 @@
 import * as stylex from "@stylexjs/stylex";
 import type { ChangeEvent } from "react";
+import { Select, Text } from "@/components/ui";
 import { spacing } from "@/lib/theme/tokens.stylex";
-import { Select, Text, VStack } from "@/components/ui";
 import { useThemeBuilder } from "../theme-builder-context";
 import { Section } from "./section";
 
@@ -26,10 +26,16 @@ const styles = stylex.create({
 });
 
 const fontFamilyOptions = [
-	{ label: "DM Sans", value: '"DM Sans", system-ui, -apple-system, sans-serif' },
+	{
+		label: "DM Sans",
+		value: '"DM Sans", system-ui, -apple-system, sans-serif',
+	},
 	{ label: "System UI", value: "system-ui, -apple-system, sans-serif" },
 	{ label: "Inter", value: '"Inter", system-ui, sans-serif' },
-	{ label: "Mono", value: '"DM Mono", ui-monospace, SFMono-Regular, monospace' },
+	{
+		label: "Mono",
+		value: '"DM Mono", ui-monospace, SFMono-Regular, monospace',
+	},
 ];
 
 const fontWeightOptions = [
@@ -40,41 +46,42 @@ const fontWeightOptions = [
 	{ label: "Bold 700", value: "700" },
 ];
 
-export function TypographyControls() {
+interface TypographyControlsProps {
+	noSection?: boolean;
+}
+
+export function TypographyControls({ noSection }: TypographyControlsProps) {
 	const tokens = useThemeBuilder((s) => s.tokens);
 	const updateToken = useThemeBuilder((s) => s.updateToken);
 
-	return (
-		<Section title="Typography">
-			<div {...stylex.props(styles.selectWrapper)}>
-				<Select.Wrapper label="Font Family">
-					<Select.Root
-						value={tokens.fontFamilySans}
-						onValueChange={(value) =>
-							updateToken("fontFamilySans", value as string)
-						}
-					>
-						<Select.Trigger size="sm">
-							<Select.Value placeholder="Select font" />
-							<Select.Icon />
-						</Select.Trigger>
-						<Select.Portal>
-							<Select.Positioner>
-								<Select.Popup>
-									<Select.List>
-										{fontFamilyOptions.map((opt) => (
-											<Select.Item key={opt.value} value={opt.value}>
-												{opt.label}
-											</Select.Item>
-										))}
-									</Select.List>
-								</Select.Popup>
-							</Select.Positioner>
-						</Select.Portal>
-					</Select.Root>
-				</Select.Wrapper>
-			</div>
-
+	const content = (
+		<>
+			<Select.Wrapper label="Font Family">
+				<Select.Root
+					value={tokens.fontFamilySans}
+					onValueChange={(value) =>
+						updateToken("fontFamilySans", value as string)
+					}
+				>
+					<Select.Trigger size="sm">
+						<Select.Value placeholder="Select font" />
+						<Select.Icon />
+					</Select.Trigger>
+					<Select.Portal>
+						<Select.Positioner>
+							<Select.Popup>
+								<Select.List>
+									{fontFamilyOptions.map((opt) => (
+										<Select.Item key={opt.value} value={opt.value}>
+											{opt.label}
+										</Select.Item>
+									))}
+								</Select.List>
+							</Select.Popup>
+						</Select.Positioner>
+					</Select.Portal>
+				</Select.Root>
+			</Select.Wrapper>
 			<div {...stylex.props(styles.sliderRow)}>
 				<div {...stylex.props(styles.sliderLabel)}>
 					<Text variant="body2">Base Font Size</Text>
@@ -115,34 +122,34 @@ export function TypographyControls() {
 				/>
 			</div>
 
-			<div {...stylex.props(styles.selectWrapper)}>
-				<Select.Wrapper label="Font Weight">
-					<Select.Root
-						value={String(tokens.fontWeight ?? "400")}
-						onValueChange={(value) =>
-							updateToken("fontWeight", value as string)
-						}
-					>
-						<Select.Trigger size="sm">
-							<Select.Value placeholder="Select weight" />
-							<Select.Icon />
-						</Select.Trigger>
-						<Select.Portal>
-							<Select.Positioner>
-								<Select.Popup>
-									<Select.List>
-										{fontWeightOptions.map((opt) => (
-											<Select.Item key={opt.value} value={opt.value}>
-												{opt.label}
-											</Select.Item>
-										))}
-									</Select.List>
-								</Select.Popup>
-							</Select.Positioner>
-						</Select.Portal>
-					</Select.Root>
-				</Select.Wrapper>
-			</div>
-		</Section>
+			<Select.Wrapper label="Font Weight">
+				<Select.Root
+					value={String(tokens.fontWeight ?? "400")}
+					onValueChange={(value) => updateToken("fontWeight", value as string)}
+				>
+					<Select.Trigger size="sm">
+						<Select.Value placeholder="Select weight" />
+						<Select.Icon />
+					</Select.Trigger>
+					<Select.Portal>
+						<Select.Positioner>
+							<Select.Popup>
+								<Select.List>
+									{fontWeightOptions.map((opt) => (
+										<Select.Item key={opt.value} value={opt.value}>
+											{opt.label}
+										</Select.Item>
+									))}
+								</Select.List>
+							</Select.Popup>
+						</Select.Positioner>
+					</Select.Portal>
+				</Select.Root>
+			</Select.Wrapper>
+		</>
 	);
+
+	if (noSection) return content;
+
+	return <Section title="Typography">{content}</Section>;
 }

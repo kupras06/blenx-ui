@@ -1,9 +1,9 @@
 import * as stylex from "@stylexjs/stylex";
 import { theme } from "@/lib/theme/contract.stylex";
 import { borderRadius, fontSize, spacing } from "@/lib/theme/tokens.stylex";
-import { useThemeBuilder } from "../theme-builder-context";
 import { Section } from "../controls/section";
 import { componentTokenMap } from "../preview/component-token-map";
+import { useThemeBuilder } from "../theme-builder-context";
 
 const styles = stylex.create({
 	table: {
@@ -77,67 +77,66 @@ const displayTokens: Array<{ key: keyof typeof theme; label: string }> = [
 	{ key: "borderRadius", label: "borderRadius" },
 ];
 
-export function TokenTable() {
+interface TokenTableProps {
+	noSection?: boolean;
+}
+
+export function TokenTable({ noSection }: TokenTableProps) {
 	const tokens = useThemeBuilder((s) => s.tokens);
 	const setSelectedToken = useThemeBuilder((s) => s.setSelectedToken);
 	const selectedToken = useThemeBuilder((s) => s.selectedToken);
 
-	return (
-		<Section title="Theme Variables">
-			<table {...stylex.props(styles.table)}>
-				<thead>
-					<tr>
-						<th {...stylex.props(styles.header)}>Token</th>
-						<th {...stylex.props(styles.header)}>Value</th>
-						<th {...stylex.props(styles.header)}>Components</th>
-					</tr>
-				</thead>
-				<tbody>
-					{displayTokens.map(({ key, label }) => {
-						const value =
-							key === "fontSize"
-								? tokens.baseFontSize
-								: key === "borderRadius"
-									? tokens.radius
-									: tokens[key as keyof typeof tokens]?.toString() ?? "-";
+	const content = (
+		<table {...stylex.props(styles.table)}>
+			<thead>
+				<tr>
+					<th {...stylex.props(styles.header)}>Token</th>
+					<th {...stylex.props(styles.header)}>Value</th>
+					<th {...stylex.props(styles.header)}>Components</th>
+				</tr>
+			</thead>
+			<tbody>
+				{displayTokens.map(({ key, label }) => {
+					const value =
+						key === "fontSize"
+							? tokens.baseFontSize
+							: key === "borderRadius"
+								? tokens.radius
+								: (tokens[key as keyof typeof tokens]?.toString() ?? "-");
 
-						const components = Object.entries(componentTokenMap)
-							.filter(([, tokenList]) =>
-								tokenList.some((t) => t.token === key),
-							)
-							.map(([name]) => name)
-							.join(", ");
+					const components = Object.entries(componentTokenMap)
+						.filter(([, tokenList]) => tokenList.some((t) => t.token === key))
+						.map(([name]) => name)
+						.join(", ");
 
-						const isSelected = selectedToken === key;
-						return (
-							<tr
-								key={key}
-								onMouseEnter={() =>
-									setSelectedToken(key as keyof typeof tokens)
-								}
-								onMouseLeave={() => setSelectedToken(null)}
-								{...stylex.props(
-									isSelected && {
-										backgroundColor: theme.focusRing + "15",
-									},
-								)}
-								style={{ cursor: "pointer" }}
-							>
-								<td
-									{...stylex.props(styles.cell, styles.code)}
-									data-token={key}
-								>
-									{label}
-								</td>
-								<td {...stylex.props(styles.cell)}>{value}</td>
-								<td {...stylex.props(styles.cell, styles.mono)}>
-									{components || "-"}
-								</td>
-							</tr>
-						);
-					})}
-				</tbody>
-			</table>
-		</Section>
+					const isSelected = selectedToken === key;
+					return (
+						<tr
+							key={key}
+							onMouseEnter={() => setSelectedToken(key as keyof typeof tokens)}
+							onMouseLeave={() => setSelectedToken(null)}
+							{...stylex.props(
+								isSelected && {
+									backgroundColor: theme.focusRing + "15",
+								},
+							)}
+							style={{ cursor: "pointer" }}
+						>
+							<td {...stylex.props(styles.cell, styles.code)} data-token={key}>
+								{label}
+							</td>
+							<td {...stylex.props(styles.cell)}>{value}</td>
+							<td {...stylex.props(styles.cell, styles.mono)}>
+								{components || "-"}
+							</td>
+						</tr>
+					);
+				})}
+			</tbody>
+		</table>
 	);
+
+	if (noSection) return content;
+
+	return <Section title="Theme Variables">{content}</Section>;
 }

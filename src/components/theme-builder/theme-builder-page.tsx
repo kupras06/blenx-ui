@@ -2,17 +2,16 @@ import { ListIcon } from "@phosphor-icons/react";
 import * as stylex from "@stylexjs/stylex";
 import { useMediaQuery } from "@uidotdev/usehooks";
 import {
+	Accordion,
 	Button,
 	ScrollArea,
 	Tabs,
 	TabsList,
 	TabsPanel,
 	TabsTab,
-	Text,
-	VStack,
 } from "@/components/ui";
 import { theme } from "@/lib/theme/contract.stylex";
-import { mediaQueries, spacing } from "@/lib/theme/tokens.stylex";
+import { spacing } from "@/lib/theme/tokens.stylex";
 import {
 	ColorControls,
 	NonColorControls,
@@ -84,16 +83,72 @@ const styles = stylex.create({
 
 function SidebarContent() {
 	return (
-		<VStack padding="medium" gap="medium">
-			<Text variant="h2">Theme Builder</Text>
-			<PresetControls />
-			<ColorControls />
-			<TypographyControls />
-			<NonColorControls />
-			<ExportPanel />
-			<TokenTable />
-			<HowItWorks />
-		</VStack>
+		<Accordion.Root
+			defaultValue={["presets", "colors", "typography", "noncolor", "export"]}
+		>
+			<Accordion.Item value="presets">
+				<Accordion.Header>
+					<Accordion.Trigger>Presets</Accordion.Trigger>
+				</Accordion.Header>
+				<Accordion.Panel>
+					<PresetControls />
+				</Accordion.Panel>
+			</Accordion.Item>
+
+			<Accordion.Item value="colors">
+				<Accordion.Header>
+					<Accordion.Trigger>Colors</Accordion.Trigger>
+				</Accordion.Header>
+				<Accordion.Panel>
+					<ColorControls noSection />
+				</Accordion.Panel>
+			</Accordion.Item>
+
+			<Accordion.Item value="typography">
+				<Accordion.Header>
+					<Accordion.Trigger>Typography</Accordion.Trigger>
+				</Accordion.Header>
+				<Accordion.Panel>
+					<TypographyControls noSection />
+				</Accordion.Panel>
+			</Accordion.Item>
+
+			<Accordion.Item value="noncolor">
+				<Accordion.Header>
+					<Accordion.Trigger>Design Tokens</Accordion.Trigger>
+				</Accordion.Header>
+				<Accordion.Panel>
+					<NonColorControls />
+				</Accordion.Panel>
+			</Accordion.Item>
+
+			<Accordion.Item value="export">
+				<Accordion.Header>
+					<Accordion.Trigger>Export</Accordion.Trigger>
+				</Accordion.Header>
+				<Accordion.Panel>
+					<ExportPanel noSection />
+				</Accordion.Panel>
+			</Accordion.Item>
+
+			<Accordion.Item value="variables">
+				<Accordion.Header>
+					<Accordion.Trigger>Theme Variables</Accordion.Trigger>
+				</Accordion.Header>
+				<Accordion.Panel>
+					<TokenTable noSection />
+				</Accordion.Panel>
+			</Accordion.Item>
+
+			<Accordion.Item value="howitworks">
+				<Accordion.Header>
+					<Accordion.Trigger>How It Works</Accordion.Trigger>
+				</Accordion.Header>
+				<Accordion.Panel>
+					<HowItWorks noSection />
+				</Accordion.Panel>
+			</Accordion.Item>
+		</Accordion.Root>
 	);
 }
 
@@ -167,9 +222,7 @@ function ThemeBuilderInner() {
 
 	return (
 		<ThemePreviewProvider>
-			<div
-				{...stylex.props(styles.layout, compact && styles.layoutFull)}
-			>
+			<div {...stylex.props(styles.layout, compact && styles.layoutFull)}>
 				<Sidebar compact={compact} />
 				<PreviewPanel compact={compact} />
 			</div>

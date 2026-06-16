@@ -11,6 +11,7 @@ import { Header } from "@/components/header";
 import { Box, VStack } from "@/components/ui";
 import { appTheme } from "@/lib/app-theme.stylex";
 import { theme } from "@/lib/theme/contract.stylex";
+import { fonts } from "@/lib/theme/tokens.stylex";
 
 export const Route = createRootRouteWithContext()({
 	head: () => ({
@@ -51,6 +52,9 @@ const rootStyles = stylex.create({
 		backgroundColor: theme.background,
 		color: theme.contentPrimary,
 		margin: 0,
+		fontFamily: fonts.display,
+		fontSize: "14px",
+		lineHeight: 1.5,
 	},
 });
 
