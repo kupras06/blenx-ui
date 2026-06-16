@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "datepicker",
+  "title": "DatePicker",
+  "description": "A StyleX Date Picker component.",
+  "dependencies": [
+    "@stylexjs/stylex",
+    "@phosphor-icons/react",
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "http://localhost:3001/reg/button.json",
+    "http://localhost:3001/reg/calendar.json",
+    "http://localhost:3001/reg/field.json",
+    "http://localhost:3001/reg/popover.json",
+    "http://localhost:3001/reg/shared.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/DatePicker/date-picker.tsx",
+      "content": "\"use client\";\n\nimport { CalendarBlankIcon } from \"@phosphor-icons/react\";\nimport { format } from \"date-fns\";\nimport { useRef, useState } from \"react\";\nimport { Button } from \"../Button/button\";\nimport { Calendar } from \"../Calendar/calendar\";\nimport { Field, FieldError, FieldLabel } from \"../Field/field\";\nimport {\n\tPopover,\n\tPopoverCompound,\n\tPopoverPopup,\n\tPopoverPositioner,\n\tPopoverTrigger,\n} from \"../Popover/popover\";\n\ntype Props = {\n\tvalue: Date | undefined;\n\tonChange: (date: Date | undefined) => void;\n\tlabel?: string;\n\tplaceholder?: string;\n\terror?: string;\n\tdisabled?: boolean;\n};\n\nexport function DatePicker({\n\tvalue,\n\tonChange,\n\tlabel,\n\tplaceholder = \"Pick a date\",\n\terror,\n\tdisabled,\n}: Props) {\n\tconst [open, setOpen] = useState(false);\n\tconst triggerRef = useRef<HTMLButtonElement>(null);\n\n\tconst handleSelect = (date: Date | undefined) => {\n\t\tonChange(date);\n\t\tsetOpen(false);\n\t};\n\n\treturn (\n\t\t<Field>\n\t\t\t<Popover open={open} onOpenChange={setOpen}>\n\t\t\t\t{label && (\n\t\t\t\t\t<FieldLabel\n\t\t\t\t\t\tonClick={() => {\n\t\t\t\t\t\t\ttriggerRef.current?.click();\n\t\t\t\t\t\t\ttriggerRef.current?.focus();\n\t\t\t\t\t\t}}\n\t\t\t\t\t>\n\t\t\t\t\t\t{label}\n\t\t\t\t\t</FieldLabel>\n\t\t\t\t)}\n\t\t\t\t<PopoverTrigger\n\t\t\t\t\tref={triggerRef}\n\t\t\t\t\tdisabled={disabled}\n\t\t\t\t\trender={<Button type=\"button\" variant=\"outline\" fullWidth />}\n\t\t\t\t>\n\t\t\t\t\t<CalendarBlankIcon size={18} />\n\t\t\t\t\t{value ? format(value, \"PPP\") : placeholder}\n\t\t\t\t</PopoverTrigger>\n\t\t\t\t<PopoverCompound.Portal>\n\t\t\t\t\t<PopoverPositioner sideOffset={6} side=\"bottom\" align=\"start\">\n\t\t\t\t\t\t<PopoverPopup>\n\t\t\t\t\t\t\t<Calendar\n\t\t\t\t\t\t\t\tmode=\"single\"\n\t\t\t\t\t\t\t\tselected={value}\n\t\t\t\t\t\t\t\tonSelect={handleSelect}\n\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t</PopoverPopup>\n\t\t\t\t\t</PopoverPositioner>\n\t\t\t\t</PopoverCompound.Portal>\n\t\t\t</Popover>\n\t\t\t{error && <FieldError>{error}</FieldError>}\n\t\t</Field>\n\t);\n}\n",
+      "type": "registry:ui",
+      "target": "@ui/DatePicker/date-picker.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

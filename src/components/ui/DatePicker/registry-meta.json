@@ -1,6 +1,6 @@
 {
 	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "date-picker",
+	"name": "datepicker",
 	"type": "registry:ui",
 	"title": "DatePicker",
 	"description": "A StyleX Date Picker component.",

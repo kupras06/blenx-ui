@@ -11,12 +11,6 @@ function ThemingDoc() {
 		<DocsLayout>
 			<VStack gap="medium">
 				<Text variant="h1">Theming</Text>
-				<Text variant="body1" color="secondary">
-					Blenx UI provides two approaches for customizing the look and feel of
-					your components. The Stylex Contract Theme is the recommended approach
-					for projects already using Stylex.
-				</Text>
-
 				<Separator tone="subtle" />
 
 				<Box>

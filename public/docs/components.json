@@ -382,7 +382,7 @@
       "Field",
       "Button"
     ],
-    "registryName": "date-picker",
+    "registryName": "datepicker",
     "examples": []
   },
   "dialog": {

@@ -3,15 +3,12 @@
 import { Checkbox as CheckboxPrimitive } from "@base-ui/react/checkbox";
 import { CheckboxGroup as CheckboxGroupPrimitive } from "@base-ui/react/checkbox-group";
 import * as stylex from "@stylexjs/stylex";
+import type { PropsWithStylex } from "@/utils/stylex.utils";
 import { checkboxStyles } from "./checkbox.styles";
 
-type CheckboxGroupProps = Omit<CheckboxGroupPrimitive.Props, "style"> & {
-	style?: stylex.StyleXStyles;
-};
+type CheckboxGroupProps = PropsWithStylex<CheckboxGroupPrimitive.Props>;
 
-type CheckboxProps = Omit<CheckboxPrimitive.Root.Props, "style"> & {
-	style?: stylex.StyleXStyles;
-};
+type CheckboxProps = PropsWithStylex<CheckboxPrimitive.Root.Props>;
 
 export function CheckboxGroup({ style, ...props }: CheckboxGroupProps) {
 	return (

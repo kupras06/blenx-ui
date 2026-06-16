@@ -26,6 +26,5 @@
       "target": "@ui/Switch/switch.styles.ts"
     }
   ],
-  "type": "registry:ui",
-  "demo": "import { HStack, VStack } from \"../Stack/stack\";\nimport { Text } from \"../Text/text\";\nimport { Switch } from \"./switch\";\n\nfunction SwitchDemo() {\n\treturn (\n\t\t<VStack gap=\"medium\">\n\t\t\t<HStack gap=\"medium\" align=\"center\">\n\t\t\t\t<Switch defaultChecked />\n\t\t\t\t<Text variant=\"body2\">Airplane Mode</Text>\n\t\t\t</HStack>\n\t\t\t<HStack gap=\"medium\" align=\"center\">\n\t\t\t\t<Switch />\n\t\t\t\t<Text variant=\"body2\">Wi-Fi</Text>\n\t\t\t</HStack>\n\t\t\t<HStack gap=\"medium\" align=\"center\">\n\t\t\t\t<Switch disabled />\n\t\t\t\t<Text variant=\"body2\" color=\"secondary\">\n\t\t\t\t\tBluetooth (disabled)\n\t\t\t\t</Text>\n\t\t\t</HStack>\n\t\t</VStack>\n\t);\n}\n\nexport { SwitchDemo as Demo };\n"
+  "type": "registry:ui"
 }

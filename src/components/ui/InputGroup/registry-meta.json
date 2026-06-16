@@ -1,6 +1,6 @@
 {
 	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "input-group",
+	"name": "inputgroup",
 	"type": "registry:ui",
 	"title": "InputGroup",
 	"description": "A StyleX Input Group component.",

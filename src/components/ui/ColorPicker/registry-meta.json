@@ -1,6 +1,6 @@
 {
 	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "color-picker",
+	"name": "colorpicker",
 	"type": "registry:ui",
 	"title": "Color Picker",
 	"description": "A StyleX color picker component.",

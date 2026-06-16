@@ -9,9 +9,8 @@ export const Route = createFileRoute("/docs/primitives")({
 function PrimitivesDoc() {
 	return (
 		<DocsLayout>
-			<Text variant="h1">Primitives with Base UI</Text>
-			<Separator />
 			<VStack gap="medium">
+				<Text variant="h1">Primitives with Base UI</Text>
 				<Text variant="h2">Why Base UI?</Text>
 				<Text variant="body2" color="secondary">
 					Blenx UI is built on <strong>Base UI React</strong> (
@@ -25,11 +24,10 @@ function PrimitivesDoc() {
 					This separation keeps the behavioral logic framework-agnostic while
 					allowing full control over visual presentation.
 				</Text>
+				<Separator tone="subtle" />
 			</VStack>
 
-			<Separator tone="subtle" />
-
-			<VStack gap="medium">
+			<VStack gap="medium" paddingY="medium">
 				<Text variant="h2">Component Architecture</Text>
 				<Surface variant="sunken" padding="medium" render={<pre />}>
 					<code>{`// Base UI handles behavior and accessibility
@@ -50,7 +48,7 @@ export function Button({ render, ...props }) {
 
 			<Separator tone="subtle" />
 
-			<VStack gap="medium">
+			<VStack gap="medium" paddingY="medium">
 				<Text variant="h2">Key Primitives Used</Text>
 				<Grid columns={2}>
 					<Surface withBorder padding="small">
@@ -94,7 +92,7 @@ export function Button({ render, ...props }) {
 
 			<Separator tone="subtle" />
 
-			<VStack gap="medium">
+			<VStack gap="medium" paddingY="medium">
 				<Text variant="h2">
 					Extending with <Text variant="code">render</Text>
 				</Text>

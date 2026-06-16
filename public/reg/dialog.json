@@ -27,6 +27,5 @@
       "target": "@ui/Dialog/dialog.styles.ts"
     }
   ],
-  "type": "registry:ui",
-  "demo": "import { Button } from \"../Button/button\";\nimport { HStack } from \"../Stack/stack\";\nimport { Text } from \"../Text/text\";\nimport {\n\tDialog,\n\tDialogClose,\n\tDialogContent,\n\tDialogDescription,\n\tDialogFooter,\n\tDialogHeader,\n\tDialogPanel,\n\tDialogTitle,\n\tDialogTrigger,\n} from \"./dialog\";\n\nfunction DialogDemo() {\n\treturn (\n\t\t<Dialog>\n\t\t\t<DialogTrigger render={<Button variant=\"outline\" />}>\n\t\t\t\tOpen Dialog\n\t\t\t</DialogTrigger>\n\t\t\t<DialogContent>\n\t\t\t\t<DialogHeader>\n\t\t\t\t\t<DialogTitle>Confirm Action</DialogTitle>\n\t\t\t\t\t<DialogDescription>\n\t\t\t\t\t\tAre you sure you want to proceed with this action?\n\t\t\t\t\t</DialogDescription>\n\t\t\t\t</DialogHeader>\n\t\t\t\t<DialogPanel>\n\t\t\t\t\t<Text variant=\"body2\">\n\t\t\t\t\t\tThis action cannot be undone. Please confirm your choice.\n\t\t\t\t\t</Text>\n\t\t\t\t</DialogPanel>\n\t\t\t\t<DialogFooter>\n\t\t\t\t\t<HStack gap=\"small\" justify=\"end\">\n\t\t\t\t\t\t<DialogClose render={<Button variant=\"ghost\" />}>\n\t\t\t\t\t\t\tCancel\n\t\t\t\t\t\t</DialogClose>\n\t\t\t\t\t\t<Button>Confirm</Button>\n\t\t\t\t\t</HStack>\n\t\t\t\t</DialogFooter>\n\t\t\t</DialogContent>\n\t\t</Dialog>\n\t);\n}\n\nexport { DialogDemo as Demo };\n"
+  "type": "registry:ui"
 }

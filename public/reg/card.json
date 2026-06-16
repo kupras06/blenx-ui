@@ -26,6 +26,5 @@
       "target": "@ui/Card/card.styles.ts"
     }
   ],
-  "type": "registry:ui",
-  "demo": "import { Button } from \"../Button/button\";\nimport { Text } from \"../Text/text\";\nimport {\n\tCard,\n\tCardBody,\n\tCardDescription,\n\tCardFooter,\n\tCardHeader,\n\tCardTitle,\n} from \"./card\";\n\nfunction CardDemo() {\n\treturn (\n\t\t<Card>\n\t\t\t<CardHeader>\n\t\t\t\t<CardTitle>Getting Started</CardTitle>\n\t\t\t\t<CardDescription>\n\t\t\t\t\tLearn how to install and use Blenx UI components in your project.\n\t\t\t\t</CardDescription>\n\t\t\t</CardHeader>\n\t\t\t<CardBody>\n\t\t\t\t<Text variant=\"body2\">\n\t\t\t\t\tBlenx UI provides a set of accessible, styleable React components\n\t\t\t\t\tbuilt on Base UI primitives and styled with StyleX.\n\t\t\t\t</Text>\n\t\t\t</CardBody>\n\t\t\t<CardFooter>\n\t\t\t\t<Button variant=\"outline\" size=\"small\">\n\t\t\t\t\tRead docs\n\t\t\t\t</Button>\n\t\t\t\t<Button size=\"small\">Install</Button>\n\t\t\t</CardFooter>\n\t\t</Card>\n\t);\n}\n\nexport { CardDemo as Demo };\n"
+  "type": "registry:ui"
 }

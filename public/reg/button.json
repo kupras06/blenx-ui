@@ -26,6 +26,5 @@
       "target": "@ui/Button/button.styles.ts"
     }
   ],
-  "type": "registry:ui",
-  "demo": "import { CaretRightIcon, PlayIcon } from \"@phosphor-icons/react\";\nimport { HStack, Stack, VStack } from \"../Stack/stack\";\nimport { Text } from \"../Text/text\";\nimport { Button } from \"./button\";\n\nfunction ButtonDemo() {\n\treturn (\n\t\t<VStack gap=\"medium\">\n\t\t\t<Stack gap=\"small\">\n\t\t\t\t<Text variant=\"h6\">Variants</Text>\n\t\t\t\t<HStack wrap>\n\t\t\t\t\t<Button variant=\"primary\">Primary</Button>\n\t\t\t\t\t<Button variant=\"secondary\">Secondary</Button>\n\t\t\t\t\t<Button variant=\"outline\">Outline</Button>\n\t\t\t\t\t<Button variant=\"ghost\">Ghost</Button>\n\t\t\t\t\t<Button variant=\"link\">Link</Button>\n\t\t\t\t\t<Button variant=\"danger\">Danger</Button>\n\t\t\t\t</HStack>\n\t\t\t</Stack>\n\n\t\t\t<Stack gap=\"small\">\n\t\t\t\t<Text variant=\"h6\">Sizes</Text>\n\t\t\t\t<HStack wrap>\n\t\t\t\t\t<Button size=\"small\">Small</Button>\n\t\t\t\t\t<Button size=\"medium\">Medium</Button>\n\t\t\t\t\t<Button size=\"large\">Large</Button>\n\t\t\t\t</HStack>\n\t\t\t</Stack>\n\n\t\t\t<Stack gap=\"small\">\n\t\t\t\t<Text variant=\"h6\">With Icons</Text>\n\t\t\t\t<HStack wrap>\n\t\t\t\t\t<Button>\n\t\t\t\t\t\t<PlayIcon />\n\t\t\t\t\t\tPlay\n\t\t\t\t\t</Button>\n\t\t\t\t\t<Button variant=\"outline\">\n\t\t\t\t\t\tNext\n\t\t\t\t\t\t<CaretRightIcon />\n\t\t\t\t\t</Button>\n\t\t\t\t</HStack>\n\t\t\t</Stack>\n\t\t</VStack>\n\t);\n}\n\nexport { ButtonDemo as Demo };\n"
+  "type": "registry:ui"
 }

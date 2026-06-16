@@ -25,6 +25,5 @@
       "target": "@ui/Table/table.styles.ts"
     }
   ],
-  "type": "registry:ui",
-  "demo": "import { Badge } from \"../Badge/badge\";\nimport { VStack } from \"../Stack/stack\";\nimport { Table } from \"./table\";\n\ninterface User {\n\tid: string;\n\tname: string;\n\temail: string;\n\trole: string;\n\tstatus: \"active\" | \"inactive\";\n}\n\nconst users: User[] = [\n\t{\n\t\tid: \"1\",\n\t\tname: \"Alice Johnson\",\n\t\temail: \"alice@example.com\",\n\t\trole: \"Admin\",\n\t\tstatus: \"active\",\n\t},\n\t{\n\t\tid: \"2\",\n\t\tname: \"Bob Smith\",\n\t\temail: \"bob@example.com\",\n\t\trole: \"Editor\",\n\t\tstatus: \"active\",\n\t},\n\t{\n\t\tid: \"3\",\n\t\tname: \"Carol Davis\",\n\t\temail: \"carol@example.com\",\n\t\trole: \"Viewer\",\n\t\tstatus: \"inactive\",\n\t},\n];\n\nfunction TableDemo() {\n\tconst columns = [\n\t\t{ key: \"name\" as keyof User, header: \"Name\" },\n\t\t{ key: \"email\" as keyof User, header: \"Email\" },\n\t\t{ key: \"role\" as keyof User, header: \"Role\" },\n\t\t{\n\t\t\tkey: \"status\" as keyof User,\n\t\t\theader: \"Status\",\n\t\t\tcell: (row: User) => (\n\t\t\t\t<Badge variant={row.status === \"active\" ? \"primary\" : \"default\"}>\n\t\t\t\t\t{row.status}\n\t\t\t\t</Badge>\n\t\t\t),\n\t\t},\n\t];\n\n\treturn (\n\t\t<VStack gap=\"medium\">\n\t\t\t<Table columnData={columns} rowData={users} rowKey=\"id\" />\n\t\t</VStack>\n\t);\n}\n\nexport { TableDemo as Demo };\n"
+  "type": "registry:ui"
 }

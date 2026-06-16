@@ -1,7 +1,7 @@
 import * as stylex from "@stylexjs/stylex";
 import { useQuery } from "@tanstack/react-query";
 import { Link, useLocation } from "@tanstack/react-router";
-import { Box, Surface, Text, VStack } from "@/components/ui";
+import { Box, ScrollArea, Surface, Text, VStack } from "@/components/ui";
 import { docsQueries } from "@/lib/docs-api";
 
 interface SidebarSection {
@@ -42,18 +42,8 @@ const styles = stylex.create({
 	link: {
 		textDecoration: "none",
 	},
-	innerNav: {
-		display: "flex",
-		flexDirection: "column",
-		gap: "var(--space-4)",
-	},
-	linkList: {
-		display: "flex",
-		flexDirection: "column",
-		gap: 2,
-	},
-	componentLink: {
-		paddingLeft: "var(--space-3)",
+	maxHeight: {
+		maxHeight: "90svh",
 	},
 });
 
@@ -108,69 +98,75 @@ function DocsSidebar() {
 	}
 
 	return (
-		<VStack gap="medium">
-			{sections.map((section) => (
-				<Box key={section.title}>
-					<Text variant="body2" weight="semibold">
-						{section.title}
-					</Text>
-					<VStack gap="xxsmall">
-						{section.links.map((link) => {
-							const isActive =
-								link.to === "/docs"
-									? pathname === "/docs" || pathname === "/docs/"
-									: pathname.startsWith(link.to);
-							return (
-								<Surface
-									variant={isActive ? "sunken" : "default"}
-									radius="small"
-									paddingY="xxsmall"
-									paddingX="xsmall"
-									key={link.to}
-									render={<Link {...stylex.props(styles.link)} to={link.to} />}
-								>
-									<Text
-										variant="body2"
-										color={isActive ? "primary" : "secondary"}
+		<VStack gap="medium" style={styles.maxHeight}>
+			<ScrollArea>
+				{sections.map((section) => (
+					<Box key={section.title}>
+						<Text variant="body2" weight="semibold">
+							{section.title}
+						</Text>
+						<VStack gap="xxsmall">
+							{section.links.map((link) => {
+								const isActive =
+									link.to === "/docs"
+										? pathname === "/docs" || pathname === "/docs/"
+										: pathname.startsWith(link.to);
+								return (
+									<Surface
+										variant={isActive ? "sunken" : "default"}
+										radius="small"
+										paddingY="xxsmall"
+										paddingX="xsmall"
+										key={link.to}
+										render={
+											<Link {...stylex.props(styles.link)} to={link.to} />
+										}
 									>
-										{link.label}
-									</Text>
-								</Surface>
-							);
-						})}
-					</VStack>
-				</Box>
-			))}
+										<Text
+											variant="body2"
+											color={isActive ? "primary" : "secondary"}
+										>
+											{link.label}
+										</Text>
+									</Surface>
+								);
+							})}
+						</VStack>
+					</Box>
+				))}
 
-			{dynamicSections.map((section) => (
-				<Box key={section.title}>
-					<Text variant="body2" weight="semibold">
-						{section.title}
-					</Text>
-					<VStack gap="xxsmall">
-						{section.links.map((link) => {
-							const isActive = pathname.startsWith(link.to);
-							return (
-								<Surface
-									variant={isActive ? "sunken" : "default"}
-									radius="small"
-									paddingY="xxsmall"
-									paddingX="xsmall"
-									key={link.to}
-									render={<Link {...stylex.props(styles.link)} to={link.to} />}
-								>
-									<Text
-										variant="body2"
-										color={isActive ? "primary" : "secondary"}
+				{dynamicSections.map((section) => (
+					<Box key={section.title}>
+						<Text variant="body2" weight="semibold">
+							{section.title}
+						</Text>
+						<VStack gap="xxsmall">
+							{section.links.map((link) => {
+								const isActive = pathname.startsWith(link.to);
+								return (
+									<Surface
+										variant={isActive ? "sunken" : "default"}
+										radius="small"
+										paddingY="xxsmall"
+										paddingX="xsmall"
+										key={link.to}
+										render={
+											<Link {...stylex.props(styles.link)} to={link.to} />
+										}
 									>
-										{link.label}
-									</Text>
-								</Surface>
-							);
-						})}
-					</VStack>
-				</Box>
-			))}
+										<Text
+											variant="body2"
+											color={isActive ? "primary" : "secondary"}
+										>
+											{link.label}
+										</Text>
+									</Surface>
+								);
+							})}
+						</VStack>
+					</Box>
+				))}
+			</ScrollArea>
 		</VStack>
 	);
 }
