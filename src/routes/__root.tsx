@@ -1,11 +1,12 @@
 import * as stylex from "@stylexjs/stylex";
-import "../app.css";
+import { QueryClientProvider } from "@tanstack/react-query";
 import {
 	createRootRouteWithContext,
 	HeadContent,
 	Outlet,
 	Scripts,
 } from "@tanstack/react-router";
+import type { QueryClient } from "@tanstack/react-query";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import { Header } from "@/components/header";
 import { Box, VStack } from "@/components/ui";
@@ -13,7 +14,7 @@ import { appTheme } from "@/lib/app-theme.stylex";
 import { theme } from "@/lib/theme/contract.stylex";
 import { fonts } from "@/lib/theme/tokens.stylex";
 
-export const Route = createRootRouteWithContext()({
+export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
 	head: () => ({
 		meta: [
 			{
@@ -112,6 +113,8 @@ const rootStyles = stylex.create({
 });
 
 function RootDocument() {
+	const { queryClient } = Route.useRouteContext();
+
 	return (
 		<html lang="en" {...stylex.props(appTheme)}>
 			<head>
@@ -142,12 +145,14 @@ function RootDocument() {
 				)}
 			</head>
 			<body {...stylex.props(rootStyles.body)}>
-				<VStack>
-					<Header />
-					<Box render={<main />} grow>
-						<Outlet />
-					</Box>
-				</VStack>
+				<QueryClientProvider client={queryClient}>
+					<VStack>
+						<Header />
+						<Box render={<main />} grow>
+							<Outlet />
+						</Box>
+					</VStack>
+				</QueryClientProvider>
 				<TanStackRouterDevtools position="bottom-left" />
 				<Scripts />
 			</body>

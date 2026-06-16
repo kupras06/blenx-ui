@@ -1,18 +1,12 @@
 import * as stylex from "@stylexjs/stylex";
 import { Link, useLocation } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { docsQueries } from "@/lib/docs-api";
 import { Box, Surface, Text, VStack } from "@/components/ui";
 
 interface SidebarSection {
 	title: string;
 	links: { to: string; label: string }[];
-}
-
-interface DocsManifest {
-	[key: string]: {
-		title: string;
-		category: string;
-	};
 }
 
 const sections: SidebarSection[] = [
@@ -76,14 +70,7 @@ const CATEGORY_ORDER = [
 
 function DocsSidebar() {
 	const { pathname } = useLocation();
-	const [manifest, setManifest] = useState<DocsManifest | null>(null);
-
-	useEffect(() => {
-		fetch("/docs/components.json")
-			.then((res) => res.json())
-			.then(setManifest)
-			.catch(() => {});
-	}, []);
+	const { data: manifest } = useQuery(docsQueries.manifest());
 
 	const groupedComponents =
 		manifest &&

@@ -1,1 +1,28 @@
 @layer stylex;
+
+.shiki {
+	margin: 0;
+	padding: var(--space-3);
+	font-family: var(--font-mono);
+	font-size: 13px;
+	line-height: 1.6;
+	tab-size: 2;
+	width: max-content;
+	min-width: 100%;
+}
+
+.shiki code {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+/* Shiki — syntax highlighting dark mode */
+@media (prefers-color-scheme: dark) {
+	.shiki,
+	.shiki span {
+		color: var(--shiki-dark) !important;
+		background-color: var(--shiki-dark-bg) !important;
+		font-style: var(--shiki-dark-font-style, inherit) !important;
+	}
+}

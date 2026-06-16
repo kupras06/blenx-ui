@@ -26,9 +26,6 @@
       ]
     },
     "registryName": "accordion",
-    "demo": {
-      "source": "import { Text } from \"../Text/text\";\nimport { Accordion } from \"./accordion\";\n\nfunction AccordionDemo() {\n\treturn (\n\t\t<Accordion.Root>\n\t\t\t<Accordion.Item value=\"item-1\">\n\t\t\t\t<Accordion.Header>\n\t\t\t\t\t<Accordion.Trigger>What is Blenx UI?</Accordion.Trigger>\n\t\t\t\t</Accordion.Header>\n\t\t\t\t<Accordion.Panel>\n\t\t\t\t\t<Text variant=\"body2\">\n\t\t\t\t\t\tBlenx UI is a modern React component library built with StyleX and\n\t\t\t\t\t\tBase UI.\n\t\t\t\t\t</Text>\n\t\t\t\t</Accordion.Panel>\n\t\t\t</Accordion.Item>\n\t\t\t<Accordion.Item value=\"item-2\">\n\t\t\t\t<Accordion.Header>\n\t\t\t\t\t<Accordion.Trigger>How do I install it?</Accordion.Trigger>\n\t\t\t\t</Accordion.Header>\n\t\t\t\t<Accordion.Panel>\n\t\t\t\t\t<Text variant=\"body2\">\n\t\t\t\t\t\tInstall via the shadcn CLI with:{\" \"}\n\t\t\t\t\t\t<Text variant=\"code\">npx shadcn@latest add button</Text>\n\t\t\t\t\t</Text>\n\t\t\t\t</Accordion.Panel>\n\t\t\t</Accordion.Item>\n\t\t\t<Accordion.Item value=\"item-3\">\n\t\t\t\t<Accordion.Header>\n\t\t\t\t\t<Accordion.Trigger>Is it accessible?</Accordion.Trigger>\n\t\t\t\t</Accordion.Header>\n\t\t\t\t<Accordion.Panel>\n\t\t\t\t\t<Text variant=\"body2\">\n\t\t\t\t\t\tYes, all components are built on Base UI primitives with full ARIA\n\t\t\t\t\t\tsupport.\n\t\t\t\t\t</Text>\n\t\t\t\t</Accordion.Panel>\n\t\t\t</Accordion.Item>\n\t\t</Accordion.Root>\n\t);\n}\n\nexport { AccordionDemo as Demo };\n"
-    },
     "examples": []
   },
   "alert": {
@@ -145,9 +142,6 @@
       "Avatar"
     ],
     "registryName": "badge",
-    "demo": {
-      "source": "import * as stylex from \"@stylexjs/stylex\";\nimport { VStack } from \"../Stack/stack\";\nimport { Text } from \"../Text/text\";\nimport { Badge } from \"./badge\";\n\nconst styles = stylex.create({\n\tgrid: {\n\t\tdisplay: \"flex\",\n\t\tflexWrap: \"wrap\",\n\t\tgap: \"var(--space-2)\",\n\t\talignItems: \"center\",\n\t},\n});\n\nfunction BadgeDemo() {\n\treturn (\n\t\t<VStack gap=\"medium\">\n\t\t\t<Text variant=\"h6\">Variants</Text>\n\t\t\t<div {...stylex.props(styles.grid)}>\n\t\t\t\t<Badge variant=\"default\">Default</Badge>\n\t\t\t\t<Badge variant=\"primary\">Primary</Badge>\n\t\t\t\t<Badge variant=\"secondary\">Secondary</Badge>\n\t\t\t</div>\n\t\t</VStack>\n\t);\n}\n\nexport { BadgeDemo as Demo };\n"
-    },
     "examples": []
   },
   "box": {
@@ -223,9 +217,6 @@
       ]
     },
     "registryName": "button",
-    "demo": {
-      "source": "import { CaretRightIcon, PlayIcon } from \"@phosphor-icons/react\";\nimport { HStack, Stack, VStack } from \"../Stack/stack\";\nimport { Text } from \"../Text/text\";\nimport { Button } from \"./button\";\n\nfunction ButtonDemo() {\n\treturn (\n\t\t<VStack gap=\"medium\">\n\t\t\t<Stack gap=\"small\">\n\t\t\t\t<Text variant=\"h6\">Variants</Text>\n\t\t\t\t<HStack wrap>\n\t\t\t\t\t<Button variant=\"primary\">Primary</Button>\n\t\t\t\t\t<Button variant=\"secondary\">Secondary</Button>\n\t\t\t\t\t<Button variant=\"outline\">Outline</Button>\n\t\t\t\t\t<Button variant=\"ghost\">Ghost</Button>\n\t\t\t\t\t<Button variant=\"link\">Link</Button>\n\t\t\t\t\t<Button variant=\"danger\">Danger</Button>\n\t\t\t\t</HStack>\n\t\t\t</Stack>\n\n\t\t\t<Stack gap=\"small\">\n\t\t\t\t<Text variant=\"h6\">Sizes</Text>\n\t\t\t\t<HStack wrap>\n\t\t\t\t\t<Button size=\"small\">Small</Button>\n\t\t\t\t\t<Button size=\"medium\">Medium</Button>\n\t\t\t\t\t<Button size=\"large\">Large</Button>\n\t\t\t\t</HStack>\n\t\t\t</Stack>\n\n\t\t\t<Stack gap=\"small\">\n\t\t\t\t<Text variant=\"h6\">With Icons</Text>\n\t\t\t\t<HStack wrap>\n\t\t\t\t\t<Button>\n\t\t\t\t\t\t<PlayIcon />\n\t\t\t\t\t\tPlay\n\t\t\t\t\t</Button>\n\t\t\t\t\t<Button variant=\"outline\">\n\t\t\t\t\t\tNext\n\t\t\t\t\t\t<CaretRightIcon />\n\t\t\t\t\t</Button>\n\t\t\t\t</HStack>\n\t\t\t</Stack>\n\t\t</VStack>\n\t);\n}\n\nexport { ButtonDemo as Demo };\n"
-    },
     "examples": []
   },
   "calendar": {
@@ -264,9 +255,6 @@
       "Box"
     ],
     "registryName": "card",
-    "demo": {
-      "source": "import { Button } from \"../Button/button\";\nimport { Text } from \"../Text/text\";\nimport {\n\tCard,\n\tCardBody,\n\tCardDescription,\n\tCardFooter,\n\tCardHeader,\n\tCardTitle,\n} from \"./card\";\n\nfunction CardDemo() {\n\treturn (\n\t\t<Card>\n\t\t\t<CardHeader>\n\t\t\t\t<CardTitle>Getting Started</CardTitle>\n\t\t\t\t<CardDescription>\n\t\t\t\t\tLearn how to install and use Blenx UI components in your project.\n\t\t\t\t</CardDescription>\n\t\t\t</CardHeader>\n\t\t\t<CardBody>\n\t\t\t\t<Text variant=\"body2\">\n\t\t\t\t\tBlenx UI provides a set of accessible, styleable React components\n\t\t\t\t\tbuilt on Base UI primitives and styled with StyleX.\n\t\t\t\t</Text>\n\t\t\t</CardBody>\n\t\t\t<CardFooter>\n\t\t\t\t<Button variant=\"outline\" size=\"small\">\n\t\t\t\t\tRead docs\n\t\t\t\t</Button>\n\t\t\t\t<Button size=\"small\">Install</Button>\n\t\t\t</CardFooter>\n\t\t</Card>\n\t);\n}\n\nexport { CardDemo as Demo };\n"
-    },
     "examples": []
   },
   "checkbox": {
@@ -427,9 +415,6 @@
       ]
     },
     "registryName": "dialog",
-    "demo": {
-      "source": "import { Button } from \"../Button/button\";\nimport { HStack } from \"../Stack/stack\";\nimport { Text } from \"../Text/text\";\nimport {\n\tDialog,\n\tDialogClose,\n\tDialogContent,\n\tDialogDescription,\n\tDialogFooter,\n\tDialogHeader,\n\tDialogPanel,\n\tDialogTitle,\n\tDialogTrigger,\n} from \"./dialog\";\n\nfunction DialogDemo() {\n\treturn (\n\t\t<Dialog>\n\t\t\t<DialogTrigger render={<Button variant=\"outline\" />}>\n\t\t\t\tOpen Dialog\n\t\t\t</DialogTrigger>\n\t\t\t<DialogContent>\n\t\t\t\t<DialogHeader>\n\t\t\t\t\t<DialogTitle>Confirm Action</DialogTitle>\n\t\t\t\t\t<DialogDescription>\n\t\t\t\t\t\tAre you sure you want to proceed with this action?\n\t\t\t\t\t</DialogDescription>\n\t\t\t\t</DialogHeader>\n\t\t\t\t<DialogPanel>\n\t\t\t\t\t<Text variant=\"body2\">\n\t\t\t\t\t\tThis action cannot be undone. Please confirm your choice.\n\t\t\t\t\t</Text>\n\t\t\t\t</DialogPanel>\n\t\t\t\t<DialogFooter>\n\t\t\t\t\t<HStack gap=\"small\" justify=\"end\">\n\t\t\t\t\t\t<DialogClose render={<Button variant=\"ghost\" />}>\n\t\t\t\t\t\t\tCancel\n\t\t\t\t\t\t</DialogClose>\n\t\t\t\t\t\t<Button>Confirm</Button>\n\t\t\t\t\t</HStack>\n\t\t\t\t</DialogFooter>\n\t\t\t</DialogContent>\n\t\t</Dialog>\n\t);\n}\n\nexport { DialogDemo as Demo };\n"
-    },
     "examples": []
   },
   "drawer": {
@@ -514,9 +499,6 @@
       "Combobox"
     ],
     "registryName": "input",
-    "demo": {
-      "source": "import * as stylex from \"@stylexjs/stylex\";\nimport { VStack } from \"../Stack/stack\";\nimport { Text } from \"../Text/text\";\nimport { Input } from \"./input\";\n\nconst styles = stylex.create({\n\tgrid: {\n\t\tdisplay: \"flex\",\n\t\tflexDirection: \"column\",\n\t\tgap: \"var(--space-3)\",\n\t\tmaxWidth: 320,\n\t},\n});\n\nfunction InputDemo() {\n\treturn (\n\t\t<VStack gap=\"medium\">\n\t\t\t<div {...stylex.props(styles.grid)}>\n\t\t\t\t<Text variant=\"h6\">Sizes</Text>\n\t\t\t\t<Input size=\"sm\" placeholder=\"Small input\" />\n\t\t\t\t<Input placeholder=\"Default input\" />\n\t\t\t\t<Input size=\"lg\" placeholder=\"Large input\" />\n\t\t\t</div>\n\n\t\t\t<div {...stylex.props(styles.grid)}>\n\t\t\t\t<Text variant=\"h6\">With Error</Text>\n\t\t\t\t<Input error=\"This field is required\" placeholder=\"Email address\" />\n\t\t\t</div>\n\t\t</VStack>\n\t);\n}\n\nexport { InputDemo as Demo };\n"
-    },
     "examples": []
   },
   "inputgroup": {
@@ -724,9 +706,6 @@
       ]
     },
     "registryName": "select",
-    "demo": {
-      "source": "import {\n\tSelectIcon,\n\tSelectItem,\n\tSelectList,\n\tSelectPopup,\n\tSelectPortal,\n\tSelectPositioner,\n\tSelectRoot,\n\tSelectTrigger,\n\tSelectValue,\n} from \"./select\";\n\nfunction SelectDemo() {\n\treturn (\n\t\t<SelectRoot defaultValue=\"apple\">\n\t\t\t<SelectTrigger>\n\t\t\t\t<SelectValue placeholder=\"Pick a fruit\" />\n\t\t\t\t<SelectIcon />\n\t\t\t</SelectTrigger>\n\t\t\t<SelectPortal>\n\t\t\t\t<SelectPositioner>\n\t\t\t\t\t<SelectPopup>\n\t\t\t\t\t\t<SelectList>\n\t\t\t\t\t\t\t<SelectItem value=\"apple\">Apple</SelectItem>\n\t\t\t\t\t\t\t<SelectItem value=\"banana\">Banana</SelectItem>\n\t\t\t\t\t\t\t<SelectItem value=\"orange\">Orange</SelectItem>\n\t\t\t\t\t\t</SelectList>\n\t\t\t\t\t</SelectPopup>\n\t\t\t\t</SelectPositioner>\n\t\t\t</SelectPortal>\n\t\t</SelectRoot>\n\t);\n}\n\nexport { SelectDemo as Demo };\n"
-    },
     "examples": []
   },
   "separator": {
@@ -894,9 +873,6 @@
       ]
     },
     "registryName": "switch",
-    "demo": {
-      "source": "import { HStack, VStack } from \"../Stack/stack\";\nimport { Text } from \"../Text/text\";\nimport { Switch } from \"./switch\";\n\nfunction SwitchDemo() {\n\treturn (\n\t\t<VStack gap=\"medium\">\n\t\t\t<HStack gap=\"medium\" align=\"center\">\n\t\t\t\t<Switch defaultChecked />\n\t\t\t\t<Text variant=\"body2\">Airplane Mode</Text>\n\t\t\t</HStack>\n\t\t\t<HStack gap=\"medium\" align=\"center\">\n\t\t\t\t<Switch />\n\t\t\t\t<Text variant=\"body2\">Wi-Fi</Text>\n\t\t\t</HStack>\n\t\t\t<HStack gap=\"medium\" align=\"center\">\n\t\t\t\t<Switch disabled />\n\t\t\t\t<Text variant=\"body2\" color=\"secondary\">\n\t\t\t\t\tBluetooth (disabled)\n\t\t\t\t</Text>\n\t\t\t</HStack>\n\t\t</VStack>\n\t);\n}\n\nexport { SwitchDemo as Demo };\n"
-    },
     "examples": []
   },
   "table": {
@@ -919,9 +895,6 @@
       ]
     },
     "registryName": "table",
-    "demo": {
-      "source": "import { Badge } from \"../Badge/badge\";\nimport { VStack } from \"../Stack/stack\";\nimport { Table } from \"./table\";\n\ninterface User {\n\tid: string;\n\tname: string;\n\temail: string;\n\trole: string;\n\tstatus: \"active\" | \"inactive\";\n}\n\nconst users: User[] = [\n\t{\n\t\tid: \"1\",\n\t\tname: \"Alice Johnson\",\n\t\temail: \"alice@example.com\",\n\t\trole: \"Admin\",\n\t\tstatus: \"active\",\n\t},\n\t{\n\t\tid: \"2\",\n\t\tname: \"Bob Smith\",\n\t\temail: \"bob@example.com\",\n\t\trole: \"Editor\",\n\t\tstatus: \"active\",\n\t},\n\t{\n\t\tid: \"3\",\n\t\tname: \"Carol Davis\",\n\t\temail: \"carol@example.com\",\n\t\trole: \"Viewer\",\n\t\tstatus: \"inactive\",\n\t},\n];\n\nfunction TableDemo() {\n\tconst columns = [\n\t\t{ key: \"name\" as keyof User, header: \"Name\" },\n\t\t{ key: \"email\" as keyof User, header: \"Email\" },\n\t\t{ key: \"role\" as keyof User, header: \"Role\" },\n\t\t{\n\t\t\tkey: \"status\" as keyof User,\n\t\t\theader: \"Status\",\n\t\t\tcell: (row: User) => (\n\t\t\t\t<Badge variant={row.status === \"active\" ? \"primary\" : \"default\"}>\n\t\t\t\t\t{row.status}\n\t\t\t\t</Badge>\n\t\t\t),\n\t\t},\n\t];\n\n\treturn (\n\t\t<VStack gap=\"medium\">\n\t\t\t<Table columnData={columns} rowData={users} rowKey=\"id\" />\n\t\t</VStack>\n\t);\n}\n\nexport { TableDemo as Demo };\n"
-    },
     "examples": []
   },
   "tabs": {
@@ -956,9 +929,6 @@
       ]
     },
     "registryName": "tabs",
-    "demo": {
-      "source": "import { VStack } from \"../Stack/stack\";\nimport { Text } from \"../Text/text\";\nimport { Tabs, TabsList, TabsPanel, TabsTab } from \"./tabs\";\n\nfunction TabsDemo() {\n\treturn (\n\t\t<VStack gap=\"medium\">\n\t\t\t<Tabs defaultValue=\"tab1\">\n\t\t\t\t<TabsList>\n\t\t\t\t\t<TabsTab value=\"tab1\">Overview</TabsTab>\n\t\t\t\t\t<TabsTab value=\"tab2\">Usage</TabsTab>\n\t\t\t\t\t<TabsTab value=\"tab3\">API</TabsTab>\n\t\t\t\t</TabsList>\n\t\t\t\t<TabsPanel value=\"tab1\">\n\t\t\t\t\t<Text variant=\"body2\">\n\t\t\t\t\t\tWelcome to the component overview. Here you will find a summary of\n\t\t\t\t\t\tfeatures and capabilities.\n\t\t\t\t\t</Text>\n\t\t\t\t</TabsPanel>\n\t\t\t\t<TabsPanel value=\"tab2\">\n\t\t\t\t\t<Text variant=\"body2\">\n\t\t\t\t\t\tUsage examples and code snippets to help you integrate the component\n\t\t\t\t\t\tinto your project.\n\t\t\t\t\t</Text>\n\t\t\t\t</TabsPanel>\n\t\t\t\t<TabsPanel value=\"tab3\">\n\t\t\t\t\t<Text variant=\"body2\">\n\t\t\t\t\t\tDetailed API reference including props, types, and methods.\n\t\t\t\t\t</Text>\n\t\t\t\t</TabsPanel>\n\t\t\t</Tabs>\n\t\t</VStack>\n\t);\n}\n\nexport { TabsDemo as Demo };\n"
-    },
     "examples": []
   },
   "text": {

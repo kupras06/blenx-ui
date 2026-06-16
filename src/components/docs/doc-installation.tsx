@@ -1,17 +1,13 @@
 import * as stylex from "@stylexjs/stylex";
+import { Badge } from "../ui";
 import { Box } from "../ui/Box/box";
 import { Separator } from "../ui/Separator/separator";
 import { HStack, VStack } from "../ui/Stack/stack";
 import { Surface } from "../ui/Surface/surface";
 import { Text } from "../ui/Text/text";
+import { DocCodeView } from "./doc-code-view";
 
 const styles = stylex.create({
-	fileItem: {
-		display: "flex",
-		alignItems: "center",
-		gap: "var(--space-2)",
-		padding: "var(--space-1) 0",
-	},
 	depList: {
 		display: "flex",
 		flexWrap: "wrap",
@@ -26,11 +22,19 @@ const styles = stylex.create({
 	},
 });
 
+interface RegistryFile {
+	target: string;
+	content: string;
+}
+
 interface DocInstallationProps {
 	registryName: string;
 	dependencies: string[];
-	registryDependencies: string[];
-	files: Array<{ path: string; type: string; target: string }>;
+	files: RegistryFile[];
+}
+
+function cleanTarget(target: string): string {
+	return target.replace(/^@(ui|lib|utils|components)\//, "");
 }
 
 function DocInstallation({
@@ -39,17 +43,6 @@ function DocInstallation({
 	files,
 }: DocInstallationProps) {
 	const cliUrl = `https://blenx-ui.vercel.app/reg/${registryName}.json`;
-
-	const cleanTarget = (target: string) => {
-		return target.replace(/^@(ui|lib|utils|components)\//, "");
-	};
-
-	const baseDeps = dependencies.filter(
-		(d) =>
-			d !== "@stylexjs/stylex" &&
-			d !== "@phosphor-icons/react" &&
-			d !== "@base-ui/react",
-	);
 
 	return (
 		<VStack gap="medium">
@@ -65,49 +58,35 @@ function DocInstallation({
 
 			<Separator />
 
-			<VStack>
-				<Box>
-					<Text variant="h3">Manual Installation</Text>
-				</Box>
-				<Box>
-					<Text variant="h6" color="secondary">
-						Required Files
-					</Text>
+			<Box>
+				<Text variant="h3">Manual Installation</Text>
+				<VStack gap="medium">
 					{files.map((file) => (
-						<HStack key={file.path}>
-							<Text variant="code">{cleanTarget(file.target)}</Text>
-						</HStack>
+						<Box key={file.target}>
+							<Text variant="code" color="secondary">
+								{cleanTarget(file.target)}
+							</Text>
+							<DocCodeView
+								code={file.content}
+								title={cleanTarget(file.target)}
+							/>
+						</Box>
 					))}
-				</Box>
-			</VStack>
+				</VStack>
+			</Box>
 
 			{dependencies.length > 0 && (
 				<Box>
 					<Text variant="h6" color="secondary">
 						Dependencies
 					</Text>
-					<div {...stylex.props(styles.depList)}>
+					<HStack>
 						{dependencies.map((dep) => (
-							<span key={dep} {...stylex.props(styles.depChip)}>
+							<Badge key={dep} {...stylex.props(styles.depChip)}>
 								{dep}
-							</span>
+							</Badge>
 						))}
-					</div>
-				</Box>
-			)}
-
-			{baseDeps.length > 0 && (
-				<Box>
-					<Text variant="h6" color="secondary">
-						Additional Dependencies
-					</Text>
-					<div {...stylex.props(styles.depList)}>
-						{baseDeps.map((dep) => (
-							<span key={dep} {...stylex.props(styles.depChip)}>
-								{dep}
-							</span>
-						))}
-					</div>
+					</HStack>
 				</Box>
 			)}
 		</VStack>

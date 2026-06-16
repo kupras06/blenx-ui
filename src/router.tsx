@@ -1,12 +1,14 @@
 import { createRouter as createTanStackRouter } from "@tanstack/react-router";
 import { Spinner } from "@/components/ui";
+import { queryClient } from "@/lib/query-client";
 import { routeTree } from "./routeTree.gen";
+
 export const getRouter = () => {
 	const router = createTanStackRouter({
 		routeTree,
 		scrollRestoration: true,
 		defaultPreloadStaleTime: 0,
-		context: {},
+		context: { queryClient },
 		defaultPendingComponent: () => <Spinner />,
 		defaultNotFoundComponent: () => <div>Not Found</div>,
 	});

@@ -25,5 +25,6 @@
       "target": "@ui/Tabs/tabs.styles.ts"
     }
   ],
-  "type": "registry:ui"
+  "type": "registry:ui",
+  "demo": "import { VStack } from \"../Stack/stack\";\nimport { Text } from \"../Text/text\";\nimport { Tabs, TabsList, TabsPanel, TabsTab } from \"./tabs\";\n\nfunction TabsDemo() {\n\treturn (\n\t\t<VStack gap=\"medium\">\n\t\t\t<Tabs defaultValue=\"tab1\">\n\t\t\t\t<TabsList>\n\t\t\t\t\t<TabsTab value=\"tab1\">Overview</TabsTab>\n\t\t\t\t\t<TabsTab value=\"tab2\">Usage</TabsTab>\n\t\t\t\t\t<TabsTab value=\"tab3\">API</TabsTab>\n\t\t\t\t</TabsList>\n\t\t\t\t<TabsPanel value=\"tab1\">\n\t\t\t\t\t<Text variant=\"body2\">\n\t\t\t\t\t\tWelcome to the component overview. Here you will find a summary of\n\t\t\t\t\t\tfeatures and capabilities.\n\t\t\t\t\t</Text>\n\t\t\t\t</TabsPanel>\n\t\t\t\t<TabsPanel value=\"tab2\">\n\t\t\t\t\t<Text variant=\"body2\">\n\t\t\t\t\t\tUsage examples and code snippets to help you integrate the component\n\t\t\t\t\t\tinto your project.\n\t\t\t\t\t</Text>\n\t\t\t\t</TabsPanel>\n\t\t\t\t<TabsPanel value=\"tab3\">\n\t\t\t\t\t<Text variant=\"body2\">\n\t\t\t\t\t\tDetailed API reference including props, types, and methods.\n\t\t\t\t\t</Text>\n\t\t\t\t</TabsPanel>\n\t\t\t</Tabs>\n\t\t</VStack>\n\t);\n}\n\nexport { TabsDemo as Demo };\n"
 }

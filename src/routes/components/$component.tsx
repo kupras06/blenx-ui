@@ -1,38 +1,24 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import type { DocsManifest } from "@/lib/docs-meta";
+import { docsQueries } from "@/lib/docs-api";
+import { DocsLayout } from "@/components/docs-layout";
 import { DocAccessibility } from "@/components/docs/doc-accessibility";
 import { DocApiReference } from "@/components/docs/doc-api-reference";
 import { DocDemoRenderer } from "@/components/docs/doc-demo-renderer";
 import { DocInstallation } from "@/components/docs/doc-installation";
 import { DocRelated } from "@/components/docs/doc-related";
-import { DocSourceCode } from "@/components/docs/doc-source-code";
-import { DocsLayout } from "@/components/docs-layout";
+import { DocCodeView } from "@/components/docs/doc-code-view";
 import { Box, Separator, Surface, Text, VStack } from "@/components/ui";
 
-interface DocsManifest {
-	[key: string]: {
-		title: string;
-		description: string;
-		category: string;
-		status?: string;
-		keywords?: string[];
-		related?: string[];
-		accessibility?: {
-			keyboard?: string[];
-			aria?: string[];
-		};
-		registryName: string;
-		registry: {
-			dependencies: string[];
-			registryDependencies: string[];
-			files: Array<{ path: string; type: string; target: string }>;
-		};
-		demo?: { source: string };
-		examples: Array<{ name: string; source: string }>;
-	};
-}
-
 export const Route = createFileRoute("/components/$component")({
+	loader: async ({ params, context: { queryClient } }) => {
+		const componentKey = params.component.toLowerCase();
+		await Promise.all([
+			queryClient.prefetchQuery(docsQueries.manifest()),
+			queryClient.prefetchQuery(docsQueries.registry(componentKey)),
+		]);
+	},
 	component: ComponentDocPage,
 	notFoundComponent: () => (
 		<DocsLayout>
@@ -43,41 +29,12 @@ export const Route = createFileRoute("/components/$component")({
 
 function ComponentDocPage() {
 	const { component } = Route.useParams();
-	const [manifest, setManifest] = useState<DocsManifest | null>(null);
-	const [loading, setLoading] = useState(true);
-
-	useEffect(() => {
-		fetch("/docs/components.json")
-			.then((res) => res.json())
-			.then((data: DocsManifest) => {
-				setManifest(data);
-				setLoading(false);
-			})
-			.catch(() => setLoading(false));
-	}, []);
-
-	if (loading) {
-		return (
-			<DocsLayout>
-				<Text variant="body2" color="secondary">
-					Loading...
-				</Text>
-			</DocsLayout>
-		);
-	}
-
-	if (!manifest) {
-		return (
-			<DocsLayout>
-				<Text variant="body2" color="secondary">
-					Failed to load documentation data.
-				</Text>
-			</DocsLayout>
-		);
-	}
-
 	const componentKey = component.toLowerCase();
-	const doc = manifest[componentKey];
+
+	const { data: manifest } = useQuery(docsQueries.manifest());
+	const { data: registry } = useQuery(docsQueries.registry(componentKey));
+
+	const doc = manifest?.[componentKey as keyof DocsManifest];
 
 	if (!doc) {
 		return (
@@ -110,23 +67,22 @@ function ComponentDocPage() {
 
 				<Separator tone="subtle" />
 
-				{doc.demo && (
-					<Box>
-						<Text variant="h2">Demo</Text>
-						<Surface padding="medium" variant="sunken">
-							<DocDemoRenderer registryName={doc.registryName} />
-						</Surface>
-						<DocSourceCode code={doc.demo.source} title="Demo Source" />
-					</Box>
-				)}
+			{doc.registryName && registry?.demo && (
+				<Box>
+					<Text variant="h2">Demo</Text>
+					<Surface padding="medium" variant="sunken">
+						<DocDemoRenderer registryName={doc.registryName} />
+					</Surface>
+					<DocCodeView code={registry.demo} title="Demo Source" />
+				</Box>
+			)}
 
 				<Separator tone="subtle" />
 
 				<DocInstallation
 					registryName={doc.registryName}
-					dependencies={doc.registry.dependencies}
-					registryDependencies={doc.registry.registryDependencies}
-					files={doc.registry.files}
+					dependencies={registry?.dependencies ?? []}
+					files={registry?.files ?? []}
 				/>
 
 				<Separator tone="subtle" />
@@ -136,7 +92,7 @@ function ComponentDocPage() {
 						<Text variant="h2">Examples</Text>
 						{doc.examples.map((example) => (
 							<Box key={example.name}>
-								<DocSourceCode code={example.source} title={example.name} />
+								<DocCodeView code={example.source} title={example.name} />
 							</Box>
 						))}
 					</Box>
@@ -162,8 +118,10 @@ function ComponentDocPage() {
 				{doc.related && doc.related.length > 0 && (
 					<>
 						<Separator tone="subtle" />
-						<Text variant="h2">Related Components</Text>
-						<DocRelated related={doc.related} />
+						<Box>
+							<Text variant="h2">Related Components</Text>
+							<DocRelated related={doc.related} />
+						</Box>
 					</>
 				)}
 			</VStack>
