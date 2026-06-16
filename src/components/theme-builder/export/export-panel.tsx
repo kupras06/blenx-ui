@@ -1,6 +1,7 @@
 import * as stylex from "@stylexjs/stylex";
 import { useCallback, useState } from "react";
 import {
+	Accordion,
 	AlertDialog,
 	AlertDialogDescription,
 	AlertDialogHeader,
@@ -107,58 +108,63 @@ ${themeEntries.join("\n")}
 	}, [resetTokens]);
 
 	return (
-		<>
-			<div {...stylex.props(styles.buttonRow)}>
-				<Button variant="outline" size="small" onClick={generateJSON}>
-					Export JSON
-				</Button>
-				<Button variant="outline" size="small" onClick={copyJSON}>
-					{copied === "json" ? "Copied!" : "Copy JSON"}
-				</Button>
-				<Button variant="outline" size="small" onClick={copyStyleX}>
-					{copied === "stylex" ? "Copied!" : "Copy StyleX Theme"}
-				</Button>
-			</div>
-
-			{copied === "stylex" && (
-				<div
-					{...stylex.props(styles.copyFeedback)}
-					style={{ marginTop: spacing["1"] }}
-				>
-					StyleX theme code copied to clipboard!
-				</div>
-			)}
-
-			<Separator style={{ marginBlock: spacing["2"] }} />
-
-			<AlertDialog open={showReset} onOpenChange={setShowReset}>
-				<AlertDialogTrigger>
-					<Button variant="danger" size="small" fullWidth>
-						Reset to Defaults
+		<Accordion.Item value="export">
+			<Accordion.Header>
+				<Accordion.Trigger>Export</Accordion.Trigger>
+			</Accordion.Header>
+			<Accordion.Panel>
+				<div {...stylex.props(styles.buttonRow)}>
+					<Button variant="outline" size="small" onClick={generateJSON}>
+						Export JSON
 					</Button>
-				</AlertDialogTrigger>
-				<AlertDialogPopup>
-					<AlertDialogHeader>
-						<AlertDialogTitle>Reset Theme</AlertDialogTitle>
-						<AlertDialogDescription>
-							This will restore all tokens to their default values. This action
-							cannot be undone.
-						</AlertDialogDescription>
-					</AlertDialogHeader>
-					<VStack gap="small" padding="medium">
-						<Button variant="danger" fullWidth onClick={handleReset}>
-							Reset
+					<Button variant="outline" size="small" onClick={copyJSON}>
+						{copied === "json" ? "Copied!" : "Copy JSON"}
+					</Button>
+					<Button variant="outline" size="small" onClick={copyStyleX}>
+						{copied === "stylex" ? "Copied!" : "Copy StyleX Theme"}
+					</Button>
+				</div>
+
+				{copied === "stylex" && (
+					<div
+						{...stylex.props(styles.copyFeedback)}
+						style={{ marginTop: spacing["1"] }}
+					>
+						StyleX theme code copied to clipboard!
+					</div>
+				)}
+
+				<Separator style={{ marginBlock: spacing["2"] }} />
+
+				<AlertDialog open={showReset} onOpenChange={setShowReset}>
+					<AlertDialogTrigger>
+						<Button variant="danger" size="small" fullWidth>
+							Reset to Defaults
 						</Button>
-						<Button
-							variant="ghost"
-							fullWidth
-							onClick={() => setShowReset(false)}
-						>
-							Cancel
-						</Button>
-					</VStack>
-				</AlertDialogPopup>
-			</AlertDialog>
-		</>
+					</AlertDialogTrigger>
+					<AlertDialogPopup>
+						<AlertDialogHeader>
+							<AlertDialogTitle>Reset Theme</AlertDialogTitle>
+							<AlertDialogDescription>
+								This will restore all tokens to their default values. This
+								action cannot be undone.
+							</AlertDialogDescription>
+						</AlertDialogHeader>
+						<VStack gap="small" padding="medium">
+							<Button variant="danger" fullWidth onClick={handleReset}>
+								Reset
+							</Button>
+							<Button
+								variant="ghost"
+								fullWidth
+								onClick={() => setShowReset(false)}
+							>
+								Cancel
+							</Button>
+						</VStack>
+					</AlertDialogPopup>
+				</AlertDialog>
+			</Accordion.Panel>
+		</Accordion.Item>
 	);
 }

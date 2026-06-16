@@ -1,5 +1,5 @@
 import type { Column } from "@/components/ui";
-import { Table, Text } from "@/components/ui";
+import { Accordion, Table, Text } from "@/components/ui";
 import { theme } from "@/lib/theme/contract.stylex";
 import { componentTokenMap } from "../preview/component-token-map";
 import { useThemeBuilder } from "../theme-builder-context";
@@ -91,23 +91,31 @@ export function TokenTable() {
 	];
 
 	return (
-		<Table
-			columnData={columns}
-			rowData={rowData}
-			rowKey="key"
-			getRowProps={(row) => {
-				const isSelected = selectedToken === row.key;
-				return {
-					onMouseEnter: () => setSelectedToken(row.key as keyof typeof tokens),
-					onMouseLeave: () => setSelectedToken(null),
-					style: {
-						cursor: "pointer",
-						...(isSelected && {
-							backgroundColor: `${theme.focusRing}15`,
-						}),
-					},
-				};
-			}}
-		/>
+		<Accordion.Item value="variables">
+			<Accordion.Header>
+				<Accordion.Trigger>Theme Variables</Accordion.Trigger>
+			</Accordion.Header>
+			<Accordion.Panel>
+				<Table
+					columnData={columns}
+					rowData={rowData}
+					rowKey="key"
+					getRowProps={(row) => {
+						const isSelected = selectedToken === row.key;
+						return {
+							onMouseEnter: () =>
+								setSelectedToken(row.key as keyof typeof tokens),
+							onMouseLeave: () => setSelectedToken(null),
+							style: {
+								cursor: "pointer",
+								...(isSelected && {
+									backgroundColor: `${theme.focusRing}15`,
+								}),
+							},
+						};
+					}}
+				/>
+			</Accordion.Panel>
+		</Accordion.Item>
 	);
 }

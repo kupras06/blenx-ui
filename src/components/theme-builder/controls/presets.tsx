@@ -1,5 +1,5 @@
 import * as stylex from "@stylexjs/stylex";
-import { Box, Text } from "@/components/ui";
+import { Accordion, Box, Text } from "@/components/ui";
 import { spacing } from "@/lib/theme/tokens.stylex";
 import { useThemeBuilder } from "../theme-builder-context";
 import { presets } from "./presets-data";
@@ -87,5 +87,14 @@ export function PresetControls() {
 			})}
 		</div>
 	);
-	return <Box>{content}</Box>;
+	return (
+		<Accordion.Item value="presets">
+			<Accordion.Header>
+				<Accordion.Trigger>Presets</Accordion.Trigger>
+			</Accordion.Header>
+			<Accordion.Panel>
+				<Box>{content}</Box>
+			</Accordion.Panel>
+		</Accordion.Item>
+	);
 }

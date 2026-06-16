@@ -22,7 +22,7 @@ export const splitterStyles = stylex.create({
 		opacity: 0.6,
 	},
 	panel: {
-		overflow: "auto",
+		overflow: "hidden",
 		flexShrink: 0,
 		flexBasis: 0,
 	},

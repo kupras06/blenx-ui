@@ -1,3 +1,4 @@
+import { Accordion } from "@base-ui/react";
 import * as stylex from "@stylexjs/stylex";
 import { theme } from "@/lib/theme/contract.stylex";
 import { borderRadius, fontSize, spacing } from "@/lib/theme/tokens.stylex";
@@ -54,40 +55,45 @@ export const customTheme = stylex.createTheme(theme, {
 
 export function HowItWorks() {
 	return (
-		<>
-			<p {...stylex.props(styles.paragraph)}>
-				Blenx UI uses <span {...stylex.props(styles.inlineCode)}>StyleX</span>{" "}
-				for its design system. StyleX compiles CSS at build time, enabling fast
-				runtime performance with zero runtime CSS-in-JS overhead.
-			</p>
-			<p {...stylex.props(styles.paragraph)}>
-				<strong>Semantic tokens</strong> (like{" "}
-				<span {...stylex.props(styles.inlineCode)}>primary</span>,{" "}
-				<span {...stylex.props(styles.inlineCode)}>background</span>) define the
-				visual identity. These are declared with{" "}
-				<span {...stylex.props(styles.inlineCode)}>stylex.defineVars()</span>:
-			</p>
-			<pre {...stylex.props(styles.codeBlock)}>{semanticCode}</pre>
-			<p {...stylex.props(styles.paragraph)}>
-				<strong>Concrete tokens</strong> (like font sizes, spacing) are design
-				primitives that stay consistent across themes:
-			</p>
-			<pre {...stylex.props(styles.codeBlock)}>{concreteCode}</pre>
-			<p {...stylex.props(styles.paragraph)}>
-				When you customize tokens in the Theme Builder, the preview wraps
-				components in a <span {...stylex.props(styles.inlineCode)}>div</span>{" "}
-				with inline CSS custom properties that override the semantic var values.
-				This avoids{" "}
-				<span {...stylex.props(styles.inlineCode)}>stylex.createTheme()</span>{" "}
-				at runtime (which must be a static call per StyleX rules).
-			</p>
-			<p {...stylex.props(styles.paragraph)}>
-				To export your custom theme for use in your own project, use the Export
-				panel to generate a static{" "}
-				<span {...stylex.props(styles.inlineCode)}>stylex.createTheme()</span>{" "}
-				call:
-			</p>
-			<pre {...stylex.props(styles.codeBlock)}>{runtimeCode}</pre>
-		</>
+		<Accordion.Item value="howitworks">
+			<Accordion.Header>
+				<Accordion.Trigger>How It Works</Accordion.Trigger>
+			</Accordion.Header>
+			<Accordion.Panel>
+				<p {...stylex.props(styles.paragraph)}>
+					Blenx UI uses <span {...stylex.props(styles.inlineCode)}>StyleX</span>{" "}
+					for its design system. StyleX compiles CSS at build time, enabling
+					fast runtime performance with zero runtime CSS-in-JS overhead.
+				</p>
+				<p {...stylex.props(styles.paragraph)}>
+					<strong>Semantic tokens</strong> (like{" "}
+					<span {...stylex.props(styles.inlineCode)}>primary</span>,{" "}
+					<span {...stylex.props(styles.inlineCode)}>background</span>) define
+					the visual identity. These are declared with{" "}
+					<span {...stylex.props(styles.inlineCode)}>stylex.defineVars()</span>:
+				</p>
+				<pre {...stylex.props(styles.codeBlock)}>{semanticCode}</pre>
+				<p {...stylex.props(styles.paragraph)}>
+					<strong>Concrete tokens</strong> (like font sizes, spacing) are design
+					primitives that stay consistent across themes:
+				</p>
+				<pre {...stylex.props(styles.codeBlock)}>{concreteCode}</pre>
+				<p {...stylex.props(styles.paragraph)}>
+					When you customize tokens in the Theme Builder, the preview wraps
+					components in a <span {...stylex.props(styles.inlineCode)}>div</span>{" "}
+					with inline CSS custom properties that override the semantic var
+					values. This avoids{" "}
+					<span {...stylex.props(styles.inlineCode)}>stylex.createTheme()</span>{" "}
+					at runtime (which must be a static call per StyleX rules).
+				</p>
+				<p {...stylex.props(styles.paragraph)}>
+					To export your custom theme for use in your own project, use the
+					Export panel to generate a static{" "}
+					<span {...stylex.props(styles.inlineCode)}>stylex.createTheme()</span>{" "}
+					call:
+				</p>
+				<pre {...stylex.props(styles.codeBlock)}>{runtimeCode}</pre>
+			</Accordion.Panel>
+		</Accordion.Item>
 	);
 }

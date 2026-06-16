@@ -1,4 +1,4 @@
-import { ColorPicker, Grid } from "@/components/ui";
+import { Accordion, ColorPicker, Grid } from "@/components/ui";
 import { useThemeBuilder } from "../theme-builder-context";
 
 const colorTokens = [
@@ -20,17 +20,24 @@ export function ColorControls() {
 	const updateTokenDebounced = useThemeBuilder((s) => s.updateTokenDebounced);
 
 	return (
-		<Grid columns={2}>
-			{colorTokens.map(({ key, label }) => (
-				<ColorPicker
-					key={key}
-					label={label}
-					value={tokens[key]}
-					onChange={(color) => {
-						updateTokenDebounced(key, color);
-					}}
-				/>
-			))}
-		</Grid>
+		<Accordion.Item value="colors">
+			<Accordion.Header>
+				<Accordion.Trigger>Colors</Accordion.Trigger>
+			</Accordion.Header>
+			<Accordion.Panel>
+				<Grid columns={2}>
+					{colorTokens.map(({ key, label }) => (
+						<ColorPicker
+							key={key}
+							label={label}
+							value={tokens[key]}
+							onChange={(color) => {
+								updateTokenDebounced(key, color);
+							}}
+						/>
+					))}
+				</Grid>
+			</Accordion.Panel>
+		</Accordion.Item>
 	);
 }

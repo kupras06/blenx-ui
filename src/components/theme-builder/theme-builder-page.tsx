@@ -41,6 +41,7 @@ const styles = stylex.create({
 		borderRightStyle: "solid",
 		borderRightColor: theme.border,
 		overflow: "auto",
+		maxHeight: "90svh",
 		backgroundColor: theme.background,
 	},
 	sidebarOverlay: {
@@ -87,68 +88,13 @@ function SidebarContent() {
 		<Accordion.Root
 			defaultValue={["presets", "colors", "typography", "noncolor", "export"]}
 		>
-			<Accordion.Item value="presets">
-				<Accordion.Header>
-					<Accordion.Trigger>Presets</Accordion.Trigger>
-				</Accordion.Header>
-				<Accordion.Panel>
-					<PresetControls />
-				</Accordion.Panel>
-			</Accordion.Item>
-
-			<Accordion.Item value="colors">
-				<Accordion.Header>
-					<Accordion.Trigger>Colors</Accordion.Trigger>
-				</Accordion.Header>
-				<Accordion.Panel>
-					<ColorControls />
-				</Accordion.Panel>
-			</Accordion.Item>
-
-			<Accordion.Item value="typography">
-				<Accordion.Header>
-					<Accordion.Trigger>Typography</Accordion.Trigger>
-				</Accordion.Header>
-				<Accordion.Panel>
-					<TypographyControls />
-				</Accordion.Panel>
-			</Accordion.Item>
-
-			<Accordion.Item value="noncolor">
-				<Accordion.Header>
-					<Accordion.Trigger>Design Tokens</Accordion.Trigger>
-				</Accordion.Header>
-				<Accordion.Panel>
-					<NonColorControls />
-				</Accordion.Panel>
-			</Accordion.Item>
-
-			<Accordion.Item value="export">
-				<Accordion.Header>
-					<Accordion.Trigger>Export</Accordion.Trigger>
-				</Accordion.Header>
-				<Accordion.Panel>
-					<ExportPanel />
-				</Accordion.Panel>
-			</Accordion.Item>
-
-			<Accordion.Item value="variables">
-				<Accordion.Header>
-					<Accordion.Trigger>Theme Variables</Accordion.Trigger>
-				</Accordion.Header>
-				<Accordion.Panel>
-					<TokenTable />
-				</Accordion.Panel>
-			</Accordion.Item>
-
-			<Accordion.Item value="howitworks">
-				<Accordion.Header>
-					<Accordion.Trigger>How It Works</Accordion.Trigger>
-				</Accordion.Header>
-				<Accordion.Panel>
-					<HowItWorks />
-				</Accordion.Panel>
-			</Accordion.Item>
+			<PresetControls />
+			<ColorControls />
+			<TypographyControls />
+			<NonColorControls />
+			<ExportPanel />
+			<TokenTable />
+			<HowItWorks />
 		</Accordion.Root>
 	);
 }
@@ -240,7 +186,7 @@ function ThemeBuilderInner() {
 					</ScrollArea>
 				</Splitter.Panel>
 				<Splitter.Handle />
-				<Splitter.Panel>
+				<Splitter.Panel minSize={30}>
 					<PreviewPanel compact={false} />
 				</Splitter.Panel>
 			</Splitter>
