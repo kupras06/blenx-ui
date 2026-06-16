@@ -1,28 +1,13 @@
-import * as stylex from "@stylexjs/stylex";
-import type { ChangeEvent } from "react";
-import { Accordion, Select, Text } from "@/components/ui";
-import { spacing } from "@/lib/theme/tokens.stylex";
+import {
+	Accordion,
+	HStack,
+	Select,
+	Slider,
+	Text,
+	VStack,
+} from "@/components/ui";
 import { useThemeBuilder } from "../theme-builder-context";
 
-const styles = stylex.create({
-	sliderRow: {
-		display: "flex",
-		flexDirection: "column",
-		gap: spacing["1"],
-	},
-	sliderLabel: {
-		display: "flex",
-		justifyContent: "space-between",
-		alignItems: "center",
-	},
-	slider: {
-		width: "100%",
-		accentColor: "var(--x1732vrt)",
-	},
-	selectWrapper: {
-		width: "100%",
-	},
-});
 
 const fontFamilyOptions = [
 	{
@@ -55,98 +40,99 @@ export function TypographyControls() {
 				<Accordion.Trigger>Typography</Accordion.Trigger>
 			</Accordion.Header>
 			<Accordion.Panel>
-				<Select.Wrapper label="Font Family">
-					<Select.Root
-						value={tokens.fontFamilySans}
-						onValueChange={(value) =>
-							updateToken("fontFamilySans", value as string)
-						}
-					>
-						<Select.Trigger size="sm">
-							<Select.Value placeholder="Select font" />
-							<Select.Icon />
-						</Select.Trigger>
-						<Select.Portal>
-							<Select.Positioner>
-								<Select.Popup>
-									<Select.List>
-										{fontFamilyOptions.map((opt) => (
-											<Select.Item key={opt.value} value={opt.value}>
-												{opt.label}
-											</Select.Item>
-										))}
-									</Select.List>
-								</Select.Popup>
-							</Select.Positioner>
-						</Select.Portal>
-					</Select.Root>
-				</Select.Wrapper>
-				<div {...stylex.props(styles.sliderRow)}>
-					<div {...stylex.props(styles.sliderLabel)}>
-						<Text variant="body2">Base Font Size</Text>
-						<Text variant="body2" color="secondary">
-							{tokens.baseFontSize}
-						</Text>
-					</div>
-					<input
-						type="range"
-						min="12"
-						max="20"
-						step="1"
-						{...stylex.props(styles.slider)}
-						value={parseInt(tokens.baseFontSize, 10)}
-						onChange={(e: ChangeEvent<HTMLInputElement>) => {
-							updateToken("baseFontSize", `${e.target.value}px`);
-						}}
-					/>
-				</div>
+				<VStack gap="medium">
+					<Select.Wrapper label="Font Family">
+						<Select.Root
+							value={tokens.fontFamilySans}
+							onValueChange={(value) =>
+								updateToken("fontFamilySans", value as string)
+							}
+						>
+							<Select.Trigger size="sm">
+								<Select.Value placeholder="Select font" />
+								<Select.Icon />
+							</Select.Trigger>
+							<Select.Portal>
+								<Select.Positioner>
+									<Select.Popup>
+										<Select.List>
+											{fontFamilyOptions.map((opt) => (
+												<Select.Item key={opt.value} value={opt.value}>
+													{opt.label}
+												</Select.Item>
+											))}
+										</Select.List>
+									</Select.Popup>
+								</Select.Positioner>
+							</Select.Portal>
+						</Select.Root>
+					</Select.Wrapper>
+					<VStack gap="xxsmall">
+						<HStack justify="between">
+							<Text variant="body2">Base Font Size</Text>
+							<Text variant="body2" color="secondary">
+								{tokens.baseFontSize}
+							</Text>
+						</HStack>
+						<Slider
+							min={12}
+							max={20}
+							step={1}
+							value={parseInt(tokens.baseFontSize, 10)}
+							onValueChange={(value) =>
+								updateToken("baseFontSize", `${value}px`)
+							}
+						/>
+					</VStack>
 
-				<div {...stylex.props(styles.sliderRow)}>
-					<div {...stylex.props(styles.sliderLabel)}>
-						<Text variant="body2">Heading Scale</Text>
-						<Text variant="body2" color="secondary">
-							{tokens.headingScale.toFixed(2)}
-						</Text>
-					</div>
-					<input
-						type="range"
-						min="1.0"
-						max="2.0"
-						step="0.05"
-						{...stylex.props(styles.slider)}
-						value={tokens.headingScale}
-						onChange={(e: ChangeEvent<HTMLInputElement>) => {
-							updateToken("headingScale", parseFloat(e.target.value));
-						}}
-					/>
-				</div>
+					<VStack gap="xxsmall">
+						<HStack justify="between">
+							<Text variant="body2">Heading Scale</Text>
+							<Text variant="body2" color="secondary">
+								{tokens.headingScale.toFixed(2)}
+							</Text>
+						</HStack>
+						<Slider
+							min={1.0}
+							max={2.0}
+							step={0.05}
+							value={tokens.headingScale}
+							onValueChange={(value) =>
+								updateToken(
+									"headingScale",
+									Array.isArray(value) ? value[0] : value,
+								)
+							}
+						/>
+					</VStack>
 
-				<Select.Wrapper label="Font Weight">
-					<Select.Root
-						value={String(tokens.fontWeight ?? "400")}
-						onValueChange={(value) =>
-							updateToken("fontWeight", value as string)
-						}
-					>
-						<Select.Trigger size="sm">
-							<Select.Value placeholder="Select weight" />
-							<Select.Icon />
-						</Select.Trigger>
-						<Select.Portal>
-							<Select.Positioner>
-								<Select.Popup>
-									<Select.List>
-										{fontWeightOptions.map((opt) => (
-											<Select.Item key={opt.value} value={opt.value}>
-												{opt.label}
-											</Select.Item>
-										))}
-									</Select.List>
-								</Select.Popup>
-							</Select.Positioner>
-						</Select.Portal>
-					</Select.Root>
-				</Select.Wrapper>
+					<Select.Wrapper label="Font Weight">
+						<Select.Root
+							value={String(tokens.fontWeight ?? "400")}
+							onValueChange={(value) =>
+								updateToken("fontWeight", value as string)
+							}
+						>
+							<Select.Trigger size="sm">
+								<Select.Value placeholder="Select weight" />
+								<Select.Icon />
+							</Select.Trigger>
+							<Select.Portal>
+								<Select.Positioner>
+									<Select.Popup>
+										<Select.List>
+											{fontWeightOptions.map((opt) => (
+												<Select.Item key={opt.value} value={opt.value}>
+													{opt.label}
+												</Select.Item>
+											))}
+										</Select.List>
+									</Select.Popup>
+								</Select.Positioner>
+							</Select.Portal>
+						</Select.Root>
+					</Select.Wrapper>
+				</VStack>
 			</Accordion.Panel>
 		</Accordion.Item>
 	);
