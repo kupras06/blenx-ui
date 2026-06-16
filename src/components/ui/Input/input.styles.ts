@@ -5,6 +5,8 @@ import { spacing } from "@/lib/theme/tokens.stylex";
 export const inputStyles = stylex.create({
 	label: {
 		fontSize: 14,
+		display: "inline-flex",
+		gap: 4,
 		lineHeight: 1.4,
 		fontWeight: 400,
 		color: theme.contentSecondary,

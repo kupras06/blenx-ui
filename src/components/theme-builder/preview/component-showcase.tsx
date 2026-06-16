@@ -27,10 +27,14 @@ import {
 	DialogTrigger,
 	HStack,
 	Input,
+	Label,
 	Progress,
 	ProgressIndicator,
 	ProgressLabel,
 	ProgressTrack,
+	Radio,
+	RadioGroup,
+	RadioGroupItem,
 	Select,
 	Switch,
 	Text,
@@ -38,67 +42,15 @@ import {
 	VStack,
 } from "@/components/ui";
 import { theme } from "@/lib/theme/contract.stylex";
-import { borderRadius, fontSize, spacing } from "@/lib/theme/tokens.stylex";
+import { fontSize, spacing } from "@/lib/theme/tokens.stylex";
 
 const styles = stylex.create({
-	section: {
-		marginBottom: spacing["6"],
-	},
-	sectionTitle: {
-		fontSize: fontSize.medium,
-		fontWeight: 600,
-		marginBottom: spacing["3"],
-		color: theme.contentPrimary,
-	},
-	row: {
-		display: "flex",
-		flexWrap: "wrap",
-		alignItems: "center",
-		gap: spacing["2"],
-		marginBottom: spacing["3"],
-	},
-	formGroup: {
-		display: "flex",
-		flexDirection: "column",
-		gap: spacing["2"],
-		maxWidth: 320,
-		marginBottom: spacing["3"],
-	},
-	alertRow: {
-		display: "flex",
-		flexDirection: "column",
-		gap: spacing["2"],
-		marginBottom: spacing["3"],
-	},
-	radioGroup: {
-		display: "flex",
-		gap: spacing["3"],
-	},
 	radioLabel: {
 		display: "flex",
 		alignItems: "center",
 		gap: spacing["1"],
 		fontSize: fontSize.small,
 		color: theme.contentPrimary,
-	},
-	progressOuter: {
-		width: "100%",
-		height: 8,
-		borderRadius: borderRadius.full,
-		backgroundColor: theme.surfaceSubtle,
-		overflow: "hidden",
-	},
-	progressInner: {
-		height: "100%",
-		borderRadius: borderRadius.full,
-		backgroundColor: theme.primary,
-		transition: "width 0.3s ease",
-	},
-	badgeRow: {
-		display: "flex",
-		gap: spacing["1"],
-		flexWrap: "wrap",
-		alignItems: "center",
 	},
 });
 
@@ -163,18 +115,17 @@ export function ComponentShowcase() {
 					<Text variant="body2">Toggle me</Text>
 				</HStack>
 				<HStack>
-					<label {...stylex.props(styles.radioLabel)}>
-						<input type="radio" name="showcase-radio" />
-						Option A
-					</label>
-					<label {...stylex.props(styles.radioLabel)}>
-						<input type="radio" name="showcase-radio" />
-						Option B
-					</label>
-					<label {...stylex.props(styles.radioLabel)}>
-						<input type="radio" name="showcase-radio" />
-						Option C
-					</label>
+					<RadioGroup defaultValue="option1">
+						<Label>
+							<RadioGroupItem value="option1" /> Option A
+						</Label>
+						<Label>
+							<RadioGroupItem value="option2" /> Option B
+						</Label>
+						<Label>
+							<RadioGroupItem value="option3" /> Option C
+						</Label>
+					</RadioGroup>
 				</HStack>
 				<HStack>
 					<input type="checkbox" />
@@ -183,8 +134,8 @@ export function ComponentShowcase() {
 			</VStack>
 
 			{/* Navigation */}
-			<div {...stylex.props(styles.section)}>
-				<h3 {...stylex.props(styles.sectionTitle)}>Navigation</h3>
+			<Box withBorder padding="small">
+				<Text variant="h3">Navigation</Text>
 				<Breadcrumb>
 					<BreadcrumbList>
 						<BreadcrumbItem>
@@ -200,9 +151,9 @@ export function ComponentShowcase() {
 						</BreadcrumbItem>
 					</BreadcrumbList>
 				</Breadcrumb>
-			</div>
+			</Box>
 
-			<VStack withBorder padding="xxsmall">
+			<VStack withBorder padding="small">
 				<Text variant="h3">Feedback</Text>
 				<Alert variant="info">This is an info message.</Alert>
 				<Alert variant="success">Operation completed successfully!</Alert>
