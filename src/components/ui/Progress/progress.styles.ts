@@ -32,7 +32,7 @@ export const progressStyles = stylex.create({
 		transitionTimingFunction: "ease",
 	},
 	label: {
-		fontSize: fontSize.small,
+		fontSize: fontSize.medium,
 		fontWeight: fontWeight.medium,
 	},
 	value: {

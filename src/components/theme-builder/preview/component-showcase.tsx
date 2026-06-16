@@ -21,6 +21,10 @@ import {
 	DialogTrigger,
 	HStack,
 	Input,
+	Progress,
+	ProgressIndicator,
+	ProgressLabel,
+	ProgressTrack,
 	Select,
 	Switch,
 	Text,
@@ -194,15 +198,12 @@ export function ComponentShowcase() {
 					<Alert variant="warning">Please review your settings.</Alert>
 					<Alert variant="error">Something went wrong.</Alert>
 				</div>
-				<div>
-					<Text variant="body2">Progress</Text>
-					<div {...stylex.props(styles.progressOuter)}>
-						<div
-							{...stylex.props(styles.progressInner)}
-							style={{ width: "60%" }}
-						/>
-					</div>
-				</div>
+				<Progress value={60}>
+					<ProgressLabel>Progress</ProgressLabel>
+					<ProgressTrack>
+						<ProgressIndicator />
+					</ProgressTrack>
+				</Progress>
 			</div>
 
 			{/* Data Display */}
