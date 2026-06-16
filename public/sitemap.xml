@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://blenx-ui.vercel.app/</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/docs/installation</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/button</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/dialog</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/table</loc>
+  </url>
+</urlset>

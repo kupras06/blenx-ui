@@ -24,10 +24,59 @@ export const Route = createRootRouteWithContext()({
 				content: "width=device-width, initial-scale=1",
 			},
 			{
-				title: "Blenx UI",
+				title:
+					"Blenx UI — Modern React Component Library powered by StyleX & Base UI",
+			},
+			{
+				name: "description",
+				content:
+					"A modern, no-Tailwind React component library built with StyleX and Base UI. Accessible, headless primitives with shadcn-style ergonomics.",
+			},
+			{
+				name: "keywords",
+				content:
+					"stylex, base-ui, react, react-components, component-library, ui-kit, design-system, no-tailwind, shadcn, modern, typescript, zustand, ui-components, headless-ui, accessible-components",
+			},
+			{
+				name: "author",
+				content: "Blenx UI",
+			},
+			{
+				property: "og:type",
+				content: "website",
+			},
+			{
+				property: "og:site_name",
+				content: "Blenx UI",
+			},
+			{
+				property: "og:title",
+				content: "Blenx UI — Modern React Component Library",
+			},
+			{
+				property: "og:description",
+				content:
+					"Built with StyleX and Base UI. Accessible, headless primitives with shadcn-style ergonomics.",
+			},
+			{
+				name: "twitter:card",
+				content: "summary_large_image",
+			},
+			{
+				name: "twitter:title",
+				content: "Blenx UI — Modern React Component Library",
+			},
+			{
+				name: "twitter:description",
+				content:
+					"Built with StyleX and Base UI. Accessible, headless primitives with shadcn-style ergonomics.",
 			},
 		],
 		links: [
+			{
+				rel: "canonical",
+				href: "https://blenx-ui.vercel.app/",
+			},
 			{
 				rel: "preconnect",
 				href: "https://fonts.googleapis.com",
@@ -40,6 +89,10 @@ export const Route = createRootRouteWithContext()({
 			{
 				rel: "stylesheet",
 				href: "https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=DM+Mono&display=swap",
+			},
+			{
+				rel: "manifest",
+				href: "/manifest.json",
 			},
 		],
 	}),
@@ -63,6 +116,24 @@ function RootDocument() {
 		<html lang="en" {...stylex.props(appTheme)}>
 			<head>
 				<HeadContent />
+				<meta property="og:image" content="https://blenx-ui.vercel.app/og" />
+				<meta name="twitter:image" content="https://blenx-ui.vercel.app/og" />
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify({
+							"@context": "https://schema.org",
+							"@type": "WebSite",
+							name: "Blenx UI",
+							url: "https://blenx-ui.vercel.app",
+							description:
+								"A modern, no-Tailwind React component library built with StyleX and Base UI.",
+							applicationCategory: "Component Library",
+							keywords:
+								"stylex, base-ui, react, component-library, ui-kit, design-system, shadcn",
+						}),
+					}}
+				/>
 				{import.meta.env.DEV && (
 					<>
 						<link rel="stylesheet" href="/virtual:stylex.css" />
