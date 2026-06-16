@@ -25,5 +25,6 @@
       "target": "@ui/Badge/badge.styles.ts"
     }
   ],
-  "type": "registry:ui"
+  "type": "registry:ui",
+  "demo": "import * as stylex from \"@stylexjs/stylex\";\nimport { VStack } from \"../Stack/stack\";\nimport { Text } from \"../Text/text\";\nimport { Badge } from \"./badge\";\n\nconst styles = stylex.create({\n\tgrid: {\n\t\tdisplay: \"flex\",\n\t\tflexWrap: \"wrap\",\n\t\tgap: \"var(--space-2)\",\n\t\talignItems: \"center\",\n\t},\n});\n\nfunction BadgeDemo() {\n\treturn (\n\t\t<VStack gap=\"medium\">\n\t\t\t<Text variant=\"h6\">Variants</Text>\n\t\t\t<div {...stylex.props(styles.grid)}>\n\t\t\t\t<Badge variant=\"default\">Default</Badge>\n\t\t\t\t<Badge variant=\"primary\">Primary</Badge>\n\t\t\t\t<Badge variant=\"secondary\">Secondary</Badge>\n\t\t\t</div>\n\t\t</VStack>\n\t);\n}\n\nexport { BadgeDemo as Demo };\n"
 }
