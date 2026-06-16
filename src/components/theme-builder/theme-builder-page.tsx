@@ -5,6 +5,7 @@ import {
 	Accordion,
 	Button,
 	ScrollArea,
+	Splitter,
 	Tabs,
 	TabsList,
 	TabsPanel,
@@ -219,12 +220,30 @@ function ThemeBuilderInner() {
 	const isTablet = useMediaQuery("(max-width: 1023px)");
 	const compact = isMobile || isTablet;
 
+	if (compact) {
+		return (
+			<ThemePreviewProvider>
+				<div {...stylex.props(styles.layout, styles.layoutFull)}>
+					<Sidebar compact />
+					<PreviewPanel compact />
+				</div>
+			</ThemePreviewProvider>
+		);
+	}
+
 	return (
 		<ThemePreviewProvider>
-			<div {...stylex.props(styles.layout, compact && styles.layoutFull)}>
-				<Sidebar compact={compact} />
-				<PreviewPanel compact={compact} />
-			</div>
+			<Splitter orientation="horizontal">
+				<Splitter.Panel defaultSize={28} minSize={18} maxSize={50}>
+					<ScrollArea {...stylex.props(styles.sidebar)}>
+						<SidebarContent />
+					</ScrollArea>
+				</Splitter.Panel>
+				<Splitter.Handle />
+				<Splitter.Panel>
+					<PreviewPanel compact={false} />
+				</Splitter.Panel>
+			</Splitter>
 		</ThemePreviewProvider>
 	);
 }

@@ -14,7 +14,7 @@ const styles = stylex.create({
 		zIndex: 200,
 		backgroundColor: theme.background,
 		paddingInline: spacing["4"],
-		paddingBlock: spacing["3"],
+		paddingBlock: spacing["1"],
 	},
 	inner: {
 		display: "flex",
