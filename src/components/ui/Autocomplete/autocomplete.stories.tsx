@@ -1,5 +1,5 @@
 import { Stack } from "../Stack/stack";
-import Autocomplete from "./autocomplete";
+import { Autocomplete } from "./autocomplete";
 
 export function DefaultStory() {
 	return (

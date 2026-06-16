@@ -51,4 +51,3 @@ function GridItem({ span: spanProp, style, ...props }: GridItemProps) {
 }
 
 export { Grid, GridItem };
-export default Grid;

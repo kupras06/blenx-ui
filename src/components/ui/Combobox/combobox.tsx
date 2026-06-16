@@ -419,4 +419,3 @@ export const useComboboxFilter: typeof ComboboxPrimitive.useFilter =
 	ComboboxPrimitive.useFilter;
 
 export { ComboboxPrimitive };
-export default ComboboxInput;

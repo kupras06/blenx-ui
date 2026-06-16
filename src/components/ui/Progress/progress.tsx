@@ -83,12 +83,4 @@ export function ProgressValue({
 	);
 }
 
-export const ProgressBar = {
-	Root: Progress,
-	Label: ProgressLabel,
-	Track: ProgressTrack,
-	Indicator: ProgressIndicator,
-	Value: ProgressValue,
-};
-
 export { ProgressPrimitive };

@@ -20,12 +20,12 @@ export const breadcrumbsStyles = stylex.create({
 		display: "flex",
 		flexWrap: "wrap",
 		alignItems: "center",
-		gap: 6,
+		gap: {
+			default: 6,
+			[mediaQueries.sm]: 10,
+		},
 		fontSize: fontSize.small,
 		color: theme.contentSecondary,
-		[mediaQueries.sm]: {
-			gap: 10,
-		},
 	},
 	item: {
 		display: "inline-flex",

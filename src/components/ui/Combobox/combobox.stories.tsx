@@ -1,5 +1,5 @@
 import { Stack } from "../Stack/stack";
-import Combobox from "./combobox";
+import { Combobox } from "./combobox";
 
 export function DefaultStory() {
 	return (

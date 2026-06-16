@@ -1,7 +1,7 @@
 "use client";
 
 import { mergeProps, useRender } from "@base-ui/react";
-import { CaretRight, DotsThree } from "@phosphor-icons/react";
+import { CaretRightIcon, DotsThreeIcon } from "@phosphor-icons/react";
 import * as stylex from "@stylexjs/stylex";
 import type { ComponentPropsWithoutRef } from "react";
 import type { PropsWithStylex } from "@/utils/stylex.utils";
@@ -49,11 +49,7 @@ export function BreadcrumbPage({ style, ...props }: SpanProps) {
 	);
 }
 
-export function BreadcrumbSeparator({
-	children,
-	style,
-	...props
-}: LiProps) {
+export function BreadcrumbSeparator({ children, style, ...props }: LiProps) {
 	return (
 		<li
 			role="presentation"
@@ -61,12 +57,10 @@ export function BreadcrumbSeparator({
 			{...stylex.props(breadcrumbsStyles.separator, style)}
 			{...props}
 		>
-			{children ?? <CaretRight size={16} />}
+			{children ?? <CaretRightIcon size={16} />}
 		</li>
 	);
 }
-
-export default Breadcrumb;
 
 export function BreadcrumbEllipsis({ style, ...props }: SpanProps) {
 	return (
@@ -75,18 +69,8 @@ export function BreadcrumbEllipsis({ style, ...props }: SpanProps) {
 			{...stylex.props(breadcrumbsStyles.ellipsis, style)}
 			{...props}
 		>
-			<DotsThree size={16} />
+			<DotsThreeIcon size={16} />
 			<span {...stylex.props(breadcrumbsStyles.srOnly)}>More</span>
 		</span>
 	);
 }
-
-export const Breadcrumbs = {
-	Root: Breadcrumb,
-	List: BreadcrumbList,
-	Item: BreadcrumbItem,
-	Link: BreadcrumbLink,
-	Page: BreadcrumbPage,
-	Separator: BreadcrumbSeparator,
-	Ellipsis: BreadcrumbEllipsis,
-};

@@ -15,6 +15,12 @@ Whenever writing or editing StyleX styles, reference `@stylex-authoring.md` for 
 - Zustand stores should be created with `create()` and exported as hooks directly.
 - For stores that need debouncing, use module-level `Map<string, ReturnType<typeof setTimeout>>` for timer tracking (not refs), since zustand stores are singletons.
 
+## Component Exports
+
+- Component files must only use **named exports** (`export {}` and `export type {}`). Do not group sub-components into a namespace object (e.g. `export const Accordion = { Root, Item }`). Instead, export each sub-component individually and let consumers import them by name.
+- **No `default` exports** in component files or barrel files.
+- The barrel file (`index.ts`) re-exports all named exports.
+
 ### Scoped Stores (Provider pattern)
 
 For stores that should be scoped to a specific route or subtree (not global singletons), use `createContext` from `zustand-utils`:

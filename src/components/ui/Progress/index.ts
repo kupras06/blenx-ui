@@ -1,6 +1,5 @@
 export {
 	Progress,
-	ProgressBar,
 	ProgressIndicator,
 	ProgressLabel,
 	ProgressPrimitive,

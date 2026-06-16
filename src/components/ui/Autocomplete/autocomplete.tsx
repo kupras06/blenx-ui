@@ -340,4 +340,3 @@ export const useAutocompleteFilter: typeof AutocompletePrimitive.useFilter =
 	AutocompletePrimitive.useFilter;
 
 export { Autocomplete, AutocompleteInput };
-export default AutocompleteInput;

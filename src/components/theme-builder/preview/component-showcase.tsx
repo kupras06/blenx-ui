@@ -5,6 +5,12 @@ import {
 	AvatarFallback,
 	Badge,
 	Box,
+	Breadcrumb,
+	BreadcrumbItem,
+	BreadcrumbLink,
+	BreadcrumbList,
+	BreadcrumbPage,
+	BreadcrumbSeparator,
 	Button,
 	Card,
 	CardBody,
@@ -31,7 +37,6 @@ import {
 	Textarea,
 	VStack,
 } from "@/components/ui";
-import Breadcrumbs from "@/components/ui/Breadcrumbs/breadcrumbs";
 import { theme } from "@/lib/theme/contract.stylex";
 import { borderRadius, fontSize, spacing } from "@/lib/theme/tokens.stylex";
 
@@ -180,13 +185,21 @@ export function ComponentShowcase() {
 			{/* Navigation */}
 			<div {...stylex.props(styles.section)}>
 				<h3 {...stylex.props(styles.sectionTitle)}>Navigation</h3>
-				<Breadcrumbs>
-					<a href="#home">Home</a>
-					<span>/</span>
-					<a href="#category">Category</a>
-					<span>/</span>
-					<span>Current</span>
-				</Breadcrumbs>
+				<Breadcrumb>
+					<BreadcrumbList>
+						<BreadcrumbItem>
+							<BreadcrumbLink href="#home">Home</BreadcrumbLink>
+							<BreadcrumbSeparator />
+						</BreadcrumbItem>
+						<BreadcrumbItem>
+							<BreadcrumbLink href="#category">Category</BreadcrumbLink>
+							<BreadcrumbSeparator />
+						</BreadcrumbItem>
+						<BreadcrumbItem>
+							<BreadcrumbPage>Current</BreadcrumbPage>
+						</BreadcrumbItem>
+					</BreadcrumbList>
+				</Breadcrumb>
 			</div>
 
 			<VStack withBorder padding="xxsmall">
