@@ -1,6 +1,6 @@
 import * as stylex from "@stylexjs/stylex";
 import { theme } from "@/lib/theme/contract.stylex";
-import { fontSize, spacing } from "@/lib/theme/tokens.stylex";
+import { fontSize, fonts, spacing } from "@/lib/theme/tokens.stylex";
 
 export const buttonSizes = stylex.create({
 	xsmall: {
@@ -60,7 +60,7 @@ export const buttonVariantStyles = stylex.create({
 	ghost: {
 		backgroundColor: "transparent",
 		borderColor: "transparent",
-		color: theme.contentPrimary,
+		color: theme.contentAccent,
 		":hover:not(:disabled)": {
 			backgroundColor: theme.backgroundSubtle,
 		},
@@ -137,6 +137,7 @@ export const buttonStyles = stylex.create({
 		fontWeight: 500,
 		height: "fit-content",
 		fontSize: theme.fontSize,
+		fontFamily: fonts.display,
 		textDecoration: "none",
 		transition: "all 0.2s ease",
 		":disabled": {

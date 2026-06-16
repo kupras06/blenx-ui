@@ -1,27 +1,20 @@
 import { Tabs as TabsPrimitive } from "@base-ui/react/tabs";
 import * as stylex from "@stylexjs/stylex";
 import * as React from "react";
+import type { PropsWithStylex } from "@/utils/stylex.utils";
 import { tabsStyles } from "./tabs.styles";
 
 type TabsVariant = "underline" | "ghost" | "segmented";
-type ClassNameProp<State> = string | ((state: State) => string | undefined);
 
-type TabsRootProps = Omit<TabsPrimitive.Root.Props, "className"> & {
-	className?: ClassNameProp<TabsPrimitive.Root.State>;
+type TabsRootProps = PropsWithStylex<TabsPrimitive.Root.Props> & {
 	variant?: TabsVariant;
 };
 
-type TabsListProps = Omit<TabsPrimitive.List.Props, "className"> & {
-	className?: ClassNameProp<TabsPrimitive.List.State>;
-};
+type TabsListProps = PropsWithStylex<TabsPrimitive.List.Props> & {};
 
-type TabsTabProps = Omit<TabsPrimitive.Tab.Props, "className"> & {
-	className?: ClassNameProp<TabsPrimitive.Tab.State>;
-};
+type TabsTabProps = PropsWithStylex<TabsPrimitive.Tab.Props>;
 
-type TabsPanelProps = Omit<TabsPrimitive.Panel.Props, "className"> & {
-	className?: ClassNameProp<TabsPrimitive.Panel.State>;
-};
+type TabsPanelProps = PropsWithStylex<TabsPrimitive.Panel.Props>;
 
 type TabsContextValue = {
 	variant: TabsVariant;
@@ -35,20 +28,10 @@ function useTabsContext(): TabsContextValue {
 	return React.useContext(TabsContext) ?? { variant: DEFAULT_VARIANT };
 }
 
-function mergeClassName<State>(
-	baseClassName: string,
-	className?: ClassNameProp<State>,
-) {
-	return (state: State) => {
-		const resolvedClassName =
-			typeof className === "function" ? className(state) : className;
-		return [baseClassName, resolvedClassName].filter(Boolean).join(" ");
-	};
-}
 
 export function Tabs({
 	children,
-	className,
+	style,
 	variant = DEFAULT_VARIANT,
 	...props
 }: TabsRootProps) {
@@ -59,8 +42,9 @@ export function Tabs({
 					const base = stylex.props(
 						tabsStyles.root,
 						state.orientation === "vertical" && tabsStyles.rootVertical,
+						style,
 					);
-					return mergeClassName(base.className ?? "", className)(state);
+					return base.className ?? "";
 				}}
 				{...props}
 			>
@@ -70,7 +54,7 @@ export function Tabs({
 	);
 }
 
-export function TabsList({ className, ...props }: TabsListProps) {
+export function TabsList({ style, ...props }: TabsListProps) {
 	const { variant } = useTabsContext();
 
 	return (
@@ -85,16 +69,17 @@ export function TabsList({ className, ...props }: TabsListProps) {
 					variant === "underline" && tabsStyles.listUnderline,
 					variant === "ghost" && tabsStyles.listGhost,
 					variant === "segmented" && tabsStyles.listSegmented,
+					style,
 				);
 
-				return mergeClassName(base.className ?? "", className)(state);
+				return base.className;
 			}}
 			{...props}
 		/>
 	);
 }
 
-export function TabsTab({ className, ...props }: TabsTabProps) {
+export function TabsTab({ style, ...props }: TabsTabProps) {
 	const { variant } = useTabsContext();
 
 	return (
@@ -102,27 +87,22 @@ export function TabsTab({ className, ...props }: TabsTabProps) {
 			className={(state) => {
 				const base = stylex.props(
 					tabsStyles.tab,
-
 					variant === "underline" && tabsStyles.tabUnderline,
 					variant === "ghost" && tabsStyles.tabGhost,
 					variant === "segmented" && tabsStyles.tabSegmented,
-
 					state.orientation === "vertical" && tabsStyles.tabVertical,
-
 					state.active &&
 						variant === "underline" &&
 						tabsStyles.tabUnderlineActive,
-
 					state.active && variant === "ghost" && tabsStyles.tabGhostActive,
-
 					state.active &&
 						variant === "segmented" &&
 						tabsStyles.tabSegmentedActive,
-
 					state.disabled && tabsStyles.tabDisabled,
+					style,
 				);
 
-				return mergeClassName(base.className ?? "", className)(state);
+				return base.className ?? "";
 			}}
 			{...props}
 		/>
@@ -133,15 +113,16 @@ export function TabsIndicator() {
 	return null;
 }
 
-export function TabsPanel({ className, ...props }: TabsPanelProps) {
+export function TabsPanel({ style, ...props }: TabsPanelProps) {
 	return (
 		<TabsPrimitive.Panel
 			className={(state) => {
 				const base = stylex.props(
 					tabsStyles.panel,
 					state.orientation === "vertical" && tabsStyles.panelVertical,
+					style,
 				);
-				return mergeClassName(base.className ?? "", className)(state);
+				return base.className ?? "";
 			}}
 			{...props}
 		/>

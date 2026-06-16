@@ -5,6 +5,7 @@ import {
 	duration,
 	easing,
 	fontSize,
+	fonts,
 	fontWeight,
 	spacing,
 } from "@/lib/theme/tokens.stylex";
@@ -129,7 +130,7 @@ export const tabsStyles = stylex.create({
 	},
 	tabSegmentedActive: {
 		backgroundColor: theme.surface,
-		color: theme.contentPrimary,
+		color: theme.contentOnPrimary,
 		fontWeight: fontWeight.semibold,
 	},
 	tab: {
@@ -150,6 +151,7 @@ export const tabsStyles = stylex.create({
 		whiteSpace: "nowrap",
 		userSelect: "none",
 		font: "inherit",
+		fontFamily: fonts.display,
 		WebkitTapHighlightColor: "transparent",
 		transition: `color ${duration.normal} ${easing.standard}, background-color ${duration.normal} ${easing.standard}, box-shadow ${duration.normal} ${easing.standard}`,
 	},

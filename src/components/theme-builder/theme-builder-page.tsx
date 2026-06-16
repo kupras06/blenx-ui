@@ -1,8 +1,6 @@
 import { ListIcon } from "@phosphor-icons/react";
 import * as stylex from "@stylexjs/stylex";
 import { useMediaQuery } from "@uidotdev/usehooks";
-import { theme } from "@/lib/theme/contract.stylex";
-import { mediaQueries, spacing } from "@/lib/theme/tokens.stylex";
 import {
 	Button,
 	ScrollArea,
@@ -13,19 +11,21 @@ import {
 	Text,
 	VStack,
 } from "@/components/ui";
-import { ThemeBuilderProvider, useThemeBuilder } from "./theme-builder-context";
-import { ThemePreviewProvider } from "./theme-provider";
+import { theme } from "@/lib/theme/contract.stylex";
+import { mediaQueries, spacing } from "@/lib/theme/tokens.stylex";
 import {
 	ColorControls,
-	TypographyControls,
 	NonColorControls,
 	PresetControls,
+	TypographyControls,
 } from "./controls";
+import { PreviewErrorBoundary } from "./error-boundary";
 import { ExportPanel } from "./export";
 import { ImpactSummary } from "./impact-map";
 import { ComponentShowcase, ExampleDashboard } from "./preview";
-import { TokenTable, HowItWorks } from "./stylex-showcase";
-import { PreviewErrorBoundary } from "./error-boundary";
+import { HowItWorks, TokenTable } from "./stylex-showcase";
+import { ThemeBuilderProvider, useThemeBuilder } from "./theme-builder-context";
+import { ThemePreviewProvider } from "./theme-provider";
 
 const styles = stylex.create({
 	layout: {
@@ -112,15 +112,9 @@ function Sidebar({ compact }: { compact: boolean }) {
 	if (!sidebarOpen) return null;
 
 	return (
-		<>
-			<div
-				{...stylex.props(styles.sidebarOverlay)}
-				onClick={toggleSidebar}
-			/>
-			<ScrollArea {...stylex.props(styles.sidebarDrawer)}>
-				<SidebarContent />
-			</ScrollArea>
-		</>
+		<ScrollArea {...stylex.props(styles.sidebarDrawer)}>
+			<SidebarContent />
+		</ScrollArea>
 	);
 }
 

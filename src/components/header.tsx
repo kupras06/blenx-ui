@@ -73,44 +73,53 @@ function DocsRouteOption() {
 			</Button>
 		);
 	return (
-		<Link
-			to="/docs"
-			{...stylex.props(styles.link, isDocsActive && styles.activeLink)}
+		<Button
+			size="xsmall"
+			variant={isDocsActive ? "soft" : "ghost"}
+			render={<Link to="/docs" />}
 		>
 			Docs
-		</Link>
+		</Button>
 	);
 }
 function Header() {
 	const { pathname } = useLocation();
 	const isThemeBuilderActive = pathname === "/theme-builder";
+	const isHomeActive = pathname === "/";
 	return (
 		<div {...stylex.props(styles.header)}>
 			<div {...stylex.props(styles.inner)}>
-				<Link to="/" {...stylex.props(styles.logo)}>
+				<Link
+					to="/"
+					{...stylex.props(styles.logo, isHomeActive && styles.activeLink)}
+				>
 					<Text variant="h3">Blenx UI</Text>
 				</Link>
 				<div {...stylex.props(styles.navLinks)}>
 					<ClientOnly>
 						<DocsRouteOption />
 					</ClientOnly>
-					<Link
-						to="/theme-builder"
-						{...stylex.props(
-							styles.link,
-							isThemeBuilderActive && styles.activeLink,
-						)}
+					<Button
+						size="xsmall"
+						variant={isThemeBuilderActive ? "soft" : "ghost"}
+						render={<Link to="/theme-builder" />}
 					>
 						Theme Builder
-					</Link>
-					<a
-						href="https://github.com/blenx-dev/blenx-dev"
-						target="_blank"
-						rel="noopener noreferrer"
-						{...stylex.props(styles.link)}
+					</Button>
+					<Button
+						size="xsmall"
+						variant="link"
+						render={
+							<a
+								href="https://github.com/blenx-dev/blenx-dev"
+								target="_blank"
+								rel="noopener noreferrer"
+								{...stylex.props(styles.link)}
+							/>
+						}
 					>
 						GitHub &rarr;
-					</a>
+					</Button>
 				</div>
 			</div>
 			<Separator />
