@@ -1,7 +1,7 @@
 import type { StyleXStyles } from "@stylexjs/stylex";
 import * as stylex from "@stylexjs/stylex";
 import type { ReactNode } from "react";
-import { tableStyles } from "./table.styles";
+import { tableColorStyles, tableStyles } from "./table.styles";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -21,24 +21,25 @@ export interface Column<TData> {
 }
 
 export interface TableProps<TData> {
-	columnData: Column<TData>[];
-	rowData: TData[];
-	/** Optional stable row key (field name). Defaults to index. */
-	rowKey?: keyof TData & string;
-	/** Optional callback for per-row props (events, styles, attributes) */
-	getRowProps?: (
-		row: TData,
-		index: number,
-	) => {
-		onMouseEnter?: () => void;
-		onMouseLeave?: () => void;
-		style?: React.CSSProperties;
-		[key: string]: unknown;
-	};
-	/** Optional wrapper box style */
-	style?: StyleXStyles;
-	className?: string;
-}
+		columnData: Column<TData>[];
+		rowData: TData[];
+		/** Optional stable row key (field name). Defaults to index. */
+		rowKey?: keyof TData & string;
+		/** Optional callback for per-row props (events, styles, attributes) */
+		getRowProps?: (
+			row: TData,
+			index: number,
+		) => {
+			onMouseEnter?: () => void;
+			onMouseLeave?: () => void;
+			style?: React.CSSProperties;
+			[key: string]: unknown;
+		};
+		/** Optional wrapper box style */
+		style?: StyleXStyles;
+		className?: string;
+		color?: "secondary";
+	}
 
 // ─── Internal styled sub-components ──────────────────────────────────────────
 
@@ -67,61 +68,71 @@ const cellAlignStyles = stylex.create({
  * ```
  */
 export function Table<TData>({
-	columnData,
-	rowData,
-	rowKey,
-	getRowProps,
-	style,
-	className,
-}: TableProps<TData>) {
-	const getCellValue = (col: Column<TData>, row: TData): React.ReactNode => {
-		if (col?.cell) {
-			return col.cell(row);
-		}
-		return row[col.key] as React.ReactNode;
-	};
-	return (
-		<div {...stylex.props(tableStyles.wrapper, style)} className={className}>
-			<table {...stylex.props(tableStyles.root)}>
-				<thead {...stylex.props(tableStyles.head)}>
-					<tr>
-						{columnData.map((col) => (
-							<th
-								key={col.key.toString()}
-								style={col.width ? { width: col.width } : undefined}
-								{...stylex.props(
-									tableStyles.header,
-									col.align && cellAlignStyles[col.align],
-								)}
-							>
-								{col.header}
-							</th>
-						))}
-					</tr>
-				</thead>
-				<tbody {...stylex.props(tableStyles.body)}>
-					{rowData.map((row, index) => {
-						const key = rowKey ? (row[rowKey] as string) : index.toString();
-						const rowProps = getRowProps?.(row, index);
-						return (
-							<tr key={key} {...rowProps} {...stylex.props(tableStyles.row)}>
-								{columnData.map((col) => (
-									<td
-										key={col.key.toString()}
-										{...col.cellProps}
-										{...stylex.props(
-											tableStyles.cell,
-											col.align && cellAlignStyles[col.align],
-										)}
-									>
-										{getCellValue(col, row)}
-									</td>
-								))}
-							</tr>
-						);
-					})}
-				</tbody>
-			</table>
-		</div>
-	);
-}
+		columnData,
+		rowData,
+		rowKey,
+		getRowProps,
+		style,
+		className,
+		color,
+	}: TableProps<TData>) {
+		const getCellValue = (col: Column<TData>, row: TData): React.ReactNode => {
+			if (col?.cell) {
+				return col.cell(row);
+			}
+			return row[col.key] as React.ReactNode;
+		};
+		return (
+			<div
+				{...stylex.props(
+					tableStyles.wrapper,
+					color && tableColorStyles[color],
+					style,
+				)}
+				className={className}
+			>
+				<table
+					{...stylex.props(tableStyles.root, color && tableColorStyles[color])}
+				>
+					<thead {...stylex.props(tableStyles.head)}>
+						<tr>
+							{columnData.map((col) => (
+								<th
+									key={col.key.toString()}
+									style={col.width ? { width: col.width } : undefined}
+									{...stylex.props(
+										tableStyles.header,
+										col.align && cellAlignStyles[col.align],
+									)}
+								>
+									{col.header}
+								</th>
+							))}
+						</tr>
+					</thead>
+					<tbody>
+						{rowData.map((row, index) => {
+							const key = rowKey ? (row[rowKey] as string) : index.toString();
+							const rowProps = getRowProps?.(row, index);
+							return (
+								<tr key={key} {...rowProps} {...stylex.props(tableStyles.row)}>
+									{columnData.map((col) => (
+										<td
+											key={col.key.toString()}
+											{...col.cellProps}
+											{...stylex.props(
+												tableStyles.cell,
+												col.align && cellAlignStyles[col.align],
+											)}
+										>
+											{getCellValue(col, row)}
+										</td>
+									))}
+								</tr>
+							);
+						})}
+					</tbody>
+				</table>
+			</div>
+		);
+	}

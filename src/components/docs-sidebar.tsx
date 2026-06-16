@@ -27,6 +27,10 @@ const sections: SidebarSection[] = [
 		links: [{ to: "/docs/theming", label: "Theming" }],
 	},
 	{
+		title: "Components",
+		links: [{ to: "/docs/data-table", label: "DataTable" }],
+	},
+	{
 		title: "Reference",
 		links: [{ to: "/docs/limitations", label: "Limitations" }],
 	},

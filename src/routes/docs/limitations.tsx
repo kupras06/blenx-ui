@@ -1,8 +1,6 @@
-import * as stylex from "@stylexjs/stylex";
 import { createFileRoute } from "@tanstack/react-router";
 import { DocsLayout } from "@/components/docs-layout";
-import { Separator, Surface, Text, VStack } from "@/components/ui";
-import { docStyles } from "../../utils/docs.styles";
+import { Box, Separator, Surface, Text, VStack } from "@/components/ui";
 
 export const Route = createFileRoute("/docs/limitations")({
 	component: LimitationsDoc,
@@ -11,22 +9,22 @@ export const Route = createFileRoute("/docs/limitations")({
 function LimitationsDoc() {
 	return (
 		<DocsLayout>
-			<div {...stylex.props(docStyles.page)}>
+			<VStack>
 				<Text variant="h1">Limitations</Text>
 				<Text variant="body2" color="secondary">
 					Blenx UI makes specific technology choices that come with important
 					constraints. Review these before adopting the library.
 				</Text>
 
-				<div {...stylex.props(docStyles.section)}>
+				<Box>
 					<VStack gap="medium">
 						<Text variant="h2">Monorepo Not Supported for Consumers</Text>
 						<Text variant="body2" color="secondary">
 							The shadcn registry model copies source files directly into your
 							project. The copied files use import aliases (
-							<code {...stylex.props(docStyles.code)}>@/components</code>,{" "}
-							<code {...stylex.props(docStyles.code)}>@/lib</code>, etc.) that
-							assume a flat project structure.
+							<Text variant="code">@/components</Text>,{" "}
+							<Text variant="code">@/lib</Text>, etc.) that assume a flat
+							project structure.
 						</Text>
 						<Text variant="body2" color="secondary">
 							If you are using a monorepo (Turborepo, Nx, Rush, pnpm
@@ -41,25 +39,22 @@ function LimitationsDoc() {
 							monorepo.
 						</Text>
 					</VStack>
-				</div>
+				</Box>
 
 				<Separator tone="subtle" />
 
-				<div {...stylex.props(docStyles.section)}>
+				<Box>
 					<VStack gap="medium">
 						<Text variant="h2">Stylex Build Requirement</Text>
 						<Text variant="body2" color="secondary">
 							Stylex is a build-time CSS-in-JS solution. Every consumer project
 							must:
 						</Text>
-						<ul {...stylex.props(docStyles.list)}>
+						<VStack render={<ul />}>
 							<li>
 								<Text variant="body2">
 									Install and configure the Stylex bundler plugin (
-									<code {...stylex.props(docStyles.code)}>
-										@stylexjs/unplugin
-									</code>
-									)
+									<Text variant="code">@stylexjs/unplugin</Text>)
 								</Text>
 							</li>
 							<li>
@@ -73,33 +68,32 @@ function LimitationsDoc() {
 									extraction (e.g., styled-components, Emotion)
 								</Text>
 							</li>
-						</ul>
+						</VStack>
 						<Text variant="body2" color="secondary">
 							Without proper Stylex configuration, components will render
 							without styles.
 						</Text>
 					</VStack>
-				</div>
+				</Box>
 
 				<Separator tone="subtle" />
 
-				<div {...stylex.props(docStyles.section)}>
+				<Box>
 					<VStack gap="medium">
 						<Text variant="h2">Base UI Version Lock</Text>
 						<Text variant="body2" color="secondary">
 							Blenx UI depends on specific{" "}
-							<code {...stylex.props(docStyles.code)}>@base-ui/react</code>{" "}
-							APIs. The library is tested against{" "}
-							<strong>Base UI React ^1.5.0</strong>. Upgrading Base UI may break
-							component behavior. If you need a newer Base UI version, test all
-							components thoroughly.
+							<Text variant="code">@base-ui/react</Text> APIs. The library is
+							tested against <strong>Base UI React ^1.5.0</strong>. Upgrading
+							Base UI may break component behavior. If you need a newer Base UI
+							version, test all components thoroughly.
 						</Text>
 					</VStack>
-				</div>
+				</Box>
 
 				<Separator tone="subtle" />
 
-				<div {...stylex.props(docStyles.section)}>
+				<Box>
 					<VStack gap="medium">
 						<Text variant="h2">No Tailwind CSS Support</Text>
 						<Text variant="body2" color="secondary">
@@ -107,39 +101,35 @@ function LimitationsDoc() {
 							registry components ship with their own Stylex styles. If your
 							project uses Tailwind, the two can coexist, but components will
 							use Stylex classes, not Tailwind utilities. You cannot override
-							component styles with{" "}
-							<code {...stylex.props(docStyles.code)}>className</code> — use the{" "}
-							<code {...stylex.props(docStyles.code)}>style</code> prop instead.
+							component styles with <Text variant="code">className</Text> — use
+							the <Text variant="code">style</Text> prop instead.
 						</Text>
 					</VStack>
-				</div>
+				</Box>
 
 				<Separator tone="subtle" />
 
-				<div {...stylex.props(docStyles.section)}>
+				<Box>
 					<VStack gap="medium">
 						<Text variant="h2">Phosphor Icons</Text>
 						<Text variant="body2" color="secondary">
-							The library uses{" "}
-							<code {...stylex.props(docStyles.code)}>
-								@phosphor-icons/react
-							</code>{" "}
+							The library uses <Text variant="code">@phosphor-icons/react</Text>{" "}
 							for all iconography. If you prefer a different icon set, you will
 							need to replace icon imports in the installed component source
 							files manually.
 						</Text>
 					</VStack>
-				</div>
+				</Box>
 
 				<Separator tone="subtle" />
 
-				<div {...stylex.props(docStyles.section)}>
+				<Box>
 					<VStack gap="medium">
 						<Text variant="h2">Framework Compatibility</Text>
 						<Text variant="body2" color="secondary">
 							Components are built with React 19+ and are not tested with:
 						</Text>
-						<ul {...stylex.props(docStyles.list)}>
+						<VStack render={<ul />}>
 							<li>
 								<Text variant="body2">React Native</Text>
 							</li>
@@ -155,13 +145,13 @@ function LimitationsDoc() {
 									{">"}
 								</Text>
 							</li>
-						</ul>
+						</VStack>
 					</VStack>
-				</div>
+				</Box>
 
 				<Separator tone="subtle" />
 
-				<div {...stylex.props(docStyles.section)}>
+				<Box>
 					<VStack gap="medium">
 						<Text variant="h2">CSS Custom Properties Theming</Text>
 						<Text variant="body2" color="secondary">
@@ -172,15 +162,15 @@ function LimitationsDoc() {
 							code.
 						</Text>
 						<Surface variant="sunken" padding="medium" render={<pre />}>
-							<code>{`/* Override theme tokens in your CSS */
+							<Text>{`/* Override theme tokens in your CSS */
 :root {
   --primary: #your-color;
   --background: #your-bg;
-}`}</code>
+}`}</Text>
 						</Surface>
 					</VStack>
-				</div>
-			</div>
+				</Box>
+			</VStack>
 		</DocsLayout>
 	);
 }

@@ -17,6 +17,7 @@ import { Route as DocsStylingRouteImport } from './routes/docs/styling'
 import { Route as DocsPrimitivesRouteImport } from './routes/docs/primitives'
 import { Route as DocsLimitationsRouteImport } from './routes/docs/limitations'
 import { Route as DocsInstallationRouteImport } from './routes/docs/installation'
+import { Route as DocsDataTableRouteImport } from './routes/docs/data-table'
 import { Route as ApiRSplatRouteImport } from './routes/api/r/$'
 
 const ThemeBuilderRoute = ThemeBuilderRouteImport.update({
@@ -59,6 +60,11 @@ const DocsInstallationRoute = DocsInstallationRouteImport.update({
   path: '/docs/installation',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DocsDataTableRoute = DocsDataTableRouteImport.update({
+  id: '/docs/data-table',
+  path: '/docs/data-table',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiRSplatRoute = ApiRSplatRouteImport.update({
   id: '/api/r/$',
   path: '/api/r/$',
@@ -68,6 +74,7 @@ const ApiRSplatRoute = ApiRSplatRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/theme-builder': typeof ThemeBuilderRoute
+  '/docs/data-table': typeof DocsDataTableRoute
   '/docs/installation': typeof DocsInstallationRoute
   '/docs/limitations': typeof DocsLimitationsRoute
   '/docs/primitives': typeof DocsPrimitivesRoute
@@ -79,6 +86,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/theme-builder': typeof ThemeBuilderRoute
+  '/docs/data-table': typeof DocsDataTableRoute
   '/docs/installation': typeof DocsInstallationRoute
   '/docs/limitations': typeof DocsLimitationsRoute
   '/docs/primitives': typeof DocsPrimitivesRoute
@@ -91,6 +99,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/theme-builder': typeof ThemeBuilderRoute
+  '/docs/data-table': typeof DocsDataTableRoute
   '/docs/installation': typeof DocsInstallationRoute
   '/docs/limitations': typeof DocsLimitationsRoute
   '/docs/primitives': typeof DocsPrimitivesRoute
@@ -104,6 +113,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/theme-builder'
+    | '/docs/data-table'
     | '/docs/installation'
     | '/docs/limitations'
     | '/docs/primitives'
@@ -115,6 +125,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/theme-builder'
+    | '/docs/data-table'
     | '/docs/installation'
     | '/docs/limitations'
     | '/docs/primitives'
@@ -126,6 +137,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/theme-builder'
+    | '/docs/data-table'
     | '/docs/installation'
     | '/docs/limitations'
     | '/docs/primitives'
@@ -138,6 +150,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ThemeBuilderRoute: typeof ThemeBuilderRoute
+  DocsDataTableRoute: typeof DocsDataTableRoute
   DocsInstallationRoute: typeof DocsInstallationRoute
   DocsLimitationsRoute: typeof DocsLimitationsRoute
   DocsPrimitivesRoute: typeof DocsPrimitivesRoute
@@ -205,6 +218,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DocsInstallationRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/docs/data-table': {
+      id: '/docs/data-table'
+      path: '/docs/data-table'
+      fullPath: '/docs/data-table'
+      preLoaderRoute: typeof DocsDataTableRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/r/$': {
       id: '/api/r/$'
       path: '/api/r/$'
@@ -218,6 +238,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ThemeBuilderRoute: ThemeBuilderRoute,
+  DocsDataTableRoute: DocsDataTableRoute,
   DocsInstallationRoute: DocsInstallationRoute,
   DocsLimitationsRoute: DocsLimitationsRoute,
   DocsPrimitivesRoute: DocsPrimitivesRoute,

@@ -22,5 +22,5 @@ export function Container({
 		containerStyles.root,
 		style,
 	);
-	return <Box {...props} {...resolvedStyles} />;
+	return <Box maxWidth={size} {...props} {...resolvedStyles} />;
 }

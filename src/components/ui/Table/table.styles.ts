@@ -8,10 +8,16 @@ import {
 	spacing,
 } from "@/lib/theme/tokens.stylex";
 
+export const tableColorStyles = stylex.create({
+	secondary: {
+		color: theme.contentSecondary,
+	},
+});
 export const tableStyles = stylex.create({
 	root: {
 		width: "100%",
 		borderCollapse: "collapse",
+		color: theme.contentSecondary,
 		boxSizing: "border-box",
 	},
 	head: {
@@ -34,7 +40,6 @@ export const tableStyles = stylex.create({
 		whiteSpace: "nowrap",
 		userSelect: "none",
 	},
-	body: {},
 	row: {
 		transition: "background-color 0.15s ease",
 		":hover": {
@@ -47,7 +52,6 @@ export const tableStyles = stylex.create({
 		paddingLeft: spacing["3"],
 		paddingRight: spacing["3"],
 		fontSize: fontSize.small,
-		color: theme.contentPrimary,
 		borderBottomWidth: borderWidth.hairline,
 		borderBottomStyle: "solid",
 		borderBottomColor: theme.borderSubtle,
