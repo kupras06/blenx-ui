@@ -84,49 +84,43 @@ export const Route = createFileRoute("/")({
 
 function HomeComponent() {
 	return (
-		<Container size="lg">
-			<VStack gap="xlarge">
-				{/* Hero Section */}
-				<Container
-					size="xl"
-					content="center"
-					paddingY="titanic"
-					paddingX="massive"
-				>
+		<Container size="lg" padding="medium">
+			<VStack gap="xlarge" align="center">
+				<Box paddingY="large">
 					<Text variant="h1" align="center" style={styles.heroTitle}>
 						Beautifully designed components.
 						<br />
 						Zero Tailwind.
 					</Text>
-					<Box maxWidth={600} margin="massive">
-						<Text variant="body1" size="large" color="secondary" align="center">
-							A premium, modern React component library engineered for
-							performance and scalability. Built strictly with{" "}
-							<strong>StyleX</strong> and headless <strong>Base UI</strong>{" "}
-							primitives, giving you complete ownership of your code.
-						</Text>
-					</Box>
-					<HStack align="center" justify="center" gap="medium">
-						<Button radius="none" render={<Link to="/docs/installation" />}>
-							Get Started <ArrowRightIcon weight="bold" />
-						</Button>
-						<Button
-							radius="none"
-							variant="soft"
-							render={
-								<a
-									href={GITHUB_URL}
-									target="_blank"
-									rel="noreferrer"
-									aria-label="Project Github URL"
-								/>
-							}
-						>
-							View on GitHub
-						</Button>
-					</HStack>
-				</Container>
-				<Separator tone="subtle" />
+				</Box>
+				<Box maxWidth={600} paddingY="large">
+					<Text variant="body1" size="large" color="secondary" align="center">
+						A premium, modern React component library engineered for performance
+						and scalability. Built strictly with <strong>StyleX</strong> and
+						headless <strong>Base UI</strong> primitives, giving you complete
+						ownership of your code.
+					</Text>
+				</Box>
+				<HStack align="center" justify="center" gap="medium">
+					<Button radius="none" render={<Link to="/docs/installation" />}>
+						Get Started <ArrowRightIcon weight="bold" />
+					</Button>
+					<Button
+						radius="none"
+						variant="soft"
+						render={
+							<a
+								href={GITHUB_URL}
+								target="_blank"
+								rel="noreferrer"
+								aria-label="Project Github URL"
+							/>
+						}
+					>
+						View on GitHub
+					</Button>
+				</HStack>
+				<Separator  />
 
 				{/* Features Grid */}
 				<VStack gap="medium">
@@ -137,7 +131,7 @@ function HomeComponent() {
 							collocated styles that scale.
 						</Text>
 					</Box>
-					<Grid columns={2}>
+					<Grid  columns={2}>
 						{features.map((feature) => (
 							<Surface key={feature.title} variant="outline" padding="large">
 								<HStack
@@ -163,7 +157,7 @@ function HomeComponent() {
 
 				{/* Getting Started Quick Look */}
 				<Surface variant="sunken" padding="large">
-					<Grid>
+					<HStack wrap>
 						<VStack gap="medium">
 							<Text variant="h3">Start building today.</Text>
 							<Text variant="body2" color="secondary">
@@ -177,12 +171,12 @@ function HomeComponent() {
 								npx shadcn@latest add http://blenx-ui.com/reg/button.json
 							</Text>
 						</Surface>
-					</Grid>
+					</HStack>
 				</Surface>
 				{/* Documentation Links */}
 				<VStack gap="medium">
 					<Text variant="h2">Documentation</Text>
-					<Grid columns={4}>
+					<HStack wrap>
 						{docLinks.map((link) => (
 							<Surface
 								key={link.to}
@@ -190,6 +184,7 @@ function HomeComponent() {
 								variant="outline"
 								padding="medium"
 								interactive
+								grow
 							>
 								<VStack gap="xxsmall">
 									<Text variant="h5">{link.title}</Text>
@@ -199,7 +194,7 @@ function HomeComponent() {
 								</VStack>
 							</Surface>
 						))}
-					</Grid>
+					</HStack>
 				</VStack>
 				<Box padding="massive" />
 			</VStack>

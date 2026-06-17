@@ -24,10 +24,9 @@ const variantTag = {
 	body2: "div",
 	body3: "div",
 	body4: "div",
-	caption: "span",
+	caption: "div",
 	creatorNote: "p",
 	p: "p",
-	div: "div",
 	code: "code",
 } as const satisfies Record<string, keyof React.JSX.IntrinsicElements>;
 export type TextVariant = keyof typeof variantTag;
@@ -41,6 +40,7 @@ type Props = PropsWithStylex<
 		transform?: keyof typeof textTransformStyles;
 		size?: keyof typeof fontSizeStyles;
 		style?: stylex.StyleXStyles;
+		span?: boolean;
 	}
 >;
 
@@ -52,6 +52,7 @@ export function Text({
 	style,
 	size,
 	render,
+	span,
 	transform = "none",
 	...props
 }: Props): React.ReactElement {
@@ -67,6 +68,13 @@ export function Text({
 		style,
 	);
 	const merged = mergeProps(props, sx);
+	if (span) {
+		return useRender({
+			defaultTagName: "span",
+			props: merged,
+			render,
+		});
+	}
 	return useRender({
 		defaultTagName: variantTag[variant],
 		props: merged,

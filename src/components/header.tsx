@@ -6,7 +6,7 @@ import { GITHUB_URL } from "@/constants";
 import { theme } from "@/lib/theme/contract.stylex";
 import { fontSize, letterSpacing, spacing } from "@/lib/theme/tokens.stylex";
 import { useSidebarStore } from "@/stores/docs-sidebar";
-import { Box, Button, HStack, Separator, Text } from "./ui";
+import { Button, Container, HStack, Separator, Text } from "./ui";
 
 const styles = stylex.create({
 	logo: {
@@ -42,11 +42,24 @@ const styles = stylex.create({
 	},
 });
 function DocsRouteOption() {
-	const sidebarOpen = useSidebarStore((st) => st.isOpen);
-	const setOpen = useSidebarStore((st) => st.setOpen);
 	const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
 	const { pathname } = useLocation();
 	const isDocsActive = pathname.startsWith("/docs");
+	if (!isSmallDevice)
+		return (
+			<Button
+				size="xsmall"
+				variant={isDocsActive ? "soft" : "ghost"}
+				render={<Link to="/docs" />}
+			>
+				Docs
+			</Button>
+		);
+}
+function DocsRouteSidebarOption() {
+	const sidebarOpen = useSidebarStore((st) => st.isOpen);
+	const setOpen = useSidebarStore((st) => st.setOpen);
+	const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
 	if (isSmallDevice)
 		return (
 			<Button
@@ -58,64 +71,57 @@ function DocsRouteOption() {
 				{sidebarOpen ? <XIcon /> : <ListIcon />}
 			</Button>
 		);
-	return (
-		<Button
-			size="xsmall"
-			variant={isDocsActive ? "soft" : "ghost"}
-			render={<Link to="/docs" />}
-		>
-			Docs
-		</Button>
-	);
 }
 function Header() {
 	const { pathname } = useLocation();
 	const isThemeBuilderActive = pathname === "/theme-builder";
 	const isHomeActive = pathname === "/";
 	return (
-		<Box>
-			<HStack
-				align="center"
-				justify="between"
-				paddingX="massive"
-				paddingY="xsmall"
-			>
-				<Link
-					to="/"
-					{...stylex.props(styles.logo, isHomeActive && styles.activeLink)}
-				>
-					<Text variant="h3">Blenx UI</Text>
-				</Link>
-				<div {...stylex.props(styles.navLinks)}>
-					<ClientOnly>
-						<DocsRouteOption />
-					</ClientOnly>
-					<Button
-						size="xsmall"
-						variant={isThemeBuilderActive ? "soft" : "ghost"}
-						render={<Link to="/theme-builder" />}
-					>
-						Theme Builder
-					</Button>
-					<Button
-						size="xsmall"
-						variant="link"
-						render={
-							<a
-								href={GITHUB_URL}
-								target="_blank"
-								aria-label="Project Github URL"
-								rel="noopener noreferrer"
-								{...stylex.props(styles.link)}
-							/>
-						}
-					>
-						GitHub &rarr;
-					</Button>
-				</div>
-			</HStack>
+		<>
+			<Container size="full" paddingX="medium" paddingY="none">
+				<HStack align="center" justify="between" paddingY="xsmall">
+					<HStack align="center" justify="between" gap="xxsmall">
+						<ClientOnly>
+							<DocsRouteSidebarOption />
+						</ClientOnly>
+						<Link
+							to="/"
+							{...stylex.props(styles.logo, isHomeActive && styles.activeLink)}
+						>
+							<Text variant="h3">Blenx UI</Text>
+						</Link>
+					</HStack>
+					<div {...stylex.props(styles.navLinks)}>
+						<ClientOnly>
+							<DocsRouteOption />
+						</ClientOnly>
+						<Button
+							size="xsmall"
+							variant={isThemeBuilderActive ? "soft" : "ghost"}
+							render={<Link to="/theme-builder" />}
+						>
+							Theme Builder
+						</Button>
+						<Button
+							size="xsmall"
+							variant="link"
+							render={
+								<a
+									href={GITHUB_URL}
+									target="_blank"
+									aria-label="Project Github URL"
+									rel="noopener noreferrer"
+									{...stylex.props(styles.link)}
+								/>
+							}
+						>
+							GitHub &rarr;
+						</Button>
+					</div>
+				</HStack>
+			</Container>
 			<Separator />
-		</Box>
+		</>
 	);
 }
 

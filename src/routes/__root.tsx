@@ -7,9 +7,8 @@ import {
 	Outlet,
 	Scripts,
 } from "@tanstack/react-router";
-import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import { Header } from "@/components/header";
-import { Box, VStack } from "@/components/ui";
+import { Box, Container } from "@/components/ui";
 import { appTheme } from "@/lib/app-theme.stylex";
 import { theme } from "@/lib/theme/contract.stylex";
 import { fonts } from "@/lib/theme/tokens.stylex";
@@ -150,14 +149,13 @@ function RootDocument() {
 			</head>
 			<body {...stylex.props(rootStyles.body)}>
 				<QueryClientProvider client={queryClient}>
-					<VStack>
+					<Container size="full">
 						<Header />
 						<Box render={<main />} grow>
 							<Outlet />
 						</Box>
-					</VStack>
+					</Container>
 				</QueryClientProvider>
-				<TanStackRouterDevtools position="bottom-left" />
 				<Scripts />
 			</body>
 		</html>
