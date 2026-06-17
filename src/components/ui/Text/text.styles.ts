@@ -25,13 +25,6 @@ export const textTransformStyles = stylex.create({
 	},
 });
 
-export const textColorStyles = stylex.create({
-	primary: { color: theme.contentPrimary },
-	secondary: { color: theme.contentSecondary },
-	accent: { color: theme.contentAccent },
-	disabled: { color: theme.contentDisabled },
-	error: { color: theme.sentimentNegative },
-});
 
 export const textAlignStyles = stylex.create({
 	left: { textAlign: "left" },

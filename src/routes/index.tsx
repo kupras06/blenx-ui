@@ -8,7 +8,16 @@ import {
 import * as stylex from "@stylexjs/stylex";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { fontSize, fonts, spacing } from "@/lib/theme/tokens.stylex";
-import { Box, Container, Grid, Separator, Surface, Text, VStack } from "@/ui";
+import {
+	Box,
+	Container,
+	Grid,
+	HStack,
+	Separator,
+	Surface,
+	Text,
+	VStack,
+} from "@/ui";
 
 const styles = stylex.create({
 	hero: {
@@ -85,9 +94,6 @@ const styles = stylex.create({
 		marginBottom: spacing["6"],
 	},
 	featureIcon: {
-		display: "flex",
-		alignItems: "center",
-		justifyContent: "center",
 		width: "40px",
 		height: "40px",
 		borderRadius: "var(--border-radius-sm)",
@@ -95,16 +101,6 @@ const styles = stylex.create({
 		border: "1px solid #30363d",
 		color: "#58a6ff",
 		marginBottom: spacing["3"],
-	},
-	docLink: {
-		display: "block",
-		textDecoration: "none",
-		color: "inherit",
-	},
-	code: {
-		fontFamily: fonts.mono,
-		fontSize: fontSize.small,
-		color: "#7ee787",
 	},
 });
 
@@ -206,8 +202,24 @@ function HomeComponent() {
 					</Box>
 					<div {...stylex.props(styles.grid)}>
 						{features.map((feature) => (
-							<Surface key={feature.title} variant="outline" padding="large">
-								<div {...stylex.props(styles.featureIcon)}>{feature.icon}</div>
+							<Surface
+								key={feature.title}
+								variant="outline"
+								padding="large"
+								backgroundColor="info"
+							>
+								<HStack
+									withBorder
+									justify="center"
+									backgroundColor="info"
+									color="primary"
+									align="center"
+									maxWidth={40}
+									padding="xsmall"
+									marginY="xsmall"
+								>
+									{feature.icon}
+								</HStack>
 								<VStack gap="small">
 									<Text variant="h4">{feature.title}</Text>
 									<Text variant="body2" color="secondary">
@@ -230,10 +242,10 @@ function HomeComponent() {
 								React code living directly in your project.
 							</Text>
 						</VStack>
-						<Surface variant="outline" padding="medium">
-							<code {...stylex.props(styles.code)}>
+						<Surface variant="sunken" withBorder padding="medium">
+							<Text variant="code" color="success">
 								npx shadcn@latest add http://blenx-ui.com/reg/button.json
-							</code>
+							</Text>
 						</Surface>
 					</Grid>
 				</Surface>
@@ -243,20 +255,20 @@ function HomeComponent() {
 					<Text variant="h2">Documentation</Text>
 					<Grid columns={4}>
 						{docLinks.map((link) => (
-							<Link
+							<Surface
 								key={link.to}
-								to={link.to}
-								{...stylex.props(styles.docLink)}
+								render={<Link to={link.to} />}
+								variant="outline"
+								padding="medium"
+								interactive
 							>
-								<Surface variant="outline" padding="medium" interactive>
-									<VStack gap="xxsmall">
-										<Text variant="h5">{link.title}</Text>
-										<Text variant="body2" color="secondary">
-											{link.desc}
-										</Text>
-									</VStack>
-								</Surface>
-							</Link>
+								<VStack gap="xxsmall">
+									<Text variant="h5">{link.title}</Text>
+									<Text variant="body2" color="secondary">
+										{link.desc}
+									</Text>
+								</VStack>
+							</Surface>
 						))}
 					</Grid>
 				</VStack>

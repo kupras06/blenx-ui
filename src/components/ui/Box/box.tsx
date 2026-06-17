@@ -1,6 +1,7 @@
 import { mergeProps } from "@base-ui/react/merge-props";
 import { useRender } from "@base-ui/react/use-render";
 import * as stylex from "@stylexjs/stylex";
+import { bgColorStyles, colorStyles } from "@/utils/base-styles";
 import {
 	borderRadiusStyles,
 	displayStyles,
@@ -10,7 +11,7 @@ import {
 	paddingXStyles,
 	paddingYStyles,
 	positionStyles,
-} from "@/utils/layouts.styles";
+} from "@/utils/layout.styles";
 import type { _BaseDivProps } from "@/utils/stylex.utils";
 import { boxSizeStyles, boxStyles } from "./box.styles";
 
@@ -35,7 +36,8 @@ type BoxProps = _BaseDivProps & {
 	marginY?: BoxSpacing;
 	radius?: keyof typeof borderRadiusStyles;
 	withBorder?: boolean;
-
+	color?: keyof typeof colorStyles;
+	backgroundColor?: keyof typeof bgColorStyles;
 	overflow?: BoxOverflow;
 	position?: BoxPosition;
 	maxWidth?: BoxSize | number;
@@ -63,6 +65,8 @@ function Box({
 	style,
 	withBorder,
 	maxWidth,
+	color,
+	backgroundColor,
 	...props
 }: BoxProps) {
 	const stylexProps = stylex.props(
@@ -89,8 +93,11 @@ function Box({
 			? boxStyles.maxWidth(maxWidth)
 			: null,
 		maxWidth && isBoxSize(maxWidth) ? boxSizeStyles[maxWidth] : null,
+		color && colorStyles[color],
+		backgroundColor && bgColorStyles[backgroundColor],
 		style,
 	);
+
 	const mergedProps = mergeProps(props, stylexProps);
 	return useRender({
 		defaultTagName: "div",

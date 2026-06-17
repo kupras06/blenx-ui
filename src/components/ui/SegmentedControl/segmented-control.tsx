@@ -1,4 +1,4 @@
-import type { BorderRadiusProp } from "@/utils/layouts.styles";
+import type { BorderRadiusProp } from "@/utils/layout.styles";
 import {
 	ToggleGroup,
 	ToggleGroupItem,

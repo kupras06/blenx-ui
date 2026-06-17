@@ -32,3 +32,9 @@ export const surfaceInteractiveStyles = stylex.create({
 		},
 	},
 });
+
+export const surfaceStyles = stylex.create({
+	base: {
+		textDecoration: "none",
+	},
+});

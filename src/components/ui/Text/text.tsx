@@ -2,10 +2,10 @@ import { mergeProps } from "@base-ui/react/merge-props";
 import { useRender } from "@base-ui/react/use-render";
 import * as stylex from "@stylexjs/stylex";
 import type React from "react";
+import { colorStyles } from "@/utils/base-styles";
 import type { PropsWithStylex } from "@/utils/stylex.utils";
 import {
 	textAlignStyles,
-	textColorStyles,
 	textStyles,
 	textTransformStyles,
 	textVarianttyles,
@@ -34,7 +34,7 @@ export type TextVariant = keyof typeof variantTag;
 type Props = PropsWithStylex<
 	useRender.ComponentProps<"span"> & {
 		variant?: TextVariant;
-		color?: keyof typeof textColorStyles;
+		color?: keyof typeof colorStyles;
 		align?: keyof typeof textAlignStyles;
 		weight?: keyof typeof textWeightStyles;
 		transform?: keyof typeof textTransformStyles;
@@ -56,10 +56,10 @@ export function Text({
 		textStyles.base,
 		textTransformStyles[transform],
 		textVarianttyles[variant],
-		color && textColorStyles[color],
+		color && colorStyles[color],
 		align && textAlignStyles[align],
 		weight && textWeightStyles[weight],
-		!color && textColorStyles.primary,
+		!color && colorStyles.primary,
 		style,
 	);
 	const merged = mergeProps(props, sx);

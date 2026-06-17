@@ -1,0 +1,24 @@
+import * as stylex from "@stylexjs/stylex";
+import { theme } from "@/lib/theme/theme.stylex";
+
+export const colorStyles = stylex.create({
+	primary: { color: theme.contentPrimary },
+	secondary: { color: theme.contentSecondary },
+	accent: { color: theme.contentAccent },
+	disabled: { color: theme.contentDisabled },
+	error: { color: theme.sentimentNegative },
+	success: { color: theme.sentimentPositive },
+	warning: { color: theme.sentimentWarning },
+	info: { color: theme.sentimentInfo },
+});
+
+export const bgColorStyles = stylex.create({
+	primary: { backgroundColor: theme.primary },
+	secondary: { backgroundColor: theme.secondary },
+	surface: { backgroundColor: theme.surface },
+	disabled: { backgroundColor: theme.surfaceSubtle },
+	error: { backgroundColor: theme.sentimentNegativeSubtle },
+	success: { backgroundColor: theme.sentimentPositiveSubtle },
+	warning: { backgroundColor: theme.sentimentWarningSubtle },
+	info: { backgroundColor: theme.sentimentInfoSubtle },
+});

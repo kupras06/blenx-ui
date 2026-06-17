@@ -5,7 +5,7 @@ import * as stylex from "@stylexjs/stylex";
 import {
 	type BorderRadiusProp,
 	borderRadiusStyles,
-} from "@/utils/layouts.styles";
+} from "@/utils/layout.styles";
 import type { PropsWithStylex } from "@/utils/stylex.utils";
 import {
 	togglePressedStyles,

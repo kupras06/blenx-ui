@@ -3,7 +3,7 @@ import {
 	type AvatarRootProps,
 } from "@base-ui/react/avatar";
 import * as stylex from "@stylexjs/stylex";
-import { borderRadiusStyles } from "@/utils/layouts.styles";
+import { borderRadiusStyles } from "@/utils/layout.styles";
 import type { PropsWithStylex } from "@/utils/stylex.utils";
 import { avatarStyles, avataSizeStyles } from "./avatar.styles";
 

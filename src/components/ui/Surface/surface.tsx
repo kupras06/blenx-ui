@@ -3,6 +3,7 @@ import type { BoxProps } from "../Box/box";
 import { Box } from "../Box/box";
 import {
 	surfaceInteractiveStyles,
+	surfaceStyles,
 	surfaceVariantStyles,
 } from "./surface.styles";
 
@@ -19,6 +20,7 @@ function Surface({
 	...props
 }: SurfaceProps) {
 	const resolvedStyles = stylex.props(
+		surfaceStyles.base,
 		surfaceVariantStyles[variant],
 		interactive && surfaceInteractiveStyles.base,
 		style,

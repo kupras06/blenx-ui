@@ -33,6 +33,14 @@ export const docLayoutStyles = stylex.create({
 		},
 		backgroundColor: "rgba(0, 0, 0, 0.4)",
 	},
+	stickySidebar: {
+		position: "sticky",
+		top: "var(--space-16)", // Assuming header is roughly space-16 (64px)
+		height: "calc(100vh - var(--space-16))",
+		overflowY: "auto",
+		paddingRight: "var(--space-4)",
+		paddingBottom: "var(--space-8)", // Give some breathing room at the bottom of the scroll
+	},
 });
 function DrawerSidebar() {
 	const sidebarOpen = useSidebarStore((st) => st.isOpen);
@@ -56,9 +64,11 @@ function RenderSidebarNavs() {
 			{isSmallDevice ? (
 				<DrawerSidebar />
 			) : (
-				<Container size="xxs">
-					<DocsSidebar />
-				</Container>
+				<div {...stylex.props(docLayoutStyles.stickySidebar)}>
+					<Container size="xxs">
+						<DocsSidebar />
+					</Container>
+				</div>
 			)}
 		</>
 	);
