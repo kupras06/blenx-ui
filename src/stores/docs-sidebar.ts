@@ -6,14 +6,12 @@ type TSiderbarStore = {
 	setOpen: (open: boolean) => void;
 };
 
-export const useSidebarStore = create<TSiderbarStore>((set) => (
-	{
-		isOpen: false,
-		toggle: () => {
-			set((prev) => ({ isOpen: !prev.isOpen }));
-		},
-		setOpen: (open: boolean) => {
-			set({ isOpen: open });
-		},
-	}
-));
+export const useSidebarStore = create<TSiderbarStore>((set) => ({
+	isOpen: false,
+	toggle: () => {
+		set((prev) => ({ isOpen: !prev.isOpen }));
+	},
+	setOpen: (open: boolean) => {
+		set({ isOpen: open });
+	},
+}));

@@ -1,5 +1,6 @@
 import { theme } from "@/lib/theme/contract.stylex";
 import { borderRadius, mediaQueries } from "@/lib/theme/tokens.stylex";
+import * as stylex from "@stylexjs/stylex";
 
 const colors = {
 	error: "#ef4444",
@@ -106,7 +107,6 @@ const themed = <T>(light: T, dark: T) => ({
 	[mediaQueries.darkMode]: dark,
 });
 
-import * as stylex from "@stylexjs/stylex";
 export const appTheme = stylex.createTheme(theme, {
 	primary: themed(lightValues.primary, darkValues.primary),
 	primarySubtle: themed(lightValues.primarySubtle, darkValues.primarySubtle),

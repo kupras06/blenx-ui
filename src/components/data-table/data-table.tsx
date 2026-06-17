@@ -1,10 +1,4 @@
-import { Button, Spinner } from "@around-me/ui";
-import {
-	fontSize,
-	fontWeight,
-	spacing,
-	theme,
-} from "@around-me/ui/theme/contract.stylex";
+// oxlint-disable max-statements
 import { CaretDownIcon, CaretUpIcon } from "@phosphor-icons/react";
 import * as stylex from "@stylexjs/stylex";
 import {
@@ -33,6 +27,9 @@ import { DataTableLoading } from "./data-table-loading";
 import { DataTablePagination } from "./data-table-pagination";
 import { DataTableToolbar } from "./data-table-toolbar";
 import type { DataTableProps, RowAction, TableFeatures } from "./types";
+import { theme } from "@/lib/theme/contract.stylex";
+import { fontSize, fontWeight, spacing } from "@/lib/theme/tokens.stylex";
+import { Button, Spinner } from "../ui";
 
 // ─── Size constants ──────────────────────────────────────────────────────────
 
@@ -82,7 +79,80 @@ function IndeterminateCheckbox({
 }
 
 // ─── Main component ──────────────────────────────────────────────────────────
+function useDataTableStates<TData extends Record<string, unknown>>(props:Partial<DataTableProps<TData>>) {
+	const [sorting, setSorting] = useState<SortingState>(props.initialSorting ?? []);
+	const [pagination, setPagination] = useState<PaginationState>(
+		props.initialPagination ?? { pageIndex: 0, pageSize: 10 },
+	);
+	const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>(
+		props.initialColumnFilters ?? [],
+	);
+	const [globalFilter, setGlobalFilter] = useState(props.initialGlobalFilter ?? "");
+	const [rowSelection, setRowSelection] = useState<RowSelectionState>(
+		props.initialRowSelection ?? {},
+	);
 
+	const handlePaginationChange = useCallback(
+		(v: PaginationState | ((old: PaginationState) => PaginationState)) => {
+			const next = typeof v === "function" ? v(pagination) : v;
+			setPagination(next);
+			props.callbacks?.onPaginationChange?.(next);
+		},
+		[pagination, props.callbacks],
+	);
+	const handleSortingChange = useCallback(
+		(v: SortingState | ((old: SortingState) => SortingState)) => {
+			const next = typeof v === "function" ? v(sorting) : v;
+			setSorting(next);
+			props.callbacks?.onSortingChange?.(next);
+			if (props.mode === "server") setPagination((p) => ({ ...p, pageIndex: 0 }));
+		},
+		[sorting, props.callbacks, props.mode],
+	);
+
+	const handleGlobalFilterChange = useCallback(
+		(value: string) => {
+			setGlobalFilter(value);
+			props.callbacks?.onGlobalFilterChange?.(value);
+			setPagination((p) => ({ ...p, pageIndex: 0 }));
+		},
+		[props.callbacks],
+	);
+
+	const handleColumnFiltersChange = useCallback(
+		(
+			v: ColumnFiltersState | ((old: ColumnFiltersState) => ColumnFiltersState),
+		) => {
+			const next = typeof v === "function" ? v(columnFilters) : v;
+			setColumnFilters(next);
+			props.callbacks?.onColumnFiltersChange?.(next);
+		},
+		[columnFilters, props.callbacks],
+	);
+
+	const handleRowSelectionChange = useCallback(
+		(
+			v: RowSelectionState | ((old: RowSelectionState) => RowSelectionState),
+		) => {
+			const next = typeof v === "function" ? v(rowSelection) : v;
+			setRowSelection(next);
+			props.callbacks?.onRowSelectionChange?.(next);
+		},
+		[rowSelection, props.callbacks],
+	);
+	return {
+		sorting,
+		handleSortingChange,
+		columnFilters,
+		handleColumnFiltersChange,
+		pagination,
+		handlePaginationChange,
+		globalFilter,
+		handleGlobalFilterChange,
+		rowSelection,
+		handleRowSelectionChange
+	};
+}
 export function DataTable<TData extends Record<string, unknown>>({
 	columns,
 	data,
@@ -117,70 +187,29 @@ export function DataTable<TData extends Record<string, unknown>>({
 		[featuresProp],
 	);
 
-	const [sorting, setSorting] = useState<SortingState>(initialSorting ?? []);
-	const [pagination, setPagination] = useState<PaginationState>(
-		initialPagination ?? { pageIndex: 0, pageSize: 10 },
-	);
-	const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>(
-		initialColumnFilters ?? [],
-	);
-	const [globalFilter, setGlobalFilter] = useState(initialGlobalFilter ?? "");
-	const [rowSelection, setRowSelection] = useState<RowSelectionState>(
-		initialRowSelection ?? {},
-	);
 	const [columnVisibility, setColumnVisibility] = useState<VisibilityState>(
 		initialColumnVisibility ?? {},
 	);
-
-	const handleSortingChange = useCallback(
-		(v: SortingState | ((old: SortingState) => SortingState)) => {
-			const next = typeof v === "function" ? v(sorting) : v;
-			setSorting(next);
-			callbacks?.onSortingChange?.(next);
-			if (mode === "server") setPagination((p) => ({ ...p, pageIndex: 0 }));
-		},
-		[sorting, callbacks, mode],
-	);
-
-	const handlePaginationChange = useCallback(
-		(v: PaginationState | ((old: PaginationState) => PaginationState)) => {
-			const next = typeof v === "function" ? v(pagination) : v;
-			setPagination(next);
-			callbacks?.onPaginationChange?.(next);
-		},
-		[pagination, callbacks],
-	);
-
-	const handleGlobalFilterChange = useCallback(
-		(value: string) => {
-			setGlobalFilter(value);
-			callbacks?.onGlobalFilterChange?.(value);
-			setPagination((p) => ({ ...p, pageIndex: 0 }));
-		},
-		[callbacks],
-	);
-
-	const handleColumnFiltersChange = useCallback(
-		(
-			v: ColumnFiltersState | ((old: ColumnFiltersState) => ColumnFiltersState),
-		) => {
-			const next = typeof v === "function" ? v(columnFilters) : v;
-			setColumnFilters(next);
-			callbacks?.onColumnFiltersChange?.(next);
-		},
-		[columnFilters, callbacks],
-	);
-
-	const handleRowSelectionChange = useCallback(
-		(
-			v: RowSelectionState | ((old: RowSelectionState) => RowSelectionState),
-		) => {
-			const next = typeof v === "function" ? v(rowSelection) : v;
-			setRowSelection(next);
-			callbacks?.onRowSelectionChange?.(next);
-		},
-		[rowSelection, callbacks],
-	);
+	const {
+		sorting,
+		handleSortingChange,
+		pagination,
+		handlePaginationChange,
+		columnFilters,
+		handleColumnFiltersChange,
+		globalFilter,
+		handleGlobalFilterChange,
+		rowSelection,
+		handleRowSelectionChange,
+	} = useDataTableStates({
+		initialPagination,
+		initialSorting,
+		initialColumnFilters,
+		initialGlobalFilter,
+		initialColumnVisibility,
+		initialRowSelection,
+		callbacks,mode
+	});
 
 	const stableColumns = useMemo(() => {
 		let result: ColumnDef<TData, unknown>[] = columns;
@@ -281,7 +310,7 @@ export function DataTable<TData extends Record<string, unknown>>({
 		() => selectedRowModel.rows.map((r) => r.original),
 		[selectedRowModel.rows],
 	);
-	const {rows} = table.getRowModel();
+	const { rows } = table.getRowModel();
 	const headerGroups = table.getHeaderGroups();
 
 	const showPagination =

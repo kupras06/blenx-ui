@@ -114,7 +114,12 @@ function HomeComponent() {
 							radius="none"
 							variant="soft"
 							render={
-								<a href={GITHUB_URL} target="_blank" rel="noreferrer" />
+								<a
+									href={GITHUB_URL}
+									target="_blank"
+									rel="noreferrer"
+									aria-label="Project Github URL"
+								/>
 							}
 						>
 							View on GitHub

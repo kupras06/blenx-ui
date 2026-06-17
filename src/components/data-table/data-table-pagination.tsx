@@ -15,10 +15,10 @@ interface DataTablePaginationProps<TData> {
 export function DataTablePagination<TData>({
 	table,
 }: DataTablePaginationProps<TData>) {
-	const {pageIndex} = table.getState().pagination;
+	const { pageIndex } = table.getState().pagination;
 	const pageCount = table.getPageCount();
 	const totalRows = table.getPrePaginationRowModel().rows.length;
-	const {pageSize} = table.getState().pagination;
+	const { pageSize } = table.getState().pagination;
 	const startRow = pageIndex * pageSize + 1;
 	const endRow = Math.min((pageIndex + 1) * pageSize, totalRows);
 	const canPreviousPage = table.getCanPreviousPage();

@@ -48,7 +48,7 @@ export function DataTableLoading({
 					</tr>
 				</thead>
 				<tbody>
-					{Array.from({ length: rowCount }).map((_, rowIdx) => (
+					{Array.from({ length: rowCount }).map((_unknown, rowIdx) => (
 						<tr key={`skeleton-row-${rowIdx.toString()}`}>
 							{Array.from({ length: columnCount }).map((_, colIdx) => (
 								<td

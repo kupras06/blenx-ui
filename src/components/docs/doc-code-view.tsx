@@ -29,7 +29,26 @@ function escapeHtml(code: string): string {
 		.replace(/</g, "&lt;")
 		.replace(/>/g, "&gt;")}</code></pre>`;
 }
+function CopyButton({ value }: { value: string }) {
+	const [copied, setCopied] = useState(false);
 
+	const handleCopy = useCallback(() => {
+		navigator.clipboard.writeText(value).then(() => {
+			setCopied(true);
+			setTimeout(() => setCopied(false), 2000);
+		});
+	}, [value]);
+	return <Button
+							type="button"
+							size="xsmall"
+							radius="xsmall"
+							onClick={handleCopy}
+							aria-label={copied ? "Copied" : "Copy code"}
+						>
+							{copied ? <CheckIcon size={14} /> : <CopySimpleIcon size={14} />}
+							{copied ? "Copied" : "Copy"}
+						</Button>
+}
 function DocCodeView({ code, title, language, files }: DocCodeViewProps) {
 	const activeFiles =
 		files || (code != null ? [{ code, title, language }] : []);
@@ -40,7 +59,6 @@ function DocCodeView({ code, title, language, files }: DocCodeViewProps) {
 		language: "typescript",
 	};
 
-	const [copied, setCopied] = useState(false);
 	const [highlighted, setHighlighted] = useState<string | null>(null);
 	const mountedRef = useRef(true);
 
@@ -58,13 +76,6 @@ function DocCodeView({ code, title, language, files }: DocCodeViewProps) {
 			mountedRef.current = false;
 		};
 	}, [activeFile.code, activeFile.language]);
-
-	const handleCopy = useCallback(() => {
-		navigator.clipboard.writeText(activeFile.code).then(() => {
-			setCopied(true);
-			setTimeout(() => setCopied(false), 2000);
-		});
-	}, [activeFile.code]);
 
 	const lang = activeFile.language ?? "typescript";
 	const isMultiFile = activeFiles.length > 1;
@@ -87,16 +98,7 @@ function DocCodeView({ code, title, language, files }: DocCodeViewProps) {
 								label: file.title || `File ${idx + 1}`,
 							}))}
 						/>
-						<Button
-							type="button"
-							size="xsmall"
-							radius="xsmall"
-							onClick={handleCopy}
-							aria-label={copied ? "Copied" : "Copy code"}
-						>
-							{copied ? <CheckIcon size={14} /> : <CopySimpleIcon size={14} />}
-							{copied ? "Copied" : "Copy"}
-						</Button>
+						<CopyButton value={activeFile.code} />
 					</HStack>
 				</Surface>
 			) : (
@@ -108,16 +110,8 @@ function DocCodeView({ code, title, language, files }: DocCodeViewProps) {
 							</Text>
 						)}
 						<Text variant="caption">{lang}</Text>
-					</HStack>
-					<Button
-						type="button"
-						onClick={handleCopy}
-						size="xsmall"
-						aria-label={copied ? "Copied" : "Copy code"}
-					>
-						{copied ? <CheckIcon size={14} /> : <CopySimpleIcon size={14} />}
-						{copied ? "Copied" : "Copy"}
-					</Button>
+						</HStack>
+						<CopyButton value={activeFile.code} />
 				</HStack>
 			)}
 

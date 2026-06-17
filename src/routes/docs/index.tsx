@@ -26,7 +26,9 @@ function DocsHome() {
 					</Text>
 				</Box>
 				<Surface render={<pre />} padding="medium" variant="sunken">
-					<code>npx shadcn@latest add http://localhost:3001/reg/button.json</code>
+					<code>
+						npx shadcn@latest add http://localhost:3001/reg/button.json
+					</code>
 				</Surface>
 				<Text>
 					Browse the sidebar to learn about installation, styling, theming, and

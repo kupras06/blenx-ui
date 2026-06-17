@@ -104,6 +104,7 @@ function Header() {
 							<a
 								href={GITHUB_URL}
 								target="_blank"
+								aria-label="Project Github URL"
 								rel="noopener noreferrer"
 								{...stylex.props(styles.link)}
 							/>

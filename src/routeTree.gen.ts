@@ -20,7 +20,6 @@ import { Route as DocsLimitationsRouteImport } from './routes/docs/limitations'
 import { Route as DocsInstallationRouteImport } from './routes/docs/installation'
 import { Route as DocsDataTableRouteImport } from './routes/docs/data-table'
 import { Route as DocsComponentsComponentRouteImport } from './routes/docs/components/$component'
-import { Route as ApiRSplatRouteImport } from './routes/api/r/$'
 
 const ThemeBuilderRoute = ThemeBuilderRouteImport.update({
   id: '/theme-builder',
@@ -77,11 +76,6 @@ const DocsComponentsComponentRoute = DocsComponentsComponentRouteImport.update({
   path: '/components/$component',
   getParentRoute: () => DocsRoute,
 } as any)
-const ApiRSplatRoute = ApiRSplatRouteImport.update({
-  id: '/api/r/$',
-  path: '/api/r/$',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -94,7 +88,6 @@ export interface FileRoutesByFullPath {
   '/docs/styling': typeof DocsStylingRoute
   '/docs/theming': typeof DocsThemingRoute
   '/docs/': typeof DocsIndexRoute
-  '/api/r/$': typeof ApiRSplatRoute
   '/docs/components/$component': typeof DocsComponentsComponentRoute
 }
 export interface FileRoutesByTo {
@@ -107,7 +100,6 @@ export interface FileRoutesByTo {
   '/docs/styling': typeof DocsStylingRoute
   '/docs/theming': typeof DocsThemingRoute
   '/docs': typeof DocsIndexRoute
-  '/api/r/$': typeof ApiRSplatRoute
   '/docs/components/$component': typeof DocsComponentsComponentRoute
 }
 export interface FileRoutesById {
@@ -122,7 +114,6 @@ export interface FileRoutesById {
   '/docs/styling': typeof DocsStylingRoute
   '/docs/theming': typeof DocsThemingRoute
   '/docs/': typeof DocsIndexRoute
-  '/api/r/$': typeof ApiRSplatRoute
   '/docs/components/$component': typeof DocsComponentsComponentRoute
 }
 export interface FileRouteTypes {
@@ -138,7 +129,6 @@ export interface FileRouteTypes {
     | '/docs/styling'
     | '/docs/theming'
     | '/docs/'
-    | '/api/r/$'
     | '/docs/components/$component'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -151,7 +141,6 @@ export interface FileRouteTypes {
     | '/docs/styling'
     | '/docs/theming'
     | '/docs'
-    | '/api/r/$'
     | '/docs/components/$component'
   id:
     | '__root__'
@@ -165,7 +154,6 @@ export interface FileRouteTypes {
     | '/docs/styling'
     | '/docs/theming'
     | '/docs/'
-    | '/api/r/$'
     | '/docs/components/$component'
   fileRoutesById: FileRoutesById
 }
@@ -173,7 +161,6 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DocsRoute: typeof DocsRouteWithChildren
   ThemeBuilderRoute: typeof ThemeBuilderRoute
-  ApiRSplatRoute: typeof ApiRSplatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -255,13 +242,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DocsComponentsComponentRouteImport
       parentRoute: typeof DocsRoute
     }
-    '/api/r/$': {
-      id: '/api/r/$'
-      path: '/api/r/$'
-      fullPath: '/api/r/$'
-      preLoaderRoute: typeof ApiRSplatRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -293,7 +273,6 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DocsRoute: DocsRouteWithChildren,
   ThemeBuilderRoute: ThemeBuilderRoute,
-  ApiRSplatRoute: ApiRSplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

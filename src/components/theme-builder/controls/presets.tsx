@@ -1,4 +1,3 @@
-import * as stylex from "@stylexjs/stylex";
 import {
 	Accordion,
 	Box,
@@ -11,14 +10,6 @@ import {
 import { useThemeBuilder } from "../theme-builder-context";
 import { presets } from "./presets-data";
 
-const styles = stylex.create({
-	swatch: {
-		width: 20,
-		height: 20,
-		borderRadius: 4,
-		border: "1px solid rgba(0,0,0,0.08)",
-	},
-});
 
 export function PresetControls() {
 	const tokens = useThemeBuilder((s) => s.tokens);
@@ -39,6 +30,7 @@ export function PresetControls() {
 						render={
 							<button
 								type="button"
+								aria-label={`Update colors to ${preset.name}`}
 								onClick={() => {
 									for (const [key, value] of Object.entries(preset.tokens)) {
 										updateToken(key as keyof typeof tokens, value);

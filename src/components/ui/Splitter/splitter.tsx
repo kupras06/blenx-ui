@@ -1,3 +1,4 @@
+// oxlint-disable max-statements
 "use client";
 
 import * as stylex from "@stylexjs/stylex";
@@ -108,7 +109,7 @@ function calculateSizes(
 		}
 	}
 
-	const result = new Array<number>(count);
+	const result = Array.from({ length: count }, () => 0);
 	let usedSize = 0;
 	let unsetCount = count;
 
@@ -435,9 +436,10 @@ export function SplitterPanel({
 
 	// Register constraints
 	useEffect(() => {
-		ctx.panelConstraintsRef.current[index] = { minSize, maxSize };
+		const ref = ctx.panelConstraintsRef.current;
+		ref[index] = { minSize, maxSize };
 		return () => {
-			ctx.panelConstraintsRef.current[index] = undefined;
+			ref[index] = undefined;
 		};
 	}, [index, minSize, maxSize, ctx.panelConstraintsRef]);
 
@@ -474,14 +476,14 @@ export function SplitterHandle({
 			setActive(true);
 			ctx.handlePointerDown(index, e);
 		},
-		[handleDisabled, ctx.disabled, ctx.handlePointerDown, index],
+		[handleDisabled, ctx, index],
 	);
 
 	const onKeyDown = useCallback(
 		(e: React.KeyboardEvent) => {
 			ctx.handleKeyDown(index, e);
 		},
-		[ctx.handleKeyDown, index],
+		[ctx, index],
 	);
 
 	useEffect(() => {
@@ -493,27 +495,28 @@ export function SplitterHandle({
 
 	const panelSize = ctx.sizes[index] ?? 0;
 
-	return (
-		<hr
-			tabIndex={handleDisabled || ctx.disabled ? -1 : 0}
-			aria-orientation={ctx.orientation}
-			aria-valuenow={Math.round(panelSize)}
-			aria-valuemin={0}
-			aria-valuemax={100}
-			aria-disabled={handleDisabled || ctx.disabled || undefined}
-			onPointerDown={onPointerDown}
-			onKeyDown={onKeyDown}
-			{...stylex.props(
-				splitterStyles.handle,
-				ctx.orientation === "horizontal"
-					? splitterStyles.handleHorizontal
-					: splitterStyles.handleVertical,
-				active && splitterStyles.handleActive,
-				(handleDisabled || ctx.disabled) && splitterStyles.handleDisabled,
-				style,
-			)}
-			data-slot="splitter-handle"
-		/>
+		return (
+			// oxlint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+			<hr
+				tabIndex={handleDisabled || ctx.disabled ? -1 : 0}
+				aria-orientation={ctx.orientation}
+				aria-valuenow={Math.round(panelSize)}
+				aria-valuemin={0}
+				aria-valuemax={100}
+				aria-disabled={handleDisabled || ctx.disabled || undefined}
+				onPointerDown={onPointerDown}
+				onKeyDown={onKeyDown}
+				{...stylex.props(
+					splitterStyles.handle,
+					ctx.orientation === "horizontal"
+						? splitterStyles.handleHorizontal
+						: splitterStyles.handleVertical,
+					active && splitterStyles.handleActive,
+					(handleDisabled || ctx.disabled) && splitterStyles.handleDisabled,
+					style,
+				)}
+				data-slot="splitter-handle"
+			/>
 	);
 }
 

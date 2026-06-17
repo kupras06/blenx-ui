@@ -43,9 +43,8 @@ type BoxProps = _BaseDivProps & {
 	maxWidth?: BoxSize | number;
 	style?: stylex.StyleXStyles;
 };
-const isBoxSize = (value: BoxSize | number): value is BoxSize => 
-	typeof value !== "number"
-;
+const isBoxSize = (value: BoxSize | number): value is BoxSize =>
+	typeof value !== "number";
 function Box({
 	render,
 	display,
