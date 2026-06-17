@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ThemeBuilderRouteImport } from './routes/theme-builder'
+import { Route as OgRouteImport } from './routes/og'
 import { Route as DocsRouteImport } from './routes/docs'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DocsIndexRouteImport } from './routes/docs/index'
@@ -24,6 +25,11 @@ import { Route as DocsComponentsComponentRouteImport } from './routes/docs/compo
 const ThemeBuilderRoute = ThemeBuilderRouteImport.update({
   id: '/theme-builder',
   path: '/theme-builder',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OgRoute = OgRouteImport.update({
+  id: '/og',
+  path: '/og',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DocsRoute = DocsRouteImport.update({
@@ -80,6 +86,7 @@ const DocsComponentsComponentRoute = DocsComponentsComponentRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/docs': typeof DocsRouteWithChildren
+  '/og': typeof OgRoute
   '/theme-builder': typeof ThemeBuilderRoute
   '/docs/data-table': typeof DocsDataTableRoute
   '/docs/installation': typeof DocsInstallationRoute
@@ -92,6 +99,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/og': typeof OgRoute
   '/theme-builder': typeof ThemeBuilderRoute
   '/docs/data-table': typeof DocsDataTableRoute
   '/docs/installation': typeof DocsInstallationRoute
@@ -106,6 +114,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/docs': typeof DocsRouteWithChildren
+  '/og': typeof OgRoute
   '/theme-builder': typeof ThemeBuilderRoute
   '/docs/data-table': typeof DocsDataTableRoute
   '/docs/installation': typeof DocsInstallationRoute
@@ -121,6 +130,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/docs'
+    | '/og'
     | '/theme-builder'
     | '/docs/data-table'
     | '/docs/installation'
@@ -133,6 +143,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/og'
     | '/theme-builder'
     | '/docs/data-table'
     | '/docs/installation'
@@ -146,6 +157,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/docs'
+    | '/og'
     | '/theme-builder'
     | '/docs/data-table'
     | '/docs/installation'
@@ -160,6 +172,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DocsRoute: typeof DocsRouteWithChildren
+  OgRoute: typeof OgRoute
   ThemeBuilderRoute: typeof ThemeBuilderRoute
 }
 
@@ -170,6 +183,13 @@ declare module '@tanstack/react-router' {
       path: '/theme-builder'
       fullPath: '/theme-builder'
       preLoaderRoute: typeof ThemeBuilderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/og': {
+      id: '/og'
+      path: '/og'
+      fullPath: '/og'
+      preLoaderRoute: typeof OgRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/docs': {
@@ -272,6 +292,7 @@ const DocsRouteWithChildren = DocsRoute._addFileChildren(DocsRouteChildren)
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DocsRoute: DocsRouteWithChildren,
+  OgRoute: OgRoute,
   ThemeBuilderRoute: ThemeBuilderRoute,
 }
 export const routeTree = rootRouteImport
