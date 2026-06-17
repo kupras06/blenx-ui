@@ -8,7 +8,6 @@ import {
 import * as stylex from "@stylexjs/stylex";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { GITHUB_URL } from "@/constants";
-import { fontSize, fonts, spacing } from "@/lib/theme/tokens.stylex";
 import {
 	Box,
 	Button,
@@ -30,61 +29,6 @@ const styles = stylex.create({
 		backgroundImage: "linear-gradient(135deg, #fff 0%, #a1a1aa 100%)",
 		WebkitBackgroundClip: "text",
 		WebkitTextFillColor: "transparent",
-	},
-	heroSubtitle: {
-		fontSize: "18px",
-		maxWidth: "600px",
-		lineHeight: 1.6,
-		color: "#a1a1aa",
-	},
-	actionRow: {
-		display: "flex",
-		gap: spacing["3"],
-		marginTop: spacing["4"],
-		alignItems: "center",
-		justifyContent: "center",
-	},
-	primaryButton: {
-		display: "inline-flex",
-		alignItems: "center",
-		gap: spacing["2"],
-		backgroundColor: "#fff",
-		color: "#000",
-		padding: "10px 20px",
-		borderRadius: "var(--border-radius-md)",
-		textDecoration: "none",
-		fontWeight: 600,
-		fontSize: "14px",
-		transition: "transform 0.15s ease",
-		":hover": {
-			transform: "translateY(-1px)",
-			opacity: 0.9,
-		},
-	},
-	secondaryButton: {
-		display: "inline-flex",
-		alignItems: "center",
-		gap: spacing["2"],
-		backgroundColor: "transparent",
-		color: "#fff",
-		padding: "10px 20px",
-		borderRadius: "var(--border-radius-md)",
-		border: "1px solid #30363d",
-		textDecoration: "none",
-		fontWeight: 600,
-		fontSize: "14px",
-		transition: "all 0.15s ease",
-		":hover": {
-			backgroundColor: "#161b22",
-			borderColor: "#8b949e",
-		},
-	},
-	grid: {
-		display: "grid",
-		gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-		gap: spacing["4"],
-		marginTop: spacing["6"],
-		marginBottom: spacing["6"],
 	},
 });
 
@@ -189,7 +133,7 @@ function HomeComponent() {
 							collocated styles that scale.
 						</Text>
 					</Box>
-					<div {...stylex.props(styles.grid)}>
+					<Grid columns={2}>
 						{features.map((feature) => (
 							<Surface key={feature.title} variant="outline" padding="large">
 								<HStack
@@ -210,7 +154,7 @@ function HomeComponent() {
 								</VStack>
 							</Surface>
 						))}
-					</div>
+					</Grid>
 				</VStack>
 
 				{/* Getting Started Quick Look */}
