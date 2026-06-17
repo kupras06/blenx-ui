@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "empty-state-01",
+	"type": "registry:ui",
+	"title": "Empty State",
+	"description": "An empty state block with icon, title, description, and optional action buttons. Use when no data exists.",
+	"registryDependencies": ["button", "text", "stack", "box", "surface", "card"],
+	"files": [
+		{
+			"file": "empty-state-01.tsx",
+			"type": "registry:ui",
+			"target": "@blocks/empty-state-01/empty-state-01.tsx"
+		},
+		{
+			"file": "empty-state-01.styles.ts",
+			"type": "registry:file",
+			"target": "@blocks/empty-state-01/empty-state-01.styles.ts"
+		}
+	]
+}

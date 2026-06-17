@@ -1,0 +1,12 @@
+{
+	"title": "Error State",
+	"description": "An error state block for displaying errors with retry action and expandable debug details. Supports card, page, and toast variants.",
+	"category": "Application States",
+	"status": "stable",
+	"keywords": ["error", "state", "failure", "retry", "alert", "exception"],
+	"related": ["Button", "Text", "Stack", "Card", "Surface"],
+	"accessibility": {
+		"keyboard": [],
+		"aria": ["role=alert", "aria-live=assertive"]
+	}
+}

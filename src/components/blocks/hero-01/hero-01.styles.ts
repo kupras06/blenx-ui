@@ -26,12 +26,12 @@ export const heroStyles = stylex.create({
 		display: "flex",
 		flexDirection: {
 			default: "row",
-			[mediaQueries.sm]:"column"
+			[mediaQueries.sm]: "column",
 		},
 		alignItems: "center",
 		gap: {
 			default: spacing.xxxlarge,
-			[mediaQueries.sm]:spacing.xlarge,
+			[mediaQueries.sm]: spacing.xlarge,
 		},
 		width: "100%",
 		maxWidth: 1200,
@@ -83,12 +83,12 @@ export const heroStyles = stylex.create({
 		flexWrap: "wrap",
 		marginTop: spacing.small,
 		width: {
-			[mediaQueries.sm]: "100%"
+			[mediaQueries.sm]: "100%",
 		},
 	},
 	actionFullWidth: {
 		width: {
-			[mediaQueries.sm]: "100%"
+			[mediaQueries.sm]: "100%",
 		},
 	},
 });

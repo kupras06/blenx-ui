@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "loading-state-01",
+	"type": "registry:ui",
+	"title": "Loading State",
+	"description": "A loading/skeleton block with various skeleton shapes (text, card, table, avatar) and optional progress indicator.",
+	"registryDependencies": ["progress", "stack", "box", "surface"],
+	"files": [
+		{
+			"file": "loading-state-01.tsx",
+			"type": "registry:ui",
+			"target": "@blocks/loading-state-01/loading-state-01.tsx"
+		},
+		{
+			"file": "loading-state-01.styles.ts",
+			"type": "registry:file",
+			"target": "@blocks/loading-state-01/loading-state-01.styles.ts"
+		}
+	]
+}

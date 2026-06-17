@@ -11,13 +11,46 @@
     <loc>https://blenx-ui.vercel.app/components/contact-01</loc>
   </url>
   <url>
+    <loc>https://blenx-ui.vercel.app/components/dashboard-01</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/empty-state-01</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/error-state-01</loc>
+  </url>
+  <url>
     <loc>https://blenx-ui.vercel.app/components/faq-01</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/forgot-password-01</loc>
   </url>
   <url>
     <loc>https://blenx-ui.vercel.app/components/hero-01</loc>
   </url>
   <url>
+    <loc>https://blenx-ui.vercel.app/components/loading-state-01</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/login-01</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/login-02</loc>
+  </url>
+  <url>
     <loc>https://blenx-ui.vercel.app/components/pricing-01</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/profile-01</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/settings-01</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/signup-01</loc>
+  </url>
+  <url>
+    <loc>https://blenx-ui.vercel.app/components/verify-email-01</loc>
   </url>
   <url>
     <loc>https://blenx-ui.vercel.app/components/accordion</loc>
