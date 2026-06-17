@@ -1,0 +1,28 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "forgot-password-01",
+	"type": "registry:ui",
+	"title": "Forgot Password",
+	"description": "A forgot password page with email input, validation, and success confirmation state.",
+	"registryDependencies": [
+		"button",
+		"input",
+		"text",
+		"card",
+		"stack",
+		"box",
+		"surface"
+	],
+	"files": [
+		{
+			"file": "forgot-password-01.tsx",
+			"type": "registry:ui",
+			"target": "@blocks/forgot-password-01/forgot-password-01.tsx"
+		},
+		{
+			"file": "forgot-password-01.styles.ts",
+			"type": "registry:file",
+			"target": "@blocks/forgot-password-01/forgot-password-01.styles.ts"
+		}
+	]
+}

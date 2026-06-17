@@ -1,0 +1,12 @@
+{
+	"title": "Forgot Password",
+	"description": "A forgot password flow with email input, validation, and success confirmation state after submission.",
+	"category": "Authentication",
+	"status": "stable",
+	"keywords": ["forgot password", "reset", "email", "recovery"],
+	"related": ["Button", "Input", "Card"],
+	"accessibility": {
+		"keyboard": ["Tab", "Enter"],
+		"aria": ["form role", "aria-label", "autoComplete", "aria-live"]
+	}
+}

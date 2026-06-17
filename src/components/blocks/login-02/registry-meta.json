@@ -1,0 +1,28 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "login-02",
+	"type": "registry:ui",
+	"title": "Alternative Sign In",
+	"description": "An email-first sign-in page with multi-step password flow or magic-link flow.",
+	"registryDependencies": [
+		"button",
+		"input",
+		"text",
+		"card",
+		"stack",
+		"box",
+		"surface"
+	],
+	"files": [
+		{
+			"file": "login-02.tsx",
+			"type": "registry:ui",
+			"target": "@blocks/login-02/login-02.tsx"
+		},
+		{
+			"file": "login-02.styles.ts",
+			"type": "registry:file",
+			"target": "@blocks/login-02/login-02.styles.ts"
+		}
+	]
+}

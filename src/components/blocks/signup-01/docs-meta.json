@@ -1,0 +1,12 @@
+{
+	"title": "Sign Up Page",
+	"description": "A complete sign-up/registration page with name, email, password, confirm password, terms acceptance, and social sign-up.",
+	"category": "Authentication",
+	"status": "stable",
+	"keywords": ["signup", "registration", "create account", "form", "social"],
+	"related": ["Button", "Input", "Checkbox", "Separator", "Card"],
+	"accessibility": {
+		"keyboard": ["Tab", "Enter"],
+		"aria": ["form role", "aria-label", "autoComplete"]
+	}
+}

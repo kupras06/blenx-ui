@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "verify-email-01",
+	"type": "registry:ui",
+	"title": "Email Verification",
+	"description": "An email verification page with 6-digit code input, auto-advance, paste support, resend with countdown timer, and success/error states.",
+	"registryDependencies": ["button", "text", "card", "stack", "box", "surface"],
+	"files": [
+		{
+			"file": "verify-email-01.tsx",
+			"type": "registry:ui",
+			"target": "@blocks/verify-email-01/verify-email-01.tsx"
+		},
+		{
+			"file": "verify-email-01.styles.ts",
+			"type": "registry:file",
+			"target": "@blocks/verify-email-01/verify-email-01.styles.ts"
+		}
+	]
+}

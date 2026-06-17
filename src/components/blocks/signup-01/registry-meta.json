@@ -1,0 +1,30 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "signup-01",
+	"type": "registry:ui",
+	"title": "Sign Up Page",
+	"description": "A registration page block with name, email, password fields, terms acceptance, and social sign-up options.",
+	"registryDependencies": [
+		"button",
+		"input",
+		"text",
+		"checkbox",
+		"separator",
+		"card",
+		"stack",
+		"box",
+		"surface"
+	],
+	"files": [
+		{
+			"file": "signup-01.tsx",
+			"type": "registry:ui",
+			"target": "@blocks/signup-01/signup-01.tsx"
+		},
+		{
+			"file": "signup-01.styles.ts",
+			"type": "registry:file",
+			"target": "@blocks/signup-01/signup-01.styles.ts"
+		}
+	]
+}

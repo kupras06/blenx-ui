@@ -1,0 +1,30 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "login-01",
+	"type": "registry:ui",
+	"title": "Sign In Page",
+	"description": "A sign-in page block with email/password form, social login options, remember me, and forgot password link.",
+	"registryDependencies": [
+		"button",
+		"input",
+		"text",
+		"checkbox",
+		"separator",
+		"card",
+		"stack",
+		"box",
+		"surface"
+	],
+	"files": [
+		{
+			"file": "login-01.tsx",
+			"type": "registry:ui",
+			"target": "@blocks/login-01/login-01.tsx"
+		},
+		{
+			"file": "login-01.styles.ts",
+			"type": "registry:file",
+			"target": "@blocks/login-01/login-01.styles.ts"
+		}
+	]
+}
