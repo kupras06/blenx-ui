@@ -1,61 +1,63 @@
-import * as stylex from "@stylexjs/stylex";
+import * as stylex from '@stylexjs/stylex';
 
 export const theme = stylex.defineVars({
-	primary: "",
-	primarySubtle: "",
-	secondary: "",
+  // Brand
+  primary:       '',
+  primarySubtle: '',
+  secondary:  '',
+  primaryHover:  '',  // ← hover IS a semantic slot; its value changes per theme
 
-	background: "",
-	backgroundSubtle: "",
+  // Content
+  contentPrimary:   '',
+  contentSecondary: '',
+  contentDisabled:  '',
+  contentAccent:    '',
+  contentOnPrimary: '',
+  contentInverse:   '',
 
-	surface: "",
-	surfaceSubtle: "",
-	surfaceRaised: "",
-	surfaceHover: "",
-	surfaceOverlay: "",
+  // Surface
+  surface:        '',
+  surfaceSubtle:  '',
+  surfaceRaised:  '',
+  surfaceHover:   '',
+  surfaceOverlay: '',
 
-	border: "",
-	borderSubtle: "",
-	borderStrong: "",
-	borderRadius: "",
+  // Border
+  border:       '',
+  borderSubtle: '',
+  borderStrong: '',
+  borderRadius: '',
 
-	fontSize: "",
-	contentPrimary: "",
-	contentSecondary: "",
-	contentDisabled: "",
-	contentAccent: "",
-	contentOnPrimary: "",
-	contentInverse: "",
+  // Background
+  background:       '',
+  backgroundSubtle: '',
 
-	sentimentNegative: "",
-	sentimentNegativeSubtle: "",
-	sentimentPositive: "",
-	sentimentPositiveSubtle: "",
-	sentimentWarning: "",
-	sentimentWarningSubtle: "",
-	sentimentInfo: "",
-	sentimentInfoSubtle: "",
+  // Sentiment — base + subtle + hover per tone
+  sentimentPositive:      '',
+  sentimentPositiveSubtle:'',
+  sentimentPositiveHover: '',
 
-	focusRing: "",
+  sentimentWarning:       '',
+  sentimentWarningSubtle: '',
+  sentimentWarningHover:  '',
 
-	shadowSm: "",
-	shadowMd: "",
-	shadowLg: "",
-	shadowXl: "",
-	// Light theme
+  sentimentNegative:      '',
+  sentimentNegativeSubtle:'',
+  sentimentNegativeHover: '',
 
-	primaryHover: "#27272a",
-	primarySoftHover: "#e4e4e7",
+  sentimentInfo:       '',
+  sentimentInfoSubtle: '',
+  sentimentInfoHover:  '',
 
-	sentimentPositiveHover: "#16a34a",
-	sentimentPositiveSoftHover: "#dcfce7",
+  // Focus & shadow
+  focusRing: '',
+  shadowSm:  '',
+  shadowMd:  '',
+  shadowLg:  '',
+  shadowXl:  '',
 
-	sentimentWarningHover: "#ca8a04",
-	sentimentWarningSoftHover: "#fef9c3",
-
-	sentimentNegativeHover: "#dc2626",
-	sentimentNegativeSoftHover: "#fee2e2",
-
-	sentimentInfoHover: "#2563eb",
-	sentimentInfoSoftHover: "#dbeafe",
+  // Typography
+  fontSize: '',
+  hoverOverlay: '', // A translucent tint applied on hover
+  hoverOverlaySoft:''
 });

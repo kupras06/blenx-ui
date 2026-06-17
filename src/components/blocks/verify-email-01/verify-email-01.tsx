@@ -136,7 +136,7 @@ export function VerifyEmail01({
 						>
 							{digits.map((digit, index) => (
 								<input
-									key={index}
+									key={`${index}-${digit}`}
 									ref={setInputRef(index)}
 									type="text"
 									inputMode="numeric"
@@ -169,7 +169,7 @@ export function VerifyEmail01({
 
 						<Button
 							type="submit"
-							variant="primary"
+							variant="solid"
 							fullWidth
 							disabled={!isComplete}
 						>

@@ -84,9 +84,9 @@ const defaultCharts: ChartSection[] = [
 ];
 
 const defaultActions = [
-	{ label: "New Report", onClick: () => {} },
-	{ label: "Export Data", onClick: () => {} },
-	{ label: "Invite Users", onClick: () => {} },
+	{ label: "New Report", handleClick: () => {} },
+	{ label: "Export Data", handleClick: () => {} },
+	{ label: "Invite Users", handleClick: () => {} },
 ];
 
 const statusVariant: Record<string, "primary" | "default" | "danger"> = {
@@ -131,7 +131,7 @@ export function Dashboard01({
 								key={action.label}
 								variant="soft"
 								size="small"
-								onClick={action.onClick}
+								onClick={action.handleClick}
 							>
 								{action.label}
 							</Button>

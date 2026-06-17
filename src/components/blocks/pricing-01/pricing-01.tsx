@@ -18,7 +18,7 @@ type Plan = {
 	yearlyPrice: number;
 	features: string[];
 	popular?: boolean;
-	cta: { label: string; onClick: () => void };
+	cta: { label: string; handleClick: () => void };
 };
 
 type Props = PropsWithStylex<{
@@ -40,7 +40,7 @@ const defaultPlans: Plan[] = [
 			"Community support",
 			"1GB storage",
 		],
-		cta: { label: "Get started", onClick: () => {} },
+		cta: { label: "Get started", handleClick: () => {} },
 	},
 	{
 		name: "Pro",
@@ -56,7 +56,7 @@ const defaultPlans: Plan[] = [
 			"API access",
 		],
 		popular: true,
-		cta: { label: "Start free trial", onClick: () => {} },
+		cta: { label: "Start free trial", handleClick: () => {} },
 	},
 	{
 		name: "Enterprise",
@@ -71,7 +71,7 @@ const defaultPlans: Plan[] = [
 			"SLA guarantee",
 			"Team training",
 		],
-		cta: { label: "Contact sales", onClick: () => {} },
+		cta: { label: "Contact sales", handleClick: () => {} },
 	},
 ];
 
@@ -159,9 +159,9 @@ export function Pricing01({
 								))}
 							</div>
 							<Button
-								variant={plan.popular ? "primary" : "outline"}
+								variant={plan.popular ? "solid" : "outline"}
 								fullWidth
-								onClick={plan.cta.onClick}
+								onClick={plan.cta.handleClick}
 								style={pricingStyles.ctaMargin}
 							>
 								{plan.cta.label}

@@ -47,7 +47,7 @@ export const buttonIntentStyles = stylex.create({
 		[intentTokens.softBg]: theme.primarySubtle,
 		[intentTokens.softFg]: theme.primary,
 
-		[intentTokens.softHoverBg]: theme.primarySoftHover,
+		[intentTokens.softHoverBg]: theme.primarySubtle,
 
 		[intentTokens.border]: theme.primary,
 		[intentTokens.borderHover]: theme.primaryHover,
@@ -58,7 +58,6 @@ export const buttonIntentStyles = stylex.create({
 		[intentTokens.solidBg]: theme.surfaceRaised,
 		[intentTokens.solidFg]: theme.contentPrimary,
 		[intentTokens.solidHoverBg]: theme.surfaceHover,
-
 		[intentTokens.softBg]: theme.backgroundSubtle,
 		[intentTokens.softFg]: theme.contentPrimary,
 
@@ -77,7 +76,7 @@ export const buttonIntentStyles = stylex.create({
 		[intentTokens.softBg]: theme.sentimentPositiveSubtle,
 		[intentTokens.softFg]: theme.sentimentPositive,
 
-		[intentTokens.softHoverBg]: theme.sentimentPositiveSoftHover,
+		[intentTokens.softHoverBg]: theme.sentimentPositiveSubtle,
 
 		[intentTokens.border]: theme.sentimentPositive,
 		[intentTokens.borderHover]: theme.sentimentPositiveHover,
@@ -92,7 +91,7 @@ export const buttonIntentStyles = stylex.create({
 		[intentTokens.softBg]: theme.sentimentWarningSubtle,
 		[intentTokens.softFg]: theme.sentimentWarning,
 
-		[intentTokens.softHoverBg]: theme.sentimentWarningSoftHover,
+		[intentTokens.softHoverBg]: theme.sentimentWarningSubtle,
 
 		[intentTokens.border]: theme.sentimentWarning,
 		[intentTokens.borderHover]: theme.sentimentWarningHover,
@@ -107,7 +106,7 @@ export const buttonIntentStyles = stylex.create({
 		[intentTokens.softBg]: theme.sentimentNegativeSubtle,
 		[intentTokens.softFg]: theme.sentimentNegative,
 
-		[intentTokens.softHoverBg]: theme.sentimentNegativeSoftHover,
+		[intentTokens.softHoverBg]: theme.sentimentNegativeSubtle,
 
 		[intentTokens.border]: theme.sentimentNegative,
 		[intentTokens.borderHover]: theme.sentimentNegativeHover,
@@ -122,7 +121,7 @@ export const buttonIntentStyles = stylex.create({
 		[intentTokens.softBg]: theme.sentimentInfoSubtle,
 		[intentTokens.softFg]: theme.sentimentInfo,
 
-		[intentTokens.softHoverBg]: theme.sentimentInfoSoftHover,
+		[intentTokens.softHoverBg]: theme.sentimentInfoSubtle,
 
 		[intentTokens.border]: theme.sentimentInfo,
 		[intentTokens.borderHover]: theme.sentimentInfoHover,
@@ -130,53 +129,47 @@ export const buttonIntentStyles = stylex.create({
 		[intentTokens.fg]: theme.sentimentInfo,
 	},
 });
-
 export const buttonVariantStyles = stylex.create({
 	solid: {
 		backgroundColor: intentTokens.solidBg,
 		borderColor: intentTokens.border,
 		color: intentTokens.solidFg,
-
 		":hover:not(:disabled)": {
 			backgroundColor: intentTokens.solidHoverBg,
 			borderColor: intentTokens.borderHover,
 		},
 	},
 	soft: {
-		backgroundColor: intentTokens.softBg,
-		borderColor: "transparent",
-		color: intentTokens.softFg,
-
+		backgroundColor: intentTokens.softFg ,
+		borderColor: 'transparent',
 		":hover:not(:disabled)": {
-			backgroundColor: intentTokens.softHoverBg,
+		backgroundColor: `color-mix(in srgb, ${intentTokens.softBg} 80%, ${theme.contentPrimary})`,
+		borderColor: `color-mix(in srgb, ${intentTokens.border} 80%, ${theme.contentPrimary})`,
 		},
 	},
 	outline: {
-		backgroundColor: "transparent",
+		backgroundColor: 'transparent',
 		borderColor: intentTokens.border,
 		color: intentTokens.fg,
-
 		":hover:not(:disabled)": {
-			backgroundColor: intentTokens.softBg,
+			backgroundColor: `color-mix(in srgb, ${intentTokens.solidFg} 85%, ${theme.contentPrimary})`,
 			borderColor: intentTokens.borderHover,
 		},
 	},
 	ghost: {
-		backgroundColor: "transparent",
-		borderColor: "transparent",
+		backgroundColor: 'transparent',
+		borderColor: 'transparent',
 		color: intentTokens.fg,
-
 		":hover:not(:disabled)": {
-			backgroundColor: intentTokens.softBg,
+			backgroundColor: `color-mix(in srgb, ${intentTokens.border} 15%, ${theme.contentPrimary})`,
 		},
 	},
 	link: {
-		backgroundColor: "transparent",
-		borderColor: "transparent",
+		backgroundColor: 'transparent',
+		borderColor: 'transparent',
 		color: intentTokens.fg,
-
 		":hover:not(:disabled)": {
-			textDecoration: "underline",
+			textDecoration: 'underline',
 		},
 	},
 });

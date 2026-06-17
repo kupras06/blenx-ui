@@ -13,12 +13,12 @@ import { loginStyles } from "./login-01.styles";
 
 type SocialProvider = {
 	provider: string;
-	onClick?: () => void;
+	handleClick?: () => void;
 };
 
 type Links = {
-	forgotPassword?: { label: string; onClick: () => void };
-	signUp?: { label: string; onClick: () => void };
+	forgotPassword?: { label: string; handleClick: () => void };
+	signUp?: { label: string; handleClick: () => void };
 };
 
 type FormValues = {
@@ -116,7 +116,7 @@ export function Login01({
 							{links?.forgotPassword && (
 								<button
 									type="button"
-									onClick={links.forgotPassword.onClick}
+									onClick={links.forgotPassword.handleClick}
 									{...stylex.props(loginStyles.forgotLink)}
 								>
 									{links.forgotPassword.label ?? "Forgot password?"}
@@ -124,7 +124,7 @@ export function Login01({
 							)}
 						</div>
 
-						<Button type="submit" variant="primary" fullWidth>
+						<Button type="submit" variant="solid" fullWidth>
 							Sign in
 						</Button>
 					</form>
@@ -137,7 +137,7 @@ export function Login01({
 									<Button
 										key={provider.provider}
 										variant="outline"
-										onClick={provider.onClick}
+										onClick={provider.handleClick}
 										style={loginStyles.socialButton}
 									>
 										{provider.provider}
@@ -154,7 +154,7 @@ export function Login01({
 							</Text>
 							<button
 								type="button"
-								onClick={links.signUp.onClick}
+								onClick={links.signUp.handleClick}
 								{...stylex.props(loginStyles.footerLink)}
 							>
 								{links.signUp.label ?? "Sign up"}

@@ -72,8 +72,8 @@ export function Faq01({
 				<div {...stylex.props(faqStyles.accordionWrapper)}>
 					{filteredItems.length > 0 ? (
 						<AccordionRoot>
-							{filteredItems.map((item, index) => (
-								<AccordionItem key={index}>
+							{filteredItems.map((item, ) => (
+								<AccordionItem key={item.question}>
 									<AccordionHeader>
 										<AccordionTrigger>{item.question}</AccordionTrigger>
 									</AccordionHeader>

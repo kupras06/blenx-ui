@@ -7,7 +7,7 @@ import { heroStyles } from "./hero-01.styles";
 
 type Cta = {
 	label: string;
-	onClick?: () => void;
+	handleClick?: () => void;
 };
 
 type Props = PropsWithStylex<{
@@ -50,12 +50,10 @@ export function Hero01({
 						</Text>
 					)}
 					{(primaryCta || secondaryCta) && (
-						<HStack gap="small" align="center" wrap style={heroStyles.actions}>
+						<HStack gap="small" align="center" wrap >
 							{primaryCta && (
 								<Button
-									variant="primary"
-									onClick={primaryCta.onClick}
-									style={heroStyles.actionFullWidth}
+									onClick={primaryCta.handleClick}fullWidth
 								>
 									{primaryCta.label}
 								</Button>
@@ -63,8 +61,8 @@ export function Hero01({
 							{secondaryCta && (
 								<Button
 									variant="ghost"
-									onClick={secondaryCta.onClick}
-									style={heroStyles.actionFullWidth}
+									onClick={secondaryCta.handleClick}
+									fullWidth
 								>
 									{secondaryCta.label}
 								</Button>

@@ -7,7 +7,7 @@ import { Box, Container } from "@/components/ui";
 
 type Action = {
 	label: string;
-	onClick: () => void;
+	handleClick: () => void;
 };
 
 type Props = PropsWithStylex<{
@@ -41,12 +41,12 @@ export function EmptyState01({
 			{(action || secondaryAction) && (
 				<HStack gap="small" align="center" wrap>
 					{action && (
-						<Button variant="primary" onClick={action.onClick} fullWidth>
+						<Button variant="solid" onClick={action.handleClick} fullWidth>
 							{action.label}
 						</Button>
 					)}
 					{secondaryAction && (
-						<Button variant="ghost" onClick={secondaryAction.onClick} fullWidth>
+						<Button variant="soft" onClick={secondaryAction.handleClick} fullWidth>
 							{secondaryAction.label}
 						</Button>
 					)}

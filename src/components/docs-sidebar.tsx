@@ -66,11 +66,10 @@ function DocsSidebar({ onClose }: { onClose?: () => void }) {
 		manifest &&
 		CATEGORY_ORDER.reduce(
 			(groups, category) => {
-				const items = Object.entries(manifest)
-					.filter(
-						([, data]) => data.category === category && category !== "Utility",
-					)
-					.toSorted(([a], [b]) => a.localeCompare(b));
+				const items = Object.entries(manifest).filter(
+					([, data]) => data.category === category && category !== "Utility",
+				);
+				items.sort(([a], [b]) => a.localeCompare(b));
 
 				if (items.length > 0) {
 					groups.push({ category, items });

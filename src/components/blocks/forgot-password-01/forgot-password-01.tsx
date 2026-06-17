@@ -12,7 +12,7 @@ import { forgotPasswordStyles } from "./forgot-password-01.styles";
 type Props = PropsWithStylex<{
 	title?: string;
 	onSubmit?: (email: string) => void;
-	backToLoginLink?: { label: string; onClick: () => void };
+	backToLoginLink?: { label: string; handleClick: () => void };
 }>;
 
 export function ForgotPassword01({
@@ -68,7 +68,7 @@ export function ForgotPassword01({
 								instructions.
 							</Text>
 							{backToLoginLink && (
-								<Button variant="ghost" onClick={backToLoginLink.onClick}>
+								<Button variant="ghost" onClick={backToLoginLink.handleClick}>
 									{backToLoginLink.label ?? "Back to login"}
 								</Button>
 							)}
@@ -110,7 +110,7 @@ export function ForgotPassword01({
 									)}
 								</div>
 
-								<Button type="submit" variant="primary" fullWidth>
+								<Button type="submit" variant="solid" fullWidth>
 									Send reset link
 								</Button>
 							</form>
@@ -119,7 +119,7 @@ export function ForgotPassword01({
 								<div {...stylex.props(forgotPasswordStyles.footer)}>
 									<button
 										type="button"
-										onClick={backToLoginLink.onClick}
+										onClick={backToLoginLink.handleClick}
 										{...stylex.props(forgotPasswordStyles.footerLink)}
 									>
 										{backToLoginLink.label ?? "Back to login"}

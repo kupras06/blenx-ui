@@ -13,7 +13,7 @@ import { signupStyles } from "./signup-01.styles";
 
 type SocialProvider = {
 	provider: string;
-	onClick?: () => void;
+	handleClick?: () => void;
 };
 
 type FormValues = {
@@ -30,7 +30,7 @@ type Props = PropsWithStylex<{
 	onSubmit?: (values: FormValues) => void;
 	socialProviders?: SocialProvider[];
 	termsUrl?: string;
-	loginLink?: { label: string; onClick: () => void };
+	loginLink?: { label: string; handleClick: () => void };
 }>;
 
 export function Signup01({
@@ -172,7 +172,7 @@ export function Signup01({
 							</label>
 						</div>
 
-						<Button type="submit" variant="primary" fullWidth>
+						<Button type="submit" variant="solid" fullWidth>
 							Create account
 						</Button>
 					</form>
@@ -185,7 +185,7 @@ export function Signup01({
 									<Button
 										key={provider.provider}
 										variant="outline"
-										onClick={provider.onClick}
+										onClick={provider.handleClick}
 										style={signupStyles.socialButton}
 									>
 										{provider.provider}
@@ -202,7 +202,7 @@ export function Signup01({
 							</Text>
 							<button
 								type="button"
-								onClick={loginLink.onClick}
+								onClick={loginLink.handleClick}
 								{...stylex.props(signupStyles.footerLink)}
 							>
 								{loginLink.label ?? "Sign in"}

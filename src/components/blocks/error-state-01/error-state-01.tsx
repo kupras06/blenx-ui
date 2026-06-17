@@ -12,7 +12,7 @@ import { errorStateStyles } from "./error-state-01.styles";
 
 type Action = {
 	label: string;
-	onClick: () => void;
+	handleClick: () => void;
 };
 
 type Props = PropsWithStylex<{
@@ -43,12 +43,11 @@ export function ErrorState01({
 		<VStack
 			align="center"
 			gap="medium"
-			style={stylex.props(
-				errorStateStyles.container,
+			style={[errorStateStyles.container,
 				variant === "page" && errorStateStyles.page,
 				variant === "toast" && errorStateStyles.toast,
 				style,
-			)}
+			]}
 			role="alert"
 			aria-live="assertive"
 		>
@@ -72,13 +71,11 @@ export function ErrorState01({
 					gap="small"
 					align="center"
 					wrap
-					style={errorStateStyles.actions}
 				>
 					{onRetry && (
 						<Button
-							variant="primary"
 							onClick={onRetry}
-							style={errorStateStyles.actionFullWidth}
+							fullWidth
 						>
 							Try again
 						</Button>
@@ -86,8 +83,8 @@ export function ErrorState01({
 					{secondaryAction && (
 						<Button
 							variant="ghost"
-							onClick={secondaryAction.onClick}
-							style={errorStateStyles.actionFullWidth}
+							onClick={secondaryAction.handleClick}
+				fullWidth
 						>
 							{secondaryAction.label}
 						</Button>
