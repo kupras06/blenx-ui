@@ -136,11 +136,7 @@ function MarketingPage() {
 								<Text variant="body2" weight="semibold">
 									Import
 								</Text>
-								<Surface
-									render={<pre />}
-									padding="small"
-									variant="sunken"
-								>
+								<Surface render={<pre />} padding="small" variant="sunken">
 									<code>{`import { ${block.demoExport.replace("Demo", "")} } from "${block.importPath}";`}</code>
 								</Surface>
 							</Box>

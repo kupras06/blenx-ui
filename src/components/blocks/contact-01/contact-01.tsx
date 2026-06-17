@@ -1,14 +1,22 @@
 "use client";
 
 import { useState } from "react";
-import * as stylex from "@stylexjs/stylex";
 import { Button } from "@/components/ui/Button/button";
-import { Input, Label } from "@/components/ui/Input/input";
+import { Input } from "@/components/ui/Input/input";
 import { Textarea } from "@/components/ui/Textarea/textarea";
 import { Text } from "@/components/ui/Text/text";
 import { Card, CardBody } from "@/components/ui/Card/card";
 import type { PropsWithStylex } from "@/utils/stylex.utils";
-import { contactStyles } from "./contact-01.styles";
+import {
+	Box,
+	Container,
+	Field,
+	FieldLabel,
+	HStack,
+	Select,
+	VStack,
+} from "@/components/ui";
+import { PaperPlaneTiltIcon } from "@phosphor-icons/react";
 
 type ContactInfo = {
 	address?: string;
@@ -45,13 +53,12 @@ export function Contact01({
 	contactInfo,
 	onSubmit,
 	subjects = defaultSubjects,
-	style,
 }: Props) {
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [subject, setSubject] = useState(subjects[0]?.value ?? "");
 	const [message, setMessage] = useState("");
-	const [submitted, setSubmitted] = useState(false);
+	const [submitted, setSubmitted] = useState(true);
 
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
@@ -61,60 +68,61 @@ export function Contact01({
 
 	if (submitted) {
 		return (
-			<section {...stylex.props(contactStyles.section, style)}>
+			<Container
+			render={<section />}
+			content="center"
+			size="full"
+			paddingY="huge"
+		>
 				<Card>
 					<CardBody>
-						<div {...stylex.props(contactStyles.successState)}>
-							<div {...stylex.props(contactStyles.successIcon)}>
-								<svg
-									width="28"
-									height="28"
-									viewBox="0 0 24 24"
-									fill="none"
-									stroke="currentColor"
-									strokeWidth="2"
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									aria-hidden="true"
-								>
-									<path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-								</svg>
-							</div>
+						<VStack align="center" gap="medium">
+							<Box backgroundColor="success"  color="success" radius="full"  padding="xxsmall" >
+									<PaperPlaneTiltIcon />
+							</Box>
 							<Text variant="h3">Message sent!</Text>
-							<Text variant="body1" style={contactStyles.description}>
+							<Text variant="body1" >
 								Thank you for reaching out. We&apos;ll get back to you as soon
 								as possible.
 							</Text>
 							<Button variant="ghost" onClick={() => setSubmitted(false)}>
 								Send another message
 							</Button>
-						</div>
+						</VStack>
 					</CardBody>
 				</Card>
-			</section>
+			</Container>
 		);
 	}
 
 	return (
-		<section {...stylex.props(contactStyles.section, style)}>
-			<div {...stylex.props(contactStyles.inner)}>
-				<div {...stylex.props(contactStyles.header)}>
-					<Text variant="h2">{title}</Text>
-					<Text variant="body1" style={contactStyles.description}>
+		<Container
+			render={<section />}
+			content="center"
+			size="full"
+			paddingY="huge"
+		>
+
+				<VStack gap="medium" align="center" justify="center">
+			<Box >
+					<Text variant="h2" align="center" >{title}</Text>
+					<Text variant="body1" color="secondary" align="center">
 						{description}
 					</Text>
-				</div>
-
-				<Card>
+			</Box>
+				<HStack gap="medium">
+					<Card>
 					<CardBody>
-						<form
-							onSubmit={handleSubmit}
-							aria-label="Contact form"
-							{...stylex.props(contactStyles.form)}
+						<VStack
+							render={<form
+								onSubmit={handleSubmit}
+								aria-label="Contact form"
+							/>
+						}
 						>
-							<div {...stylex.props(contactStyles.formRow)}>
-								<div {...stylex.props(contactStyles.fieldGroup)}>
-									<Label htmlFor="contact-name">Name</Label>
+							<HStack>
+								<Field>
+									<FieldLabel>Name</FieldLabel>
 									<Input
 										id="contact-name"
 										value={name}
@@ -122,9 +130,9 @@ export function Contact01({
 										required
 										autoComplete="name"
 									/>
-								</div>
-								<div {...stylex.props(contactStyles.fieldGroup)}>
-									<Label htmlFor="contact-email">Email</Label>
+								</Field>
+								<Field >
+									<FieldLabel>Email</FieldLabel>
 									<Input
 										id="contact-email"
 										type="email"
@@ -133,28 +141,38 @@ export function Contact01({
 										required
 										autoComplete="email"
 									/>
-								</div>
-							</div>
+								</Field>
+							</HStack>
 
-							<div {...stylex.props(contactStyles.fieldGroup)}>
-								<Label htmlFor="contact-subject">Subject</Label>
-								<select
-									id="contact-subject"
+							<Select.Wrapper label="Subject">
+								<Select.Root
 									value={subject}
-									onChange={(e) => setSubject(e.target.value)}
-									required
-									{...stylex.props(contactStyles.select)}
+									onValueChange={(e) => {
+										setSubject(e as string);
+									}}
 								>
-									{subjects.map((s) => (
-										<option key={s.value} value={s.value}>
-											{s.label}
-										</option>
-									))}
-								</select>
-							</div>
+									<Select.Trigger size="sm">
+										<Select.Value placeholder="Select font" />
+										<Select.Icon />
+									</Select.Trigger>
+									<Select.Portal>
+										<Select.Positioner>
+											<Select.Popup>
+												<Select.List>
+													{subjects.map((s) => (
+														<Select.Item key={s.value} value={s.value}>
+															{s.label}
+														</Select.Item>
+													))}
+												</Select.List>
+											</Select.Popup>
+										</Select.Positioner>
+									</Select.Portal>
+								</Select.Root>
+							</Select.Wrapper>
 
-							<div {...stylex.props(contactStyles.fieldGroup)}>
-								<Label htmlFor="contact-message">Message</Label>
+							<Field>
+								<FieldLabel>Message</FieldLabel>
 								<Textarea
 									id="contact-message"
 									value={message}
@@ -162,50 +180,46 @@ export function Contact01({
 									required
 									rows={5}
 								/>
-							</div>
+							</Field>
 
 							<Button type="submit" variant="primary" fullWidth>
 								Send message
 							</Button>
-						</form>
+						</VStack>
 					</CardBody>
 				</Card>
 
 				{contactInfo && (
-					<div {...stylex.props(contactStyles.infoSidebar)}>
+					<VStack gap="large">
 						{contactInfo.address && (
-							<div {...stylex.props(contactStyles.infoItem)}>
-								<Text variant="caption" style={contactStyles.infoLabel}>
-									Address
-								</Text>
-								<Text variant="body2" style={contactStyles.infoValue}>
-									{contactInfo.address}
-								</Text>
-							</div>
-						)}
-						{contactInfo.phone && (
-							<div {...stylex.props(contactStyles.infoItem)}>
-								<Text variant="caption" style={contactStyles.infoLabel}>
-									Phone
-								</Text>
-								<Text variant="body2" style={contactStyles.infoValue}>
+							<Box>
+								<Text variant="body3">Address</Text>
+								<Text variant="h5" color="secondary">
 									{contactInfo.phone}
 								</Text>
-							</div>
+							</Box>
+						)}
+						{contactInfo.phone && (
+							<Box>
+								<Text variant="body3">Phone</Text>
+								<Text variant="h5" color="secondary">
+									{contactInfo.phone}
+								</Text>
+							</Box>
 						)}
 						{contactInfo.email && (
-							<div {...stylex.props(contactStyles.infoItem)}>
-								<Text variant="caption" style={contactStyles.infoLabel}>
-									Email
-								</Text>
-								<Text variant="body2" style={contactStyles.infoValue}>
+							<Box>
+								<Text variant="body3">Email</Text>
+								<Text variant="h5" color="secondary">
 									{contactInfo.email}
 								</Text>
-							</div>
+							</Box>
 						)}
-					</div>
+					</VStack>
 				)}
-			</div>
-		</section>
+				</HStack>
+				</VStack>
+				
+		</Container>
 	);
 }

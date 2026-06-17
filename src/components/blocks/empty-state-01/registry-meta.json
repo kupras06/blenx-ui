@@ -10,11 +10,6 @@
 			"file": "empty-state-01.tsx",
 			"type": "registry:ui",
 			"target": "@blocks/empty-state-01/empty-state-01.tsx"
-		},
-		{
-			"file": "empty-state-01.styles.ts",
-			"type": "registry:file",
-			"target": "@blocks/empty-state-01/empty-state-01.styles.ts"
 		}
 	]
 }

@@ -1,10 +1,9 @@
-import * as stylex from "@stylexjs/stylex";
 import { Button } from "@/components/ui/Button/button";
 import { Text } from "@/components/ui/Text/text";
 import { VStack, HStack } from "@/components/ui/Stack/stack";
 import { Card, CardBody } from "@/components/ui/Card/card";
 import type { PropsWithStylex } from "@/utils/stylex.utils";
-import { emptyStateStyles } from "./empty-state-01.styles";
+import { Box, Container } from "@/components/ui";
 
 type Action = {
 	label: string;
@@ -26,61 +25,28 @@ export function EmptyState01({
 	description,
 	action,
 	secondaryAction,
-	variant = "page",
-	style,
+	variant,
 }: Props) {
 	const content = (
-		<VStack
-			align="center"
-			gap="medium"
-			style={stylex.props(
-				emptyStateStyles.container,
-				variant === "page" && emptyStateStyles.page,
-				style,
-			)}
-		>
-			{icon && (
-				<div {...stylex.props(emptyStateStyles.iconWrapper)}>{icon}</div>
-			)}
-			<Text
-				variant="h3"
-				weight="semibold"
-				align="center"
-				style={emptyStateStyles.title}
-			>
+		<VStack align="center" gap="medium">
+			{icon && <Box color="secondary">{icon}</Box>}
+			<Text variant="h3" weight="semibold" align="center">
 				{title}
 			</Text>
 			{description && (
-				<Text
-					variant="body1"
-					align="center"
-					style={emptyStateStyles.description}
-				>
+				<Text variant="body1" align="center" color="secondary">
 					{description}
 				</Text>
 			)}
 			{(action || secondaryAction) && (
-				<HStack
-					gap="small"
-					align="center"
-					wrap
-					style={emptyStateStyles.actions}
-				>
+				<HStack gap="small" align="center" wrap>
 					{action && (
-						<Button
-							variant="primary"
-							onClick={action.onClick}
-							style={emptyStateStyles.actionFullWidth}
-						>
+						<Button variant="primary" onClick={action.onClick} fullWidth>
 							{action.label}
 						</Button>
 					)}
 					{secondaryAction && (
-						<Button
-							variant="ghost"
-							onClick={secondaryAction.onClick}
-							style={emptyStateStyles.actionFullWidth}
-						>
+						<Button variant="ghost" onClick={secondaryAction.onClick} fullWidth>
 							{secondaryAction.label}
 						</Button>
 					)}
@@ -97,5 +63,5 @@ export function EmptyState01({
 		);
 	}
 
-	return content;
+	return <Container>{content}</Container>;
 }

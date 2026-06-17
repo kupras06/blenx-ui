@@ -6,4 +6,10 @@ export const containerStyles = stylex.create({
 		boxSizing: "border-box",
 	},
 	center: { marginLeft: "auto", marginRight: "auto" },
+	contentCenter: {
+		display: "flex",
+		flexDirection:'column',
+		justifyContent: "center",
+		alignItems: "center",
+	},
 });
