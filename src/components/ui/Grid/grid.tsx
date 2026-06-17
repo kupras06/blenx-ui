@@ -8,18 +8,11 @@ import {
 	gridSpanStyles,
 	gridStyles,
 } from "./grid.styles";
-import { responsiveGridColumns } from "./responsiveGrid.styles";
 
 type SpacingToken = keyof typeof gridGapStyles;
 
-export type Breakpoint = "base" | "sm" | "md" | "lg" | "xl";
-
-export type ResponsiveColumns = Partial<
-	Record<Breakpoint, keyof typeof gridColumnStyles>
->;
-
 export type GridProps = BoxProps & {
-	columns?: keyof typeof gridColumnStyles | ResponsiveColumns;
+	columns?: keyof typeof gridColumnStyles;
 	gap?: SpacingToken;
 	align?: "start" | "center" | "end" | "stretch";
 	justify?: "start" | "center" | "end" | "stretch";
@@ -29,26 +22,6 @@ export type GridItemProps = BoxProps & {
 	span?: keyof typeof gridSpanStyles;
 };
 
-const breakpointOrder: Breakpoint[] = ["base", "sm", "md", "lg", "xl"];
-
-function resolveColumns(
-	columns: GridProps["columns"],
-): readonly stylex.StyleXStyles[] {
-	if (!columns) return [];
-	if (typeof columns === "number") {
-		return [gridColumnStyles[columns] as stylex.StyleXStyles];
-	}
-	const result: stylex.StyleXStyles[] = [];
-	for (const bp of breakpointOrder) {
-		const col = columns[bp];
-		if (col !== undefined) {
-			const key = `${bp}${col}` as keyof typeof responsiveGridColumns;
-			result.push(responsiveGridColumns[key] as stylex.StyleXStyles);
-		}
-	}
-	return result;
-}
-
 function Grid({
 	gap: gapProp = "medium",
 	columns: columnsProp,
@@ -57,9 +30,8 @@ function Grid({
 	style,
 	...props
 }: GridProps) {
-	const columnStyles = resolveColumns(columnsProp);
 	const resolvedStyles = stylex.props(
-		...columnStyles,
+		columnsProp && gridColumnStyles[columnsProp],
 		gridGapStyles[gapProp],
 		alignProp && gridAlignStyles[alignProp],
 		justifyProp && gridJustifyStyles[justifyProp],

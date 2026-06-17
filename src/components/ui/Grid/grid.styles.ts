@@ -14,6 +14,7 @@ export const gridColumnStyles = stylex.create({
 	11: { gridTemplateColumns: "repeat(11, minmax(0, 1fr))" },
 	12: { gridTemplateColumns: "repeat(12, minmax(0, 1fr))" },
 });
+
 export const gridAlignStyles = stylex.create({
 	start: { alignItems: "start" },
 	center: { alignItems: "center" },

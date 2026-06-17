@@ -5,7 +5,7 @@ import { Grid, GridItem } from "./grid";
 export function ColumnsStory() {
 	return (
 		<Stack gap="medium">
-			<Text variant="h4">Fixed: 3 columns</Text>
+			<Text variant="h4">3 columns</Text>
 			<Grid columns={3} gap="small">
 				<GridItem>
 					<div
@@ -80,7 +80,7 @@ export function ColumnsStory() {
 					</div>
 				</GridItem>
 			</Grid>
-			<Text variant="h4">Fixed: 4 columns with spans</Text>
+			<Text variant="h4">4 columns with spans</Text>
 			<Grid columns={4} gap="small">
 				<GridItem span={2}>
 					<div
@@ -140,105 +140,6 @@ export function ColumnsStory() {
 						}}
 					>
 						Span 3
-					</div>
-				</GridItem>
-			</Grid>
-			<Text variant="h4">Responsive: 1 / 2 / 4 columns</Text>
-			<Grid columns={{ base: 1, md: 2, lg: 4 }} gap="small">
-				<GridItem>
-					<div
-						style={{
-							background: "var(--surface)",
-							padding: 16,
-							borderRadius: 8,
-							border: "1px solid var(--border)",
-						}}
-					>
-						1
-					</div>
-				</GridItem>
-				<GridItem>
-					<div
-						style={{
-							background: "var(--surface)",
-							padding: 16,
-							borderRadius: 8,
-							border: "1px solid var(--border)",
-						}}
-					>
-						2
-					</div>
-				</GridItem>
-				<GridItem>
-					<div
-						style={{
-							background: "var(--surface)",
-							padding: 16,
-							borderRadius: 8,
-							border: "1px solid var(--border)",
-						}}
-					>
-						3
-					</div>
-				</GridItem>
-				<GridItem>
-					<div
-						style={{
-							background: "var(--surface)",
-							padding: 16,
-							borderRadius: 8,
-							border: "1px solid var(--border)",
-						}}
-					>
-						4
-					</div>
-				</GridItem>
-				<GridItem>
-					<div
-						style={{
-							background: "var(--surface)",
-							padding: 16,
-							borderRadius: 8,
-							border: "1px solid var(--border)",
-						}}
-					>
-						5
-					</div>
-				</GridItem>
-				<GridItem>
-					<div
-						style={{
-							background: "var(--surface)",
-							padding: 16,
-							borderRadius: 8,
-							border: "1px solid var(--border)",
-						}}
-					>
-						6
-					</div>
-				</GridItem>
-				<GridItem>
-					<div
-						style={{
-							background: "var(--surface)",
-							padding: 16,
-							borderRadius: 8,
-							border: "1px solid var(--border)",
-						}}
-					>
-						7
-					</div>
-				</GridItem>
-				<GridItem>
-					<div
-						style={{
-							background: "var(--surface)",
-							padding: 16,
-							borderRadius: 8,
-							border: "1px solid var(--border)",
-						}}
-					>
-						8
 					</div>
 				</GridItem>
 			</Grid>

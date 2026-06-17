@@ -304,7 +304,7 @@
       "Field",
       "Button"
     ],
-    "registryName": "color-picker",
+    "registryName": "colorpicker",
     "examples": []
   },
   "colorswatch": {
@@ -519,7 +519,7 @@
       "Checkbox",
       "Radio"
     ],
-    "registryName": "input-group",
+    "registryName": "inputgroup",
     "examples": []
   },
   "menu": {

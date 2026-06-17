@@ -25,5 +25,6 @@
       "target": "@ui/Input/input.styles.ts"
     }
   ],
-  "type": "registry:ui"
+  "type": "registry:ui",
+  "demo": "import { Grid } from \"../Grid/grid\";\nimport { VStack } from \"../Stack/stack\";\nimport { Text } from \"../Text/text\";\nimport { Input } from \"./input\";\n\nfunction InputDemo() {\n\treturn (\n\t\t<VStack gap=\"medium\">\n\t\t\t<Grid columns={3}>\n\t\t\t\t<Text variant=\"h6\">Sizes</Text>\n\t\t\t\t<Input size=\"sm\" placeholder=\"Small input\" />\n\t\t\t\t<Input placeholder=\"Default input\" />\n\t\t\t\t<Input size=\"lg\" placeholder=\"Large input\" />\n\t\t\t</Grid>\n\n\t\t\t<Grid columns={3}>\n\t\t\t\t<Text variant=\"h6\">With Error</Text>\n\t\t\t\t<Input error=\"This field is required\" placeholder=\"Email address\" />\n\t\t\t</Grid>\n\t\t</VStack>\n\t);\n}\n\nexport { InputDemo as Demo };\n"
 }
