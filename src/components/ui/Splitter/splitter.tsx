@@ -495,28 +495,28 @@ export function SplitterHandle({
 
 	const panelSize = ctx.sizes[index] ?? 0;
 
-		return (
-			// oxlint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
-			<hr
-				tabIndex={handleDisabled || ctx.disabled ? -1 : 0}
-				aria-orientation={ctx.orientation}
-				aria-valuenow={Math.round(panelSize)}
-				aria-valuemin={0}
-				aria-valuemax={100}
-				aria-disabled={handleDisabled || ctx.disabled || undefined}
-				onPointerDown={onPointerDown}
-				onKeyDown={onKeyDown}
-				{...stylex.props(
-					splitterStyles.handle,
-					ctx.orientation === "horizontal"
-						? splitterStyles.handleHorizontal
-						: splitterStyles.handleVertical,
-					active && splitterStyles.handleActive,
-					(handleDisabled || ctx.disabled) && splitterStyles.handleDisabled,
-					style,
-				)}
-				data-slot="splitter-handle"
-			/>
+	return (
+		// oxlint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+		<hr
+			tabIndex={handleDisabled || ctx.disabled ? -1 : 0}
+			aria-orientation={ctx.orientation}
+			aria-valuenow={Math.round(panelSize)}
+			aria-valuemin={0}
+			aria-valuemax={100}
+			aria-disabled={handleDisabled || ctx.disabled || undefined}
+			onPointerDown={onPointerDown}
+			onKeyDown={onKeyDown}
+			{...stylex.props(
+				splitterStyles.handle,
+				ctx.orientation === "horizontal"
+					? splitterStyles.handleHorizontal
+					: splitterStyles.handleVertical,
+				active && splitterStyles.handleActive,
+				(handleDisabled || ctx.disabled) && splitterStyles.handleDisabled,
+				style,
+			)}
+			data-slot="splitter-handle"
+		/>
 	);
 }
 

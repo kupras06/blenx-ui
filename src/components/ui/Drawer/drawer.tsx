@@ -9,7 +9,7 @@ import { useRender } from "@base-ui/react/use-render";
 import { ArrowRightIcon, XIcon } from "@phosphor-icons/react";
 import * as stylex from "@stylexjs/stylex";
 import type React from "react";
-import { createContext, useContext } from "react";
+import { createContext, useContext, useMemo } from "react";
 import type { _BaseDivProps, PropsWithStylex } from "@/utils/stylex.utils";
 import { Button } from "../Button/button";
 import { ScrollArea } from "../ScrollArea/scroll-area";
@@ -44,8 +44,9 @@ export function Drawer({
 }: DrawerPrimitive.Root.Props & {
 	position?: DrawerPosition;
 }): React.ReactElement {
+	const contextValue = useMemo(() => ({ position }), [position]);
 	return (
-		<DrawerContext.Provider value={{ position }}>
+		<DrawerContext.Provider value={contextValue}>
 			<DrawerPrimitive.Root
 				swipeDirection={swipeDirection ?? directionMap[position]}
 				{...props}
@@ -560,7 +561,7 @@ export function DrawerMenuRadioGroup({
 	);
 }
 
-export function DrawerMenuRadioItem({
+function DrawerMenuRadioItem({
 	className,
 	children,
 	value,
@@ -604,4 +605,4 @@ export function DrawerMenuRadioItem({
 	);
 }
 
-export { DrawerPrimitive };
+export { DrawerMenuRadioItem };

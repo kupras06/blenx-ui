@@ -12,9 +12,9 @@ export function Switch({ style, ...props }: Props) {
 		<SwitchPrimitive.Root
 			{...props}
 			{...rootProps}
-			render={(rootProps, { checked, disabled }) => (
+			render={(renderProps, { checked, disabled }) => (
 				<span
-					{...rootProps}
+					{...renderProps}
 					{...stylex.props(
 						switchStyles.root,
 						checked && switchStyles.rootChecked,

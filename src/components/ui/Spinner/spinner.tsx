@@ -8,11 +8,11 @@ type Props = PropsWithStylex<React.ComponentProps<typeof SpinnerIcon>>;
 
 export function Spinner({ style, ...props }: Props): React.ReactElement {
 	return (
-		<SpinnerIcon
+		<output
 			aria-label="Loading"
-			role="status"
 			{...stylex.props(spinnerStyles.spinner, style)}
-			{...props}
-		/>
+		>
+			<SpinnerIcon {...props} />
+		</output>
 	);
 }

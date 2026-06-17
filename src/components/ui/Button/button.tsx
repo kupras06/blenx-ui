@@ -34,7 +34,7 @@ function Button({
 	style,
 	...props
 }: ButtonProps) {
-	const isDisabled: boolean = Boolean(loading || disabledProp);
+	const isDisabled = Boolean(loading || disabledProp);
 	const typeValue = render ? undefined : (type ?? "button");
 
 	const defaultProps = {

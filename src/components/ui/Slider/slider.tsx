@@ -18,7 +18,7 @@ type SliderValueProps = Omit<SliderPrimitive.Value.Props, "style"> & {
 	style?: stylex.StyleXStyles;
 };
 
-export function Slider({
+function Slider({
 	className,
 	children,
 	defaultValue,
@@ -28,7 +28,7 @@ export function Slider({
 	style,
 	...props
 }: SliderProps): React.ReactElement {
-	const _values = React.useMemo(() => {
+	const values = React.useMemo(() => {
 		if (value !== undefined) {
 			return Array.isArray(value) ? value : [value];
 		}
@@ -72,16 +72,15 @@ export function Slider({
 						className={stylex.props(sliderStyles.indicator).className}
 						data-slot="slider-indicator"
 					/>
-					{Array.from({ length: _values.length }, (_, index) => (
+					{Array.from({ length: values.length }, (_, index) => (
 						<SliderPrimitive.Thumb
 							index={index}
-							// Biome-ignore lint/suspicious/noArrayIndexKey: noArrayIndexKey
 							key={index}
-							render={(props, state) => (
+							render={(thumbRenderProps, state) => (
 								<div
-									{...props}
+									{...thumbRenderProps}
 									className={[
-										props.className,
+										thumbRenderProps.className,
 										stylex.props(
 											sliderStyles.thumb,
 											state.dragging && thumbStateStyles.dragging,
@@ -100,7 +99,7 @@ export function Slider({
 	);
 }
 
-export function SliderValue({
+function SliderValue({
 	className,
 	style,
 	...props
@@ -116,4 +115,4 @@ export function SliderValue({
 	);
 }
 
-export { SliderPrimitive };
+export { SliderValue, Slider };

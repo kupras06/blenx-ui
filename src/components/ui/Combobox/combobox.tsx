@@ -25,10 +25,12 @@ export function Combobox<Value, Multiple extends boolean | undefined = false>(
 	props: ComboboxPrimitive.Root.Props<Value, Multiple>,
 ): React.ReactElement {
 	const chipsRef = React.useRef<Element | null>(null);
+	const contextValue = React.useMemo(
+		() => ({ chipsRef, multiple: Boolean(props.multiple) }),
+		[props.multiple],
+	);
 	return (
-		<ComboboxContext.Provider
-			value={{ chipsRef, multiple: Boolean(props.multiple) }}
-		>
+		<ComboboxContext.Provider value={contextValue}>
 			<ComboboxPrimitive.Root {...props} />
 		</ComboboxContext.Provider>
 	);
@@ -400,7 +402,7 @@ export function ComboboxChip({
 	);
 }
 
-export function ComboboxChipRemove({
+function ComboboxChipRemove({
 	style,
 	...props
 }: PropsWithStylex<ComboboxPrimitive.ChipRemove.Props>): React.ReactElement {
@@ -420,4 +422,4 @@ export function ComboboxChipRemove({
 export const useComboboxFilter: typeof ComboboxPrimitive.useFilter =
 	ComboboxPrimitive.useFilter;
 
-export { ComboboxPrimitive };
+export { ComboboxChipRemove };

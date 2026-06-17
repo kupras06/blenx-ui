@@ -51,4 +51,4 @@ export function Radio({ style, ...props }: RadioProps) {
 	);
 }
 
-export { RadioGroupPrimitive, RadioPrimitive, Radio as RadioGroupItem };
+export { Radio as RadioGroupItem };

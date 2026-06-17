@@ -48,7 +48,7 @@ export function FieldDescription({
 	);
 }
 
-export function FieldError({
+function FieldError({
 	style,
 	...props
 }: PropsWithStylex<FieldPrimitive.Error.Props>): React.ReactElement {
@@ -63,4 +63,4 @@ export const FieldControl: typeof FieldPrimitive.Control =
 export const FieldValidity: typeof FieldPrimitive.Validity =
 	FieldPrimitive.Validity;
 
-export { FieldPrimitive };
+export { FieldError };

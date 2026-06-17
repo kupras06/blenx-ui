@@ -45,6 +45,11 @@ export function ToggleGroup({
 	const isHorizontal = orientation === "horizontal";
 	const isOutline = variant === "outline";
 
+	const contextValue = React.useMemo(
+		() => ({ variant, size, orientation }),
+		[variant, size, orientation],
+	);
+
 	const groupProps = stylex.props(
 		toggleGroupStyles.groupBase,
 		isHorizontal
@@ -63,7 +68,7 @@ export function ToggleGroup({
 			orientation={orientation}
 			{...props}
 		>
-			<ToggleGroupContext.Provider value={{ variant, size, orientation }}>
+			<ToggleGroupContext.Provider value={contextValue}>
 				{children}
 			</ToggleGroupContext.Provider>
 		</ToggleGroupPrimitive>

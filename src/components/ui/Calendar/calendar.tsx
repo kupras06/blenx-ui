@@ -102,27 +102,27 @@ function Calendar({
 	const defaultComponents = {
 		Chevron: ({
 			orientation,
-			...props
+			...chevronProps
 		}: {
 			orientation?: "left" | "right" | "up" | "down";
 		}): React.ReactElement => {
 			if (orientation === "left") {
 				return (
 					<Button size="icon" variant="ghost">
-						<CaretLeftIcon {...props} aria-hidden="true" />
+						<CaretLeftIcon {...chevronProps} aria-hidden="true" />
 					</Button>
 				);
 			}
 			if (orientation === "right") {
 				return (
 					<Button size="icon" variant="ghost">
-						<CaretRightIcon {...props} aria-hidden="true" />
+						<CaretRightIcon {...chevronProps} aria-hidden="true" />
 					</Button>
 				);
 			}
 			return (
 				<Button size="icon" variant="ghost">
-					<CaretUpDownIcon {...props} aria-hidden="true" />
+					<CaretUpDownIcon {...chevronProps} aria-hidden="true" />
 				</Button>
 			);
 		},

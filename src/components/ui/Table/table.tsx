@@ -67,6 +67,12 @@ const cellAlignStyles = stylex.create({
  * />
  * ```
  */
+function getCellValue<TData>(col: Column<TData>, row: TData): React.ReactNode {
+	if (col?.cell) {
+		return col.cell(row);
+	}
+	return row[col.key] as React.ReactNode;
+}
 export function Table<TData>({
 	columnData,
 	rowData,
@@ -76,12 +82,6 @@ export function Table<TData>({
 	className,
 	color,
 }: TableProps<TData>) {
-	const getCellValue = (col: Column<TData>, row: TData): React.ReactNode => {
-		if (col?.cell) {
-			return col.cell(row);
-		}
-		return row[col.key] as React.ReactNode;
-	};
 	return (
 		<div
 			{...stylex.props(

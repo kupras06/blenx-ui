@@ -11,7 +11,7 @@ export const calendarStyles = stylex.create({
 		display: "flex",
 		flexDirection: "column",
 	},
-	// Month: {},
+	month: {},
 	monthCaption: {
 		display: "flex",
 		alignItems: "center",

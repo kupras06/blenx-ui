@@ -229,6 +229,5 @@ export {
 	DialogPanel,
 	DialogPopup as DialogContent,
 	DialogPortal,
-	DialogPrimitive,
 	DialogTrigger,
 };

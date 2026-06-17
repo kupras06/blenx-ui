@@ -97,7 +97,6 @@ export {
 	MenuGroupLabel,
 	MenuItem,
 	MenuPopup,
-	MenuPrimitive as MenuBase,
 	MenuSeparator,
 	MenuShortcut,
 	MenuTrigger,

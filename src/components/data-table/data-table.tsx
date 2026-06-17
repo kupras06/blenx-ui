@@ -79,15 +79,21 @@ function IndeterminateCheckbox({
 }
 
 // ─── Main component ──────────────────────────────────────────────────────────
-function useDataTableStates<TData extends Record<string, unknown>>(props:Partial<DataTableProps<TData>>) {
-	const [sorting, setSorting] = useState<SortingState>(props.initialSorting ?? []);
+function useDataTableStates<TData extends Record<string, unknown>>(
+	props: Partial<DataTableProps<TData>>,
+) {
+	const [sorting, setSorting] = useState<SortingState>(
+		props.initialSorting ?? [],
+	);
 	const [pagination, setPagination] = useState<PaginationState>(
 		props.initialPagination ?? { pageIndex: 0, pageSize: 10 },
 	);
 	const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>(
 		props.initialColumnFilters ?? [],
 	);
-	const [globalFilter, setGlobalFilter] = useState(props.initialGlobalFilter ?? "");
+	const [globalFilter, setGlobalFilter] = useState(
+		props.initialGlobalFilter ?? "",
+	);
 	const [rowSelection, setRowSelection] = useState<RowSelectionState>(
 		props.initialRowSelection ?? {},
 	);
@@ -105,7 +111,8 @@ function useDataTableStates<TData extends Record<string, unknown>>(props:Partial
 			const next = typeof v === "function" ? v(sorting) : v;
 			setSorting(next);
 			props.callbacks?.onSortingChange?.(next);
-			if (props.mode === "server") setPagination((p) => ({ ...p, pageIndex: 0 }));
+			if (props.mode === "server")
+				setPagination((p) => ({ ...p, pageIndex: 0 }));
 		},
 		[sorting, props.callbacks, props.mode],
 	);
@@ -150,7 +157,7 @@ function useDataTableStates<TData extends Record<string, unknown>>(props:Partial
 		globalFilter,
 		handleGlobalFilterChange,
 		rowSelection,
-		handleRowSelectionChange
+		handleRowSelectionChange,
 	};
 }
 export function DataTable<TData extends Record<string, unknown>>({
@@ -208,7 +215,8 @@ export function DataTable<TData extends Record<string, unknown>>({
 		initialGlobalFilter,
 		initialColumnVisibility,
 		initialRowSelection,
-		callbacks,mode
+		callbacks,
+		mode,
 	});
 
 	const stableColumns = useMemo(() => {

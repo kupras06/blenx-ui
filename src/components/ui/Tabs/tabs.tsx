@@ -34,8 +34,10 @@ export function Tabs({
 	variant = DEFAULT_VARIANT,
 	...props
 }: TabsRootProps) {
+	const contextValue = React.useMemo(() => ({ variant }), [variant]);
+
 	return (
-		<TabsContext.Provider value={{ variant }}>
+		<TabsContext.Provider value={contextValue}>
 			<TabsPrimitive.Root
 				className={(state) => {
 					const base = stylex.props(
@@ -112,7 +114,7 @@ export function TabsIndicator() {
 	return null;
 }
 
-export function TabsPanel({ style, ...props }: TabsPanelProps) {
+function TabsPanel({ style, ...props }: TabsPanelProps) {
 	return (
 		<TabsPrimitive.Panel
 			className={(state) => {
@@ -128,4 +130,4 @@ export function TabsPanel({ style, ...props }: TabsPanelProps) {
 	);
 }
 
-export { TabsPrimitive as TabsPrimitiveBase };
+export { TabsPanel };

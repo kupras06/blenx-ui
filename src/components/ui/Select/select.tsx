@@ -12,7 +12,7 @@ type SelectItemProp =
 	| number
 	| { label: React.ReactNode; value: unknown };
 
-interface SelectRootProps extends SelectPrimitive.Root.Props<SelectItemProp> {}
+type SelectRootProps = SelectPrimitive.Root.Props<SelectItemProp>;
 
 export function SelectRoot({ children, ...props }: SelectRootProps) {
 	return <SelectPrimitive.Root {...props}>{children}</SelectPrimitive.Root>;

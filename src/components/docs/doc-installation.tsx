@@ -17,7 +17,7 @@ interface DocInstallationProps {
 }
 
 function cleanTarget(target: string): string {
-	return target.replace(/^@(ui|lib|utils|components)\//, "");
+	return target.replace(/^@(?:ui|lib|utils|components)\//, "");
 }
 
 function DocInstallation({

@@ -19,7 +19,7 @@ export function CheckboxGroup({ style, ...props }: CheckboxGroupProps) {
 	);
 }
 
-export function Checkbox({ style, ...props }: CheckboxProps) {
+function Checkbox({ style, ...props }: CheckboxProps) {
 	return (
 		<CheckboxPrimitive.Root
 			{...props}
@@ -85,4 +85,4 @@ export function Checkbox({ style, ...props }: CheckboxProps) {
 	);
 }
 
-export { CheckboxPrimitive, CheckboxGroupPrimitive };
+export { Checkbox };

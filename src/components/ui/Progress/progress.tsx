@@ -7,7 +7,7 @@ import { progressStyles } from "./progress.styles";
 
 type ProgressRootProps = PropsWithStylex<ProgressPrimitive.Root.Props>;
 
-export function Progress({ children, style, ...props }: ProgressRootProps) {
+function Progress({ children, style, ...props }: ProgressRootProps) {
 	return (
 		<ProgressPrimitive.Root
 			{...stylex.props(progressStyles.root, style)}
@@ -67,4 +67,4 @@ export function ProgressValue({ style, ...props }: ProgressValueProps) {
 	);
 }
 
-export { ProgressPrimitive };
+export { Progress };

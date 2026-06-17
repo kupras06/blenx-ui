@@ -84,5 +84,5 @@ function ScrollBar({
 	);
 }
 
-export { ScrollAreaPrimitive, ScrollArea, ScrollBar };
+export { ScrollArea, ScrollBar };
 export type { ScrollAreaProps, ScrollBarProps };

@@ -38,16 +38,18 @@ function CopyButton({ value }: { value: string }) {
 			setTimeout(() => setCopied(false), 2000);
 		});
 	}, [value]);
-	return <Button
-							type="button"
-							size="xsmall"
-							radius="xsmall"
-							onClick={handleCopy}
-							aria-label={copied ? "Copied" : "Copy code"}
-						>
-							{copied ? <CheckIcon size={14} /> : <CopySimpleIcon size={14} />}
-							{copied ? "Copied" : "Copy"}
-						</Button>
+	return (
+		<Button
+			type="button"
+			size="xsmall"
+			radius="xsmall"
+			onClick={handleCopy}
+			aria-label={copied ? "Copied" : "Copy code"}
+		>
+			{copied ? <CheckIcon size={14} /> : <CopySimpleIcon size={14} />}
+			{copied ? "Copied" : "Copy"}
+		</Button>
+	);
 }
 function DocCodeView({ code, title, language, files }: DocCodeViewProps) {
 	const activeFiles =
@@ -110,8 +112,8 @@ function DocCodeView({ code, title, language, files }: DocCodeViewProps) {
 							</Text>
 						)}
 						<Text variant="caption">{lang}</Text>
-						</HStack>
-						<CopyButton value={activeFile.code} />
+					</HStack>
+					<CopyButton value={activeFile.code} />
 				</HStack>
 			)}
 
