@@ -25,7 +25,7 @@ function Surface({
 		interactive && surfaceInteractiveStyles.base,
 		style,
 	);
-	return <Box {...props} {...resolvedStyles} />;
+	return <Box {...resolvedStyles} {...props} />;
 }
 
 export type { SurfaceProps, SurfaceVariant };

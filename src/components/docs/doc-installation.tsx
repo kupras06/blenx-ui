@@ -1,5 +1,4 @@
 import { Badge } from "../ui";
-import { Box } from "../ui/Box/box";
 import { Separator } from "../ui/Separator/separator";
 import { HStack, VStack } from "../ui/Stack/stack";
 import { Surface } from "../ui/Surface/surface";
@@ -56,17 +55,16 @@ function DocInstallation({
 			</VStack>
 
 			{dependencies.length > 0 && (
-				<Box>
+				<VStack gap="small">
 					<Text variant="h6" color="secondary">
 						Dependencies
 					</Text>
 					<HStack>
-						ss
 						{dependencies.map((dep) => (
 							<Badge key={dep}>{dep}</Badge>
 						))}
 					</HStack>
-				</Box>
+				</VStack>
 			)}
 		</VStack>
 	);

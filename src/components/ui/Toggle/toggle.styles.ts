@@ -30,7 +30,7 @@ export const toggleVariantStyles = stylex.create({
 	default: {
 		borderColor: "transparent",
 		color: theme.contentPrimary,
-		backgroundColor: theme.backgroundSubtle,
+		backgroundColor: theme.surface,
 	},
 	outline: {
 		borderColor: {
@@ -44,7 +44,7 @@ export const toggleVariantStyles = stylex.create({
 
 export const togglePressedStyles = stylex.create({
 	default: {
-		backgroundColor: theme.contentAccent,
+		backgroundColor: theme.surfaceRaised,
 	},
 	outline: {
 		outlineWidth: "0px",

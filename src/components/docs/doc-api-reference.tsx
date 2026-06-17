@@ -1,10 +1,10 @@
-import { Box } from "../ui/Box/box";
+import { VStack } from "@/ui";
 import { Surface } from "../ui/Surface/surface";
 import { Text } from "../ui/Text/text";
 
 function DocApiReference() {
 	return (
-		<Box>
+		<VStack gap="medium">
 			<Text variant="h3">API Reference</Text>
 			<Surface padding="medium" variant="sunken">
 				<Text variant="body2" color="secondary">
@@ -12,7 +12,7 @@ function DocApiReference() {
 					TypeScript definitions.
 				</Text>
 			</Surface>
-		</Box>
+		</VStack>
 	);
 }
 

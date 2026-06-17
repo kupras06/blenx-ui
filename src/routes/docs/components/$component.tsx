@@ -82,7 +82,7 @@ function ComponentDocPage() {
 			<Separator tone="subtle" />
 
 			{doc.examples.length > 0 && (
-				<Box>
+				<VStack>
 					<Text variant="h2">Examples</Text>
 					<DocCodeView
 						files={doc.examples.map((example) => ({
@@ -90,7 +90,7 @@ function ComponentDocPage() {
 							code: example.source,
 						}))}
 					/>
-				</Box>
+				</VStack>
 			)}
 
 			<Separator tone="subtle" />
@@ -98,7 +98,7 @@ function ComponentDocPage() {
 			<DocApiReference />
 
 			{doc.accessibility && (
-				<>
+				<VStack gap="medium">
 					<Separator tone="subtle" />
 					<Box>
 						<Text variant="h2">Accessibility</Text>
@@ -107,17 +107,17 @@ function ComponentDocPage() {
 							aria={doc.accessibility.aria}
 						/>
 					</Box>
-				</>
+				</VStack>
 			)}
 
 			{doc.related && doc.related.length > 0 && (
-				<>
+				<VStack>
 					<Separator tone="subtle" />
 					<VStack>
 						<Text variant="h2">Related Components</Text>
 						<DocRelated related={doc.related} />
 					</VStack>
-				</>
+				</VStack>
 			)}
 		</VStack>
 	);

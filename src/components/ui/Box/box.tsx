@@ -83,7 +83,6 @@ function Box({
 
 		overflow && overflowStyles[overflow],
 		position && positionStyles[position],
-		radius && borderRadiusStyles[radius],
 		withBorder && boxStyles.withBorder,
 		resolvedPaddingX && paddingXStyles[resolvedPaddingX],
 		resolvedPaddingY && paddingYStyles[resolvedPaddingY],
@@ -95,6 +94,7 @@ function Box({
 			? boxStyles.maxWidth(maxWidth)
 			: null,
 		maxWidth && isBoxSize(maxWidth) ? boxSizeStyles[maxWidth] : null,
+		radius && borderRadiusStyles[radius],
 		style,
 	);
 

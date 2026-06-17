@@ -73,7 +73,7 @@ function DocCodeView({ code, title, language, files }: DocCodeViewProps) {
 	return (
 		<Surface variant="sunken">
 			{isMultiFile ? (
-				<Surface variant="raised" radius="none">
+				<Surface radius="xsmall">
 					<HStack justify="between" padding="xxsmall">
 						<SegmentedControl
 							variant="default"
