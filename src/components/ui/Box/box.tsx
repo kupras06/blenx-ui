@@ -69,6 +69,10 @@ function Box({
 	backgroundColor,
 	...props
 }: BoxProps) {
+	const resolvedPaddingX = paddingX ?? padding;
+	const resolvedPaddingY = paddingY ?? padding;
+	const resolvedMarginX = marginX ?? margin;
+	const resolvedMarginY = marginY ?? margin;
 	const stylexProps = stylex.props(
 		boxStyles.root,
 		display && displayStyles[display],
@@ -81,14 +85,10 @@ function Box({
 		position && positionStyles[position],
 		radius && borderRadiusStyles[radius],
 		withBorder && boxStyles.withBorder,
-		padding && paddingXStyles[padding],
-		padding && paddingYStyles[padding],
-		paddingX && paddingXStyles[paddingX],
-		paddingY && paddingYStyles[paddingY],
-		margin && marginXStyles[margin],
-		margin && marginYStyles[margin],
-		marginX && marginXStyles[marginX],
-		marginY && marginYStyles[marginY],
+		resolvedPaddingX && paddingXStyles[resolvedPaddingX],
+		resolvedPaddingY && paddingYStyles[resolvedPaddingY],
+		resolvedMarginX && marginXStyles[resolvedMarginX],
+		resolvedMarginY && marginYStyles[resolvedMarginY],
 		maxWidth && typeof maxWidth === "number"
 			? boxStyles.maxWidth(maxWidth)
 			: null,
