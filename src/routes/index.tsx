@@ -120,7 +120,7 @@ function HomeComponent() {
 						View on GitHub
 					</Button>
 				</HStack>
-				<Separator  />
+				<Separator />
 
 				{/* Features Grid */}
 				<VStack gap="medium">
@@ -131,7 +131,7 @@ function HomeComponent() {
 							collocated styles that scale.
 						</Text>
 					</Box>
-					<Grid  columns={2}>
+					<Grid columns={2}>
 						{features.map((feature) => (
 							<Surface key={feature.title} variant="outline" padding="large">
 								<HStack
@@ -166,7 +166,7 @@ function HomeComponent() {
 								React code living directly in your project.
 							</Text>
 						</VStack>
-						<Surface variant="sunken" withBorder padding="medium">
+						<Surface variant="sunken" withBorder padding="medium" grow>
 							<Text variant="code" color="success">
 								npx shadcn@latest add http://blenx-ui.com/reg/button.json
 							</Text>

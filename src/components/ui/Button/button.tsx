@@ -1,5 +1,5 @@
 import { mergeProps } from "@base-ui/react/merge-props";
-import { useRender } from "@base-ui/react/use-render";
+import { Button as ButtonPrimitive } from "@base-ui/react/button";
 import * as stylex from "@stylexjs/stylex";
 import { borderRadiusStyles } from "@/utils/layout.styles";
 import type { PropsWithStylex } from "@/utils/stylex.utils";
@@ -10,7 +10,7 @@ import {
 	buttonVariantStyles,
 } from "./button.styles";
 
-type _BaseUIButtonProps = PropsWithStylex<useRender.ComponentProps<"button">>;
+type _BaseUIButtonProps = PropsWithStylex<ButtonPrimitive.Props>;
 
 type ButtonProps = PropsWithStylex<_BaseUIButtonProps> & {
 	variant?: keyof typeof buttonVariantStyles;
@@ -64,11 +64,7 @@ function Button({
 		disabled: isDisabled,
 		type: typeValue,
 	};
-	return useRender({
-		defaultTagName: "button",
-		props: mergeProps<"button">(defaultProps, props),
-		render,
-	});
+	return <ButtonPrimitive {...mergeProps<"button">(defaultProps, props)} />;
 }
 
 export { Button };
