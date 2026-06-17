@@ -8,7 +8,7 @@ export const containerStyles = stylex.create({
 	center: { marginLeft: "auto", marginRight: "auto" },
 	contentCenter: {
 		display: "flex",
-		flexDirection:'column',
+		flexDirection: "column",
 		justifyContent: "center",
 		alignItems: "center",
 	},

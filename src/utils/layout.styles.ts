@@ -98,3 +98,13 @@ export const positionStyles = stylex.create({
 });
 
 export type BorderRadiusProp = keyof typeof borderRadiusStyles;
+type BoxDisplay = keyof typeof displayStyles;
+
+export type LayoutProps = {
+	display?: BoxDisplay;
+	overflow?: BoxOverflow;
+	position?: BoxPosition;
+};
+
+type BoxOverflow = keyof typeof overflowStyles;
+type BoxPosition = keyof typeof positionStyles;

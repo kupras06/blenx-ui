@@ -1,7 +1,11 @@
 import { mergeProps } from "@base-ui/react/merge-props";
 import { useRender } from "@base-ui/react/use-render";
 import * as stylex from "@stylexjs/stylex";
-import { bgColorStyles, colorStyles } from "@/utils/base.styles";
+import {
+	bgColorStyles,
+	colorStyles,
+	type SpacingProps,
+} from "@/utils/base.styles";
 import {
 	borderRadiusStyles,
 	displayStyles,
@@ -11,38 +15,28 @@ import {
 	paddingXStyles,
 	paddingYStyles,
 	positionStyles,
+	type BorderRadiusProp,
+	type LayoutProps,
 } from "@/utils/layout.styles";
 import type { _BaseDivProps } from "@/utils/stylex.utils";
 import { boxSizeStyles, boxStyles } from "./box.styles";
 
-type BoxDisplay = keyof typeof displayStyles;
-type BoxSpacing = keyof typeof paddingXStyles;
-type BoxOverflow = keyof typeof overflowStyles;
-type BoxPosition = keyof typeof positionStyles;
 type BoxSize = keyof typeof boxSizeStyles;
-type BoxProps = _BaseDivProps & {
-	display?: BoxDisplay;
+type BoxProps = _BaseDivProps &
+	LayoutProps &
+	SpacingProps & {
+		fullWidth?: boolean;
+		fullHeight?: boolean;
+		grow?: boolean;
+		shrink?: boolean;
 
-	fullWidth?: boolean;
-	fullHeight?: boolean;
-	grow?: boolean;
-	shrink?: boolean;
-
-	padding?: BoxSpacing;
-	paddingX?: BoxSpacing;
-	paddingY?: BoxSpacing;
-	margin?: BoxSpacing;
-	marginX?: BoxSpacing;
-	marginY?: BoxSpacing;
-	radius?: keyof typeof borderRadiusStyles;
-	withBorder?: boolean;
-	color?: keyof typeof colorStyles;
-	backgroundColor?: keyof typeof bgColorStyles;
-	overflow?: BoxOverflow;
-	position?: BoxPosition;
-	maxWidth?: BoxSize | number;
-	style?: stylex.StyleXStyles;
-};
+		radius?: BorderRadiusProp;
+		withBorder?: boolean;
+		color?: keyof typeof colorStyles;
+		backgroundColor?: keyof typeof bgColorStyles;
+		maxWidth?: BoxSize | number;
+		style?: stylex.StyleXStyles;
+	};
 const isBoxSize = (value: BoxSize | number): value is BoxSize =>
 	typeof value !== "number";
 function Box({
