@@ -89,12 +89,12 @@ function Box({
 		resolvedPaddingY && paddingYStyles[resolvedPaddingY],
 		resolvedMarginX && marginXStyles[resolvedMarginX],
 		resolvedMarginY && marginYStyles[resolvedMarginY],
+		color && colorStyles[color],
+		backgroundColor && bgColorStyles[backgroundColor],
 		maxWidth && typeof maxWidth === "number"
 			? boxStyles.maxWidth(maxWidth)
 			: null,
 		maxWidth && isBoxSize(maxWidth) ? boxSizeStyles[maxWidth] : null,
-		color && colorStyles[color],
-		backgroundColor && bgColorStyles[backgroundColor],
 		style,
 	);
 

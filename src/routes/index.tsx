@@ -202,18 +202,11 @@ function HomeComponent() {
 					</Box>
 					<div {...stylex.props(styles.grid)}>
 						{features.map((feature) => (
-							<Surface
-								key={feature.title}
-								variant="outline"
-								padding="large"
-								backgroundColor="info"
-							>
+							<Surface key={feature.title} variant="outline" padding="large">
 								<HStack
 									withBorder
-									justify="center"
-									backgroundColor="info"
-									color="primary"
-									align="center"
+									backgroundColor="surface"
+									color="info"
 									maxWidth={40}
 									padding="xsmall"
 									marginY="xsmall"
@@ -249,7 +242,6 @@ function HomeComponent() {
 						</Surface>
 					</Grid>
 				</Surface>
-
 				{/* Documentation Links */}
 				<VStack gap="medium">
 					<Text variant="h2">Documentation</Text>
