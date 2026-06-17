@@ -1,0 +1,12 @@
+{
+	"title": "IconButton",
+	"description": "A square icon-only button with accessible label requirements, variant and intent styling, loading state, and consistent sizing.",
+	"category": "Forms",
+	"status": "stable",
+	"keywords": ["icon", "button", "icon-button", "action", "toolbar"],
+	"related": ["Icon", "Button", "Spinner"],
+	"accessibility": {
+		"keyboard": ["Enter", "Space"],
+		"aria": ["aria-label", "aria-disabled"]
+	}
+}

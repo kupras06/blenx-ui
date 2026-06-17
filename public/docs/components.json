@@ -947,6 +947,62 @@
     "registryName": "grid",
     "examples": []
   },
+  "icon": {
+    "title": "Icon",
+    "description": "A standardized wrapper for SVG icons with token-based sizing and theme-aware color support. Built for use inside buttons, inputs, badges, and other UI components.",
+    "category": "Utility",
+    "status": "stable",
+    "keywords": [
+      "icon",
+      "svg",
+      "size",
+      "color",
+      "wrapper"
+    ],
+    "related": [
+      "IconButton",
+      "Button",
+      "Badge"
+    ],
+    "accessibility": {
+      "keyboard": [],
+      "aria": [
+        "aria-hidden"
+      ]
+    },
+    "registryName": "icon",
+    "examples": []
+  },
+  "iconbutton": {
+    "title": "IconButton",
+    "description": "A square icon-only button with accessible label requirements, variant and intent styling, loading state, and consistent sizing.",
+    "category": "Forms",
+    "status": "stable",
+    "keywords": [
+      "icon",
+      "button",
+      "icon-button",
+      "action",
+      "toolbar"
+    ],
+    "related": [
+      "Icon",
+      "Button",
+      "Spinner"
+    ],
+    "accessibility": {
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "aria": [
+        "aria-label",
+        "aria-disabled"
+      ]
+    },
+    "registryName": "icon-button",
+    "examples": []
+  },
   "input": {
     "title": "Input",
     "description": "A text input component with size presets, error state styling, and auto-generated IDs. Built on Base UI Input primitive.",

@@ -32,6 +32,8 @@ export const demoImports: Record<
 	button: () => import("@/components/ui/Button/button.demo"),
 	card: () => import("@/components/ui/Card/card.demo"),
 	dialog: () => import("@/components/ui/Dialog/dialog.demo"),
+	icon: () => import("@/components/ui/Icon/icon.demo"),
+	"icon-button": () => import("@/components/ui/IconButton/icon-button.demo"),
 	input: () => import("@/components/ui/Input/input.demo"),
 	select: () => import("@/components/ui/Select/select.demo"),
 	switch: () => import("@/components/ui/Switch/switch.demo"),

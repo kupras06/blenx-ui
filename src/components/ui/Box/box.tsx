@@ -29,8 +29,9 @@ type BoxProps = _BaseDivProps &
 		fullHeight?: boolean;
 		grow?: boolean;
 		shrink?: boolean;
-
+		// @deprecated use borderRadius instead
 		radius?: BorderRadiusProp;
+		borderRadius?: BorderRadiusProp;
 		withBorder?: boolean;
 		color?: keyof typeof colorStyles;
 		backgroundColor?: keyof typeof bgColorStyles;

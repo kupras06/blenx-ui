@@ -22,6 +22,8 @@ export * from "./Dialog/dialog";
 export * from "./Drawer/drawer";
 export * from "./Field/field";
 export * from "./Grid/grid";
+export * from "./Icon/icon";
+export * from "./IconButton/icon-button";
 export * from "./Input/input";
 export * from "./InputGroup/input-group";
 export * from "./Menu/menu";

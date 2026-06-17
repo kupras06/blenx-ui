@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "icon",
+	"type": "registry:ui",
+	"title": "Icon",
+	"description": "Icon component from Blenx UI.",
+	"registryDependencies": [],
+	"files": [
+		{
+			"file": "icon.tsx",
+			"type": "registry:ui",
+			"target": "@ui/Icon/icon.tsx"
+		},
+		{
+			"file": "icon.styles.ts",
+			"type": "registry:file",
+			"target": "@ui/Icon/icon.styles.ts"
+		}
+	]
+}
