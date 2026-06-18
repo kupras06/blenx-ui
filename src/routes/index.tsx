@@ -19,6 +19,7 @@ import {
 	Text,
 	VStack,
 } from "@/ui";
+import { theme } from "@/lib/theme/contract.stylex";
 
 const styles = stylex.create({
 	heroTitle: {
@@ -26,7 +27,7 @@ const styles = stylex.create({
 		lineHeight: 1.1,
 		fontWeight: 700,
 		letterSpacing: "-0.04em",
-		backgroundImage: "linear-gradient(135deg, #fff 0%, #a1a1aa 100%)",
+		backgroundImage: `linear-gradient(135deg, ${theme.contentPrimary} 0%, ${theme.contentDisabled} 100%)`,
 		WebkitBackgroundClip: "text",
 		WebkitTextFillColor: "transparent",
 	},
