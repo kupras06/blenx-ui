@@ -1,13 +1,12 @@
-import * as stylex from "@stylexjs/stylex";
 import { Button } from "@/components/ui/Button/button";
 import { Text } from "@/components/ui/Text/text";
-import { Card, CardBody } from "@/components/ui/Card/card";
+import { Card, CardBody, CardTitle } from "@/components/ui/Card/card";
 import { Table } from "@/components/ui/Table/table";
 import { Badge } from "@/components/ui/Badge/badge";
 import { Surface } from "@/components/ui/Surface/surface";
 import type { Column } from "@/components/ui/Table/table";
 import type { PropsWithStylex } from "@/utils/stylex.utils";
-import { dashboardStyles } from "./dashboard-01.styles";
+import { Container, Grid, HStack, VStack } from "@/components/ui";
 
 type Kpi = {
 	label: string;
@@ -100,7 +99,6 @@ export function Dashboard01({
 	activities = defaultActivities,
 	chartSections = defaultCharts,
 	actions = defaultActions,
-	style,
 }: Props) {
 	const activityColumns: Column<Activity>[] = [
 		{ key: "event", header: "Event" },
@@ -118,85 +116,80 @@ export function Dashboard01({
 	];
 
 	return (
-		<div
-			{...stylex.props(dashboardStyles.container, style)}
-			aria-label="Dashboard"
-		>
-			<div {...stylex.props(dashboardStyles.section)}>
-				<div {...stylex.props(dashboardStyles.sectionHeader)}>
-					<Text variant="h3">Dashboard</Text>
-					<div {...stylex.props(dashboardStyles.quickActions)}>
-						{actions.map((action) => (
-							<Button
-								key={action.label}
-								variant="soft"
-								size="small"
-								onClick={action.handleClick}
-							>
-								{action.label}
-							</Button>
-						))}
-					</div>
-				</div>
-			</div>
-
-			<ul {...stylex.props(dashboardStyles.kpiGrid)} aria-label="Key metrics">
-				{kpis.map((kpi) => (
-					<li key={kpi.label}>
-						<CardBody {...stylex.props(dashboardStyles.kpiCard)}>
-							<Text variant="caption" style={dashboardStyles.kpiLabel}>
-								{kpi.label}
-							</Text>
-							<Text style={dashboardStyles.kpiValue}>{kpi.value}</Text>
-							{kpi.trend && (
-								<span
-									{...stylex.props(
-										dashboardStyles.kpiTrend,
-										kpi.trend === "up"
-											? dashboardStyles.kpiTrendUp
-											: dashboardStyles.kpiTrendDown,
-									)}
+		<Container aria-label="Dashboard">
+			<VStack>
+				<VStack>
+					<HStack justify="between" align="center">
+						<Text variant="h3">Dashboard</Text>
+						<HStack wrap>
+							{actions.map((action) => (
+								<Button
+									key={action.label}
+									variant="soft"
+									size="small"
+									onClick={action.handleClick}
 								>
-									{kpi.trend === "up" ? "↑" : "↓"} {kpi.trendValue}
-								</span>
-							)}
-						</CardBody>
-					</li>
-				))}
-			</ul>
+									{action.label}
+								</Button>
+							))}
+						</HStack>
+					</HStack>
+				</VStack>
 
-			<div {...stylex.props(dashboardStyles.chartGrid)}>
-				{chartSections.map((chart) => (
-					<Card key={chart.title}>
-						<CardBody>
-							<div {...stylex.props(dashboardStyles.sectionHeader)}>
-								<Text variant="h5">{chart.title}</Text>
-							</div>
-							<Surface
-								variant="sunken"
-								style={dashboardStyles.chartPlaceholder}
-							>
-								Chart
-							</Surface>
-						</CardBody>
-					</Card>
-				))}
-			</div>
+				<Grid aria-label="Key metrics" columns={4}>
+					{kpis.map((kpi) => (
+						<Card render={<li />} key={kpi.label}>
+							<CardBody>
+								<Text variant="caption" size="medium" color="secondary">
+									{kpi.label}
+								</Text>
+								<Text weight="bold" size="xlarge">
+									{kpi.value}
+								</Text>
+								{kpi.trend && (
+									<Text
+										size="small"
+										color={kpi.trend === "up" ? "success" : "error"}
+									>
+										{kpi.trend === "up" ? "↑" : "↓"} {kpi.trendValue}
+									</Text>
+								)}
+							</CardBody>
+						</Card>
+					))}
+				</Grid>
 
-			<Card>
-				<CardBody>
-					<div {...stylex.props(dashboardStyles.sectionHeader)}>
+				<Grid columns={2}>
+					{chartSections.map((chart) => (
+						<Card key={chart.title}>
+							<CardTitle>{chart.title}</CardTitle>
+							<CardBody>
+								<Surface
+									variant="sunken"
+									padding="medium"
+									paddingY="massive"
+									withBorder
+								>
+									<Text variant="h5" color="secondary" align="center">
+										Chart
+									</Text>
+								</Surface>
+							</CardBody>
+						</Card>
+					))}
+				</Grid>
+
+				<Card>
+					<CardBody>
 						<Text variant="h5">Recent Activity</Text>
-					</div>
-					<div {...stylex.props(dashboardStyles.tableWrapper)}>
 						<Table
 							columnData={activityColumns}
 							rowData={activities}
 							rowKey="event"
 						/>
-					</div>
-				</CardBody>
-			</Card>
-		</div>
+					</CardBody>
+				</Card>
+			</VStack>
+		</Container>
 	);
 }

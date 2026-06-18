@@ -1,13 +1,19 @@
 "use client";
 
 import { useState } from "react";
-import * as stylex from "@stylexjs/stylex";
 import { Button } from "@/components/ui/Button/button";
-import { Input, Label } from "@/components/ui/Input/input";
+import { Input } from "@/components/ui/Input/input";
 import { Text } from "@/components/ui/Text/text";
 import { Card, CardBody } from "@/components/ui/Card/card";
 import type { PropsWithStylex } from "@/utils/stylex.utils";
-import { forgotPasswordStyles } from "./forgot-password-01.styles";
+import {
+	Box,
+	Container,
+	Field,
+	FieldLabel,
+	HStack,
+	VStack,
+} from "@/components/ui";
 
 type Props = PropsWithStylex<{
 	title?: string;
@@ -19,7 +25,6 @@ export function ForgotPassword01({
 	title = "Forgot your password?",
 	onSubmit,
 	backToLoginLink,
-	style,
 }: Props) {
 	const [email, setEmail] = useState("");
 	const [submitted, setSubmitted] = useState(false);
@@ -41,12 +46,12 @@ export function ForgotPassword01({
 	};
 
 	return (
-		<div {...stylex.props(forgotPasswordStyles.container, style)}>
-			<Card {...stylex.props(forgotPasswordStyles.card)}>
-				<CardBody {...stylex.props(forgotPasswordStyles.cardBody)}>
+		<Container size="md" paddingY="xlarge">
+			<Card>
+				<CardBody>
 					{submitted ? (
-						<div {...stylex.props(forgotPasswordStyles.success)}>
-							<div {...stylex.props(forgotPasswordStyles.successIcon)}>
+						<VStack>
+							<div>
 								<svg
 									width="28"
 									height="28"
@@ -62,7 +67,7 @@ export function ForgotPassword01({
 								</svg>
 							</div>
 							<Text variant="h4">Check your email</Text>
-							<Text variant="body2" style={forgotPasswordStyles.successMessage}>
+							<Text variant="body2" color="success">
 								We&apos;ve sent a password reset link to{" "}
 								<strong>{email}</strong>. Please check your inbox and follow the
 								instructions.
@@ -72,24 +77,29 @@ export function ForgotPassword01({
 									{backToLoginLink.label ?? "Back to login"}
 								</Button>
 							)}
-						</div>
+						</VStack>
 					) : (
-						<>
-							<div {...stylex.props(forgotPasswordStyles.header)}>
-								<Text variant="h3">{title}</Text>
-								<Text variant="body2" style={forgotPasswordStyles.description}>
+						<VStack gap="medium">
+							<Box>
+								<Text variant="h3" align="center">
+									{title}
+								</Text>
+								<Text variant="body2" color="secondary">
 									Enter the email address associated with your account and
 									we&apos;ll send you a link to reset your password.
 								</Text>
-							</div>
-
-							<form
-								onSubmit={handleSubmit}
-								aria-label="Forgot password form"
-								{...stylex.props(forgotPasswordStyles.form)}
+							</Box>
+							<VStack
+								render={
+									<form
+										onSubmit={handleSubmit}
+										aria-label="Forgot password form"
+									/>
+								}
+								marginY="medium"
 							>
-								<div {...stylex.props(forgotPasswordStyles.fieldGroup)}>
-									<Label htmlFor="forgot-email">Email</Label>
+								<Field>
+									<FieldLabel>Email</FieldLabel>
 									<Input
 										id="forgot-email"
 										type="email"
@@ -104,32 +114,32 @@ export function ForgotPassword01({
 										error={error}
 									/>
 									{error && (
-										<Text variant="caption" style={forgotPasswordStyles.error}>
+										<Text variant="caption" color="error">
 											{error}
 										</Text>
 									)}
-								</div>
+								</Field>
 
 								<Button type="submit" variant="solid" fullWidth>
 									Send reset link
 								</Button>
-							</form>
+							</VStack>
 
 							{backToLoginLink && (
-								<div {...stylex.props(forgotPasswordStyles.footer)}>
-									<button
+								<HStack fullWidth justify="center">
+									<Button
 										type="button"
+										variant="link"
 										onClick={backToLoginLink.handleClick}
-										{...stylex.props(forgotPasswordStyles.footerLink)}
 									>
 										{backToLoginLink.label ?? "Back to login"}
-									</button>
-								</div>
+									</Button>
+								</HStack>
 							)}
-						</>
+						</VStack>
 					)}
 				</CardBody>
 			</Card>
-		</div>
+		</Container>
 	);
 }

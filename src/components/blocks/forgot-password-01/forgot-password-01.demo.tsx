@@ -9,4 +9,6 @@ export function ForgotPassword01DefaultDemo() {
 	);
 }
 
-export const demos = [{ name: "Default", component: ForgotPassword01DefaultDemo }];
+export const demos = [
+	{ name: "Default", component: ForgotPassword01DefaultDemo },
+];

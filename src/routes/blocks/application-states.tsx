@@ -50,7 +50,11 @@ const BLOCKS: BlockInfo[] = [
 		description:
 			"An error state block for displaying errors with retry action and expandable debug details. Supports card, page, and toast variants.",
 		importPath: "@/components/blocks/error-state-01/error-state-01",
-		demoExports: ["ErrorState01PageDemo", "ErrorState01CardDemo", "ErrorState01ToastDemo"],
+		demoExports: [
+			"ErrorState01PageDemo",
+			"ErrorState01CardDemo",
+			"ErrorState01ToastDemo",
+		],
 	},
 ];
 
@@ -77,7 +81,9 @@ function BlockDemo({ block }: { block: BlockInfo }) {
 			| undefined;
 
 		if (!items || items.length === 0) {
-			return { default: (() => <Text>Demo not found</Text>) as React.ComponentType };
+			return {
+				default: (() => <Text>Demo not found</Text>) as React.ComponentType,
+			};
 		}
 
 		return {

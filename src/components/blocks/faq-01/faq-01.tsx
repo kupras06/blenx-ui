@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import * as stylex from "@stylexjs/stylex";
 import { Text } from "@/components/ui/Text/text";
 import {
 	AccordionRoot,
@@ -11,7 +10,7 @@ import {
 	AccordionPanel,
 } from "@/components/ui/Accordion/accordion";
 import type { PropsWithStylex } from "@/utils/stylex.utils";
-import { faqStyles } from "./faq-01.styles";
+import { Box, Container, Input, VStack } from "@/components/ui";
 
 type FaqItem = {
 	question: string;
@@ -30,7 +29,6 @@ export function Faq01({
 	description,
 	items,
 	searchable = false,
-	style,
 }: Props) {
 	const [searchQuery, setSearchQuery] = useState("");
 
@@ -45,31 +43,30 @@ export function Faq01({
 	}, [items, searchQuery, searchable]);
 
 	return (
-		<section {...stylex.props(faqStyles.section, style)}>
-			<div {...stylex.props(faqStyles.inner)}>
-				<div {...stylex.props(faqStyles.header)}>
-					<Text variant="h2" style={faqStyles.title}>
+		<Container size="md">
+			<VStack gap="large">
+				<Box>
+					<Text variant="h2" align="center">
 						{title}
 					</Text>
 					{description && (
-						<Text variant="body1" style={faqStyles.description}>
+						<Text variant="body1" color="secondary" align="center">
 							{description}
 						</Text>
 					)}
-				</div>
+				</Box>
 
 				{searchable && (
-					<input
+					<Input
 						type="search"
 						placeholder="Search questions..."
 						value={searchQuery}
 						onChange={(e) => setSearchQuery(e.target.value)}
 						aria-label="Search frequently asked questions"
-						{...stylex.props(faqStyles.search)}
 					/>
 				)}
 
-				<div {...stylex.props(faqStyles.accordionWrapper)}>
+				<Box fullWidth>
 					{filteredItems.length > 0 ? (
 						<AccordionRoot>
 							{filteredItems.map((item) => (
@@ -84,12 +81,12 @@ export function Faq01({
 							))}
 						</AccordionRoot>
 					) : (
-						<Text variant="body1" style={faqStyles.noResults}>
+						<Text variant="body1" size="large" color="secondary">
 							No questions match your search.
 						</Text>
 					)}
-				</div>
-			</div>
-		</section>
+				</Box>
+			</VStack>
+		</Container>
 	);
 }

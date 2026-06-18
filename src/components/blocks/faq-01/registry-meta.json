@@ -10,11 +10,6 @@
 			"file": "faq-01.tsx",
 			"type": "registry:ui",
 			"target": "@blocks/faq-01/faq-01.tsx"
-		},
-		{
-			"file": "faq-01.styles.ts",
-			"type": "registry:file",
-			"target": "@blocks/faq-01/faq-01.styles.ts"
 		}
 	]
 }

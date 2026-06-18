@@ -20,11 +20,6 @@
 			"file": "dashboard-01.tsx",
 			"type": "registry:ui",
 			"target": "@blocks/dashboard-01/dashboard-01.tsx"
-		},
-		{
-			"file": "dashboard-01.styles.ts",
-			"type": "registry:file",
-			"target": "@blocks/dashboard-01/dashboard-01.styles.ts"
 		}
 	]
 }

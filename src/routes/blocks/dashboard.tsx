@@ -71,7 +71,9 @@ function BlockDemo({ block }: { block: BlockInfo }) {
 			| undefined;
 
 		if (!items || items.length === 0) {
-			return { default: (() => <Text>Demo not found</Text>) as React.ComponentType };
+			return {
+				default: (() => <Text>Demo not found</Text>) as React.ComponentType,
+			};
 		}
 
 		return {
