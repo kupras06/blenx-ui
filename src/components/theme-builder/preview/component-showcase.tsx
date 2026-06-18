@@ -129,12 +129,12 @@ export const ComponentShowcase = memo(() => (
 				<BreadcrumbList>
 					<BreadcrumbItem>
 						<BreadcrumbLink href="#home">Home</BreadcrumbLink>
-						<BreadcrumbSeparator />
 					</BreadcrumbItem>
+					<BreadcrumbSeparator />
 					<BreadcrumbItem>
 						<BreadcrumbLink href="#category">Category</BreadcrumbLink>
-						<BreadcrumbSeparator />
 					</BreadcrumbItem>
+					<BreadcrumbSeparator />
 					<BreadcrumbItem>
 						<BreadcrumbPage>Current</BreadcrumbPage>
 					</BreadcrumbItem>
@@ -193,8 +193,8 @@ export const ComponentShowcase = memo(() => (
 		<Box>
 			<Text variant="h3">Overlays</Text>
 			<Dialog>
-				<DialogTrigger>
-					<Button variant="outline">Open Dialog</Button>
+				<DialogTrigger render={<Button variant="outline" />}>
+					Open Dialog
 				</DialogTrigger>
 				<DialogContent>
 					<DialogHeader>

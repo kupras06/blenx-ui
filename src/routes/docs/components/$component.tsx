@@ -46,7 +46,9 @@ function ComponentDocPage() {
 	return (
 		<VStack gap="large">
 			<VStack gap="small">
-				<DocHeading variant="h1" title={doc.title}>{doc.title}</DocHeading>
+				<DocHeading variant="h1" title={doc.title}>
+					{doc.title}
+				</DocHeading>
 				<Text variant="body2" color="secondary">
 					{doc.description}
 				</Text>

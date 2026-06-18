@@ -17,7 +17,10 @@ function LimitationsDoc() {
 
 			<Box>
 				<VStack gap="medium">
-				<DocHeading variant="h2" title="Monorepo Not Supported for Consumers" />
+					<DocHeading
+						variant="h2"
+						title="Monorepo Not Supported for Consumers"
+					/>
 					<Text variant="body2" color="secondary">
 						The shadcn registry model copies source files directly into your
 						project. The copied files use import aliases (

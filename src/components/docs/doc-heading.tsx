@@ -55,7 +55,7 @@ export function DocHeading({
 		timeoutRef.current = setTimeout(() => setCopied(false), 2000);
 	};
 	return (
-		<Box marginBottom="xsmall"  id={headingId}>
+		<Box marginBottom="xsmall" id={headingId}>
 			<Text variant={variant} {...props} marginBottom="xsmall">
 				{children || title}
 				<Text span style={headingStyles.anchorLink} data-slot="anchor-link">

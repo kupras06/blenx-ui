@@ -95,12 +95,12 @@ export function Button({ render, ...props }) {
 			<Separator tone="subtle" />
 
 			<VStack gap="medium" paddingY="medium">
-			<DocHeading variant="h2" title="Extending with render">
-				Extending with{" "}
-				<Text variant="code" size="large" span>
-					render
-				</Text>
-			</DocHeading>
+				<DocHeading variant="h2" title="Extending with render">
+					Extending with{" "}
+					<Text variant="code" size="large" span>
+						render
+					</Text>
+				</DocHeading>
 				<Text variant="body2" color="secondary">
 					Every component supports a{" "}
 					<Text variant="code" span>

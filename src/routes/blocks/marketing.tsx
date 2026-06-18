@@ -148,7 +148,9 @@ function MarketingPage() {
 					<TabsPanel key={block.key} value={block.key}>
 						<VStack gap="medium">
 							<VStack gap="small">
-								<DocHeading variant="h2" title={block.label}>{block.label}</DocHeading>
+								<DocHeading variant="h2" title={block.label}>
+									{block.label}
+								</DocHeading>
 								<Text variant="body2" color="secondary">
 									{block.description}
 								</Text>

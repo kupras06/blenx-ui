@@ -1,12 +1,14 @@
-import { ListIcon, XIcon } from "@phosphor-icons/react";
+import { ListIcon, MoonIcon, SunIcon, XIcon } from "@phosphor-icons/react";
 import * as stylex from "@stylexjs/stylex";
 import { ClientOnly, Link, useLocation } from "@tanstack/react-router";
-import { useMediaQuery } from "@uidotdev/usehooks";
+import { useMediaQuery, useLocalStorage } from "@uidotdev/usehooks";
 import { GITHUB_URL } from "@/constants";
 import { theme } from "@/lib/theme/contract.stylex";
 import { fontSize, letterSpacing, spacing } from "@/lib/theme/tokens.stylex";
 import { useSidebarStore } from "@/stores/docs-sidebar";
 import { Button, Container, HStack, Separator, Text } from "./ui";
+import { darkTheme, lightTheme } from "@/lib/app-theme.stylex";
+import { useEffect } from "react";
 
 const styles = stylex.create({
 	logo: {
@@ -48,6 +50,7 @@ function DocsRouteOption() {
 		<Button
 			size="xsmall"
 			variant={isDocsActive ? "soft" : "ghost"}
+			nativeButton={false}
 			render={<Link to="/docs" />}
 		>
 			Docs
@@ -62,6 +65,7 @@ function BlocksRouteOption() {
 			size="xsmall"
 			variant={isBlocksActive ? "soft" : "ghost"}
 			render={<Link to="/blocks" />}
+			nativeButton={false}
 		>
 			Blocks
 		</Button>
@@ -83,6 +87,53 @@ function DocsRouteSidebarOption() {
 			</Button>
 		);
 }
+const lightThemeClass = stylex.props(lightTheme).className || "";
+const darkThemeClass = stylex.props(darkTheme).className || "";
+export function ThemeEffect() {
+	const [themeMode] = useLocalStorage("Blenx-Theme", "light");
+
+	useEffect(() => {
+		document.documentElement.classList.remove(
+			...lightThemeClass.split(" "),
+			...darkThemeClass.split(" "),
+		);
+
+		document.documentElement.classList.add(
+			...(themeMode === "dark" ? darkThemeClass : lightThemeClass).split(" "),
+		);
+	}, [themeMode]);
+
+	return null;
+}
+function ThemeToggle() {
+	const [themeMode, setThemeMode] = useLocalStorage("Blenx-Theme", "light");
+
+	const handleToggle = () => {
+		const previousTheme = themeMode;
+		const nextTheme = previousTheme === "light" ? "dark" : "light";
+		setThemeMode(nextTheme);
+		document.documentElement.classList.remove(
+			...lightThemeClass.split(" "),
+			...darkThemeClass.split(" "),
+		);
+		if (nextTheme === "light") {
+			document.documentElement.classList.add(...lightThemeClass.split(" "));
+		} else {
+			document.documentElement.classList.add(...darkThemeClass.split(" "));
+		}
+	};
+	return (
+		<Button
+			size="icon"
+			variant="ghost"
+			onClick={handleToggle}
+			aria-label={`Switch to ${themeMode === "light" ? "dark" : "light"} mode`}
+		>
+			{themeMode === "light" ? <MoonIcon /> : <SunIcon />}
+		</Button>
+	);
+}
+
 function Header() {
 	const { pathname } = useLocation();
 	const isThemeBuilderActive = pathname === "/theme-builder";
@@ -106,16 +157,19 @@ function Header() {
 						<ClientOnly>
 							<DocsRouteOption />
 							<BlocksRouteOption />
+							<ThemeToggle />
 						</ClientOnly>
 						<Button
 							size="xsmall"
 							variant={isThemeBuilderActive ? "soft" : "ghost"}
+							nativeButton={false}
 							render={<Link to="/theme-builder" />}
 						>
 							Theme Builder
 						</Button>
 						<Button
 							size="xsmall"
+							nativeButton={false}
 							variant="link"
 							render={
 								<a

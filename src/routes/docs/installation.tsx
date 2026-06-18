@@ -73,7 +73,7 @@ function InstallationDoc() {
 
 			<Box>
 				<VStack gap="medium">
-					<DocHeading variant="h2" title="2. Install a Component"/>
+					<DocHeading variant="h2" title="2. Install a Component" />
 					<Surface variant="sunken" padding="medium" render={<pre />}>
 						<code>{`# Using the registry URL directly
 npx shadcn@latest add http://localhost:3001/reg/button.json

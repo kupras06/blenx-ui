@@ -10,7 +10,6 @@ function StylingDoc() {
 	return (
 		<VStack>
 			<DocHeading variant="h1" title="Styling with Stylex" />
-			<Separator />
 			<Box>
 				<VStack gap="medium">
 					<DocHeading variant="h2" title="Why Stylex?" />

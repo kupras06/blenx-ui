@@ -14,7 +14,10 @@ function ThemingDoc() {
 
 			<Box>
 				<VStack gap="medium">
-				<DocHeading variant="h2" title="Approach 1: Stylex Contract Theme (Recommended)" />
+					<DocHeading
+						variant="h2"
+						title="Approach 1: Stylex Contract Theme (Recommended)"
+					/>
 					<Text variant="body1" color="secondary">
 						Create a typed theme using{" "}
 						<Text variant="code" span>

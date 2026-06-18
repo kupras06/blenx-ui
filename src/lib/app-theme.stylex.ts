@@ -1,5 +1,5 @@
 import { theme } from "@/lib/theme/contract.stylex";
-import { borderRadius, mediaQueries } from "@/lib/theme/tokens.stylex";
+import { borderRadius } from "@/lib/theme/tokens.stylex";
 import * as stylex from "@stylexjs/stylex";
 
 const colors = {
@@ -58,17 +58,15 @@ const lightValues = {
 	shadowMd: "0 4px 12px rgba(0,0,0,0.10), 0 2px 4px rgba(0,0,0,0.06)",
 	shadowLg: "0 8px 24px rgba(0,0,0,0.12), 0 4px 8px rgba(0,0,0,0.06)",
 	shadowXl: "0 20px 48px rgba(0,0,0,0.15), 0 8px 16px rgba(0,0,0,0.08)",
-	// Light theme
 
 	primaryHover: "#3f3f46",
-
 	sentimentPositiveHover: "#15803d",
-
 	sentimentWarningHover: "#b91c1c",
-
 	sentimentNegativeHover: "#dc2626",
-
 	sentimentInfoHover: "#1d4ed8",
+
+	hoverOverlay: "rgba(0,0,0,0.06)",
+	hoverOverlaySoft: "rgba(0,0,0,0.12)",
 };
 
 const darkValues = {
@@ -112,116 +110,121 @@ const darkValues = {
 	shadowMd: "0 4px 12px rgba(0,0,0,0.35), 0 2px 4px rgba(0,0,0,0.2)",
 	shadowLg: "0 8px 24px rgba(0,0,0,0.4), 0 4px 8px rgba(0,0,0,0.25)",
 	shadowXl: "0 20px 48px rgba(0,0,0,0.5), 0 8px 16px rgba(0,0,0,0.3)",
-	// Dark theme
 
 	primaryHover: "#d4d4d8",
-
 	sentimentPositiveHover: "#4ade80",
-
 	sentimentWarningHover: "#facc15",
-
 	sentimentNegativeHover: "#f87171",
-
 	sentimentInfoHover: "#60a5fa",
+
+	hoverOverlay: "rgba(255,255,255,0.08)",
+	hoverOverlaySoft: "rgba(255,255,255,0.15)",
 };
-const themed = <T>(light: T, dark: T) => ({
-	default: light,
-	[mediaQueries.darkMode]: dark,
+
+export const lightTheme = stylex.createTheme(theme, {
+	primary: lightValues.primary,
+	primarySubtle: lightValues.primarySubtle,
+	primaryHover: lightValues.primaryHover,
+	secondary: lightValues.secondary,
+	fontSize: "16px",
+	background: lightValues.background,
+	backgroundSubtle: lightValues.backgroundSubtle,
+
+	surface: lightValues.surface,
+	surfaceSubtle: lightValues.surfaceSubtle,
+	surfaceRaised: lightValues.surfaceRaised,
+	surfaceHover: lightValues.surfaceHover,
+	surfaceOverlay: lightValues.surfaceOverlay,
+
+	border: lightValues.border,
+	borderSubtle: lightValues.borderSubtle,
+	borderStrong: lightValues.borderStrong,
+	borderRadius: lightValues.borderRadius,
+
+	contentPrimary: lightValues.contentPrimary,
+	contentSecondary: lightValues.contentSecondary,
+	contentDisabled: lightValues.contentDisabled,
+	contentAccent: lightValues.contentAccent,
+	contentOnPrimary: lightValues.contentOnPrimary,
+	contentInverse: lightValues.contentInverse,
+
+	focusRing: lightValues.focusRing,
+
+	sentimentNegative: lightValues.sentimentNegative,
+	sentimentNegativeSubtle: lightValues.sentimentNegativeSubtle,
+	sentimentNegativeHover: lightValues.sentimentNegativeHover,
+
+	sentimentPositive: lightValues.sentimentPositive,
+	sentimentPositiveSubtle: lightValues.sentimentPositiveSubtle,
+	sentimentPositiveHover: lightValues.sentimentPositiveHover,
+
+	sentimentWarning: lightValues.sentimentWarning,
+	sentimentWarningSubtle: lightValues.sentimentWarningSubtle,
+	sentimentWarningHover: lightValues.sentimentWarningHover,
+
+	sentimentInfo: lightValues.sentimentInfo,
+	sentimentInfoSubtle: lightValues.sentimentInfoSubtle,
+	sentimentInfoHover: lightValues.sentimentInfoHover,
+
+	shadowSm: lightValues.shadowSm,
+	shadowMd: lightValues.shadowMd,
+	shadowLg: lightValues.shadowLg,
+	shadowXl: lightValues.shadowXl,
+
+	hoverOverlay: lightValues.hoverOverlay,
+	hoverOverlaySoft: lightValues.hoverOverlaySoft,
 });
-export const appTheme = stylex.createTheme(theme, {
-	primary: themed(lightValues.primary, darkValues.primary),
-	primarySubtle: themed(lightValues.primarySubtle, darkValues.primarySubtle),
-	primaryHover: themed(lightValues.primaryHover, darkValues.primaryHover),
-	secondary: themed(lightValues.secondary, darkValues.secondary),
-	fontSize: themed("16px", "16px"),
-	background: themed(lightValues.background, darkValues.background),
-	backgroundSubtle: themed(
-		lightValues.backgroundSubtle,
-		darkValues.backgroundSubtle,
-	),
 
-	surface: themed(lightValues.surface, darkValues.surface),
-	surfaceSubtle: themed(lightValues.surfaceSubtle, darkValues.surfaceSubtle),
-	surfaceRaised: themed(lightValues.surfaceRaised, darkValues.surfaceRaised),
-	surfaceHover: themed(lightValues.surfaceHover, darkValues.surfaceHover),
-	surfaceOverlay: themed(lightValues.surfaceOverlay, darkValues.surfaceOverlay),
+export const darkTheme = stylex.createTheme(theme, {
+	primary: darkValues.primary,
+	primarySubtle: darkValues.primarySubtle,
+	primaryHover: darkValues.primaryHover,
+	secondary: darkValues.secondary,
+	fontSize: "16px",
+	background: darkValues.background,
+	backgroundSubtle: darkValues.backgroundSubtle,
 
-	border: themed(lightValues.border, darkValues.border),
-	borderSubtle: themed(lightValues.borderSubtle, darkValues.borderSubtle),
-	borderStrong: themed(lightValues.borderStrong, darkValues.borderStrong),
-	borderRadius: themed(lightValues.borderRadius, darkValues.borderRadius),
+	surface: darkValues.surface,
+	surfaceSubtle: darkValues.surfaceSubtle,
+	surfaceRaised: darkValues.surfaceRaised,
+	surfaceHover: darkValues.surfaceHover,
+	surfaceOverlay: darkValues.surfaceOverlay,
 
-	contentPrimary: themed(lightValues.contentPrimary, darkValues.contentPrimary),
-	contentSecondary: themed(
-		lightValues.contentSecondary,
-		darkValues.contentSecondary,
-	),
-	contentDisabled: themed(
-		lightValues.contentDisabled,
-		darkValues.contentDisabled,
-	),
-	contentAccent: themed(lightValues.contentAccent, darkValues.contentAccent),
-	contentOnPrimary: themed(
-		lightValues.contentOnPrimary,
-		darkValues.contentOnPrimary,
-	),
-	contentInverse: themed(lightValues.contentInverse, darkValues.contentInverse),
+	border: darkValues.border,
+	borderSubtle: darkValues.borderSubtle,
+	borderStrong: darkValues.borderStrong,
+	borderRadius: darkValues.borderRadius,
 
-	focusRing: themed(lightValues.focusRing, darkValues.focusRing),
+	contentPrimary: darkValues.contentPrimary,
+	contentSecondary: darkValues.contentSecondary,
+	contentDisabled: darkValues.contentDisabled,
+	contentAccent: darkValues.contentAccent,
+	contentOnPrimary: darkValues.contentOnPrimary,
+	contentInverse: darkValues.contentInverse,
 
-	sentimentNegative: themed(
-		lightValues.sentimentNegative,
-		darkValues.sentimentNegative,
-	),
-	sentimentNegativeSubtle: themed(
-		lightValues.sentimentNegativeSubtle,
-		darkValues.sentimentNegativeSubtle,
-	),
-	sentimentNegativeHover: themed(
-		lightValues.sentimentNegativeHover,
-		darkValues.sentimentNegativeHover,
-	),
+	focusRing: darkValues.focusRing,
 
-	sentimentPositive: themed(
-		lightValues.sentimentPositive,
-		darkValues.sentimentPositive,
-	),
-	sentimentPositiveSubtle: themed(
-		lightValues.sentimentPositiveSubtle,
-		darkValues.sentimentPositiveSubtle,
-	),
-	sentimentPositiveHover: themed(
-		lightValues.sentimentPositiveHover,
-		darkValues.sentimentPositiveHover,
-	),
+	sentimentNegative: darkValues.sentimentNegative,
+	sentimentNegativeSubtle: darkValues.sentimentNegativeSubtle,
+	sentimentNegativeHover: darkValues.sentimentNegativeHover,
 
-	sentimentWarning: themed(
-		lightValues.sentimentWarning,
-		darkValues.sentimentWarning,
-	),
-	sentimentWarningSubtle: themed(
-		lightValues.sentimentWarningSubtle,
-		darkValues.sentimentWarningSubtle,
-	),
-	sentimentWarningHover: themed(
-		lightValues.sentimentWarningHover,
-		darkValues.sentimentWarningHover,
-	),
+	sentimentPositive: darkValues.sentimentPositive,
+	sentimentPositiveSubtle: darkValues.sentimentPositiveSubtle,
+	sentimentPositiveHover: darkValues.sentimentPositiveHover,
 
-	sentimentInfo: themed(lightValues.sentimentInfo, darkValues.sentimentInfo),
-	sentimentInfoSubtle: themed(
-		lightValues.sentimentInfoSubtle,
-		darkValues.sentimentInfoSubtle,
-	),
-	sentimentInfoHover: themed(
-		lightValues.sentimentInfoHover,
-		darkValues.sentimentInfoHover,
-	),
+	sentimentWarning: darkValues.sentimentWarning,
+	sentimentWarningSubtle: darkValues.sentimentWarningSubtle,
+	sentimentWarningHover: darkValues.sentimentWarningHover,
 
-	shadowSm: themed(lightValues.shadowSm, darkValues.shadowSm),
-	shadowMd: themed(lightValues.shadowMd, darkValues.shadowMd),
-	shadowLg: themed(lightValues.shadowLg, darkValues.shadowLg),
-	shadowXl: themed(lightValues.shadowXl, darkValues.shadowXl),
-	hoverOverlay: themed("rgba(0,0,0,0.06)", "rgba(255,255,255,0.08)"),
-	hoverOverlaySoft: themed("rgba(0,0,0,0.12)", "rgba(255,255,255,0.15)"),
+	sentimentInfo: darkValues.sentimentInfo,
+	sentimentInfoSubtle: darkValues.sentimentInfoSubtle,
+	sentimentInfoHover: darkValues.sentimentInfoHover,
+
+	shadowSm: darkValues.shadowSm,
+	shadowMd: darkValues.shadowMd,
+	shadowLg: darkValues.shadowLg,
+	shadowXl: darkValues.shadowXl,
+
+	hoverOverlay: darkValues.hoverOverlay,
+	hoverOverlaySoft: darkValues.hoverOverlaySoft,
 });

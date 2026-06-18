@@ -24,6 +24,7 @@ import { ComponentShowcase, ExampleDashboard } from "./preview";
 import { HowItWorks, TokenTable } from "./stylex-showcase";
 import { ThemeBuilderProvider, useThemeBuilder } from "./theme-builder-context";
 import { ThemePreviewProvider } from "./theme-provider";
+import { ClientOnly } from "@tanstack/react-router";
 
 function SidebarContent() {
 	return (
@@ -135,7 +136,9 @@ function ThemeBuilderInner() {
 export function ThemeBuilderPage() {
 	return (
 		<ThemeBuilderProvider>
-			<ThemeBuilderInner />
+			<ClientOnly>
+				<ThemeBuilderInner />
+			</ClientOnly>
 		</ThemeBuilderProvider>
 	);
 }

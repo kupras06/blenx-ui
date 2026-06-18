@@ -2,14 +2,15 @@ import * as stylex from "@stylexjs/stylex";
 import type { QueryClient } from "@tanstack/react-query";
 import { QueryClientProvider } from "@tanstack/react-query";
 import {
+	ClientOnly,
 	createRootRouteWithContext,
 	HeadContent,
 	Outlet,
 	Scripts,
 } from "@tanstack/react-router";
-import { Header } from "@/components/header";
+import { Header, ThemeEffect } from "@/components/header";
 import { Box, Container } from "@/components/ui";
-import { appTheme } from "@/lib/app-theme.stylex";
+import { darkTheme } from "@/lib/app-theme.stylex";
 import { theme } from "@/lib/theme/contract.stylex";
 import { fonts } from "@/lib/theme/tokens.stylex";
 
@@ -117,7 +118,7 @@ function RootDocument() {
 	const { queryClient } = Route.useRouteContext();
 
 	return (
-		<html lang="en" {...stylex.props(appTheme)}>
+		<html lang="en" {...stylex.props(darkTheme)}>
 			<head>
 				<HeadContent />
 				<meta property="og:image" content="https://blenx-ui.vercel.app/og" />
@@ -148,6 +149,9 @@ function RootDocument() {
 				)}
 			</head>
 			<body {...stylex.props(rootStyles.body)}>
+				<ClientOnly>
+					<ThemeEffect />
+				</ClientOnly>
 				<QueryClientProvider client={queryClient}>
 					<Container size="full">
 						<Header />

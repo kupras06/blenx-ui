@@ -44,6 +44,15 @@ const value = useMyStore((s) => s.value)
 const actions = useMyStore((s) => s.actions)
 ```
 
+## Theme System
+
+- Theme is defined via StyleX contract (`src/lib/theme/contract.stylex.ts`) with `stylex.defineVars()`.
+- Two themes are created with `stylex.createTheme` in `src/lib/app-theme.stylex.ts`: `lightTheme` and `darkTheme`.
+- Theme mode is managed by zustand store `src/stores/theme.ts` (`useThemeStore`), persisted to `localStorage` under key `"theme"`.
+- An inline `<script>` in `<head>` sets `color-scheme` on `<html>` from localStorage before any rendering.
+- A `<meta name="color-scheme" content="dark light">` tag is included in the document head.
+- Theme toggle button in `src/components/header.tsx` (`ThemeToggle` component) uses sun/moon icons from `@phosphor-icons/react`.
+
 ## Lint & Format
 
 - **Linting**: `oxlint` via `.oxlintrc.json`.
