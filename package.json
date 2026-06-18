@@ -23,7 +23,7 @@
     "generate-routes": "bun run docs:build && tsr generate",
     "sitemap": "tsx scripts/generate-sitemap.ts",
     "docs:build": "tsx scripts/generate-docs-manifest.ts",
-    "build": "bun run docs:build && bun run sitemap && vite build",
+    "build": "bun registry:build && bun run docs:build && bun run sitemap && vite build",
     "preview": "vite preview",
     "test": "vitest run",
     "format": "oxfmt src/",

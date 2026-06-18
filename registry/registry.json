@@ -328,11 +328,6 @@
           "path": "registry/.temp/src/components/blocks/login-01/login-01.tsx",
           "type": "registry:ui",
           "target": "@blocks/login-01/login-01.tsx"
-        },
-        {
-          "path": "registry/.temp/src/components/blocks/login-01/login-01.styles.ts",
-          "type": "registry:file",
-          "target": "@blocks/login-01/login-01.styles.ts"
         }
       ],
       "dependencies": [
@@ -362,11 +357,6 @@
           "path": "registry/.temp/src/components/blocks/login-02/login-02.tsx",
           "type": "registry:ui",
           "target": "@blocks/login-02/login-02.tsx"
-        },
-        {
-          "path": "registry/.temp/src/components/blocks/login-02/login-02.styles.ts",
-          "type": "registry:file",
-          "target": "@blocks/login-02/login-02.styles.ts"
         }
       ],
       "dependencies": [
@@ -398,11 +388,6 @@
           "path": "registry/.temp/src/components/blocks/pricing-01/pricing-01.tsx",
           "type": "registry:ui",
           "target": "@blocks/pricing-01/pricing-01.tsx"
-        },
-        {
-          "path": "registry/.temp/src/components/blocks/pricing-01/pricing-01.styles.ts",
-          "type": "registry:file",
-          "target": "@blocks/pricing-01/pricing-01.styles.ts"
         }
       ],
       "dependencies": [
@@ -435,11 +420,6 @@
           "path": "registry/.temp/src/components/blocks/profile-01/profile-01.tsx",
           "type": "registry:ui",
           "target": "@blocks/profile-01/profile-01.tsx"
-        },
-        {
-          "path": "registry/.temp/src/components/blocks/profile-01/profile-01.styles.ts",
-          "type": "registry:file",
-          "target": "@blocks/profile-01/profile-01.styles.ts"
         }
       ],
       "dependencies": [
@@ -472,11 +452,6 @@
           "path": "registry/.temp/src/components/blocks/settings-01/settings-01.tsx",
           "type": "registry:ui",
           "target": "@blocks/settings-01/settings-01.tsx"
-        },
-        {
-          "path": "registry/.temp/src/components/blocks/settings-01/settings-01.styles.ts",
-          "type": "registry:file",
-          "target": "@blocks/settings-01/settings-01.styles.ts"
         }
       ],
       "dependencies": [
@@ -508,11 +483,6 @@
           "path": "registry/.temp/src/components/blocks/signup-01/signup-01.tsx",
           "type": "registry:ui",
           "target": "@blocks/signup-01/signup-01.tsx"
-        },
-        {
-          "path": "registry/.temp/src/components/blocks/signup-01/signup-01.styles.ts",
-          "type": "registry:file",
-          "target": "@blocks/signup-01/signup-01.styles.ts"
         }
       ],
       "dependencies": [
@@ -541,11 +511,6 @@
           "path": "registry/.temp/src/components/blocks/verify-email-01/verify-email-01.tsx",
           "type": "registry:ui",
           "target": "@blocks/verify-email-01/verify-email-01.tsx"
-        },
-        {
-          "path": "registry/.temp/src/components/blocks/verify-email-01/verify-email-01.styles.ts",
-          "type": "registry:file",
-          "target": "@blocks/verify-email-01/verify-email-01.styles.ts"
         }
       ],
       "dependencies": [
@@ -1348,6 +1313,33 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "otpfield",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "A StyleX Progress component.",
+      "files": [
+        {
+          "path": "registry/.temp/src/components/ui/OTPField/otp-field.tsx",
+          "type": "registry:ui",
+          "target": "@ui/OTPField/otp-field.tsx"
+        },
+        {
+          "path": "registry/.temp/src/components/ui/OTPField/otp-field.styles.ts",
+          "type": "registry:file",
+          "target": "@ui/OTPField/otp-field.styles.ts"
+        }
+      ],
+      "registryDependencies": [
+        "http://localhost:3001/reg/shared.json"
+      ],
+      "dependencies": [
+        "@stylexjs/stylex",
+        "@phosphor-icons/react",
+        "@base-ui/react"
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "popover",
       "type": "registry:ui",
       "title": "Popover",
@@ -1864,7 +1856,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "name": "toggle-group",
+      "name": "togglegroup",
       "type": "registry:ui",
       "title": "ToggleGroup",
       "description": "A StyleX ToggleGroup component.",
