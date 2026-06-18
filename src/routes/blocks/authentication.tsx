@@ -77,21 +77,35 @@ function BlockDemo({ block }: { block: BlockInfo }) {
 	const DemoComponent = lazy(async () => {
 		const mod = await importFn();
 		const m = mod as Record<string, unknown>;
-		const demos = m.demos as
+		const items = m.demos as
 			| { name: string; component: React.ComponentType }[]
 			| undefined;
 
-		if (demos && demos.length > 0) {
-			const match = block.demoName
-				? demos.find((d) => d.name === block.demoName)
-				: undefined;
-			const demo = match ?? demos[0];
-			if (demo) {
-				return { default: demo.component as React.ComponentType };
-			}
+		if (!items || items.length === 0) {
+			return { default: (() => <Text>Demo not found</Text>) as never };
 		}
 
-		return { default: (() => <Text>Demo not found</Text>) as never };
+		if (items.length === 1) {
+			return { default: items[0].component as React.ComponentType };
+		}
+
+		const First = items[0].component;
+		const rest = items.slice(1);
+		return {
+			default: (() => (
+				<VStack gap="large">
+					<First />
+					{rest.map((d) => (
+						<VStack key={d.name} gap="small">
+							<Text variant="body2" weight="semibold" color="secondary">
+								{d.name}
+							</Text>
+							<d.component />
+						</VStack>
+					))}
+				</VStack>
+			)) as never,
+		};
 	});
 
 	return (

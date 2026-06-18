@@ -1,6 +1,7 @@
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense } from "react";
 import { demoImports } from "@/docs-demo-registry";
 import { Text } from "../ui/Text/text";
+import { VStack } from "../ui/Stack/stack";
 
 export interface DemoItem {
 	name: string;
@@ -11,38 +12,25 @@ interface DocDemoRendererProps {
 	registryName: string;
 }
 
-function DemosSwitch({ demos }: { demos: DemoItem[] }) {
-	const [idx, setIdx] = useState(0);
-	const Demo = idx < demos.length ? demos[idx].component : null;
+function AllDemos({ demos }: { demos: DemoItem[] }) {
+	const First = demos[0].component;
 
-	if (demos.length <= 1) {
-		return Demo ? <Demo /> : <Text>Demo not found</Text>;
+	if (demos.length === 1) {
+		return <First />;
 	}
 
 	return (
-		<>
-			<div style={{ display: "flex", gap: 8, marginBottom: 16 }}>
-				{demos.map((demo, i) => (
-					<button
-						key={demo.name}
-						type="button"
-						onClick={() => setIdx(i)}
-						style={{
-							padding: "6px 12px",
-							border: i === idx ? "2px solid" : "1px solid",
-							borderRadius: 6,
-							background: "transparent",
-							cursor: "pointer",
-							fontSize: 13,
-							fontWeight: i === idx ? 600 : 400,
-						}}
-					>
+		<VStack gap="large">
+			<First />
+			{demos.slice(1).map((demo) => (
+				<VStack key={demo.name} gap="small">
+					<Text variant="body2" weight="semibold" color="secondary">
 						{demo.name}
-					</button>
-				))}
-			</div>
-			{Demo ? <Demo /> : <Text>Demo not found</Text>}
-		</>
+					</Text>
+					<demo.component />
+				</VStack>
+			))}
+		</VStack>
 	);
 }
 
@@ -53,14 +41,14 @@ function DocDemoRenderer({ registryName }: DocDemoRendererProps) {
 		return null;
 	}
 
-	const DemoComponent = lazy(async (): Promise<{ default: React.ComponentType }> => {
+	const DemoComponent = lazy(async () => {
 		const mod = await importFn();
 		const m = mod as Record<string, unknown>;
 		const demos = m.demos as DemoItem[] | undefined;
 
 		if (demos && demos.length > 0) {
 			return {
-				default: () => <DemosSwitch demos={demos} />,
+				default: () => <AllDemos demos={demos} />,
 			};
 		}
 

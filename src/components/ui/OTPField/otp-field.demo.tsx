@@ -13,7 +13,7 @@ const styles = stylex.create({
 	},
 });
 
-export function OTPFieldDemo() {
+function OTPFieldDemo() {
 	return (
 		<div {...stylex.props(styles.wrapper)}>
 			<OTPField length={6} defaultValue="">
@@ -52,6 +52,6 @@ function OTPFieldGroupedDemo() {
 }
 
 export const demos = [
-	{ name: "Default", component: OTPFieldDefaultDemo },
+	{ name: "Default", component: OTPFieldDemo },
 	{ name: "Grouped", component: OTPFieldGroupedDemo },
 ];
