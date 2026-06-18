@@ -23,11 +23,11 @@ const sampleFaqs = [
 	},
 ];
 
-function Faq01DefaultDemo() {
+export function Faq01DefaultDemo() {
 	return <Faq01 items={sampleFaqs} />;
 }
 
-function Faq01WithSearchDemo() {
+export function Faq01WithSearchDemo() {
 	return (
 		<Faq01
 			title="Common questions"

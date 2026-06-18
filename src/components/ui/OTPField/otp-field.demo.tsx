@@ -13,7 +13,7 @@ const styles = stylex.create({
 	},
 });
 
-function OTPFieldDemo() {
+export function OTPFieldDemo() {
 	return (
 		<div {...stylex.props(styles.wrapper)}>
 			<OTPField length={6} defaultValue="">
@@ -28,7 +28,7 @@ function OTPFieldDemo() {
 	);
 }
 
-function OTPFieldGroupedDemo() {
+export function OTPFieldGroupedDemo() {
 	return (
 		<div {...stylex.props(styles.wrapper)}>
 			<OTPField length={12} defaultValue="" validationType="alphanumeric">

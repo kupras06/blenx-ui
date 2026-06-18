@@ -18,7 +18,7 @@ interface BlockInfo {
 	label: string;
 	description: string;
 	importPath: string;
-	demoName?: string;
+	demoName: string;
 }
 
 const BLOCKS: BlockInfo[] = [
@@ -28,6 +28,7 @@ const BLOCKS: BlockInfo[] = [
 		description:
 			"An empty state block for use when no data exists. Supports card and page variants with optional action buttons.",
 		importPath: "@/components/blocks/empty-state-01/empty-state-01",
+		demoName: "EmptyState01Demo",
 	},
 	{
 		key: "loading-state-01",
@@ -35,7 +36,7 @@ const BLOCKS: BlockInfo[] = [
 		description:
 			"A loading/skeleton block for use while content is being fetched. Supports text, card, table, and avatar patterns.",
 		importPath: "@/components/blocks/loading-state-01/loading-state-01",
-		demoName: "All",
+		demoName: "LoadingState01AllDemo",
 	},
 	{
 		key: "error-state-01",
@@ -43,7 +44,7 @@ const BLOCKS: BlockInfo[] = [
 		description:
 			"An error state block for displaying errors with retry action and expandable debug details. Supports card, page, and toast variants.",
 		importPath: "@/components/blocks/error-state-01/error-state-01",
-		demoName: "Page",
+		demoName: "ErrorState01PageDemo",
 	},
 ];
 
@@ -70,29 +71,25 @@ function BlockDemo({ block }: { block: BlockInfo }) {
 			| undefined;
 
 		if (!items || items.length === 0) {
-			return { default: (() => <Text>Demo not found</Text>) as never };
+			return { default: (() => <Text>Demo not found</Text>) as React.ComponentType };
 		}
 
-		if (items.length === 1) {
-			return { default: items[0].component as React.ComponentType };
-		}
-
-		const First = items[0].component;
-		const rest = items.slice(1);
 		return {
 			default: (() => (
-				<VStack gap="large">
-					<First />
-					{rest.map((d) => (
+				<>
+					{items.map((d, i) => (
 						<VStack key={d.name} gap="small">
-							<Text variant="body2" weight="semibold" color="secondary">
-								{d.name}
-							</Text>
+							{i > 0 && <Separator tone="subtle" />}
+							{i > 0 && (
+								<Text variant="body2" weight="semibold" color="secondary">
+									{d.name}
+								</Text>
+							)}
 							<d.component />
 						</VStack>
 					))}
-				</VStack>
-			)) as never,
+				</>
+			)) as React.ComponentType,
 		};
 	});
 
@@ -154,7 +151,7 @@ function ApplicationStatesPage() {
 									Import
 								</Text>
 								<Surface render={<pre />} padding="small" variant="sunken">
-									<code>{`import { demos } from "${block.importPath}";`}</code>
+									<code>{`import { ${block.demoName} } from "${block.importPath}";`}</code>
 								</Surface>
 							</Box>
 						</VStack>

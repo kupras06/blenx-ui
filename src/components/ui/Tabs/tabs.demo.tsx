@@ -2,7 +2,7 @@ import { VStack } from "../Stack/stack";
 import { Text } from "../Text/text";
 import { Tabs, TabsList, TabsPanel, TabsTab } from "./tabs";
 
-function TabsDemo() {
+export function TabsDemo() {
 	return (
 		<VStack gap="medium">
 			<Tabs defaultValue="tab1">

@@ -3,7 +3,7 @@ import { HStack, Stack, VStack } from "../Stack/stack";
 import { Text } from "../Text/text";
 import { Button } from "./button";
 
-function ButtonDemo() {
+export function ButtonDemo() {
 	return (
 		<VStack gap="medium">
 			<Stack gap="small">

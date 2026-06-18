@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 import { demoImports } from "@/docs-demo-registry";
+import { Separator } from "../ui/Separator/separator";
 import { Text } from "../ui/Text/text";
 import { VStack } from "../ui/Stack/stack";
 
@@ -13,24 +14,20 @@ interface DocDemoRendererProps {
 }
 
 function AllDemos({ demos }: { demos: DemoItem[] }) {
-	const First = demos[0].component;
-
-	if (demos.length === 1) {
-		return <First />;
-	}
-
 	return (
-		<VStack gap="large">
-			<First />
-			{demos.slice(1).map((demo) => (
-				<VStack key={demo.name} gap="small">
-					<Text variant="body2" weight="semibold" color="secondary">
-						{demo.name}
-					</Text>
-					<demo.component />
+		<>
+			{demos.map((d, i) => (
+				<VStack key={d.name} gap="small">
+					{i > 0 && <Separator tone="subtle" />}
+					{i > 0 && (
+						<Text variant="body2" weight="semibold" color="secondary">
+							{d.name}
+						</Text>
+					)}
+					<d.component />
 				</VStack>
 			))}
-		</VStack>
+		</>
 	);
 }
 

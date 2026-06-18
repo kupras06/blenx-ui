@@ -3,7 +3,7 @@ import { VStack } from "../Stack/stack";
 import { Text } from "../Text/text";
 import { Input } from "./input";
 
-function InputDemo() {
+export function InputDemo() {
 	return (
 		<VStack gap="medium">
 			<Grid columns={3}>

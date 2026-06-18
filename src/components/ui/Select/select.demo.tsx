@@ -10,7 +10,7 @@ import {
 	SelectValue,
 } from "./select";
 
-function SelectDemo() {
+export function SelectDemo() {
 	return (
 		<SelectRoot defaultValue="apple">
 			<SelectTrigger>

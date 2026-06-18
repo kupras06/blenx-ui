@@ -18,7 +18,7 @@ interface BlockInfo {
 	label: string;
 	description: string;
 	importPath: string;
-	demoName?: string;
+	demoName: string;
 }
 
 const BLOCKS: BlockInfo[] = [
@@ -28,7 +28,7 @@ const BLOCKS: BlockInfo[] = [
 		description:
 			"A marketing hero section with headline, supporting text, dual CTA buttons, and optional image.",
 		importPath: "@/components/blocks/hero-01/hero-01",
-		demoName: "Default",
+		demoName: "Hero01DefaultDemo",
 	},
 	{
 		key: "faq-01",
@@ -36,7 +36,7 @@ const BLOCKS: BlockInfo[] = [
 		description:
 			"An expandable FAQ accordion with section heading, description, and optional search/filter.",
 		importPath: "@/components/blocks/faq-01/faq-01",
-		demoName: "Default",
+		demoName: "Faq01DefaultDemo",
 	},
 	{
 		key: "pricing-01",
@@ -44,6 +44,7 @@ const BLOCKS: BlockInfo[] = [
 		description:
 			"A pricing section with monthly/yearly toggle, three plan tiers, feature lists, and prominent CTA for the popular plan.",
 		importPath: "@/components/blocks/pricing-01/pricing-01",
+		demoName: "Pricing01DefaultDemo",
 	},
 	{
 		key: "contact-01",
@@ -51,7 +52,7 @@ const BLOCKS: BlockInfo[] = [
 		description:
 			"A contact form page with name, email, subject select, message textarea, success state, and optional contact information sidebar.",
 		importPath: "@/components/blocks/contact-01/contact-01",
-		demoName: "Default",
+		demoName: "Contact01DefaultDemo",
 	},
 ];
 
@@ -78,29 +79,25 @@ function BlockDemo({ block }: { block: BlockInfo }) {
 			| undefined;
 
 		if (!items || items.length === 0) {
-			return { default: (() => <Text>Demo not found</Text>) as never };
+			return { default: (() => <Text>Demo not found</Text>) as React.ComponentType };
 		}
 
-		if (items.length === 1) {
-			return { default: items[0].component as React.ComponentType };
-		}
-
-		const First = items[0].component;
-		const rest = items.slice(1);
 		return {
 			default: (() => (
-				<VStack gap="large">
-					<First />
-					{rest.map((d) => (
+				<>
+					{items.map((d, i) => (
 						<VStack key={d.name} gap="small">
-							<Text variant="body2" weight="semibold" color="secondary">
-								{d.name}
-							</Text>
+							{i > 0 && <Separator tone="subtle" />}
+							{i > 0 && (
+								<Text variant="body2" weight="semibold" color="secondary">
+									{d.name}
+								</Text>
+							)}
 							<d.component />
 						</VStack>
 					))}
-				</VStack>
-			)) as never,
+				</>
+			)) as React.ComponentType,
 		};
 	});
 
@@ -161,7 +158,7 @@ function MarketingPage() {
 									Import
 								</Text>
 								<Surface render={<pre />} padding="small" variant="sunken">
-									<code>{`import { demos } from "${block.importPath}";`}</code>
+									<code>{`import { ${block.demoName} } from "${block.importPath}";`}</code>
 								</Surface>
 							</Box>
 						</VStack>

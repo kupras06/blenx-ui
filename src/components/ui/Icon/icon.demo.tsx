@@ -10,7 +10,7 @@ import { HStack, VStack } from "../Stack/stack";
 import { Text } from "../Text/text";
 import { Icon } from "./icon";
 
-function IconDemo() {
+export function IconDemo() {
 	return (
 		<VStack gap="medium">
 			<VStack gap="small">

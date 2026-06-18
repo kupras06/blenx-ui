@@ -8,7 +8,7 @@ import { HStack, VStack } from "../Stack/stack";
 import { Text } from "../Text/text";
 import { IconButton } from "./icon-button";
 
-function IconButtonDemo() {
+export function IconButtonDemo() {
 	return (
 		<VStack gap="medium">
 			<VStack gap="small">

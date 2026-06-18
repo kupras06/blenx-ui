@@ -1,6 +1,6 @@
 import { ForgotPassword01 } from "./forgot-password-01";
 
-function ForgotPassword01DefaultDemo() {
+export function ForgotPassword01DefaultDemo() {
 	return (
 		<ForgotPassword01
 			onSubmit={(email) => console.log("Reset link sent to:", email)}

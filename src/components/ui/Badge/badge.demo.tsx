@@ -12,7 +12,7 @@ const styles = stylex.create({
 	},
 });
 
-function BadgeDemo() {
+export function BadgeDemo() {
 	return (
 		<VStack gap="medium">
 			<Text variant="h6">Variants</Text>

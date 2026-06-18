@@ -34,7 +34,7 @@ const users: User[] = [
 	},
 ];
 
-function TableDemo() {
+export function TableDemo() {
 	const columns = [
 		{ key: "name" as keyof User, header: "Name" },
 		{ key: "email" as keyof User, header: "Email" },

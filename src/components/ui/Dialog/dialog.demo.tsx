@@ -13,7 +13,7 @@ import {
 	DialogTrigger,
 } from "./dialog";
 
-function DialogDemo() {
+export function DialogDemo() {
 	return (
 		<Dialog>
 			<DialogTrigger render={<Button variant="outline" />}>

@@ -1,7 +1,7 @@
 import { Text } from "../Text/text";
 import { Accordion } from "./accordion";
 
-function AccordionDemo() {
+export function AccordionDemo() {
 	return (
 		<Accordion.Root>
 			<Accordion.Item value="item-1">

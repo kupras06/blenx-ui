@@ -9,7 +9,7 @@ import {
 	CardTitle,
 } from "./card";
 
-function CardDemo() {
+export function CardDemo() {
 	return (
 		<Card>
 			<CardHeader>

@@ -2,7 +2,7 @@ import { HStack, VStack } from "../Stack/stack";
 import { Text } from "../Text/text";
 import { Switch } from "./switch";
 
-function SwitchDemo() {
+export function SwitchDemo() {
 	return (
 		<VStack gap="medium">
 			<HStack gap="medium" align="center">
