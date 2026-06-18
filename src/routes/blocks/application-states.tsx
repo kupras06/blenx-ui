@@ -18,7 +18,7 @@ interface BlockInfo {
 	label: string;
 	description: string;
 	importPath: string;
-	demoName: string;
+	demoExports: string[];
 }
 
 const BLOCKS: BlockInfo[] = [
@@ -28,7 +28,7 @@ const BLOCKS: BlockInfo[] = [
 		description:
 			"An empty state block for use when no data exists. Supports card and page variants with optional action buttons.",
 		importPath: "@/components/blocks/empty-state-01/empty-state-01",
-		demoName: "EmptyState01Demo",
+		demoExports: ["EmptyState01Demo"],
 	},
 	{
 		key: "loading-state-01",
@@ -36,7 +36,13 @@ const BLOCKS: BlockInfo[] = [
 		description:
 			"A loading/skeleton block for use while content is being fetched. Supports text, card, table, and avatar patterns.",
 		importPath: "@/components/blocks/loading-state-01/loading-state-01",
-		demoName: "LoadingState01AllDemo",
+		demoExports: [
+			"LoadingState01TextDemo",
+			"LoadingState01CardDemo",
+			"LoadingState01TableDemo",
+			"LoadingState01AvatarDemo",
+			"LoadingState01AllDemo",
+		],
 	},
 	{
 		key: "error-state-01",
@@ -44,7 +50,7 @@ const BLOCKS: BlockInfo[] = [
 		description:
 			"An error state block for displaying errors with retry action and expandable debug details. Supports card, page, and toast variants.",
 		importPath: "@/components/blocks/error-state-01/error-state-01",
-		demoName: "ErrorState01PageDemo",
+		demoExports: ["ErrorState01PageDemo", "ErrorState01CardDemo", "ErrorState01ToastDemo"],
 	},
 ];
 
@@ -76,19 +82,23 @@ function BlockDemo({ block }: { block: BlockInfo }) {
 
 		return {
 			default: (() => (
-				<>
+				<VStack gap="medium">
 					{items.map((d, i) => (
 						<VStack key={d.name} gap="small">
-							{i > 0 && <Separator tone="subtle" />}
-							{i > 0 && (
-								<Text variant="body2" weight="semibold" color="secondary">
-									{d.name}
+							<Surface padding="medium" variant="sunken">
+								<d.component />
+							</Surface>
+							<Box>
+								<Text variant="body2" weight="semibold">
+									Import
 								</Text>
-							)}
-							<d.component />
+								<Surface render={<pre />} padding="small" variant="sunken">
+									<code>{`import { ${block.demoExports[i]} } from "${block.importPath}";`}</code>
+								</Surface>
+							</Box>
 						</VStack>
 					))}
-				</>
+				</VStack>
 			)) as React.ComponentType,
 		};
 	});
@@ -140,20 +150,7 @@ function ApplicationStatesPage() {
 								</Text>
 							</VStack>
 
-							<Surface padding="medium" variant="sunken">
-								<BlockDemo block={block} />
-							</Surface>
-
-							<Separator tone="subtle" />
-
-							<Box>
-								<Text variant="body2" weight="semibold">
-									Import
-								</Text>
-								<Surface render={<pre />} padding="small" variant="sunken">
-									<code>{`import { ${block.demoName} } from "${block.importPath}";`}</code>
-								</Surface>
-							</Box>
+							<BlockDemo block={block} />
 						</VStack>
 					</TabsPanel>
 				))}

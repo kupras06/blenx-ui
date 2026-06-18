@@ -18,7 +18,7 @@ interface BlockInfo {
 	label: string;
 	description: string;
 	importPath: string;
-	demoName: string;
+	demoExports: string[];
 }
 
 const BLOCKS: BlockInfo[] = [
@@ -28,7 +28,7 @@ const BLOCKS: BlockInfo[] = [
 		description:
 			"A SaaS dashboard with KPI metric grid, chart placeholders, and an activity table.",
 		importPath: "@/components/blocks/dashboard-01/dashboard-01",
-		demoName: "Dashboard01DefaultDemo",
+		demoExports: ["Dashboard01DefaultDemo"],
 	},
 	{
 		key: "profile-01",
@@ -36,7 +36,7 @@ const BLOCKS: BlockInfo[] = [
 		description:
 			"A user profile page with editable form fields, notification preference toggles, and a danger zone for account deletion.",
 		importPath: "@/components/blocks/profile-01/profile-01",
-		demoName: "Profile01DefaultDemo",
+		demoExports: ["Profile01DefaultDemo"],
 	},
 	{
 		key: "settings-01",
@@ -44,7 +44,7 @@ const BLOCKS: BlockInfo[] = [
 		description:
 			"A tabbed settings page with sections for general, appearance, notifications, privacy, and billing preferences.",
 		importPath: "@/components/blocks/settings-01/settings-01",
-		demoName: "Settings01DefaultDemo",
+		demoExports: ["Settings01DefaultDemo"],
 	},
 ];
 
@@ -76,19 +76,23 @@ function BlockDemo({ block }: { block: BlockInfo }) {
 
 		return {
 			default: (() => (
-				<>
+				<VStack gap="medium">
 					{items.map((d, i) => (
 						<VStack key={d.name} gap="small">
-							{i > 0 && <Separator tone="subtle" />}
-							{i > 0 && (
-								<Text variant="body2" weight="semibold" color="secondary">
-									{d.name}
+							<Surface padding="medium" variant="sunken">
+								<d.component />
+							</Surface>
+							<Box>
+								<Text variant="body2" weight="semibold">
+									Import
 								</Text>
-							)}
-							<d.component />
+								<Surface render={<pre />} padding="small" variant="sunken">
+									<code>{`import { ${block.demoExports[i]} } from "${block.importPath}";`}</code>
+								</Surface>
+							</Box>
 						</VStack>
 					))}
-				</>
+				</VStack>
 			)) as React.ComponentType,
 		};
 	});
@@ -140,20 +144,7 @@ function DashboardPage() {
 								</Text>
 							</VStack>
 
-							<Surface padding="medium" variant="sunken">
-								<BlockDemo block={block} />
-							</Surface>
-
-							<Separator tone="subtle" />
-
-							<Box>
-								<Text variant="body2" weight="semibold">
-									Import
-								</Text>
-								<Surface render={<pre />} padding="small" variant="sunken">
-									<code>{`import { ${block.demoName} } from "${block.importPath}";`}</code>
-								</Surface>
-							</Box>
+							<BlockDemo block={block} />
 						</VStack>
 					</TabsPanel>
 				))}

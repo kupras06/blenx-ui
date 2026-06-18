@@ -18,7 +18,7 @@ interface BlockInfo {
 	label: string;
 	description: string;
 	importPath: string;
-	demoName: string;
+	demoExports: string[];
 }
 
 const BLOCKS: BlockInfo[] = [
@@ -28,7 +28,7 @@ const BLOCKS: BlockInfo[] = [
 		description:
 			"A sign-in form with email/password fields, social login options, and links to password reset and registration.",
 		importPath: "@/components/blocks/login-01/login-01",
-		demoName: "Login01DefaultDemo",
+		demoExports: ["Login01DefaultDemo"],
 	},
 	{
 		key: "login-02",
@@ -36,7 +36,7 @@ const BLOCKS: BlockInfo[] = [
 		description:
 			"An email-first sign-in flow supporting both password and magic-link authentication.",
 		importPath: "@/components/blocks/login-02/login-02",
-		demoName: "Login02PasswordFlowDemo",
+		demoExports: ["Login02PasswordFlowDemo", "Login02MagicLinkDemo"],
 	},
 	{
 		key: "signup-01",
@@ -44,7 +44,7 @@ const BLOCKS: BlockInfo[] = [
 		description:
 			"A registration form with name, email, password fields, social sign-up options, and terms acceptance.",
 		importPath: "@/components/blocks/signup-01/signup-01",
-		demoName: "Signup01DefaultDemo",
+		demoExports: ["Signup01DefaultDemo"],
 	},
 	{
 		key: "forgot-password-01",
@@ -52,7 +52,7 @@ const BLOCKS: BlockInfo[] = [
 		description:
 			"A password reset form that accepts an email address and displays a success confirmation after submission.",
 		importPath: "@/components/blocks/forgot-password-01/forgot-password-01",
-		demoName: "ForgotPassword01DefaultDemo",
+		demoExports: ["ForgotPassword01DefaultDemo"],
 	},
 	{
 		key: "verify-email-01",
@@ -60,7 +60,7 @@ const BLOCKS: BlockInfo[] = [
 		description:
 			"A 6-digit OTP verification form with auto-advancing inputs, resend cooldown, and email display.",
 		importPath: "@/components/blocks/verify-email-01/verify-email-01",
-		demoName: "VerifyEmail01DefaultDemo",
+		demoExports: ["VerifyEmail01DefaultDemo"],
 	},
 ];
 
@@ -92,19 +92,23 @@ function BlockDemo({ block }: { block: BlockInfo }) {
 
 		return {
 			default: (() => (
-				<>
+				<VStack gap="medium">
 					{items.map((d, i) => (
 						<VStack key={d.name} gap="small">
-							{i > 0 && <Separator tone="subtle" />}
-							{i > 0 && (
-								<Text variant="body2" weight="semibold" color="secondary">
-									{d.name}
+							<Surface padding="medium" variant="sunken">
+								<d.component />
+							</Surface>
+							<Box>
+								<Text variant="body2" weight="semibold">
+									Import
 								</Text>
-							)}
-							<d.component />
+								<Surface render={<pre />} padding="small" variant="sunken">
+									<code>{`import { ${block.demoExports[i]} } from "${block.importPath}";`}</code>
+								</Surface>
+							</Box>
 						</VStack>
 					))}
-				</>
+				</VStack>
 			)) as React.ComponentType,
 		};
 	});
@@ -156,20 +160,7 @@ function AuthenticationPage() {
 								</Text>
 							</VStack>
 
-							<Surface padding="medium" variant="sunken">
-								<BlockDemo block={block} />
-							</Surface>
-
-							<Separator tone="subtle" />
-
-							<Box>
-								<Text variant="body2" weight="semibold">
-									Import
-								</Text>
-								<Surface render={<pre />} padding="small" variant="sunken">
-									<code>{`import { ${block.demoName} } from "${block.importPath}";`}</code>
-								</Surface>
-							</Box>
+							<BlockDemo block={block} />
 						</VStack>
 					</TabsPanel>
 				))}

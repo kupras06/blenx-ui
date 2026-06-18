@@ -18,7 +18,7 @@ interface BlockInfo {
 	label: string;
 	description: string;
 	importPath: string;
-	demoName: string;
+	demoExports: string[];
 }
 
 const BLOCKS: BlockInfo[] = [
@@ -28,7 +28,7 @@ const BLOCKS: BlockInfo[] = [
 		description:
 			"A marketing hero section with headline, supporting text, dual CTA buttons, and optional image.",
 		importPath: "@/components/blocks/hero-01/hero-01",
-		demoName: "Hero01DefaultDemo",
+		demoExports: ["Hero01DefaultDemo", "Hero01WithImageDemo"],
 	},
 	{
 		key: "faq-01",
@@ -36,7 +36,7 @@ const BLOCKS: BlockInfo[] = [
 		description:
 			"An expandable FAQ accordion with section heading, description, and optional search/filter.",
 		importPath: "@/components/blocks/faq-01/faq-01",
-		demoName: "Faq01DefaultDemo",
+		demoExports: ["Faq01DefaultDemo", "Faq01WithSearchDemo"],
 	},
 	{
 		key: "pricing-01",
@@ -44,7 +44,7 @@ const BLOCKS: BlockInfo[] = [
 		description:
 			"A pricing section with monthly/yearly toggle, three plan tiers, feature lists, and prominent CTA for the popular plan.",
 		importPath: "@/components/blocks/pricing-01/pricing-01",
-		demoName: "Pricing01DefaultDemo",
+		demoExports: ["Pricing01DefaultDemo"],
 	},
 	{
 		key: "contact-01",
@@ -52,7 +52,7 @@ const BLOCKS: BlockInfo[] = [
 		description:
 			"A contact form page with name, email, subject select, message textarea, success state, and optional contact information sidebar.",
 		importPath: "@/components/blocks/contact-01/contact-01",
-		demoName: "Contact01DefaultDemo",
+		demoExports: ["Contact01DefaultDemo", "Contact01SimpleDemo"],
 	},
 ];
 
@@ -84,19 +84,23 @@ function BlockDemo({ block }: { block: BlockInfo }) {
 
 		return {
 			default: (() => (
-				<>
+				<VStack gap="medium">
 					{items.map((d, i) => (
 						<VStack key={d.name} gap="small">
-							{i > 0 && <Separator tone="subtle" />}
-							{i > 0 && (
-								<Text variant="body2" weight="semibold" color="secondary">
-									{d.name}
+							<Surface padding="medium" variant="sunken">
+								<d.component />
+							</Surface>
+							<Box>
+								<Text variant="body2" weight="semibold">
+									Import
 								</Text>
-							)}
-							<d.component />
+								<Surface render={<pre />} padding="small" variant="sunken">
+									<code>{`import { ${block.demoExports[i]} } from "${block.importPath}";`}</code>
+								</Surface>
+							</Box>
 						</VStack>
 					))}
-				</>
+				</VStack>
 			)) as React.ComponentType,
 		};
 	});
@@ -147,20 +151,7 @@ function MarketingPage() {
 								</Text>
 							</VStack>
 
-							<Surface padding="medium" variant="sunken">
-								<BlockDemo block={block} />
-							</Surface>
-
-							<Separator tone="subtle" />
-
-							<Box>
-								<Text variant="body2" weight="semibold">
-									Import
-								</Text>
-								<Surface render={<pre />} padding="small" variant="sunken">
-									<code>{`import { ${block.demoName} } from "${block.importPath}";`}</code>
-								</Surface>
-							</Box>
+							<BlockDemo block={block} />
 						</VStack>
 					</TabsPanel>
 				))}
