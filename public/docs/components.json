@@ -932,7 +932,7 @@
     "title": "Grid",
     "description": "A CSS Grid layout component with column presets, gap tokens, and alignment control. Includes a GridItem sub-component for spanning.",
     "category": "Layout",
-    "status": "stable",
+    "status": "beta",
     "keywords": [
       "grid",
       "layout",

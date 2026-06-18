@@ -20,7 +20,6 @@ export type ThemeTokens = {
 	contentDisabled: string;
 	contentAccent: string;
 	contentOnPrimary: string;
-	contentInverse: string;
 	sentimentNegative: string;
 	sentimentNegativeSubtle: string;
 	sentimentPositive: string;
@@ -63,7 +62,6 @@ export const defaultTokens: ThemeTokens = {
 	contentDisabled: "#A9B2BD",
 	contentAccent: "#243142",
 	contentOnPrimary: "#FFFFFF",
-	contentInverse: "#F7F4EE",
 	sentimentNegative: "#D63031",
 	sentimentNegativeSubtle: "#FFEAEA",
 	sentimentPositive: "#27AE60",

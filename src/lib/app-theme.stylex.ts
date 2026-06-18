@@ -41,7 +41,6 @@ const lightValues = {
 	contentDisabled: "#a1a1aa",
 	contentAccent: "#18181b",
 	contentOnPrimary: "#ffffff",
-	contentInverse: "#ffffff",
 
 	focusRing: "#3b82f6",
 
@@ -93,7 +92,6 @@ const darkValues = {
 	contentDisabled: "#52525b",
 	contentAccent: "#fafafa",
 	contentOnPrimary: "#09090b",
-	contentInverse: "#09090b",
 
 	focusRing: "#3b82f6",
 
@@ -146,7 +144,6 @@ export const lightTheme = stylex.createTheme(theme, {
 	contentDisabled: lightValues.contentDisabled,
 	contentAccent: lightValues.contentAccent,
 	contentOnPrimary: lightValues.contentOnPrimary,
-	contentInverse: lightValues.contentInverse,
 
 	focusRing: lightValues.focusRing,
 
@@ -200,7 +197,6 @@ export const darkTheme = stylex.createTheme(theme, {
 	contentDisabled: darkValues.contentDisabled,
 	contentAccent: darkValues.contentAccent,
 	contentOnPrimary: darkValues.contentOnPrimary,
-	contentInverse: darkValues.contentInverse,
 
 	focusRing: darkValues.focusRing,
 

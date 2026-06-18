@@ -30,7 +30,6 @@ const displayTokens: Array<{ key: string; label: string }> = [
 	{ key: "contentDisabled", label: "contentDisabled" },
 	{ key: "contentAccent", label: "contentAccent" },
 	{ key: "contentOnPrimary", label: "contentOnPrimary" },
-	{ key: "contentInverse", label: "contentInverse" },
 	{ key: "sentimentNegative", label: "sentimentNegative" },
 	{ key: "sentimentNegativeSubtle", label: "sentimentNegativeSubtle" },
 	{ key: "sentimentPositive", label: "sentimentPositive" },

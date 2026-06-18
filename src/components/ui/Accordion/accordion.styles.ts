@@ -47,7 +47,7 @@ export const accordionStyles = stylex.create({
 		fontSize: fontSize.small,
 		lineHeight: lineHeight.normal,
 		fontWeight: fontWeight.medium,
-		color: theme.contentPrimary,
+		color: theme.contentOnPrimary,
 		backgroundColor: "transparent",
 		border: "none",
 		borderRadius: borderRadius.small,

@@ -13,7 +13,6 @@ export const theme = stylex.defineVars({
 	contentDisabled: "",
 	contentAccent: "",
 	contentOnPrimary: "",
-	contentInverse: "",
 
 	// Surface
 	surface: "",

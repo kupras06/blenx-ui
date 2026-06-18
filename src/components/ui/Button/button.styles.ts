@@ -85,7 +85,7 @@ export const buttonIntentStyles = stylex.create({
 	},
 	warning: {
 		[intentTokens.solidBg]: theme.sentimentWarning,
-		[intentTokens.solidFg]: theme.contentInverse,
+		[intentTokens.solidFg]: theme.contentOnPrimary,
 		[intentTokens.solidHoverBg]: theme.sentimentWarningHover,
 
 		[intentTokens.softBg]: theme.sentimentWarningSubtle,
@@ -115,7 +115,7 @@ export const buttonIntentStyles = stylex.create({
 	},
 	info: {
 		[intentTokens.solidBg]: theme.sentimentInfo,
-		[intentTokens.solidFg]: theme.contentInverse,
+		[intentTokens.solidFg]: theme.contentOnPrimary,
 		[intentTokens.solidHoverBg]: theme.sentimentInfoHover,
 
 		[intentTokens.softBg]: theme.sentimentInfoSubtle,

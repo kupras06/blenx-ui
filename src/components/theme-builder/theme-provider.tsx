@@ -40,7 +40,6 @@ export function ThemePreviewProvider({ children }: { children: ReactNode }) {
 			[theme.contentDisabled, tokens.contentDisabled],
 			[theme.contentAccent, tokens.contentAccent],
 			[theme.contentOnPrimary, tokens.contentOnPrimary],
-			[theme.contentInverse, tokens.contentInverse],
 			[theme.sentimentNegative, tokens.sentimentNegative],
 			[theme.sentimentNegativeSubtle, tokens.sentimentNegativeSubtle],
 			[theme.sentimentPositive, tokens.sentimentPositive],
