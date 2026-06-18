@@ -19,11 +19,6 @@
 			"file": "contact-01.tsx",
 			"type": "registry:ui",
 			"target": "@blocks/contact-01/contact-01.tsx"
-		},
-		{
-			"file": "contact-01.styles.ts",
-			"type": "registry:file",
-			"target": "@blocks/contact-01/contact-01.styles.ts"
 		}
 	]
 }

@@ -1,4 +1,3 @@
-import type { ReactElement } from "react";
 import { borderRadiusStyles } from "@/utils/layout.styles";
 import type { BorderRadiusProp } from "@/utils/layout.styles";
 import { iconWrapperStyles } from "./icon.styles";
@@ -6,7 +5,6 @@ import { Box, type BoxProps } from "../Box/box";
 
 type IconProps = BoxProps & {
 	radius?: BorderRadiusProp;
-	children: ReactElement;
 };
 
 export function Icon({ radius, children, style, ...props }: IconProps) {

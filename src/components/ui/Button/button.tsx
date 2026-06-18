@@ -40,16 +40,15 @@ function Button({
 	...props
 }: ButtonProps) {
 	const isDisabled = Boolean(loading || disabledProp);
-	const isNewSystem = Boolean(intent);
 	const resolvedVariant = variant;
 
 	const defaultProps = {
 		...stylex.props(
+			buttonIntentStyles[intent ?? "primary"],
 			buttonStyles.base,
 			fullWidth && buttonStyles.fullWidth,
 			buttonSizes[size],
 			buttonVariantStyles[resolvedVariant],
-			isNewSystem && buttonIntentStyles[intent ?? "primary"],
 			radius && borderRadiusStyles[radius],
 			style,
 		),

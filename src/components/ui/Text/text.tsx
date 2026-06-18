@@ -12,6 +12,7 @@ import {
 	textVarianttyles,
 	textWeightStyles,
 } from "./text.styles";
+import { Box, type BoxProps } from "../Box/box";
 
 const variantTag = {
 	h1: "h1",
@@ -32,7 +33,7 @@ const variantTag = {
 export type TextVariant = keyof typeof variantTag;
 
 type Props = PropsWithStylex<
-	useRender.ComponentProps<"span"> & {
+	BoxProps & {
 		variant?: TextVariant;
 		color?: keyof typeof colorStyles;
 		align?: keyof typeof textAlignStyles;
@@ -75,9 +76,5 @@ export function Text({
 			render,
 		});
 	}
-	return useRender({
-		defaultTagName: variantTag[variant],
-		props: merged,
-		render,
-	});
+	return <Box render={render} {...merged} />;
 }

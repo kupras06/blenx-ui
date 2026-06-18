@@ -143,8 +143,8 @@ export const buttonVariantStyles = stylex.create({
 		backgroundColor: intentTokens.softFg,
 		borderColor: "transparent",
 		":hover:not(:disabled)": {
-			backgroundColor: `color-mix(in srgb, ${intentTokens.softBg} 80%, ${theme.contentPrimary})`,
-			borderColor: `color-mix(in srgb, ${intentTokens.border} 80%, ${theme.contentPrimary})`,
+			backgroundColor: `color-mix(in srgb, ${intentTokens.borderHover} 80%, ${intentTokens.softBg})`,
+			borderColor: `color-mix(in srgb, ${intentTokens.border} 80%, ${intentTokens.softBg})`,
 		},
 	},
 	outline: {
@@ -152,7 +152,7 @@ export const buttonVariantStyles = stylex.create({
 		borderColor: intentTokens.border,
 		color: intentTokens.fg,
 		":hover:not(:disabled)": {
-			backgroundColor: `color-mix(in srgb, ${intentTokens.solidFg} 85%, ${theme.contentPrimary})`,
+			backgroundColor: `color-mix(in srgb, ${intentTokens.solidFg} 85%, ${intentTokens.solidFg})`,
 			borderColor: intentTokens.borderHover,
 		},
 	},
@@ -161,7 +161,7 @@ export const buttonVariantStyles = stylex.create({
 		borderColor: "transparent",
 		color: intentTokens.fg,
 		":hover:not(:disabled)": {
-			backgroundColor: `color-mix(in srgb, ${intentTokens.border} 15%, ${theme.contentPrimary})`,
+			backgroundColor: `color-mix(in srgb, ${intentTokens.border} 15%, ${intentTokens.solidFg})`,
 		},
 	},
 	link: {
