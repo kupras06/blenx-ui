@@ -1,9 +1,11 @@
 import * as stylex from "@stylexjs/stylex";
 import { Button } from "@/components/ui/Button/button";
 import { Text } from "@/components/ui/Text/text";
-import { HStack } from "@/components/ui/Stack/stack";
+import { HStack, VStack } from "@/components/ui/Stack/stack";
 import type { PropsWithStylex } from "@/utils/stylex.utils";
 import { heroStyles } from "./hero-01.styles";
+import { ImageIcon } from "@phosphor-icons/react";
+import { Box, Container } from "@/components/ui";
 
 type Cta = {
 	label: string;
@@ -27,25 +29,16 @@ export function Hero01({
 	secondaryCta,
 	imageSrc,
 	imageAlt = "",
-	backgroundVariant = "default",
-	style,
 }: Props) {
 	return (
-		<section
-			{...stylex.props(
-				heroStyles.section,
-				backgroundVariant === "muted" && heroStyles.muted,
-				backgroundVariant === "accent" && heroStyles.accent,
-				style,
-			)}
-		>
+		<Container>
 			<div {...stylex.props(heroStyles.inner)}>
-				<div {...stylex.props(heroStyles.textColumn)}>
-					<Text variant="h1" style={heroStyles.headline}>
+				<VStack>
+					<Text variant="h1" maxWidth={"md"}>
 						{headline}
 					</Text>
 					{subheadline && (
-						<Text variant="body1" style={heroStyles.subheadline}>
+						<Text variant="body1" maxWidth="sm">
 							{subheadline}
 						</Text>
 					)}
@@ -67,8 +60,8 @@ export function Hero01({
 							)}
 						</HStack>
 					)}
-				</div>
-				<div {...stylex.props(heroStyles.imageColumn)}>
+				</VStack>
+				<VStack>
 					{imageSrc ? (
 						<img
 							src={imageSrc}
@@ -76,26 +69,12 @@ export function Hero01({
 							{...stylex.props(heroStyles.image)}
 						/>
 					) : (
-						<div {...stylex.props(heroStyles.imagePlaceholder)}>
-							<svg
-								width="64"
-								height="64"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								strokeWidth="1.5"
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								aria-hidden="true"
-							>
-								<rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-								<circle cx="8.5" cy="8.5" r="1.5" />
-								<polyline points="21 15 16 10 5 21" />
-							</svg>
-						</div>
+						<Box maxWidth="md" paddingY="massive">
+							<ImageIcon size={98} />
+						</Box>
 					)}
-				</div>
+				</VStack>
 			</div>
-		</section>
+		</Container>
 	);
 }

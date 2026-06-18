@@ -20,11 +20,6 @@
 			"file": "signup-01.tsx",
 			"type": "registry:ui",
 			"target": "@blocks/signup-01/signup-01.tsx"
-		},
-		{
-			"file": "signup-01.styles.ts",
-			"type": "registry:file",
-			"target": "@blocks/signup-01/signup-01.styles.ts"
 		}
 	]
 }

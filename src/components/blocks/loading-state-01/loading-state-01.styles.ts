@@ -29,7 +29,7 @@ export const skeletonStyles = stylex.create({
 	textLine: {
 		height: 14,
 		borderRadius: borderRadius.full,
-		backgroundColor: theme.surfaceSubtle,
+		backgroundColor: theme.surfaceRaised,
 	},
 
 	textLineShort: {
@@ -39,27 +39,27 @@ export const skeletonStyles = stylex.create({
 	cardSkeleton: {
 		height: 200,
 		borderRadius: theme.borderRadius,
-		backgroundColor: theme.surfaceSubtle,
+		backgroundColor: theme.surfaceRaised,
 	},
 
 	tableHeader: {
 		height: 40,
 		borderRadius: theme.borderRadius,
-		backgroundColor: theme.surfaceSubtle,
+		backgroundColor: theme.surfaceRaised,
 		marginBottom: spacing.xsmall,
 	},
 
 	tableRow: {
 		height: 48,
 		borderRadius: theme.borderRadius,
-		backgroundColor: theme.surfaceSubtle,
+		backgroundColor: theme.surfaceRaised,
 	},
 
 	avatar: {
 		width: 48,
 		height: 48,
 		borderRadius: "50%",
-		backgroundColor: theme.surfaceSubtle,
+		backgroundColor: theme.surfaceRaised,
 		flexShrink: 0,
 	},
 
