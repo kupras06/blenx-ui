@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/Button/button";
 import { Input, Label } from "@/components/ui/Input/input";
 import { Text } from "@/components/ui/Text/text";
 import { Checkbox } from "@/components/ui/Checkbox/checkbox";
-import { Card, CardBody, CardTitle } from "@/components/ui/Card/card";
+import { Card, CardBody,  } from "@/components/ui/Card/card";
 import type { PropsWithStylex } from "@/utils/stylex.utils";
 import {
 	Box,
@@ -13,6 +13,7 @@ import {
 	Field,
 	FieldLabel,
 	HStack,
+	Separator,
 	VStack,
 } from "@/components/ui";
 
@@ -65,86 +66,81 @@ export function Signup01({
 	};
 
 	return (
-		<Container size="md" center>
-			<Card>
-				<CardTitle>
-					<Box>
-						{logo && <div>{logo}</div>}
+		<Container size="sm">
+			<Card fullWidth>
+				<CardBody>
+					<Box paddingY="medium">
+						{logo && <Box>{logo}</Box>}
 						<Text variant="h3">{title}</Text>
 						<Text variant="body2" color="secondary">
 							{description}
 						</Text>
 					</Box>
-				</CardTitle>
-				<CardBody>
-					<VStack>
-						<VStack
-							render={
-								<form onSubmit={handleSubmit} aria-label="Sign up form" />
-							}
-						>
-							<Field>
-								<FieldLabel htmlFor="signup-name">Full name</FieldLabel>
-								<Input
-									id="signup-name"
-									type="text"
-									placeholder="Jane Doe"
-									value={fullName}
-									onChange={(e) => setFullName(e.target.value)}
-									required
-									autoComplete="name"
-								/>
-							</Field>
 
-							<Field>
-								<FieldLabel htmlFor="signup-email">Email</FieldLabel>
-								<Input
-									id="signup-email"
-									type="email"
-									placeholder="jane@example.com"
-									value={email}
-									onChange={(e) => setEmail(e.target.value)}
-									required
-									autoComplete="email"
-								/>
-							</Field>
+					<VStack
+						render={<form onSubmit={handleSubmit} aria-label="Sign up form" />}
+					>
+						<Field>
+							<FieldLabel htmlFor="signup-name">Full name</FieldLabel>
+							<Input
+								id="signup-name"
+								type="text"
+								placeholder="Jane Doe"
+								value={fullName}
+								onChange={(e) => setFullName(e.target.value)}
+								required
+								autoComplete="name"
+							/>
+						</Field>
 
-							<Field>
-								<FieldLabel htmlFor="signup-password">Password</FieldLabel>
-								<Input
-									id="signup-password"
-									type="password"
-									placeholder="Create a password"
-									value={password}
-									onChange={(e) => {
-										setPassword(e.target.value);
-										setPasswordError("");
-									}}
-									required
-									autoComplete="new-password"
-									error={passwordError}
-								/>
-								<Text variant="caption" color="info">
-									At least 8 characters with a number and a letter
-								</Text>
-							</Field>
+						<Field>
+							<FieldLabel htmlFor="signup-email">Email</FieldLabel>
+							<Input
+								id="signup-email"
+								type="email"
+								placeholder="jane@example.com"
+								value={email}
+								onChange={(e) => setEmail(e.target.value)}
+								required
+								autoComplete="email"
+							/>
+						</Field>
 
-							<Field>
-								<FieldLabel htmlFor="signup-confirm">
-									Confirm password
-								</FieldLabel>
-								<Input
-									id="signup-confirm"
-									type="password"
-									placeholder="Confirm your password"
-									value={confirmPassword}
-									onChange={(e) => setConfirmPassword(e.target.value)}
-									required
-									autoComplete="new-password"
-									error={passwordError}
-								/>
-							</Field>
+						<Field>
+							<FieldLabel htmlFor="signup-password">Password</FieldLabel>
+							<Input
+								id="signup-password"
+								type="password"
+								placeholder="Create a password"
+								value={password}
+								onChange={(e) => {
+									setPassword(e.target.value);
+									setPasswordError("");
+								}}
+								required
+								autoComplete="new-password"
+								error={passwordError}
+							/>
+							<Text variant="caption" color="secondary">
+								At least 8 characters with a number and a letter
+							</Text>
+						</Field>
 
+						<Field>
+							<FieldLabel htmlFor="signup-confirm">Confirm password</FieldLabel>
+							<Input
+								id="signup-confirm"
+								type="password"
+								placeholder="Confirm your password"
+								value={confirmPassword}
+								onChange={(e) => setConfirmPassword(e.target.value)}
+								required
+								autoComplete="new-password"
+								error={passwordError}
+							/>
+						</Field>
+
+						<HStack>
 							<Label>
 								<Checkbox
 									checked={acceptedTerms}
@@ -152,12 +148,12 @@ export function Signup01({
 										setAcceptedTerms(checked as boolean)
 									}
 								/>
-								<Text color="secondary">
+								<Text>
 									I agree to the{" "}
 									<Button
-										variant="link"
-										size="xsmall"
 										type="button"
+										size="xsmall"
+										variant="link"
 										onClick={() => {
 											if (termsUrl) window.open(termsUrl, "_blank");
 										}}
@@ -166,9 +162,9 @@ export function Signup01({
 									</Button>{" "}
 									and{" "}
 									<Button
-										variant="link"
-										size="xsmall"
 										type="button"
+										size="xsmall"
+										variant="link"
 										onClick={() => {
 											if (termsUrl) window.open(termsUrl, "_blank");
 										}}
@@ -177,14 +173,17 @@ export function Signup01({
 									</Button>
 								</Text>
 							</Label>
+						</HStack>
 
-							<Button type="submit" variant="solid" fullWidth>
-								Create account
-							</Button>
-						</VStack>
+						<Button type="submit" variant="solid" fullWidth>
+							Create account
+						</Button>
+					</VStack>
 
-						{socialProviders && socialProviders.length > 0 && (
-							<HStack grow>
+					{socialProviders && socialProviders.length > 0 && (
+						<VStack gap="small">
+							<Separator label="Or sign up with" tone="subtle" />
+							<HStack gap="small" justify="between" fullWidth>
 								{socialProviders.map((provider) => (
 									<Button
 										key={provider.provider}
@@ -196,24 +195,22 @@ export function Signup01({
 									</Button>
 								))}
 							</HStack>
-						)}
+						</VStack>
+					)}
 
-						{loginLink && (
-							<HStack justify="center" align="center">
-								<Text variant="body2" span>
-									Already have an account?{" "}
-								</Text>
-								<Button
-									variant="link"
-									size="xsmall"
-									type="button"
-									onClick={loginLink.handleClick}
-								>
-									{loginLink.label ?? "Sign in"}
-								</Button>
-							</HStack>
-						)}
-					</VStack>
+					{loginLink && (
+						<HStack gap="xsmall" align="center" justify="center">
+							<Text variant="body2">Already have an account?</Text>
+							<Button
+								variant="link"
+								type="button"
+								onClick={loginLink.handleClick}
+								size="xsmall"
+							>
+								{loginLink.label ?? "Sign in"}
+							</Button>
+						</HStack>
+					)}
 				</CardBody>
 			</Card>
 		</Container>

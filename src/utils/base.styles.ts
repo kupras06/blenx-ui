@@ -1,6 +1,6 @@
 import * as stylex from "@stylexjs/stylex";
 import { theme } from "@/lib/theme/contract.stylex";
-import type { paddingXStyles } from "./layout.styles";
+import type { paddingTopStyles } from "./layout.styles";
 
 export const colorStyles = stylex.create({
 	primary: { color: theme.contentPrimary },
@@ -23,16 +23,27 @@ export const bgColorStyles = stylex.create({
 	warning: { backgroundColor: theme.sentimentWarningSubtle },
 	info: { backgroundColor: theme.sentimentInfoSubtle },
 });
-type BoxSpacing = keyof typeof paddingXStyles;
-export type SpacingProps = {
+type BoxSpacing = keyof typeof paddingTopStyles;
+export type PaddingProps = {
 	padding?: BoxSpacing;
 	paddingX?: BoxSpacing;
 	paddingY?: BoxSpacing;
+	paddingTop?: BoxSpacing;
+	paddingBottom?: BoxSpacing;
+	paddingLeft?: BoxSpacing;
+	paddingRight?: BoxSpacing;
+};
+export type MarginProps = {
 	margin?: BoxSpacing;
 	marginX?: BoxSpacing;
 	marginY?: BoxSpacing;
+	marginTop?: BoxSpacing;
+	marginBottom?: BoxSpacing;
+	marginLeft?: BoxSpacing;
+	marginRight?: BoxSpacing;
 };
 
+export type SpacingProps = PaddingProps & MarginProps;
 export type ColorProps = {
 	color?: keyof typeof colorStyles;
 	backgroundColor?: keyof typeof bgColorStyles;

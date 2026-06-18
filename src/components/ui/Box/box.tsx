@@ -9,12 +9,9 @@ import {
 import {
 	borderRadiusStyles,
 	displayStyles,
-	marginXStyles,
-	marginYStyles,
-	overflowStyles,
-	paddingXStyles,
-	paddingYStyles,
-	positionStyles,
+	resolvePaddingStyles,
+	overflowStyles,positionStyles,
+	resolveMarginStyles,
 	type BorderRadiusProp,
 	type LayoutProps,
 } from "@/utils/layout.styles";
@@ -40,6 +37,7 @@ type BoxProps = _BaseDivProps &
 	};
 const isBoxSize = (value: BoxSize | number): value is BoxSize =>
 	typeof value !== "number";
+
 function Box({
 	render,
 	display,
@@ -50,12 +48,21 @@ function Box({
 	padding,
 	paddingX,
 	paddingY,
+	paddingTop: paddingTopProp,
+	paddingBottom: paddingBottomProp,
+	paddingLeft: paddingLeftProp,
+	paddingRight: paddingRightProp,
 	margin,
 	marginX,
 	marginY,
+	marginTop: marginTopProp,
+	marginBottom: marginBottomProp,
+	marginLeft: marginLeftProp,
+	marginRight: marginRightProp,
 	overflow,
 	position,
 	radius,
+	borderRadius,
 	style,
 	withBorder,
 	maxWidth,
@@ -63,10 +70,26 @@ function Box({
 	backgroundColor,
 	...props
 }: BoxProps) {
-	const resolvedPaddingX = paddingX ?? padding;
-	const resolvedPaddingY = paddingY ?? padding;
-	const resolvedMarginX = marginX ?? margin;
-	const resolvedMarginY = marginY ?? margin;
+	const paddingStyles = resolvePaddingStyles({
+		padding,
+		paddingX,
+		paddingY,
+		paddingTop: paddingTopProp,
+		paddingBottom: paddingBottomProp,
+		paddingLeft: paddingLeftProp,
+		paddingRight: paddingRightProp,
+	});
+	const marginStyles = resolveMarginStyles({
+		margin,
+		marginX,
+		marginY,
+		marginTop: marginTopProp,
+		marginBottom: marginBottomProp,
+		marginLeft: marginLeftProp,
+		marginRight: marginRightProp,
+	});
+	const resolvedRadius = borderRadius ?? radius;
+
 	const stylexProps = stylex.props(
 		boxStyles.root,
 		display && displayStyles[display],
@@ -78,10 +101,8 @@ function Box({
 		overflow && overflowStyles[overflow],
 		position && positionStyles[position],
 		withBorder && boxStyles.withBorder,
-		resolvedPaddingX && paddingXStyles[resolvedPaddingX],
-		resolvedPaddingY && paddingYStyles[resolvedPaddingY],
-		resolvedMarginX && marginXStyles[resolvedMarginX],
-		resolvedMarginY && marginYStyles[resolvedMarginY],
+		...paddingStyles,
+		...marginStyles,
 		color && colorStyles[color],
 		backgroundColor && bgColorStyles[backgroundColor],
 		maxWidth && typeof maxWidth === "number"
@@ -89,10 +110,9 @@ function Box({
 			: null,
 		maxWidth && isBoxSize(maxWidth) ? boxSizeStyles[maxWidth] : null,
 		Boolean(maxWidth) && boxStyles.fullWidth,
-		radius && borderRadiusStyles[radius],
+		resolvedRadius && borderRadiusStyles[resolvedRadius],
 		style,
 	);
-
 	const mergedProps = mergeProps(props, stylexProps);
 	return useRender({
 		defaultTagName: "div",
