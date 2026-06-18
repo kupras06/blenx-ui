@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Toggle Group",
 	"description": "A group of toggle buttons with variant, size, and orientation control. Built on Base UI ToggleGroup.",
 	"category": "Forms",

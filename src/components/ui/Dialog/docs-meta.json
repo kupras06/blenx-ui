@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Dialog",
 	"description": "A modal dialog with backdrop, header, footer, scroll panel, and mobile bottom sheet behavior.",
 	"category": "Overlay",

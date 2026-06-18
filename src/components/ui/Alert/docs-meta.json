@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Alert",
 	"description": "A contextual feedback banner with four visual variants: info, success, warning, and error.",
 	"category": "Feedback",

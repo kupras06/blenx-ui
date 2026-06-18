@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Badge",
 	"description": "An inline badge or pill component with variant color presets for status, labels, and counts.",
 	"category": "Data Display",

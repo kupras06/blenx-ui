@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "FAQ Section",
 	"description": "An expandable FAQ accordion with section heading, description, and optional search/filter.",
 	"category": "Marketing",

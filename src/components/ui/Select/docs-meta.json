@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Select",
 	"description": "A fully compound select component with trigger, popup, list, items, groups, scroll arrows, and a convenience SelectWrapper for forms.",
 	"category": "Forms",

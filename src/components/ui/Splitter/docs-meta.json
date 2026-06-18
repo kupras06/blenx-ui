@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Splitter",
 	"description": "A resizable split panel layout with pointer and keyboard support, collapsible panels, and localStorage persistence.",
 	"category": "Layout",

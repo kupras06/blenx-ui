@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Segmented Control",
 	"description": "A convenience wrapper around ToggleGroup providing a single-select segmented control with options array.",
 	"category": "Forms",

@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Grid",
 	"description": "A CSS Grid layout component with column presets, gap tokens, and alignment control. Includes a GridItem sub-component for spanning.",
 	"category": "Layout",

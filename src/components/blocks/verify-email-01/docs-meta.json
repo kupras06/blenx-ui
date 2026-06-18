@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Email Verification",
 	"description": "A verification code page with 6 individual digit inputs supporting auto-advance, paste, and resend cooldown.",
 	"category": "Authentication",

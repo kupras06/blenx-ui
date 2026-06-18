@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Pricing Page",
 	"description": "A pricing section with monthly/yearly toggle, three plan tiers, feature lists, and prominent CTA for the popular plan.",
 	"category": "Marketing",

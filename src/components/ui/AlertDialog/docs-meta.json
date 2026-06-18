@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Alert Dialog",
 	"description": "A confirmation or alert modal dialog for critical user interactions requiring acknowledgment.",
 	"category": "Overlay",

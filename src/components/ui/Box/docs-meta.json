@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Box",
 	"description": "A low-level polymorphic layout primitive. The foundational building block for all layout components.",
 	"category": "Layout",

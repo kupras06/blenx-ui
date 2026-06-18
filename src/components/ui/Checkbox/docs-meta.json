@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Checkbox",
 	"description": "A checkbox input with checked, indeterminate, and disabled states. Includes a CheckboxGroup wrapper for grouping.",
 	"category": "Forms",

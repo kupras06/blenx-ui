@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Radio",
 	"description": "A radio button with RadioGroup wrapper for single-select option lists. Built on Base UI Radio primitive.",
 	"category": "Forms",

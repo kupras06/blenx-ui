@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Avatar",
 	"description": "An avatar component with image and fallback support. Displays a user profile image or initials placeholder.",
 	"category": "Data Display",

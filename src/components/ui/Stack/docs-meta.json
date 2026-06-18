@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Stack",
 	"description": "A flexbox layout component with gap, alignment, and direction control. Includes VStack and HStack shorthands.",
 	"category": "Layout",

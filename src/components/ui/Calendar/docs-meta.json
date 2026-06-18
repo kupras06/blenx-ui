@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Calendar",
 	"description": "A date calendar component built on react-day-picker. Supports single, range, and multiple date selection modes.",
 	"category": "Forms",

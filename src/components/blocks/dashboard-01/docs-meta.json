@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Dashboard",
 	"description": "A SaaS dashboard with KPI metrics grid, chart placeholders, quick actions, and a recent activity table.",
 	"category": "Dashboard",

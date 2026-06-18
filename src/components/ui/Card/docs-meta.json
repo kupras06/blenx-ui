@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Card",
 	"description": "A content card container with header, body, footer, title, and description sub-components.",
 	"category": "Data Display",

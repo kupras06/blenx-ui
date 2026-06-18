@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Forgot Password",
 	"description": "A forgot password flow with email input, validation, and success confirmation state after submission.",
 	"category": "Authentication",

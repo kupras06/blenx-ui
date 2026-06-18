@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Color Picker",
 	"description": "A color picker inside a popover. Uses react-colorful with hex input and color swatch preview.",
 	"category": "Forms",

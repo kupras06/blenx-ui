@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Autocomplete",
 	"description": "A typeahead autocomplete input that filters suggestions as the user types. Built with Base UI Autocomplete.",
 	"category": "Forms",

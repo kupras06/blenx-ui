@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Color Swatch",
 	"description": "A small inline color swatch square that displays a given color value.",
 	"category": "Data Display",

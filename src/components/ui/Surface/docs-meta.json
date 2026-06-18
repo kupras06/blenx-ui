@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Surface",
 	"description": "A background surface layer with variant presets for different visual depths. Supports interactive hover styles.",
 	"category": "Layout",

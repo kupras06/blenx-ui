@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Table",
 	"description": "A styled table component with column definitions, row data, cell alignment, and optional row event handlers.",
 	"category": "Data Display",

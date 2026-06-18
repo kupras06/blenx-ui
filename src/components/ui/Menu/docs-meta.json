@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Menu",
 	"description": "A dropdown menu with items, separators, group labels, and shortcuts. Built on Base UI Menu.",
 	"category": "Navigation",

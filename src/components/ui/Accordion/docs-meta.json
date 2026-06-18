@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Accordion",
 	"description": "A collapsible accordion for showing and hiding content sections. Supports single and multiple item expansion.",
 	"category": "Data Display",

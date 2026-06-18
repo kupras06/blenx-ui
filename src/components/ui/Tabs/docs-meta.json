@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Tabs",
 	"description": "A tabbed navigation component with underline, ghost, and segmented variants. Built on Base UI Tabs.",
 	"category": "Navigation",

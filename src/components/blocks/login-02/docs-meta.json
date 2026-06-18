@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Alternative Sign In",
 	"description": "An email-first sign-in flow supporting multi-step password entry or magic-link authentication.",
 	"category": "Authentication",

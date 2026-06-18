@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Separator",
 	"description": "A visual divider supporting horizontal and vertical orientations with subtle and strong tone variants. Optionally labeled.",
 	"category": "Layout",

@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Date Picker",
 	"description": "A date picker built as a popover containing a calendar with formatted date display.",
 	"category": "Forms",

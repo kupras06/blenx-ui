@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Input Group",
 	"description": "A compound form control group with addon, label, input, textarea, menu, checkbox, and radio sub-components.",
 	"category": "Forms",

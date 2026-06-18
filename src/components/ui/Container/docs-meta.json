@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Container",
 	"description": "A centered layout wrapper that constrains content width with configurable max-width presets.",
 	"category": "Layout",

@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Button",
 	"description": "A polymorphic button component with loading state, variant and size presets, full-width mode, and custom border radius. Built on Base UI useRender.",
 	"category": "Forms",

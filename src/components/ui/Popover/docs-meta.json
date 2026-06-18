@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Popover",
 	"description": "A floating popover with trigger, positioning, arrow, backdrop, and accessible title/description.",
 	"category": "Overlay",

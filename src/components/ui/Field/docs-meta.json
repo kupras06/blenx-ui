@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "Field",
 	"description": "A form field wrapper with accessible label, description, error, and validity wiring for form controls.",
 	"category": "Forms",

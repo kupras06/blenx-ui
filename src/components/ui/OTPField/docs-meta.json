@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../schemas/docs-meta.schema.json",
 	"title": "OTPField",
 	"description": "A one-time password input component with individual character slots, separator support, and auto-submit. Built on Base UI OTP Field primitive.",
 	"category": "Forms",
