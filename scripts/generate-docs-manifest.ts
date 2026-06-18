@@ -60,12 +60,13 @@ function findComponentFiles(dir: string, pattern: RegExp): string[] {
 	const entries = readdirSync(dir);
 	const results: string[] = [];
 	for (const entry of entries) {
-		if (entry === "node_modules") continue;
-		const fullPath = join(dir, entry);
-		if (statSync(fullPath).isDirectory()) {
-			results.push(...findComponentFiles(fullPath, pattern));
-		} else if (pattern.test(entry)) {
-			results.push(fullPath);
+		if (entry !== "node_modules") {
+			const fullPath = join(dir, entry);
+			if (statSync(fullPath).isDirectory()) {
+				results.push(...findComponentFiles(fullPath, pattern));
+			} else if (pattern.test(entry)) {
+				results.push(fullPath);
+			}
 		}
 	}
 	return results;
@@ -116,8 +117,8 @@ function buildExamplesMeta(compDir: string): ExampleFile[] {
 	const exampleFiles = findComponentFiles(compDir, /\.example\.\w+\.tsx$/);
 	return exampleFiles.map((exPath) => {
 		const ext = basename(exPath);
-		const match = ext.match(/\.example\.(\w+)\.tsx$/);
-		const name = match ? match[1] : ext;
+		const match = ext.match(/\.example\.(?<name>\w+)\.tsx$/);
+		const name = match?.groups?.name ?? ext;
 		return { name, source: readSource(exPath) };
 	});
 }
@@ -177,4 +178,6 @@ ${demoImportPaths.join(",\n")},
 	);
 }
 
-build();
+if (import.meta.main) {
+	build();
+}

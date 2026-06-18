@@ -1,0 +1,1843 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry.json",
+	"name": "blenx-dev",
+	"homepage": "https://blenx-dev.com",
+	"items": [
+		{
+			"name": "shared",
+			"type": "registry:lib",
+			"title": "Shared",
+			"description": "Shared libraries, theme and utilities.",
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/lib/app-theme.stylex.ts",
+					"type": "registry:file",
+					"target": "@lib/app-theme.stylex.ts"
+				},
+				{
+					"path": "registry/.temp/src/lib/docs-api.ts",
+					"type": "registry:file",
+					"target": "@lib/docs-api.ts"
+				},
+				{
+					"path": "registry/.temp/src/lib/docs-meta.ts",
+					"type": "registry:file",
+					"target": "@lib/docs-meta.ts"
+				},
+				{
+					"path": "registry/.temp/src/lib/query-client.ts",
+					"type": "registry:file",
+					"target": "@lib/query-client.ts"
+				},
+				{
+					"path": "registry/.temp/src/lib/slug.ts",
+					"type": "registry:file",
+					"target": "@lib/slug.ts"
+				},
+				{
+					"path": "registry/.temp/src/lib/syntax-highlight.ts",
+					"type": "registry:file",
+					"target": "@lib/syntax-highlight.ts"
+				},
+				{
+					"path": "registry/.temp/src/lib/theme/contract.stylex.ts",
+					"type": "registry:file",
+					"target": "@lib/theme/contract.stylex.ts"
+				},
+				{
+					"path": "registry/.temp/src/lib/theme/theme.stylex.ts",
+					"type": "registry:file",
+					"target": "@lib/theme/theme.stylex.ts"
+				},
+				{
+					"path": "registry/.temp/src/lib/theme/tokens.stylex.ts",
+					"type": "registry:file",
+					"target": "@lib/theme/tokens.stylex.ts"
+				},
+				{
+					"path": "registry/.temp/src/utils/base.styles.ts",
+					"type": "registry:file",
+					"target": "@utils/base.styles.ts"
+				},
+				{
+					"path": "registry/.temp/src/utils/layout.styles.ts",
+					"type": "registry:file",
+					"target": "@utils/layout.styles.ts"
+				},
+				{
+					"path": "registry/.temp/src/utils/stylex.utils.ts",
+					"type": "registry:file",
+					"target": "@utils/stylex.utils.ts"
+				}
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "contact-01",
+			"type": "registry:ui",
+			"title": "Contact Page",
+			"description": "A contact page block with name, email, subject, message form and optional contact info sidebar.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/button.json",
+				"http://localhost:3001/reg/input.json",
+				"http://localhost:3001/reg/textarea.json",
+				"http://localhost:3001/reg/text.json",
+				"http://localhost:3001/reg/card.json",
+				"http://localhost:3001/reg/stack.json",
+				"http://localhost:3001/reg/box.json",
+				"http://localhost:3001/reg/surface.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/blocks/contact-01/contact-01.tsx",
+					"type": "registry:ui",
+					"target": "@blocks/contact-01/contact-01.tsx"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "dashboard-01",
+			"type": "registry:ui",
+			"title": "Dashboard",
+			"description": "A SaaS dashboard block with KPI cards, chart placeholders, recent activity table, and quick actions.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/button.json",
+				"http://localhost:3001/reg/text.json",
+				"http://localhost:3001/reg/card.json",
+				"http://localhost:3001/reg/table.json",
+				"http://localhost:3001/reg/badge.json",
+				"http://localhost:3001/reg/surface.json",
+				"http://localhost:3001/reg/grid.json",
+				"http://localhost:3001/reg/stack.json",
+				"http://localhost:3001/reg/box.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/blocks/dashboard-01/dashboard-01.tsx",
+					"type": "registry:ui",
+					"target": "@blocks/dashboard-01/dashboard-01.tsx"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "empty-state-01",
+			"type": "registry:ui",
+			"title": "Empty State",
+			"description": "An empty state block with icon, title, description, and optional action buttons. Use when no data exists.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/button.json",
+				"http://localhost:3001/reg/text.json",
+				"http://localhost:3001/reg/stack.json",
+				"http://localhost:3001/reg/box.json",
+				"http://localhost:3001/reg/surface.json",
+				"http://localhost:3001/reg/card.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/blocks/empty-state-01/empty-state-01.tsx",
+					"type": "registry:ui",
+					"target": "@blocks/empty-state-01/empty-state-01.tsx"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "error-state-01",
+			"type": "registry:ui",
+			"title": "Error State",
+			"description": "An error state block with icon, title, message, retry button, and optional expandable error details. Supports card, page, and toast variants.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/button.json",
+				"http://localhost:3001/reg/text.json",
+				"http://localhost:3001/reg/stack.json",
+				"http://localhost:3001/reg/box.json",
+				"http://localhost:3001/reg/surface.json",
+				"http://localhost:3001/reg/card.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/blocks/error-state-01/error-state-01.tsx",
+					"type": "registry:ui",
+					"target": "@blocks/error-state-01/error-state-01.tsx"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "faq-01",
+			"type": "registry:ui",
+			"title": "FAQ Section",
+			"description": "An FAQ section block with accordion Q&A items and optional search/filter functionality.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/accordion.json",
+				"http://localhost:3001/reg/text.json",
+				"http://localhost:3001/reg/stack.json",
+				"http://localhost:3001/reg/box.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/blocks/faq-01/faq-01.tsx",
+					"type": "registry:ui",
+					"target": "@blocks/faq-01/faq-01.tsx"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "forgot-password-01",
+			"type": "registry:ui",
+			"title": "Forgot Password",
+			"description": "A forgot password page with email input, validation, and success confirmation state.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/button.json",
+				"http://localhost:3001/reg/input.json",
+				"http://localhost:3001/reg/text.json",
+				"http://localhost:3001/reg/card.json",
+				"http://localhost:3001/reg/stack.json",
+				"http://localhost:3001/reg/box.json",
+				"http://localhost:3001/reg/surface.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/blocks/forgot-password-01/forgot-password-01.tsx",
+					"type": "registry:ui",
+					"target": "@blocks/forgot-password-01/forgot-password-01.tsx"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "hero-01",
+			"type": "registry:ui",
+			"title": "Hero Section",
+			"description": "A marketing hero section block with headline, subtext, CTA buttons, and optional image placeholder.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/button.json",
+				"http://localhost:3001/reg/text.json",
+				"http://localhost:3001/reg/stack.json",
+				"http://localhost:3001/reg/box.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/blocks/hero-01/hero-01.tsx",
+					"type": "registry:ui",
+					"target": "@blocks/hero-01/hero-01.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/blocks/hero-01/hero-01.styles.ts",
+					"type": "registry:file",
+					"target": "@blocks/hero-01/hero-01.styles.ts"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "loading-state-01",
+			"type": "registry:ui",
+			"title": "Loading State",
+			"description": "A loading/skeleton block with various skeleton shapes (text, card, table, avatar) and optional progress indicator.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/progress.json",
+				"http://localhost:3001/reg/stack.json",
+				"http://localhost:3001/reg/box.json",
+				"http://localhost:3001/reg/surface.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/blocks/loading-state-01/loading-state-01.tsx",
+					"type": "registry:ui",
+					"target": "@blocks/loading-state-01/loading-state-01.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/blocks/loading-state-01/loading-state-01.styles.ts",
+					"type": "registry:file",
+					"target": "@blocks/loading-state-01/loading-state-01.styles.ts"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "login-01",
+			"type": "registry:ui",
+			"title": "Sign In Page",
+			"description": "A sign-in page block with email/password form, social login options, remember me, and forgot password link.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/button.json",
+				"http://localhost:3001/reg/input.json",
+				"http://localhost:3001/reg/text.json",
+				"http://localhost:3001/reg/checkbox.json",
+				"http://localhost:3001/reg/separator.json",
+				"http://localhost:3001/reg/card.json",
+				"http://localhost:3001/reg/stack.json",
+				"http://localhost:3001/reg/box.json",
+				"http://localhost:3001/reg/surface.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/blocks/login-01/login-01.tsx",
+					"type": "registry:ui",
+					"target": "@blocks/login-01/login-01.tsx"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "login-02",
+			"type": "registry:ui",
+			"title": "Alternative Sign In",
+			"description": "An email-first sign-in page with multi-step password flow or magic-link flow.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/button.json",
+				"http://localhost:3001/reg/input.json",
+				"http://localhost:3001/reg/text.json",
+				"http://localhost:3001/reg/card.json",
+				"http://localhost:3001/reg/stack.json",
+				"http://localhost:3001/reg/box.json",
+				"http://localhost:3001/reg/surface.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/blocks/login-02/login-02.tsx",
+					"type": "registry:ui",
+					"target": "@blocks/login-02/login-02.tsx"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "pricing-01",
+			"type": "registry:ui",
+			"title": "Pricing Page",
+			"description": "A pricing page block with monthly/yearly billing toggle, 3 plan tiers, feature comparison, and CTA buttons.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/button.json",
+				"http://localhost:3001/reg/text.json",
+				"http://localhost:3001/reg/badge.json",
+				"http://localhost:3001/reg/separator.json",
+				"http://localhost:3001/reg/switch.json",
+				"http://localhost:3001/reg/card.json",
+				"http://localhost:3001/reg/stack.json",
+				"http://localhost:3001/reg/box.json",
+				"http://localhost:3001/reg/surface.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/blocks/pricing-01/pricing-01.tsx",
+					"type": "registry:ui",
+					"target": "@blocks/pricing-01/pricing-01.tsx"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "profile-01",
+			"type": "registry:ui",
+			"title": "User Profile",
+			"description": "A user profile page with personal info form, notification toggles, account settings, and danger zone.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/button.json",
+				"http://localhost:3001/reg/input.json",
+				"http://localhost:3001/reg/text.json",
+				"http://localhost:3001/reg/switch.json",
+				"http://localhost:3001/reg/separator.json",
+				"http://localhost:3001/reg/card.json",
+				"http://localhost:3001/reg/avatar.json",
+				"http://localhost:3001/reg/stack.json",
+				"http://localhost:3001/reg/box.json",
+				"http://localhost:3001/reg/surface.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/blocks/profile-01/profile-01.tsx",
+					"type": "registry:ui",
+					"target": "@blocks/profile-01/profile-01.tsx"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "settings-01",
+			"type": "registry:ui",
+			"title": "Settings Page",
+			"description": "A tabbed settings page with General, Security, Appearance, Notifications, and Billing sections.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/button.json",
+				"http://localhost:3001/reg/input.json",
+				"http://localhost:3001/reg/text.json",
+				"http://localhost:3001/reg/switch.json",
+				"http://localhost:3001/reg/separator.json",
+				"http://localhost:3001/reg/tabs.json",
+				"http://localhost:3001/reg/card.json",
+				"http://localhost:3001/reg/stack.json",
+				"http://localhost:3001/reg/box.json",
+				"http://localhost:3001/reg/surface.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/blocks/settings-01/settings-01.tsx",
+					"type": "registry:ui",
+					"target": "@blocks/settings-01/settings-01.tsx"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "signup-01",
+			"type": "registry:ui",
+			"title": "Sign Up Page",
+			"description": "A registration page block with name, email, password fields, terms acceptance, and social sign-up options.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/button.json",
+				"http://localhost:3001/reg/input.json",
+				"http://localhost:3001/reg/text.json",
+				"http://localhost:3001/reg/checkbox.json",
+				"http://localhost:3001/reg/separator.json",
+				"http://localhost:3001/reg/card.json",
+				"http://localhost:3001/reg/stack.json",
+				"http://localhost:3001/reg/box.json",
+				"http://localhost:3001/reg/surface.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/blocks/signup-01/signup-01.tsx",
+					"type": "registry:ui",
+					"target": "@blocks/signup-01/signup-01.tsx"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "verify-email-01",
+			"type": "registry:ui",
+			"title": "Email Verification",
+			"description": "An email verification page with 6-digit code input, auto-advance, paste support, resend with countdown timer, and success/error states.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/button.json",
+				"http://localhost:3001/reg/text.json",
+				"http://localhost:3001/reg/card.json",
+				"http://localhost:3001/reg/stack.json",
+				"http://localhost:3001/reg/box.json",
+				"http://localhost:3001/reg/surface.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/blocks/verify-email-01/verify-email-01.tsx",
+					"type": "registry:ui",
+					"target": "@blocks/verify-email-01/verify-email-01.tsx"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "data-table",
+			"type": "registry:ui",
+			"title": "Data Table",
+			"description": "A feature-rich data table component with sorting, filtering, pagination, column visibility, row selection, infinite scroll, and server-side support.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/button.json",
+				"http://localhost:3001/reg/input.json",
+				"http://localhost:3001/reg/menu.json",
+				"http://localhost:3001/reg/spinner.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/data-table/data-table.tsx",
+					"type": "registry:component",
+					"target": "@components/data-table/data-table.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/data-table/data-table-column-toggle.tsx",
+					"type": "registry:file",
+					"target": "@components/data-table/data-table-column-toggle.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/data-table/data-table-empty.tsx",
+					"type": "registry:file",
+					"target": "@components/data-table/data-table-empty.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/data-table/data-table-error.tsx",
+					"type": "registry:file",
+					"target": "@components/data-table/data-table-error.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/data-table/data-table-infinite-loader.tsx",
+					"type": "registry:file",
+					"target": "@components/data-table/data-table-infinite-loader.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/data-table/data-table-loading.tsx",
+					"type": "registry:file",
+					"target": "@components/data-table/data-table-loading.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/data-table/data-table-pagination.tsx",
+					"type": "registry:file",
+					"target": "@components/data-table/data-table-pagination.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/data-table/data-table-toolbar.tsx",
+					"type": "registry:file",
+					"target": "@components/data-table/data-table-toolbar.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/data-table/types.ts",
+					"type": "registry:file",
+					"target": "@ui/data-table/types.ts"
+				},
+				{
+					"path": "registry/.temp/src/components/data-table/index.ts",
+					"type": "registry:file",
+					"target": "@components/data-table/index.ts"
+				},
+				{
+					"path": "registry/.temp/src/components/data-table/use-infinite-scroll.ts",
+					"type": "registry:file",
+					"target": "@components/data-table/use-infinite-scroll.ts"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "accordion",
+			"type": "registry:ui",
+			"title": "Accordion",
+			"description": "A StyleX Accordion component.",
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Accordion/accordion.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Accordion/accordion.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Accordion/accordion.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Accordion/accordion.styles.ts"
+				}
+			],
+			"registryDependencies": ["http://localhost:3001/reg/shared.json"],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "alert",
+			"type": "registry:ui",
+			"title": "Alert",
+			"description": "Alert component for displaying contextual feedback messages.",
+			"registryDependencies": ["http://localhost:3001/reg/shared.json"],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Alert/alert.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Alert/alert.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Alert/alert.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Alert/alert.styles.ts"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "alert-dialog",
+			"type": "registry:ui",
+			"title": "Alert Dialog",
+			"description": "A dialog component for displaying alerts.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/button.json",
+				"http://localhost:3001/reg/scroll-area.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/AlertDialog/alert-dialog.tsx",
+					"type": "registry:ui",
+					"target": "@ui/AlertDialog/alert-dialog.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/AlertDialog/alert-dialog.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/AlertDialog/alert-dialog.styles.ts"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "autocomplete",
+			"type": "registry:ui",
+			"title": "Autocomplete",
+			"description": "Autocomplete component from Blenx UI.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/input.json",
+				"http://localhost:3001/reg/scroll-area.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Autocomplete/autocomplete.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Autocomplete/autocomplete.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Autocomplete/autocomplete.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Autocomplete/autocomplete.styles.ts"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "avatar",
+			"type": "registry:ui",
+			"title": "Avatar",
+			"description": "Avatar component from Blenx UI.",
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Avatar/avatar.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Avatar/avatar.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Avatar/avatar.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Avatar/avatar.styles.ts"
+				}
+			],
+			"registryDependencies": ["http://localhost:3001/reg/shared.json"],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "badge",
+			"type": "registry:ui",
+			"title": "Badge",
+			"description": "Badge component from Blenx UI.",
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Badge/badge.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Badge/badge.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Badge/badge.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Badge/badge.styles.ts"
+				}
+			],
+			"registryDependencies": ["http://localhost:3001/reg/shared.json"],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "box",
+			"type": "registry:ui",
+			"title": "Box",
+			"description": "Box component from Blenx UI.",
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Box/box.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Box/box.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Box/box.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Box/box.styles.ts"
+				}
+			],
+			"registryDependencies": ["http://localhost:3001/reg/shared.json"],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "breadcrumbs",
+			"type": "registry:ui",
+			"title": "Breadcrumbs",
+			"description": "Breadcrumbs component from Blenx UI.",
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Breadcrumbs/breadcrumbs.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Breadcrumbs/breadcrumbs.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Breadcrumbs/breadcrumbs.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Breadcrumbs/breadcrumbs.styles.ts"
+				}
+			],
+			"registryDependencies": ["http://localhost:3001/reg/shared.json"],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "button",
+			"type": "registry:ui",
+			"title": "Button",
+			"description": "A StyleX button component.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/spinner.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Button/button.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Button/button.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Button/button.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Button/button.styles.ts"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "calendar",
+			"type": "registry:ui",
+			"title": "Calendar",
+			"description": "A StyleX button component.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/button.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Calendar/calendar.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Calendar/calendar.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Calendar/calendar.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Calendar/calendar.styles.ts"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "card",
+			"type": "registry:ui",
+			"title": "Card",
+			"description": "A StyleX button component.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/box.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Card/card.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Card/card.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Card/card.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Card/card.styles.ts"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "checkbox",
+			"type": "registry:ui",
+			"title": "Checkbox",
+			"description": "A StyleX Checkbox component.",
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Checkbox/checkbox.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Checkbox/checkbox.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Checkbox/checkbox.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Checkbox/checkbox.styles.ts"
+				}
+			],
+			"registryDependencies": ["http://localhost:3001/reg/shared.json"],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "colorpicker",
+			"type": "registry:ui",
+			"title": "Color Picker",
+			"description": "A StyleX color picker component.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/button.json",
+				"http://localhost:3001/reg/color-swatch.json",
+				"http://localhost:3001/reg/field.json",
+				"http://localhost:3001/reg/popover.json",
+				"http://localhost:3001/reg/stack.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/ColorPicker/color-picker.tsx",
+					"type": "registry:ui",
+					"target": "@ui/ColorPicker/color-picker.tsx"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "color-swatch",
+			"type": "registry:ui",
+			"title": "ColorSwatch",
+			"description": "A StyleX button component.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/box.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/ColorSwatch/color-swatch.tsx",
+					"type": "registry:ui",
+					"target": "@ui/ColorSwatch/color-swatch.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/ColorSwatch/color-swatch.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/ColorSwatch/color-swatch.styles.ts"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "combobox",
+			"type": "registry:ui",
+			"title": "Combobox",
+			"description": "A StyleX button component.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/input.json",
+				"http://localhost:3001/reg/scroll-area.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Combobox/combobox.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Combobox/combobox.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Combobox/combobox.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Combobox/combobox.styles.ts"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "container",
+			"type": "registry:ui",
+			"title": "Container",
+			"description": "A StyleX Container component.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/box.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Container/container.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Container/container.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Container/container.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Container/container.styles.ts"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "datepicker",
+			"type": "registry:ui",
+			"title": "DatePicker",
+			"description": "A StyleX Date Picker component.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/button.json",
+				"http://localhost:3001/reg/calendar.json",
+				"http://localhost:3001/reg/field.json",
+				"http://localhost:3001/reg/popover.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/DatePicker/date-picker.tsx",
+					"type": "registry:ui",
+					"target": "@ui/DatePicker/date-picker.tsx"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "dialog",
+			"type": "registry:ui",
+			"title": "Dialog",
+			"description": "A StyleX Dialog component.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/button.json",
+				"http://localhost:3001/reg/scroll-area.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Dialog/dialog.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Dialog/dialog.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Dialog/dialog.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Dialog/dialog.styles.ts"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "drawer",
+			"type": "registry:ui",
+			"title": "Drawer",
+			"description": "A StyleX Drawer component.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/button.json",
+				"http://localhost:3001/reg/scroll-area.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Drawer/drawer.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Drawer/drawer.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Drawer/drawer.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Drawer/drawer.styles.ts"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "field",
+			"type": "registry:ui",
+			"title": "Field",
+			"description": "A StyleX Drawer component.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/button.json",
+				"http://localhost:3001/reg/scroll-area.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Field/field.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Field/field.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Field/field.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Field/field.styles.ts"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "grid",
+			"type": "registry:ui",
+			"title": "Grid",
+			"description": "A StyleX Grid component.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/box.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Grid/grid.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Grid/grid.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Grid/grid.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Grid/grid.styles.ts"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "icon",
+			"type": "registry:ui",
+			"title": "Icon",
+			"description": "Icon component from Blenx UI.",
+			"registryDependencies": ["http://localhost:3001/reg/shared.json"],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Icon/icon.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Icon/icon.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Icon/icon.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Icon/icon.styles.ts"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "icon-button",
+			"type": "registry:ui",
+			"title": "IconButton",
+			"description": "IconButton component from Blenx UI.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/icon.json",
+				"http://localhost:3001/reg/spinner.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/IconButton/icon-button.tsx",
+					"type": "registry:ui",
+					"target": "@ui/IconButton/icon-button.tsx"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "input",
+			"type": "registry:ui",
+			"title": "Input",
+			"description": "A StyleX Input component.",
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Input/input.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Input/input.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Input/input.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Input/input.styles.ts"
+				}
+			],
+			"registryDependencies": ["http://localhost:3001/reg/shared.json"],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "inputgroup",
+			"type": "registry:ui",
+			"title": "InputGroup",
+			"description": "A StyleX Input Group component.",
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/InputGroup/input-group.tsx",
+					"type": "registry:ui",
+					"target": "@ui/InputGroup/input-group.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/InputGroup/input-group.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/InputGroup/input-group.styles.ts"
+				}
+			],
+			"registryDependencies": ["http://localhost:3001/reg/shared.json"],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "menu",
+			"type": "registry:ui",
+			"title": "Menu",
+			"description": "A StyleX Input Group component.",
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Menu/menu.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Menu/menu.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Menu/menu.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Menu/menu.styles.ts"
+				}
+			],
+			"registryDependencies": ["http://localhost:3001/reg/shared.json"],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "otpfield",
+			"type": "registry:ui",
+			"title": "Progress",
+			"description": "A StyleX Progress component.",
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/OTPField/otp-field.tsx",
+					"type": "registry:ui",
+					"target": "@ui/OTPField/otp-field.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/OTPField/otp-field.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/OTPField/otp-field.styles.ts"
+				}
+			],
+			"registryDependencies": ["http://localhost:3001/reg/shared.json"],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "popover",
+			"type": "registry:ui",
+			"title": "Popover",
+			"description": "A StyleX Input Group component.",
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Popover/popover.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Popover/popover.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Popover/popover.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Popover/popover.styles.ts"
+				}
+			],
+			"registryDependencies": ["http://localhost:3001/reg/shared.json"],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "progress",
+			"type": "registry:ui",
+			"title": "Progress",
+			"description": "A StyleX Progress component.",
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Progress/progress.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Progress/progress.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Progress/progress.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Progress/progress.styles.ts"
+				}
+			],
+			"registryDependencies": ["http://localhost:3001/reg/shared.json"],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "radio",
+			"type": "registry:ui",
+			"title": "Radio",
+			"description": "A StyleX Radio component.",
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Radio/radio.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Radio/radio.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Radio/radio.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Radio/radio.styles.ts"
+				}
+			],
+			"registryDependencies": ["http://localhost:3001/reg/shared.json"],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "scroll-area",
+			"type": "registry:ui",
+			"title": "ScrollArea",
+			"description": "A StyleX Input Group component.",
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/ScrollArea/scroll-area.tsx",
+					"type": "registry:ui",
+					"target": "@ui/ScrollArea/scroll-area.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/ScrollArea/scroll-area.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/ScrollArea/scroll-area.styles.ts"
+				}
+			],
+			"registryDependencies": ["http://localhost:3001/reg/shared.json"],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "segmented-control",
+			"type": "registry:ui",
+			"title": "SegmentedControl",
+			"description": "A StyleX SegmentedControl component.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/toggle.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/SegmentedControl/segmented-control.tsx",
+					"type": "registry:ui",
+					"target": "@ui/SegmentedControl/segmented-control.tsx"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "select",
+			"type": "registry:ui",
+			"title": "Select",
+			"description": "A StyleX Select component.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/field.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Select/select.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Select/select.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Select/select.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Select/select.styles.ts"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "separator",
+			"type": "registry:ui",
+			"title": "Separator",
+			"description": "A StyleX Separator component.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/field.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Separator/separator.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Separator/separator.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Separator/separator.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Separator/separator.styles.ts"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "sheet",
+			"type": "registry:ui",
+			"title": "Sheet",
+			"description": "A StyleX Sheet component built on Base UI Dialog primitives.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/button.json",
+				"http://localhost:3001/reg/scroll-area.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Sheet/sheet.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Sheet/sheet.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Sheet/sheet.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Sheet/sheet.styles.ts"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "slider",
+			"type": "registry:ui",
+			"title": "Slider",
+			"description": "A StyleX Slider component.",
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Slider/slider.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Slider/slider.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Slider/slider.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Slider/slider.styles.ts"
+				}
+			],
+			"registryDependencies": ["http://localhost:3001/reg/shared.json"],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "spinner",
+			"type": "registry:ui",
+			"title": "Spinner",
+			"description": "A StyleX Spinner component.",
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Spinner/spinner.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Spinner/spinner.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Spinner/spinner.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Spinner/spinner.styles.ts"
+				}
+			],
+			"registryDependencies": ["http://localhost:3001/reg/shared.json"],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "splitter",
+			"type": "registry:ui",
+			"title": "Splitter",
+			"description": "A StyleX Splitter component.",
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Splitter/splitter.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Splitter/splitter.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Splitter/splitter.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Splitter/splitter.styles.ts"
+				}
+			],
+			"registryDependencies": ["http://localhost:3001/reg/shared.json"],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "stack",
+			"type": "registry:ui",
+			"title": "Stack",
+			"description": "A StyleX Stack component.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/box.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Stack/stack.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Stack/stack.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Stack/stack.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Stack/stack.styles.ts"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "surface",
+			"type": "registry:ui",
+			"title": "Surface",
+			"description": "A StyleX Surface component.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/box.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Surface/surface.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Surface/surface.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Surface/surface.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Surface/surface.styles.ts"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "switch",
+			"type": "registry:ui",
+			"title": "Switch",
+			"description": "A StyleX Switch component.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/box.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Switch/switch.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Switch/switch.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Switch/switch.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Switch/switch.styles.ts"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "table",
+			"type": "registry:ui",
+			"title": "Table",
+			"description": "A simple styled table component with column definitions and row rendering.",
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Table/table.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Table/table.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Table/table.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Table/table.styles.ts"
+				}
+			],
+			"registryDependencies": ["http://localhost:3001/reg/shared.json"],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "tabs",
+			"type": "registry:ui",
+			"title": "Tabs",
+			"description": "A StyleX Tabs component.",
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Tabs/tabs.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Tabs/tabs.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Tabs/tabs.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Tabs/tabs.styles.ts"
+				}
+			],
+			"registryDependencies": ["http://localhost:3001/reg/shared.json"],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "text",
+			"type": "registry:ui",
+			"title": "Text",
+			"description": "A StyleX Text component.",
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Text/text.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Text/text.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Text/text.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Text/text.styles.ts"
+				}
+			],
+			"registryDependencies": ["http://localhost:3001/reg/shared.json"],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "textarea",
+			"type": "registry:ui",
+			"title": "Textarea",
+			"description": "A StyleX Textarea component.",
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Textarea/textarea.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Textarea/textarea.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Textarea/textarea.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Textarea/textarea.styles.ts"
+				}
+			],
+			"registryDependencies": ["http://localhost:3001/reg/shared.json"],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "toggle",
+			"type": "registry:ui",
+			"title": "Toggle",
+			"description": "A StyleX Toggle component.",
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/Toggle/toggle.tsx",
+					"type": "registry:ui",
+					"target": "@ui/Toggle/toggle.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/Toggle/toggle.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/Toggle/toggle.styles.ts"
+				}
+			],
+			"registryDependencies": ["http://localhost:3001/reg/shared.json"],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		},
+		{
+			"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+			"name": "togglegroup",
+			"type": "registry:ui",
+			"title": "ToggleGroup",
+			"description": "A StyleX ToggleGroup component.",
+			"registryDependencies": [
+				"http://localhost:3001/reg/toggle.json",
+				"http://localhost:3001/reg/shared.json"
+			],
+			"files": [
+				{
+					"path": "registry/.temp/src/components/ui/ToggleGroup/toggle-group.tsx",
+					"type": "registry:ui",
+					"target": "@ui/ToggleGroup/toggle-group.tsx"
+				},
+				{
+					"path": "registry/.temp/src/components/ui/ToggleGroup/toggle-group.styles.ts",
+					"type": "registry:file",
+					"target": "@ui/ToggleGroup/toggle-group.styles.ts"
+				}
+			],
+			"dependencies": [
+				"@stylexjs/stylex",
+				"@phosphor-icons/react",
+				"@base-ui/react"
+			]
+		}
+	]
+}

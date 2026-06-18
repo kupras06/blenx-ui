@@ -31,9 +31,9 @@
 		"lint": "oxlint src/",
 		"check": "oxlint src/ && oxfmt --check src/",
 		"check:fix": "oxlint --fix src/ && oxfmt src/",
-		"registry:gen": "tsx registry/build.ts",
+		"registry:gen": "tsx scripts/build.ts",
 		"generate-responsive-grid": "tsx scripts/generate-responsive-grid.ts",
-		"registry:build": "bun registry:gen && shadcn build registry/registry.json --output public/reg && bun registry/clean.ts",
+		"registry:build": "bun registry:gen && shadcn build scripts/registry.json --output public/reg && bun scripts/clean.ts",
 		"deploy": "bun run build && wrangler deploy"
 	},
 	"dependencies": {

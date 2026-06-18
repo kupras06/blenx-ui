@@ -16,6 +16,7 @@
 		"style": "warn"
 	},
 	"rules": {
+		"import/no-default-export": "error",
 		"import/no-named-export": "off",
 		"import/exports-last": "off",
 		"import/group-exports": "off",
@@ -47,6 +48,14 @@
 		"node": true,
 		"browser": true
 	},
+	"overrides": [
+		{
+			"files": ["scripts/**/*"],
+			"rules": {
+				"import/no-nodejs-modules": "off"
+			}
+		}
+	],
 	"ignorePatterns": [
 		"**/routeTree.gen.ts",
 		"**/responsiveGrid.styles.ts",
