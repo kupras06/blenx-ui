@@ -21,7 +21,7 @@ function DocRelated({ related }: DocRelatedProps) {
 	}
 
 	const handleClick = (name: string) => {
-		navigate({ to: `/components/${name.toLowerCase()}` });
+		navigate({ to: `/docs/components/${name.toLowerCase()}` });
 	};
 
 	return (
@@ -30,7 +30,6 @@ function DocRelated({ related }: DocRelatedProps) {
 				<Badge
 					key={name}
 					variant="primary"
-					radius="small"
 					onClick={() => handleClick(name)}
 					style={clickableBadge.clickable}
 				>

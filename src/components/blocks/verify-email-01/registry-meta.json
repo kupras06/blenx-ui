@@ -10,11 +10,6 @@
 			"file": "verify-email-01.tsx",
 			"type": "registry:ui",
 			"target": "@blocks/verify-email-01/verify-email-01.tsx"
-		},
-		{
-			"file": "verify-email-01.styles.ts",
-			"type": "registry:file",
-			"target": "@blocks/verify-email-01/verify-email-01.styles.ts"
 		}
 	]
 }

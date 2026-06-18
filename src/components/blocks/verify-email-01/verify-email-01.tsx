@@ -1,12 +1,19 @@
 "use client";
 
-import { useState, useRef, useCallback, useEffect } from "react";
-import * as stylex from "@stylexjs/stylex";
+import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/Button/button";
 import { Text } from "@/components/ui/Text/text";
 import { Card, CardBody } from "@/components/ui/Card/card";
 import type { PropsWithStylex } from "@/utils/stylex.utils";
-import { verifyEmailStyles } from "./verify-email-01.styles";
+import {
+	Alert,
+	Box,
+	Container,
+	HStack,
+	OTPField,
+	OTPFieldInput,
+	VStack,
+} from "@/components/ui";
 
 const DIGIT_COUNT = 6;
 
@@ -25,20 +32,12 @@ export function VerifyEmail01({
 	onVerify,
 	onResend,
 	resendCooldown = 60,
-	style,
 }: Props) {
-	const [digits, setDigits] = useState<string[]>(Array(DIGIT_COUNT).fill(""));
+	const [digits, setDigits] = useState<string>("");
 	const [cooldown, setCooldown] = useState(resendCooldown);
 	const [error, setError] = useState("");
 	const [verified, setVerified] = useState(false);
 	const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
-
-	const setInputRef = useCallback(
-		(index: number) => (el: HTMLInputElement | null) => {
-			inputRefs.current[index] = el;
-		},
-		[],
-	);
 
 	useEffect(() => {
 		inputRefs.current[0]?.focus();
@@ -52,52 +51,13 @@ export function VerifyEmail01({
 		return () => clearInterval(timer);
 	}, [cooldown]);
 
-	const handleDigitChange = (index: number, value: string) => {
-		if (value.length > 1) return;
-		if (value !== "" && !/^\d$/.test(value)) return;
-
-		setError("");
-		const newDigits = [...digits];
-		newDigits[index] = value;
-		setDigits(newDigits);
-
-		if (value && index < DIGIT_COUNT - 1) {
-			inputRefs.current[index + 1]?.focus();
-		}
-	};
-
-	const handleKeyDown = (
-		index: number,
-		e: React.KeyboardEvent<HTMLInputElement>,
-	) => {
-		if (e.key === "Backspace" && !digits[index] && index > 0) {
-			inputRefs.current[index - 1]?.focus();
-		}
-	};
-
-	const handlePaste = (e: React.ClipboardEvent) => {
-		e.preventDefault();
-		const pasted = e.clipboardData.getData("text").replace(/\D/g, "");
-		if (!pasted) return;
-
-		const newDigits = [...digits];
-		for (let i = 0; i < Math.min(pasted.length, DIGIT_COUNT); i++) {
-			newDigits[i] = pasted[i];
-		}
-		setDigits(newDigits);
-
-		const focusIndex = Math.min(pasted.length, DIGIT_COUNT - 1);
-		inputRefs.current[focusIndex]?.focus();
-	};
-
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
-		const code = digits.join("");
-		if (code.length !== DIGIT_COUNT) {
+		if (digits.length !== DIGIT_COUNT) {
 			setError("Please enter the full verification code");
 			return;
 		}
-		onVerify?.(code);
+		onVerify?.(digits);
 		setVerified(true);
 	};
 
@@ -105,98 +65,93 @@ export function VerifyEmail01({
 		if (cooldown > 0) return;
 		setCooldown(resendCooldown);
 		onResend?.();
-		setDigits(Array(DIGIT_COUNT).fill(""));
+		setDigits("");
 		inputRefs.current[0]?.focus();
 	};
 
-	const isComplete = digits.every((d) => d !== "");
+	const isComplete = digits.length === DIGIT_COUNT;
 
 	return (
-		<div {...stylex.props(verifyEmailStyles.container, style)}>
-			<Card {...stylex.props(verifyEmailStyles.card)}>
-				<CardBody {...stylex.props(verifyEmailStyles.cardBody)}>
-					<div {...stylex.props(verifyEmailStyles.header)}>
-						<Text variant="h3">{title}</Text>
-						{email && (
-							<Text variant="body2" style={verifyEmailStyles.description}>
-								We&apos;ve sent a verification code to <strong>{email}</strong>.
-								Enter the code below.
-							</Text>
-						)}
-					</div>
+		<Container size="md">
+			<Card>
+				<CardBody>
+					<VStack>
+						<Box>
+							<Text variant="h3">{title}</Text>
+							{email && (
+								<Text variant="body2" color="secondary">
+									We&apos;ve sent a verification code to{" "}
+									<strong>{email}</strong>. Enter the code below.
+								</Text>
+							)}
+						</Box>
 
-					<form
-						onSubmit={handleSubmit}
-						aria-label="Email verification form"
-						{...stylex.props(verifyEmailStyles.form)}
-					>
-						<fieldset
-							{...stylex.props(verifyEmailStyles.codeInputs)}
-							aria-label="Verification code"
-						>
-							{digits.map((digit, index) => (
-								<input
-									key={`${index}-${digit}`}
-									ref={setInputRef(index)}
-									type="text"
-									inputMode="numeric"
-									maxLength={1}
-									value={digit}
-									onChange={(e) => handleDigitChange(index, e.target.value)}
-									onKeyDown={(e) => handleKeyDown(index, e)}
-									onPaste={index === 0 ? handlePaste : undefined}
-									aria-label={`Digit ${index + 1}`}
-									autoComplete="one-time-code"
-									{...stylex.props(
-										verifyEmailStyles.digitInput,
-										Boolean(digit) && verifyEmailStyles.digitInputFilled,
-										Boolean(error) && verifyEmailStyles.digitInputError,
-									)}
+						<VStack
+							render={
+								<form
+									onSubmit={handleSubmit}
+									aria-label="Email verification form"
 								/>
-							))}
-						</fieldset>
-
-						{error && (
-							<Text variant="caption" style={verifyEmailStyles.error}>
-								{error}
-							</Text>
-						)}
-						{verified && (
-							<Text variant="caption" style={verifyEmailStyles.success}>
-								Email verified successfully!
-							</Text>
-						)}
-
-						<Button
-							type="submit"
-							variant="solid"
-							fullWidth
-							disabled={!isComplete}
+							}
+							justify="center"
+							align="center"
 						>
-							Verify email
-						</Button>
-					</form>
-
-					<div {...stylex.props(verifyEmailStyles.resendRow)}>
-						<Text variant="caption" span>
-							Didn&apos;t receive the code?{" "}
-						</Text>
-						{cooldown > 0 ? (
-							<span {...stylex.props(verifyEmailStyles.timer)}>
-								Resend in {cooldown}s
-							</span>
-						) : (
-							<button
-								type="button"
-								onClick={handleResend}
-								{...stylex.props(verifyEmailStyles.resendButton)}
+							<OTPField
+								length={DIGIT_COUNT}
+								value={digits}
+								onValueChange={setDigits}
 							>
-								Resend code
-							</button>
-						)}
-					</div>
+								<OTPFieldInput />
+								<OTPFieldInput />
+								<OTPFieldInput />
+								<OTPFieldInput />
+								<OTPFieldInput />
+								<OTPFieldInput />
+							</OTPField>
+
+							{error && (
+								<Alert variant="error" icon="">
+									{error}
+								</Alert>
+							)}
+							{verified && (
+								<Alert variant="success" icon="">
+									Email verified successfully!
+								</Alert>
+							)}
+
+							<Button
+								type="submit"
+								variant="solid"
+								fullWidth
+								disabled={!isComplete}
+							>
+								Verify email
+							</Button>
+						</VStack>
+
+						<HStack align="center" justify="center" gap="medium">
+							<Text variant="caption" span>
+								Didn&apos;t receive the code?{" "}
+							</Text>
+							{cooldown > 0 ? (
+								<Text variant="caption" color="secondary">
+									Resend in {cooldown}s
+								</Text>
+							) : (
+								<Button
+									type="button"
+									variant="link"
+									size="xsmall"
+									onClick={handleResend}
+								>
+									Resend code
+								</Button>
+							)}
+						</HStack>
+					</VStack>
 				</CardBody>
 			</Card>
-		</div>
+		</Container>
 	);
 }
