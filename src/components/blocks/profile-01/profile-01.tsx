@@ -131,8 +131,9 @@ export function Profile01({
 						</div>
 						<Button
 							type="submit"
-							variant="primary"
-							style={{ width: "fit-content" }}
+							variant="solid"
+							intent="primary"
+							style={profileStyles.fitContent}
 						>
 							Save changes
 						</Button>
@@ -175,7 +176,7 @@ export function Profile01({
 				</CardHeader>
 				<CardBody>
 					<VStack gap="medium">
-						<Button variant="outline" style={{ width: "fit-content" }}>
+						<Button variant="outline" style={profileStyles.fitContent}>
 							Change password
 						</Button>
 					</VStack>
@@ -191,9 +192,10 @@ export function Profile01({
 					certain.
 				</Text>
 				<Button
-					variant="danger"
+					variant="solid"
+					intent="danger"
 					onClick={onDeleteAccount}
-					style={{ width: "fit-content" }}
+					style={profileStyles.fitContent}
 				>
 					Delete account
 				</Button>

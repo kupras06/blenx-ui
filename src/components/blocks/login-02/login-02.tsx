@@ -101,7 +101,7 @@ export function Login02({
 									autoComplete="email"
 								/>
 							</div>
-							<Button type="submit" variant="primary" fullWidth>
+							<Button type="submit" variant="solid" intent="primary" fullWidth>
 								{flow === "magic-link" ? "Send magic link" : "Continue"}
 							</Button>
 						</form>
@@ -148,7 +148,7 @@ export function Login02({
 									autoComplete="current-password"
 								/>
 							</div>
-							<Button type="submit" variant="primary" fullWidth>
+							<Button type="submit" variant="solid" intent="primary" fullWidth>
 								Sign in
 							</Button>
 						</form>

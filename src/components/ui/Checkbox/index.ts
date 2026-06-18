@@ -1,6 +1,1 @@
-export {
-	Checkbox,
-	CheckboxGroup,
-	CheckboxGroupPrimitive,
-	CheckboxPrimitive,
-} from "./checkbox";
+export { Checkbox, CheckboxGroup } from "./checkbox";

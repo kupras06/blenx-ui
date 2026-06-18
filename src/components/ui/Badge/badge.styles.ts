@@ -33,4 +33,8 @@ export const badgeVariantStyles = stylex.create({
 		backgroundColor: theme.secondary,
 		color: theme.contentPrimary,
 	},
+	danger: {
+		backgroundColor: theme.sentimentNegative,
+		color: theme.contentOnPrimary,
+	},
 });

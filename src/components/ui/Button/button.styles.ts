@@ -140,15 +140,15 @@ export const buttonVariantStyles = stylex.create({
 		},
 	},
 	soft: {
-		backgroundColor: intentTokens.softFg ,
-		borderColor: 'transparent',
+		backgroundColor: intentTokens.softFg,
+		borderColor: "transparent",
 		":hover:not(:disabled)": {
-		backgroundColor: `color-mix(in srgb, ${intentTokens.softBg} 80%, ${theme.contentPrimary})`,
-		borderColor: `color-mix(in srgb, ${intentTokens.border} 80%, ${theme.contentPrimary})`,
+			backgroundColor: `color-mix(in srgb, ${intentTokens.softBg} 80%, ${theme.contentPrimary})`,
+			borderColor: `color-mix(in srgb, ${intentTokens.border} 80%, ${theme.contentPrimary})`,
 		},
 	},
 	outline: {
-		backgroundColor: 'transparent',
+		backgroundColor: "transparent",
 		borderColor: intentTokens.border,
 		color: intentTokens.fg,
 		":hover:not(:disabled)": {
@@ -157,19 +157,19 @@ export const buttonVariantStyles = stylex.create({
 		},
 	},
 	ghost: {
-		backgroundColor: 'transparent',
-		borderColor: 'transparent',
+		backgroundColor: "transparent",
+		borderColor: "transparent",
 		color: intentTokens.fg,
 		":hover:not(:disabled)": {
 			backgroundColor: `color-mix(in srgb, ${intentTokens.border} 15%, ${theme.contentPrimary})`,
 		},
 	},
 	link: {
-		backgroundColor: 'transparent',
-		borderColor: 'transparent',
+		backgroundColor: "transparent",
+		borderColor: "transparent",
 		color: intentTokens.fg,
 		":hover:not(:disabled)": {
-			textDecoration: 'underline',
+			textDecoration: "underline",
 		},
 	},
 });

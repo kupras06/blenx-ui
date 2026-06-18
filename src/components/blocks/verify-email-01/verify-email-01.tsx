@@ -149,8 +149,8 @@ export function VerifyEmail01({
 									autoComplete="one-time-code"
 									{...stylex.props(
 										verifyEmailStyles.digitInput,
-										digit && verifyEmailStyles.digitInputFilled,
-										error && verifyEmailStyles.digitInputError,
+										Boolean(digit) && verifyEmailStyles.digitInputFilled,
+										Boolean(error) && verifyEmailStyles.digitInputError,
 									)}
 								/>
 							))}

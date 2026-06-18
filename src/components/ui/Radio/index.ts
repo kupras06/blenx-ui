@@ -1,7 +1,1 @@
-export {
-	Radio,
-	RadioGroup,
-	RadioGroupItem,
-	RadioGroupPrimitive,
-	RadioPrimitive,
-} from "./radio";
+export { Radio, RadioGroup, RadioGroupItem } from "./radio";

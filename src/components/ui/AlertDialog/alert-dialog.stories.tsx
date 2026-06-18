@@ -14,7 +14,7 @@ import {
 export function DefaultStory() {
 	return (
 		<AlertDialog>
-			<AlertDialogTrigger render={<Button variant="danger">Delete</Button>} />
+			<AlertDialogTrigger render={<Button intent="danger">Delete</Button>} />
 			<AlertDialogPopup>
 				<AlertDialogHeader>
 					<AlertDialogTitle>Are you sure?</AlertDialogTitle>
@@ -24,10 +24,8 @@ export function DefaultStory() {
 				</AlertDialogHeader>
 				<AlertDialogPanel />
 				<AlertDialogFooter>
-					<AlertDialogClose
-						render={<Button variant="secondary">Cancel</Button>}
-					/>
-					<Button variant="danger">Delete</Button>
+					<AlertDialogClose render={<Button variant="soft">Cancel</Button>} />
+					<Button intent="danger">Delete</Button>
 				</AlertDialogFooter>
 			</AlertDialogPopup>
 		</AlertDialog>

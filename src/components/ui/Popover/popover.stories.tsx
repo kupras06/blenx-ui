@@ -27,7 +27,7 @@ export function DefaultStory() {
 							<PopoverDescription>
 								This is a popover. It can contain any content.
 							</PopoverDescription>
-							<Button size="small" variant="primary">
+							<Button size="small" variant="solid">
 								Action
 							</Button>
 						</Stack>

@@ -5,11 +5,11 @@ export function Signup01DefaultDemo() {
 		<Signup01
 			onSubmit={(values) => console.log("Signup:", values)}
 			socialProviders={[
-				{ provider: "GitHub", onClick: () => {} },
-				{ provider: "Google", onClick: () => {} },
+				{ provider: "GitHub", handleClick: () => {} },
+				{ provider: "Google", handleClick: () => {} },
 			]}
 			termsUrl="#"
-			loginLink={{ label: "Sign in", onClick: () => {} }}
+			loginLink={{ label: "Sign in", handleClick: () => {} }}
 		/>
 	);
 }

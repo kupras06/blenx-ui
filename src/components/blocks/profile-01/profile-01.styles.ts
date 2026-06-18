@@ -97,4 +97,7 @@ export const profileStyles = stylex.create({
 		fontWeight: 600,
 		marginBottom: spacing.small,
 	},
+	fitContent: {
+		width: "fit-content",
+	},
 });

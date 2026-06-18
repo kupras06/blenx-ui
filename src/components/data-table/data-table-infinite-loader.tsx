@@ -43,7 +43,7 @@ export function DataTableInfiniteLoader({
 
 	if (isAuto) {
 		return (
-			<output
+			<div
 				ref={sentinelRef}
 				aria-label={isFetchingNextPage ? loadingText : noMoreText}
 				{...stylex.props(styles.sentinel)}
@@ -57,7 +57,7 @@ export function DataTableInfiniteLoader({
 				{!hasNextPage && !isFetchingNextPage && (
 					<span {...stylex.props(styles.noMore)}>{noMoreText}</span>
 				)}
-			</output>
+			</div>
 		);
 	}
 

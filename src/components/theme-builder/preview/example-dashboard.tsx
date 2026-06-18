@@ -254,7 +254,7 @@ export const ExampleDashboard = memo(() => (
 							<PencilSimpleLineIcon size={14} />
 							Edit
 						</Button>
-						<Button variant="danger" size="small">
+						<Button intent="danger" size="small">
 							<TrashSimpleIcon size={14} />
 							Delete
 						</Button>

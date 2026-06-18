@@ -11,7 +11,7 @@ type Lang =
 	| "html"
 	| "md";
 
-const LANGUAGES: Lang[] = new Set([
+const LANGUAGES = new Set<Lang>([
 	"typescript",
 	"ts",
 	"js",

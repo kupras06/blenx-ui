@@ -46,7 +46,11 @@ export function EmptyState01({
 						</Button>
 					)}
 					{secondaryAction && (
-						<Button variant="soft" onClick={secondaryAction.handleClick} fullWidth>
+						<Button
+							variant="soft"
+							onClick={secondaryAction.handleClick}
+							fullWidth
+						>
 							{secondaryAction.label}
 						</Button>
 					)}

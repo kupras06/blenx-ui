@@ -109,7 +109,7 @@ ${themeEntries.join("\n")}
 					<AlertDialog open={showReset} onOpenChange={setShowReset}>
 						<AlertDialogTrigger
 							render={
-								<Button variant="danger" size="small" fullWidth>
+								<Button intent="danger" size="small" fullWidth>
 									Reset to Defaults
 								</Button>
 							}
@@ -123,7 +123,7 @@ ${themeEntries.join("\n")}
 								</AlertDialogDescription>
 							</AlertDialogHeader>
 							<VStack gap="small" padding="medium">
-								<Button variant="danger" fullWidth onClick={handleReset}>
+								<Button intent="danger" fullWidth onClick={handleReset}>
 									Reset
 								</Button>
 								<Button

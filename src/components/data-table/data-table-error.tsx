@@ -1,5 +1,6 @@
-import { Button } from "@around-me/ui";
-import { fontSize, spacing, theme } from "@around-me/ui/theme/contract.stylex";
+import { Button } from "@/components/ui";
+import { theme } from "@/lib/theme/contract.stylex";
+import { fontSize, spacing } from "@/lib/theme/tokens.stylex";
 import { WarningCircleIcon } from "@phosphor-icons/react";
 import * as stylex from "@stylexjs/stylex";
 

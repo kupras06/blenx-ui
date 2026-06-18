@@ -5,12 +5,12 @@ export function Login01DefaultDemo() {
 		<Login01
 			onSubmit={(values) => console.log("Login:", values)}
 			socialProviders={[
-				{ provider: "GitHub", onClick: () => {} },
-				{ provider: "Google", onClick: () => {} },
+				{ provider: "GitHub", handleClick: () => {} },
+				{ provider: "Google", handleClick: () => {} },
 			]}
 			links={{
-				forgotPassword: { label: "Forgot password?", onClick: () => {} },
-				signUp: { label: "Create an account", onClick: () => {} },
+				forgotPassword: { label: "Forgot password?", handleClick: () => {} },
+				signUp: { label: "Create an account", handleClick: () => {} },
 			}}
 		/>
 	);

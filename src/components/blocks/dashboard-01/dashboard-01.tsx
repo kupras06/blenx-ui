@@ -31,7 +31,7 @@ type Props = PropsWithStylex<{
 	kpis?: Kpi[];
 	activities?: Activity[];
 	chartSections?: ChartSection[];
-	actions?: { label: string; onClick: () => void }[];
+	actions?: { label: string; handleClick: () => void }[];
 }>;
 
 const defaultKpis: Kpi[] = [

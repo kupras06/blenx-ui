@@ -14,10 +14,10 @@ function IconButtonDemo() {
 			<VStack gap="small">
 				<Text variant="h6">Variants</Text>
 				<HStack wrap>
-					<IconButton aria-label="Send" variant="primary">
+					<IconButton aria-label="Send" variant="solid">
 						<PaperPlaneTiltIcon />
 					</IconButton>
-					<IconButton aria-label="Send" variant="secondary">
+					<IconButton aria-label="Send" variant="soft">
 						<PaperPlaneTiltIcon />
 					</IconButton>
 					<IconButton aria-label="Send" variant="outline">

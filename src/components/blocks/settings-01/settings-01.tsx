@@ -71,7 +71,7 @@ export function Settings01({ style }: Props) {
 						</CardHeader>
 						<CardBody>
 							<div {...stylex.props(settingsStyles.section)}>
-								<Button variant="outline" style={{ width: "fit-content" }}>
+								<Button variant="outline" style={settingsStyles.fitContent}>
 									Change password
 								</Button>
 								<Separator />
@@ -102,7 +102,7 @@ export function Settings01({ style }: Props) {
 						<CardBody>
 							<div {...stylex.props(settingsStyles.section)}>
 								<Text variant="body2">Theme preference</Text>
-								<Button variant="outline" style={{ width: "fit-content" }}>
+								<Button variant="outline" style={settingsStyles.fitContent}>
 									Toggle theme
 								</Button>
 								<Separator />
@@ -177,7 +177,7 @@ export function Settings01({ style }: Props) {
 									</div>
 								</div>
 								<Separator />
-								<Button variant="outline" style={{ width: "fit-content" }}>
+								<Button variant="outline" style={settingsStyles.fitContent}>
 									Manage subscription
 								</Button>
 							</div>

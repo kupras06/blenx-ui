@@ -24,8 +24,8 @@ export function DefaultStory() {
 					<div>Dialog content goes here.</div>
 				</DialogPanel>
 				<DialogFooter>
-					<DialogClose render={<Button variant="secondary">Close</Button>} />
-					<Button variant="primary">Confirm</Button>
+					<DialogClose render={<Button variant="soft">Close</Button>} />
+					<Button variant="solid">Confirm</Button>
 				</DialogFooter>
 			</DialogPopup>
 		</Dialog>

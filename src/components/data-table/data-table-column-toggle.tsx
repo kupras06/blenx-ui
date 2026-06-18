@@ -5,8 +5,8 @@ import {
 	MenuPopup,
 	MenuSeparator,
 	MenuTrigger,
-} from "@around-me/ui";
-import { theme } from "@around-me/ui/theme/contract.stylex";
+} from "@/components/ui";
+import { theme } from "@/lib/theme/contract.stylex";
 import { ListIcon } from "@phosphor-icons/react";
 import * as stylex from "@stylexjs/stylex";
 import type { Table } from "@tanstack/react-table";

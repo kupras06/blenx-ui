@@ -48,26 +48,26 @@ export const ComponentShowcase = memo(() => (
 		<VStack withBorder padding="small">
 			<Text variant="h3">Buttons</Text>
 			<HStack>
-				<Button variant="primary">Primary</Button>
-				<Button variant="secondary">Secondary</Button>
+				<Button variant="solid">Primary</Button>
+				<Button variant="soft">Secondary</Button>
 				<Button variant="ghost">Ghost</Button>
 				<Button variant="outline">Outline</Button>
-				<Button variant="danger">Destructive</Button>
+				<Button intent="danger">Destructive</Button>
 			</HStack>
 			<HStack>
-				<Button variant="primary" loading>
+				<Button variant="solid" loading>
 					Loading
 				</Button>
 				<Button variant="outline" disabled>
 					Disabled
 				</Button>
-				<Button variant="primary" size="small">
+				<Button variant="solid" size="small">
 					Small
 				</Button>
-				<Button variant="primary" size="medium">
+				<Button variant="solid" size="medium">
 					Medium
 				</Button>
-				<Button variant="primary" size="large">
+				<Button variant="solid" size="large">
 					Large
 				</Button>
 			</HStack>
@@ -174,7 +174,7 @@ export const ComponentShowcase = memo(() => (
 					<Button variant="ghost" size="small">
 						Action
 					</Button>
-					<Button variant="primary" size="small">
+					<Button variant="solid" size="small">
 						Save
 					</Button>
 				</CardFooter>
@@ -207,7 +207,7 @@ export const ComponentShowcase = memo(() => (
 						<DialogTrigger>
 							<Button variant="ghost">Cancel</Button>
 						</DialogTrigger>
-						<Button variant="primary">Confirm</Button>
+						<Button slot="primary">Confirm</Button>
 					</DialogFooter>
 				</DialogContent>
 			</Dialog>

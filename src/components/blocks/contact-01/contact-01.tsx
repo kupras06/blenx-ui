@@ -187,7 +187,12 @@ export function Contact01({
 									/>
 								</Field>
 
-								<Button type="submit" variant="primary" fullWidth>
+								<Button
+									type="submit"
+									variant="solid"
+									intent="primary"
+									fullWidth
+								>
 									Send message
 								</Button>
 							</VStack>

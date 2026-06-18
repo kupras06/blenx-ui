@@ -1,5 +1,5 @@
-import { Button, Input } from "@around-me/ui";
-import { spacing } from "@around-me/ui/theme/contract.stylex";
+import { Button, Input } from "@/components/ui";
+import { spacing } from "@/lib/theme/tokens.stylex";
 import * as stylex from "@stylexjs/stylex";
 import type { Table } from "@tanstack/react-table";
 import { DataTableColumnToggle } from "./data-table-column-toggle";
@@ -47,9 +47,8 @@ export function DataTableToolbar<TData>({
 					bulkActions?.map((action, index) => (
 						<Button
 							key={`bulk-action-${index.toString()}`}
-							variant={
-								action.variant === "destructive" ? "danger" : "secondary"
-							}
+							variant={action.variant === "destructive" ? "solid" : "outline"}
+							intent={action.variant === "destructive" ? "danger" : undefined}
 							size="small"
 							disabled={action.disabled}
 							onClick={() => action.onClick(selectedRows)}

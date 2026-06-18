@@ -1,5 +1,6 @@
-import { Button } from "@around-me/ui";
-import { fontSize, spacing, theme } from "@around-me/ui/theme/contract.stylex";
+import { Button } from "@/components/ui";
+import { theme } from "@/lib/theme/contract.stylex";
+import { fontSize, spacing } from "@/lib/theme/tokens.stylex";
 import { CaretLeftIcon, CaretRightIcon } from "@phosphor-icons/react";
 import * as stylex from "@stylexjs/stylex";
 import type { Table } from "@tanstack/react-table";
@@ -62,7 +63,8 @@ export function DataTablePagination<TData>({
 										<span {...stylex.props(styles.ellipsis)}>...</span>
 									)}
 									<Button
-										variant={isActive ? "primary" : "ghost"}
+										variant={isActive ? "solid" : "ghost"}
+										intent={isActive ? "primary" : undefined}
 										size="small"
 										disabled={isActive}
 										onClick={() => table.setPageIndex(pageIdx)}

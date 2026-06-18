@@ -42,34 +42,30 @@ const styles = stylex.create({
 	},
 });
 function DocsRouteOption() {
-	const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
 	const { pathname } = useLocation();
 	const isDocsActive = pathname.startsWith("/docs");
-	if (!isSmallDevice)
-		return (
-			<Button
-				size="xsmall"
-				variant={isDocsActive ? "soft" : "ghost"}
-				render={<Link to="/docs" />}
-			>
-				Docs
-			</Button>
-		);
+	return (
+		<Button
+			size="xsmall"
+			variant={isDocsActive ? "soft" : "ghost"}
+			render={<Link to="/docs" />}
+		>
+			Docs
+		</Button>
+	);
 }
 function BlocksRouteOption() {
-	const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
 	const { pathname } = useLocation();
 	const isBlocksActive = pathname.startsWith("/blocks");
-	if (!isSmallDevice)
-		return (
-			<Button
-				size="xsmall"
-				variant={isBlocksActive ? "soft" : "ghost"}
-				render={<Link to="/blocks" />}
-			>
-				Blocks
-			</Button>
-		);
+	return (
+		<Button
+			size="xsmall"
+			variant={isBlocksActive ? "soft" : "ghost"}
+			render={<Link to="/blocks" />}
+		>
+			Blocks
+		</Button>
+	);
 }
 function DocsRouteSidebarOption() {
 	const sidebarOpen = useSidebarStore((st) => st.isOpen);
@@ -79,7 +75,7 @@ function DocsRouteSidebarOption() {
 		return (
 			<Button
 				size="icon"
-				variant="secondary"
+				variant="soft"
 				onClick={() => setOpen(!sidebarOpen)}
 				aria-label="Toggle sidebar"
 			>

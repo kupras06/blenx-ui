@@ -50,11 +50,9 @@ export function Hero01({
 						</Text>
 					)}
 					{(primaryCta || secondaryCta) && (
-						<HStack gap="small" align="center" wrap >
+						<HStack gap="small" align="center" wrap>
 							{primaryCta && (
-								<Button
-									onClick={primaryCta.handleClick}fullWidth
-								>
+								<Button onClick={primaryCta.handleClick} fullWidth>
 									{primaryCta.label}
 								</Button>
 							)}

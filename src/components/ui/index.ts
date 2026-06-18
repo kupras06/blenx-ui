@@ -26,6 +26,7 @@ export * from "./Icon/icon";
 export * from "./IconButton/icon-button";
 export * from "./Input/input";
 export * from "./InputGroup/input-group";
+export * from "./OTPField/otp-field";
 export * from "./Menu/menu";
 export * from "./Popover/popover";
 export * from "./Progress/progress";

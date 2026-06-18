@@ -24,8 +24,8 @@ export function BottomStory() {
 					<div>Drawer content goes here.</div>
 				</DrawerPanel>
 				<DrawerFooter>
-					<DrawerClose render={<Button variant="secondary">Cancel</Button>} />
-					<Button variant="primary">Save</Button>
+					<DrawerClose render={<Button variant="soft">Cancel</Button>} />
+					<Button variant="solid">Save</Button>
 				</DrawerFooter>
 			</DrawerPopup>
 		</Drawer>

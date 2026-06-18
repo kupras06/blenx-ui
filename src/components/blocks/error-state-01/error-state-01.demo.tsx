@@ -8,7 +8,7 @@ export function ErrorState01PageDemo() {
 			title="Something went wrong"
 			message="An unexpected error occurred. Please try again or contact support if the problem persists."
 			onRetry={() => {}}
-			secondaryAction={{ label: "Go home", onClick: () => {} }}
+			secondaryAction={{ label: "Go home", handleClick: () => {} }}
 			error={
 				new Error(
 					"Failed to fetch user data: Network request timed out after 30s",

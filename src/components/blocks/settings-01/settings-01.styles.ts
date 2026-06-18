@@ -61,4 +61,7 @@ export const settingsStyles = stylex.create({
 		alignItems: "center",
 		justifyContent: "space-between",
 	},
+	fitContent: {
+		width: "fit-content",
+	},
 });

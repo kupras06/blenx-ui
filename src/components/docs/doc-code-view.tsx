@@ -43,7 +43,7 @@ function CopyButton({ value }: { value: string }) {
 			type="button"
 			size="xsmall"
 			radius="xsmall"
-			variant={copied ? "success" : "primary"}
+			variant={copied ? "solid" : "soft"}
 			onClick={handleCopy}
 			aria-label={copied ? "Copied" : "Copy code"}
 		>

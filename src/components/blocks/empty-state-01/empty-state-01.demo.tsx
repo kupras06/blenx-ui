@@ -7,8 +7,8 @@ export function EmptyState01Demo() {
 			icon={<FolderOpenIcon size={28} />}
 			title="No documents yet"
 			description="Get started by creating your first document. It will appear here once created."
-			action={{ label: "Create document", onClick: () => {} }}
-			secondaryAction={{ label: "Learn more", onClick: () => {} }}
+			action={{ label: "Create document", handleClick: () => {} }}
+			secondaryAction={{ label: "Learn more", handleClick: () => {} }}
 		/>
 	);
 }

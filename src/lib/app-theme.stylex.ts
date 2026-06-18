@@ -135,7 +135,10 @@ export const appTheme = stylex.createTheme(theme, {
 	secondary: themed(lightValues.secondary, darkValues.secondary),
 	fontSize: themed("16px", "16px"),
 	background: themed(lightValues.background, darkValues.background),
-	backgroundSubtle: themed(lightValues.backgroundSubtle, darkValues.backgroundSubtle),
+	backgroundSubtle: themed(
+		lightValues.backgroundSubtle,
+		darkValues.backgroundSubtle,
+	),
 
 	surface: themed(lightValues.surface, darkValues.surface),
 	surfaceSubtle: themed(lightValues.surfaceSubtle, darkValues.surfaceSubtle),
@@ -149,34 +152,76 @@ export const appTheme = stylex.createTheme(theme, {
 	borderRadius: themed(lightValues.borderRadius, darkValues.borderRadius),
 
 	contentPrimary: themed(lightValues.contentPrimary, darkValues.contentPrimary),
-	contentSecondary: themed(lightValues.contentSecondary, darkValues.contentSecondary),
-	contentDisabled: themed(lightValues.contentDisabled, darkValues.contentDisabled),
+	contentSecondary: themed(
+		lightValues.contentSecondary,
+		darkValues.contentSecondary,
+	),
+	contentDisabled: themed(
+		lightValues.contentDisabled,
+		darkValues.contentDisabled,
+	),
 	contentAccent: themed(lightValues.contentAccent, darkValues.contentAccent),
-	contentOnPrimary: themed(lightValues.contentOnPrimary, darkValues.contentOnPrimary),
+	contentOnPrimary: themed(
+		lightValues.contentOnPrimary,
+		darkValues.contentOnPrimary,
+	),
 	contentInverse: themed(lightValues.contentInverse, darkValues.contentInverse),
 
 	focusRing: themed(lightValues.focusRing, darkValues.focusRing),
 
-	sentimentNegative: themed(lightValues.sentimentNegative, darkValues.sentimentNegative),
-	sentimentNegativeSubtle: themed(lightValues.sentimentNegativeSubtle, darkValues.sentimentNegativeSubtle),
-	sentimentNegativeHover: themed(lightValues.sentimentNegativeHover, darkValues.sentimentNegativeHover),
+	sentimentNegative: themed(
+		lightValues.sentimentNegative,
+		darkValues.sentimentNegative,
+	),
+	sentimentNegativeSubtle: themed(
+		lightValues.sentimentNegativeSubtle,
+		darkValues.sentimentNegativeSubtle,
+	),
+	sentimentNegativeHover: themed(
+		lightValues.sentimentNegativeHover,
+		darkValues.sentimentNegativeHover,
+	),
 
-	sentimentPositive: themed(lightValues.sentimentPositive, darkValues.sentimentPositive),
-	sentimentPositiveSubtle: themed(lightValues.sentimentPositiveSubtle, darkValues.sentimentPositiveSubtle),
-	sentimentPositiveHover: themed(lightValues.sentimentPositiveHover, darkValues.sentimentPositiveHover),
+	sentimentPositive: themed(
+		lightValues.sentimentPositive,
+		darkValues.sentimentPositive,
+	),
+	sentimentPositiveSubtle: themed(
+		lightValues.sentimentPositiveSubtle,
+		darkValues.sentimentPositiveSubtle,
+	),
+	sentimentPositiveHover: themed(
+		lightValues.sentimentPositiveHover,
+		darkValues.sentimentPositiveHover,
+	),
 
-	sentimentWarning: themed(lightValues.sentimentWarning, darkValues.sentimentWarning),
-	sentimentWarningSubtle: themed(lightValues.sentimentWarningSubtle, darkValues.sentimentWarningSubtle),
-	sentimentWarningHover: themed(lightValues.sentimentWarningHover, darkValues.sentimentWarningHover),
+	sentimentWarning: themed(
+		lightValues.sentimentWarning,
+		darkValues.sentimentWarning,
+	),
+	sentimentWarningSubtle: themed(
+		lightValues.sentimentWarningSubtle,
+		darkValues.sentimentWarningSubtle,
+	),
+	sentimentWarningHover: themed(
+		lightValues.sentimentWarningHover,
+		darkValues.sentimentWarningHover,
+	),
 
 	sentimentInfo: themed(lightValues.sentimentInfo, darkValues.sentimentInfo),
-	sentimentInfoSubtle: themed(lightValues.sentimentInfoSubtle, darkValues.sentimentInfoSubtle),
-	sentimentInfoHover: themed(lightValues.sentimentInfoHover, darkValues.sentimentInfoHover),
+	sentimentInfoSubtle: themed(
+		lightValues.sentimentInfoSubtle,
+		darkValues.sentimentInfoSubtle,
+	),
+	sentimentInfoHover: themed(
+		lightValues.sentimentInfoHover,
+		darkValues.sentimentInfoHover,
+	),
 
 	shadowSm: themed(lightValues.shadowSm, darkValues.shadowSm),
 	shadowMd: themed(lightValues.shadowMd, darkValues.shadowMd),
 	shadowLg: themed(lightValues.shadowLg, darkValues.shadowLg),
 	shadowXl: themed(lightValues.shadowXl, darkValues.shadowXl),
-hoverOverlay:     themed('rgba(0,0,0,0.06)', 'rgba(255,255,255,0.08)'),
-hoverOverlaySoft: themed('rgba(0,0,0,0.12)', 'rgba(255,255,255,0.15)'),
+	hoverOverlay: themed("rgba(0,0,0,0.06)", "rgba(255,255,255,0.08)"),
+	hoverOverlaySoft: themed("rgba(0,0,0,0.12)", "rgba(255,255,255,0.15)"),
 });

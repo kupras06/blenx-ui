@@ -43,7 +43,8 @@ export function ErrorState01({
 		<VStack
 			align="center"
 			gap="medium"
-			style={[errorStateStyles.container,
+			style={[
+				errorStateStyles.container,
 				variant === "page" && errorStateStyles.page,
 				variant === "toast" && errorStateStyles.toast,
 				style,
@@ -67,16 +68,9 @@ export function ErrorState01({
 				</Text>
 			)}
 			{(onRetry || secondaryAction) && (
-				<HStack
-					gap="small"
-					align="center"
-					wrap
-				>
+				<HStack gap="small" align="center" wrap>
 					{onRetry && (
-						<Button
-							onClick={onRetry}
-							fullWidth
-						>
+						<Button onClick={onRetry} fullWidth>
 							Try again
 						</Button>
 					)}
@@ -84,7 +78,7 @@ export function ErrorState01({
 						<Button
 							variant="ghost"
 							onClick={secondaryAction.handleClick}
-				fullWidth
+							fullWidth
 						>
 							{secondaryAction.label}
 						</Button>
