@@ -1,5 +1,5 @@
 {
-	"$schema": "../../../schemas/docs-meta.schema.json",
+	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
 	"title": "Hero Section",
 	"description": "A marketing hero section with headline, supporting text, dual CTA buttons, and optional image. Supports default, muted, and accent background variants.",
 	"category": "Marketing",

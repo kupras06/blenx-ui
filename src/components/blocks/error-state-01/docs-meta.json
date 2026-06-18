@@ -1,5 +1,5 @@
 {
-	"$schema": "../../../schemas/docs-meta.schema.json",
+	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
 	"title": "Error State",
 	"description": "An error state block for displaying errors with retry action and expandable debug details. Supports card, page, and toast variants.",
 	"category": "Application States",

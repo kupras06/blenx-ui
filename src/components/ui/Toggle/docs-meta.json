@@ -1,5 +1,5 @@
 {
-	"$schema": "../../../schemas/docs-meta.schema.json",
+	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
 	"title": "Toggle",
 	"description": "A two-state toggle button with variant and size presets. Built on Base UI Toggle.",
 	"category": "Forms",

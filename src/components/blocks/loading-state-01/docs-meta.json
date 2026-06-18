@@ -1,5 +1,5 @@
 {
-	"$schema": "../../../schemas/docs-meta.schema.json",
+	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
 	"title": "Loading State",
 	"description": "A loading/skeleton block for use while content is being fetched. Supports text, card, table, avatar, and custom patterns.",
 	"category": "Application States",

@@ -1,5 +1,5 @@
 {
-	"$schema": "../../../schemas/docs-meta.schema.json",
+	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
 	"title": "Progress",
 	"description": "A progress bar with label, track, indicator, and value display. Built on Base UI Progress.",
 	"category": "Feedback",

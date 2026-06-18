@@ -1,5 +1,5 @@
 {
-	"$schema": "../../../schemas/docs-meta.schema.json",
+	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
 	"title": "Sign Up Page",
 	"description": "A complete sign-up/registration page with name, email, password, confirm password, terms acceptance, and social sign-up.",
 	"category": "Authentication",

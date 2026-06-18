@@ -1,5 +1,5 @@
 {
-	"$schema": "../../../schemas/docs-meta.schema.json",
+	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
 	"title": "Spinner",
 	"description": "A loading spinner with ARIA role and label for accessible loading state indication.",
 	"category": "Feedback",

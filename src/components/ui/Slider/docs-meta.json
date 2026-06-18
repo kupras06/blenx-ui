@@ -1,5 +1,5 @@
 {
-	"$schema": "../../../schemas/docs-meta.schema.json",
+	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
 	"title": "Slider",
 	"description": "A range slider supporting single and multi-thumb values with orientation, min/max, and thumb alignment. Built on Base UI Slider.",
 	"category": "Forms",

@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
+import { Flask, WarningCircle } from "@phosphor-icons/react";
 import { DocAccessibility } from "@/components/docs/doc-accessibility";
 import { DocApiReference } from "@/components/docs/doc-api-reference";
 import { DocHeading } from "@/components/docs/doc-heading";
@@ -7,7 +8,7 @@ import { DocCodeView } from "@/components/docs/doc-code-view";
 import { DocDemoRenderer } from "@/components/docs/doc-demo-renderer";
 import { DocInstallation } from "@/components/docs/doc-installation";
 import { DocRelated } from "@/components/docs/doc-related";
-import { Box, Separator, Surface, Text, VStack } from "@/components/ui";
+import { Alert, Box, Separator, Surface, Text, VStack } from "@/components/ui";
 import { docsQueries } from "@/lib/docs-api";
 import type { DocsManifest } from "@/lib/docs-meta";
 
@@ -54,12 +55,27 @@ function ComponentDocPage() {
 				</Text>
 			</VStack>
 
-			{doc.status && (
-				<Surface padding="xsmall" variant="sunken">
-					<Text variant="body2" color="secondary">
-						Status: {doc.status}
+			{doc.status === "beta" && (
+				<Alert
+					variant="warning"
+					icon={<WarningCircle size={20} />}
+				>
+					<Text variant="body2">
+						<strong>Beta:</strong> This component is stable for most use
+						cases, but the API may change in minor updates.
 					</Text>
-				</Surface>
+				</Alert>
+			)}
+			{doc.status === "experimental" && (
+				<Alert
+					variant="error"
+					icon={<Flask size={20} />}
+				>
+					<Text variant="body2">
+						<strong>Experimental:</strong> This component is a work in
+						progress. Expect breaking changes and incomplete features.
+					</Text>
+				</Alert>
 			)}
 
 			<Separator tone="subtle" />

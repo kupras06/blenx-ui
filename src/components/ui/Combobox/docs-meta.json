@@ -1,5 +1,5 @@
 {
-	"$schema": "../../../schemas/docs-meta.schema.json",
+	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
 	"title": "Combobox",
 	"description": "A combobox with single and multi-select (chip) support, built on Base UI Combobox with filtering and popup.",
 	"category": "Forms",

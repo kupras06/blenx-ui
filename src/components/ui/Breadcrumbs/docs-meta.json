@@ -1,5 +1,5 @@
 {
-	"$schema": "../../../schemas/docs-meta.schema.json",
+	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
 	"title": "Breadcrumbs",
 	"description": "A breadcrumb navigation trail with ARIA support for hierarchical page navigation.",
 	"category": "Navigation",

@@ -1,5 +1,5 @@
 {
-	"$schema": "../../../schemas/docs-meta.schema.json",
+	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
 	"title": "Settings Page",
 	"description": "A full settings page with tabbed navigation covering general, security, appearance, notifications, and billing sections.",
 	"category": "Dashboard",

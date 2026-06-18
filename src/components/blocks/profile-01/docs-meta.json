@@ -1,5 +1,5 @@
 {
-	"$schema": "../../../schemas/docs-meta.schema.json",
+	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
 	"title": "User Profile",
 	"description": "A profile page with personal information form, notification preferences toggles, account actions, and danger zone.",
 	"category": "Dashboard",

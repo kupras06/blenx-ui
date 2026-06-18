@@ -1,5 +1,5 @@
 {
-	"$schema": "../../../schemas/docs-meta.schema.json",
+	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
 	"title": "Drawer",
 	"description": "A swipeable drawer panel that slides in from any side. Supports nested menus, radio groups, and checkboxes.",
 	"category": "Overlay",

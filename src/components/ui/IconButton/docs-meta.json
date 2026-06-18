@@ -1,5 +1,5 @@
 {
-	"$schema": "../../../schemas/docs-meta.schema.json",
+	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
 	"title": "IconButton",
 	"description": "A square icon-only button with accessible label requirements, variant and intent styling, loading state, and consistent sizing.",
 	"category": "Forms",
