@@ -121,6 +121,7 @@ function ThemeToggle() {
 		} else {
 			document.documentElement.classList.add(...darkThemeClass.split(" "));
 		}
+		document.documentElement.setAttribute("data-theme", nextTheme);
 	};
 	return (
 		<Button

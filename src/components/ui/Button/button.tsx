@@ -40,7 +40,7 @@ function Button({
 	...props
 }: ButtonProps) {
 	const isDisabled = Boolean(loading || disabledProp);
-	const resolvedVariant = variant;
+	const resolvedVariant = intent === "mono" ? "soft" : variant;
 
 	const defaultProps = {
 		...stylex.props(

@@ -128,7 +128,7 @@ function useActiveHeading(headings: TOCHeading[]): string {
 			(entries) => {
 				const visible = [...entries]
 					.filter((e) => e.isIntersecting)
-					.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+					visible.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
 
 				if (visible.length > 0) {
 					setActiveId(visible[0].target.id);

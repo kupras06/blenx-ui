@@ -18,8 +18,15 @@ type BundledLanguage =
 	| "javascript"
 	| "js"
 	| "cjs"
-	| "mjs";
-type BundledTheme = "github-dark";
+	| "mjs"
+	| "shellscript"
+	| "bash"
+	| "sh"
+	| "shell"
+	| "zsh"
+	| "json"
+	| "tsx";
+type BundledTheme = "github-dark" | "github-light";
 type Highlighter = HighlighterGeneric<BundledLanguage, BundledTheme>;
 
 const bundledLanguages = {
@@ -31,10 +38,18 @@ const bundledLanguages = {
 	js: () => import("@shikijs/langs/javascript"),
 	cjs: () => import("@shikijs/langs/javascript"),
 	mjs: () => import("@shikijs/langs/javascript"),
+	shellscript: () => import("@shikijs/langs/shellscript"),
+	bash: () => import("@shikijs/langs/shellscript"),
+	sh: () => import("@shikijs/langs/shellscript"),
+	shell: () => import("@shikijs/langs/shellscript"),
+	zsh: () => import("@shikijs/langs/shellscript"),
+	json: () => import("@shikijs/langs/json"),
+	tsx: () => import("@shikijs/langs/tsx"),
 } as Record<BundledLanguage, DynamicImportLanguageRegistration>;
 
 const bundledThemes = {
 	"github-dark": () => import("@shikijs/themes/github-dark"),
+	"github-light": () => import("@shikijs/themes/github-light"),
 } as Record<BundledTheme, DynamicImportThemeRegistration>;
 
 const createHighlighter = /* @__PURE__ */ createBundledHighlighter<

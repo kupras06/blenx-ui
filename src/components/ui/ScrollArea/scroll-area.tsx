@@ -6,12 +6,13 @@ import type React from "react";
 import type { CSSProperties } from "react";
 import type { PropsWithStylex } from "@/utils/stylex.utils";
 import { scrollAreaStyles } from "./scroll-area.styles";
+import { applyBoxHeightStyle, type BoxHeightStyles } from "../Box/box.styles";
 
 type ScrollAreaProps = PropsWithStylex<ScrollAreaPrimitive.Root.Props> & {
 	scrollFade?: boolean;
 	scrollbarGutter?: boolean;
 	fill?: boolean;
-	height?: CSSProperties["height"];
+	height?: BoxHeightStyles | CSSProperties["height"];
 };
 
 function ScrollArea({
@@ -19,14 +20,16 @@ function ScrollArea({
 	scrollFade = false,
 	scrollbarGutter = false,
 	fill = false,
-	height = 400,
+	height = "60svh",
 	style,
 	...props
 }: ScrollAreaProps): React.ReactElement {
+	const heightStyle = applyBoxHeightStyle(height);
 	const rootProps = stylex.props(
 		scrollAreaStyles.root,
 		style,
-		scrollAreaStyles.height(height),
+		heightStyle,
+		Boolean(!heightStyle && height) && scrollAreaStyles.height(height),
 	);
 	return (
 		<ScrollAreaPrimitive.Root

@@ -128,6 +128,21 @@ export const buttonIntentStyles = stylex.create({
 
 		[intentTokens.fg]: theme.sentimentInfo,
 	},
+	mono: {
+		[intentTokens.solidBg]: "#ffffff",
+		[intentTokens.solidFg]: "#ffffff",
+		[intentTokens.solidHoverBg]: "#f5f5f5",
+
+		[intentTokens.softBg]: "#ffffff",
+		[intentTokens.softFg]: "#ffffff",
+
+		[intentTokens.softHoverBg]: "#f5f5f5",
+
+		[intentTokens.border]: "#d4d4d4",
+		[intentTokens.borderHover]: "#d4d4d4",
+
+		[intentTokens.fg]: "#111111",
+	},
 });
 export const buttonVariantStyles = stylex.create({
 	solid: {

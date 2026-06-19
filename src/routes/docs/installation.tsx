@@ -81,13 +81,14 @@ function InstallationDoc() {
 			<Box>
 				<VStack gap="medium">
 					<DocHeading variant="h2" title="2. Install a Component" />
-					<Surface variant="sunken" padding="medium" render={<pre />}>
-						<code>{`# Using the registry URL directly
+					<CodeBlock
+						language="bash"
+						code={`# Using the registry URL directly
 npx shadcn@latest add http://localhost:3001/reg/button.json
 
 # Or using the configured registry name
-npx shadcn@latest add @blenx-dev/button`}</code>
-					</Surface>
+npx shadcn@latest add @blenx-dev/button`}
+					/>
 				</VStack>
 			</Box>
 

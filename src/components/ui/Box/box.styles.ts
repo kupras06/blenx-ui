@@ -44,18 +44,29 @@ export const boxSizeStyles = stylex.create({
 });
 
 export const boxHeightStyles = stylex.create({
+	"5svh": {
+		maxHeight: "5svh",
+		height: "5svh",
+	},
+	"10svh": {
+		maxHeight: "10svh",
+		height: "10svh",
+	},
+	"15svh": {
+		maxHeight: "15svh",
+		height: "15svh",
+	},
 	"25svh": {
 		maxHeight: "25svh",
 		height: "25svh",
-		
-	 },
+	},
 	"40svh": {
 		maxHeight: "40svh",
-		height: "40svh"
+		height: "40svh",
 	},
 	"60svh": {
 		maxHeight: "60svh",
-		height: "60svh"
+		height: "60svh",
 	},
 	"75svh": {
 		maxHeight: "75svh",
@@ -65,7 +76,7 @@ export const boxHeightStyles = stylex.create({
 		maxHeight: "90svh",
 		height: "90svh",
 	},
-	
+
 	full: {
 		maxHeight: "100%",
 		height: "100%",
@@ -79,10 +90,10 @@ export const boxHeightStyles = stylex.create({
 		height: "none",
 	},
 });
-export type BoxHeightStyles = keyof typeof boxHeightStyles
-const BOX_HEIGHT_KEYS = Object.keys(boxHeightStyles)
+export type BoxHeightStyles = keyof typeof boxHeightStyles;
+const BOX_HEIGHT_KEYS = Object.keys(boxHeightStyles);
 export const applyBoxHeightStyle = (height: unknown) => {
-	if (typeof height === 'string' && BOX_HEIGHT_KEYS.includes(height))
-		return [boxHeightStyles[height as BoxHeightStyles]]
-	return null
-}
+	if (typeof height === "string" && BOX_HEIGHT_KEYS.includes(height))
+		return [boxHeightStyles[height as BoxHeightStyles]];
+	return null;
+};

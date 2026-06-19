@@ -3,15 +3,27 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { highlightCode } from "@/lib/syntax-highlight";
 import { Button } from "../Button/button";
 import { Box } from "../Box/box";
-import { ScrollArea } from "../ScrollArea/scroll-area";
-
+import { parse } from "@babel/parser";
+import generate from "@babel/generator";
+import { Surface } from "../Surface/surface";
 interface CodeBlockProps {
 	code: string;
 	language?: string;
 }
+function _formatCode(code: string) {
+	const ast = parse(code, {
+		sourceType: "module",
+		plugins: ["typescript", "jsx"],
+	});
 
+	const result = generate(ast, {
+		comments: false,
+	});
+
+	return result.code;
+}
 function escapeHtml(code: string): string {
-	return `<pre class="shiki"><code>${code
+	return `<pre class="shiki shiki themes"><code>${code
 		.replace(/&/g, "&amp;")
 		.replace(/</g, "&lt;")
 		.replace(/>/g, "&gt;")}</code></pre>`;
@@ -41,15 +53,18 @@ function CodeBlock({ code, language = "typescript" }: CodeBlockProps) {
 	}, [code]);
 
 	return (
-		<Box >
-			<ScrollArea fill>
-			<Box paddingY="medium">
-				<Box position="absolute" right="small" top="large">
+		<Surface
+			position="relative"
+			variant="sunken"
+			paddingX="medium"
+			render={<pre />}
+		>
+			<Box position="absolute" right="small" top="small">
 				<Button
 					type="button"
 					size="xsmall"
 					radius="xsmall"
-					variant={copied ? "solid" : "soft"}
+					variant={copied ? "solid" : "ghost"}
 					onClick={handleCopy}
 					aria-label={copied ? "Copied" : "Copy code"}
 				>
@@ -62,9 +77,7 @@ function CodeBlock({ code, language = "typescript" }: CodeBlockProps) {
 					__html: highlighted ?? escapeHtml(code),
 				}}
 			/>
-			</Box>
-		</ScrollArea>
-		</Box>
+		</Surface>
 	);
 }
 

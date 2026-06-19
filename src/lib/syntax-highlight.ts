@@ -31,7 +31,10 @@ export async function highlightCode(
 		const lang = LANGUAGES.has(language as Lang) ? language : "typescript";
 		return codeToHtml(code, {
 			lang,
-			theme: "github-dark",
+			themes: {
+				light: "github-light",
+				dark: "github-dark",
+			},
 		});
 	} catch {
 		return escapeHtml(code);
