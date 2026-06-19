@@ -46,7 +46,7 @@ export function DrawerDemo() {
 						</VStack>
 					</DrawerPanel>
 					<DrawerFooter>
-						<HStack gap="small" justify="end">
+						<HStack gap="small" justify="end" wrap>
 							<DrawerClose render={<Button variant="ghost" />}>
 								Cancel
 							</DrawerClose>

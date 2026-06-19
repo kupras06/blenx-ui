@@ -58,11 +58,13 @@ function CodeBlock({ code, language = "typescript" }: CodeBlockProps) {
 					{copied ? "Copied" : "Copy"}
 				</Button>
 			</Box>
-			<div
-				dangerouslySetInnerHTML={{
-					__html: highlighted ?? escapeHtml(code),
-				}}
-			/>
+			<Box overflow="auto">
+				<div
+					dangerouslySetInnerHTML={{
+						__html: highlighted ?? escapeHtml(code),
+					}}
+				/>
+			</Box>
 		</Surface>
 	);
 }

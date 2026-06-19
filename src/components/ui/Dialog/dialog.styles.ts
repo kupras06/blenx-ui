@@ -28,12 +28,7 @@ export const dialogStyles = stylex.create({
 		padding: spacing.medium,
 		boxSizing: "border-box",
 	},
-	viewportShell: {
-		":is([data-slot='dialog-viewport'])": {
-			display: "grid",
-		},
-	},
-	viewportShellBottomStickOnMobile: {},
+
 	popup: {
 		position: "relative",
 		gridRowStart: 2,
@@ -74,7 +69,24 @@ export const dialogStyles = stylex.create({
 				"0 1px 0 rgba(0, 0, 0, 0.04), inset 0 0 0 1px rgba(255, 255, 255, 0.02)",
 		},
 	},
-	popupBottomStickOnMobile: {},
+	viewportShellBottomStickOnMobile: {
+		"@media (max-width: 768px)": {
+			display: "flex",
+			alignItems: "flex-end",
+			justifyContent: "center",
+			padding: spacing.small,
+			paddingBottom: 0,
+		},
+	},
+	popupBottomStickOnMobile: {
+		"@media (max-width: 768px)": {
+			width: "100%",
+			maxWidth: "100%",
+			maxHeight: "90svh",
+			borderBottomLeftRadius: 0,
+			borderBottomRightRadius: 0,
+		},
+	},
 	closeButton: {
 		position: "absolute",
 		top: spacing.small,
@@ -97,6 +109,7 @@ export const dialogStyles = stylex.create({
 		paddingLeft: spacing.large,
 		paddingRight: spacing.large,
 		boxSizing: "border-box",
+		paddingBottom: "env(safe-area-inset-bottom)",
 	},
 	footerDefault: {
 		borderTopWidth: borderWidth.thin,
@@ -131,9 +144,9 @@ export const dialogStyles = stylex.create({
 		":has([data-slot='dialog-popup']:has([data-slot='dialog-header']))": {
 			paddingTop: spacing.xsmall,
 		},
-		// ":has([data-slot='dialog-popup']:has([data-slot='dialog-footer']:not(.border-t))":
-		// 	{
-		// 		PaddingBottom: spacing.xsmall,
-		// 	},
+		":has([data-slot='dialog-popup']:has([data-slot='dialog-footer']:not(.border-t)))":
+			{
+				paddingBottom: spacing.xsmall,
+			},
 	},
 });

@@ -1,6 +1,7 @@
 .shiki {
 	background: transparent !important;
 	padding: 0px 12px;
+		max-width: 100%;
 }
 
 html[data-theme="dark"] .shiki,

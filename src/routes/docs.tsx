@@ -53,11 +53,9 @@ function DocsLayout() {
 				<ClientOnly>
 					<RenderSidebarNavs />
 				</ClientOnly>
-				<Box grow>
+				<Box grow maxWidth='viewport'>
 					<ScrollArea height="90svh">
-						<Box data-doc-content="">
 							<Outlet />
-						</Box>
 					</ScrollArea>
 				</Box>
 				<ClientOnly>

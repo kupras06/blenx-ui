@@ -84,7 +84,7 @@ function DocCodeView({ code, title, language, files }: DocCodeViewProps) {
 	const isMultiFile = activeFiles.length > 1;
 
 	return (
-		<Surface variant="sunken">
+		<Surface variant="sunken"  maxWidth='viewport'>
 			{isMultiFile ? (
 				<HStack justify="between" padding="xsmall" align="center">
 					<SegmentedControl

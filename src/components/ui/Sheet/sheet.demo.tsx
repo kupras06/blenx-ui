@@ -41,7 +41,7 @@ export function SheetDemo() {
 						</VStack>
 					</SheetPanel>
 					<SheetFooter>
-						<HStack gap="small" justify="end">
+						<HStack gap="small" justify="end" wrap>
 							<SheetClose render={<Button variant="ghost" />}>
 								Cancel
 							</SheetClose>

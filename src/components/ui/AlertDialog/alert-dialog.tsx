@@ -52,13 +52,21 @@ function AlertDialogBackdrop(
 }
 
 function AlertDialogViewport(
-	props: AlertDialogPrimitive.Viewport.Props,
+	props: PropsWithStylex<AlertDialogPrimitive.Viewport.Props> & {
+		bottomStickOnMobile?: boolean;
+	},
 ): React.ReactElement {
+	const { bottomStickOnMobile, style, ...restProps } = props;
 	return (
 		<AlertDialogPrimitive.Viewport
-			{...stylex.props(alertDialogStyles.viewport)}
+			{...stylex.props(
+				alertDialogStyles.viewport,
+				bottomStickOnMobile &&
+					alertDialogStyles.viewportShellBottomStickOnMobile,
+				style,
+			)}
 			data-slot="alert-dialog-viewport"
-			{...props}
+			{...restProps}
 		/>
 	);
 }
@@ -66,12 +74,14 @@ type AlertDialogPopupProps = PropsWithStylex<
 	AlertDialogPrimitive.Popup.Props & {
 		showCloseButton?: boolean;
 		closeProps?: AlertDialogPrimitive.Close.Props;
+		bottomStickOnMobile?: boolean;
 	}
 >;
 
 function AlertDialogPopup({
 	children,
 	style,
+	bottomStickOnMobile = true,
 	showCloseButton = true,
 	closeProps,
 	...props
@@ -79,9 +89,13 @@ function AlertDialogPopup({
 	return (
 		<AlertDialogPortal>
 			<AlertDialogBackdrop />
-			<AlertDialogViewport>
+			<AlertDialogViewport bottomStickOnMobile={bottomStickOnMobile}>
 				<AlertDialogPrimitive.Popup
-					{...stylex.props(alertDialogStyles.popup, style)}
+					{...stylex.props(
+						alertDialogStyles.popup,
+						bottomStickOnMobile && alertDialogStyles.popupBottomStickOnMobile,
+						style,
+					)}
 					data-slot="alert-dialog-popup"
 					{...props}
 				>

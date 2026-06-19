@@ -115,6 +115,7 @@ const rootStyles = stylex.create({
 		fontFamily: fonts.display,
 		fontSize: "14px",
 		lineHeight: 1.5,
+		maxWidth:'100svw'
 	},
 });
 

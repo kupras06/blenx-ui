@@ -78,6 +78,24 @@ export const alertDialogStyles = stylex.create({
 			scale: 0.95,
 		},
 	},
+	viewportShellBottomStickOnMobile: {
+		"@media (max-width: 768px)": {
+			display: "flex",
+			alignItems: "flex-end",
+			justifyContent: "center",
+			padding: spacing.small,
+			paddingBottom: 0,
+		},
+	},
+	popupBottomStickOnMobile: {
+		"@media (max-width: 768px)": {
+			width: "100%",
+			maxWidth: "100%",
+			maxHeight: "90svh",
+			borderBottomLeftRadius: 0,
+			borderBottomRightRadius: 0,
+		},
+	},
 	closeButton: {
 		position: "absolute",
 		top: 4,

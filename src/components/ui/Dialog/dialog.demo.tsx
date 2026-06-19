@@ -32,7 +32,7 @@ export function DialogDemo() {
 					</Text>
 				</DialogPanel>
 				<DialogFooter>
-					<HStack gap="small" justify="end">
+					<HStack gap="small" justify="end" wrap>
 						<DialogClose render={<Button variant="ghost" />}>
 							Cancel
 						</DialogClose>

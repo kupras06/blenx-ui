@@ -44,7 +44,7 @@ export function AlertDialogDemo() {
 							</Text>
 						</AlertDialogPanel>
 						<AlertDialogFooter>
-							<HStack gap="small" justify="end">
+							<HStack gap="small" justify="end" wrap>
 								<AlertDialogClose render={<Button variant="ghost" />}>
 									Cancel
 								</AlertDialogClose>

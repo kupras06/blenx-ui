@@ -7,9 +7,9 @@ import { XIcon } from "@phosphor-icons/react";
 import * as stylex from "@stylexjs/stylex";
 import type React from "react";
 import type { _BaseDivProps, PropsWithStylex } from "@/utils/stylex.utils";
-import { Button } from "../Button/button";
 import { ScrollArea } from "../ScrollArea/scroll-area";
 import { dialogStyles } from "./dialog.styles";
+import { IconButton } from "../IconButton/icon-button";
 
 type ClassNameProp<State> = string | ((state: State) => string | undefined);
 
@@ -52,14 +52,21 @@ export function DialogBackdrop(
 		/>
 	);
 }
-type DialogViewportProps = PropsWithStylex<DialogPrimitive.Viewport.Props>;
+type DialogViewportProps = PropsWithStylex<DialogPrimitive.Viewport.Props> & {
+	bottomStickOnMobile?: boolean;
+};
 export function DialogViewport({
 	style,
+	bottomStickOnMobile,
 	...props
 }: DialogViewportProps): React.ReactElement {
 	return (
 		<DialogPrimitive.Viewport
-			{...stylex.props(dialogStyles.viewport, style)}
+			{...stylex.props(
+				dialogStyles.viewport,
+				bottomStickOnMobile && dialogStyles.viewportShellBottomStickOnMobile,
+				style,
+			)}
 			data-slot="dialog-viewport"
 			{...props}
 		/>
@@ -88,12 +95,7 @@ export function DialogPopup({
 	return (
 		<DialogPortal {...portalProps}>
 			<DialogBackdrop />
-			<DialogViewport
-				{...stylex.props(
-					dialogStyles.viewportShell,
-					bottomStickOnMobile && dialogStyles.viewportShellBottomStickOnMobile,
-				)}
-			>
+			<DialogViewport bottomStickOnMobile={bottomStickOnMobile}>
 				<DialogPrimitive.Popup
 					{...popupProps}
 					data-slot="dialog-popup"
@@ -103,8 +105,9 @@ export function DialogPopup({
 					{showCloseButton && (
 						<DialogPrimitive.Close
 							aria-label="Close"
-							className={stylex.props(dialogStyles.closeButton).className}
-							render={<Button size="small" variant="ghost" />}
+							render={
+								<IconButton variant="ghost" style={dialogStyles.closeButton} />
+							}
 							{...closeProps}
 						>
 							<XIcon />

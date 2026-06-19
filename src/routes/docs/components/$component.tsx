@@ -45,7 +45,7 @@ function ComponentDocPage() {
 	}
 
 	return (
-		<VStack gap="large">
+		<VStack gap="large" >
 			<VStack gap="small">
 				<DocHeading variant="h1" title={doc.title}>
 					{doc.title}
