@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "table",
+	"type": "registry:ui",
+	"title": "Table",
+	"description": "A simple styled table component with column definitions and row rendering.",
+	"files": [
+		{
+			"file": "table.tsx",
+			"type": "registry:ui",
+			"target": "@ui/Table/table.tsx"
+		},
+		{
+			"file": "table.styles.ts",
+			"type": "registry:file",
+			"target": "@ui/Table/table.styles.ts"
+		}
+	]
+}

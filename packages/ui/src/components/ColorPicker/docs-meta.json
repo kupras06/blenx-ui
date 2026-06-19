@@ -1,0 +1,9 @@
+{
+	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
+	"title": "Color Picker",
+	"description": "A color picker inside a popover. Uses react-colorful with hex input and color swatch preview.",
+	"category": "Forms",
+	"status": "stable",
+	"keywords": ["color", "picker", "color picker", "hex", "popover"],
+	"related": ["ColorSwatch", "Popover", "Field", "Button"]
+}

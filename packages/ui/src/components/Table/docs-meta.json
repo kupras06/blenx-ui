@@ -1,0 +1,12 @@
+{
+	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
+	"title": "Table",
+	"description": "A styled table component with column definitions, row data, cell alignment, and optional row event handlers.",
+	"category": "Data Display",
+	"status": "stable",
+	"keywords": ["table", "data", "grid", "rows", "columns"],
+	"related": [],
+	"accessibility": {
+		"aria": ["role", "aria-colcount"]
+	}
+}

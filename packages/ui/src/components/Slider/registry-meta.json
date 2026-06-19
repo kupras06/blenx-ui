@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "slider",
+	"type": "registry:ui",
+	"title": "Slider",
+	"description": "A StyleX Slider component.",
+	"files": [
+		{
+			"file": "slider.tsx",
+			"type": "registry:ui",
+			"target": "@ui/Slider/slider.tsx"
+		},
+		{
+			"file": "slider.styles.ts",
+			"type": "registry:file",
+			"target": "@ui/Slider/slider.styles.ts"
+		}
+	]
+}

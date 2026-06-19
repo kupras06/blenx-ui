@@ -1,0 +1,118 @@
+import * as stylex from "@stylexjs/stylex";
+import { theme } from "@/lib/theme/contract.stylex";
+import {
+	borderRadius,
+	fontSize,
+	fontWeight,
+	letterSpacing,
+	spacing,
+	zIndexVars,
+} from "@/lib/theme/tokens.stylex";
+
+export const menuStyles = stylex.create({
+	trigger: {
+		display: "inline-flex",
+		alignItems: "center",
+		justifyContent: "center",
+		cursor: "pointer",
+		backgroundColor: "transparent",
+		appearance: "none",
+		border: "none",
+		padding: 0,
+		outline: "none",
+		borderWidth: 0,
+		fontFamily: "inherit",
+		fontSize: "inherit",
+		color: "inherit",
+		borderRadius: borderRadius.medium,
+		transition: "background-color 0.15s ease, box-shadow 0.15s ease",
+		":focus-visible": {
+			boxShadow: `0 0 0 2px ${theme.borderStrong}`,
+		},
+	},
+	popup: {
+		backgroundColor: theme.surface,
+		borderWidth: 1,
+		borderStyle: "solid",
+		borderColor: theme.borderSubtle,
+		borderRadius: borderRadius.large,
+		boxShadow: theme.shadowXl,
+		zIndex: zIndexVars.floating,
+		padding: spacing.xsmall,
+		display: "flex",
+		gap: spacing[1],
+		flexDirection: "column",
+		minWidth: 224,
+		overflow: "hidden",
+		outline: "none",
+	},
+	item: {
+		display: "flex",
+		alignItems: "center",
+		gap: spacing.small,
+		minHeight: 24,
+		padding: `${spacing.xsmall} ${spacing.small}`,
+		borderRadius: theme.borderRadius,
+		color: theme.contentPrimary,
+		fontSize: fontSize.small,
+		fontWeight: fontWeight.medium,
+		lineHeight: 1.2,
+		textDecoration: "none",
+		textAlign: "left",
+		border: "none",
+		backgroundColor: "transparent",
+		cursor: "pointer",
+		appearance: "none",
+		outline: "none",
+		transition: "background-color 0.15s ease, color 0.15s ease",
+		":hover": {
+			backgroundColor: theme.backgroundSubtle,
+			color: theme.contentPrimary,
+		},
+		":focus-visible": {
+			backgroundColor: theme.backgroundSubtle,
+			color: theme.contentPrimary,
+			boxShadow: `0 0 0 2px ${theme.borderStrong} inset`,
+		},
+		":active": {
+			backgroundColor: theme.borderSubtle,
+		},
+	},
+	itemDestructive: {
+		color: theme.sentimentNegative,
+		":hover": {
+			backgroundColor: theme.sentimentNegativeSubtle,
+			color: theme.sentimentNegative,
+		},
+		":focus-visible": {
+			backgroundColor: theme.sentimentNegativeSubtle,
+			color: theme.sentimentNegative,
+			boxShadow: `0 0 0 2px ${theme.sentimentNegative} inset`,
+		},
+		":active": {
+			backgroundColor: theme.sentimentNegativeSubtle,
+		},
+	},
+	separator: {
+		height: 1,
+		backgroundColor: theme.borderSubtle,
+		border: "none",
+	},
+	groupLabel: {
+		padding: `${spacing.small} ${spacing.medium} ${spacing.xsmall}`,
+		fontSize: fontSize.xsmall,
+		fontWeight: fontWeight.semibold,
+		color: theme.contentSecondary,
+		textTransform: "uppercase",
+		letterSpacing: letterSpacing.wide,
+	},
+	inset: {
+		paddingLeft: 40,
+	},
+	shortcut: {
+		marginLeft: "auto",
+		color: theme.contentDisabled,
+		fontSize: fontSize.xsmall,
+		fontWeight: fontWeight.medium,
+	},
+});

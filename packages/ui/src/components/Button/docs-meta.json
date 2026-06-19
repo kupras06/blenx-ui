@@ -1,0 +1,13 @@
+{
+	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
+	"title": "Button",
+	"description": "A polymorphic button component with loading state, variant and size presets, full-width mode, and custom border radius. Built on Base UI useRender.",
+	"category": "Forms",
+	"status": "stable",
+	"keywords": ["button", "action", "click", "submit", "loading", "variant"],
+	"related": ["Spinner", "IconButton", "Toggle"],
+	"accessibility": {
+		"keyboard": ["Enter", "Space"],
+		"aria": ["aria-disabled", "aria-label", "aria-describedby"]
+	}
+}

@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "switch",
+	"type": "registry:ui",
+	"title": "Switch",
+	"description": "A StyleX Switch component.",
+	"registryDependencies": ["box"],
+	"files": [
+		{
+			"file": "switch.tsx",
+			"type": "registry:ui",
+			"target": "@ui/Switch/switch.tsx"
+		},
+		{
+			"file": "switch.styles.ts",
+			"type": "registry:file",
+			"target": "@ui/Switch/switch.styles.ts"
+		}
+	]
+}

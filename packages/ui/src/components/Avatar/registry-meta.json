@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "avatar",
+	"type": "registry:ui",
+	"title": "Avatar",
+	"description": "Avatar component from Blenx UI.",
+	"files": [
+		{
+			"file": "avatar.tsx",
+			"type": "registry:ui",
+			"target": "@ui/Avatar/avatar.tsx"
+		},
+		{
+			"file": "avatar.styles.ts",
+			"type": "registry:file",
+			"target": "@ui/Avatar/avatar.styles.ts"
+		}
+	]
+}

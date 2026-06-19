@@ -1,0 +1,19 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "checkbox",
+	"type": "registry:ui",
+	"title": "Checkbox",
+	"description": "A StyleX Checkbox component.",
+	"files": [
+		{
+			"file": "checkbox.tsx",
+			"type": "registry:ui",
+			"target": "@ui/Checkbox/checkbox.tsx"
+		},
+		{
+			"file": "checkbox.styles.ts",
+			"type": "registry:file",
+			"target": "@ui/Checkbox/checkbox.styles.ts"
+		}
+	]
+}

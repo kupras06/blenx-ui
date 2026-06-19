@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "dialog",
+	"type": "registry:ui",
+	"title": "Dialog",
+	"description": "A StyleX Dialog component.",
+	"registryDependencies": ["icon-button", "scroll-area"],
+	"files": [
+		{
+			"file": "dialog.tsx",
+			"type": "registry:ui",
+			"target": "@ui/Dialog/dialog.tsx"
+		},
+		{
+			"file": "dialog.styles.ts",
+			"type": "registry:file",
+			"target": "@ui/Dialog/dialog.styles.ts"
+		}
+	]
+}

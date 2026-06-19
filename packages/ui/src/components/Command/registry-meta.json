@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "command",
+	"type": "registry:ui",
+	"title": "Command",
+	"description": "A searchable command palette with groups, filtering, and keyboard navigation.",
+	"registryDependencies": ["scroll-area"],
+	"files": [
+		{
+			"file": "command.tsx",
+			"type": "registry:ui",
+			"target": "@ui/Command/command.tsx"
+		},
+		{
+			"file": "command.styles.ts",
+			"type": "registry:file",
+			"target": "@ui/Command/command.styles.ts"
+		}
+	]
+}

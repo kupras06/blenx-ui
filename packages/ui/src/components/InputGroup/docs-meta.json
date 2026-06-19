@@ -1,0 +1,9 @@
+{
+	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
+	"title": "Input Group",
+	"description": "A compound form control group with addon, label, input, textarea, menu, checkbox, and radio sub-components.",
+	"category": "Forms",
+	"status": "stable",
+	"keywords": ["input group", "fieldset", "addon", "form", "group"],
+	"related": ["Input", "Field", "Checkbox", "Radio"]
+}

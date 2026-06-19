@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "datepicker",
+	"type": "registry:ui",
+	"title": "DatePicker",
+	"description": "A StyleX Date Picker component.",
+	"registryDependencies": ["button", "calendar", "field", "popover"],
+	"files": [
+		{
+			"file": "date-picker.tsx",
+			"type": "registry:ui",
+			"target": "@ui/DatePicker/date-picker.tsx"
+		}
+	]
+}

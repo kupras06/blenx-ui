@@ -1,0 +1,13 @@
+{
+	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
+	"title": "Switch",
+	"description": "A toggle switch with thumb knob for on/off states. Built on Base UI Switch primitive.",
+	"category": "Forms",
+	"status": "stable",
+	"keywords": ["switch", "toggle", "on/off", "toggle switch"],
+	"related": ["Field"],
+	"accessibility": {
+		"keyboard": ["Enter", "Space"],
+		"aria": ["aria-checked", "aria-labelledby"]
+	}
+}

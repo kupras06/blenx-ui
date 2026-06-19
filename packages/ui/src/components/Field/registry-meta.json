@@ -1,0 +1,20 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "field",
+	"type": "registry:ui",
+	"title": "Field",
+	"description": "A StyleX Drawer component.",
+	"registryDependencies": ["button", "scroll-area"],
+	"files": [
+		{
+			"file": "field.tsx",
+			"type": "registry:ui",
+			"target": "@ui/Field/field.tsx"
+		},
+		{
+			"file": "field.styles.ts",
+			"type": "registry:file",
+			"target": "@ui/Field/field.styles.ts"
+		}
+	]
+}
