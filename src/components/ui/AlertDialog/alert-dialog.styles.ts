@@ -13,7 +13,7 @@ export const alertDialogStyles = stylex.create({
 	backdrop: {
 		position: "fixed",
 		inset: 0,
-		zIndex: zIndexVars.modal,
+		zIndex: zIndexVars.overlay,
 		backgroundColor: "rgba(0, 0, 0, 0.32)",
 		backdropFilter: "blur(4px)",
 		transitionProperty: "transform, opacity",

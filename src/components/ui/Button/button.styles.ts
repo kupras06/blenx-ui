@@ -201,6 +201,7 @@ export const buttonStyles = stylex.create({
 		borderRadius: theme.borderRadius,
 		cursor: "pointer",
 		fontWeight: 500,
+		width: "fit-content",
 		height: "fit-content",
 		fontSize: theme.fontSize,
 		fontFamily: fonts.display,

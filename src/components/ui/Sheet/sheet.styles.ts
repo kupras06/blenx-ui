@@ -7,6 +7,7 @@ import {
 	fontWeight,
 	mediaQueries,
 	spacing,
+	zIndexVars,
 } from "@/lib/theme/tokens.stylex";
 
 export const sheetStyles = stylex.create({
@@ -34,7 +35,7 @@ export const sheetStyles = stylex.create({
 	viewport: {
 		position: "fixed",
 		inset: 0,
-		zIndex: 50,
+		zIndex: zIndexVars.overlay,
 		boxSizing: "border-box",
 	},
 	viewportBottom: {

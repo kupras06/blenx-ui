@@ -11,9 +11,9 @@ import * as stylex from "@stylexjs/stylex";
 import type React from "react";
 import { createContext, useContext, useMemo } from "react";
 import type { _BaseDivProps, PropsWithStylex } from "@/utils/stylex.utils";
-import { Button } from "../Button/button";
 import { ScrollArea } from "../ScrollArea/scroll-area";
 import { drawerStyles } from "./drawer.styles";
+import { IconButton } from "../IconButton/icon-button";
 
 type DrawerPosition = "right" | "left" | "top" | "bottom";
 
@@ -184,16 +184,17 @@ export function DrawerPopup({
 					data-slot="drawer-popup"
 					{...props}
 				>
-					{children}
 					{showCloseButton && (
 						<DrawerPrimitive.Close
 							aria-label="Close"
-							className={stylex.props(drawerStyles.closeButton).className}
-							render={<Button size="small" variant="ghost" />}
+							render={
+								<IconButton variant="ghost" style={drawerStyles.closeButton} />
+							}
 						>
 							<XIcon />
 						</DrawerPrimitive.Close>
-					)}
+					)}{" "}
+					{children}
 					{showBar && <DrawerBar />}
 				</DrawerPrimitive.Popup>
 			</DrawerViewport>

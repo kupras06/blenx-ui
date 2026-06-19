@@ -4,7 +4,7 @@
 	"type": "registry:ui",
 	"title": "Alert Dialog",
 	"description": "A dialog component for displaying alerts.",
-	"registryDependencies": ["button", "scroll-area"],
+	"registryDependencies": ["icon-button", "scroll-area"],
 	"files": [
 		{
 			"file": "alert-dialog.tsx",

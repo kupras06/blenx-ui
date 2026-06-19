@@ -4,7 +4,7 @@
 	"type": "registry:ui",
 	"title": "Drawer",
 	"description": "A StyleX Drawer component.",
-	"registryDependencies": ["button", "scroll-area"],
+	"registryDependencies": ["icon-button", "scroll-area"],
 	"files": [
 		{
 			"file": "drawer.tsx",

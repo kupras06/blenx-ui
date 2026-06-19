@@ -4,7 +4,7 @@
 	"type": "registry:ui",
 	"title": "IconButton",
 	"description": "IconButton component from Blenx UI.",
-	"registryDependencies": ["icon", "spinner"],
+	"registryDependencies": ["button"],
 	"files": [
 		{
 			"file": "icon-button.tsx",

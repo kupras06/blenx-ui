@@ -67,14 +67,14 @@ export function DialogViewport({
 }
 
 export function DialogPopup({
-	className,
+	style,
 	children,
 	showCloseButton = true,
 	bottomStickOnMobile = true,
 	closeProps,
 	portalProps,
 	...props
-}: DialogPrimitive.Popup.Props & {
+}: PropsWithStylex<DialogPrimitive.Popup.Props> & {
 	showCloseButton?: boolean;
 	bottomStickOnMobile?: boolean;
 	closeProps?: DialogPrimitive.Close.Props;
@@ -83,6 +83,7 @@ export function DialogPopup({
 	const popupProps = stylex.props(
 		dialogStyles.popup,
 		bottomStickOnMobile && dialogStyles.popupBottomStickOnMobile,
+		style,
 	);
 	return (
 		<DialogPortal {...portalProps}>
@@ -94,7 +95,7 @@ export function DialogPopup({
 				)}
 			>
 				<DialogPrimitive.Popup
-					className={mergeClassName(popupProps.className ?? "", className)}
+					{...popupProps}
 					data-slot="dialog-popup"
 					{...props}
 				>

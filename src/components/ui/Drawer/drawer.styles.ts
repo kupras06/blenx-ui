@@ -7,6 +7,7 @@ import {
 	fontWeight,
 	mediaQueries,
 	spacing,
+	zIndexVars,
 } from "@/lib/theme/tokens.stylex";
 
 export const drawerStyles = stylex.create({
@@ -58,7 +59,7 @@ export const drawerStyles = stylex.create({
 	viewport: {
 		position: "fixed",
 		inset: 0,
-		zIndex: 50,
+		zIndex: zIndexVars.overlay,
 		touchAction: "none",
 		boxSizing: "border-box",
 	},

@@ -7,9 +7,9 @@ import { XIcon } from "@phosphor-icons/react";
 import * as stylex from "@stylexjs/stylex";
 import type React from "react";
 import type { _BaseDivProps, PropsWithStylex } from "@/utils/stylex.utils";
-import { Button } from "../Button/button";
 import { ScrollArea } from "../ScrollArea/scroll-area";
 import { sheetStyles } from "./sheet.styles";
+import { IconButton } from "../IconButton/icon-button";
 
 type Side = "right" | "left" | "top" | "bottom";
 
@@ -111,8 +111,9 @@ export function SheetPopup({
 					{showCloseButton && (
 						<SheetPrimitive.Close
 							aria-label="Close"
-							className={stylex.props(sheetStyles.closeButton).className}
-							render={<Button size="icon" variant="ghost" />}
+							render={
+								<IconButton variant="ghost" style={sheetStyles.closeButton} />
+							}
 							{...closeProps}
 						>
 							<XIcon />

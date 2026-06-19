@@ -4,7 +4,7 @@
 	"type": "registry:ui",
 	"title": "Dialog",
 	"description": "A StyleX Dialog component.",
-	"registryDependencies": ["button", "scroll-area"],
+	"registryDependencies": ["icon-button", "scroll-area"],
 	"files": [
 		{
 			"file": "dialog.tsx",

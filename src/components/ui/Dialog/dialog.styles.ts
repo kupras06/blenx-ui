@@ -21,7 +21,7 @@ export const dialogStyles = stylex.create({
 	viewport: {
 		position: "fixed",
 		inset: 0,
-		zIndex: 50,
+		zIndex: 51,
 		display: "grid",
 		gridTemplateRows: "1fr auto 3fr",
 		justifyItems: "center",

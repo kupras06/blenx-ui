@@ -4,7 +4,7 @@
 	"type": "registry:ui",
 	"title": "Sheet",
 	"description": "A StyleX Sheet component built on Base UI Dialog primitives.",
-	"registryDependencies": ["button", "scroll-area"],
+	"registryDependencies": ["icon-button", "scroll-area"],
 	"files": [
 		{
 			"file": "sheet.tsx",

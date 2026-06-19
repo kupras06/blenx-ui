@@ -18,7 +18,13 @@ export function SheetDemo() {
 		<VStack gap="medium">
 			<Text variant="h6">Sheet</Text>
 			<Sheet>
-				<SheetTrigger render={<Button variant="outline">Open Sheet</Button>} />
+				<SheetTrigger
+					render={
+						<Button variant="outline" size="small">
+							Open Sheet
+						</Button>
+					}
+				/>
 				<SheetPopup side="right">
 					<SheetHeader>
 						<SheetTitle>Edit Profile</SheetTitle>
