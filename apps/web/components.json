@@ -13,8 +13,8 @@
   "iconLibrary": "lucide",
   "aliases": {
     "components": "@/components",
-    "utils": "@blenx-repo/ui/lib/utils",
-    "ui": "@blenx-repo/ui/components",
+    "utils": "@blenx-dev/ui/lib/utils",
+    "ui": "@blenx-dev/ui/components",
     "lib": "@/lib",
     "hooks": "@/hooks"
   },

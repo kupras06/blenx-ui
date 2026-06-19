@@ -1,4 +1,4 @@
-import { cn } from "@blenx-repo/ui/lib/utils";
+import { cn } from "@blenx-dev/ui/lib/utils";
 import * as React from "react";
 
 function Card({

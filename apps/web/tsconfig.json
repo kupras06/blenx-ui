@@ -21,7 +21,7 @@
     "noUncheckedSideEffectImports": true,
     "paths": {
       "@/*": ["./src/*"],
-      "@blenx-repo/ui/*": ["../../packages/ui/src/*"]
+      "@blenx-dev/ui/*": ["../../packages/ui/src/*"]
     }
   }
 }

@@ -1,3 +1,3 @@
 {
-  "extends": "@blenx-repo/config/tsconfig.base.json"
+  "extends": "@blenx-dev/config/tsconfig.base.json"
 }

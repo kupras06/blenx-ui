@@ -1,5 +1,5 @@
 {
-  "name": "blenx-repo",
+  "name": "blenx-dev",
   "private": true,
   "workspaces": {
     "packages": [
@@ -27,12 +27,12 @@
     "check": "oxlint && oxfmt --write"
   },
   "dependencies": {
-    "@blenx-repo/env": "workspace:*",
+    "@blenx-dev/env": "workspace:*",
     "dotenv": "catalog:",
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@blenx-repo/config": "workspace:*",
+    "@blenx-dev/config": "workspace:*",
     "@types/node": "catalog:",
     "lefthook": "^2.1.9",
     "oxfmt": "^0.53.0",

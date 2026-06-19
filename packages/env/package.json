@@ -1,5 +1,5 @@
 {
-  "name": "@blenx-repo/env",
+  "name": "@blenx-dev/env",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -13,7 +13,7 @@
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@blenx-repo/config": "workspace:*",
+    "@blenx-dev/config": "workspace:*",
     "@types/node": "catalog:",
     "typescript": "catalog:"
   }

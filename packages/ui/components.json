@@ -12,11 +12,11 @@
   },
   "iconLibrary": "lucide",
   "aliases": {
-    "components": "@blenx-repo/ui/components",
-    "utils": "@blenx-repo/ui/lib/utils",
-    "hooks": "@blenx-repo/ui/hooks",
-    "lib": "@blenx-repo/ui/lib",
-    "ui": "@blenx-repo/ui/components"
+    "components": "@blenx-dev/ui/components",
+    "utils": "@blenx-dev/ui/lib/utils",
+    "hooks": "@blenx-dev/ui/hooks",
+    "lib": "@blenx-dev/ui/lib",
+    "ui": "@blenx-dev/ui/components"
   },
   "menuColor": "default",
   "menuAccent": "subtle",
