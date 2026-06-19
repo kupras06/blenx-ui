@@ -1,22 +1,3 @@
 {
-	"$schema": "./node_modules/oxfmt/configuration_schema.json",
-	"useTabs": true,
-	"tabWidth": 2,
-	"printWidth": 80,
-	"singleQuote": false,
-	"jsxSingleQuote": false,
-	"quoteProps": "as-needed",
-	"trailingComma": "all",
-	"semi": true,
-	"arrowParens": "always",
-	"bracketSameLine": false,
-	"bracketSpacing": true,
-	"ignorePatterns": [
-		"**/src/routeTree.gen.ts",
-		"**/src/styles.css",
-		"**/src/components/ui/Grid/responsiveGrid.styles.ts",
-		"**/node_modules",
-		"**/dist",
-		"**/public"
-	]
+  "ignorePatterns": []
 }

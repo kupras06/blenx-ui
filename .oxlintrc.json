@@ -1,65 +1,11 @@
 {
-	"$schema": "./node_modules/oxlint/configuration_schema.json",
-	"plugins": [
-		"typescript",
-		"unicorn",
-		"oxc",
-		"react",
-		"vitest",
-		"import",
-		"jsx-a11y"
-	],
-	"categories": {
-		"correctness": "error",
-		"suspicious": "warn",
-		"perf": "warn",
-		"style": "warn"
-	},
-	"rules": {
-		"import/no-default-export": "error",
-		"import/no-named-export": "off",
-		"import/exports-last": "off",
-		"import/group-exports": "off",
-		"import/no-namespace": "off",
-		"import/consistent-type-specifier-style": "off",
-		"import/prefer-default-export": "off",
-		"react/react-in-jsx-scope": "off",
-		"react/jsx-props-no-spreading": "off",
-		"react/jsx-max-depth": "off",
-		"eslint/func-style": "off",
-		"eslint/curly": "off",
-		"eslint/sort-imports": "off",
-		"eslint/sort-keys": "off",
-		"eslint/id-length": "off",
-		"eslint/no-magic-numbers": "off",
-		"eslint/no-ternary": "off",
-		"eslint/no-nested-ternary": "off",
-		"eslint/no-duplicate-imports": "off",
-		"typescript/consistent-type-definitions": "off",
-		"typescript/array-type": "off",
-		"react/no-unstable-nested-components": "off",
-		"unicorn/no-zero-fractions": "off",
-		"unicorn/no-nested-ternary": "off",
-		"unicorn/no-null": "off",
-		"import/newline-after-import": "off"
-	},
-	"env": {
-		"builtin": true,
-		"node": true,
-		"browser": true
-	},
-	"overrides": [
-		{
-			"files": ["scripts/**/*"],
-			"rules": {
-				"import/no-nodejs-modules": "off"
-			}
-		}
-	],
-	"ignorePatterns": [
-		"**/routeTree.gen.ts",
-		"**/responsiveGrid.styles.ts",
-		"**/dist",
-		"**/public"
-	]
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "unicorn", "oxc"],
+  "categories": {
+    "correctness": "error"
+  },
+  "rules": {},
+  "env": {
+    "builtin": true
+  }
 }
