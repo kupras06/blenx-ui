@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { DocHeading } from "@/components/docs/doc-heading";
-import { Grid, Separator, Surface, Text, VStack } from "@/components/ui";
+import { CodeBlock, Grid, Separator, Surface, Text, VStack } from "@/components/ui";
 
 export const Route = createFileRoute("/docs/primitives")({
 	component: PrimitivesDoc,
@@ -31,8 +31,8 @@ function PrimitivesDoc() {
 
 			<VStack gap="medium" paddingY="medium">
 				<DocHeading variant="h2" title="Component Architecture" />
-				<Surface variant="sunken" padding="medium" render={<pre />}>
-					<code>{`// Base UI handles behavior and accessibility
+				<CodeBlock
+					code={`// Base UI handles behavior and accessibility
 import { useRender } from "@base-ui/react/use-render";
 
 // Stylex handles visual styling
@@ -44,8 +44,8 @@ export function Button({ render, ...props }) {
     props: stylex.props(buttonStyles.base, props),
     render,
   });
-}`}</code>
-				</Surface>
+}`}
+				/>
 			</VStack>
 
 			<Separator tone="subtle" />
@@ -109,15 +109,15 @@ export function Button({ render, ...props }) {
 					prop that lets you override the rendered HTML element. This makes the
 					library highly composable:
 				</Text>
-				<Surface variant="sunken" padding="medium" render={<pre />}>
-					<Text variant="code">{`// Render Button as a link
+				<CodeBlock
+					code={`// Render Button as a link
 <Button render={<a href="/page" />}>Go</Button>
 
 // Compose Dialog close as a Button
 <DialogPrimitive.Close render={<Button size="small" />}>
   <XIcon />
-</DialogPrimitive.Close>`}</Text>
-				</Surface>
+</DialogPrimitive.Close>`}
+				/>
 			</VStack>
 		</>
 	);

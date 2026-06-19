@@ -1,7 +1,6 @@
-import { Badge } from "../ui";
+import { Badge, CodeBlock } from "../ui";
 import { Separator } from "../ui/Separator/separator";
 import { HStack, VStack } from "../ui/Stack/stack";
-import { Surface } from "../ui/Surface/surface";
 import { Text } from "../ui/Text/text";
 import { DocCodeView } from "./doc-code-view";
 
@@ -34,9 +33,7 @@ function DocInstallation({
 				<Text variant="body2" color="secondary">
 					Install the component using the shadcn CLI:
 				</Text>
-				<Surface padding="small" variant="sunken">
-					<Text variant="code">{`npx shadcn@latest add "${cliUrl}"`}</Text>
-				</Surface>
+				<CodeBlock language="bash" code={`npx shadcn@latest add "${cliUrl}"`} />
 			</VStack>
 
 			<Separator />

@@ -42,7 +42,7 @@ export async function highlightCode(
 }
 
 function escapeHtml(code: string): string {
-	return `<pre class="shiki"><code>${code
+	return `<pre class="shiki shiki-themes"><code>${code
 		.replace(/&/g, "&amp;")
 		.replace(/</g, "&lt;")
 		.replace(/>/g, "&gt;")}</code></pre>`;

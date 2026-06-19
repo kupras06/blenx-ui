@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { DocHeading } from "@/components/docs/doc-heading";
-import { Box, Separator, Surface, Text, VStack } from "@/components/ui";
+import { Box, CodeBlock, Separator, Text, VStack } from "@/components/ui";
 
 export const Route = createFileRoute("/docs/theming")({
 	component: ThemingDoc,
@@ -36,9 +36,8 @@ function ThemingDoc() {
 					</Text>
 
 					<DocHeading variant="h3" title="1. Create a theme file" />
-					<Surface variant="sunken" padding="medium" render={<pre />}>
-						<Text variant="code">
-							{`// styles/my-theme.stylex.ts
+					<CodeBlock
+						code={`// styles/my-theme.stylex.ts
 import * as stylex from "@stylexjs/stylex";
 import { theme } from "@blenx-dev/theme/contract.stylex";
 
@@ -62,13 +61,11 @@ export const myTheme = stylex.createTheme(theme, {
 
   focusRing: "#6C63FF",
 });`}
-						</Text>
-					</Surface>
+					/>
 
 					<DocHeading variant="h3" title="2. Apply to root element" />
-					<Surface variant="sunken" padding="medium" render={<pre />}>
-						<Text variant="code">
-							{`// React — wrap your app root
+					<CodeBlock
+						code={`// React — wrap your app root
 import * as stylex from "@stylexjs/stylex";
 import { myTheme } from "./styles/my-tokens.stylex";
 
@@ -79,11 +76,9 @@ function App() {
     </div>
   );
 }`}
-						</Text>
-					</Surface>
-					<Surface variant="sunken" padding="medium" render={<pre />}>
-						<Text variant="code">
-							{`// Next.js — apply to the body or a layout wrapper
+					/>
+					<CodeBlock
+						code={`// Next.js — apply to the body or a layout wrapper
 // app/layout.tsx
 import { myTheme } from "@/styles/my-tokens.stylex";
 
@@ -96,19 +91,16 @@ export default function RootLayout({ children }) {
     </html>
   );
 }`}
-						</Text>
-					</Surface>
+					/>
 
 					<DocHeading variant="h3" title="Available Imports" />
-					<Surface variant="sunken" padding="medium" render={<pre />}>
-						<Text variant="code">
-							{`// Import the contract for createTheme
+					<CodeBlock
+						code={`// Import the contract for createTheme
 import { theme } from "@blenx-dev/theme/contract.stylex";
 
 // Or use the convenience re-exports
 import { theme, borderRadius, spacing, fontSize } from "@/lib/theme/tokens.stylex";`}
-						</Text>
-					</Surface>
+					/>
 				</VStack>
 			</Box>
 

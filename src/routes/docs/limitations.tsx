@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { DocHeading } from "@/components/docs/doc-heading";
-import { Box, Separator, Surface, Text, VStack } from "@/components/ui";
+import { Box, CodeBlock, Separator, Text, VStack } from "@/components/ui";
 
 export const Route = createFileRoute("/docs/limitations")({
 	component: LimitationsDoc,
@@ -184,13 +184,14 @@ function LimitationsDoc() {
 						JavaScript-level theme switching without updating component source
 						code.
 					</Text>
-					<Surface variant="sunken" padding="medium" render={<pre />}>
-						<Text>{`/* Override theme tokens in your CSS */
+					<CodeBlock
+						language="css"
+						code={`/* Override theme tokens in your CSS */
 :root {
   --primary: #your-color;
   --background: #your-bg;
-}`}</Text>
-					</Surface>
+}`}
+					/>
 				</VStack>
 			</Box>
 		</VStack>

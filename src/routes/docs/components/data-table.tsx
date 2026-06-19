@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { DocHeading } from "@/components/docs/doc-heading";
 import {
 	Box,
+	CodeBlock,
 	Grid,
 	Separator,
-	Surface,
 	Table,
 	Text,
 	VStack,
@@ -180,13 +180,9 @@ function DataTableDoc() {
 				<Text>
 					Add the DataTable component and its sub-components via the shadcn CLI:
 				</Text>
-				<Surface padding="small" variant="sunken">
-					<Text variant="code">npx shadcn@latest add data-table</Text>
-				</Surface>
+				<CodeBlock language="bash" code="npx shadcn@latest add data-table" />
 				<Text>You also need TanStack Table as a peer dependency:</Text>
-				<Surface padding="small" variant="sunken">
-					<Text variant="code">npm install @tanstack/react-table</Text>
-				</Surface>
+				<CodeBlock language="bash" code="npm install @tanstack/react-table" />
 			</Box>
 
 			<Separator tone="subtle" />
@@ -195,9 +191,8 @@ function DataTableDoc() {
 			<Box>
 				<DocHeading variant="h2" title="Quick Start" />
 				<Text>Basic client-side table with sorting and pagination:</Text>
-				<Surface padding="small" variant="sunken">
-					<Text variant="code">
-						{`import { DataTable } from "@/components/ui"
+				<CodeBlock
+					code={`import { DataTable } from "@/components/ui"
 import { createColumnHelper } from "@tanstack/react-table"
 
 interface User {
@@ -224,8 +219,7 @@ function UsersPage() {
     />
   )
 }`}
-					</Text>
-				</Surface>
+				/>
 			</Box>
 			<Separator tone="subtle" />
 
@@ -273,9 +267,8 @@ function UsersPage() {
 					provide <Text variant="code">pageCount</Text>. Use the{" "}
 					<Text variant="code">callbacks</Text> prop to handle state changes:
 				</Text>
-				<Surface padding="small" variant="sunken">
-					<Text variant="code">
-						{`function ServerTable() {
+				<CodeBlock
+					code={`function ServerTable() {
   const [sorting, setSorting] = useState<SortingState>([])
   const [pagination, setPagination] = useState({
     pageIndex: 0, pageSize: 10,
@@ -300,8 +293,7 @@ function UsersPage() {
     />
   )
 }`}
-					</Text>
-				</Surface>
+				/>
 
 				<DocHeading variant="h3" title="Infinite Mode" />
 				<Text>
@@ -309,9 +301,8 @@ function UsersPage() {
 					append pages as the user scrolls. Supports auto (IntersectionObserver)
 					and manual ("Load more" button) modes:
 				</Text>
-				<Surface padding="small" variant="sunken">
-					<Text variant="code">
-						{`function InfiniteTable() {
+				<CodeBlock
+					code={`function InfiniteTable() {
   const { data, fetchNextPage, hasNextPage,
           isFetchingNextPage, isLoading } =
     useInfiniteQuery({
@@ -339,8 +330,7 @@ function UsersPage() {
     />
   )
 }`}
-					</Text>
-				</Surface>
+				/>
 			</VStack>
 
 			<Separator tone="subtle" />
@@ -448,9 +438,8 @@ function UsersPage() {
 					Override any built-in state component using the{" "}
 					<Text variant="code">slots</Text> prop:
 				</Text>
-				<Surface padding="small" variant="sunken">
-					<Text variant="code">
-						{`function CustomTable() {
+				<CodeBlock
+					code={`function CustomTable() {
   const { data } = useQuery(...)
 
   return (
@@ -467,8 +456,7 @@ function UsersPage() {
     />
   )
 }`}
-					</Text>
-				</Surface>
+				/>
 			</Box>
 
 			<Separator tone="subtle" />
@@ -479,9 +467,8 @@ function UsersPage() {
 				<Text>
 					Define per-row action buttons with optional icons and disabled state:
 				</Text>
-				<Surface padding="small" variant="sunken">
-					<Text variant="code">
-						{`function ActionsTable() {
+				<CodeBlock
+					code={`function ActionsTable() {
   return (
     <DataTable
       columns={columns}
@@ -504,8 +491,7 @@ function UsersPage() {
     />
   )
 }`}
-					</Text>
-				</Surface>
+				/>
 			</Box>
 
 			<Separator tone="subtle" />

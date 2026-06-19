@@ -1,4 +1,4 @@
-import { Accordion, Box, Text } from "@/components/ui";
+import { Accordion, Box, CodeBlock, Text } from "@/components/ui";
 
 const semanticCode = `// Semantic tokens (what you edit)
 export const theme = stylex.defineVars({
@@ -55,7 +55,7 @@ export function HowItWorks() {
 					:
 				</Text>
 				<Box paddingY="medium">
-					<Text variant="code">{semanticCode}</Text>
+					<CodeBlock code={semanticCode} />
 				</Box>
 				<Text variant="p">
 					<Text variant="body2" weight="bold">
@@ -66,10 +66,10 @@ export function HowItWorks() {
 				</Text>
 				<Text variant="code" color="accent">
 					stylex.defineVars():
-					<Box paddingY="medium">
-						<Text variant="code">{concreteCode}</Text>
-					</Box>
 				</Text>
+				<Box paddingY="medium">
+					<CodeBlock code={concreteCode} />
+				</Box>
 				<Text variant="p">
 					When you customize tokens in the Theme Builder, the preview wraps
 					components in a{" "}
@@ -91,7 +91,7 @@ export function HowItWorks() {
 					</Text>{" "}
 					call:
 				</Text>
-				<Text variant="code">{runtimeCode}</Text>
+				<CodeBlock code={runtimeCode} />
 			</Accordion.Panel>
 		</Accordion.Item>
 	);

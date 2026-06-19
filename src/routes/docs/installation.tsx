@@ -4,7 +4,6 @@ import {
 	Box,
 	CodeBlock,
 	Separator,
-	Surface,
 	Text,
 	VStack,
 } from "@/components/ui";
@@ -100,10 +99,11 @@ npx shadcn@latest add @blenx-dev/button`}
 					<Text variant="body2" color="secondary">
 						Each component may require installing additional packages:
 					</Text>
-					<Surface variant="sunken" padding="medium" render={<pre />}>
-						<code>{`npm install @stylexjs/stylex @base-ui/react @phosphor-icons/react
-# Plus optional: react-day-picker, date-fns, react-colorful`}</code>
-					</Surface>
+					<CodeBlock
+						language="bash"
+						code={`npm install @stylexjs/stylex @base-ui/react @phosphor-icons/react
+# Plus optional: react-day-picker, date-fns, react-colorful`}
+					/>
 				</VStack>
 			</Box>
 

@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { DocHeading } from "@/components/docs/doc-heading";
-import { Box, Separator, Surface, Text, VStack } from "@/components/ui";
+import { Box, CodeBlock, Separator, Text, VStack } from "@/components/ui";
 
 export const Route = createFileRoute("/docs/styling")({
 	component: StylingDoc,
@@ -40,8 +40,8 @@ function StylingDoc() {
 						</Text>
 						:
 					</Text>
-					<Surface variant="sunken" padding="medium" render={<pre />}>
-						<Text variant="code">{`export const theme = stylex.defineVars({
+					<CodeBlock
+						code={`export const theme = stylex.defineVars({
   primary: "",
   background: "",
   surface: "",
@@ -51,8 +51,8 @@ function StylingDoc() {
   focusRing: "",
   shadowSm: "",
   // ...
-});`}</Text>
-					</Surface>
+});`}
+					/>
 					<Text variant="body2" color="secondary">
 						Theme tokens support automatic light/dark mode via media queries.
 						See <a href="/docs/theming">Theming</a> for details on customizing
@@ -73,14 +73,14 @@ function StylingDoc() {
 					, which merges multiple style definitions and applies them as atomic
 					classes:
 				</Text>
-				<Surface variant="sunken" padding="medium" render={<pre />}>
-					<code>{`const resolved = stylex.props(
+				<CodeBlock
+					code={`const resolved = stylex.props(
   buttonStyles.base,
   variantStyles[variant],
   sizeStyles[size],
   style,          // overrides via prop
-);`}</code>
-				</Surface>
+);`}
+				/>
 			</VStack>
 			<Separator tone="subtle" />
 
