@@ -5,7 +5,7 @@ import { HStack, VStack } from "@/components/ui/Stack/stack";
 import type { PropsWithStylex } from "@/utils/stylex.utils";
 import { heroStyles } from "./hero-01.styles";
 import { ImageIcon } from "@phosphor-icons/react";
-import { Container, Icon } from "@/components/ui";
+import { Container, Icon } from "@blenx-dev/ui/components";;
 
 type Cta = {
 	label: string;

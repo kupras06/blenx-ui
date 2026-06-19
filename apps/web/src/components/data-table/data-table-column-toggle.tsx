@@ -5,7 +5,7 @@ import {
 	MenuPopup,
 	MenuSeparator,
 	MenuTrigger,
-} from "@/components/ui";
+} from "@blenx-dev/ui/components";;
 import { theme } from "@/lib/theme/contract.stylex";
 import { ListIcon } from "@phosphor-icons/react";
 import * as stylex from "@stylexjs/stylex";

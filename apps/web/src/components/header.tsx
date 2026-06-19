@@ -6,7 +6,7 @@ import { GITHUB_URL } from "@/constants";
 import { theme } from "@/lib/theme/contract.stylex";
 import { fontSize, letterSpacing, spacing } from "@/lib/theme/tokens.stylex";
 import { useSidebarStore } from "@/stores/docs-sidebar";
-import { Button, Container, HStack, IconButton, Separator } from "./ui";
+import { Button, Container, HStack, IconButton, Separator } from "@blenx-dev/ui/components";
 import { darkTheme, lightTheme } from "@/lib/app-theme.stylex";
 import { useEffect } from "react";
 

@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import * as stylex from "@stylexjs/stylex";
-import { Box, Text } from "@/components/ui";
+import { Box, Text } from "@blenx-dev/ui/components";;
 import { theme } from "@/lib/theme/contract.stylex";
 import {
 	borderRadius,

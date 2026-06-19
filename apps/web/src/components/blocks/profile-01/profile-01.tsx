@@ -13,7 +13,7 @@ import {
 import { Switch } from "@/components/ui/Switch/switch";
 import { HStack, VStack } from "@/components/ui/Stack/stack";
 import type { PropsWithStylex } from "@/utils/stylex.utils";
-import { Box, Container, Field, FieldLabel } from "@/components/ui";
+import { Box, Container, Field, FieldLabel } from "@blenx-dev/ui/components";;
 
 type NotificationSetting = {
 	key: string;

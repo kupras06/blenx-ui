@@ -13,7 +13,7 @@ import {
 	FieldLabel,
 	HStack,
 	VStack,
-} from "@/components/ui";
+} from "@blenx-dev/ui/components";;
 
 type Props = PropsWithStylex<{
 	title?: string;

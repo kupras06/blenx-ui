@@ -1,9 +1,0 @@
-{
-	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
-	"title": "Field",
-	"description": "A form field wrapper with accessible label, description, error, and validity wiring for form controls.",
-	"category": "Forms",
-	"status": "stable",
-	"keywords": ["field", "form", "label", "error", "validation", "input"],
-	"related": ["Input", "Select", "Textarea", "ColorPicker", "DatePicker"]
-}

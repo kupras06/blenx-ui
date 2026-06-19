@@ -5,14 +5,14 @@ import {
 	themeTransition,
 	type ColorProps,
 	type SpacingProps,
-} from "@/utils/base.styles";
+} from "@blenx-dev/ui/utils/base.styles";
 import {
 	resolvePaddingStyles,
 	resolveMarginStyles,
 	resolveDisplayStyles,
 	type BorderRadiusProp,
 	type LayoutProps,
-} from "@/utils/layout.styles";
+} from "@blenx-dev/ui/utils/layout.styles";
 import type { _BaseDivProps } from "@/utils/stylex.utils";
 import { boxSizeStyles, boxStyles } from "./box.styles";
 

@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui";
+import { Button } from "@blenx-dev/ui/components";;
 import { theme } from "@/lib/theme/contract.stylex";
 import { fontSize, spacing } from "@/lib/theme/tokens.stylex";
 import { CaretLeftIcon, CaretRightIcon } from "@phosphor-icons/react";

@@ -1,6 +1,6 @@
 import * as stylex from "@stylexjs/stylex";
 import { Link, useLocation } from "@tanstack/react-router";
-import { Box, Surface, Text, VStack } from "@/components/ui";
+import { Box, Surface, Text, VStack } from "@blenx-dev/ui/components";
 
 const BLOCK_SECTIONS = [
 	{

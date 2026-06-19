@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/Badge/badge";
 import { Surface } from "@/components/ui/Surface/surface";
 import type { Column } from "@/components/ui/Table/table";
 import type { PropsWithStylex } from "@/utils/stylex.utils";
-import { Container, Grid, HStack, VStack } from "@/components/ui";
+import { Container, Grid, HStack, VStack } from "@blenx-dev/ui/components";;
 
 type Kpi = {
 	label: string;

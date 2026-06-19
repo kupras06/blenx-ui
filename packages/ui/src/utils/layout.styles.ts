@@ -1,5 +1,5 @@
 import * as stylex from "@stylexjs/stylex";
-import { borderRadius, spacing } from "@/lib/theme/tokens.stylex";
+import { borderRadius, spacing } from "@blenx-dev/ui/lib/theme/tokens.stylex";
 import {
 	bgColorStyles,
 	colorStyles,
@@ -7,7 +7,7 @@ import {
 	type MarginProps,
 	type PaddingProps,
 } from "./base.styles";
-import type { BoxProps } from "@blenx-dev/ui/components";;
+import type { BoxProps } from "@/components/ui";
 
 export const displayStyles = stylex.create({
 	block: { display: "block" },

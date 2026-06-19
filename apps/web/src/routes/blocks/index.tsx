@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { DocHeading } from "@/components/docs/doc-heading";
-import { Box, Separator, Text, VStack } from "@/components/ui";
+import { Box, Separator, Text, VStack } from "@blenx-dev/ui/components";;
 
 export const Route = createFileRoute("/blocks/")({
 	component: BlocksHome,

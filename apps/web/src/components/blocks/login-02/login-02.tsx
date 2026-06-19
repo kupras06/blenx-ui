@@ -13,7 +13,7 @@ import {
 	FieldLabel,
 	Progress,
 	VStack,
-} from "@/components/ui";
+} from "@blenx-dev/ui/components";;
 import { ArrowLeftIcon } from "@phosphor-icons/react";
 
 type Props = PropsWithStylex<{

@@ -1,7 +1,7 @@
 import { createRouter as createTanStackRouter } from "@tanstack/react-router";
-import { Spinner } from "@/components/ui";
 import { queryClient } from "@/lib/query-client";
 import { routeTree } from "./routeTree.gen";
+import { Spinner } from "@blenx-dev/ui/components";
 
 export const getRouter = () => {
 	const router = createTanStackRouter({

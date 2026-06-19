@@ -3,7 +3,7 @@ import { Text } from "@/components/ui/Text/text";
 import { VStack, HStack } from "@/components/ui/Stack/stack";
 import { Card, CardBody } from "@/components/ui/Card/card";
 import type { PropsWithStylex } from "@/utils/stylex.utils";
-import { Box, Container } from "@/components/ui";
+import { Box, Container } from "@blenx-dev/ui/components";;
 
 type Action = {
 	label: string;

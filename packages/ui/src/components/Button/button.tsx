@@ -1,7 +1,7 @@
 import { mergeProps } from "@base-ui/react/merge-props";
 import { Button as ButtonPrimitive } from "@base-ui/react/button";
 import * as stylex from "@stylexjs/stylex";
-import { borderRadiusStyles } from "@/utils/layout.styles";
+import { borderRadiusStyles } from "@blenx-dev/ui/utils/layout.styles";
 import type { PropsWithStylex } from "@/utils/stylex.utils";
 import { Spinner } from "../Spinner/spinner";
 import {

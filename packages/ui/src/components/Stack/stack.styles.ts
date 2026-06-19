@@ -1,5 +1,5 @@
 import * as stylex from "@stylexjs/stylex";
-import { spacing } from "@/lib/theme/tokens.stylex";
+import { spacing } from "@blenx-dev/ui/lib/theme/tokens.stylex";
 
 export const stackDirectionStyles = stylex.create({
 	column: { flexDirection: "column" },

@@ -22,7 +22,7 @@ import {
 	Table,
 	Text,
 	VStack,
-} from "@/components/ui";
+} from "@blenx-dev/ui/components";;
 import { theme } from "@/lib/theme/contract.stylex";
 import { fontSize, spacing } from "@/lib/theme/tokens.stylex";
 

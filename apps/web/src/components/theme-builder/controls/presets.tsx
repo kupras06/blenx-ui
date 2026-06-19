@@ -6,7 +6,7 @@ import {
 	HStack,
 	Surface,
 	Text,
-} from "@/components/ui";
+} from "@blenx-dev/ui/components";;
 import { useThemeBuilder } from "../theme-builder-context";
 import { presets } from "./presets-data";
 

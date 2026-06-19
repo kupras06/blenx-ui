@@ -5,7 +5,7 @@ import {
 	Slider,
 	Text,
 	VStack,
-} from "@/components/ui";
+} from "@blenx-dev/ui/components";;
 import { useThemeBuilder } from "../theme-builder-context";
 
 const fontFamilyOptions = [

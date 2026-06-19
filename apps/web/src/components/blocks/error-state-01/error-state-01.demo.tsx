@@ -1,6 +1,6 @@
 import { WarningCircleIcon } from "@phosphor-icons/react";
 import { ErrorState01 } from "./error-state-01";
-import { Card, CardBody } from "@/components/ui";
+import { Card, CardBody } from "@blenx-dev/ui/components";;
 
 export function ErrorState01PageDemo() {
 	return (

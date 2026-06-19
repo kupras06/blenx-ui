@@ -7,7 +7,7 @@ import {
 	Surface,
 	Text,
 	VStack,
-} from "@/components/ui";
+} from "@blenx-dev/ui/components";;
 
 export const Route = createFileRoute("/docs/primitives")({
 	component: PrimitivesDoc,

@@ -11,7 +11,7 @@ import {
 	Separator,
 	Text,
 	VStack,
-} from "@/components/ui";
+} from "@blenx-dev/ui/components";;
 import { theme } from "@/lib/theme/contract.stylex";
 import { useThemeBuilder } from "../theme-builder-context";
 

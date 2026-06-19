@@ -10,7 +10,7 @@ import {
 	TabsList,
 	TabsPanel,
 	TabsTab,
-} from "@/components/ui";
+} from "@blenx-dev/ui/components";;
 import {
 	ColorControls,
 	NonColorControls,

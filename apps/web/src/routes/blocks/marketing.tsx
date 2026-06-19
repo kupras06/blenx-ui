@@ -12,7 +12,7 @@ import {
 	TabsPanel,
 	TabsTab,
 	VStack,
-} from "@/components/ui";
+} from "@blenx-dev/ui/components";;
 
 interface BlockInfo {
 	key: string;

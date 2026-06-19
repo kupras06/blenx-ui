@@ -39,7 +39,7 @@ import {
 	Text,
 	Textarea,
 	VStack,
-} from "@/components/ui";
+} from "@blenx-dev/ui/components";;
 
 import { memo } from "react";
 

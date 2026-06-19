@@ -8,7 +8,7 @@ import { Checkbox } from "@/components/ui/Checkbox/checkbox";
 import { Separator } from "@/components/ui/Separator/separator";
 import { Card, CardBody } from "@/components/ui/Card/card";
 import type { PropsWithStylex } from "@/utils/stylex.utils";
-import { Container, Field, FieldLabel, HStack, VStack } from "@/components/ui";
+import { Container, Field, FieldLabel, HStack, VStack } from "@blenx-dev/ui/components";;
 
 type SocialProvider = {
 	provider: string;

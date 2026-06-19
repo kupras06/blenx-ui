@@ -9,7 +9,7 @@ import {
 	Scripts,
 } from "@tanstack/react-router";
 import { Header, ThemeEffect } from "@/components/header";
-import { Box, Container } from "@/components/ui";
+import { Box, Container } from "@blenx-dev/ui/components";;
 import { darkTheme } from "@/lib/app-theme.stylex";
 import { theme } from "@/lib/theme/contract.stylex";
 import { fonts } from "@/lib/theme/tokens.stylex";

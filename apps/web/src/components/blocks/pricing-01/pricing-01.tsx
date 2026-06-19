@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/Badge/badge";
 import { Switch } from "@/components/ui/Switch/switch";
 import type { PropsWithStylex } from "@/utils/stylex.utils";
 import { CheckIcon } from "@phosphor-icons/react";
-import { Container, HStack, Icon, VStack } from "@/components/ui";
+import { Container, HStack, Icon, VStack } from "@blenx-dev/ui/components";;
 
 type Plan = {
 	name: string;

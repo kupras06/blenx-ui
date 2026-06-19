@@ -20,7 +20,7 @@ import {
 	FieldLabel,
 	HStack,
 	VStack,
-} from "@/components/ui";
+} from "@blenx-dev/ui/components";;
 
 export function Settings01() {
 	const [language, setLanguage] = useState("en");

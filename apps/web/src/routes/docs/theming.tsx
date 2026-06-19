@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { DocHeading } from "@/components/docs/doc-heading";
-import { Box, CodeBlock, Separator, Text, VStack } from "@/components/ui";
+import { Box, CodeBlock, Separator, Text, VStack } from "@blenx-dev/ui/components";;
 
 export const Route = createFileRoute("/docs/theming")({
 	component: ThemingDoc,

@@ -1,5 +1,5 @@
-import type { Column } from "@/components/ui";
-import { Accordion, Table, Text } from "@/components/ui";
+import type { Column } from "@blenx-dev/ui/components";;
+import { Accordion, Table, Text } from "@blenx-dev/ui/components";;
 import { theme } from "@/lib/theme/contract.stylex";
 import { componentTokenMap } from "../preview/component-token-map";
 import { useThemeBuilder } from "../theme-builder-context";

@@ -1,4 +1,4 @@
-import { Button, Input } from "@/components/ui";
+import { Button, Input } from "@blenx-dev/ui/components";;
 import { spacing } from "@/lib/theme/tokens.stylex";
 import * as stylex from "@stylexjs/stylex";
 import type { Table } from "@tanstack/react-table";

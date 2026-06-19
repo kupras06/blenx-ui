@@ -1,5 +1,5 @@
 import * as stylex from "@stylexjs/stylex";
-import { theme } from "@/lib/theme/contract.stylex";
+import { theme } from "@blenx-dev/ui/lib/theme/contract.stylex";
 import {
 	borderRadius,
 	duration,
@@ -8,7 +8,7 @@ import {
 	fonts,
 	fontWeight,
 	spacing,
-} from "@/lib/theme/tokens.stylex";
+} from "@blenx-dev/ui/lib/theme/tokens.stylex";
 
 export const tabsStyles = stylex.create({
 	root: {

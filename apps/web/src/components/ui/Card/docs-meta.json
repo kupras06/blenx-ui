@@ -1,9 +1,0 @@
-{
-	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
-	"title": "Card",
-	"description": "A content card container with header, body, footer, title, and description sub-components.",
-	"category": "Data Display",
-	"status": "stable",
-	"keywords": ["card", "container", "panel", "content", "surface"],
-	"related": ["Surface", "Box"]
-}

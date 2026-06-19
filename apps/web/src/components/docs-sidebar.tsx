@@ -1,7 +1,7 @@
 import * as stylex from "@stylexjs/stylex";
 import { useQuery } from "@tanstack/react-query";
 import { Link, useLocation } from "@tanstack/react-router";
-import { Box, Surface, Text, VStack } from "@/components/ui";
+import { Box, Surface, Text, VStack } from "@blenx-dev/ui/components";;
 import { docsQueries } from "@/lib/docs-api";
 
 interface SidebarSection {

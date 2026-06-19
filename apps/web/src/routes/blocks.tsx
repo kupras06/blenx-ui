@@ -9,7 +9,7 @@ import {
 	ScrollArea,
 	Sheet,
 	SheetPopup,
-} from "@/components/ui";
+} from "@blenx-dev/ui/components";;
 import { useSidebarStore } from "@/stores/docs-sidebar";
 
 export const Route = createFileRoute("/blocks")({

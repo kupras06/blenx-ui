@@ -1,6 +1,6 @@
 import * as stylex from "@stylexjs/stylex";
-import { theme } from "@/lib/theme/contract.stylex";
-import { fontSize, fonts, spacing } from "@/lib/theme/tokens.stylex";
+import { theme } from "@blenx-dev/ui/lib/theme/contract.stylex";
+import { fontSize, fonts, spacing } from "@blenx-dev/ui/lib/theme/tokens.stylex";
 import { intentTokens } from "./button-intents.stylex";
 
 export const buttonSizes = stylex.create({

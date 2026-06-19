@@ -8,7 +8,7 @@ import { DocCodeView } from "@/components/docs/doc-code-view";
 import { DocDemoRenderer } from "@/components/docs/doc-demo-renderer";
 import { DocInstallation } from "@/components/docs/doc-installation";
 import { DocRelated } from "@/components/docs/doc-related";
-import { Alert, Box, Separator, Surface, Text, VStack } from "@/components/ui";
+import { Alert, Box, Separator, Surface, Text, VStack } from "@blenx-dev/ui/components";;
 import { docsQueries } from "@/lib/docs-api";
 import type { DocsManifest } from "@/lib/docs-meta";
 

@@ -14,7 +14,6 @@ export * from "./Calendar/calendar";
 export * from "./Card/card";
 export * from "./Checkbox/checkbox";
 export * from "./Command/command";
-export * from "./CodeBlock/code-block";
 export * from "./ColorPicker/color-picker";
 export * from "./ColorSwatch/color-swatch";
 export * from "./Combobox/combobox";

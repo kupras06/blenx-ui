@@ -6,7 +6,7 @@ import { Text } from "@/components/ui/Text/text";
 import { VStack, HStack } from "@/components/ui/Stack/stack";
 import { Surface } from "@/components/ui/Surface/surface";
 import type { PropsWithStylex } from "@/utils/stylex.utils";
-import { Icon } from "@/components/ui";
+import { Icon } from "@blenx-dev/ui/components";;
 
 type Action = {
 	label: string;

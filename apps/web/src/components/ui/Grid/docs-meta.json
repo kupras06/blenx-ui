@@ -1,9 +1,0 @@
-{
-	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
-	"title": "Grid",
-	"description": "A CSS Grid layout component with column presets, gap tokens, and alignment control. Includes a GridItem sub-component for spanning.",
-	"category": "Layout",
-	"status": "experimental",
-	"keywords": ["grid", "layout", "columns", "css grid", "responsive"],
-	"related": ["Box", "Stack"]
-}

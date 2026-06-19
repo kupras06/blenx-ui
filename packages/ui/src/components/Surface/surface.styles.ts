@@ -1,5 +1,5 @@
 import * as stylex from "@stylexjs/stylex";
-import { theme } from "@/lib/theme/contract.stylex";
+import { theme } from "@blenx-dev/ui/lib/theme/contract.stylex";
 
 export const surfaceVariantStyles = stylex.create({
 	default: {

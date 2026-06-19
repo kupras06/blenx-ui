@@ -1,4 +1,4 @@
-import { Accordion, Box, CodeBlock, Text } from "@/components/ui";
+import { Accordion, Box, CodeBlock, Text } from "@blenx-dev/ui/components";;
 
 const semanticCode = `// Semantic tokens (what you edit)
 export const theme = stylex.defineVars({
