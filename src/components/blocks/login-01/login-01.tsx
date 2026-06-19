@@ -51,7 +51,7 @@ export function Login01({
 	};
 
 	return (
-		<Container size="2xl" content="center">
+		<Container size="2xl" content="center" paddingY="huge">
 			<Card maxWidth="sm" fullWidth>
 				<CardBody padding="medium">
 					<VStack align="center" gap="small">
@@ -141,7 +141,7 @@ export function Login01({
 					)}
 
 					{links?.signUp && (
-						<HStack align="center" justify="center">
+						<HStack align="center" justify="center" paddingY="small">
 							<Text variant="body2" span>
 								Don&apos;t have an account?{" "}
 							</Text>

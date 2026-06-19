@@ -3,14 +3,72 @@ import type { ThemeTokens } from "../theme-builder-context";
 export interface ThemePreset {
 	name: string;
 	colors: string[];
-	tokens: ThemeTokens;
+	tokens: Partial<ThemeTokens>;
 }
+const lightDefaults: Partial<ThemeTokens> = {
+	borderRadius: "0.5rem",
+	fontSize: "14px",
+
+	sentimentPositive: "#22c55e",
+	sentimentPositiveSubtle: "rgba(34,197,94,0.12)",
+	sentimentPositiveHover: "#16a34a",
+
+	sentimentWarning: "#f59e0b",
+	sentimentWarningSubtle: "rgba(245,158,11,0.12)",
+	sentimentWarningHover: "#d97706",
+
+	sentimentNegative: "#ef4444",
+	sentimentNegativeSubtle: "rgba(239,68,68,0.12)",
+	sentimentNegativeHover: "#dc2626",
+
+	sentimentInfo: "#3b82f6",
+	sentimentInfoSubtle: "rgba(59,130,246,0.12)",
+	sentimentInfoHover: "#2563eb",
+
+	shadowSm: "0 1px 2px rgba(0,0,0,0.05)",
+	shadowMd: "0 4px 12px rgba(0,0,0,0.08)",
+	shadowLg: "0 12px 32px rgba(0,0,0,0.12)",
+	shadowXl: "0 24px 64px rgba(0,0,0,0.16)",
+
+	hoverOverlay: "rgba(0,0,0,0.06)",
+	hoverOverlaySoft: "rgba(0,0,0,0.03)",
+};
+
+const darkDefaults: Partial<ThemeTokens> = {
+	borderRadius: "0.5rem",
+	fontSize: "14px",
+
+	sentimentPositive: "#22c55e",
+	sentimentPositiveSubtle: "rgba(34,197,94,0.12)",
+	sentimentPositiveHover: "#16a34a",
+
+	sentimentWarning: "#f59e0b",
+	sentimentWarningSubtle: "rgba(245,158,11,0.12)",
+	sentimentWarningHover: "#d97706",
+
+	sentimentNegative: "#ef4444",
+	sentimentNegativeSubtle: "rgba(239,68,68,0.12)",
+	sentimentNegativeHover: "#dc2626",
+
+	sentimentInfo: "#3b82f6",
+	sentimentInfoSubtle: "rgba(59,130,246,0.12)",
+	sentimentInfoHover: "#2563eb",
+
+	shadowSm: "0 1px 2px rgba(0,0,0,0.35)",
+	shadowMd: "0 4px 12px rgba(0,0,0,0.40)",
+	shadowLg: "0 12px 32px rgba(0,0,0,0.45)",
+	shadowXl: "0 24px 64px rgba(0,0,0,0.50)",
+
+	hoverOverlay: "rgba(255,255,255,0.08)",
+	hoverOverlaySoft: "rgba(255,255,255,0.04)",
+};
 
 export const presets: ThemePreset[] = [
 	{
 		name: "Zinc Dark",
 		colors: ["#09090b", "#18181b", "#27272a", "#fafafa", "#3b82f6"],
 		tokens: {
+			...lightDefaults,
 			primary: "#fafafa",
 			primarySubtle: "#d4d4d8",
 			secondary: "#3b82f6",
@@ -36,6 +94,7 @@ export const presets: ThemePreset[] = [
 		name: "Vercel Light",
 		colors: ["#ffffff", "#fafafa", "#eaeaea", "#000000", "#0070f3"],
 		tokens: {
+			...lightDefaults,
 			primary: "#000000",
 			primarySubtle: "#333333",
 			secondary: "#0070f3",
@@ -61,6 +120,7 @@ export const presets: ThemePreset[] = [
 		name: "Linear Dark",
 		colors: ["#0E0F11", "#151618", "#2B2D31", "#E5E5E5", "#5E6AD2"],
 		tokens: {
+			...darkDefaults,
 			primary: "#E5E5E5",
 			primarySubtle: "#A1A1A1",
 			secondary: "#5E6AD2",
@@ -86,6 +146,7 @@ export const presets: ThemePreset[] = [
 		name: "Supabase Dark",
 		colors: ["#1c1c1c", "#232323", "#2e2e2e", "#ededed", "#24b47e"],
 		tokens: {
+			...darkDefaults,
 			primary: "#24b47e",
 			primarySubtle: "#3ecf8e",
 			secondary: "#ededed",
@@ -111,6 +172,7 @@ export const presets: ThemePreset[] = [
 		name: "Github Dark",
 		colors: ["#0d1117", "#161b22", "#30363d", "#c9d1d9", "#58a6ff"],
 		tokens: {
+			...darkDefaults,
 			primary: "#c9d1d9",
 			primarySubtle: "#8b949e",
 			secondary: "#58a6ff",
