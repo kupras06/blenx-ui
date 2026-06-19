@@ -38,7 +38,6 @@ export function ThemePreviewProvider({ children }: { children: ReactNode }) {
 			[theme.contentPrimary, tokens.contentPrimary],
 			[theme.contentSecondary, tokens.contentSecondary],
 			[theme.contentDisabled, tokens.contentDisabled],
-			[theme.contentAccent, tokens.contentAccent],
 			[theme.contentOnPrimary, tokens.contentOnPrimary],
 			[theme.sentimentNegative, tokens.sentimentNegative],
 			[theme.sentimentNegativeSubtle, tokens.sentimentNegativeSubtle],
@@ -53,8 +52,11 @@ export function ThemePreviewProvider({ children }: { children: ReactNode }) {
 			[theme.shadowMd, tokens.shadowMd],
 			[theme.shadowLg, tokens.shadowLg],
 			[theme.shadowXl, tokens.shadowXl],
-			[theme.fontSize, tokens.baseFontSize],
-			[theme.borderRadius, radiusMap[tokens.radius] ?? radiusTokens.medium],
+			[theme.fontSize, tokens.fontSize],
+			[
+				theme.borderRadius,
+				radiusMap[tokens.borderRadius] ?? radiusTokens.medium,
+			],
 		];
 		for (const [k, v] of entries) {
 			vars[cx(k)] = v;

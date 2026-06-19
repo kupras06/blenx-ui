@@ -142,7 +142,6 @@ export const lightTheme = stylex.createTheme(theme, {
 	contentPrimary: lightValues.contentPrimary,
 	contentSecondary: lightValues.contentSecondary,
 	contentDisabled: lightValues.contentDisabled,
-	contentAccent: lightValues.contentAccent,
 	contentOnPrimary: lightValues.contentOnPrimary,
 
 	focusRing: lightValues.focusRing,
@@ -195,7 +194,6 @@ export const darkTheme = stylex.createTheme(theme, {
 	contentPrimary: darkValues.contentPrimary,
 	contentSecondary: darkValues.contentSecondary,
 	contentDisabled: darkValues.contentDisabled,
-	contentAccent: darkValues.contentAccent,
 	contentOnPrimary: darkValues.contentOnPrimary,
 
 	focusRing: darkValues.focusRing,

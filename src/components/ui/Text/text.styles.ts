@@ -54,7 +54,7 @@ export const textStyles = stylex.create({
 	base: {
 		margin: 0,
 		textDecoration: "none",
-		color: theme.contentAccent,
+		color: theme.contentOnPrimary,
 	},
 });
 export const textVarianttyles = stylex.create({

@@ -214,7 +214,6 @@ export const autoCompleteStyles = stylex.create({
 		// },
 		// ":where([data-highlighted])&": {
 		// 	BackgroundColor: theme.surface,
-		// 	Color: theme.contentAccent,
 		// },
 		minHeight: {
 			default: "32px",

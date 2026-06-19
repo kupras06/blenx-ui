@@ -39,13 +39,13 @@ export const defaultTokens: ThemeTokens = {
 	shadowMd: "0 4px 12px rgba(36,49,66,0.10), 0 2px 4px rgba(36,49,66,0.06)",
 	shadowLg: "0 8px 24px rgba(36,49,66,0.12), 0 4px 8px rgba(36,49,66,0.06)",
 	shadowXl: "0 20px 48px rgba(36,49,66,0.15), 0 8px 16px rgba(36,49,66,0.08)",
-	primaryHover: "",
-	sentimentPositiveHover: "",
-	sentimentWarningHover: "",
-	sentimentNegativeHover: "",
-	sentimentInfoHover: "",
-	hoverOverlay: "",
-	hoverOverlaySoft: "",
+	primaryHover: "#1B2533",
+	sentimentPositiveHover: "#219150",
+	sentimentWarningHover: "#D68910",
+	sentimentNegativeHover: "#B9292A",
+	sentimentInfoHover: "#206694",
+	hoverOverlay: "rgba(0,0,0,0.05)",
+	hoverOverlaySoft: "rgba(0,0,0,0.02)",
 };
 
 interface ThemeBuilderStore {

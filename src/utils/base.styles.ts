@@ -6,7 +6,6 @@ import { zIndexVars } from "@/lib/theme/tokens.stylex";
 export const colorStyles = stylex.create({
 	primary: { color: theme.contentPrimary },
 	secondary: { color: theme.contentSecondary },
-	accent: { color: theme.contentAccent },
 	disabled: { color: theme.contentDisabled },
 	error: { color: theme.sentimentNegative },
 	success: { color: theme.sentimentPositive },
