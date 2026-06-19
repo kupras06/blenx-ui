@@ -10,10 +10,14 @@ export const spin = stylex.keyframes({
 });
 
 export const spinnerStyles = stylex.create({
-	spinner: {
-		animationName: spin,
-		animationDuration: "1s",
-		animationIterationCount: "infinite",
-		animationTimingFunction: "linear",
-	},
+spinner: {
+	display: "inline-flex",
+	alignItems: "center",
+	justifyContent: "center",
+	transformOrigin: "center",
+	animationName: spin,
+	animationDuration: "1s",
+	animationIterationCount: "infinite",
+	animationTimingFunction: "linear",
+}
 });

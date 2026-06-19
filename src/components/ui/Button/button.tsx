@@ -61,7 +61,6 @@ function Button({
 		<ButtonPrimitive {...mergeProps<"button">(defaultProps, props)}>
 			{loading && (
 				<Spinner
-					style={buttonStyles.spinner}
 					data-slot="button-loading-indicator"
 				/>
 			)}

@@ -36,9 +36,10 @@ function Checkbox({ style, ...props }: CheckboxProps) {
 					<CheckboxPrimitive.Indicator
 						render={(_indicatorProps, state) => (
 							<span
+							{..._indicatorProps}
 								{...stylex.props(
 									checkboxStyles.indicator,
-									!state.indeterminate && checkboxStyles.indicatorChecked,
+									state.checked && checkboxStyles.indicatorChecked,
 									state.indeterminate && checkboxStyles.indicatorIndeterminate,
 								)}
 								data-slot="checkbox-indicator"

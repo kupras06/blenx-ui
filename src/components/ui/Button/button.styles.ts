@@ -205,16 +205,12 @@ export const buttonStyles = stylex.create({
 		fontSize: theme.fontSize,
 		fontFamily: fonts.display,
 		textDecoration: "none",
+		position:'relative',
 		transition: "all 0.2s ease",
 		":disabled": {
 			opacity: 0.4,
 			cursor: "not-allowed",
 		},
-	},
-
-	spinner: {
-		position: "absolute",
-		pointerEvents: "none",
 	},
 	fullWidth: {
 		width: "100%",
