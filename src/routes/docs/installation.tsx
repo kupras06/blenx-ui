@@ -1,6 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { DocHeading } from "@/components/docs/doc-heading";
-import { Box, Separator, Surface, Text, VStack } from "@/components/ui";
+import {
+	Box,
+	CodeBlock,
+	Separator,
+	Surface,
+	Text,
+	VStack,
+} from "@/components/ui";
 
 export const Route = createFileRoute("/docs/installation")({
 	component: InstallationDoc,
@@ -46,8 +53,8 @@ function InstallationDoc() {
 						</Text>
 						:
 					</Text>
-					<Surface variant="sunken" padding="medium" render={<pre />}>
-						<code>{`{
+					<CodeBlock
+						code={`{
   "$schema": "https://ui.shadcn.com/schema.json",
   "style": "new-york",
   "rsc": false,
@@ -64,8 +71,8 @@ function InstallationDoc() {
       "baseUrl": "http://localhost:3001/reg"
     }
   }
-}`}</code>
-					</Surface>
+}`}
+					/>
 				</VStack>
 			</Box>
 
@@ -108,16 +115,16 @@ npx shadcn@latest add @blenx-dev/button`}</code>
 						Your bundler must be configured with the Stylex plugin. Components
 						use atomic CSS via Stylex, which requires a build-time transform.
 					</Text>
-					<Surface variant="sunken" padding="medium" render={<pre />}>
-						<code>{`// Example: vite.config.ts
-import { stylexPlugin } from "@stylexjs/unplugin/vite";
+					<CodeBlock
+						code={`// Example: vite.config.ts
+import stylex from "@stylexjs/unplugin";
 
 export default defineConfig({
   plugins: [
-    stylexPlugin({ ... }),
+    stylex.vite({ ... }),
   ],
-});`}</code>
-					</Surface>
+});`}
+					/>
 				</VStack>
 			</Box>
 		</VStack>

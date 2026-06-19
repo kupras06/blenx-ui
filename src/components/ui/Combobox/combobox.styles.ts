@@ -7,7 +7,7 @@ import {
 	fontWeight,
 	mediaQueries,
 	spacing,
-	zIndex,
+	zIndexVars,
 } from "@/lib/theme/tokens.stylex";
 
 export const comboboxStyles = stylex.create({
@@ -96,7 +96,7 @@ export const comboboxStyles = stylex.create({
 		// },
 	},
 	positioner: {
-		zIndex: zIndex.dropdown,
+		zIndex: zIndexVars.floating,
 		outline: "none",
 	},
 	popupShell: {

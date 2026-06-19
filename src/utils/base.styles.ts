@@ -1,6 +1,7 @@
 import * as stylex from "@stylexjs/stylex";
 import { theme } from "@/lib/theme/contract.stylex";
 import type { paddingTopStyles } from "./layout.styles";
+import { zIndexVars } from "@/lib/theme/tokens.stylex";
 
 export const colorStyles = stylex.create({
 	primary: { color: theme.contentPrimary },
@@ -22,6 +23,35 @@ export const bgColorStyles = stylex.create({
 	success: { backgroundColor: theme.sentimentPositiveSubtle },
 	warning: { backgroundColor: theme.sentimentWarningSubtle },
 	info: { backgroundColor: theme.sentimentInfoSubtle },
+});
+export const zIndexStyles = stylex.create({
+	base: {
+		zIndex: zIndexVars.base,
+	},
+	raised: {
+		zIndex: zIndexVars.raised,
+	},
+	floating: {
+		zIndex: zIndexVars.floating,
+	},
+	sticky: {
+		zIndex: zIndexVars.sticky,
+	},
+	overlay: {
+		zIndex: zIndexVars.overlay,
+	},
+	modal: {
+		zIndex: zIndexVars.modal,
+	},
+	popover: {
+		zIndex: zIndexVars.popover,
+	},
+	toast: {
+		zIndex: zIndexVars.toast,
+	},
+	tooltip: {
+		zIndex: zIndexVars.tooltip,
+	},
 });
 type BoxSpacing = keyof typeof paddingTopStyles;
 export type PaddingProps = {

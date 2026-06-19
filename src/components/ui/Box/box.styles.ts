@@ -42,3 +42,47 @@ export const boxSizeStyles = stylex.create({
 	"3xl": { maxWidth: 1440 },
 	full: { maxWidth: "none" },
 });
+
+export const boxHeightStyles = stylex.create({
+	"25svh": {
+		maxHeight: "25svh",
+		height: "25svh",
+		
+	 },
+	"40svh": {
+		maxHeight: "40svh",
+		height: "40svh"
+	},
+	"60svh": {
+		maxHeight: "60svh",
+		height: "60svh"
+	},
+	"75svh": {
+		maxHeight: "75svh",
+		height: "75svh",
+	},
+	"90svh": {
+		maxHeight: "90svh",
+		height: "90svh",
+	},
+	
+	full: {
+		maxHeight: "100%",
+		height: "100%",
+	},
+	screen: {
+		maxHeight: "100svh",
+		height: "100svh",
+	},
+	none: {
+		maxHeight: "none",
+		height: "none",
+	},
+});
+export type BoxHeightStyles = keyof typeof boxHeightStyles
+const BOX_HEIGHT_KEYS = Object.keys(boxHeightStyles)
+export const applyBoxHeightStyle = (height: unknown) => {
+	if (typeof height === 'string' && BOX_HEIGHT_KEYS.includes(height))
+		return [boxHeightStyles[height as BoxHeightStyles]]
+	return null
+}

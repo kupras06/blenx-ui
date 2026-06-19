@@ -1,6 +1,13 @@
 import * as stylex from "@stylexjs/stylex";
 import { borderRadius, spacing } from "@/lib/theme/tokens.stylex";
-import type { MarginProps, PaddingProps } from "./base.styles";
+import {
+	bgColorStyles,
+	colorStyles,
+	zIndexStyles,
+	type MarginProps,
+	type PaddingProps,
+} from "./base.styles";
+import type { BoxProps } from "@/components/ui";
 
 export const displayStyles = stylex.create({
 	block: { display: "block" },
@@ -157,19 +164,81 @@ export const positionStyles = stylex.create({
 	fixed: { position: "fixed" },
 	sticky: { position: "sticky" },
 });
+export const positionTopStyles = stylex.create({
+	none: { top: 0 },
+	xsmall: { top: spacing.xxsmall },
+	small: { top: spacing.small },
+	medium: { top: spacing.medium },
+	large: { top: spacing.large },
+	xlarge: { top: spacing.xlarge },
+	xxlarge: { top: spacing.xxlarge },
+	xxxlarge: { top: spacing.xxxlarge },
+	huge: { top: spacing.huge },
+	massive: { top: spacing.massive },
+	titanic: { top: spacing.titanic },
+});
+export const positionBottomStyles = stylex.create({
+	none: { bottom: 0 },
+	xsmall: { bottom: spacing.xxsmall },
+	small: { bottom: spacing.small },
+	medium: { bottom: spacing.medium },
+	large: { bottom: spacing.large },
+	xlarge: { bottom: spacing.xlarge },
+	xxlarge: { bottom: spacing.xxlarge },
+	xxxlarge: { bottom: spacing.xxxlarge },
+	huge: { bottom: spacing.huge },
+	massive: { bottom: spacing.massive },
+	titanic: { bottom: spacing.titanic },
+});
+export const positionLeftStyles = stylex.create({
+	none: { left: 0 },
+	xsmall: { left: spacing.xxsmall },
+	small: { left: spacing.small },
+	medium: { left: spacing.medium },
+	large: { left: spacing.large },
+	xlarge: { left: spacing.xlarge },
+	xxlarge: { left: spacing.xxlarge },
+	xxxlarge: { left: spacing.xxxlarge },
+	huge: { left: spacing.huge },
+	massive: { left: spacing.massive },
+	titanic: { left: spacing.titanic },
+});
+export const positionRightStyles = stylex.create({
+	none: { right: 0 },
+	xsmall: { right: spacing.xxsmall },
+	small: { right: spacing.small },
+	medium: { right: spacing.medium },
+	large: { right: spacing.large },
+	xlarge: { right: spacing.xlarge },
+	xxlarge: { right: spacing.xxlarge },
+	xxxlarge: { right: spacing.xxxlarge },
+	huge: { right: spacing.huge },
+	massive: { right: spacing.massive },
+	titanic: { right: spacing.titanic },
+});
 
 export type BorderRadiusProp = keyof typeof borderRadiusStyles;
 type BoxDisplay = keyof typeof displayStyles;
+
+type BoxOverflow = keyof typeof overflowStyles;
+type BoxPosition = keyof typeof positionStyles;
+type PositionTop = keyof typeof positionTopStyles;
+type PositionBottom = keyof typeof positionBottomStyles;
+type PositionLeft = keyof typeof positionLeftStyles;
+type PositionRight = keyof typeof positionRightStyles;
 
 export type LayoutProps = {
 	display?: BoxDisplay;
 	overflow?: BoxOverflow;
 	position?: BoxPosition;
+	top?: PositionTop;
+	bottom?: PositionBottom;
+	left?: PositionLeft;
+	right?: PositionRight;
+	zIndex?: keyof typeof zIndexStyles;
 };
 
-type BoxOverflow = keyof typeof overflowStyles;
-type BoxPosition = keyof typeof positionStyles;
-export function resolvePaddingStyles(paddingProps: PaddingProps) {
+export function resolvePaddingStyles(paddingProps: Partial<PaddingProps>) {
 	const resolvedPaddingX = paddingProps.paddingX ?? paddingProps.padding;
 	const resolvedPaddingY = paddingProps.paddingY ?? paddingProps.padding;
 	const paddingTop = paddingProps.paddingTop ?? resolvedPaddingY;
@@ -196,5 +265,23 @@ export function resolveMarginStyles(marginProps: MarginProps) {
 		marginBottom && marginBottomStyles[marginBottom],
 		marginLeft && marginLeftStyles[marginLeft],
 		marginRight && marginRightStyles[marginRight],
+	];
+}
+
+export function resolveDisplayStyles(boxProps: BoxProps) {
+	const resolvedRadius = boxProps.borderRadius ?? boxProps.radius;
+	return [
+		boxProps.color && colorStyles[boxProps.color],
+		boxProps.backgroundColor && bgColorStyles[boxProps.backgroundColor],
+		boxProps.zIndex && zIndexStyles[boxProps.zIndex],
+		resolvedRadius && borderRadiusStyles[resolvedRadius],
+		boxProps.zIndex && zIndexStyles[boxProps.zIndex],
+		boxProps.display && displayStyles[boxProps.display],
+		boxProps.overflow && overflowStyles[boxProps.overflow],
+		boxProps.position && positionStyles[boxProps.position],
+		boxProps.top && positionTopStyles[boxProps.top],
+		boxProps.bottom && positionBottomStyles[boxProps.bottom],
+		boxProps.left && positionLeftStyles[boxProps.left],
+		boxProps.right && positionRightStyles[boxProps.right],
 	];
 }

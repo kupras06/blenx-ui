@@ -12,5 +12,5 @@ export {
 	lineHeight,
 	mediaQueries,
 	spacing,
-	zIndex,
+	zIndexVars,
 } from "./tokens.stylex";

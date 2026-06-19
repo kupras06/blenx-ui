@@ -6,7 +6,7 @@ import {
 	fontWeight,
 	letterSpacing,
 	spacing,
-	zIndex,
+	zIndexVars,
 } from "@/lib/theme/tokens.stylex";
 
 export const menuStyles = stylex.create({
@@ -37,7 +37,7 @@ export const menuStyles = stylex.create({
 		borderColor: theme.borderSubtle,
 		borderRadius: borderRadius.large,
 		boxShadow: theme.shadowXl,
-		zIndex: zIndex.dropdown,
+		zIndex: zIndexVars.floating,
 		padding: spacing.xsmall,
 		display: "flex",
 		gap: spacing[1],

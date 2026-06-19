@@ -7,7 +7,7 @@ import {
 	fontWeight,
 	mediaQueries,
 	spacing,
-	zIndex,
+	zIndexVars,
 } from "@/lib/theme/tokens.stylex";
 
 export const autoCompleteInputSize = stylex.create({
@@ -111,7 +111,7 @@ export const autoCompleteStyles = stylex.create({
 		height: "16px",
 	},
 	positioner: {
-		zIndex: zIndex.dropdown,
+		zIndex: zIndexVars.floating,
 		outline: "none",
 	},
 	popupShell: {

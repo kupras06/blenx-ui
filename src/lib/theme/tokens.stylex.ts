@@ -167,14 +167,14 @@ export const easing = stylex.defineVars({
 });
 
 // ─── Z-index ─────────────────────────────────────────────────────────────────
-export const zIndex = stylex.defineVars({
-	base: "0",
-	raised: "10",
-	dropdown: "100",
-	sticky: "200",
-	overlay: "300",
-	modal: "400",
-	popover: "500",
-	toast: "600",
-	tooltip: "700",
+export const zIndexVars = stylex.defineVars({
+	base: 0,
+	raised: 100,
+	floating: 1000,
+	sticky: 1100,
+	overlay: 1200,
+	popover: 1300,
+	modal: 1400,
+	toast: 1500,
+	tooltip: 1600,
 });

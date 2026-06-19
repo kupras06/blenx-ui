@@ -12,6 +12,7 @@ export * from "./Breadcrumbs/breadcrumbs";
 export * from "./Button/button";
 export * from "./Calendar/calendar";
 export * from "./Card/card";
+export * from "./CodeBlock/code-block";
 export * from "./Checkbox/checkbox";
 export * from "./ColorPicker/color-picker";
 export * from "./ColorSwatch/color-swatch";

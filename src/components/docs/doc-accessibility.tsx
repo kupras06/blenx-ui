@@ -1,5 +1,5 @@
 import { Box } from "../ui/Box/box";
-import { VStack } from "../ui/Stack/stack";
+import { HStack, VStack } from "../ui/Stack/stack";
 import { Text } from "../ui/Text/text";
 
 interface DocAccessibilityProps {
@@ -16,27 +16,31 @@ function DocAccessibility({ keyboard, aria }: DocAccessibilityProps) {
 		<VStack gap="medium">
 			{keyboard && keyboard.length > 0 && (
 				<Box>
-					<Text variant="h6">Keyboard Support</Text>
-					<div>
+					<Text variant="h6" marginBottom="xsmall">
+						Keyboard Support
+					</Text>
+					<HStack gap="xsmall">
 						{keyboard.map((key) => (
-							<Text key={key} variant="code">
+							<Text key={key} variant="code" span>
 								{key}
 							</Text>
 						))}
-					</div>
+					</HStack>
 				</Box>
 			)}
 
 			{aria && aria.length > 0 && (
 				<Box>
-					<Text variant="h6">ARIA Attributes</Text>
-					<div>
+					<Text variant="h6" marginBottom="xsmall">
+						ARIA Attributes
+					</Text>
+					<HStack gap="xsmall">
 						{aria.map((attr) => (
 							<Text key={attr} variant="code">
 								{attr}
 							</Text>
 						))}
-					</div>
+					</HStack>
 				</Box>
 			)}
 		</VStack>

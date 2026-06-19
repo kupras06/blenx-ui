@@ -7,13 +7,13 @@ import {
 	lineHeight,
 	mediaQueries,
 	spacing,
-	zIndex,
+	zIndexVars,
 } from "@/lib/theme/tokens.stylex";
 export const alertDialogStyles = stylex.create({
 	backdrop: {
 		position: "fixed",
 		inset: 0,
-		zIndex: zIndex.modal,
+		zIndex: zIndexVars.modal,
 		backgroundColor: "rgba(0, 0, 0, 0.32)",
 		backdropFilter: "blur(4px)",
 		transitionProperty: "transform, opacity",
@@ -27,7 +27,7 @@ export const alertDialogStyles = stylex.create({
 	viewport: {
 		position: "fixed",
 		inset: 0,
-		zIndex: zIndex.modal,
+		zIndex: zIndexVars.modal,
 		display: "grid",
 		gridTemplateRows: "1fr auto 3fr",
 		justifyItems: "center",
