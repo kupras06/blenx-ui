@@ -1,10 +1,39 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { DocHeading } from "@/components/docs/doc-heading";
-import { CodeBlock, Grid, Separator, Surface, Text, VStack } from "@/components/ui";
+import {
+	CodeBlock,
+	Grid,
+	Separator,
+	Surface,
+	Text,
+	VStack,
+} from "@/components/ui";
 
 export const Route = createFileRoute("/docs/primitives")({
 	component: PrimitivesDoc,
 });
+
+const COMPONENT_ARCHITECTURE_CODE = `// Base UI handles behavior and accessibility
+import { useRender } from "@base-ui/react/use-render";
+
+// Stylex handles visual styling
+import * as stylex from "@stylexjs/stylex";
+
+export function Button({ render, ...props }) {
+  return useRender({
+    defaultTagName: "button",
+    props: stylex.props(buttonStyles.base, props),
+    render,
+  });
+}`;
+
+const RENDER_PROP_CODE = `// Render Button as a link
+<Button render={<a href="/page" />}>Go</Button>
+
+// Compose Dialog close as a Button
+<DialogPrimitive.Close render={<Button size="small" />}>
+  <XIcon />
+</DialogPrimitive.Close>`;
 
 function PrimitivesDoc() {
 	return (
@@ -31,21 +60,7 @@ function PrimitivesDoc() {
 
 			<VStack gap="medium" paddingY="medium">
 				<DocHeading variant="h2" title="Component Architecture" />
-				<CodeBlock
-					code={`// Base UI handles behavior and accessibility
-import { useRender } from "@base-ui/react/use-render";
-
-// Stylex handles visual styling
-import * as stylex from "@stylexjs/stylex";
-
-export function Button({ render, ...props }) {
-  return useRender({
-    defaultTagName: "button",
-    props: stylex.props(buttonStyles.base, props),
-    render,
-  });
-}`}
-				/>
+				<CodeBlock code={COMPONENT_ARCHITECTURE_CODE} />
 			</VStack>
 
 			<Separator tone="subtle" />
@@ -109,15 +124,7 @@ export function Button({ render, ...props }) {
 					prop that lets you override the rendered HTML element. This makes the
 					library highly composable:
 				</Text>
-				<CodeBlock
-					code={`// Render Button as a link
-<Button render={<a href="/page" />}>Go</Button>
-
-// Compose Dialog close as a Button
-<DialogPrimitive.Close render={<Button size="small" />}>
-  <XIcon />
-</DialogPrimitive.Close>`}
-				/>
+				<CodeBlock code={RENDER_PROP_CODE} />
 			</VStack>
 		</>
 	);

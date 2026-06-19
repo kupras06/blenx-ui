@@ -126,9 +126,10 @@ function useActiveHeading(headings: TOCHeading[]): string {
 
 		const observer = new IntersectionObserver(
 			(entries) => {
-				const visible = [...entries]
-					.filter((e) => e.isIntersecting)
-					visible.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+				const visible = [...entries].filter((e) => e.isIntersecting);
+				visible.sort(
+					(a, b) => a.boundingClientRect.top - b.boundingClientRect.top,
+				);
 
 				if (visible.length > 0) {
 					setActiveId(visible[0].target.id);

@@ -2,6 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { DocHeading } from "@/components/docs/doc-heading";
 import { Box, CodeBlock, Separator, Text, VStack } from "@/components/ui";
 
+const INSTALLATION_COMMAND = `// npx shadcn@latest init
+// Update component-registry in components.json
+npx shadcn@latest add http://localhost:3001/reg/button.json`;
 export const Route = createFileRoute("/docs/")({
 	component: DocsHome,
 });
@@ -26,14 +29,7 @@ function DocsHome() {
 						Install components via the shadcn CLI into your React project:
 					</Text>
 				</Box>
-				<CodeBlock
-					language="bash"
-					code={`
-					// npx shadcn@latest init
-					// Update component-registry in components.json
-						npx shadcn@latest add http://localhost:3001/reg/button.json
-				`}
-				/>
+				<CodeBlock language="bash" code={INSTALLATION_COMMAND} />
 				<Text>
 					Browse the sidebar to learn about installation, styling, theming, and
 					constraints.

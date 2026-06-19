@@ -155,10 +155,11 @@ export const buttonVariantStyles = stylex.create({
 		},
 	},
 	soft: {
-		backgroundColor: intentTokens.softFg,
+		backgroundColor: intentTokens.softBg,
+		color: intentTokens.solidFg,
 		borderColor: "transparent",
 		":hover:not(:disabled)": {
-			backgroundColor: `color-mix(in srgb, ${intentTokens.borderHover} 80%, ${intentTokens.softBg})`,
+			backgroundColor: `color-mix(in srgb, ${intentTokens.solidHoverBg} 80%, ${intentTokens.softBg})`,
 			borderColor: `color-mix(in srgb, ${intentTokens.border} 80%, ${intentTokens.softBg})`,
 		},
 	},

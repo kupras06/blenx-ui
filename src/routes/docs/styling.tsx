@@ -6,6 +6,25 @@ export const Route = createFileRoute("/docs/styling")({
 	component: StylingDoc,
 });
 
+const DESIGN_TOKENS_CODE = `export const theme = stylex.defineVars({
+  primary: "",
+  background: "",
+  surface: "",
+  border: "",
+  contentPrimary: "",
+  sentimentNegative: "",
+  focusRing: "",
+  shadowSm: "",
+  // ...
+});`;
+
+const STYLE_COMPOSITION_CODE = `const resolved = stylex.props(
+  buttonStyles.base,
+  variantStyles[variant],
+  sizeStyles[size],
+  style,          // overrides via prop
+);`;
+
 function StylingDoc() {
 	return (
 		<VStack>
@@ -40,19 +59,7 @@ function StylingDoc() {
 						</Text>
 						:
 					</Text>
-					<CodeBlock
-						code={`export const theme = stylex.defineVars({
-  primary: "",
-  background: "",
-  surface: "",
-  border: "",
-  contentPrimary: "",
-  sentimentNegative: "",
-  focusRing: "",
-  shadowSm: "",
-  // ...
-});`}
-					/>
+					<CodeBlock code={DESIGN_TOKENS_CODE} />
 					<Text variant="body2" color="secondary">
 						Theme tokens support automatic light/dark mode via media queries.
 						See <a href="/docs/theming">Theming</a> for details on customizing
@@ -73,14 +80,7 @@ function StylingDoc() {
 					, which merges multiple style definitions and applies them as atomic
 					classes:
 				</Text>
-				<CodeBlock
-					code={`const resolved = stylex.props(
-  buttonStyles.base,
-  variantStyles[variant],
-  sizeStyles[size],
-  style,          // overrides via prop
-);`}
-				/>
+				<CodeBlock code={STYLE_COMPOSITION_CODE} />
 			</VStack>
 			<Separator tone="subtle" />
 

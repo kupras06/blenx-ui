@@ -25,6 +25,7 @@ function DocInstallation({
 	files,
 }: DocInstallationProps) {
 	const cliUrl = `https://blenx-ui.vercel.app/reg/${registryName}.json`;
+	const cliCode = `npx shadcn@latest add "${cliUrl}"`;
 
 	return (
 		<VStack gap="medium">
@@ -33,7 +34,7 @@ function DocInstallation({
 				<Text variant="body2" color="secondary">
 					Install the component using the shadcn CLI:
 				</Text>
-				<CodeBlock language="bash" code={`npx shadcn@latest add "${cliUrl}"`} />
+				<CodeBlock language="bash" code={cliCode} />
 			</VStack>
 
 			<Separator />

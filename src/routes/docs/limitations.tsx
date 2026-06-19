@@ -6,6 +6,12 @@ export const Route = createFileRoute("/docs/limitations")({
 	component: LimitationsDoc,
 });
 
+const CSS_OVERRIDE_CODE = `/* Override theme tokens in your CSS */
+:root {
+  --primary: #your-color;
+  --background: #your-bg;
+}`;
+
 function LimitationsDoc() {
 	return (
 		<VStack>
@@ -184,14 +190,7 @@ function LimitationsDoc() {
 						JavaScript-level theme switching without updating component source
 						code.
 					</Text>
-					<CodeBlock
-						language="css"
-						code={`/* Override theme tokens in your CSS */
-:root {
-  --primary: #your-color;
-  --background: #your-bg;
-}`}
-					/>
+					<CodeBlock language="css" code={CSS_OVERRIDE_CODE} />
 				</VStack>
 			</Box>
 		</VStack>

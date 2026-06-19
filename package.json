@@ -64,7 +64,6 @@
 		"zustand-utils": "^2.1.1"
 	},
 	"devDependencies": {
-		"@babel/generator": "^8.0.0",
 		"@stylexjs/unplugin": "^0.19.0",
 		"@tanstack/devtools-vite": "latest",
 		"@tanstack/router-cli": "^1.132.0",

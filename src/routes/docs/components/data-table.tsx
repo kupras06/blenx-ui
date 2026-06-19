@@ -142,6 +142,134 @@ const FEATURE_KEYS = [
 	["bulkActions", "Actions on selected rows"],
 ];
 
+const SHADCN_ADD_CODE = "npx shadcn@latest add data-table";
+const TANSTACK_INSTALL_CODE = "npm install @tanstack/react-table";
+
+const QUICK_START_CODE = `import { DataTable } from "@/components/ui"
+import { createColumnHelper } from "@tanstack/react-table"
+
+interface User {
+  name: string
+  email: string
+  role: string
+}
+
+const columns = [
+  columnHelper.accessor("name", { header: "Name" }),
+  columnHelper.accessor("email", { header: "Email" }),
+  columnHelper.accessor("role", { header: "Role" }),
+]
+
+function UsersPage() {
+  const { data, isLoading } = useQuery(...)
+
+  return (
+    <DataTable
+      columns={columns}
+      data={data ?? []}
+      isLoading={isLoading}
+      features={{ sorting: true, pagination: true }}
+    />
+  )
+}`;
+
+const SERVER_MODE_CODE = `function ServerTable() {
+  const [sorting, setSorting] = useState<SortingState>([])
+  const [pagination, setPagination] = useState({
+    pageIndex: 0, pageSize: 10,
+  })
+
+  const { data, isLoading } = useQuery({
+    queryKey: ["users", sorting, pagination],
+    queryFn: () => fetchUsers({ sorting, pagination }),
+  })
+
+  return (
+    <DataTable
+      mode="server"
+      columns={columns}
+      data={data?.rows ?? []}
+      pageCount={data?.pageCount}
+      isLoading={isLoading}
+      callbacks={{
+        onSortingChange: setSorting,
+        onPaginationChange: setPagination,
+      }}
+    />
+  )
+}`;
+
+const INFINITE_MODE_CODE = `function InfiniteTable() {
+  const { data, fetchNextPage, hasNextPage,
+          isFetchingNextPage, isLoading } =
+    useInfiniteQuery({
+      queryKey: ["users"],
+      queryFn: ({ pageParam }) => fetchUsers(pageParam),
+      initialPageParam: 0,
+      getNextPageParam: (last) => last.nextCursor,
+    })
+
+  const flatData = useMemo(
+    () => data?.pages.flatMap((p) => p.rows) ?? [],
+    [data],
+  )
+
+  return (
+    <DataTable
+      mode="infinite"
+      columns={columns}
+      data={flatData}
+      isLoading={isLoading}
+      fetchNextPage={fetchNextPage}
+      hasNextPage={hasNextPage}
+      isFetchingNextPage={isFetchingNextPage}
+      infiniteScroll={{ mode: "auto" }}
+    />
+  )
+}`;
+
+const CUSTOM_SLOTS_CODE = `function CustomTable() {
+  const { data } = useQuery(...)
+
+  return (
+    <DataTable
+      columns={columns}
+      data={data}
+      slots={{
+        empty: <YourEmptyState />,
+        loading: <YourSkeleton />,
+        error: <YourErrorState />,
+        toolbar: <CustomToolbar />,
+        pagination: <CustomPagination />,
+      }}
+    />
+  )
+}`;
+
+const ROW_ACTIONS_CODE = `function ActionsTable() {
+  return (
+    <DataTable
+      columns={columns}
+      data={data}
+      features={{ rowActions: true }}
+      rowActions={[
+        {
+          label: "Edit",
+          icon: <PencilIcon />,
+          onClick: (row) => editUser(row.id),
+        },
+        {
+          label: "Delete",
+          icon: <TrashIcon />,
+          onClick: (row) => deleteUser(row.id),
+          variant: "destructive",
+          disabled: (row) => row.status === "archived",
+        },
+      ]}
+    />
+  )
+}`;
+
 function DataTableDoc() {
 	return (
 		<VStack>
@@ -180,9 +308,9 @@ function DataTableDoc() {
 				<Text>
 					Add the DataTable component and its sub-components via the shadcn CLI:
 				</Text>
-				<CodeBlock language="bash" code="npx shadcn@latest add data-table" />
+				<CodeBlock language="bash" code={SHADCN_ADD_CODE} />
 				<Text>You also need TanStack Table as a peer dependency:</Text>
-				<CodeBlock language="bash" code="npm install @tanstack/react-table" />
+				<CodeBlock language="bash" code={TANSTACK_INSTALL_CODE} />
 			</Box>
 
 			<Separator tone="subtle" />
@@ -191,35 +319,7 @@ function DataTableDoc() {
 			<Box>
 				<DocHeading variant="h2" title="Quick Start" />
 				<Text>Basic client-side table with sorting and pagination:</Text>
-				<CodeBlock
-					code={`import { DataTable } from "@/components/ui"
-import { createColumnHelper } from "@tanstack/react-table"
-
-interface User {
-  name: string
-  email: string
-  role: string
-}
-
-const columns = [
-  columnHelper.accessor("name", { header: "Name" }),
-  columnHelper.accessor("email", { header: "Email" }),
-  columnHelper.accessor("role", { header: "Role" }),
-]
-
-function UsersPage() {
-  const { data, isLoading } = useQuery(...)
-
-  return (
-    <DataTable
-      columns={columns}
-      data={data ?? []}
-      isLoading={isLoading}
-      features={{ sorting: true, pagination: true }}
-    />
-  )
-}`}
-				/>
+				<CodeBlock code={QUICK_START_CODE} />
 			</Box>
 			<Separator tone="subtle" />
 
@@ -267,33 +367,7 @@ function UsersPage() {
 					provide <Text variant="code">pageCount</Text>. Use the{" "}
 					<Text variant="code">callbacks</Text> prop to handle state changes:
 				</Text>
-				<CodeBlock
-					code={`function ServerTable() {
-  const [sorting, setSorting] = useState<SortingState>([])
-  const [pagination, setPagination] = useState({
-    pageIndex: 0, pageSize: 10,
-  })
-
-  const { data, isLoading } = useQuery({
-    queryKey: ["users", sorting, pagination],
-    queryFn: () => fetchUsers({ sorting, pagination }),
-  })
-
-  return (
-    <DataTable
-      mode="server"
-      columns={columns}
-      data={data?.rows ?? []}
-      pageCount={data?.pageCount}
-      isLoading={isLoading}
-      callbacks={{
-        onSortingChange: setSorting,
-        onPaginationChange: setPagination,
-      }}
-    />
-  )
-}`}
-				/>
+				<CodeBlock code={SERVER_MODE_CODE} />
 
 				<DocHeading variant="h3" title="Infinite Mode" />
 				<Text>
@@ -301,36 +375,7 @@ function UsersPage() {
 					append pages as the user scrolls. Supports auto (IntersectionObserver)
 					and manual ("Load more" button) modes:
 				</Text>
-				<CodeBlock
-					code={`function InfiniteTable() {
-  const { data, fetchNextPage, hasNextPage,
-          isFetchingNextPage, isLoading } =
-    useInfiniteQuery({
-      queryKey: ["users"],
-      queryFn: ({ pageParam }) => fetchUsers(pageParam),
-      initialPageParam: 0,
-      getNextPageParam: (last) => last.nextCursor,
-    })
-
-  const flatData = useMemo(
-    () => data?.pages.flatMap((p) => p.rows) ?? [],
-    [data],
-  )
-
-  return (
-    <DataTable
-      mode="infinite"
-      columns={columns}
-      data={flatData}
-      isLoading={isLoading}
-      fetchNextPage={fetchNextPage}
-      hasNextPage={hasNextPage}
-      isFetchingNextPage={isFetchingNextPage}
-      infiniteScroll={{ mode: "auto" }}
-    />
-  )
-}`}
-				/>
+				<CodeBlock code={INFINITE_MODE_CODE} />
 			</VStack>
 
 			<Separator tone="subtle" />
@@ -438,25 +483,7 @@ function UsersPage() {
 					Override any built-in state component using the{" "}
 					<Text variant="code">slots</Text> prop:
 				</Text>
-				<CodeBlock
-					code={`function CustomTable() {
-  const { data } = useQuery(...)
-
-  return (
-    <DataTable
-      columns={columns}
-      data={data}
-      slots={{
-        empty: <YourEmptyState />,
-        loading: <YourSkeleton />,
-        error: <YourErrorState />,
-        toolbar: <CustomToolbar />,
-        pagination: <CustomPagination />,
-      }}
-    />
-  )
-}`}
-				/>
+				<CodeBlock code={CUSTOM_SLOTS_CODE} />
 			</Box>
 
 			<Separator tone="subtle" />
@@ -467,31 +494,7 @@ function UsersPage() {
 				<Text>
 					Define per-row action buttons with optional icons and disabled state:
 				</Text>
-				<CodeBlock
-					code={`function ActionsTable() {
-  return (
-    <DataTable
-      columns={columns}
-      data={data}
-      features={{ rowActions: true }}
-      rowActions={[
-        {
-          label: "Edit",
-          icon: <PencilIcon />,
-          onClick: (row) => editUser(row.id),
-        },
-        {
-          label: "Delete",
-          icon: <TrashIcon />,
-          onClick: (row) => deleteUser(row.id),
-          variant: "destructive",
-          disabled: (row) => row.status === "archived",
-        },
-      ]}
-    />
-  )
-}`}
-				/>
+				<CodeBlock code={ROW_ACTIONS_CODE} />
 			</Box>
 
 			<Separator tone="subtle" />

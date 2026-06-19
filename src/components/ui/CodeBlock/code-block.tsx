@@ -3,24 +3,10 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { highlightCode } from "@/lib/syntax-highlight";
 import { Button } from "../Button/button";
 import { Box } from "../Box/box";
-import { parse } from "@babel/parser";
-import generate from "@babel/generator";
 import { Surface } from "../Surface/surface";
 interface CodeBlockProps {
 	code: string;
 	language?: string;
-}
-function _formatCode(code: string) {
-	const ast = parse(code, {
-		sourceType: "module",
-		plugins: ["typescript", "jsx"],
-	});
-
-	const result = generate(ast, {
-		comments: false,
-	});
-
-	return result.code;
 }
 function escapeHtml(code: string): string {
 	return `<pre class="shiki shiki themes"><code>${code

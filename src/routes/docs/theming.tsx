@@ -6,6 +6,63 @@ export const Route = createFileRoute("/docs/theming")({
 	component: ThemingDoc,
 });
 
+const THEME_FILE_CODE = `// styles/my-theme.stylex.ts
+import * as stylex from "@stylexjs/stylex";
+import { theme } from "@blenx-dev/theme/contract.stylex";
+
+export const myTheme = stylex.createTheme(theme, {
+  primary: "#6C63FF",
+  primarySubtle: "#8B83FF",
+  secondary: "#FF6584",
+
+  background: "#FAFAFA",
+  backgroundSubtle: "#F0F0F5",
+
+  surface: "#FFFFFF",
+  surfaceSubtle: "#F0F0F5",
+  surfaceHover: "#E8E8EE",
+
+  border: "#D1D1E0",
+  borderSubtle: "#E5E5F0",
+
+  contentPrimary: "#2D2D44",
+  contentSecondary: "#6B6B80",
+
+  focusRing: "#6C63FF",
+});`;
+
+const REACT_WRAPPER_CODE = `// React — wrap your app root
+import * as stylex from "@stylexjs/stylex";
+import { myTheme } from "./styles/my-tokens.stylex";
+
+function App() {
+  return (
+    <div {...stylex.props(myTheme)}>
+      <YourApp />
+    </div>
+  );
+}`;
+
+const NEXTJS_WRAPPER_CODE = `// Next.js — apply to the body or a layout wrapper
+// app/layout.tsx
+import { myTheme } from "@/styles/my-tokens.stylex";
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body className={myTheme}>
+        {children}
+      </body>
+    </html>
+  );
+}`;
+
+const AVAILABLE_IMPORTS_CODE = `// Import the contract for createTheme
+import { theme } from "@blenx-dev/theme/contract.stylex";
+
+// Or use the convenience re-exports
+import { theme, borderRadius, spacing, fontSize } from "@/lib/theme/tokens.stylex";`;
+
 function ThemingDoc() {
 	return (
 		<VStack gap="medium">
@@ -36,71 +93,14 @@ function ThemingDoc() {
 					</Text>
 
 					<DocHeading variant="h3" title="1. Create a theme file" />
-					<CodeBlock
-						code={`// styles/my-theme.stylex.ts
-import * as stylex from "@stylexjs/stylex";
-import { theme } from "@blenx-dev/theme/contract.stylex";
-
-export const myTheme = stylex.createTheme(theme, {
-  primary: "#6C63FF",
-  primarySubtle: "#8B83FF",
-  secondary: "#FF6584",
-
-  background: "#FAFAFA",
-  backgroundSubtle: "#F0F0F5",
-
-  surface: "#FFFFFF",
-  surfaceSubtle: "#F0F0F5",
-  surfaceHover: "#E8E8EE",
-
-  border: "#D1D1E0",
-  borderSubtle: "#E5E5F0",
-
-  contentPrimary: "#2D2D44",
-  contentSecondary: "#6B6B80",
-
-  focusRing: "#6C63FF",
-});`}
-					/>
+					<CodeBlock code={THEME_FILE_CODE} />
 
 					<DocHeading variant="h3" title="2. Apply to root element" />
-					<CodeBlock
-						code={`// React — wrap your app root
-import * as stylex from "@stylexjs/stylex";
-import { myTheme } from "./styles/my-tokens.stylex";
-
-function App() {
-  return (
-    <div {...stylex.props(myTheme)}>
-      <YourApp />
-    </div>
-  );
-}`}
-					/>
-					<CodeBlock
-						code={`// Next.js — apply to the body or a layout wrapper
-// app/layout.tsx
-import { myTheme } from "@/styles/my-tokens.stylex";
-
-export default function RootLayout({ children }) {
-  return (
-    <html lang="en">
-      <body className={myTheme}>
-        {children}
-      </body>
-    </html>
-  );
-}`}
-					/>
+					<CodeBlock code={REACT_WRAPPER_CODE} />
+					<CodeBlock code={NEXTJS_WRAPPER_CODE} />
 
 					<DocHeading variant="h3" title="Available Imports" />
-					<CodeBlock
-						code={`// Import the contract for createTheme
-import { theme } from "@blenx-dev/theme/contract.stylex";
-
-// Or use the convenience re-exports
-import { theme, borderRadius, spacing, fontSize } from "@/lib/theme/tokens.stylex";`}
-					/>
+					<CodeBlock code={AVAILABLE_IMPORTS_CODE} />
 				</VStack>
 			</Box>
 
