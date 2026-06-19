@@ -57,7 +57,7 @@ import {
  * Data
  * ------------------------------------------------------------------------- */
 
-const INSTALL_COMMAND = `npx shadcn@latest add https://blenx-ui.vercel.app/r/button.json`;
+const INSTALL_COMMAND = `npx shadcn@latest add https://blenx-ui.vercel.app/reg/button.json`;
 
 const features = [
 	{
