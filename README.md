@@ -255,6 +255,16 @@ Blenx is built around a different philosophy:
 * 📱 Responsive by default
 * 🔒 Type-safe APIs
 
+## Why Blenx?
+
+| Feature | Blenx | Traditional UI Libraries |
+|----------|--------|--------|
+| Own the source code | ✅ | ❌ |
+| Copy into project | ✅ | ❌ |
+| Accessible primitives | ✅ | Varies |
+| Fully customizable | ✅ | Limited |
+| Registry-first distribution | ✅ | ❌ |
+| StyleX-native | ✅ | Rare |
 ## Core Components
 
 ### Layout
