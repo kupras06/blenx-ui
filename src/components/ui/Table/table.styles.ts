@@ -64,6 +64,7 @@ export const tableStyles = stylex.create({
 		borderStyle: "solid",
 		borderColor: theme.border,
 		borderRadius: borderRadius.medium,
-		overflow: "hidden",
+		maxWidth: "100%",
+		overflowX: "auto",
 	},
 });

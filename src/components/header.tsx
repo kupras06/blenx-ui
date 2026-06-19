@@ -131,6 +131,8 @@ function ThemeToggle() {
 
 function Header() {
 	const { pathname } = useLocation();
+	const isDocsActive = pathname.startsWith("/docs");
+	const isBlocksActive = pathname.startsWith("/blocks");
 	const isThemeBuilderActive = pathname === "/theme-builder";
 	const isHomeActive = pathname === "/";
 	return (
@@ -139,7 +141,7 @@ function Header() {
 				<HStack align="center" justify="between" paddingY="xsmall">
 					<HStack align="center" justify="between" gap="xxsmall">
 						<ClientOnly>
-							<DocsRouteSidebarOption />
+							{isDocsActive && <DocsRouteSidebarOption />}
 						</ClientOnly>
 						<Link
 							to="/"
@@ -150,46 +152,50 @@ function Header() {
 					</HStack>
 					<HStack>
 						<ClientOnly>
-							<DocsRouteOption />
-							<BlocksRouteOption />
+							{!isDocsActive && <DocsRouteOption />}
+							{isDocsActive && <BlocksRouteOption />}
 							<ThemeToggle />
 						</ClientOnly>
-						<Button
-							size="xsmall"
-							variant={isThemeBuilderActive ? "soft" : "ghost"}
-							nativeButton={false}
-							render={<Link to="/theme-builder" />}
-						>
-							<HStack gap="xxsmall" position="relative">
-								Theme Builder
-								<Icon
-									color="error"
-									backgroundColor="error"
-									position="absolute"
-									bottom="small"
-									padding="xxsmall"
-									left="massive"
-								>
-									<WarningIcon />
-								</Icon>
-							</HStack>
-						</Button>
-						<Button
-							size="xsmall"
-							nativeButton={false}
-							variant="link"
-							render={
-								<a
-									href={GITHUB_URL}
-									target="_blank"
-									aria-label="Project Github URL"
-									rel="noopener noreferrer"
-									{...stylex.props(styles.link)}
-								/>
-							}
-						>
-							GitHub &rarr;
-						</Button>
+						{isDocsActive && (
+							<Button
+								size="xsmall"
+								variant={isThemeBuilderActive ? "soft" : "ghost"}
+								nativeButton={false}
+								render={<Link to="/theme-builder" />}
+							>
+								<HStack gap="xxsmall" position="relative">
+									Theme Builder
+									<Icon
+										color="error"
+										backgroundColor="error"
+										position="absolute"
+										bottom="small"
+										padding="xxsmall"
+										left="massive"
+									>
+										<WarningIcon />
+									</Icon>
+								</HStack>
+							</Button>
+						)}
+						{!isDocsActive && !isBlocksActive && (
+							<Button
+								size="xsmall"
+								nativeButton={false}
+								variant="link"
+								render={
+									<a
+										href={GITHUB_URL}
+										target="_blank"
+										aria-label="Project Github URL"
+										rel="noopener noreferrer"
+										{...stylex.props(styles.link)}
+									/>
+								}
+							>
+								GitHub &rarr;
+							</Button>
+						)}
 					</HStack>
 				</HStack>
 			</Container>

@@ -90,7 +90,7 @@ interface ComparisonRow {
 const comparisonColumns: Column<ComparisonRow>[] = [
 	{ key: "feature", header: "Feature" },
 	{ key: "blenx", header: "Blenx" },
-	{ key: "traditiona" as keyof ComparisonRow, header: "Traditional UI Libraries" },
+	{ key: "traditional" as keyof ComparisonRow, header: "Traditional UI Libraries" },
 ];
 
 const comparisonRows: ComparisonRow[] = [
@@ -618,11 +618,13 @@ function HomeComponent() {
 							</Text>
 						</Box>
 					</VStack>
-					<Table
+					<Box maxWidth="lg" overflow="auto">
+						<Table
 						columnData={comparisonColumns}
 						rowData={comparisonRows}
 						rowKey="feature"
 					/>
+					</Box>
 				</VStack>
 
 				<Separator tone="subtle" />
