@@ -14,6 +14,7 @@ import { darkTheme } from "@/lib/app-theme.stylex";
 import { theme } from "@/lib/theme/contract.stylex";
 import { fonts } from "@/lib/theme/tokens.stylex";
 import appCss from "@/app.css?url";
+import { Analytics } from "@vercel/analytics/next"
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 	{
 		head: () => ({
@@ -165,6 +166,7 @@ function RootDocument() {
 						</Box>
 					</Container>
 				</QueryClientProvider>
+				<Analytics />
 				<Scripts />
 			</body>
 		</html>
