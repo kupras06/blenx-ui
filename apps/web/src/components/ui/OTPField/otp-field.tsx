@@ -1,4 +1,4 @@
-import { OTPFieldPreview } from "@base-ui/react/otp-field";
+import { OTPField as OTPFieldPreview } from "@base-ui/react/otp-field";
 import * as stylex from "@stylexjs/stylex";
 import type React from "react";
 import {

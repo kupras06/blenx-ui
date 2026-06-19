@@ -51,7 +51,7 @@ import {
 	TabsTab,
 	Text,
 	VStack,
-} from "@/ui";
+} from "@/components/ui";
 
 /* ---------------------------------------------------------------------------
  * Data

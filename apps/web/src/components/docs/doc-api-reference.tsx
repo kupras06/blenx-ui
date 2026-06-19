@@ -1,4 +1,4 @@
-import { VStack } from "@/ui";
+import { VStack } from "../ui";
 import { Surface } from "../ui/Surface/surface";
 import { Text } from "../ui/Text/text";
 
