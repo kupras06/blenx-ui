@@ -15,13 +15,6 @@ interface SidebarSection {
 
 const staticSections: SidebarSection[] = [
   {
-    title: "Overview",
-    links: [
-      { to: "/docs", label: "Overview" },
-      { to: "/docs/installation", label: "Installation" },
-    ],
-  },
-  {
     title: "Customization",
     links: [
       { to: "/docs/theming", label: "Theming" },
@@ -56,12 +49,12 @@ const styles = stylex.create({
 function DocsSidebar({ onClose }: { onClose?: () => void }) {
   const { pathname } = useLocation();
 
-  const guideLinks: SidebarLink[] = [...allGuides]
-    .sort((a, b) => a.navigation.order - b.navigation.order)
-    .map((g) => ({
-      to: `/docs/${g._meta.path}`,
-      label: g.title,
-    }));
+  const guideLinks: SidebarLink[] = allGuides
+      .sort((a, b) => a.navigation.order - b.navigation.order)
+      .map((g) => ({
+        to: g.navigation.link ?? `/docs/${g._meta.path}`,
+        label: g.title,
+      }))
 
   const componentLinks: SidebarLink[] = [...allComponents]
     .sort((a, b) => a.navigation.order - b.navigation.order)
@@ -71,10 +64,9 @@ function DocsSidebar({ onClose }: { onClose?: () => void }) {
     }));
 
   const allSections: SidebarSection[] = [
-    staticSections[0],
     { title: "Guides", links: guideLinks },
     { title: "Components", links: componentLinks },
-    ...staticSections.slice(1),
+    ...staticSections,
   ];
 
   return (
