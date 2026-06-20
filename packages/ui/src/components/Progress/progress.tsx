@@ -2,7 +2,7 @@
 
 import { Progress as ProgressPrimitive } from "@base-ui/react/progress";
 import * as stylex from "@stylexjs/stylex";
-import type { PropsWithStylex } from "@/utils/stylex.utils";
+import type { PropsWithStylex } from "@blenx-dev/ui/utils/stylex.utils";
 import { progressStyles } from "./progress.styles";
 
 type ProgressRootProps = PropsWithStylex<ProgressPrimitive.Root.Props>;

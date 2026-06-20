@@ -3,7 +3,7 @@ import { mergeProps } from "@base-ui/react/merge-props";
 import { CaretUpDownIcon, XIcon } from "@phosphor-icons/react";
 import * as stylex from "@stylexjs/stylex";
 import type React from "react";
-import type { PropsWithStylex } from "@/utils/stylex.utils";
+import type { PropsWithStylex } from "@blenx-dev/ui/utils/stylex.utils";
 import { Input } from "../Input/input";
 import { ScrollArea } from "../ScrollArea/scroll-area";
 import {

@@ -9,7 +9,7 @@ import {
 	AccordionTrigger,
 	AccordionPanel,
 } from "@blenx-dev/ui/components/Accordion/accordion";
-import type { PropsWithStylex } from "@/utils/stylex.utils";
+import type { PropsWithStylex } from "@blenx-dev/ui/utils/stylex.utils";
 import { Box, Container, Input, VStack } from "@blenx-dev/ui/components";;
 
 type FaqItem = {

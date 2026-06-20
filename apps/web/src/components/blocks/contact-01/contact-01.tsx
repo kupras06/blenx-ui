@@ -6,7 +6,7 @@ import { Input } from "@blenx-dev/ui/components/Input/input";
 import { Textarea } from "@blenx-dev/ui/components/Textarea/textarea";
 import { Text } from "@blenx-dev/ui/components/Text/text";
 import { Card, CardBody } from "@blenx-dev/ui/components/Card/card";
-import type { PropsWithStylex } from "@/utils/stylex.utils";
+import type { PropsWithStylex } from "@blenx-dev/ui/utils/stylex.utils";
 import {
 	Box,
 	Container,

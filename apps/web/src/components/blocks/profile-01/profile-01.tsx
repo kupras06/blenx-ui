@@ -12,7 +12,7 @@ import {
 } from "@blenx-dev/ui/components/Card/card";
 import { Switch } from "@blenx-dev/ui/components/Switch/switch";
 import { HStack, VStack } from "@blenx-dev/ui/components/Stack/stack";
-import type { PropsWithStylex } from "@/utils/stylex.utils";
+import type { PropsWithStylex } from "@blenx-dev/ui/utils/stylex.utils";
 import { Box, Container, Field, FieldLabel } from "@blenx-dev/ui/components";;
 
 type NotificationSetting = {

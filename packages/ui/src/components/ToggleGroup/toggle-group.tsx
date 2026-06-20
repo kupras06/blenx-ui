@@ -3,7 +3,7 @@
 import { ToggleGroup as ToggleGroupPrimitive } from "@base-ui/react/toggle-group";
 import * as stylex from "@stylexjs/stylex";
 import * as React from "react";
-import type { PropsWithStylex } from "@/utils/stylex.utils";
+import type { PropsWithStylex } from "@blenx-dev/ui/utils/stylex.utils";
 import type { SeparatorProps } from "../Separator/separator";
 import { Separator } from "../Separator/separator";
 import {

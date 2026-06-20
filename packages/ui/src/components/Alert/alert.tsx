@@ -1,7 +1,7 @@
 import { mergeProps, useRender } from "@base-ui/react";
 import * as stylex from "@stylexjs/stylex";
 import type { ReactNode } from "react";
-import type { PropsWithStylex } from "@/utils/stylex.utils";
+import type { PropsWithStylex } from "@blenx-dev/ui/utils/stylex.utils";
 import { alertStyles, alertVariantStyles } from "./alert.styles";
 
 export type AlertVariant = keyof typeof alertVariantStyles;

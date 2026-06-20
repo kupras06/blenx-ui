@@ -4,7 +4,7 @@ import {
 } from "@base-ui/react/avatar";
 import * as stylex from "@stylexjs/stylex";
 import { borderRadiusStyles } from "@blenx-dev/ui/utils/layout.styles";
-import type { PropsWithStylex } from "@/utils/stylex.utils";
+import type { PropsWithStylex } from "@blenx-dev/ui/utils/stylex.utils";
 import { avatarStyles, avataSizeStyles } from "./avatar.styles";
 
 interface AvatarProps extends PropsWithStylex<AvatarRootProps> {

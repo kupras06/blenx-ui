@@ -1,6 +1,6 @@
 import { mergeProps } from "@base-ui/react";
 import * as stylex from "@stylexjs/stylex";
-import type { PropsWithStylex } from "@/utils/stylex.utils";
+import type { PropsWithStylex } from "@blenx-dev/ui/utils/stylex.utils";
 import { badgeStyles, badgeVariantStyles } from "./badge.styles";
 import { Box, type BoxProps } from "../Box/box";
 

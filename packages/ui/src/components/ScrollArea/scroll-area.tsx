@@ -4,7 +4,7 @@ import { ScrollArea as ScrollAreaPrimitive } from "@base-ui/react/scroll-area";
 import * as stylex from "@stylexjs/stylex";
 import type React from "react";
 import type { CSSProperties } from "react";
-import type { PropsWithStylex } from "@/utils/stylex.utils";
+import type { PropsWithStylex } from "@blenx-dev/ui/utils/stylex.utils";
 import { scrollAreaStyles } from "./scroll-area.styles";
 import { applyBoxHeightStyle, type BoxHeightStyles } from "../Box/box.styles";
 

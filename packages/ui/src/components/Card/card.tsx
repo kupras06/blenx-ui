@@ -1,6 +1,6 @@
 import { mergeProps, useRender } from "@base-ui/react";
 import * as stylex from "@stylexjs/stylex";
-import type { _BaseDivProps, PropsWithStylex } from "@/utils/stylex.utils";
+import type { _BaseDivProps, PropsWithStylex } from "@blenx-dev/ui/utils/stylex.utils";
 import { Surface, type SurfaceProps } from "../Surface/surface";
 import {
 	cardPaddingStyles,

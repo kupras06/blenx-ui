@@ -4,7 +4,7 @@ import { useRender } from "@base-ui/react/use-render";
 import * as stylex from "@stylexjs/stylex";
 import type * as React from "react";
 import { useId } from "react";
-import type { PropsWithStylex } from "@/utils/stylex.utils";
+import type { PropsWithStylex } from "@blenx-dev/ui/utils/stylex.utils";
 import { inputStyles } from "./input.styles";
 
 type InputSize = "sm" | "default" | "lg";

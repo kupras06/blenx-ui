@@ -3,7 +3,7 @@
 import { Accordion as AccordionPrimitive } from "@base-ui/react/accordion";
 import { CaretUpDownIcon } from "@phosphor-icons/react";
 import * as stylex from "@stylexjs/stylex";
-import type { PropsWithStylex } from "@/utils/stylex.utils";
+import type { PropsWithStylex } from "@blenx-dev/ui/utils/stylex.utils";
 import { accordionStyles } from "./accordion.styles";
 
 type AccordionRootProps = PropsWithStylex<AccordionPrimitive.Root.Props>;

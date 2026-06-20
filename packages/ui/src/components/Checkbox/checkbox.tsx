@@ -3,7 +3,7 @@
 import { Checkbox as CheckboxPrimitive } from "@base-ui/react/checkbox";
 import { CheckboxGroup as CheckboxGroupPrimitive } from "@base-ui/react/checkbox-group";
 import * as stylex from "@stylexjs/stylex";
-import type { PropsWithStylex } from "@/utils/stylex.utils";
+import type { PropsWithStylex } from "@blenx-dev/ui/utils/stylex.utils";
 import { checkboxStyles } from "./checkbox.styles";
 
 type CheckboxGroupProps = PropsWithStylex<CheckboxGroupPrimitive.Props>;

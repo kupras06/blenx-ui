@@ -2,7 +2,7 @@ import * as stylex from "@stylexjs/stylex";
 import { Button } from "@blenx-dev/ui/components/Button/button";
 import { Text } from "@blenx-dev/ui/components/Text/text";
 import { HStack, VStack } from "@blenx-dev/ui/components/Stack/stack";
-import type { PropsWithStylex } from "@/utils/stylex.utils";
+import type { PropsWithStylex } from "@blenx-dev/ui/utils/stylex.utils";
 import { heroStyles } from "./hero-01.styles";
 import { ImageIcon } from "@phosphor-icons/react";
 import { Container, Icon } from "@blenx-dev/ui/components";;

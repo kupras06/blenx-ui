@@ -6,7 +6,7 @@ import {
 	type BorderRadiusProp,
 	borderRadiusStyles,
 } from "@blenx-dev/ui/utils/layout.styles";
-import type { PropsWithStylex } from "@/utils/stylex.utils";
+import type { PropsWithStylex } from "@blenx-dev/ui/utils/stylex.utils";
 import {
 	togglePressedStyles,
 	toggleSizeStyles,

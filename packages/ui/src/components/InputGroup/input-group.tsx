@@ -7,7 +7,7 @@ import { Radio as RadioPrimitive } from "@base-ui/react/radio";
 import { RadioGroup as RadioGroupPrimitive } from "@base-ui/react/radio-group";
 import * as stylex from "@stylexjs/stylex";
 import type * as React from "react";
-import type { _BaseDivProps, PropsWithStylex } from "@/utils/stylex.utils";
+import type { _BaseDivProps, PropsWithStylex } from "@blenx-dev/ui/utils/stylex.utils";
 import { inputGroupStyles } from "./input-group.styles";
 
 type Align = "inline-start" | "inline-end" | "block-start" | "block-end";

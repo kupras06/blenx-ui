@@ -6,7 +6,7 @@ import { Text } from "@blenx-dev/ui/components/Text/text";
 import { Card, CardBody, CardHeader } from "@blenx-dev/ui/components/Card/card";
 import { Badge } from "@blenx-dev/ui/components/Badge/badge";
 import { Switch } from "@blenx-dev/ui/components/Switch/switch";
-import type { PropsWithStylex } from "@/utils/stylex.utils";
+import type { PropsWithStylex } from "@blenx-dev/ui/utils/stylex.utils";
 import { CheckIcon } from "@phosphor-icons/react";
 import { Container, HStack, Icon, VStack } from "@blenx-dev/ui/components";;
 

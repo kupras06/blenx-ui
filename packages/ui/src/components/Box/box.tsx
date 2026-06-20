@@ -13,7 +13,7 @@ import {
 	type BorderRadiusProp,
 	type LayoutProps,
 } from "@blenx-dev/ui/utils/layout.styles";
-import type { _BaseDivProps } from "@/utils/stylex.utils";
+import type { _BaseDivProps } from "@blenx-dev/ui/utils/stylex.utils";
 import { boxSizeStyles, boxStyles } from "./box.styles";
 
 type BoxSize = keyof typeof boxSizeStyles;

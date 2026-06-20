@@ -4,7 +4,7 @@ import { mergeProps, useRender } from "@base-ui/react";
 import { CaretRightIcon, DotsThreeIcon } from "@phosphor-icons/react";
 import * as stylex from "@stylexjs/stylex";
 import type { ComponentPropsWithoutRef } from "react";
-import type { PropsWithStylex } from "@/utils/stylex.utils";
+import type { PropsWithStylex } from "@blenx-dev/ui/utils/stylex.utils";
 import { breadcrumbsStyles } from "./breadcrumbs.styles";
 
 type NavProps = PropsWithStylex<useRender.ComponentProps<"nav">>;
