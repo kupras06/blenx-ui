@@ -1,8 +1,9 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { allGuides } from "content-collections";
 import { MDXContent } from "@content-collections/mdx/react";
-import { Box, Text, VStack } from "@blenx-dev/ui/components";
-import { DocHeading } from "@/components/docs/doc-heading";
+import { Box, Text } from "@blenx-dev/ui/components";
+import { DocsContent } from "@/components/docs/DocsContent";
+import { mdxComponents } from "@/components/docs/MdxComponents";
 
 export const Route = createFileRoute("/docs/$guide")({
 	component: GuideDoc,
@@ -18,14 +19,14 @@ function GuideDoc() {
 	if (!doc) throw notFound();
 
 	return (
-		<VStack gap="large">
+		<DocsContent>
 			<Box>
-				<DocHeading variant="h1" title={doc.title} />
+				<Text variant="h1">{doc.title}</Text>
 				<Text variant="body2" color="secondary">
 					{doc.description}
 				</Text>
 			</Box>
-			<MDXContent code={doc.mdx} />
-		</VStack>
+			<MDXContent code={doc.mdx} components={mdxComponents} />
+		</DocsContent>
 	);
 }
