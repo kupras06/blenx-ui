@@ -1,13 +1,13 @@
 {
-	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
-	"title": "Settings Page",
-	"description": "A full settings page with tabbed navigation covering general, security, appearance, notifications, and billing sections.",
-	"category": "Dashboard",
-	"status": "stable",
-	"keywords": ["settings", "preferences", "tabs", "configuration", "account"],
-	"related": ["Tabs", "Button", "Input", "Switch", "Card", "Separator"],
-	"accessibility": {
-		"keyboard": ["Tab", "Arrow Keys", "Enter"],
-		"aria": ["tablist", "tab", "tabpanel"]
-	}
+  "$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
+  "title": "Settings Page",
+  "description": "A full settings page with tabbed navigation covering general, security, appearance, notifications, and billing sections.",
+  "category": "Dashboard",
+  "status": "stable",
+  "keywords": ["settings", "preferences", "tabs", "configuration", "account"],
+  "related": ["Tabs", "Button", "Input", "Switch", "Card", "Separator"],
+  "accessibility": {
+    "keyboard": ["Tab", "Arrow Keys", "Enter"],
+    "aria": ["tablist", "tab", "tabpanel"]
+  }
 }

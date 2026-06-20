@@ -1,23 +1,23 @@
 import { type RefObject, useCallback, useEffect, useRef } from "react";
 
 interface UseInfiniteScrollOptions {
-	/** Whether there are more pages to load */
-	hasNextPage: boolean;
-	/** Whether a fetch is currently in progress */
-	isFetchingNextPage: boolean;
-	/** Function to fetch the next page */
-	fetchNextPage: () => void;
-	/** IntersectionObserver root margin. Default: "200px" */
-	rootMargin?: string;
-	/** IntersectionObserver threshold. Default: 0 */
-	threshold?: number;
-	/** If true, the observer is disabled */
-	enabled?: boolean;
+  /** Whether there are more pages to load */
+  hasNextPage: boolean;
+  /** Whether a fetch is currently in progress */
+  isFetchingNextPage: boolean;
+  /** Function to fetch the next page */
+  fetchNextPage: () => void;
+  /** IntersectionObserver root margin. Default: "200px" */
+  rootMargin?: string;
+  /** IntersectionObserver threshold. Default: 0 */
+  threshold?: number;
+  /** If true, the observer is disabled */
+  enabled?: boolean;
 }
 
 interface UseInfiniteScrollReturn {
-	/** Ref to attach to the sentinel element */
-	sentinelRef: RefObject<HTMLDivElement | null>;
+  /** Ref to attach to the sentinel element */
+  sentinelRef: RefObject<HTMLDivElement | null>;
 }
 
 /**
@@ -28,40 +28,40 @@ interface UseInfiniteScrollReturn {
  * duplicate requests.
  */
 export function useInfiniteScroll({
-	hasNextPage,
-	isFetchingNextPage,
-	fetchNextPage,
-	rootMargin = "200px",
-	threshold = 0,
-	enabled = true,
+  hasNextPage,
+  isFetchingNextPage,
+  fetchNextPage,
+  rootMargin = "200px",
+  threshold = 0,
+  enabled = true,
 }: UseInfiniteScrollOptions): UseInfiniteScrollReturn {
-	const sentinelRef = useRef<HTMLDivElement | null>(null);
+  const sentinelRef = useRef<HTMLDivElement | null>(null);
 
-	const handleIntersection = useCallback(
-		(entries: IntersectionObserverEntry[]) => {
-			const [entry] = entries;
-			if (entry?.isIntersecting && hasNextPage && !isFetchingNextPage) {
-				fetchNextPage();
-			}
-		},
-		[hasNextPage, isFetchingNextPage, fetchNextPage],
-	);
+  const handleIntersection = useCallback(
+    (entries: IntersectionObserverEntry[]) => {
+      const [entry] = entries;
+      if (entry?.isIntersecting && hasNextPage && !isFetchingNextPage) {
+        fetchNextPage();
+      }
+    },
+    [hasNextPage, isFetchingNextPage, fetchNextPage],
+  );
 
-	useEffect(() => {
-		const sentinel = sentinelRef.current;
-		if (!sentinel || !enabled) return;
+  useEffect(() => {
+    const sentinel = sentinelRef.current;
+    if (!sentinel || !enabled) return;
 
-		const observer = new IntersectionObserver(handleIntersection, {
-			rootMargin,
-			threshold,
-		});
+    const observer = new IntersectionObserver(handleIntersection, {
+      rootMargin,
+      threshold,
+    });
 
-		observer.observe(sentinel);
+    observer.observe(sentinel);
 
-		return () => {
-			observer.disconnect();
-		};
-	}, [enabled, handleIntersection, rootMargin, threshold]);
+    return () => {
+      observer.disconnect();
+    };
+  }, [enabled, handleIntersection, rootMargin, threshold]);
 
-	return { sentinelRef };
+  return { sentinelRef };
 }

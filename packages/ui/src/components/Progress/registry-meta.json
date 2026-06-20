@@ -1,19 +1,19 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "progress",
-	"type": "registry:ui",
-	"title": "Progress",
-	"description": "A StyleX Progress component.",
-	"files": [
-		{
-			"file": "progress.tsx",
-			"type": "registry:ui",
-			"target": "@ui/Progress/progress.tsx"
-		},
-		{
-			"file": "progress.styles.ts",
-			"type": "registry:file",
-			"target": "@ui/Progress/progress.styles.ts"
-		}
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress",
+  "type": "registry:ui",
+  "title": "Progress",
+  "description": "A StyleX Progress component.",
+  "files": [
+    {
+      "file": "progress.tsx",
+      "type": "registry:ui",
+      "target": "@ui/Progress/progress.tsx"
+    },
+    {
+      "file": "progress.styles.ts",
+      "type": "registry:file",
+      "target": "@ui/Progress/progress.styles.ts"
+    }
+  ]
 }

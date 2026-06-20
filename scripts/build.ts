@@ -1,11 +1,4 @@
-import {
-	readdirSync,
-	readFileSync,
-	writeFileSync,
-	existsSync,
-	statSync,
-	mkdirSync,
-} from "fs";
+import { readdirSync, readFileSync, writeFileSync, existsSync, statSync, mkdirSync } from "fs";
 import { join, relative, dirname } from "path";
 
 const TEMP_DIR = "registry/.temp";
@@ -20,86 +13,80 @@ const LIB_DIR = join(TEMP_SRC_DIR, "lib");
 const UTILS_DIR = join(TEMP_SRC_DIR, "utils");
 const items = [];
 function findRegistryMetaFiles(dir: string): string[] {
-	if (!existsSync(dir)) {
-		return [];
-	}
+  if (!existsSync(dir)) {
+    return [];
+  }
 
-	const entries = readdirSync(dir);
+  const entries = readdirSync(dir);
 
-	return entries.flatMap((entry) => {
-		const fullPath = join(dir, entry);
+  return entries.flatMap((entry) => {
+    const fullPath = join(dir, entry);
 
-		if (statSync(fullPath).isDirectory()) {
-			return findRegistryMetaFiles(fullPath);
-		}
+    if (statSync(fullPath).isDirectory()) {
+      return findRegistryMetaFiles(fullPath);
+    }
 
-		return entry === "registry-meta.json" ? [fullPath] : [];
-	});
+    return entry === "registry-meta.json" ? [fullPath] : [];
+  });
 }
 function copyAndTransformRecursive(src: string, dest: string) {
-	if (!existsSync(src)) return;
-	const stat = statSync(src);
-	if (stat.isDirectory()) {
-		if (!existsSync(dest)) mkdirSync(dest, { recursive: true });
-		for (const child of readdirSync(src)) {
-			copyAndTransformRecursive(join(src, child), join(dest, child));
-		}
-	} else {
-		if (!existsSync(dirname(dest)))
-			mkdirSync(dirname(dest), { recursive: true });
-		let content = readFileSync(src, "utf8");
-		if (src.endsWith(".ts") || src.endsWith(".tsx")) {
-			content = content
-				.replace(/from\s+"#\//g, 'from "@/')
-				.replace(/import\s+"#\//g, 'import "@/');
-		}
-		writeFileSync(dest, content, "utf8");
-	}
+  if (!existsSync(src)) return;
+  const stat = statSync(src);
+  if (stat.isDirectory()) {
+    if (!existsSync(dest)) mkdirSync(dest, { recursive: true });
+    for (const child of readdirSync(src)) {
+      copyAndTransformRecursive(join(src, child), join(dest, child));
+    }
+  } else {
+    if (!existsSync(dirname(dest))) mkdirSync(dirname(dest), { recursive: true });
+    let content = readFileSync(src, "utf8");
+    if (src.endsWith(".ts") || src.endsWith(".tsx")) {
+      content = content.replace(/from\s+"#\//g, 'from "@/').replace(/import\s+"#\//g, 'import "@/');
+    }
+    writeFileSync(dest, content, "utf8");
+  }
 }
 
 // Copy and transform before scanning
 copyAndTransformRecursive("src", TEMP_SRC_DIR);
 function getFilesRecursive(dir: string): string[] {
-	if (!existsSync(dir)) {
-		return [];
-	}
-	const entries = readdirSync(dir);
+  if (!existsSync(dir)) {
+    return [];
+  }
+  const entries = readdirSync(dir);
 
-	return entries.flatMap((entry) => {
-		const fullPath = join(dir, entry);
+  return entries.flatMap((entry) => {
+    const fullPath = join(dir, entry);
 
-		if (statSync(fullPath).isDirectory()) {
-			return getFilesRecursive(fullPath);
-		}
+    if (statSync(fullPath).isDirectory()) {
+      return getFilesRecursive(fullPath);
+    }
 
-		return [fullPath];
-	});
+    return [fullPath];
+  });
 }
 
 function buildRegistryFiles(
-	sourceDir: string,
-	targetPrefix: string,
+  sourceDir: string,
+  targetPrefix: string,
 ): Array<{
-	path: string;
-	type: string;
-	target: string;
+  path: string;
+  type: string;
+  target: string;
 }> {
-	return getFilesRecursive(sourceDir).map((file) => ({
-		path: file,
-		type: "registry:file",
-		target: join(targetPrefix, relative(sourceDir, file).replaceAll("\\", "/")),
-	}));
+  return getFilesRecursive(sourceDir).map((file) => ({
+    path: file,
+    type: "registry:file",
+    target: join(targetPrefix, relative(sourceDir, file).replaceAll("\\", "/")),
+  }));
 }
 items.push({
-	name: "shared",
-	type: "registry:lib",
-	title: "Shared",
-	description: "Shared libraries, theme and utilities.",
-	dependencies: ["@stylexjs/stylex", "@phosphor-icons/react", "@base-ui/react"],
-	files: [
-		...buildRegistryFiles(LIB_DIR, "@lib"),
-		...buildRegistryFiles(UTILS_DIR, "@utils"),
-	],
+  name: "shared",
+  type: "registry:lib",
+  title: "Shared",
+  description: "Shared libraries, theme and utilities.",
+  dependencies: ["@stylexjs/stylex", "@phosphor-icons/react", "@base-ui/react"],
+  files: [...buildRegistryFiles(LIB_DIR, "@lib"), ...buildRegistryFiles(UTILS_DIR, "@utils")],
 });
 
 const themeRegistryUrl = `${REGISTRY_URL}/shared.json`;
@@ -107,43 +94,35 @@ const themeRegistryUrl = `${REGISTRY_URL}/shared.json`;
 const registryMetaFiles = findRegistryMetaFiles(SOURCE_COMPONENTS_DIR);
 console.log("registryMetaFiles", registryMetaFiles);
 for (const metaPath of registryMetaFiles) {
-	const sourceComponentDir = dirname(metaPath);
-	const relativeComponentDir = relative(
-		SOURCE_COMPONENTS_DIR,
-		sourceComponentDir,
-	);
+  const sourceComponentDir = dirname(metaPath);
+  const relativeComponentDir = relative(SOURCE_COMPONENTS_DIR, sourceComponentDir);
 
-	const tempComponentDir = join(TEMP_COMPONENTS_DIR, relativeComponentDir);
-	const meta = JSON.parse(readFileSync(metaPath, "utf8"));
+  const tempComponentDir = join(TEMP_COMPONENTS_DIR, relativeComponentDir);
+  const meta = JSON.parse(readFileSync(metaPath, "utf8"));
 
-	const files = (meta.files || []).map(({ file, type, target }: any) => ({
-		path: join(tempComponentDir, file),
-		type,
-		target,
-	}));
+  const files = (meta.files || []).map(({ file, type, target }: any) => ({
+    path: join(tempComponentDir, file),
+    type,
+    target,
+  }));
 
-	const itemRegistryDependencies = (meta.registryDependencies || []).map(
-		(dep: string) =>
-			dep.startsWith("http") ? dep : `${REGISTRY_URL}/${dep}.json`,
-	);
+  const itemRegistryDependencies = (meta.registryDependencies || []).map((dep: string) =>
+    dep.startsWith("http") ? dep : `${REGISTRY_URL}/${dep}.json`,
+  );
 
-	items.push({
-		...meta,
-		files,
-		registryDependencies: [...itemRegistryDependencies, themeRegistryUrl],
-		dependencies: [
-			"@stylexjs/stylex",
-			"@phosphor-icons/react",
-			"@base-ui/react",
-		],
-	});
+  items.push({
+    ...meta,
+    files,
+    registryDependencies: [...itemRegistryDependencies, themeRegistryUrl],
+    dependencies: ["@stylexjs/stylex", "@phosphor-icons/react", "@base-ui/react"],
+  });
 }
 
 const registry = {
-	$schema: "https://ui.shadcn.com/schema/registry.json",
-	name: "blenx-dev",
-	homepage: "https://blenx-dev.com",
-	items,
+  $schema: "https://ui.shadcn.com/schema/registry.json",
+  name: "blenx-dev",
+  homepage: "https://blenx-dev.com",
+  items,
 };
 
 const content = JSON.stringify(registry, null, 2);

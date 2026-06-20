@@ -1,13 +1,13 @@
 {
-	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
-	"title": "Popover",
-	"description": "A floating popover with trigger, positioning, arrow, backdrop, and accessible title/description.",
-	"category": "Overlay",
-	"status": "stable",
-	"keywords": ["popover", "tooltip", "popup", "floating", "overlay"],
-	"related": ["Button", "ColorPicker", "DatePicker"],
-	"accessibility": {
-		"keyboard": ["Escape"],
-		"aria": ["role", "aria-labelledby", "aria-describedby"]
-	}
+  "$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
+  "title": "Popover",
+  "description": "A floating popover with trigger, positioning, arrow, backdrop, and accessible title/description.",
+  "category": "Overlay",
+  "status": "stable",
+  "keywords": ["popover", "tooltip", "popup", "floating", "overlay"],
+  "related": ["Button", "ColorPicker", "DatePicker"],
+  "accessibility": {
+    "keyboard": ["Escape"],
+    "aria": ["role", "aria-labelledby", "aria-describedby"]
+  }
 }

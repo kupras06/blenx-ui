@@ -1,19 +1,19 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "text",
-	"type": "registry:ui",
-	"title": "Text",
-	"description": "A StyleX Text component.",
-	"files": [
-		{
-			"file": "text.tsx",
-			"type": "registry:ui",
-			"target": "@ui/Text/text.tsx"
-		},
-		{
-			"file": "text.styles.ts",
-			"type": "registry:file",
-			"target": "@ui/Text/text.styles.ts"
-		}
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "text",
+  "type": "registry:ui",
+  "title": "Text",
+  "description": "A StyleX Text component.",
+  "files": [
+    {
+      "file": "text.tsx",
+      "type": "registry:ui",
+      "target": "@ui/Text/text.tsx"
+    },
+    {
+      "file": "text.styles.ts",
+      "type": "registry:file",
+      "target": "@ui/Text/text.styles.ts"
+    }
+  ]
 }

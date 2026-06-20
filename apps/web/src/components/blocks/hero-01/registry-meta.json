@@ -1,20 +1,20 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "hero-01",
-	"type": "registry:ui",
-	"title": "Hero Section",
-	"description": "A marketing hero section block with headline, subtext, CTA buttons, and optional image placeholder.",
-	"registryDependencies": ["button", "text", "stack", "box"],
-	"files": [
-		{
-			"file": "hero-01.tsx",
-			"type": "registry:ui",
-			"target": "@blocks/hero-01/hero-01.tsx"
-		},
-		{
-			"file": "hero-01.styles.ts",
-			"type": "registry:file",
-			"target": "@blocks/hero-01/hero-01.styles.ts"
-		}
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hero-01",
+  "type": "registry:ui",
+  "title": "Hero Section",
+  "description": "A marketing hero section block with headline, subtext, CTA buttons, and optional image placeholder.",
+  "registryDependencies": ["button", "text", "stack", "box"],
+  "files": [
+    {
+      "file": "hero-01.tsx",
+      "type": "registry:ui",
+      "target": "@blocks/hero-01/hero-01.tsx"
+    },
+    {
+      "file": "hero-01.styles.ts",
+      "type": "registry:file",
+      "target": "@blocks/hero-01/hero-01.styles.ts"
+    }
+  ]
 }

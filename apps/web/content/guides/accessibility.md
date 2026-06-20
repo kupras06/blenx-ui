@@ -74,7 +74,7 @@ const prefersReducedMotion = useReducedMotion();
 
 const styles = stylex.create({
   overlay: {
-    opacityTransition: prefersReducedMotion ? '0.2s' : '0s',
+    opacityTransition: prefersReducedMotion ? "0.2s" : "0s",
   },
 });
 ```

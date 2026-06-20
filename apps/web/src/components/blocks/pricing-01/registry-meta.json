@@ -1,25 +1,25 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "pricing-01",
-	"type": "registry:ui",
-	"title": "Pricing Page",
-	"description": "A pricing page block with monthly/yearly billing toggle, 3 plan tiers, feature comparison, and CTA buttons.",
-	"registryDependencies": [
-		"button",
-		"text",
-		"badge",
-		"separator",
-		"switch",
-		"card",
-		"stack",
-		"box",
-		"surface"
-	],
-	"files": [
-		{
-			"file": "pricing-01.tsx",
-			"type": "registry:ui",
-			"target": "@blocks/pricing-01/pricing-01.tsx"
-		}
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pricing-01",
+  "type": "registry:ui",
+  "title": "Pricing Page",
+  "description": "A pricing page block with monthly/yearly billing toggle, 3 plan tiers, feature comparison, and CTA buttons.",
+  "registryDependencies": [
+    "button",
+    "text",
+    "badge",
+    "separator",
+    "switch",
+    "card",
+    "stack",
+    "box",
+    "surface"
+  ],
+  "files": [
+    {
+      "file": "pricing-01.tsx",
+      "type": "registry:ui",
+      "target": "@blocks/pricing-01/pricing-01.tsx"
+    }
+  ]
 }

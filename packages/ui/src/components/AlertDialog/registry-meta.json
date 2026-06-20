@@ -1,20 +1,20 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "alert-dialog",
-	"type": "registry:ui",
-	"title": "Alert Dialog",
-	"description": "A dialog component for displaying alerts.",
-	"registryDependencies": ["icon-button", "scroll-area"],
-	"files": [
-		{
-			"file": "alert-dialog.tsx",
-			"type": "registry:ui",
-			"target": "@ui/AlertDialog/alert-dialog.tsx"
-		},
-		{
-			"file": "alert-dialog.styles.ts",
-			"type": "registry:file",
-			"target": "@ui/AlertDialog/alert-dialog.styles.ts"
-		}
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog",
+  "type": "registry:ui",
+  "title": "Alert Dialog",
+  "description": "A dialog component for displaying alerts.",
+  "registryDependencies": ["icon-button", "scroll-area"],
+  "files": [
+    {
+      "file": "alert-dialog.tsx",
+      "type": "registry:ui",
+      "target": "@ui/AlertDialog/alert-dialog.tsx"
+    },
+    {
+      "file": "alert-dialog.styles.ts",
+      "type": "registry:file",
+      "target": "@ui/AlertDialog/alert-dialog.styles.ts"
+    }
+  ]
 }

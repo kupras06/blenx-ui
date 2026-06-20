@@ -1,5 +1,5 @@
 import { CodeBlock } from "@/components/ui/CodeBlock/code-block";
-import { Accordion, Box, Text } from "@blenx-dev/ui/components";;
+import { Accordion, Box, Text } from "@blenx-dev/ui/components";
 
 const semanticCode = `// Semantic tokens (what you edit)
 export const theme = stylex.defineVars({
@@ -23,77 +23,49 @@ export const customTheme = stylex.createTheme(theme, {
 });`;
 
 export function HowItWorks() {
-	return (
-		<Accordion.Item value="howitworks">
-			<Accordion.Header>
-				<Accordion.Trigger>How It Works</Accordion.Trigger>
-			</Accordion.Header>
-			<Accordion.Panel>
-				<Text variant="p">
-					Blenx UI uses{" "}
-					<Text variant="code" >
-						StyleX
-					</Text>{" "}
-					for its design system. StyleX compiles CSS at build time, enabling
-					fast runtime performance with zero runtime CSS-in-JS overhead.
-				</Text>
-				<Text variant="p">
-					<Text variant="body2" weight="bold">
-						Semantic tokens
-					</Text>{" "}
-					(like{" "}
-					<Text variant="code" >
-						primary
-					</Text>
-					,{" "}
-					<Text variant="code" >
-						background
-					</Text>
-					) define the visual identity. These are declared with{" "}
-					<Text variant="code" >
-						stylex.defineVars()
-					</Text>
-					:
-				</Text>
-				<Box paddingY="medium">
-					<CodeBlock code={semanticCode} />
-				</Box>
-				<Text variant="p">
-					<Text variant="body2" weight="bold">
-						Concrete tokens
-					</Text>
-					(like font sizes, spacing) are design primitives that stay consistent
-					across themes:
-				</Text>
-				<Text variant="code" >
-					stylex.defineVars():
-				</Text>
-				<Box paddingY="medium">
-					<CodeBlock code={concreteCode} />
-				</Box>
-				<Text variant="p">
-					When you customize tokens in the Theme Builder, the preview wraps
-					components in a{" "}
-					<Text variant="code" >
-						div
-					</Text>{" "}
-					with inline CSS custom properties that override the semantic var
-					values. This avoids{" "}
-					<Text variant="code" >
-						stylex.createTheme()
-					</Text>{" "}
-					at runtime (which must be a static call per StyleX rules).
-				</Text>
-				<Text variant="p">
-					To export your custom theme for use in your own project, use the
-					Export panel to generate a static{" "}
-					<Text variant="code" >
-						stylex.createTheme()
-					</Text>{" "}
-					call:
-				</Text>
-				<CodeBlock code={runtimeCode} />
-			</Accordion.Panel>
-		</Accordion.Item>
-	);
+  return (
+    <Accordion.Item value="howitworks">
+      <Accordion.Header>
+        <Accordion.Trigger>How It Works</Accordion.Trigger>
+      </Accordion.Header>
+      <Accordion.Panel>
+        <Text variant="p">
+          Blenx UI uses <Text variant="code">StyleX</Text> for its design system. StyleX compiles
+          CSS at build time, enabling fast runtime performance with zero runtime CSS-in-JS overhead.
+        </Text>
+        <Text variant="p">
+          <Text variant="body2" weight="bold">
+            Semantic tokens
+          </Text>{" "}
+          (like <Text variant="code">primary</Text>, <Text variant="code">background</Text>) define
+          the visual identity. These are declared with{" "}
+          <Text variant="code">stylex.defineVars()</Text>:
+        </Text>
+        <Box paddingY="medium">
+          <CodeBlock code={semanticCode} />
+        </Box>
+        <Text variant="p">
+          <Text variant="body2" weight="bold">
+            Concrete tokens
+          </Text>
+          (like font sizes, spacing) are design primitives that stay consistent across themes:
+        </Text>
+        <Text variant="code">stylex.defineVars():</Text>
+        <Box paddingY="medium">
+          <CodeBlock code={concreteCode} />
+        </Box>
+        <Text variant="p">
+          When you customize tokens in the Theme Builder, the preview wraps components in a{" "}
+          <Text variant="code">div</Text> with inline CSS custom properties that override the
+          semantic var values. This avoids <Text variant="code">stylex.createTheme()</Text> at
+          runtime (which must be a static call per StyleX rules).
+        </Text>
+        <Text variant="p">
+          To export your custom theme for use in your own project, use the Export panel to generate
+          a static <Text variant="code">stylex.createTheme()</Text> call:
+        </Text>
+        <CodeBlock code={runtimeCode} />
+      </Accordion.Panel>
+    </Accordion.Item>
+  );
 }

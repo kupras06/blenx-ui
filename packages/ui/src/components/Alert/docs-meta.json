@@ -1,20 +1,12 @@
 {
-	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
-	"title": "Alert",
-	"description": "A contextual feedback banner with four visual variants: info, success, warning, and error.",
-	"category": "Feedback",
-	"status": "stable",
-	"keywords": [
-		"alert",
-		"banner",
-		"feedback",
-		"info",
-		"success",
-		"warning",
-		"error"
-	],
-	"related": ["Text"],
-	"accessibility": {
-		"aria": ["role", "aria-live"]
-	}
+  "$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
+  "title": "Alert",
+  "description": "A contextual feedback banner with four visual variants: info, success, warning, and error.",
+  "category": "Feedback",
+  "status": "stable",
+  "keywords": ["alert", "banner", "feedback", "info", "success", "warning", "error"],
+  "related": ["Text"],
+  "accessibility": {
+    "aria": ["role", "aria-live"]
+  }
 }

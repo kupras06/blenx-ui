@@ -84,12 +84,12 @@ Build your own registry server, or host a static JSON file. The CLI reads the ma
 
 The `target` configuration determines where files land:
 
-| Config Value   | Default Directory         |
-|----------------|---------------------------|
-| `@ui`          | `src/ui/`                 |
-| `@blocks`      | `src/blocks/`             |
-| `@components`  | `src/components/`         |
-| `@lib`         | `src/lib/`                |
+| Config Value  | Default Directory |
+| ------------- | ----------------- |
+| `@ui`         | `src/ui/`         |
+| `@blocks`     | `src/blocks/`     |
+| `@components` | `src/components/` |
+| `@lib`        | `src/lib/`        |
 
 These aliases are created during `init` in your `tsconfig.json` and bundler configuration. You can rename them freely, but changing a target after components are installed breaks imports—you would need to update every component file's import paths.
 

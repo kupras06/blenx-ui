@@ -1,25 +1,25 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "dashboard-01",
-	"type": "registry:ui",
-	"title": "Dashboard",
-	"description": "A SaaS dashboard block with KPI cards, chart placeholders, recent activity table, and quick actions.",
-	"registryDependencies": [
-		"button",
-		"text",
-		"card",
-		"table",
-		"badge",
-		"surface",
-		"grid",
-		"stack",
-		"box"
-	],
-	"files": [
-		{
-			"file": "dashboard-01.tsx",
-			"type": "registry:ui",
-			"target": "@blocks/dashboard-01/dashboard-01.tsx"
-		}
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dashboard-01",
+  "type": "registry:ui",
+  "title": "Dashboard",
+  "description": "A SaaS dashboard block with KPI cards, chart placeholders, recent activity table, and quick actions.",
+  "registryDependencies": [
+    "button",
+    "text",
+    "card",
+    "table",
+    "badge",
+    "surface",
+    "grid",
+    "stack",
+    "box"
+  ],
+  "files": [
+    {
+      "file": "dashboard-01.tsx",
+      "type": "registry:ui",
+      "target": "@blocks/dashboard-01/dashboard-01.tsx"
+    }
+  ]
 }

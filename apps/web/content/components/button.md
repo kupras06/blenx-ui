@@ -8,6 +8,14 @@ navigation:
 
 Button triggers actions and is the most frequently used interactive element in any application. It supports multiple variants (solid, outline, ghost, soft, link), intents (primary, neutral, success, warning, danger, info), sizes, a loading state, and named icon slots (start, end). Use Button for form submissions, dialog triggers, navigation actions, and any click-initiated operation. The variant and intent system maps visual weight to action importance: solid primary for primary actions, ghost for low-priority actions, and danger for destructive operations. Do not use Button for navigation between pages when a semantic link element is more appropriate — use Link for actual URL navigation. Buttons are also inappropriate for toggling persistent states; use Toggle for that pattern.
 
+## Demo
+
+<DemoRenderer registryName="button" />
+
+## Installation
+
+<Installation registryName="button" />
+
 ## Usage
 
 Set `variant` and `intent` to select the visual combination. The `size` prop (sm, md, lg) scales padding, font size, and icon spacing proportionally. For actions that trigger asynchronous operations, use the `loading` prop to disable interaction and show a spinner in place of the start icon. The `startIcon` and `endIcon` slots accept Icon components that inherit the button's size and color. A button with an icon only (no visible children) renders as a square icon button with equal width and height, suitable for toolbars and action bars. The `disabled` prop prevents interaction and applies reduced opacity.
@@ -27,6 +35,14 @@ Using too many solid buttons on one page creates visual competition — only one
 ## Design Guidelines
 
 Button height should be consistent at each size tier across the entire application — all md buttons must be the same height regardless of label length. The loading spinner should use a circular indeterminate animation centered where the start icon would appear. Focus outlines must be visible and high-contrast, not relying solely on color changes. Icon-only buttons should have the same dimensions as text buttons at the same size to maintain alignment in toolbars. Disabled state opacity should be uniform across all variants.
+
+## API Reference
+
+<ApiReference />
+
+## Accessibility
+
+<Accessibility keyboard={["Enter", "Space"]} aria={["aria-disabled", "aria-label", "aria-describedby"]} />
 
 ## Limitations
 

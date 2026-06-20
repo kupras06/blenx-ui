@@ -10,34 +10,34 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isVercel = process.env.VERCEL === "1";
 
 const config = defineConfig(({ command, mode }) => {
-	const isDev = mode === "development" || command === "serve";
+  const isDev = mode === "development" || command === "serve";
 
-	return {
-		resolve: {
-			tsconfigPaths: true,
-		},
-		server: {
-			port: 3001,
-		},
-		plugins: [
-			stylex.vite({
-				useCSSLayers: true,
-				dev: isDev,
-				devMode: "full",
-				runtimeInjection: false,
-				aliases: {
-					"@/*": path.join(__dirname, "./src/*"),
-					"@blenx-dev/ui/*": path.join(__dirname, "../../packages/ui/src/*"),
-				},
-			}),
-			 contentCollections(),
-			tanstackStart(),
-			viteReact(),
-			nitro({
-				preset: isVercel ? "vercel" : undefined,
-			}),
-		],
-	};
+  return {
+    resolve: {
+      tsconfigPaths: true,
+    },
+    server: {
+      port: 3001,
+    },
+    plugins: [
+      stylex.vite({
+        useCSSLayers: true,
+        dev: isDev,
+        devMode: "full",
+        runtimeInjection: false,
+        aliases: {
+          "@/*": path.join(__dirname, "./src/*"),
+          "@blenx-dev/ui/*": path.join(__dirname, "../../packages/ui/src/*"),
+        },
+      }),
+      contentCollections(),
+      tanstackStart(),
+      viteReact(),
+      nitro({
+        preset: isVercel ? "vercel" : undefined,
+      }),
+    ],
+  };
 });
 
 export default config;

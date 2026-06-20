@@ -1,13 +1,13 @@
 {
-	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
-	"title": "Loading State",
-	"description": "A loading/skeleton block for use while content is being fetched. Supports text, card, table, avatar, and custom patterns.",
-	"category": "Application States",
-	"status": "stable",
-	"keywords": ["loading", "skeleton", "placeholder", "shimmer", "progress"],
-	"related": ["Progress", "Stack"],
-	"accessibility": {
-		"keyboard": [],
-		"aria": ["aria-busy", "aria-label", "role=status"]
-	}
+  "$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
+  "title": "Loading State",
+  "description": "A loading/skeleton block for use while content is being fetched. Supports text, card, table, avatar, and custom patterns.",
+  "category": "Application States",
+  "status": "stable",
+  "keywords": ["loading", "skeleton", "placeholder", "shimmer", "progress"],
+  "related": ["Progress", "Stack"],
+  "accessibility": {
+    "keyboard": [],
+    "aria": ["aria-busy", "aria-label", "role=status"]
+  }
 }

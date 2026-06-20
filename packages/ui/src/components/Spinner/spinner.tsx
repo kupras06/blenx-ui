@@ -7,11 +7,7 @@ import { spinnerStyles } from "./spinner.styles";
 type Props = PropsWithStylex<React.ComponentProps<typeof CircleNotchIcon>>;
 
 export function Spinner({ style, ...props }: Props): React.ReactElement {
-	return (
-		<CircleNotchIcon
-			weight="bold"
-			{...props}
-			{...stylex.props(spinnerStyles.spinner, style)}
-		/>
-	);
+  return (
+    <CircleNotchIcon weight="bold" {...props} {...stylex.props(spinnerStyles.spinner, style)} />
+  );
 }

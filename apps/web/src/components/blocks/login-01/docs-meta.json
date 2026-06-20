@@ -1,13 +1,13 @@
 {
-	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
-	"title": "Sign In Page",
-	"description": "A complete sign-in page with email/password form, remember me, forgot password link, social login buttons, and sign-up link.",
-	"category": "Authentication",
-	"status": "stable",
-	"keywords": ["login", "sign in", "authentication", "form", "social login"],
-	"related": ["Button", "Input", "Checkbox", "Separator", "Card"],
-	"accessibility": {
-		"keyboard": ["Tab", "Enter"],
-		"aria": ["form role", "aria-label", "autoComplete"]
-	}
+  "$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
+  "title": "Sign In Page",
+  "description": "A complete sign-in page with email/password form, remember me, forgot password link, social login buttons, and sign-up link.",
+  "category": "Authentication",
+  "status": "stable",
+  "keywords": ["login", "sign in", "authentication", "form", "social login"],
+  "related": ["Button", "Input", "Checkbox", "Separator", "Card"],
+  "accessibility": {
+    "keyboard": ["Tab", "Enter"],
+    "aria": ["form role", "aria-label", "autoComplete"]
+  }
 }

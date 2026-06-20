@@ -1,19 +1,19 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "menu",
-	"type": "registry:ui",
-	"title": "Menu",
-	"description": "A StyleX Input Group component.",
-	"files": [
-		{
-			"file": "menu.tsx",
-			"type": "registry:ui",
-			"target": "@ui/Menu/menu.tsx"
-		},
-		{
-			"file": "menu.styles.ts",
-			"type": "registry:file",
-			"target": "@ui/Menu/menu.styles.ts"
-		}
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "menu",
+  "type": "registry:ui",
+  "title": "Menu",
+  "description": "A StyleX Input Group component.",
+  "files": [
+    {
+      "file": "menu.tsx",
+      "type": "registry:ui",
+      "target": "@ui/Menu/menu.tsx"
+    },
+    {
+      "file": "menu.styles.ts",
+      "type": "registry:file",
+      "target": "@ui/Menu/menu.styles.ts"
+    }
+  ]
 }

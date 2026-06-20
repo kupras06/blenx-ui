@@ -3,90 +3,90 @@ import { theme } from "@blenx-dev/ui/lib/theme/contract.stylex";
 import { spacing, borderRadius } from "@blenx-dev/ui/lib/theme/tokens.stylex";
 
 const shimmer = stylex.keyframes({
-	"0%": { transform: "translateX(-100%)" },
-	"100%": { transform: "translateX(100%)" },
+  "0%": { transform: "translateX(-100%)" },
+  "100%": { transform: "translateX(100%)" },
 });
 
 export const skeletonStyles = stylex.create({
-	shimmer: {
-		position: "relative",
-		overflow: "hidden",
-		"::after": {
-			content: "",
-			position: "absolute",
-			inset: 0,
-			background: `linear-gradient(90deg, transparent 0%, ${theme.surfaceRaised} 50%, transparent 100%)`,
-			animationName: shimmer,
-			animationDuration: {
-				default: "1.5s",
-				"@media (prefers-reduced-motion: reduce)": "0ms",
-			},
-			animationIterationCount: "infinite",
-			animationTimingFunction: "ease-in-out",
-		},
-	},
+  shimmer: {
+    position: "relative",
+    overflow: "hidden",
+    "::after": {
+      content: "",
+      position: "absolute",
+      inset: 0,
+      background: `linear-gradient(90deg, transparent 0%, ${theme.surfaceRaised} 50%, transparent 100%)`,
+      animationName: shimmer,
+      animationDuration: {
+        default: "1.5s",
+        "@media (prefers-reduced-motion: reduce)": "0ms",
+      },
+      animationIterationCount: "infinite",
+      animationTimingFunction: "ease-in-out",
+    },
+  },
 
-	textLine: {
-		height: 14,
-		borderRadius: borderRadius.full,
-		backgroundColor: theme.surfaceRaised,
-	},
+  textLine: {
+    height: 14,
+    borderRadius: borderRadius.full,
+    backgroundColor: theme.surfaceRaised,
+  },
 
-	textLineShort: {
-		width: "60%",
-	},
+  textLineShort: {
+    width: "60%",
+  },
 
-	cardSkeleton: {
-		height: 200,
-		borderRadius: theme.borderRadius,
-		backgroundColor: theme.surfaceRaised,
-	},
+  cardSkeleton: {
+    height: 200,
+    borderRadius: theme.borderRadius,
+    backgroundColor: theme.surfaceRaised,
+  },
 
-	tableHeader: {
-		height: 40,
-		borderRadius: theme.borderRadius,
-		backgroundColor: theme.surfaceRaised,
-		marginBottom: spacing.xsmall,
-	},
+  tableHeader: {
+    height: 40,
+    borderRadius: theme.borderRadius,
+    backgroundColor: theme.surfaceRaised,
+    marginBottom: spacing.xsmall,
+  },
 
-	tableRow: {
-		height: 48,
-		borderRadius: theme.borderRadius,
-		backgroundColor: theme.surfaceRaised,
-	},
+  tableRow: {
+    height: 48,
+    borderRadius: theme.borderRadius,
+    backgroundColor: theme.surfaceRaised,
+  },
 
-	avatar: {
-		width: 48,
-		height: 48,
-		borderRadius: "50%",
-		backgroundColor: theme.surfaceRaised,
-		flexShrink: 0,
-	},
+  avatar: {
+    width: 48,
+    height: 48,
+    borderRadius: "50%",
+    backgroundColor: theme.surfaceRaised,
+    flexShrink: 0,
+  },
 
-	avatarRow: {
-		display: "flex",
-		flexDirection: "row",
-		alignItems: "center",
-		gap: spacing.medium,
-	},
+  avatarRow: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.medium,
+  },
 
-	avatarTextGroup: {
-		display: "flex",
-		flexDirection: "column",
-		gap: spacing.xsmall,
-		flex: 1,
-	},
+  avatarTextGroup: {
+    display: "flex",
+    flexDirection: "column",
+    gap: spacing.xsmall,
+    flex: 1,
+  },
 
-	container: {
-		display: "flex",
-		flexDirection: "column",
-		gap: spacing.medium,
-		padding: spacing.medium,
-	},
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    gap: spacing.medium,
+    padding: spacing.medium,
+  },
 
-	progressWrapper: {
-		marginTop: spacing.small,
-		width: "100%",
-		maxWidth: 300,
-	},
+  progressWrapper: {
+    marginTop: spacing.small,
+    width: "100%",
+    maxWidth: 300,
+  },
 });

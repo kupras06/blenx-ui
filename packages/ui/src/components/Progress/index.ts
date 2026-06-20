@@ -1,7 +1,7 @@
 export {
-	Progress,
-	ProgressIndicator,
-	ProgressLabel,
-	ProgressTrack,
-	ProgressValue,
+  Progress,
+  ProgressIndicator,
+  ProgressLabel,
+  ProgressTrack,
+  ProgressValue,
 } from "./progress";

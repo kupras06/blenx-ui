@@ -1,19 +1,13 @@
 {
-	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
-	"title": "Tabs",
-	"description": "A tabbed navigation component with underline, ghost, and segmented variants. Built on Base UI Tabs.",
-	"category": "Navigation",
-	"status": "stable",
-	"keywords": ["tabs", "tab", "navigation", "panel", "tabbed"],
-	"related": ["Accordion", "SegmentedControl"],
-	"accessibility": {
-		"keyboard": ["ArrowLeft", "ArrowRight", "Home", "End"],
-		"aria": [
-			"role",
-			"aria-orientation",
-			"aria-selected",
-			"aria-labelledby",
-			"role"
-		]
-	}
+  "$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
+  "title": "Tabs",
+  "description": "A tabbed navigation component with underline, ghost, and segmented variants. Built on Base UI Tabs.",
+  "category": "Navigation",
+  "status": "stable",
+  "keywords": ["tabs", "tab", "navigation", "panel", "tabbed"],
+  "related": ["Accordion", "SegmentedControl"],
+  "accessibility": {
+    "keyboard": ["ArrowLeft", "ArrowRight", "Home", "End"],
+    "aria": ["role", "aria-orientation", "aria-selected", "aria-labelledby", "role"]
+  }
 }

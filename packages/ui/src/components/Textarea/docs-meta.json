@@ -1,9 +1,9 @@
 {
-	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
-	"title": "Textarea",
-	"description": "A multi-line text input with size presets and numeric row control. Built on Base UI Field.Control.",
-	"category": "Forms",
-	"status": "stable",
-	"keywords": ["textarea", "text", "input", "multiline", "form"],
-	"related": ["Field", "InputGroup"]
+  "$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
+  "title": "Textarea",
+  "description": "A multi-line text input with size presets and numeric row control. Built on Base UI Field.Control.",
+  "category": "Forms",
+  "status": "stable",
+  "keywords": ["textarea", "text", "input", "multiline", "form"],
+  "related": ["Field", "InputGroup"]
 }

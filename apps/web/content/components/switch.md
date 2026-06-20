@@ -20,7 +20,7 @@ Switches sit inside form rows alongside descriptive Text that explains what the 
 
 ## Best Practices
 
-Always provide a clear, concise label that describes what the switch controls — the label should complete the sentence "Turn on ___". Use a supporting description when the effect of the toggle is not immediately obvious. Group related switches under a common heading using Text components. The switch's effect should be immediate: do not use a switch to stage a change that requires a separate save action.
+Always provide a clear, concise label that describes what the switch controls — the label should complete the sentence "Turn on \_\_\_". Use a supporting description when the effect of the toggle is not immediately obvious. Group related switches under a common heading using Text components. The switch's effect should be immediate: do not use a switch to stage a change that requires a separate save action.
 
 ## Common Mistakes
 

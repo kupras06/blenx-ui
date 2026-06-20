@@ -37,8 +37,8 @@ Define styles statically at the module level. Never call `stylex.create()` insid
 ```tsx
 const styles = stylex.create({
   root: {
-    display: 'flex',
-    alignItems: 'center',
+    display: "flex",
+    alignItems: "center",
     gap: themeContract.spaceMd,
   },
   active: {
@@ -76,9 +76,9 @@ Use a variant map pattern. Define one base style and one style per variant. Appl
 
 ```tsx
 const variants = stylex.create({
-  primary: { backgroundColor: 'var(--accent-bg)' },
-  secondary: { backgroundColor: 'var(--bg-surface)' },
-  ghost: { backgroundColor: 'transparent' },
+  primary: { backgroundColor: "var(--accent-bg)" },
+  secondary: { backgroundColor: "var(--bg-surface)" },
+  ghost: { backgroundColor: "transparent" },
 });
 ```
 
@@ -91,10 +91,10 @@ StyleX supports media queries through a `stylex.media()` API. Define breakpoint-
 ```tsx
 const styles = stylex.create({
   root: {
-    display: 'flex',
-    flexDirection: 'column',
-    [stylex.media('(min-width: 768px)')]: {
-      flexDirection: 'row',
+    display: "flex",
+    flexDirection: "column",
+    [stylex.media("(min-width: 768px)")]: {
+      flexDirection: "row",
     },
   },
 });
@@ -118,7 +118,7 @@ These primitives exist because layout CSS is repetitive and error-prone. A `Stac
 Always reference theme tokens through the contract. Import the contract and use it as a variable source:
 
 ```tsx
-import { themeContract } from '@/lib/theme/contract.stylex';
+import { themeContract } from "@/lib/theme/contract.stylex";
 
 const styles = stylex.create({
   root: {

@@ -41,8 +41,12 @@ Blenx `Card` is not a component—it is a _pattern_ composed from primitives:
 ```tsx
 <Surface padding="lg" radius="md">
   <VStack gap="sm">
-    <Text as="h3" size="lg">Title</Text>
-    <Text as="p" size="sm">Content goes here.</Text>
+    <Text as="h3" size="lg">
+      Title
+    </Text>
+    <Text as="p" size="sm">
+      Content goes here.
+    </Text>
   </VStack>
 </Surface>
 ```
@@ -78,7 +82,9 @@ Grid is a CSS Grid wrapper with props for `columns`, `rows`, `gap`, and `alignme
 
 ```tsx
 <Grid columns={{ base: 1, md: 2, lg: 3 }} gap="md">
-  {items.map(item => <Card key={item.id}>{item.content}</Card>)}
+  {items.map((item) => (
+    <Card key={item.id}>{item.content}</Card>
+  ))}
 </Grid>
 ```
 

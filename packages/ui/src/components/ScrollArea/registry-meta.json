@@ -1,19 +1,19 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "scroll-area",
-	"type": "registry:ui",
-	"title": "ScrollArea",
-	"description": "A StyleX Input Group component.",
-	"files": [
-		{
-			"file": "scroll-area.tsx",
-			"type": "registry:ui",
-			"target": "@ui/ScrollArea/scroll-area.tsx"
-		},
-		{
-			"file": "scroll-area.styles.ts",
-			"type": "registry:file",
-			"target": "@ui/ScrollArea/scroll-area.styles.ts"
-		}
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-area",
+  "type": "registry:ui",
+  "title": "ScrollArea",
+  "description": "A StyleX Input Group component.",
+  "files": [
+    {
+      "file": "scroll-area.tsx",
+      "type": "registry:ui",
+      "target": "@ui/ScrollArea/scroll-area.tsx"
+    },
+    {
+      "file": "scroll-area.styles.ts",
+      "type": "registry:file",
+      "target": "@ui/ScrollArea/scroll-area.styles.ts"
+    }
+  ]
 }

@@ -1,29 +1,21 @@
 {
-	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
-	"title": "Command",
-	"description": "A searchable command palette with keyboard navigation, groups, and filtering.",
-	"category": "Overlay",
-	"status": "experimental",
-	"keywords": [
-		"command",
-		"palette",
-		"search",
-		"filter",
-		"kbar",
-		"spotlight",
-		"keyboard"
-	],
-	"related": ["Dialog", "Select", "Menu"],
-	"accessibility": {
-		"keyboard": ["ArrowDown", "ArrowUp", "Enter", "Escape"],
-		"aria": [
-			"role",
-			"combobox",
-			"listbox",
-			"option",
-			"aria-selected",
-			"aria-expanded",
-			"aria-haspopup"
-		]
-	}
+  "$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
+  "title": "Command",
+  "description": "A searchable command palette with keyboard navigation, groups, and filtering.",
+  "category": "Overlay",
+  "status": "experimental",
+  "keywords": ["command", "palette", "search", "filter", "kbar", "spotlight", "keyboard"],
+  "related": ["Dialog", "Select", "Menu"],
+  "accessibility": {
+    "keyboard": ["ArrowDown", "ArrowUp", "Enter", "Escape"],
+    "aria": [
+      "role",
+      "combobox",
+      "listbox",
+      "option",
+      "aria-selected",
+      "aria-expanded",
+      "aria-haspopup"
+    ]
+  }
 }

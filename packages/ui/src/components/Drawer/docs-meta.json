@@ -1,9 +1,9 @@
 {
-	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
-	"title": "Drawer",
-	"description": "A swipeable drawer panel that slides in from any side. Supports nested menus, radio groups, and checkboxes.",
-	"category": "Overlay",
-	"status": "stable",
-	"keywords": ["drawer", "panel", "slide", "swipe", "sidebar", "menu"],
-	"related": ["ScrollArea", "Dialog", "Button"]
+  "$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
+  "title": "Drawer",
+  "description": "A swipeable drawer panel that slides in from any side. Supports nested menus, radio groups, and checkboxes.",
+  "category": "Overlay",
+  "status": "stable",
+  "keywords": ["drawer", "panel", "slide", "swipe", "sidebar", "menu"],
+  "related": ["ScrollArea", "Dialog", "Button"]
 }

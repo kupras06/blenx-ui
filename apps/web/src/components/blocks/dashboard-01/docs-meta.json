@@ -1,13 +1,13 @@
 {
-	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
-	"title": "Dashboard",
-	"description": "A SaaS dashboard with KPI metrics grid, chart placeholders, quick actions, and a recent activity table.",
-	"category": "Dashboard",
-	"status": "stable",
-	"keywords": ["dashboard", "kpi", "metrics", "analytics", "table", "chart"],
-	"related": ["Button", "Card", "Table", "Badge", "Grid", "Surface"],
-	"accessibility": {
-		"keyboard": [],
-		"aria": ["aria-label", "role=list"]
-	}
+  "$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
+  "title": "Dashboard",
+  "description": "A SaaS dashboard with KPI metrics grid, chart placeholders, quick actions, and a recent activity table.",
+  "category": "Dashboard",
+  "status": "stable",
+  "keywords": ["dashboard", "kpi", "metrics", "analytics", "table", "chart"],
+  "related": ["Button", "Card", "Table", "Badge", "Grid", "Surface"],
+  "accessibility": {
+    "keyboard": [],
+    "aria": ["aria-label", "role=list"]
+  }
 }

@@ -1,13 +1,13 @@
 {
-	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
-	"title": "Contact Page",
-	"description": "A contact form page with name, email, subject select, message textarea, success state, and optional contact information sidebar.",
-	"category": "Marketing",
-	"status": "stable",
-	"keywords": ["contact", "form", "support", "message", "email"],
-	"related": ["Button", "Input", "Textarea", "Card"],
-	"accessibility": {
-		"keyboard": ["Tab", "Enter"],
-		"aria": ["form role", "aria-label", "autoComplete"]
-	}
+  "$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
+  "title": "Contact Page",
+  "description": "A contact form page with name, email, subject select, message textarea, success state, and optional contact information sidebar.",
+  "category": "Marketing",
+  "status": "stable",
+  "keywords": ["contact", "form", "support", "message", "email"],
+  "related": ["Button", "Input", "Textarea", "Card"],
+  "accessibility": {
+    "keyboard": ["Tab", "Enter"],
+    "aria": ["form role", "aria-label", "autoComplete"]
+  }
 }

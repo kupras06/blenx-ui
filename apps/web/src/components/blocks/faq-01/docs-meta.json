@@ -1,13 +1,13 @@
 {
-	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
-	"title": "FAQ Section",
-	"description": "An expandable FAQ accordion with section heading, description, and optional search/filter.",
-	"category": "Marketing",
-	"status": "stable",
-	"keywords": ["faq", "accordion", "questions", "help", "support"],
-	"related": ["Accordion", "Text"],
-	"accessibility": {
-		"keyboard": ["Enter", "Space"],
-		"aria": ["aria-expanded", "aria-controls", "aria-label"]
-	}
+  "$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
+  "title": "FAQ Section",
+  "description": "An expandable FAQ accordion with section heading, description, and optional search/filter.",
+  "category": "Marketing",
+  "status": "stable",
+  "keywords": ["faq", "accordion", "questions", "help", "support"],
+  "related": ["Accordion", "Text"],
+  "accessibility": {
+    "keyboard": ["Enter", "Space"],
+    "aria": ["aria-expanded", "aria-controls", "aria-label"]
+  }
 }

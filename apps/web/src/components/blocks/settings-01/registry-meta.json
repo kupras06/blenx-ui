@@ -1,26 +1,26 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "settings-01",
-	"type": "registry:ui",
-	"title": "Settings Page",
-	"description": "A tabbed settings page with General, Security, Appearance, Notifications, and Billing sections.",
-	"registryDependencies": [
-		"button",
-		"input",
-		"text",
-		"switch",
-		"separator",
-		"tabs",
-		"card",
-		"stack",
-		"box",
-		"surface"
-	],
-	"files": [
-		{
-			"file": "settings-01.tsx",
-			"type": "registry:ui",
-			"target": "@blocks/settings-01/settings-01.tsx"
-		}
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "settings-01",
+  "type": "registry:ui",
+  "title": "Settings Page",
+  "description": "A tabbed settings page with General, Security, Appearance, Notifications, and Billing sections.",
+  "registryDependencies": [
+    "button",
+    "input",
+    "text",
+    "switch",
+    "separator",
+    "tabs",
+    "card",
+    "stack",
+    "box",
+    "surface"
+  ],
+  "files": [
+    {
+      "file": "settings-01.tsx",
+      "type": "registry:ui",
+      "target": "@blocks/settings-01/settings-01.tsx"
+    }
+  ]
 }

@@ -22,7 +22,7 @@
     "paths": {
       "@/*": ["./src/*"],
       "@blenx-dev/ui/*": ["../../packages/ui/src/*"],
-        "content-collections": ["./.content-collections/generated"]
+      "content-collections": ["./.content-collections/generated"]
     }
   }
 }

@@ -1,0 +1,87 @@
+import { useEffect, useState } from "react";
+import { CodeBlock } from "@/components/ui/CodeBlock/code-block";
+import { DocCodeView } from "./doc-code-view";
+import { Badge, HStack, Separator, Text, VStack } from "@blenx-dev/ui/components";
+
+interface RegistryMeta {
+  name: string;
+  type: string;
+  title: string;
+  description: string;
+  registryDependencies?: string[];
+  files: Array<{
+    target: string;
+    content?: string;
+  }>;
+}
+
+interface InstallationProps {
+  registryName: string;
+}
+
+function cleanTarget(target: string): string {
+  return target.replace(/^@(?:ui|lib|utils|components)\//, "");
+}
+
+function Installation({ registryName }: InstallationProps) {
+  const [registry, setRegistry] = useState<RegistryMeta | null>(null);
+
+  useEffect(() => {
+    fetch(`/reg/${registryName}.json`)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data) => {
+        setRegistry(data);
+      })
+      .catch(() => {});
+  }, [registryName]);
+
+  const cliUrl = `https://blenx-ui.vercel.app/reg/${registryName}.json`;
+  const cliCode = `npx shadcn@latest add "${cliUrl}"`;
+  const dependencies = registry?.registryDependencies ?? [];
+  const files = registry?.files ?? [];
+
+  return (
+    <VStack gap="medium">
+      <VStack gap="xsmall">
+        <Text variant="h3">CLI Installation</Text>
+        <Text variant="body2" color="secondary">
+          Install the component using the shadcn CLI:
+        </Text>
+        <CodeBlock language="bash" code={cliCode} />
+      </VStack>
+
+      {registry && files.length > 0 && (
+        <>
+          <Separator />
+          <VStack gap="xsmall">
+            <Text variant="h3">Manual Installation</Text>
+            <VStack gap="medium">
+              <DocCodeView
+                files={files.map((f) => ({
+                  code: f.content ?? "",
+                  title: cleanTarget(f.target),
+                }))}
+              />
+            </VStack>
+          </VStack>
+        </>
+      )}
+
+      {dependencies.length > 0 && (
+        <VStack gap="small">
+          <Text variant="h6" color="secondary">
+            Dependencies
+          </Text>
+          <HStack>
+            {dependencies.map((dep) => (
+              <Badge key={dep}>{dep}</Badge>
+            ))}
+          </HStack>
+        </VStack>
+      )}
+    </VStack>
+  );
+}
+
+export { Installation };
+export type { InstallationProps };

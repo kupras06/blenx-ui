@@ -1,26 +1,26 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "profile-01",
-	"type": "registry:ui",
-	"title": "User Profile",
-	"description": "A user profile page with personal info form, notification toggles, account settings, and danger zone.",
-	"registryDependencies": [
-		"button",
-		"input",
-		"text",
-		"switch",
-		"separator",
-		"card",
-		"avatar",
-		"stack",
-		"box",
-		"surface"
-	],
-	"files": [
-		{
-			"file": "profile-01.tsx",
-			"type": "registry:ui",
-			"target": "@blocks/profile-01/profile-01.tsx"
-		}
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "profile-01",
+  "type": "registry:ui",
+  "title": "User Profile",
+  "description": "A user profile page with personal info form, notification toggles, account settings, and danger zone.",
+  "registryDependencies": [
+    "button",
+    "input",
+    "text",
+    "switch",
+    "separator",
+    "card",
+    "avatar",
+    "stack",
+    "box",
+    "surface"
+  ],
+  "files": [
+    {
+      "file": "profile-01.tsx",
+      "type": "registry:ui",
+      "target": "@blocks/profile-01/profile-01.tsx"
+    }
+  ]
 }

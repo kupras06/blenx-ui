@@ -1,90 +1,82 @@
 /* Generate by @shikijs/codegen */
 import type {
-	DynamicImportLanguageRegistration,
-	DynamicImportThemeRegistration,
-	HighlighterGeneric,
+  DynamicImportLanguageRegistration,
+  DynamicImportThemeRegistration,
+  HighlighterGeneric,
 } from "@shikijs/types";
-import {
-	createBundledHighlighter,
-	createSingletonShorthands,
-} from "@shikijs/core";
+import { createBundledHighlighter, createSingletonShorthands } from "@shikijs/core";
 import { createJavaScriptRegexEngine } from "@shikijs/engine-javascript";
 
 type BundledLanguage =
-	| "typescript"
-	| "ts"
-	| "cts"
-	| "mts"
-	| "javascript"
-	| "js"
-	| "cjs"
-	| "mjs"
-	| "shellscript"
-	| "bash"
-	| "sh"
-	| "shell"
-	| "zsh"
-	| "json"
-	| "tsx"
-	| "css";
+  | "typescript"
+  | "ts"
+  | "cts"
+  | "mts"
+  | "javascript"
+  | "js"
+  | "cjs"
+  | "mjs"
+  | "shellscript"
+  | "bash"
+  | "sh"
+  | "shell"
+  | "zsh"
+  | "json"
+  | "tsx"
+  | "css";
 type BundledTheme = "github-dark" | "github-light";
 type Highlighter = HighlighterGeneric<BundledLanguage, BundledTheme>;
 
 const bundledLanguages = {
-	typescript: () => import("@shikijs/langs/typescript"),
-	ts: () => import("@shikijs/langs/typescript"),
-	cts: () => import("@shikijs/langs/typescript"),
-	mts: () => import("@shikijs/langs/typescript"),
-	javascript: () => import("@shikijs/langs/javascript"),
-	js: () => import("@shikijs/langs/javascript"),
-	cjs: () => import("@shikijs/langs/javascript"),
-	mjs: () => import("@shikijs/langs/javascript"),
-	shellscript: () => import("@shikijs/langs/shellscript"),
-	bash: () => import("@shikijs/langs/shellscript"),
-	sh: () => import("@shikijs/langs/shellscript"),
-	shell: () => import("@shikijs/langs/shellscript"),
-	zsh: () => import("@shikijs/langs/shellscript"),
-	json: () => import("@shikijs/langs/json"),
-	tsx: () => import("@shikijs/langs/tsx"),
-	css: () => import("@shikijs/langs/css"),
+  typescript: () => import("@shikijs/langs/typescript"),
+  ts: () => import("@shikijs/langs/typescript"),
+  cts: () => import("@shikijs/langs/typescript"),
+  mts: () => import("@shikijs/langs/typescript"),
+  javascript: () => import("@shikijs/langs/javascript"),
+  js: () => import("@shikijs/langs/javascript"),
+  cjs: () => import("@shikijs/langs/javascript"),
+  mjs: () => import("@shikijs/langs/javascript"),
+  shellscript: () => import("@shikijs/langs/shellscript"),
+  bash: () => import("@shikijs/langs/shellscript"),
+  sh: () => import("@shikijs/langs/shellscript"),
+  shell: () => import("@shikijs/langs/shellscript"),
+  zsh: () => import("@shikijs/langs/shellscript"),
+  json: () => import("@shikijs/langs/json"),
+  tsx: () => import("@shikijs/langs/tsx"),
+  css: () => import("@shikijs/langs/css"),
 } as Record<BundledLanguage, DynamicImportLanguageRegistration>;
 
 const bundledThemes = {
-	"github-dark": () => import("@shikijs/themes/github-dark"),
-	"github-light": () => import("@shikijs/themes/github-light"),
+  "github-dark": () => import("@shikijs/themes/github-dark"),
+  "github-light": () => import("@shikijs/themes/github-light"),
 } as Record<BundledTheme, DynamicImportThemeRegistration>;
 
-const createHighlighter = /* @__PURE__ */ createBundledHighlighter<
-	BundledLanguage,
-	BundledTheme
->({
-	langs: bundledLanguages,
-	themes: bundledThemes,
-	engine: () => createJavaScriptRegexEngine(),
+const createHighlighter = /* @__PURE__ */ createBundledHighlighter<BundledLanguage, BundledTheme>({
+  langs: bundledLanguages,
+  themes: bundledThemes,
+  engine: () => createJavaScriptRegexEngine(),
 });
 
 const {
-	codeToHtml,
-	codeToHast,
-	codeToTokensBase,
-	codeToTokens,
-	codeToTokensWithThemes,
-	getSingletonHighlighter,
-	getLastGrammarState,
-} = /* @__PURE__ */ createSingletonShorthands<BundledLanguage, BundledTheme>(
-	createHighlighter,
-);
+  codeToHtml,
+  codeToHast,
+  codeToTokensBase,
+  codeToTokens,
+  codeToTokensWithThemes,
+  getSingletonHighlighter,
+  getLastGrammarState,
+} = /* @__PURE__ */ createSingletonShorthands<BundledLanguage, BundledTheme>(createHighlighter);
 
 export {
-	bundledLanguages,
-	bundledThemes,
-	codeToHast,
-	codeToHtml,
-	codeToTokens,
-	codeToTokensBase,
-	codeToTokensWithThemes,
-	createHighlighter,
-	getLastGrammarState,
-	getSingletonHighlighter,
+  bundledLanguages,
+  bundledThemes,
+  codeToHast,
+  codeToHtml,
+  codeToTokens,
+  codeToTokensBase,
+  codeToTokensWithThemes,
+  createHighlighter,
+  getLastGrammarState,
+  getSingletonHighlighter,
 };
 export type { BundledLanguage, BundledTheme, Highlighter };

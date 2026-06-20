@@ -1,12 +1,12 @@
 {
-	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
-	"title": "Separator",
-	"description": "A visual divider supporting horizontal and vertical orientations with subtle and strong tone variants. Optionally labeled.",
-	"category": "Layout",
-	"status": "stable",
-	"keywords": ["separator", "divider", "line", "rule", "hr"],
-	"related": ["ToggleGroup", "Menu"],
-	"accessibility": {
-		"aria": ["role", "aria-orientation"]
-	}
+  "$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
+  "title": "Separator",
+  "description": "A visual divider supporting horizontal and vertical orientations with subtle and strong tone variants. Optionally labeled.",
+  "category": "Layout",
+  "status": "stable",
+  "keywords": ["separator", "divider", "line", "rule", "hr"],
+  "related": ["ToggleGroup", "Menu"],
+  "accessibility": {
+    "aria": ["role", "aria-orientation"]
+  }
 }

@@ -50,11 +50,11 @@ function DocsSidebar({ onClose }: { onClose?: () => void }) {
   const { pathname } = useLocation();
 
   const guideLinks: SidebarLink[] = allGuides
-      .sort((a, b) => a.navigation.order - b.navigation.order)
-      .map((g) => ({
-        to: g.navigation.link ?? `/docs/${g._meta.path}`,
-        label: g.title,
-      }))
+    .sort((a, b) => a.navigation.order - b.navigation.order)
+    .map((g) => ({
+      to: g.navigation.link ?? `/docs/${g._meta.path}`,
+      label: g.title,
+    }));
 
   const componentLinks: SidebarLink[] = [...allComponents]
     .sort((a, b) => a.navigation.order - b.navigation.order)
@@ -92,18 +92,9 @@ function DocsSidebar({ onClose }: { onClose?: () => void }) {
                     paddingY="xxsmall"
                     paddingX="xsmall"
                     key={link.to}
-                    render={
-                      <Link
-                        {...stylex.props(styles.link)}
-                        to={link.to}
-                        onClick={onClose}
-                      />
-                    }
+                    render={<Link {...stylex.props(styles.link)} to={link.to} onClick={onClose} />}
                   >
-                    <Text
-                      variant="body2"
-                      color={isActive ? "primary" : "secondary"}
-                    >
+                    <Text variant="body2" color={isActive ? "primary" : "secondary"}>
                       {link.label}
                     </Text>
                   </Surface>

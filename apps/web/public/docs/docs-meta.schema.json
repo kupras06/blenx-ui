@@ -1,89 +1,89 @@
 {
-	"$schema": "https://json-schema.org/draft-07/schema#",
-	"$id": "https://blenx-ui.vercel.app/schemas/docs-meta.schema.json",
-	"title": "DocsMeta",
-	"description": "Schema for component/block documentation metadata files (docs-meta.json)",
-	"type": "object",
-	"properties": {
-		"$schema": {
-			"type": "string",
-			"description": "JSON Schema reference URI"
-		},
-		"title": {
-			"type": "string",
-			"description": "Display name of the component or block"
-		},
-		"componentKey": {
-			"type": "string",
-			"description": "Unique key to identify component. used to link with other app aspects. defauls to directory name."
-		},
-		"description": {
-			"type": "string",
-			"description": "Brief description of the component or block"
-		},
-		"category": {
-			"type": "string",
-			"description": "Documentation category grouping",
-			"enum": [
-				"Application States",
-				"Authentication",
-				"Dashboard",
-				"Data Display",
-				"Feedback",
-				"Forms",
-				"Layout",
-				"Marketing",
-				"Navigation",
-				"Overlay",
-				"Typography",
-				"Utility"
-			]
-		},
-		"status": {
-			"type": "string",
-			"description": "Release maturity level",
-			"enum": ["stable", "beta", "experimental"]
-		},
-		"keywords": {
-			"type": "array",
-			"description": "Search keywords for discoverability",
-			"items": {
-				"type": "string"
-			},
-			"uniqueItems": true
-		},
-		"related": {
-			"type": "array",
-			"description": "Names of related components or blocks",
-			"items": {
-				"type": "string"
-			},
-			"uniqueItems": true
-		},
-		"accessibility": {
-			"type": "object",
-			"description": "Accessibility implementation details",
-			"properties": {
-				"keyboard": {
-					"type": "array",
-					"description": "Keyboard interactions supported",
-					"items": {
-						"type": "string"
-					},
-					"uniqueItems": true
-				},
-				"aria": {
-					"type": "array",
-					"description": "ARIA attributes used by the component",
-					"items": {
-						"type": "string"
-					},
-					"uniqueItems": true
-				}
-			},
-			"additionalProperties": false
-		}
-	},
-	"required": ["title", "description", "category"],
-	"additionalProperties": false
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://blenx-ui.vercel.app/schemas/docs-meta.schema.json",
+  "title": "DocsMeta",
+  "description": "Schema for component/block documentation metadata files (docs-meta.json)",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "JSON Schema reference URI"
+    },
+    "title": {
+      "type": "string",
+      "description": "Display name of the component or block"
+    },
+    "componentKey": {
+      "type": "string",
+      "description": "Unique key to identify component. used to link with other app aspects. defauls to directory name."
+    },
+    "description": {
+      "type": "string",
+      "description": "Brief description of the component or block"
+    },
+    "category": {
+      "type": "string",
+      "description": "Documentation category grouping",
+      "enum": [
+        "Application States",
+        "Authentication",
+        "Dashboard",
+        "Data Display",
+        "Feedback",
+        "Forms",
+        "Layout",
+        "Marketing",
+        "Navigation",
+        "Overlay",
+        "Typography",
+        "Utility"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "description": "Release maturity level",
+      "enum": ["stable", "beta", "experimental"]
+    },
+    "keywords": {
+      "type": "array",
+      "description": "Search keywords for discoverability",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "related": {
+      "type": "array",
+      "description": "Names of related components or blocks",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "accessibility": {
+      "type": "object",
+      "description": "Accessibility implementation details",
+      "properties": {
+        "keyboard": {
+          "type": "array",
+          "description": "Keyboard interactions supported",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "aria": {
+          "type": "array",
+          "description": "ARIA attributes used by the component",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["title", "description", "category"],
+  "additionalProperties": false
 }

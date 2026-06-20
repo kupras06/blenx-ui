@@ -1,26 +1,13 @@
 {
-	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
-	"title": "Alternative Sign In",
-	"description": "An email-first sign-in flow supporting multi-step password entry or magic-link authentication.",
-	"category": "Authentication",
-	"status": "stable",
-	"keywords": [
-		"login",
-		"sign in",
-		"email-first",
-		"password",
-		"magic link",
-		"multi-step"
-	],
-	"related": ["Button", "Input", "Card"],
-	"accessibility": {
-		"keyboard": ["Tab", "Enter"],
-		"aria": [
-			"form role",
-			"aria-label",
-			"autoComplete",
-			"aria-live",
-			"progressbar"
-		]
-	}
+  "$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
+  "title": "Alternative Sign In",
+  "description": "An email-first sign-in flow supporting multi-step password entry or magic-link authentication.",
+  "category": "Authentication",
+  "status": "stable",
+  "keywords": ["login", "sign in", "email-first", "password", "magic link", "multi-step"],
+  "related": ["Button", "Input", "Card"],
+  "accessibility": {
+    "keyboard": ["Tab", "Enter"],
+    "aria": ["form role", "aria-label", "autoComplete", "aria-live", "progressbar"]
+  }
 }

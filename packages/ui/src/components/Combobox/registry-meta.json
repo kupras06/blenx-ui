@@ -1,20 +1,20 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "combobox",
-	"type": "registry:ui",
-	"title": "Combobox",
-	"description": "A StyleX button component.",
-	"registryDependencies": ["input", "scroll-area"],
-	"files": [
-		{
-			"file": "combobox.tsx",
-			"type": "registry:ui",
-			"target": "@ui/Combobox/combobox.tsx"
-		},
-		{
-			"file": "combobox.styles.ts",
-			"type": "registry:file",
-			"target": "@ui/Combobox/combobox.styles.ts"
-		}
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "combobox",
+  "type": "registry:ui",
+  "title": "Combobox",
+  "description": "A StyleX button component.",
+  "registryDependencies": ["input", "scroll-area"],
+  "files": [
+    {
+      "file": "combobox.tsx",
+      "type": "registry:ui",
+      "target": "@ui/Combobox/combobox.tsx"
+    },
+    {
+      "file": "combobox.styles.ts",
+      "type": "registry:file",
+      "target": "@ui/Combobox/combobox.styles.ts"
+    }
+  ]
 }

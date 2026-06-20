@@ -1,19 +1,19 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "popover",
-	"type": "registry:ui",
-	"title": "Popover",
-	"description": "A StyleX Input Group component.",
-	"files": [
-		{
-			"file": "popover.tsx",
-			"type": "registry:ui",
-			"target": "@ui/Popover/popover.tsx"
-		},
-		{
-			"file": "popover.styles.ts",
-			"type": "registry:file",
-			"target": "@ui/Popover/popover.styles.ts"
-		}
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "popover",
+  "type": "registry:ui",
+  "title": "Popover",
+  "description": "A StyleX Input Group component.",
+  "files": [
+    {
+      "file": "popover.tsx",
+      "type": "registry:ui",
+      "target": "@ui/Popover/popover.tsx"
+    },
+    {
+      "file": "popover.styles.ts",
+      "type": "registry:file",
+      "target": "@ui/Popover/popover.styles.ts"
+    }
+  ]
 }

@@ -1,15 +1,15 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "faq-01",
-	"type": "registry:ui",
-	"title": "FAQ Section",
-	"description": "An FAQ section block with accordion Q&A items and optional search/filter functionality.",
-	"registryDependencies": ["accordion", "text", "stack", "box"],
-	"files": [
-		{
-			"file": "faq-01.tsx",
-			"type": "registry:ui",
-			"target": "@blocks/faq-01/faq-01.tsx"
-		}
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "faq-01",
+  "type": "registry:ui",
+  "title": "FAQ Section",
+  "description": "An FAQ section block with accordion Q&A items and optional search/filter functionality.",
+  "registryDependencies": ["accordion", "text", "stack", "box"],
+  "files": [
+    {
+      "file": "faq-01.tsx",
+      "type": "registry:ui",
+      "target": "@blocks/faq-01/faq-01.tsx"
+    }
+  ]
 }

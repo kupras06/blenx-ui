@@ -1,13 +1,13 @@
 {
-	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
-	"title": "Icon",
-	"description": "A standardized wrapper for SVG icons with token-based sizing and theme-aware color support. Built for use inside buttons, inputs, badges, and other UI components.",
-	"category": "Utility",
-	"status": "stable",
-	"keywords": ["icon", "svg", "size", "color", "wrapper"],
-	"related": ["IconButton", "Button", "Badge"],
-	"accessibility": {
-		"keyboard": [],
-		"aria": ["aria-hidden"]
-	}
+  "$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
+  "title": "Icon",
+  "description": "A standardized wrapper for SVG icons with token-based sizing and theme-aware color support. Built for use inside buttons, inputs, badges, and other UI components.",
+  "category": "Utility",
+  "status": "stable",
+  "keywords": ["icon", "svg", "size", "color", "wrapper"],
+  "related": ["IconButton", "Button", "Badge"],
+  "accessibility": {
+    "keyboard": [],
+    "aria": ["aria-hidden"]
+  }
 }

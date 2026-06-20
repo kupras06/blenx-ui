@@ -1,13 +1,13 @@
 {
-	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
-	"title": "User Profile",
-	"description": "A profile page with personal information form, notification preferences toggles, account actions, and danger zone.",
-	"category": "Dashboard",
-	"status": "stable",
-	"keywords": ["profile", "user", "settings", "notifications", "account"],
-	"related": ["Button", "Input", "Switch", "Card", "Avatar", "Separator"],
-	"accessibility": {
-		"keyboard": ["Tab", "Enter"],
-		"aria": ["form label", "switch role"]
-	}
+  "$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
+  "title": "User Profile",
+  "description": "A profile page with personal information form, notification preferences toggles, account actions, and danger zone.",
+  "category": "Dashboard",
+  "status": "stable",
+  "keywords": ["profile", "user", "settings", "notifications", "account"],
+  "related": ["Button", "Input", "Switch", "Card", "Avatar", "Separator"],
+  "accessibility": {
+    "keyboard": ["Tab", "Enter"],
+    "aria": ["form label", "switch role"]
+  }
 }

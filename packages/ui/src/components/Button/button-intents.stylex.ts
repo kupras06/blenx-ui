@@ -1,17 +1,17 @@
 import * as stylex from "@stylexjs/stylex";
 export const intentTokens = stylex.defineVars({
-	solidBg: "",
-	solidFg: "",
+  solidBg: "",
+  solidFg: "",
 
-	solidHoverBg: "",
+  solidHoverBg: "",
 
-	softBg: "",
-	softFg: "",
+  softBg: "",
+  softFg: "",
 
-	softHoverBg: "",
+  softHoverBg: "",
 
-	border: "",
-	borderHover: "",
+  border: "",
+  borderHover: "",
 
-	fg: "",
+  fg: "",
 });

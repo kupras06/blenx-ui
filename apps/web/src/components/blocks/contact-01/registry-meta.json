@@ -1,24 +1,24 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "contact-01",
-	"type": "registry:ui",
-	"title": "Contact Page",
-	"description": "A contact page block with name, email, subject, message form and optional contact info sidebar.",
-	"registryDependencies": [
-		"button",
-		"input",
-		"textarea",
-		"text",
-		"card",
-		"stack",
-		"box",
-		"surface"
-	],
-	"files": [
-		{
-			"file": "contact-01.tsx",
-			"type": "registry:ui",
-			"target": "@blocks/contact-01/contact-01.tsx"
-		}
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "contact-01",
+  "type": "registry:ui",
+  "title": "Contact Page",
+  "description": "A contact page block with name, email, subject, message form and optional contact info sidebar.",
+  "registryDependencies": [
+    "button",
+    "input",
+    "textarea",
+    "text",
+    "card",
+    "stack",
+    "box",
+    "surface"
+  ],
+  "files": [
+    {
+      "file": "contact-01.tsx",
+      "type": "registry:ui",
+      "target": "@blocks/contact-01/contact-01.tsx"
+    }
+  ]
 }

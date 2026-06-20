@@ -1,9 +1,9 @@
 {
-	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
-	"title": "Autocomplete",
-	"description": "A typeahead autocomplete input that filters suggestions as the user types. Built with Base UI Autocomplete.",
-	"category": "Forms",
-	"status": "stable",
-	"keywords": ["autocomplete", "typeahead", "search", "suggestions", "filter"],
-	"related": ["Input", "ScrollArea", "Field", "Combobox"]
+  "$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
+  "title": "Autocomplete",
+  "description": "A typeahead autocomplete input that filters suggestions as the user types. Built with Base UI Autocomplete.",
+  "category": "Forms",
+  "status": "stable",
+  "keywords": ["autocomplete", "typeahead", "search", "suggestions", "filter"],
+  "related": ["Input", "ScrollArea", "Field", "Combobox"]
 }

@@ -1,9 +1,9 @@
 {
-	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
-	"title": "Box",
-	"description": "A low-level polymorphic layout primitive. The foundational building block for all layout components.",
-	"category": "Layout",
-	"status": "stable",
-	"keywords": ["box", "layout", "div", "polymorphic", "primitive"],
-	"related": ["Container", "Grid", "Stack", "Surface"]
+  "$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
+  "title": "Box",
+  "description": "A low-level polymorphic layout primitive. The foundational building block for all layout components.",
+  "category": "Layout",
+  "status": "stable",
+  "keywords": ["box", "layout", "div", "polymorphic", "primitive"],
+  "related": ["Container", "Grid", "Stack", "Surface"]
 }

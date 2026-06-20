@@ -11,12 +11,7 @@ const NavigationMeta = z.object({
 const GuideSchema = z.object({
   title: z.string(),
   description: z.string(),
-  category: z.enum([
-    "Getting Started",
-    "Guides",
-    "Customization",
-    "Advanced",
-  ]),
+  category: z.enum(["Getting Started", "Guides", "Customization", "Advanced"]),
   keywords: z.array(z.string()).default([]),
   status: z.enum(["draft", "stable", "deprecated"]).default("stable"),
   navigation: NavigationMeta,
@@ -28,17 +23,20 @@ const ComponentMetaSchema = z.object({
   description: z.string().optional().default(""),
   status: z.enum(["alpha", "beta", "stable", "deprecated"]).optional().default("stable"),
   keywords: z.array(z.string()).default([]),
-  category: z.enum([
-    "layout",
-    "form",
-    "data-display",
-    "feedback",
-    "overlay",
-    "navigation",
-    "media",
-    "typography",
-    "primitives",
-  ]).optional().default("primitives"),
+  category: z
+    .enum([
+      "layout",
+      "form",
+      "data-display",
+      "feedback",
+      "overlay",
+      "navigation",
+      "media",
+      "typography",
+      "primitives",
+    ])
+    .optional()
+    .default("primitives"),
   navigation: NavigationMeta,
 });
 

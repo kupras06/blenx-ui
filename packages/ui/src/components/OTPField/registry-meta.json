@@ -1,19 +1,19 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "otpfield",
-	"type": "registry:ui",
-	"title": "Progress",
-	"description": "A StyleX Progress component.",
-	"files": [
-		{
-			"file": "otp-field.tsx",
-			"type": "registry:ui",
-			"target": "@ui/OTPField/otp-field.tsx"
-		},
-		{
-			"file": "otp-field.styles.ts",
-			"type": "registry:file",
-			"target": "@ui/OTPField/otp-field.styles.ts"
-		}
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "otpfield",
+  "type": "registry:ui",
+  "title": "Progress",
+  "description": "A StyleX Progress component.",
+  "files": [
+    {
+      "file": "otp-field.tsx",
+      "type": "registry:ui",
+      "target": "@ui/OTPField/otp-field.tsx"
+    },
+    {
+      "file": "otp-field.styles.ts",
+      "type": "registry:file",
+      "target": "@ui/OTPField/otp-field.styles.ts"
+    }
+  ]
 }

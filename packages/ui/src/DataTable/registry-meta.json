@@ -1,70 +1,66 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "data-table",
-	"type": "registry:ui",
-	"title": "Data Table",
-	"description": "A feature-rich data table component with sorting, filtering, pagination, column visibility, row selection, infinite scroll, and server-side support.",
-	"registryDependencies": ["button", "input", "menu", "spinner"],
-	"files": [
-		{
-			"file": "data-table.tsx",
-			"type": "registry:component",
-			"target": "@components/data-table/data-table.tsx"
-		},
-		{
-			"file": "data-table-column-toggle.tsx",
-			"type": "registry:file",
-			"target": "@components/data-table/data-table-column-toggle.tsx"
-		},
-		{
-			"file": "data-table-empty.tsx",
-			"type": "registry:file",
-			"target": "@components/data-table/data-table-empty.tsx"
-		},
-		{
-			"file": "data-table-error.tsx",
-			"type": "registry:file",
-			"target": "@components/data-table/data-table-error.tsx"
-		},
-		{
-			"file": "data-table-infinite-loader.tsx",
-			"type": "registry:file",
-			"target": "@components/data-table/data-table-infinite-loader.tsx"
-		},
-		{
-			"file": "data-table-loading.tsx",
-			"type": "registry:file",
-			"target": "@components/data-table/data-table-loading.tsx"
-		},
-		{
-			"file": "data-table-pagination.tsx",
-			"type": "registry:file",
-			"target": "@components/data-table/data-table-pagination.tsx"
-		},
-		{
-			"file": "data-table-toolbar.tsx",
-			"type": "registry:file",
-			"target": "@components/data-table/data-table-toolbar.tsx"
-		},
-		{
-			"file": "types.ts",
-			"type": "registry:file",
-			"target": "@ui/data-table/types.ts"
-		},
-		{
-			"file": "index.ts",
-			"type": "registry:file",
-			"target": "@components/data-table/index.ts"
-		},
-		{
-			"file": "use-infinite-scroll.ts",
-			"type": "registry:file",
-			"target": "@components/data-table/use-infinite-scroll.ts"
-		}
-	],
-	"dependencies": [
-		"@stylexjs/stylex",
-		"@phosphor-icons/react",
-		"@tanstack/react-table"
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "data-table",
+  "type": "registry:ui",
+  "title": "Data Table",
+  "description": "A feature-rich data table component with sorting, filtering, pagination, column visibility, row selection, infinite scroll, and server-side support.",
+  "registryDependencies": ["button", "input", "menu", "spinner"],
+  "files": [
+    {
+      "file": "data-table.tsx",
+      "type": "registry:component",
+      "target": "@components/data-table/data-table.tsx"
+    },
+    {
+      "file": "data-table-column-toggle.tsx",
+      "type": "registry:file",
+      "target": "@components/data-table/data-table-column-toggle.tsx"
+    },
+    {
+      "file": "data-table-empty.tsx",
+      "type": "registry:file",
+      "target": "@components/data-table/data-table-empty.tsx"
+    },
+    {
+      "file": "data-table-error.tsx",
+      "type": "registry:file",
+      "target": "@components/data-table/data-table-error.tsx"
+    },
+    {
+      "file": "data-table-infinite-loader.tsx",
+      "type": "registry:file",
+      "target": "@components/data-table/data-table-infinite-loader.tsx"
+    },
+    {
+      "file": "data-table-loading.tsx",
+      "type": "registry:file",
+      "target": "@components/data-table/data-table-loading.tsx"
+    },
+    {
+      "file": "data-table-pagination.tsx",
+      "type": "registry:file",
+      "target": "@components/data-table/data-table-pagination.tsx"
+    },
+    {
+      "file": "data-table-toolbar.tsx",
+      "type": "registry:file",
+      "target": "@components/data-table/data-table-toolbar.tsx"
+    },
+    {
+      "file": "types.ts",
+      "type": "registry:file",
+      "target": "@ui/data-table/types.ts"
+    },
+    {
+      "file": "index.ts",
+      "type": "registry:file",
+      "target": "@components/data-table/index.ts"
+    },
+    {
+      "file": "use-infinite-scroll.ts",
+      "type": "registry:file",
+      "target": "@components/data-table/use-infinite-scroll.ts"
+    }
+  ],
+  "dependencies": ["@stylexjs/stylex", "@phosphor-icons/react", "@tanstack/react-table"]
 }

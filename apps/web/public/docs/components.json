@@ -4,29 +4,11 @@
     "description": "A contact form page with name, email, subject select, message textarea, success state, and optional contact information sidebar.",
     "category": "Marketing",
     "status": "stable",
-    "keywords": [
-      "contact",
-      "form",
-      "support",
-      "message",
-      "email"
-    ],
-    "related": [
-      "Button",
-      "Input",
-      "Textarea",
-      "Card"
-    ],
+    "keywords": ["contact", "form", "support", "message", "email"],
+    "related": ["Button", "Input", "Textarea", "Card"],
     "accessibility": {
-      "keyboard": [
-        "Tab",
-        "Enter"
-      ],
-      "aria": [
-        "form role",
-        "aria-label",
-        "autoComplete"
-      ]
+      "keyboard": ["Tab", "Enter"],
+      "aria": ["form role", "aria-label", "autoComplete"]
     },
     "registryName": "contact-01",
     "examples": []
@@ -36,28 +18,11 @@
     "description": "A SaaS dashboard with KPI metrics grid, chart placeholders, quick actions, and a recent activity table.",
     "category": "Dashboard",
     "status": "stable",
-    "keywords": [
-      "dashboard",
-      "kpi",
-      "metrics",
-      "analytics",
-      "table",
-      "chart"
-    ],
-    "related": [
-      "Button",
-      "Card",
-      "Table",
-      "Badge",
-      "Grid",
-      "Surface"
-    ],
+    "keywords": ["dashboard", "kpi", "metrics", "analytics", "table", "chart"],
+    "related": ["Button", "Card", "Table", "Badge", "Grid", "Surface"],
     "accessibility": {
       "keyboard": [],
-      "aria": [
-        "aria-label",
-        "role=list"
-      ]
+      "aria": ["aria-label", "role=list"]
     },
     "registryName": "dashboard-01",
     "examples": []
@@ -67,24 +32,11 @@
     "description": "An empty state block for use when no data exists. Supports card and page variants with optional action buttons.",
     "category": "Application States",
     "status": "stable",
-    "keywords": [
-      "empty",
-      "state",
-      "no data",
-      "placeholder",
-      "nothing"
-    ],
-    "related": [
-      "Button",
-      "Text",
-      "Stack",
-      "Card"
-    ],
+    "keywords": ["empty", "state", "no data", "placeholder", "nothing"],
+    "related": ["Button", "Text", "Stack", "Card"],
     "accessibility": {
       "keyboard": [],
-      "aria": [
-        "aria-label"
-      ]
+      "aria": ["aria-label"]
     },
     "registryName": "empty-state-01",
     "examples": []
@@ -94,27 +46,11 @@
     "description": "An error state block for displaying errors with retry action and expandable debug details. Supports card, page, and toast variants.",
     "category": "Application States",
     "status": "stable",
-    "keywords": [
-      "error",
-      "state",
-      "failure",
-      "retry",
-      "alert",
-      "exception"
-    ],
-    "related": [
-      "Button",
-      "Text",
-      "Stack",
-      "Card",
-      "Surface"
-    ],
+    "keywords": ["error", "state", "failure", "retry", "alert", "exception"],
+    "related": ["Button", "Text", "Stack", "Card", "Surface"],
     "accessibility": {
       "keyboard": [],
-      "aria": [
-        "role=alert",
-        "aria-live=assertive"
-      ]
+      "aria": ["role=alert", "aria-live=assertive"]
     },
     "registryName": "error-state-01",
     "examples": []
@@ -124,27 +60,11 @@
     "description": "An expandable FAQ accordion with section heading, description, and optional search/filter.",
     "category": "Marketing",
     "status": "stable",
-    "keywords": [
-      "faq",
-      "accordion",
-      "questions",
-      "help",
-      "support"
-    ],
-    "related": [
-      "Accordion",
-      "Text"
-    ],
+    "keywords": ["faq", "accordion", "questions", "help", "support"],
+    "related": ["Accordion", "Text"],
     "accessibility": {
-      "keyboard": [
-        "Enter",
-        "Space"
-      ],
-      "aria": [
-        "aria-expanded",
-        "aria-controls",
-        "aria-label"
-      ]
+      "keyboard": ["Enter", "Space"],
+      "aria": ["aria-expanded", "aria-controls", "aria-label"]
     },
     "registryName": "faq-01",
     "examples": []
@@ -154,28 +74,11 @@
     "description": "A forgot password flow with email input, validation, and success confirmation state after submission.",
     "category": "Authentication",
     "status": "stable",
-    "keywords": [
-      "forgot password",
-      "reset",
-      "email",
-      "recovery"
-    ],
-    "related": [
-      "Button",
-      "Input",
-      "Card"
-    ],
+    "keywords": ["forgot password", "reset", "email", "recovery"],
+    "related": ["Button", "Input", "Card"],
     "accessibility": {
-      "keyboard": [
-        "Tab",
-        "Enter"
-      ],
-      "aria": [
-        "form role",
-        "aria-label",
-        "autoComplete",
-        "aria-live"
-      ]
+      "keyboard": ["Tab", "Enter"],
+      "aria": ["form role", "aria-label", "autoComplete", "aria-live"]
     },
     "registryName": "forgot-password-01",
     "examples": []
@@ -185,23 +88,11 @@
     "description": "A marketing hero section with headline, supporting text, dual CTA buttons, and optional image. Supports default, muted, and accent background variants.",
     "category": "Marketing",
     "status": "stable",
-    "keywords": [
-      "hero",
-      "marketing",
-      "header",
-      "landing",
-      "cta"
-    ],
-    "related": [
-      "Button",
-      "Text",
-      "Stack"
-    ],
+    "keywords": ["hero", "marketing", "header", "landing", "cta"],
+    "related": ["Button", "Text", "Stack"],
     "accessibility": {
       "keyboard": [],
-      "aria": [
-        "image alt text"
-      ]
+      "aria": ["image alt text"]
     },
     "registryName": "hero-01",
     "examples": []
@@ -211,24 +102,11 @@
     "description": "A loading/skeleton block for use while content is being fetched. Supports text, card, table, avatar, and custom patterns.",
     "category": "Application States",
     "status": "stable",
-    "keywords": [
-      "loading",
-      "skeleton",
-      "placeholder",
-      "shimmer",
-      "progress"
-    ],
-    "related": [
-      "Progress",
-      "Stack"
-    ],
+    "keywords": ["loading", "skeleton", "placeholder", "shimmer", "progress"],
+    "related": ["Progress", "Stack"],
     "accessibility": {
       "keyboard": [],
-      "aria": [
-        "aria-busy",
-        "aria-label",
-        "role=status"
-      ]
+      "aria": ["aria-busy", "aria-label", "role=status"]
     },
     "registryName": "loading-state-01",
     "examples": []
@@ -238,30 +116,11 @@
     "description": "A complete sign-in page with email/password form, remember me, forgot password link, social login buttons, and sign-up link.",
     "category": "Authentication",
     "status": "stable",
-    "keywords": [
-      "login",
-      "sign in",
-      "authentication",
-      "form",
-      "social login"
-    ],
-    "related": [
-      "Button",
-      "Input",
-      "Checkbox",
-      "Separator",
-      "Card"
-    ],
+    "keywords": ["login", "sign in", "authentication", "form", "social login"],
+    "related": ["Button", "Input", "Checkbox", "Separator", "Card"],
     "accessibility": {
-      "keyboard": [
-        "Tab",
-        "Enter"
-      ],
-      "aria": [
-        "form role",
-        "aria-label",
-        "autoComplete"
-      ]
+      "keyboard": ["Tab", "Enter"],
+      "aria": ["form role", "aria-label", "autoComplete"]
     },
     "registryName": "login-01",
     "examples": []
@@ -271,31 +130,11 @@
     "description": "An email-first sign-in flow supporting multi-step password entry or magic-link authentication.",
     "category": "Authentication",
     "status": "stable",
-    "keywords": [
-      "login",
-      "sign in",
-      "email-first",
-      "password",
-      "magic link",
-      "multi-step"
-    ],
-    "related": [
-      "Button",
-      "Input",
-      "Card"
-    ],
+    "keywords": ["login", "sign in", "email-first", "password", "magic link", "multi-step"],
+    "related": ["Button", "Input", "Card"],
     "accessibility": {
-      "keyboard": [
-        "Tab",
-        "Enter"
-      ],
-      "aria": [
-        "form role",
-        "aria-label",
-        "autoComplete",
-        "aria-live",
-        "progressbar"
-      ]
+      "keyboard": ["Tab", "Enter"],
+      "aria": ["form role", "aria-label", "autoComplete", "aria-live", "progressbar"]
     },
     "registryName": "login-02",
     "examples": []
@@ -305,29 +144,11 @@
     "description": "A pricing section with monthly/yearly toggle, three plan tiers, feature lists, and prominent CTA for the popular plan.",
     "category": "Marketing",
     "status": "stable",
-    "keywords": [
-      "pricing",
-      "plans",
-      "subscription",
-      "billing",
-      "tiers"
-    ],
-    "related": [
-      "Button",
-      "Card",
-      "Badge",
-      "Switch",
-      "Separator"
-    ],
+    "keywords": ["pricing", "plans", "subscription", "billing", "tiers"],
+    "related": ["Button", "Card", "Badge", "Switch", "Separator"],
     "accessibility": {
-      "keyboard": [
-        "Tab",
-        "Enter"
-      ],
-      "aria": [
-        "switch role",
-        "list of features"
-      ]
+      "keyboard": ["Tab", "Enter"],
+      "aria": ["switch role", "list of features"]
     },
     "registryName": "pricing-01",
     "examples": []
@@ -337,30 +158,11 @@
     "description": "A profile page with personal information form, notification preferences toggles, account actions, and danger zone.",
     "category": "Dashboard",
     "status": "stable",
-    "keywords": [
-      "profile",
-      "user",
-      "settings",
-      "notifications",
-      "account"
-    ],
-    "related": [
-      "Button",
-      "Input",
-      "Switch",
-      "Card",
-      "Avatar",
-      "Separator"
-    ],
+    "keywords": ["profile", "user", "settings", "notifications", "account"],
+    "related": ["Button", "Input", "Switch", "Card", "Avatar", "Separator"],
     "accessibility": {
-      "keyboard": [
-        "Tab",
-        "Enter"
-      ],
-      "aria": [
-        "form label",
-        "switch role"
-      ]
+      "keyboard": ["Tab", "Enter"],
+      "aria": ["form label", "switch role"]
     },
     "registryName": "profile-01",
     "examples": []
@@ -370,32 +172,11 @@
     "description": "A full settings page with tabbed navigation covering general, security, appearance, notifications, and billing sections.",
     "category": "Dashboard",
     "status": "stable",
-    "keywords": [
-      "settings",
-      "preferences",
-      "tabs",
-      "configuration",
-      "account"
-    ],
-    "related": [
-      "Tabs",
-      "Button",
-      "Input",
-      "Switch",
-      "Card",
-      "Separator"
-    ],
+    "keywords": ["settings", "preferences", "tabs", "configuration", "account"],
+    "related": ["Tabs", "Button", "Input", "Switch", "Card", "Separator"],
     "accessibility": {
-      "keyboard": [
-        "Tab",
-        "Arrow Keys",
-        "Enter"
-      ],
-      "aria": [
-        "tablist",
-        "tab",
-        "tabpanel"
-      ]
+      "keyboard": ["Tab", "Arrow Keys", "Enter"],
+      "aria": ["tablist", "tab", "tabpanel"]
     },
     "registryName": "settings-01",
     "examples": []
@@ -405,30 +186,11 @@
     "description": "A complete sign-up/registration page with name, email, password, confirm password, terms acceptance, and social sign-up.",
     "category": "Authentication",
     "status": "stable",
-    "keywords": [
-      "signup",
-      "registration",
-      "create account",
-      "form",
-      "social"
-    ],
-    "related": [
-      "Button",
-      "Input",
-      "Checkbox",
-      "Separator",
-      "Card"
-    ],
+    "keywords": ["signup", "registration", "create account", "form", "social"],
+    "related": ["Button", "Input", "Checkbox", "Separator", "Card"],
     "accessibility": {
-      "keyboard": [
-        "Tab",
-        "Enter"
-      ],
-      "aria": [
-        "form role",
-        "aria-label",
-        "autoComplete"
-      ]
+      "keyboard": ["Tab", "Enter"],
+      "aria": ["form role", "aria-label", "autoComplete"]
     },
     "registryName": "signup-01",
     "examples": []
@@ -438,30 +200,11 @@
     "description": "A verification code page with 6 individual digit inputs supporting auto-advance, paste, and resend cooldown.",
     "category": "Authentication",
     "status": "stable",
-    "keywords": [
-      "verify",
-      "email",
-      "otp",
-      "code",
-      "2fa",
-      "verification"
-    ],
-    "related": [
-      "Button",
-      "Text",
-      "Card"
-    ],
+    "keywords": ["verify", "email", "otp", "code", "2fa", "verification"],
+    "related": ["Button", "Text", "Card"],
     "accessibility": {
-      "keyboard": [
-        "Tab",
-        "Enter",
-        "Backspace"
-      ],
-      "aria": [
-        "aria-label per digit",
-        "role=group",
-        "autoComplete=one-time-code"
-      ]
+      "keyboard": ["Tab", "Enter", "Backspace"],
+      "aria": ["aria-label per digit", "role=group", "autoComplete=one-time-code"]
     },
     "registryName": "verify-email-01",
     "examples": []
@@ -471,26 +214,11 @@
     "description": "A collapsible accordion for showing and hiding content sections. Supports single and multiple item expansion.",
     "category": "Data Display",
     "status": "stable",
-    "keywords": [
-      "accordion",
-      "collapsible",
-      "expand",
-      "collapse"
-    ],
-    "related": [
-      "Tabs",
-      "Dialog"
-    ],
+    "keywords": ["accordion", "collapsible", "expand", "collapse"],
+    "related": ["Tabs", "Dialog"],
     "accessibility": {
-      "keyboard": [
-        "Enter",
-        "Space"
-      ],
-      "aria": [
-        "aria-expanded",
-        "aria-controls",
-        "aria-labelledby"
-      ]
+      "keyboard": ["Enter", "Space"],
+      "aria": ["aria-expanded", "aria-controls", "aria-labelledby"]
     },
     "registryName": "accordion",
     "examples": []
@@ -500,23 +228,10 @@
     "description": "A contextual feedback banner with four visual variants: info, success, warning, and error.",
     "category": "Feedback",
     "status": "stable",
-    "keywords": [
-      "alert",
-      "banner",
-      "feedback",
-      "info",
-      "success",
-      "warning",
-      "error"
-    ],
-    "related": [
-      "Text"
-    ],
+    "keywords": ["alert", "banner", "feedback", "info", "success", "warning", "error"],
+    "related": ["Text"],
     "accessibility": {
-      "aria": [
-        "role",
-        "aria-live"
-      ]
+      "aria": ["role", "aria-live"]
     },
     "registryName": "alert",
     "examples": []
@@ -526,28 +241,11 @@
     "description": "A confirmation or alert modal dialog for critical user interactions requiring acknowledgment.",
     "category": "Overlay",
     "status": "stable",
-    "keywords": [
-      "dialog",
-      "modal",
-      "alert",
-      "confirmation",
-      "confirm"
-    ],
-    "related": [
-      "Dialog",
-      "Button",
-      "ScrollArea"
-    ],
+    "keywords": ["dialog", "modal", "alert", "confirmation", "confirm"],
+    "related": ["Dialog", "Button", "ScrollArea"],
     "accessibility": {
-      "keyboard": [
-        "Escape"
-      ],
-      "aria": [
-        "role",
-        "aria-modal",
-        "aria-labelledby",
-        "aria-describedby"
-      ]
+      "keyboard": ["Escape"],
+      "aria": ["role", "aria-modal", "aria-labelledby", "aria-describedby"]
     },
     "registryName": "alert-dialog",
     "examples": []
@@ -557,19 +255,8 @@
     "description": "A typeahead autocomplete input that filters suggestions as the user types. Built with Base UI Autocomplete.",
     "category": "Forms",
     "status": "stable",
-    "keywords": [
-      "autocomplete",
-      "typeahead",
-      "search",
-      "suggestions",
-      "filter"
-    ],
-    "related": [
-      "Input",
-      "ScrollArea",
-      "Field",
-      "Combobox"
-    ],
+    "keywords": ["autocomplete", "typeahead", "search", "suggestions", "filter"],
+    "related": ["Input", "ScrollArea", "Field", "Combobox"],
     "registryName": "autocomplete",
     "examples": []
   },
@@ -578,16 +265,8 @@
     "description": "An avatar component with image and fallback support. Displays a user profile image or initials placeholder.",
     "category": "Data Display",
     "status": "stable",
-    "keywords": [
-      "avatar",
-      "profile",
-      "image",
-      "user",
-      "fallback"
-    ],
-    "related": [
-      "Badge"
-    ],
+    "keywords": ["avatar", "profile", "image", "user", "fallback"],
+    "related": ["Badge"],
     "registryName": "avatar",
     "examples": []
   },
@@ -596,18 +275,8 @@
     "description": "An inline badge or pill component with variant color presets for status, labels, and counts.",
     "category": "Data Display",
     "status": "stable",
-    "keywords": [
-      "badge",
-      "pill",
-      "chip",
-      "label",
-      "status",
-      "count"
-    ],
-    "related": [
-      "Text",
-      "Avatar"
-    ],
+    "keywords": ["badge", "pill", "chip", "label", "status", "count"],
+    "related": ["Text", "Avatar"],
     "registryName": "badge",
     "examples": []
   },
@@ -616,19 +285,8 @@
     "description": "A low-level polymorphic layout primitive. The foundational building block for all layout components.",
     "category": "Layout",
     "status": "stable",
-    "keywords": [
-      "box",
-      "layout",
-      "div",
-      "polymorphic",
-      "primitive"
-    ],
-    "related": [
-      "Container",
-      "Grid",
-      "Stack",
-      "Surface"
-    ],
+    "keywords": ["box", "layout", "div", "polymorphic", "primitive"],
+    "related": ["Container", "Grid", "Stack", "Surface"],
     "registryName": "box",
     "examples": []
   },
@@ -637,19 +295,10 @@
     "description": "A breadcrumb navigation trail with ARIA support for hierarchical page navigation.",
     "category": "Navigation",
     "status": "stable",
-    "keywords": [
-      "breadcrumbs",
-      "navigation",
-      "breadcrumb",
-      "trail",
-      "hierarchy"
-    ],
+    "keywords": ["breadcrumbs", "navigation", "breadcrumb", "trail", "hierarchy"],
     "related": [],
     "accessibility": {
-      "aria": [
-        "aria-label",
-        "aria-current"
-      ]
+      "aria": ["aria-label", "aria-current"]
     },
     "registryName": "breadcrumbs",
     "examples": []
@@ -659,29 +308,11 @@
     "description": "A polymorphic button component with loading state, variant and size presets, full-width mode, and custom border radius. Built on Base UI useRender.",
     "category": "Forms",
     "status": "stable",
-    "keywords": [
-      "button",
-      "action",
-      "click",
-      "submit",
-      "loading",
-      "variant"
-    ],
-    "related": [
-      "Spinner",
-      "IconButton",
-      "Toggle"
-    ],
+    "keywords": ["button", "action", "click", "submit", "loading", "variant"],
+    "related": ["Spinner", "IconButton", "Toggle"],
     "accessibility": {
-      "keyboard": [
-        "Enter",
-        "Space"
-      ],
-      "aria": [
-        "aria-disabled",
-        "aria-label",
-        "aria-describedby"
-      ]
+      "keyboard": ["Enter", "Space"],
+      "aria": ["aria-disabled", "aria-label", "aria-describedby"]
     },
     "registryName": "button",
     "examples": []
@@ -691,17 +322,8 @@
     "description": "A date calendar component built on react-day-picker. Supports single, range, and multiple date selection modes.",
     "category": "Forms",
     "status": "stable",
-    "keywords": [
-      "calendar",
-      "date",
-      "datepicker",
-      "day",
-      "month"
-    ],
-    "related": [
-      "DatePicker",
-      "Button"
-    ],
+    "keywords": ["calendar", "date", "datepicker", "day", "month"],
+    "related": ["DatePicker", "Button"],
     "registryName": "calendar",
     "examples": []
   },
@@ -710,17 +332,8 @@
     "description": "A content card container with header, body, footer, title, and description sub-components.",
     "category": "Data Display",
     "status": "stable",
-    "keywords": [
-      "card",
-      "container",
-      "panel",
-      "content",
-      "surface"
-    ],
-    "related": [
-      "Surface",
-      "Box"
-    ],
+    "keywords": ["card", "container", "panel", "content", "surface"],
+    "related": ["Surface", "Box"],
     "registryName": "card",
     "examples": []
   },
@@ -729,26 +342,11 @@
     "description": "A checkbox input with checked, indeterminate, and disabled states. Includes a CheckboxGroup wrapper for grouping.",
     "category": "Forms",
     "status": "stable",
-    "keywords": [
-      "checkbox",
-      "check",
-      "input",
-      "form",
-      "selection",
-      "indeterminate"
-    ],
-    "related": [
-      "Field",
-      "CheckboxGroup"
-    ],
+    "keywords": ["checkbox", "check", "input", "form", "selection", "indeterminate"],
+    "related": ["Field", "CheckboxGroup"],
     "accessibility": {
-      "keyboard": [
-        "Space"
-      ],
-      "aria": [
-        "aria-checked",
-        "aria-labelledby"
-      ]
+      "keyboard": ["Space"],
+      "aria": ["aria-checked", "aria-labelledby"]
     },
     "registryName": "checkbox",
     "examples": []
@@ -758,19 +356,8 @@
     "description": "A color picker inside a popover. Uses react-colorful with hex input and color swatch preview.",
     "category": "Forms",
     "status": "stable",
-    "keywords": [
-      "color",
-      "picker",
-      "color picker",
-      "hex",
-      "popover"
-    ],
-    "related": [
-      "ColorSwatch",
-      "Popover",
-      "Field",
-      "Button"
-    ],
+    "keywords": ["color", "picker", "color picker", "hex", "popover"],
+    "related": ["ColorSwatch", "Popover", "Field", "Button"],
     "registryName": "colorpicker",
     "examples": []
   },
@@ -779,15 +366,8 @@
     "description": "A small inline color swatch square that displays a given color value.",
     "category": "Data Display",
     "status": "stable",
-    "keywords": [
-      "color",
-      "swatch",
-      "preview",
-      "color swatch"
-    ],
-    "related": [
-      "ColorPicker"
-    ],
+    "keywords": ["color", "swatch", "preview", "color swatch"],
+    "related": ["ColorPicker"],
     "registryName": "color-swatch",
     "examples": []
   },
@@ -796,19 +376,8 @@
     "description": "A combobox with single and multi-select (chip) support, built on Base UI Combobox with filtering and popup.",
     "category": "Forms",
     "status": "stable",
-    "keywords": [
-      "combobox",
-      "select",
-      "autocomplete",
-      "chips",
-      "multi-select"
-    ],
-    "related": [
-      "Input",
-      "ScrollArea",
-      "Field",
-      "Autocomplete"
-    ],
+    "keywords": ["combobox", "select", "autocomplete", "chips", "multi-select"],
+    "related": ["Input", "ScrollArea", "Field", "Autocomplete"],
     "registryName": "combobox",
     "examples": []
   },
@@ -817,27 +386,10 @@
     "description": "A searchable command palette with keyboard navigation, groups, and filtering.",
     "category": "Overlay",
     "status": "experimental",
-    "keywords": [
-      "command",
-      "palette",
-      "search",
-      "filter",
-      "kbar",
-      "spotlight",
-      "keyboard"
-    ],
-    "related": [
-      "Dialog",
-      "Select",
-      "Menu"
-    ],
+    "keywords": ["command", "palette", "search", "filter", "kbar", "spotlight", "keyboard"],
+    "related": ["Dialog", "Select", "Menu"],
     "accessibility": {
-      "keyboard": [
-        "ArrowDown",
-        "ArrowUp",
-        "Enter",
-        "Escape"
-      ],
+      "keyboard": ["ArrowDown", "ArrowUp", "Enter", "Escape"],
       "aria": [
         "role",
         "combobox",
@@ -856,17 +408,8 @@
     "description": "A centered layout wrapper that constrains content width with configurable max-width presets.",
     "category": "Layout",
     "status": "stable",
-    "keywords": [
-      "container",
-      "layout",
-      "wrapper",
-      "center",
-      "max-width"
-    ],
-    "related": [
-      "Box",
-      "Stack"
-    ],
+    "keywords": ["container", "layout", "wrapper", "center", "max-width"],
+    "related": ["Box", "Stack"],
     "registryName": "container",
     "examples": []
   },
@@ -875,19 +418,8 @@
     "description": "A date picker built as a popover containing a calendar with formatted date display.",
     "category": "Forms",
     "status": "stable",
-    "keywords": [
-      "date",
-      "date picker",
-      "calendar",
-      "popover",
-      "form"
-    ],
-    "related": [
-      "Calendar",
-      "Popover",
-      "Field",
-      "Button"
-    ],
+    "keywords": ["date", "date picker", "calendar", "popover", "form"],
+    "related": ["Calendar", "Popover", "Field", "Button"],
     "registryName": "datepicker",
     "examples": []
   },
@@ -896,29 +428,11 @@
     "description": "A modal dialog with backdrop, header, footer, scroll panel, and mobile bottom sheet behavior.",
     "category": "Overlay",
     "status": "stable",
-    "keywords": [
-      "dialog",
-      "modal",
-      "popup",
-      "overlay",
-      "alert"
-    ],
-    "related": [
-      "AlertDialog",
-      "Button",
-      "ScrollArea",
-      "Drawer"
-    ],
+    "keywords": ["dialog", "modal", "popup", "overlay", "alert"],
+    "related": ["AlertDialog", "Button", "ScrollArea", "Drawer"],
     "accessibility": {
-      "keyboard": [
-        "Escape"
-      ],
-      "aria": [
-        "role",
-        "aria-modal",
-        "aria-labelledby",
-        "aria-describedby"
-      ]
+      "keyboard": ["Escape"],
+      "aria": ["role", "aria-modal", "aria-labelledby", "aria-describedby"]
     },
     "registryName": "dialog",
     "examples": []
@@ -928,19 +442,8 @@
     "description": "A swipeable drawer panel that slides in from any side. Supports nested menus, radio groups, and checkboxes.",
     "category": "Overlay",
     "status": "stable",
-    "keywords": [
-      "drawer",
-      "panel",
-      "slide",
-      "swipe",
-      "sidebar",
-      "menu"
-    ],
-    "related": [
-      "ScrollArea",
-      "Dialog",
-      "Button"
-    ],
+    "keywords": ["drawer", "panel", "slide", "swipe", "sidebar", "menu"],
+    "related": ["ScrollArea", "Dialog", "Button"],
     "registryName": "drawer",
     "examples": []
   },
@@ -949,21 +452,8 @@
     "description": "A form field wrapper with accessible label, description, error, and validity wiring for form controls.",
     "category": "Forms",
     "status": "stable",
-    "keywords": [
-      "field",
-      "form",
-      "label",
-      "error",
-      "validation",
-      "input"
-    ],
-    "related": [
-      "Input",
-      "Select",
-      "Textarea",
-      "ColorPicker",
-      "DatePicker"
-    ],
+    "keywords": ["field", "form", "label", "error", "validation", "input"],
+    "related": ["Input", "Select", "Textarea", "ColorPicker", "DatePicker"],
     "registryName": "field",
     "examples": []
   },
@@ -972,17 +462,8 @@
     "description": "A CSS Grid layout component with column presets, gap tokens, and alignment control. Includes a GridItem sub-component for spanning.",
     "category": "Layout",
     "status": "experimental",
-    "keywords": [
-      "grid",
-      "layout",
-      "columns",
-      "css grid",
-      "responsive"
-    ],
-    "related": [
-      "Box",
-      "Stack"
-    ],
+    "keywords": ["grid", "layout", "columns", "css grid", "responsive"],
+    "related": ["Box", "Stack"],
     "registryName": "grid",
     "examples": []
   },
@@ -991,23 +472,11 @@
     "description": "A standardized wrapper for SVG icons with token-based sizing and theme-aware color support. Built for use inside buttons, inputs, badges, and other UI components.",
     "category": "Utility",
     "status": "stable",
-    "keywords": [
-      "icon",
-      "svg",
-      "size",
-      "color",
-      "wrapper"
-    ],
-    "related": [
-      "IconButton",
-      "Button",
-      "Badge"
-    ],
+    "keywords": ["icon", "svg", "size", "color", "wrapper"],
+    "related": ["IconButton", "Button", "Badge"],
     "accessibility": {
       "keyboard": [],
-      "aria": [
-        "aria-hidden"
-      ]
+      "aria": ["aria-hidden"]
     },
     "registryName": "icon",
     "examples": []
@@ -1017,27 +486,11 @@
     "description": "A square icon-only button with accessible label requirements, variant and intent styling, loading state, and consistent sizing.",
     "category": "Forms",
     "status": "stable",
-    "keywords": [
-      "icon",
-      "button",
-      "icon-button",
-      "action",
-      "toolbar"
-    ],
-    "related": [
-      "Icon",
-      "Button",
-      "Spinner"
-    ],
+    "keywords": ["icon", "button", "icon-button", "action", "toolbar"],
+    "related": ["Icon", "Button", "Spinner"],
     "accessibility": {
-      "keyboard": [
-        "Enter",
-        "Space"
-      ],
-      "aria": [
-        "aria-label",
-        "aria-disabled"
-      ]
+      "keyboard": ["Enter", "Space"],
+      "aria": ["aria-label", "aria-disabled"]
     },
     "registryName": "icon-button",
     "examples": []
@@ -1047,19 +500,8 @@
     "description": "A text input component with size presets, error state styling, and auto-generated IDs. Built on Base UI Input primitive.",
     "category": "Forms",
     "status": "stable",
-    "keywords": [
-      "input",
-      "text",
-      "form",
-      "field",
-      "text input"
-    ],
-    "related": [
-      "Field",
-      "InputGroup",
-      "Autocomplete",
-      "Combobox"
-    ],
+    "keywords": ["input", "text", "form", "field", "text input"],
+    "related": ["Field", "InputGroup", "Autocomplete", "Combobox"],
     "registryName": "input",
     "examples": []
   },
@@ -1068,19 +510,8 @@
     "description": "A compound form control group with addon, label, input, textarea, menu, checkbox, and radio sub-components.",
     "category": "Forms",
     "status": "stable",
-    "keywords": [
-      "input group",
-      "fieldset",
-      "addon",
-      "form",
-      "group"
-    ],
-    "related": [
-      "Input",
-      "Field",
-      "Checkbox",
-      "Radio"
-    ],
+    "keywords": ["input group", "fieldset", "addon", "form", "group"],
+    "related": ["Input", "Field", "Checkbox", "Radio"],
     "registryName": "inputgroup",
     "examples": []
   },
@@ -1089,26 +520,11 @@
     "description": "A dropdown menu with items, separators, group labels, and shortcuts. Built on Base UI Menu.",
     "category": "Navigation",
     "status": "stable",
-    "keywords": [
-      "menu",
-      "dropdown",
-      "context menu",
-      "navigation"
-    ],
-    "related": [
-      "Button"
-    ],
+    "keywords": ["menu", "dropdown", "context menu", "navigation"],
+    "related": ["Button"],
     "accessibility": {
-      "keyboard": [
-        "ArrowUp",
-        "ArrowDown",
-        "Enter",
-        "Escape"
-      ],
-      "aria": [
-        "role",
-        "aria-orientation"
-      ]
+      "keyboard": ["ArrowUp", "ArrowDown", "Enter", "Escape"],
+      "aria": ["role", "aria-orientation"]
     },
     "registryName": "menu",
     "examples": []
@@ -1118,18 +534,8 @@
     "description": "A one-time password input component with individual character slots, separator support, and auto-submit. Built on Base UI OTP Field primitive.",
     "category": "Forms",
     "status": "experimental",
-    "keywords": [
-      "otp",
-      "password",
-      "code",
-      "verification",
-      "2fa",
-      "input"
-    ],
-    "related": [
-      "Input",
-      "Field"
-    ],
+    "keywords": ["otp", "password", "code", "verification", "2fa", "input"],
+    "related": ["Input", "Field"],
     "registryName": "otpfield",
     "examples": []
   },
@@ -1138,27 +544,11 @@
     "description": "A floating popover with trigger, positioning, arrow, backdrop, and accessible title/description.",
     "category": "Overlay",
     "status": "stable",
-    "keywords": [
-      "popover",
-      "tooltip",
-      "popup",
-      "floating",
-      "overlay"
-    ],
-    "related": [
-      "Button",
-      "ColorPicker",
-      "DatePicker"
-    ],
+    "keywords": ["popover", "tooltip", "popup", "floating", "overlay"],
+    "related": ["Button", "ColorPicker", "DatePicker"],
     "accessibility": {
-      "keyboard": [
-        "Escape"
-      ],
-      "aria": [
-        "role",
-        "aria-labelledby",
-        "aria-describedby"
-      ]
+      "keyboard": ["Escape"],
+      "aria": ["role", "aria-labelledby", "aria-describedby"]
     },
     "registryName": "popover",
     "examples": []
@@ -1168,23 +558,10 @@
     "description": "A progress bar with label, track, indicator, and value display. Built on Base UI Progress.",
     "category": "Feedback",
     "status": "stable",
-    "keywords": [
-      "progress",
-      "bar",
-      "loading",
-      "status",
-      "indicator"
-    ],
-    "related": [
-      "Spinner"
-    ],
+    "keywords": ["progress", "bar", "loading", "status", "indicator"],
+    "related": ["Spinner"],
     "accessibility": {
-      "aria": [
-        "role",
-        "aria-valuenow",
-        "aria-valuemin",
-        "aria-valuemax"
-      ]
+      "aria": ["role", "aria-valuenow", "aria-valuemin", "aria-valuemax"]
     },
     "registryName": "progress",
     "examples": []
@@ -1194,26 +571,11 @@
     "description": "A radio button with RadioGroup wrapper for single-select option lists. Built on Base UI Radio primitive.",
     "category": "Forms",
     "status": "stable",
-    "keywords": [
-      "radio",
-      "radio group",
-      "option",
-      "select",
-      "form"
-    ],
-    "related": [
-      "Field",
-      "InputGroup"
-    ],
+    "keywords": ["radio", "radio group", "option", "select", "form"],
+    "related": ["Field", "InputGroup"],
     "accessibility": {
-      "keyboard": [
-        "ArrowUp",
-        "ArrowDown"
-      ],
-      "aria": [
-        "aria-checked",
-        "aria-labelledby"
-      ]
+      "keyboard": ["ArrowUp", "ArrowDown"],
+      "aria": ["aria-checked", "aria-labelledby"]
     },
     "registryName": "radio",
     "examples": []
@@ -1223,19 +585,8 @@
     "description": "A custom scroll area with scroll fade, scrollbar gutter reservation, and fill mode. Built on Base UI ScrollArea.",
     "category": "Utility",
     "status": "stable",
-    "keywords": [
-      "scroll",
-      "scroll area",
-      "scrollbar",
-      "scroll fade"
-    ],
-    "related": [
-      "Dialog",
-      "AlertDialog",
-      "Drawer",
-      "Autocomplete",
-      "Combobox"
-    ],
+    "keywords": ["scroll", "scroll area", "scrollbar", "scroll fade"],
+    "related": ["Dialog", "AlertDialog", "Drawer", "Autocomplete", "Combobox"],
     "registryName": "scroll-area",
     "examples": []
   },
@@ -1244,17 +595,8 @@
     "description": "A convenience wrapper around ToggleGroup providing a single-select segmented control with options array.",
     "category": "Forms",
     "status": "stable",
-    "keywords": [
-      "segmented",
-      "control",
-      "toggle",
-      "segment",
-      "button group"
-    ],
-    "related": [
-      "ToggleGroup",
-      "Toggle"
-    ],
+    "keywords": ["segmented", "control", "toggle", "segment", "button group"],
+    "related": ["ToggleGroup", "Toggle"],
     "registryName": "segmented-control",
     "examples": []
   },
@@ -1263,29 +605,11 @@
     "description": "A fully compound select component with trigger, popup, list, items, groups, scroll arrows, and a convenience SelectWrapper for forms.",
     "category": "Forms",
     "status": "stable",
-    "keywords": [
-      "select",
-      "dropdown",
-      "combobox",
-      "listbox",
-      "form"
-    ],
-    "related": [
-      "Field",
-      "ScrollArea"
-    ],
+    "keywords": ["select", "dropdown", "combobox", "listbox", "form"],
+    "related": ["Field", "ScrollArea"],
     "accessibility": {
-      "keyboard": [
-        "ArrowUp",
-        "ArrowDown",
-        "Enter",
-        "Escape"
-      ],
-      "aria": [
-        "role",
-        "aria-expanded",
-        "aria-labelledby"
-      ]
+      "keyboard": ["ArrowUp", "ArrowDown", "Enter", "Escape"],
+      "aria": ["role", "aria-expanded", "aria-labelledby"]
     },
     "registryName": "select",
     "examples": []
@@ -1295,22 +619,10 @@
     "description": "A visual divider supporting horizontal and vertical orientations with subtle and strong tone variants. Optionally labeled.",
     "category": "Layout",
     "status": "stable",
-    "keywords": [
-      "separator",
-      "divider",
-      "line",
-      "rule",
-      "hr"
-    ],
-    "related": [
-      "ToggleGroup",
-      "Menu"
-    ],
+    "keywords": ["separator", "divider", "line", "rule", "hr"],
+    "related": ["ToggleGroup", "Menu"],
     "accessibility": {
-      "aria": [
-        "role",
-        "aria-orientation"
-      ]
+      "aria": ["role", "aria-orientation"]
     },
     "registryName": "separator",
     "examples": []
@@ -1320,30 +632,11 @@
     "description": "A slide-in panel component that enters from any edge of the viewport. Built on Base UI Dialog with custom side positioning.",
     "category": "Overlay",
     "status": "stable",
-    "keywords": [
-      "sheet",
-      "panel",
-      "slide",
-      "sidebar",
-      "drawer",
-      "overlay"
-    ],
-    "related": [
-      "Drawer",
-      "Dialog",
-      "Button",
-      "ScrollArea"
-    ],
+    "keywords": ["sheet", "panel", "slide", "sidebar", "drawer", "overlay"],
+    "related": ["Drawer", "Dialog", "Button", "ScrollArea"],
     "accessibility": {
-      "keyboard": [
-        "Escape"
-      ],
-      "aria": [
-        "role",
-        "aria-modal",
-        "aria-labelledby",
-        "aria-describedby"
-      ]
+      "keyboard": ["Escape"],
+      "aria": ["role", "aria-modal", "aria-labelledby", "aria-describedby"]
     },
     "registryName": "sheet",
     "examples": []
@@ -1353,29 +646,11 @@
     "description": "A range slider supporting single and multi-thumb values with orientation, min/max, and thumb alignment. Built on Base UI Slider.",
     "category": "Forms",
     "status": "stable",
-    "keywords": [
-      "slider",
-      "range",
-      "input",
-      "range slider",
-      "thumb"
-    ],
-    "related": [
-      "Field"
-    ],
+    "keywords": ["slider", "range", "input", "range slider", "thumb"],
+    "related": ["Field"],
     "accessibility": {
-      "keyboard": [
-        "ArrowLeft",
-        "ArrowRight",
-        "ArrowUp",
-        "ArrowDown"
-      ],
-      "aria": [
-        "role",
-        "aria-valuenow",
-        "aria-valuemin",
-        "aria-valuemax"
-      ]
+      "keyboard": ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"],
+      "aria": ["role", "aria-valuenow", "aria-valuemin", "aria-valuemax"]
     },
     "registryName": "slider",
     "examples": []
@@ -1385,22 +660,10 @@
     "description": "A loading spinner with ARIA role and label for accessible loading state indication.",
     "category": "Feedback",
     "status": "stable",
-    "keywords": [
-      "spinner",
-      "loading",
-      "loader",
-      "progress",
-      "wait"
-    ],
-    "related": [
-      "Button",
-      "Progress"
-    ],
+    "keywords": ["spinner", "loading", "loader", "progress", "wait"],
+    "related": ["Button", "Progress"],
     "accessibility": {
-      "aria": [
-        "role",
-        "aria-label"
-      ]
+      "aria": ["role", "aria-label"]
     },
     "registryName": "spinner",
     "examples": []
@@ -1410,17 +673,8 @@
     "description": "A resizable split panel layout with pointer and keyboard support, collapsible panels, and localStorage persistence.",
     "category": "Layout",
     "status": "stable",
-    "keywords": [
-      "splitter",
-      "resize",
-      "panel",
-      "layout",
-      "split",
-      "resizable"
-    ],
-    "related": [
-      "Box"
-    ],
+    "keywords": ["splitter", "resize", "panel", "layout", "split", "resizable"],
+    "related": ["Box"],
     "registryName": "splitter",
     "examples": []
   },
@@ -1429,18 +683,8 @@
     "description": "A flexbox layout component with gap, alignment, and direction control. Includes VStack and HStack shorthands.",
     "category": "Layout",
     "status": "stable",
-    "keywords": [
-      "stack",
-      "flex",
-      "layout",
-      "vstack",
-      "hstack",
-      "flexbox"
-    ],
-    "related": [
-      "Box",
-      "Grid"
-    ],
+    "keywords": ["stack", "flex", "layout", "vstack", "hstack", "flexbox"],
+    "related": ["Box", "Grid"],
     "registryName": "stack",
     "examples": []
   },
@@ -1449,17 +693,8 @@
     "description": "A background surface layer with variant presets for different visual depths. Supports interactive hover styles.",
     "category": "Layout",
     "status": "stable",
-    "keywords": [
-      "surface",
-      "background",
-      "container",
-      "elevation",
-      "card"
-    ],
-    "related": [
-      "Box",
-      "Card"
-    ],
+    "keywords": ["surface", "background", "container", "elevation", "card"],
+    "related": ["Box", "Card"],
     "registryName": "surface",
     "examples": []
   },
@@ -1468,24 +703,11 @@
     "description": "A toggle switch with thumb knob for on/off states. Built on Base UI Switch primitive.",
     "category": "Forms",
     "status": "stable",
-    "keywords": [
-      "switch",
-      "toggle",
-      "on/off",
-      "toggle switch"
-    ],
-    "related": [
-      "Field"
-    ],
+    "keywords": ["switch", "toggle", "on/off", "toggle switch"],
+    "related": ["Field"],
     "accessibility": {
-      "keyboard": [
-        "Enter",
-        "Space"
-      ],
-      "aria": [
-        "aria-checked",
-        "aria-labelledby"
-      ]
+      "keyboard": ["Enter", "Space"],
+      "aria": ["aria-checked", "aria-labelledby"]
     },
     "registryName": "switch",
     "examples": []
@@ -1495,19 +717,10 @@
     "description": "A styled table component with column definitions, row data, cell alignment, and optional row event handlers.",
     "category": "Data Display",
     "status": "stable",
-    "keywords": [
-      "table",
-      "data",
-      "grid",
-      "rows",
-      "columns"
-    ],
+    "keywords": ["table", "data", "grid", "rows", "columns"],
     "related": [],
     "accessibility": {
-      "aria": [
-        "role",
-        "aria-colcount"
-      ]
+      "aria": ["role", "aria-colcount"]
     },
     "registryName": "table",
     "examples": []
@@ -1517,31 +730,11 @@
     "description": "A tabbed navigation component with underline, ghost, and segmented variants. Built on Base UI Tabs.",
     "category": "Navigation",
     "status": "stable",
-    "keywords": [
-      "tabs",
-      "tab",
-      "navigation",
-      "panel",
-      "tabbed"
-    ],
-    "related": [
-      "Accordion",
-      "SegmentedControl"
-    ],
+    "keywords": ["tabs", "tab", "navigation", "panel", "tabbed"],
+    "related": ["Accordion", "SegmentedControl"],
     "accessibility": {
-      "keyboard": [
-        "ArrowLeft",
-        "ArrowRight",
-        "Home",
-        "End"
-      ],
-      "aria": [
-        "role",
-        "aria-orientation",
-        "aria-selected",
-        "aria-labelledby",
-        "role"
-      ]
+      "keyboard": ["ArrowLeft", "ArrowRight", "Home", "End"],
+      "aria": ["role", "aria-orientation", "aria-selected", "aria-labelledby", "role"]
     },
     "registryName": "tabs",
     "examples": []
@@ -1551,16 +744,8 @@
     "description": "A polymorphic typography component with variant presets for headings, body text, and code. Supports color, alignment, and weight.",
     "category": "Typography",
     "status": "stable",
-    "keywords": [
-      "text",
-      "typography",
-      "heading",
-      "paragraph",
-      "font"
-    ],
-    "related": [
-      "Badge"
-    ],
+    "keywords": ["text", "typography", "heading", "paragraph", "font"],
+    "related": ["Badge"],
     "registryName": "text",
     "examples": []
   },
@@ -1569,17 +754,8 @@
     "description": "A multi-line text input with size presets and numeric row control. Built on Base UI Field.Control.",
     "category": "Forms",
     "status": "stable",
-    "keywords": [
-      "textarea",
-      "text",
-      "input",
-      "multiline",
-      "form"
-    ],
-    "related": [
-      "Field",
-      "InputGroup"
-    ],
+    "keywords": ["textarea", "text", "input", "multiline", "form"],
+    "related": ["Field", "InputGroup"],
     "registryName": "textarea",
     "examples": []
   },
@@ -1588,21 +764,10 @@
     "description": "A two-state toggle button with variant and size presets. Built on Base UI Toggle.",
     "category": "Forms",
     "status": "stable",
-    "keywords": [
-      "toggle",
-      "button",
-      "on/off",
-      "pressed",
-      "toggle button"
-    ],
-    "related": [
-      "ToggleGroup",
-      "SegmentedControl"
-    ],
+    "keywords": ["toggle", "button", "on/off", "pressed", "toggle button"],
+    "related": ["ToggleGroup", "SegmentedControl"],
     "accessibility": {
-      "aria": [
-        "aria-pressed"
-      ]
+      "aria": ["aria-pressed"]
     },
     "registryName": "toggle",
     "examples": []
@@ -1612,17 +777,8 @@
     "description": "A group of toggle buttons with variant, size, and orientation control. Built on Base UI ToggleGroup.",
     "category": "Forms",
     "status": "stable",
-    "keywords": [
-      "toggle group",
-      "button group",
-      "toggle",
-      "button bar"
-    ],
-    "related": [
-      "Toggle",
-      "SegmentedControl",
-      "Separator"
-    ],
+    "keywords": ["toggle group", "button group", "toggle", "button bar"],
+    "related": ["Toggle", "SegmentedControl", "Separator"],
     "registryName": "togglegroup",
     "examples": []
   }

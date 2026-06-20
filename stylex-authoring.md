@@ -10,16 +10,16 @@ Styles must be created using `stylex.create()`. Define styles as an object with 
 import * as stylex from "@stylexjs/stylex";
 
 const styles = stylex.create({
-	container: {
-		display: "flex",
-		alignItems: "center",
-		padding: 16,
-	},
-	title: {
-		fontSize: 24,
-		fontWeight: "bold",
-		color: "navy",
-	},
+  container: {
+    display: "flex",
+    alignItems: "center",
+    padding: 16,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "navy",
+  },
 });
 ```
 
@@ -37,11 +37,11 @@ Convert StyleX style objects to props using `stylex.props()`:
 
 ```tsx
 function Component() {
-	return (
-		<div {...stylex.props(styles.container)}>
-			<h1 {...stylex.props(styles.title)}>Hello</h1>
-		</div>
-	);
+  return (
+    <div {...stylex.props(styles.container)}>
+      <h1 {...stylex.props(styles.title)}>Hello</h1>
+    </div>
+  );
 }
 ```
 
@@ -63,12 +63,12 @@ Use JavaScript expressions for conditional styling:
 
 ```tsx
 <div
-	{...stylex.props(
-		styles.base,
-		isActive && styles.active,
-		isDisabled && styles.disabled,
-		variant === "primary" ? styles.primary : styles.secondary,
-	)}
+  {...stylex.props(
+    styles.base,
+    isActive && styles.active,
+    isDisabled && styles.disabled,
+    variant === "primary" ? styles.primary : styles.secondary,
+  )}
 />
 ```
 
@@ -80,20 +80,20 @@ Accept styles from parent components:
 import type { StyleXStyles } from "@stylexjs/stylex";
 
 type Props = {
-	children: React.ReactNode;
-	style?: StyleXStyles;
+  children: React.ReactNode;
+  style?: StyleXStyles;
 };
 
 const styles = stylex.create({
-	card: {
-		padding: 16,
-		borderRadius: 8,
-	},
+  card: {
+    padding: 16,
+    borderRadius: 8,
+  },
 });
 
 function Card({ children, style }: Props) {
-	// Local styles first, then prop styles (so props can override)
-	return <div {...stylex.props(styles.card, style)}>{children}</div>;
+  // Local styles first, then prop styles (so props can override)
+  return <div {...stylex.props(styles.card, style)}>{children}</div>;
 }
 ```
 
@@ -103,8 +103,8 @@ Use `null` to remove a style property:
 
 ```tsx
 const styles = stylex.create({
-	base: { margin: 16, padding: 16 },
-	reset: { margin: null, padding: null }, // Removes margin and padding
+  base: { margin: 16, padding: 16 },
+  reset: { margin: null, padding: null }, // Removes margin and padding
 });
 
 <div {...stylex.props(styles.base, styles.reset)} />;
@@ -118,19 +118,19 @@ Nest pseudo-classes within property values using an object with `default` and ps
 
 ```tsx
 const styles = stylex.create({
-	button: {
-		backgroundColor: {
-			default: "lightblue",
-			":hover": "blue",
-			":active": "darkblue",
-			":focus-visible": "royalblue",
-			":disabled": "gray",
-		},
-		cursor: {
-			default: "pointer",
-			":disabled": "not-allowed",
-		},
-	},
+  button: {
+    backgroundColor: {
+      default: "lightblue",
+      ":hover": "blue",
+      ":active": "darkblue",
+      ":focus-visible": "royalblue",
+      ":disabled": "gray",
+    },
+    cursor: {
+      default: "pointer",
+      ":disabled": "not-allowed",
+    },
+  },
 });
 ```
 
@@ -148,16 +148,16 @@ Define pseudo-elements as top-level keys within a style namespace:
 
 ```tsx
 const styles = stylex.create({
-	input: {
-		color: "black",
-		"::placeholder": {
-			color: "gray",
-			fontStyle: "italic",
-		},
-		"::selection": {
-			backgroundColor: "yellow",
-		},
-	},
+  input: {
+    color: "black",
+    "::placeholder": {
+      color: "gray",
+      fontStyle: "italic",
+    },
+    "::selection": {
+      backgroundColor: "yellow",
+    },
+  },
 });
 ```
 
@@ -171,17 +171,17 @@ Nest media queries within property values:
 
 ```tsx
 const styles = stylex.create({
-	container: {
-		flexDirection: {
-			default: "column",
-			"@media (min-width: 768px)": "row",
-		},
-		padding: {
-			default: 8,
-			"@media (min-width: 768px)": 16,
-			"@media (min-width: 1024px)": 24,
-		},
-	},
+  container: {
+    flexDirection: {
+      default: "column",
+      "@media (min-width: 768px)": "row",
+    },
+    padding: {
+      default: 8,
+      "@media (min-width: 768px)": 16,
+      "@media (min-width: 1024px)": 24,
+    },
+  },
 });
 ```
 
@@ -224,15 +224,15 @@ Use `stylex.defineConsts()` for shareable media queries and static values like a
 import * as stylex from "@stylexjs/stylex";
 
 export const breakpoints = stylex.defineConsts({
-	small: "@media (max-width: 600px)",
-	medium: "@media (min-width: 601px) and (max-width: 1024px)",
-	large: "@media (min-width: 1025px)",
+  small: "@media (max-width: 600px)",
+  medium: "@media (min-width: 601px) and (max-width: 1024px)",
+  large: "@media (min-width: 1025px)",
 });
 
 export const zIndices = stylex.defineConsts({
-	modal: "1000",
-	tooltip: "1100",
-	toast: "1200",
+  modal: "1000",
+  tooltip: "1100",
+  toast: "1200",
 });
 ```
 
@@ -247,16 +247,16 @@ Use `stylex.defineVars()` when values need theming or runtime overrides. Must be
 import * as stylex from "@stylexjs/stylex";
 
 export const colors = stylex.defineVars({
-	primary: "blue",
-	secondary: "gray",
-	text: "black",
-	background: "white",
+  primary: "blue",
+  secondary: "gray",
+  text: "black",
+  background: "white",
 });
 
 export const spacing = stylex.defineVars({
-	small: "8px",
-	medium: "16px",
-	large: "24px",
+  small: "8px",
+  medium: "16px",
+  large: "24px",
 });
 ```
 
@@ -271,11 +271,11 @@ import * as stylex from "@stylexjs/stylex";
 import { colors, spacing } from "./tokens.stylex";
 
 const styles = stylex.create({
-	container: {
-		backgroundColor: colors.background,
-		color: colors.text,
-		padding: spacing.medium,
-	},
+  container: {
+    backgroundColor: colors.background,
+    color: colors.text,
+    padding: spacing.medium,
+  },
 });
 ```
 
@@ -296,18 +296,18 @@ import * as stylex from "@stylexjs/stylex";
 import { colors } from "./tokens.stylex";
 
 export const darkTheme = stylex.createTheme(colors, {
-	primary: "lightblue",
-	text: "white",
-	background: "#1a1a1a",
+  primary: "lightblue",
+  text: "white",
+  background: "#1a1a1a",
 });
 
 // Apply theme to a container
 function App({ isDark, children }) {
-	return (
-		<div {...stylex.props(isDark && darkTheme)}>
-			{children} {/* All descendants use theme values */}
-		</div>
-	);
+  return (
+    <div {...stylex.props(isDark && darkTheme)}>
+      {children} {/* All descendants use theme values */}
+    </div>
+  );
 }
 ```
 
@@ -323,16 +323,16 @@ Mark the observed element with `stylex.defaultMarker()` or create custom markers
 
 ```tsx
 const styles = stylex.create({
-	card: {
-		transform: {
-			default: "translateX(0)",
-			[stylex.when.ancestor(":hover")]: "translateX(10px)",
-		},
-	},
+  card: {
+    transform: {
+      default: "translateX(0)",
+      [stylex.when.ancestor(":hover")]: "translateX(10px)",
+    },
+  },
 });
 
 <div {...stylex.props(stylex.defaultMarker())}>
-	<div {...stylex.props(styles.card)}>Hover the parent to move me</div>
+  <div {...stylex.props(styles.card)}>Hover the parent to move me</div>
 </div>;
 ```
 
@@ -344,10 +344,10 @@ Use `stylex.firstThatWorks()` for browser compatibility fallbacks:
 
 ```tsx
 const styles = stylex.create({
-	header: {
-		position: stylex.firstThatWorks("sticky", "-webkit-sticky", "fixed"),
-		display: stylex.firstThatWorks("grid", "flex"),
-	},
+  header: {
+    position: stylex.firstThatWorks("sticky", "-webkit-sticky", "fixed"),
+    display: stylex.firstThatWorks("grid", "flex"),
+  },
 });
 ```
 
@@ -359,21 +359,21 @@ Define animations with `stylex.keyframes()`:
 
 ```tsx
 const fadeIn = stylex.keyframes({
-	from: { opacity: 0 },
-	to: { opacity: 1 },
+  from: { opacity: 0 },
+  to: { opacity: 1 },
 });
 
 const slideIn = stylex.keyframes({
-	"0%": { transform: "translateX(-100%)" },
-	"100%": { transform: "translateX(0)" },
+  "0%": { transform: "translateX(-100%)" },
+  "100%": { transform: "translateX(0)" },
 });
 
 const styles = stylex.create({
-	animated: {
-		animationName: fadeIn,
-		animationDuration: "0.3s",
-		animationTimingFunction: "ease-out",
-	},
+  animated: {
+    animationName: fadeIn,
+    animationDuration: "0.3s",
+    animationTimingFunction: "ease-out",
+  },
 });
 ```
 
@@ -388,19 +388,19 @@ import * as stylex from "@stylexjs/stylex";
 import { unstable_ViewTransition as ViewTransition } from "react";
 
 const fadeInUp = stylex.keyframes({
-	from: { opacity: 0, transform: "translateY(-30px)" },
-	to: { opacity: 1, transform: "translateY(0)" },
+  from: { opacity: 0, transform: "translateY(-30px)" },
+  to: { opacity: 1, transform: "translateY(0)" },
 });
 
 const transitionClass = stylex.viewTransitionClass({
-	group: {
-		/* ::view-transition-group styles */
-	},
-	imagePair: {
-		/* ::view-transition-image-pair styles */
-	},
-	old: { animationDuration: "2s" },
-	new: { animationName: fadeInUp },
+  group: {
+    /* ::view-transition-group styles */
+  },
+  imagePair: {
+    /* ::view-transition-image-pair styles */
+  },
+  old: { animationDuration: "2s" },
+  new: { animationName: fadeInUp },
 });
 
 <ViewTransition default={transitionClass}>{/* ... */}</ViewTransition>;
@@ -414,17 +414,17 @@ Use `stylex.positionTry()` to define CSS anchor positioning fallbacks:
 
 ```tsx
 const fallback = stylex.positionTry({
-	positionAnchor: "--anchor",
-	top: "0",
-	left: "0",
-	width: "100px",
-	height: "100px",
+  positionAnchor: "--anchor",
+  top: "0",
+  left: "0",
+  width: "100px",
+  height: "100px",
 });
 
 const styles = stylex.create({
-	tooltip: {
-		positionTryFallbacks: fallback,
-	},
+  tooltip: {
+    positionTryFallbacks: fallback,
+  },
 });
 ```
 
@@ -442,7 +442,7 @@ Accept any StyleX styles:
 import type { StyleXStyles } from "@stylexjs/stylex";
 
 type Props = {
-	style?: StyleXStyles;
+  style?: StyleXStyles;
 };
 ```
 
@@ -450,10 +450,10 @@ Constrain to specific properties:
 
 ```tsx
 type Props = {
-	style?: StyleXStyles<{
-		color?: string;
-		backgroundColor?: string;
-	}>;
+  style?: StyleXStyles<{
+    color?: string;
+    backgroundColor?: string;
+  }>;
 };
 ```
 
@@ -465,13 +465,13 @@ Exclude specific properties:
 import type { StyleXStylesWithout } from "@stylexjs/stylex";
 
 type Props = {
-	// Allow all styles except layout properties
-	style?: StyleXStylesWithout<{
-		margin: unknown;
-		padding: unknown;
-		width: unknown;
-		height: unknown;
-	}>;
+  // Allow all styles except layout properties
+  style?: StyleXStylesWithout<{
+    margin: unknown;
+    padding: unknown;
+    width: unknown;
+    height: unknown;
+  }>;
 };
 ```
 
@@ -484,7 +484,7 @@ import type { VarGroup } from "@stylexjs/stylex";
 import { colors } from "./tokens.stylex";
 
 function ThemeProvider({ theme }: { theme: VarGroup<typeof colors> }) {
-	return <div {...stylex.props(theme)}>{children}</div>;
+  return <div {...stylex.props(theme)}>{children}</div>;
 }
 ```
 
@@ -500,13 +500,13 @@ function ThemeProvider({ theme }: { theme: VarGroup<typeof colors> }) {
 // invalid: imported non-StyleX variable
 import { PADDING } from "./constants";
 const styles = stylex.create({
-	container: { padding: PADDING },
+  container: { padding: PADDING },
 });
 
 // valid: use StyleX constants or variables
 import { spacing } from "./tokens.stylex";
 const styles = stylex.create({
-	container: { padding: spacing.medium },
+  container: { padding: spacing.medium },
 });
 ```
 
@@ -529,36 +529,36 @@ Media queries and pseudo-classes must be nested inside property values, not at t
 ```tsx
 // invalid: media query at top level
 const styles = stylex.create({
-	container: {
-		"@media (min-width: 768px)": {
-			padding: 16,
-		},
-	},
+  container: {
+    "@media (min-width: 768px)": {
+      padding: 16,
+    },
+  },
 });
 
 // invalid: pseudo-class at top level
 const styles = stylex.create({
-	button: {
-		":hover": {
-			backgroundColor: "blue",
-		},
-	},
+  button: {
+    ":hover": {
+      backgroundColor: "blue",
+    },
+  },
 });
 
 // valid: nest inside property values
 const styles = stylex.create({
-	container: {
-		padding: {
-			default: 8,
-			"@media (min-width: 768px)": 16,
-		},
-	},
-	button: {
-		backgroundColor: {
-			default: "lightblue",
-			":hover": "blue",
-		},
-	},
+  container: {
+    padding: {
+      default: 8,
+      "@media (min-width: 768px)": 16,
+    },
+  },
+  button: {
+    backgroundColor: {
+      default: "lightblue",
+      ":hover": "blue",
+    },
+  },
 });
 ```
 

@@ -1,10 +1,4 @@
-import {
-	readFileSync,
-	writeFileSync,
-	existsSync,
-	statSync,
-	readdirSync,
-} from "fs";
+import { readFileSync, writeFileSync, existsSync, statSync, readdirSync } from "fs";
 import { join, relative, dirname, basename } from "path";
 
 const SOURCE_COMPONENTS_DIR = "src/components";
@@ -13,171 +7,165 @@ const OUTPUT_REGISTRY = "src/docs-demo-registry.ts";
 const REGISTRY_OUTPUT_DIR = "public/reg";
 
 interface DocsMeta {
-	title: string;
-	componentKey?: string;
-	description: string;
-	category: string;
-	status?: "stable" | "beta" | "experimental";
-	keywords?: string[];
-	related?: string[];
-	accessibility?: {
-		keyboard?: string[];
-		aria?: string[];
-	};
+  title: string;
+  componentKey?: string;
+  description: string;
+  category: string;
+  status?: "stable" | "beta" | "experimental";
+  keywords?: string[];
+  related?: string[];
+  accessibility?: {
+    keyboard?: string[];
+    aria?: string[];
+  };
 }
 
 interface ExampleFile {
-	name: string;
-	source: string;
+  name: string;
+  source: string;
 }
 
 interface ManifestItem {
-	title: string;
-	description: string;
-	category: string;
-	status: string | undefined;
-	keywords: string[] | undefined;
-	related: string[] | undefined;
-	accessibility: object | undefined;
-	registryName: string;
-	examples: ExampleFile[];
+  title: string;
+  description: string;
+  category: string;
+  status: string | undefined;
+  keywords: string[] | undefined;
+  related: string[] | undefined;
+  accessibility: object | undefined;
+  registryName: string;
+  examples: ExampleFile[];
 }
 
 type Manifest = Record<string, ManifestItem>;
 
 function findDocsMetaFiles(dir: string): string[] {
-	if (!existsSync(dir)) return [];
-	const entries = readdirSync(dir);
-	return entries.flatMap((entry) => {
-		const fullPath = join(dir, entry);
-		if (statSync(fullPath).isDirectory()) return findDocsMetaFiles(fullPath);
-		return entry === "docs-meta.json" ? [fullPath] : [];
-	});
+  if (!existsSync(dir)) return [];
+  const entries = readdirSync(dir);
+  return entries.flatMap((entry) => {
+    const fullPath = join(dir, entry);
+    if (statSync(fullPath).isDirectory()) return findDocsMetaFiles(fullPath);
+    return entry === "docs-meta.json" ? [fullPath] : [];
+  });
 }
 
 function findComponentFiles(dir: string, pattern: RegExp): string[] {
-	if (!existsSync(dir)) return [];
-	const entries = readdirSync(dir);
-	const results: string[] = [];
-	for (const entry of entries) {
-		if (entry !== "node_modules") {
-			const fullPath = join(dir, entry);
-			if (statSync(fullPath).isDirectory()) {
-				results.push(...findComponentFiles(fullPath, pattern));
-			} else if (pattern.test(entry)) {
-				results.push(fullPath);
-			}
-		}
-	}
-	return results;
+  if (!existsSync(dir)) return [];
+  const entries = readdirSync(dir);
+  const results: string[] = [];
+  for (const entry of entries) {
+    if (entry !== "node_modules") {
+      const fullPath = join(dir, entry);
+      if (statSync(fullPath).isDirectory()) {
+        results.push(...findComponentFiles(fullPath, pattern));
+      } else if (pattern.test(entry)) {
+        results.push(fullPath);
+      }
+    }
+  }
+  return results;
 }
 
 function readSource(filePath: string): string {
-	try {
-		return readFileSync(filePath, "utf8");
-	} catch {
-		return "";
-	}
+  try {
+    return readFileSync(filePath, "utf8");
+  } catch {
+    return "";
+  }
 }
 
 function findRegistryName(compDir: string): string | null {
-	const metaPath = join(compDir, "registry-meta.json");
-	if (!existsSync(metaPath)) return null;
-	try {
-		const meta = JSON.parse(readFileSync(metaPath, "utf8"));
-		return meta.name || null;
-	} catch {
-		return null;
-	}
+  const metaPath = join(compDir, "registry-meta.json");
+  if (!existsSync(metaPath)) return null;
+  try {
+    const meta = JSON.parse(readFileSync(metaPath, "utf8"));
+    return meta.name || null;
+  } catch {
+    return null;
+  }
 }
 
 const registeredDemos: Array<{ name: string; path: string }> = [];
 
 const demoImportPaths: string[] = [];
 
-function updateDemoImportPaths(
-	registryName: string,
-	compDir: string,
-	relativeCompDir: string,
-) {
-	const demoFiles = findComponentFiles(compDir, /\.demo\.tsx$/);
-	if (demoFiles.length === 0) return;
-	const registryPath = join(REGISTRY_OUTPUT_DIR, `${registryName}.json`);
-	if (existsSync(registryPath)) {
-		const regJson = JSON.parse(readFileSync(registryPath, "utf8"));
-		regJson.demo = readSource(demoFiles[0]);
-		writeFileSync(registryPath, JSON.stringify(regJson, null, 2));
-	}
-	const importPath = `@/components/${relativeCompDir}/${basename(demoFiles[0]).replace(/\.tsx$/, "")}`;
+function updateDemoImportPaths(registryName: string, compDir: string, relativeCompDir: string) {
+  const demoFiles = findComponentFiles(compDir, /\.demo\.tsx$/);
+  if (demoFiles.length === 0) return;
+  const registryPath = join(REGISTRY_OUTPUT_DIR, `${registryName}.json`);
+  if (existsSync(registryPath)) {
+    const regJson = JSON.parse(readFileSync(registryPath, "utf8"));
+    regJson.demo = readSource(demoFiles[0]);
+    writeFileSync(registryPath, JSON.stringify(regJson, null, 2));
+  }
+  const importPath = `@/components/${relativeCompDir}/${basename(demoFiles[0]).replace(/\.tsx$/, "")}`;
 
-	registeredDemos.push({ name: registryName, path: importPath });
-	demoImportPaths.push(`  "${registryName}": () => import("${importPath}")`);
+  registeredDemos.push({ name: registryName, path: importPath });
+  demoImportPaths.push(`  "${registryName}": () => import("${importPath}")`);
 }
 function buildExamplesMeta(compDir: string): ExampleFile[] {
-	const exampleFiles = findComponentFiles(compDir, /\.example\.\w+\.tsx$/);
-	return exampleFiles.map((exPath) => {
-		const ext = basename(exPath);
-		const match = ext.match(/\.example\.(?<name>\w+)\.tsx$/);
-		const name = match?.groups?.name ?? ext;
-		return { name, source: readSource(exPath) };
-	});
+  const exampleFiles = findComponentFiles(compDir, /\.example\.\w+\.tsx$/);
+  return exampleFiles.map((exPath) => {
+    const ext = basename(exPath);
+    const match = ext.match(/\.example\.(?<name>\w+)\.tsx$/);
+    const name = match?.groups?.name ?? ext;
+    return { name, source: readSource(exPath) };
+  });
 }
 function buildManifestInfo(metaPath: string): {
-	componentKey: string;
-	manifestInfo: ManifestItem;
+  componentKey: string;
+  manifestInfo: ManifestItem;
 } {
-	const compDir = dirname(metaPath);
-	const relativeCompDir = relative(SOURCE_COMPONENTS_DIR, compDir);
-	const dirName = basename(compDir);
+  const compDir = dirname(metaPath);
+  const relativeCompDir = relative(SOURCE_COMPONENTS_DIR, compDir);
+  const dirName = basename(compDir);
 
-	const meta: DocsMeta = JSON.parse(readFileSync(metaPath, "utf8"));
-	const componentKey = meta.componentKey || dirName.toLowerCase();
-	const registryName = findRegistryName(compDir) || componentKey;
+  const meta: DocsMeta = JSON.parse(readFileSync(metaPath, "utf8"));
+  const componentKey = meta.componentKey || dirName.toLowerCase();
+  const registryName = findRegistryName(compDir) || componentKey;
 
-	updateDemoImportPaths(registryName, compDir, relativeCompDir);
+  updateDemoImportPaths(registryName, compDir, relativeCompDir);
 
-	const examples = buildExamplesMeta(compDir);
-	return {
-		componentKey,
-		manifestInfo: {
-			title: meta.title,
-			description: meta.description,
-			category: meta.category,
-			status: meta.status,
-			keywords: meta.keywords,
-			related: meta.related,
-			accessibility: meta.accessibility,
-			registryName,
-			examples,
-		},
-	};
+  const examples = buildExamplesMeta(compDir);
+  return {
+    componentKey,
+    manifestInfo: {
+      title: meta.title,
+      description: meta.description,
+      category: meta.category,
+      status: meta.status,
+      keywords: meta.keywords,
+      related: meta.related,
+      accessibility: meta.accessibility,
+      registryName,
+      examples,
+    },
+  };
 }
 function build() {
-	const docsMetaFiles = findDocsMetaFiles(SOURCE_COMPONENTS_DIR);
-	const manifest: Manifest = {};
+  const docsMetaFiles = findDocsMetaFiles(SOURCE_COMPONENTS_DIR);
+  const manifest: Manifest = {};
 
-	for (const metaPath of docsMetaFiles) {
-		const { componentKey, manifestInfo } = buildManifestInfo(metaPath);
-		manifest[componentKey] = manifestInfo;
-	}
-	writeFileSync(OUTPUT_MANIFEST, JSON.stringify(manifest, null, 2));
-	console.log(
-		`✔ docs manifest written to ${OUTPUT_MANIFEST} with ${Object.keys(manifest).length} components`,
-	);
+  for (const metaPath of docsMetaFiles) {
+    const { componentKey, manifestInfo } = buildManifestInfo(metaPath);
+    manifest[componentKey] = manifestInfo;
+  }
+  writeFileSync(OUTPUT_MANIFEST, JSON.stringify(manifest, null, 2));
+  console.log(
+    `✔ docs manifest written to ${OUTPUT_MANIFEST} with ${Object.keys(manifest).length} components`,
+  );
 
-	const registryContent = `// This file is auto-generated by scripts/generate-docs-manifest.ts
+  const registryContent = `// This file is auto-generated by scripts/generate-docs-manifest.ts
 // Do not edit manually.
 
 export const demoImports: Record<string, () => Promise<Record<string, unknown>>> = {
 ${demoImportPaths.join(",\n")},
 };
 `;
-	writeFileSync(OUTPUT_REGISTRY, registryContent);
-	console.log(
-		`✔ demo registry written to ${OUTPUT_REGISTRY} with ${registeredDemos.length} demos`,
-	);
+  writeFileSync(OUTPUT_REGISTRY, registryContent);
+  console.log(`✔ demo registry written to ${OUTPUT_REGISTRY} with ${registeredDemos.length} demos`);
 }
 
 if (import.meta.main) {
-	build();
+  build();
 }

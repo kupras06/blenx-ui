@@ -1,9 +1,9 @@
 {
-	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
-	"title": "Text",
-	"description": "A polymorphic typography component with variant presets for headings, body text, and code. Supports color, alignment, and weight.",
-	"category": "Typography",
-	"status": "stable",
-	"keywords": ["text", "typography", "heading", "paragraph", "font"],
-	"related": ["Badge"]
+  "$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
+  "title": "Text",
+  "description": "A polymorphic typography component with variant presets for headings, body text, and code. Supports color, alignment, and weight.",
+  "category": "Typography",
+  "status": "stable",
+  "keywords": ["text", "typography", "heading", "paragraph", "font"],
+  "related": ["Badge"]
 }

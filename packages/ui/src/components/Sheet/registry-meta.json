@@ -1,20 +1,20 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "sheet",
-	"type": "registry:ui",
-	"title": "Sheet",
-	"description": "A StyleX Sheet component built on Base UI Dialog primitives.",
-	"registryDependencies": ["icon-button", "scroll-area"],
-	"files": [
-		{
-			"file": "sheet.tsx",
-			"type": "registry:ui",
-			"target": "@ui/Sheet/sheet.tsx"
-		},
-		{
-			"file": "sheet.styles.ts",
-			"type": "registry:file",
-			"target": "@ui/Sheet/sheet.styles.ts"
-		}
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sheet",
+  "type": "registry:ui",
+  "title": "Sheet",
+  "description": "A StyleX Sheet component built on Base UI Dialog primitives.",
+  "registryDependencies": ["icon-button", "scroll-area"],
+  "files": [
+    {
+      "file": "sheet.tsx",
+      "type": "registry:ui",
+      "target": "@ui/Sheet/sheet.tsx"
+    },
+    {
+      "file": "sheet.styles.ts",
+      "type": "registry:file",
+      "target": "@ui/Sheet/sheet.styles.ts"
+    }
+  ]
 }

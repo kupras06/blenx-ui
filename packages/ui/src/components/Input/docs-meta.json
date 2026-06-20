@@ -1,9 +1,9 @@
 {
-	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
-	"title": "Input",
-	"description": "A text input component with size presets, error state styling, and auto-generated IDs. Built on Base UI Input primitive.",
-	"category": "Forms",
-	"status": "stable",
-	"keywords": ["input", "text", "form", "field", "text input"],
-	"related": ["Field", "InputGroup", "Autocomplete", "Combobox"]
+  "$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
+  "title": "Input",
+  "description": "A text input component with size presets, error state styling, and auto-generated IDs. Built on Base UI Input primitive.",
+  "category": "Forms",
+  "status": "stable",
+  "keywords": ["input", "text", "form", "field", "text input"],
+  "related": ["Field", "InputGroup", "Autocomplete", "Combobox"]
 }

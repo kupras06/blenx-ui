@@ -1,13 +1,13 @@
 {
-	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
-	"title": "Email Verification",
-	"description": "A verification code page with 6 individual digit inputs supporting auto-advance, paste, and resend cooldown.",
-	"category": "Authentication",
-	"status": "stable",
-	"keywords": ["verify", "email", "otp", "code", "2fa", "verification"],
-	"related": ["Button", "Text", "Card"],
-	"accessibility": {
-		"keyboard": ["Tab", "Enter", "Backspace"],
-		"aria": ["aria-label per digit", "role=group", "autoComplete=one-time-code"]
-	}
+  "$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
+  "title": "Email Verification",
+  "description": "A verification code page with 6 individual digit inputs supporting auto-advance, paste, and resend cooldown.",
+  "category": "Authentication",
+  "status": "stable",
+  "keywords": ["verify", "email", "otp", "code", "2fa", "verification"],
+  "related": ["Button", "Text", "Card"],
+  "accessibility": {
+    "keyboard": ["Tab", "Enter", "Backspace"],
+    "aria": ["aria-label per digit", "role=group", "autoComplete=one-time-code"]
+  }
 }

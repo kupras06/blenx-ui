@@ -1,13 +1,13 @@
 {
-	"$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
-	"title": "Empty State",
-	"description": "An empty state block for use when no data exists. Supports card and page variants with optional action buttons.",
-	"category": "Application States",
-	"status": "stable",
-	"keywords": ["empty", "state", "no data", "placeholder", "nothing"],
-	"related": ["Button", "Text", "Stack", "Card"],
-	"accessibility": {
-		"keyboard": [],
-		"aria": ["aria-label"]
-	}
+  "$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
+  "title": "Empty State",
+  "description": "An empty state block for use when no data exists. Supports card and page variants with optional action buttons.",
+  "category": "Application States",
+  "status": "stable",
+  "keywords": ["empty", "state", "no data", "placeholder", "nothing"],
+  "related": ["Button", "Text", "Stack", "Card"],
+  "accessibility": {
+    "keyboard": [],
+    "aria": ["aria-label"]
+  }
 }

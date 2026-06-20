@@ -7,18 +7,18 @@ export { DataTableLoading } from "./data-table-loading";
 export { DataTablePagination } from "./data-table-pagination";
 export { DataTableToolbar } from "./data-table-toolbar";
 export type {
-	BulkAction,
-	ColumnPinningOptions,
-	DataTableProps,
-	InfiniteScrollConfig,
-	InfiniteScrollMode,
-	RowAction,
-	ServerTableResponse,
-	ServerTableState,
-	TableCallbacks,
-	TableFeatures,
-	TableMode,
-	TableSize,
-	TableSlots,
+  BulkAction,
+  ColumnPinningOptions,
+  DataTableProps,
+  InfiniteScrollConfig,
+  InfiniteScrollMode,
+  RowAction,
+  ServerTableResponse,
+  ServerTableState,
+  TableCallbacks,
+  TableFeatures,
+  TableMode,
+  TableSize,
+  TableSlots,
 } from "./types";
 export { useInfiniteScroll } from "./use-infinite-scroll";

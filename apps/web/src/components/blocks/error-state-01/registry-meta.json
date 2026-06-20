@@ -1,15 +1,15 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
-	"name": "error-state-01",
-	"type": "registry:ui",
-	"title": "Error State",
-	"description": "An error state block with icon, title, message, retry button, and optional expandable error details. Supports card, page, and toast variants.",
-	"registryDependencies": ["button", "text", "stack", "box", "surface", "card"],
-	"files": [
-		{
-			"file": "error-state-01.tsx",
-			"type": "registry:ui",
-			"target": "@blocks/error-state-01/error-state-01.tsx"
-		}
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "error-state-01",
+  "type": "registry:ui",
+  "title": "Error State",
+  "description": "An error state block with icon, title, message, retry button, and optional expandable error details. Supports card, page, and toast variants.",
+  "registryDependencies": ["button", "text", "stack", "box", "surface", "card"],
+  "files": [
+    {
+      "file": "error-state-01.tsx",
+      "type": "registry:ui",
+      "target": "@blocks/error-state-01/error-state-01.tsx"
+    }
+  ]
 }
