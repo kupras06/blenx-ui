@@ -1,4 +1,4 @@
-import { VStack } from "@/components/ui/Stack/stack";
+import { VStack } from "@blenx-dev/ui/components/Stack/stack";
 import { LoadingState01 } from "./loading-state-01";
 
 export function LoadingState01TextDemo() {

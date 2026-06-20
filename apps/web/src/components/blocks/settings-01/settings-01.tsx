@@ -1,18 +1,18 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/components/ui/Button/button";
-import { Input } from "@/components/ui/Input/input";
-import { Text } from "@/components/ui/Text/text";
+import { Button } from "@blenx-dev/ui/components/Button/button";
+import { Input } from "@blenx-dev/ui/components/Input/input";
+import { Text } from "@blenx-dev/ui/components/Text/text";
 import {
 	Card,
 	CardBody,
 	CardHeader,
 	CardTitle,
-} from "@/components/ui/Card/card";
-import { Switch } from "@/components/ui/Switch/switch";
-import { Separator } from "@/components/ui/Separator/separator";
-import { Tabs, TabsList, TabsTab, TabsPanel } from "@/components/ui/Tabs/tabs";
+} from "@blenx-dev/ui/components/Card/card";
+import { Switch } from "@blenx-dev/ui/components/Switch/switch";
+import { Separator } from "@blenx-dev/ui/components/Separator/separator";
+import { Tabs, TabsList, TabsTab, TabsPanel } from "@blenx-dev/ui/components/Tabs/tabs";
 import {
 	Box,
 	Container,

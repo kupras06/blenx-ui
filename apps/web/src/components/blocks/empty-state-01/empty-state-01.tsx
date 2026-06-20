@@ -1,7 +1,7 @@
-import { Button } from "@/components/ui/Button/button";
-import { Text } from "@/components/ui/Text/text";
-import { VStack, HStack } from "@/components/ui/Stack/stack";
-import { Card, CardBody } from "@/components/ui/Card/card";
+import { Button } from "@blenx-dev/ui/components/Button/button";
+import { Text } from "@blenx-dev/ui/components/Text/text";
+import { VStack, HStack } from "@blenx-dev/ui/components/Stack/stack";
+import { Card, CardBody } from "@blenx-dev/ui/components/Card/card";
 import type { PropsWithStylex } from "@/utils/stylex.utils";
 import { Box, Container } from "@blenx-dev/ui/components";;
 

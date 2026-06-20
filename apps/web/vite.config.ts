@@ -5,7 +5,7 @@ import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
 import { nitro } from "nitro/vite";
 import { defineConfig } from "vite";
-
+import contentCollections from "@content-collections/vite";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isVercel = process.env.VERCEL === "1";
 
@@ -31,6 +31,7 @@ const config = defineConfig(({ command, mode }) => {
 					"@/lib/theme/*": path.join(__dirname, "./src/lib/theme/*"),
 				},
 			}),
+			 contentCollections(),
 			tanstackStart(),
 			viteReact(),
 			nitro({

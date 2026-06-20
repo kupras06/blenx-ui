@@ -1,14 +1,14 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { Text } from "@/components/ui/Text/text";
+import { Text } from "@blenx-dev/ui/components/Text/text";
 import {
 	AccordionRoot,
 	AccordionItem,
 	AccordionHeader,
 	AccordionTrigger,
 	AccordionPanel,
-} from "@/components/ui/Accordion/accordion";
+} from "@blenx-dev/ui/components/Accordion/accordion";
 import type { PropsWithStylex } from "@/utils/stylex.utils";
 import { Box, Container, Input, VStack } from "@blenx-dev/ui/components";;
 

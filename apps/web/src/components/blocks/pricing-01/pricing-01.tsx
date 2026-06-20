@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/components/ui/Button/button";
-import { Text } from "@/components/ui/Text/text";
-import { Card, CardBody, CardHeader } from "@/components/ui/Card/card";
-import { Badge } from "@/components/ui/Badge/badge";
-import { Switch } from "@/components/ui/Switch/switch";
+import { Button } from "@blenx-dev/ui/components/Button/button";
+import { Text } from "@blenx-dev/ui/components/Text/text";
+import { Card, CardBody, CardHeader } from "@blenx-dev/ui/components/Card/card";
+import { Badge } from "@blenx-dev/ui/components/Badge/badge";
+import { Switch } from "@blenx-dev/ui/components/Switch/switch";
 import type { PropsWithStylex } from "@/utils/stylex.utils";
 import { CheckIcon } from "@phosphor-icons/react";
 import { Container, HStack, Icon, VStack } from "@blenx-dev/ui/components";;

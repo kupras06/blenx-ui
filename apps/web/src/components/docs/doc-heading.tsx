@@ -5,7 +5,7 @@ import type React from "react";
 import * as stylex from "@stylexjs/stylex";
 import { Box, Separator, Text } from "@blenx-dev/ui/components";;
 import { slugify } from "@/lib/slug";
-import type { TextVariant } from "@/components/ui/Text/text";
+import type { TextVariant } from "@blenx-dev/ui/components/Text/text";
 
 const headingStyles = stylex.create({
 	anchorLink: {

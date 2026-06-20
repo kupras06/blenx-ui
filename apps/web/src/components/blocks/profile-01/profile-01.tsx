@@ -1,17 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/components/ui/Button/button";
-import { Input } from "@/components/ui/Input/input";
-import { Text } from "@/components/ui/Text/text";
+import { Button } from "@blenx-dev/ui/components/Button/button";
+import { Input } from "@blenx-dev/ui/components/Input/input";
+import { Text } from "@blenx-dev/ui/components/Text/text";
 import {
 	Card,
 	CardBody,
 	CardHeader,
 	CardTitle,
-} from "@/components/ui/Card/card";
-import { Switch } from "@/components/ui/Switch/switch";
-import { HStack, VStack } from "@/components/ui/Stack/stack";
+} from "@blenx-dev/ui/components/Card/card";
+import { Switch } from "@blenx-dev/ui/components/Switch/switch";
+import { HStack, VStack } from "@blenx-dev/ui/components/Stack/stack";
 import type { PropsWithStylex } from "@/utils/stylex.utils";
 import { Box, Container, Field, FieldLabel } from "@blenx-dev/ui/components";;
 

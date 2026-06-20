@@ -11,7 +11,7 @@ import {
 	SheetPopup,
 } from "@blenx-dev/ui/components";;
 import { useSidebarStore } from "@/stores/docs-sidebar";
-
+import { allDocs } from 'content-collections'
 export const Route = createFileRoute("/docs")({
 	component: DocsLayout,
 });
@@ -47,6 +47,7 @@ function RenderSidebarNavs() {
 	);
 }
 function DocsLayout() {
+	console.log(allDocs);
 	return (
 		<Container padding="medium">
 			<HStack>
