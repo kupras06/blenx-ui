@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 1
+---
+
 ## Overview
 
 The Accordion component organizes content into collapsible sections, letting users disclose information progressively. It is built on Base UI Accordion primitives for accessible expand/collapse behavior with proper ARIA attributes and keyboard navigation. Use accordions to reduce vertical space when presenting heterogeneous content that users can choose to engage with — common use cases include FAQ sections, settings panels, and multi-step form summaries. Do not use an accordion when users need to see all content simultaneously or when the content is critical to the page's primary action. If every section must be read for the user to complete a task, a flat layout is more appropriate. Accordions hide content by nature, so they should never wrap essential information that users cannot afford to miss.

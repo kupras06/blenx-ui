@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 15
+---
+
 ## Overview
 
 Combobox merges a text input with a selectable options list, combining the flexibility of free-text entry with the precision of constrained selection. Users can type to filter options, navigate with arrow keys, and select with Enter or click. Use Combobox when users need to select from a list but may also need to enter a custom value not in the list — think tag inputs, recipient selectors, or country pickers with typing support. Combobox differs from Autocomplete in that it is designed for option selection rather than suggestion-based input completion. Do not use Combobox when the option set is small and static; a standard Select provides a better experience. Combobox is also inappropriate when users should never enter custom values — use Select for strictly constrained choices.

@@ -14,6 +14,9 @@ keywords:
   - motion preferences
   - testing
 status: "stable"
+navigation:
+  group: guides
+  order: 5
 ---
 
 ## Developer Responsibilities

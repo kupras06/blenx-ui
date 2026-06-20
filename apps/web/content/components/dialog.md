@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 20
+---
+
 ## Overview
 
 Dialog is a modal overlay that presents content requiring user attention or input while blocking interaction with the rest of the page. It is built on Base UI Dialog primitives for accessible focus trapping, dismiss handling, and backdrop management. Use Dialog for forms, confirmations, detail views, and any workflow where the user should focus on a single task before returning to the main interface. Dialogs are appropriate when the content is contextually related to the current page but benefits from isolation — editing a record, viewing details, or confirming an action. Do not use Dialog for non-critical information that does not require immediate action; use a Toast or inline Alert instead. Dialog is also inappropriate for complex multi-step flows that span multiple screens — consider a dedicated page or Drawer for those patterns.

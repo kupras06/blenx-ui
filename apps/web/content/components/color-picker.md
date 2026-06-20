@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 13
+---
+
 ## Overview
 
 Color Picker provides a popover-based color selection interface with a swatch preview, HEX and RGB input fields, and a grid of preset colors. Use it when users need to specify a color value for customization tools — theme builders, branding settings, chart color configuration, and UI personalization panels. The component abstracts the complexity of color space representation while giving power users direct input for precise values. Do not use Color Picker when only a small set of predefined color options are available; a simple Select or segmented control with named colors is more appropriate. Color Picker is also overkill for text highlight colors in a rich text editor — a small popover with a limited swatch set is more focused.

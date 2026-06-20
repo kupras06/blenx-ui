@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 43
+---
+
 ## Overview
 
 Switch provides a binary toggle control for turning a setting on or off. It renders with a visual track and thumb that animate between checked and unchecked states, clearly communicating the current boolean value. Use switches for settings and preferences — notifications on or off, dark mode toggle, feature enablement, and any binary configuration where the effect is immediate. Do not use switches for actions that require confirmation, form submission, or cases where the off state represents a negative or dangerous action.

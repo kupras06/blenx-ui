@@ -13,6 +13,9 @@ keywords:
   - layout
   - anti-patterns
 status: "stable"
+navigation:
+  group: guides
+  order: 3
 ---
 
 ## StyleX Philosophy

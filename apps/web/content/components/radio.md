@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 32
+---
+
 ## Overview
 
 Radio renders a group of radio buttons where exactly one option can be selected at a time. It handles selection state, keyboard navigation, focus management, and form integration. Use radios when the user must choose exactly one option from a small set (fewer than six), and the options benefit from being visible simultaneously for comparison. For larger sets, consider Select. For mutually exclusive options in a compact layout, consider Segmented Control or Toggle Group.

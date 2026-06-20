@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 21
+---
+
 ## Overview
 
 Drawer is a slide-in panel that emerges from any edge of the viewport — left, right, top, or bottom — providing a secondary surface for content and actions. It is built on Base UI Dialog primitives, inheriting accessible focus trapping and backdrop management. Use Drawer for navigation menus on mobile, detail panels that reference data on the current page, filter panels, and multi-step workflows that benefit from staying in context. Drawer keeps users anchored to the current page while providing access to supplementary content. Do not use Drawer for confirmations or alerts — use Dialog or AlertDialog instead. Drawer is also inappropriate for content that requires the full viewport width, such as complex forms or data tables; a full Dialog or dedicated page is better suited.

@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 10
+---
+
 ## Overview
 
 Calendar renders a date grid with month navigation, supporting single date, date range, and multiple date selection modes. It provides keyboard navigation for power users and accessible announcements for screen readers. Use Calendar when users need to view or select dates within a structured monthly layout — booking systems, scheduling interfaces, date-filtered reports, and birth date pickers. Calendar is designed as a standalone date view; for text-input-based date selection, use DatePicker which composes Calendar with a Popover. Do not use Calendar when the user needs to pick a date within a limited range that fits on screen — consider a compact date input instead. Calendar is also inappropriate for selecting times; combine it with a TimeInput for datetime selection.

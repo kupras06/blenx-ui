@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 11
+---
+
 ## Overview
 
 Card is a surface-level container that groups related content and actions into a single visual unit. It provides sub-components for header, body, footer, title, and description, enabling structured layouts without manual arrangement. Use cards to present discrete pieces of content — user profiles, dashboard widgets, product listings, and detail panels. Cards establish clear visual boundaries that help users scan and differentiate information on dense interfaces. Do not use Card as a generic page wrapper; use Container or Box for page-level layout. Cards are also inappropriate for content that needs to be inline with text, such as within paragraphs or list items.

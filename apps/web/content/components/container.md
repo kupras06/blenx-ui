@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 17
+---
+
 ## Overview
 
 Container provides a responsive content width constraint and horizontal centering for page-level layouts. It caps the maximum width of its children at a configurable breakpoint and centers them within the viewport using auto margins. Use Container as the outermost wrapper for page content to ensure consistent reading widths across different screen sizes. It solves the common problem of content stretching across the full viewport on wide screens, which reduces readability and creates an unpolished appearance. Do not use Container for sidebar panels, modals, or card components — those have their own width constraints. Container is also inappropriate for full-bleed sections like hero banners or navigation bars that should span the entire viewport width.

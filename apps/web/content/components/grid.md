@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 23
+---
+
 ## Overview
 
 Grid is a CSS Grid layout primitive that enables complex two-dimensional layouts with rows and columns. It provides a declarative API for defining grid templates, gaps, and item placement using theme tokens. Use Grid for page-level layouts with multiple regions, card grids, dashboard layouts, and any layout that requires simultaneous control over horizontal and vertical alignment. Grid excels at layouts where items need to align across both axes — such as a product grid with consistent row heights or a dashboard with widgets of varying sizes. Do not use Grid for one-dimensional layouts; use Stack for simple vertical or horizontal sequences. Grid is also overkill for layouts with only two or three items in a single row — a simple Box with `display="flex"` and `gap` is more straightforward.

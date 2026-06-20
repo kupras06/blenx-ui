@@ -14,6 +14,9 @@ keywords:
   - composition
   - layout
 status: "stable"
+navigation:
+  group: guides
+  order: 4
 ---
 
 ## What Primitives Are

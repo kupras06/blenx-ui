@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 48
+---
+
 ## Overview
 
 Toggle provides a two-state button that switches between active and inactive visual states. It communicates whether a feature, filter, or mode is currently enabled. Use toggles for toolbar mode switches, filter enablement, view option toggles, and feature flags in settings interfaces. Do not use toggles for actions with immediate side effects — use a Button for those. Toggles are for persistent state, not transient actions.

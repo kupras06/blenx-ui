@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 42
+---
+
 ## Overview
 
 Surface provides a themed container with configurable elevation, padding, and background variants. It serves as the visual foundation for cards, panels, sidebars, and any grouped content region. Use surfaces for card layouts, form sections, filter panels, sidebar navigation containers, and content grouping within page layouts. Avoid nesting surfaces excessively — two to three levels deep is the practical limit before the visual hierarchy becomes muddy. Surface is not intended for layout scaffolding; use Stack for structural arrangement and apply Surface for visual framing.

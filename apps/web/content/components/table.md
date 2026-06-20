@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 44
+---
+
 ## Overview
 
 Table renders structured data in a grid of rows and columns using styled native HTML table elements. It supports header groups, body rows, sorting indicators, and responsive overflow handling. Use tables for data comparison, financial reports, user lists, activity logs, and any dataset where users need to scan, compare, and reference values across multiple records. Avoid tables for presenting simple lists, card-style content, or data with very few columns that could be presented as a list. Tables excel at density but sacrifice readability for it — use them deliberately.

@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 22
+---
+
 ## Overview
 
 Field wraps form controls with label, help text, and error message layout, providing consistent form structure and accessible associations. It acts as the single source of truth for form field metadata — every interactive input in a form should be wrapped in Field to ensure proper labeling and validation feedback. Use Field everywhere you place a form control — text inputs, selects, checkboxes, radio groups, date pickers, and custom form widgets. Field handles the layout and accessibility wiring so each form control component can focus on its own concern. Do not use Field for non-form content like buttons or display-only text. Field is also unnecessary when you need a label that is not associated with a form control, such as a section heading.

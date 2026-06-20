@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 39
+---
+
 ## Overview
 
 Spinner communicates ongoing loading activity through a rotating indicator animation. It provides size variants and optional label support for accessible loading announcements. Use spinners for content loading, form submission feedback, page transitions, and any asynchronous operation where a determinate progress indicator is not appropriate. Avoid spinners for operations that complete in under 300 milliseconds — the flash creates visual noise. For longer operations with known progress, prefer the Progress component.

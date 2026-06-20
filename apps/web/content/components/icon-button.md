@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 25
+---
+
 ## Overview
 
 Icon buttons provide a compact trigger for actions where visual real estate is limited. They use a square footprint with no visible text label, relying entirely on the icon to communicate intent. Use icon buttons in toolbars, table row actions, search fields, and notification controls where space is constrained and the icon meaning is self-evident. Avoid icon buttons for critical or ambiguous actions where a text label is necessary to prevent user error.

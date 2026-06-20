@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 35
+---
+
 ## Overview
 
 Select presents a list of options from which the user chooses one value. It supports both native browser select rendering and a custom dropdown implementation with option groups, placeholder text, disabled states, and validation feedback. Use selects when the user must choose from multiple options (typically more than five) and space constraints make radio buttons or segmented controls impractical. Avoid selects for options that are easily scannable at a glance — two to four options are better presented as radios or a segmented control.

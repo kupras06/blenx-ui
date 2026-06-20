@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 29
+---
+
 ## Overview
 
 OTP Field provides a dedicated input experience for one-time passwords, verification codes, and numeric tokens typically delivered via SMS or email. It renders individual digit slots with auto-advance between fields, paste support, and validation feedback. Use OTP Field in authentication flows, two-factor verification screens, and account recovery forms. Avoid using it for general-purpose numeric input or cases where the code length is variable.

@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 31
+---
+
 ## Overview
 
 Progress visualizes the completion status of an ongoing operation. It supports determinate mode for known progress values and indeterminate mode for operations of unknown duration. Use progress bars for file uploads, multi-step form submissions, data loading, export generation, and any process where the user benefits from knowing that work is progressing. Avoid using progress bars for operations that complete in under 300 milliseconds — the flash is more distracting than helpful.

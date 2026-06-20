@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 28
+---
+
 ## Overview
 
 Menu provides a dropdown list of actions or options triggered by a button, link, or other interactive element. It handles item selection, separators, disabled items, submenus, and full keyboard navigation. Use menus for contextual action lists, overflow menus in toolbars, profile dropdowns, and "more actions" patterns. Do not use a menu for navigation between pages — use the Tabs or a navigation component instead.

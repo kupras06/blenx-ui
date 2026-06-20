@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 5
+---
+
 ## Overview
 
 Avatar displays user profile images with automatic fallback to initials when the image fails to load or is not provided. It is built on Base UI Avatar primitives, which handle image loading states and fallback rendering accessibly. Use Avatar to represent people in user lists, comment threads, team grids, and chat interfaces. The component supports an optional status indicator — a small dot that conveys presence state (online, away, busy, offline). Do not use Avatar for decorative icons or brand logos; Avatar is specifically for user representation. If you need a circular container for any visual content, use Box with rounded styling instead.

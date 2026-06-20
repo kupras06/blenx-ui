@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 47
+---
+
 ## Overview
 
 Textarea provides a multi-line text input for longer-form content entry. It supports resizing, placeholder text, disabled state, character count, and validation styling consistent with the Input component. Use textareas for comments, descriptions, bio fields, message composition, address entry, and any scenario where the input text is expected to exceed a single line. Avoid textareas for short single-line inputs, structured data entry, or code editing — use Input or a dedicated code editor component for those cases.

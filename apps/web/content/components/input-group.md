@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 27
+---
+
 ## Overview
 
 Input Group extends a standard Input with prefix or suffix adornments — icons, buttons, text labels, or dropdown triggers. It solves the problem of composite input fields where additional context or actions are necessary within the same visual boundary. Use input groups for search fields with submit buttons, password fields with visibility toggles, amount fields with currency indicators, and URL inputs with protocol prefixes.

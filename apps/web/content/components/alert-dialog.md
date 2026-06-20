@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 3
+---
+
 ## Overview
 
 Alert Dialog is a modal dialog variant designed for urgent confirmations and critical actions that require the user's immediate attention. It is built on Base UI Dialog primitives with the AlertDialog pattern, ensuring proper focus trapping, backdrop blocking, and dismiss prevention. Use Alert Dialog when an action has destructive or irreversible consequences — deleting a resource, discarding unsaved changes, or confirming a payment. The component demands explicit user acknowledgment before the application can proceed. Do not use Alert Dialog for routine confirmations like "Are you sure?" on every form submission; overuse trains users to dismiss critical warnings without reading. If the information is informational rather than action-requiring, use an inline Alert instead.

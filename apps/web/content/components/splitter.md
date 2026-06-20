@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 40
+---
+
 ## Overview
 
 Splitter creates resizable panel layouts where users can adjust the relative size of adjacent content areas by dragging a divider handle. It supports horizontal and vertical splitting, initial panel sizes, minimum and maximum size constraints, and collapsed states. Use splitters in code editors with preview panes, email clients with list and detail views, dashboard layouts with adjustable widget areas, and any interface where users benefit from controlling content distribution. Avoid splitters for layouts with fixed content requirements, narrow viewports where panels become unusably small, or interfaces where the default split ratio is almost never changed.

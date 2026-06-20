@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 34
+---
+
 ## Overview
 
 Segmented Control presents mutually exclusive options in a compact, horizontal row of connected segments. It provides an alternative to Radio Groups when space is limited and the options are visually comparable at a glance. Use segmented controls for view mode switching (list, grid, detail), time range selection (day, week, month), or filter toggles within toolbars and headers. Do not use segmented controls for more than five options, for options with long labels that truncate, or when the options require supporting description text.

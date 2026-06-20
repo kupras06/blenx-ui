@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 6
+---
+
 ## Overview
 
 Badge is a small visual indicator that communicates counts, status, or labels adjacent to an element. It supports multiple intents (primary, neutral, success, warning, danger, info) and size variants. Use badges to display unread notification counts, tag content with metadata labels, or indicate system status. They are purely presentational and do not capture interactions on their own. Do not use badges as primary navigation or action targets — users should not click a badge to trigger behavior. If the element needs to be interactive, pair it with a Button or a clickable container. Badges are also inappropriate for conveying critical information that users might miss due to their small size.

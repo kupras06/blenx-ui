@@ -13,6 +13,9 @@ keywords:
   - theming
   - token inheritance
 status: "stable"
+navigation:
+  group: guides
+  order: 2
 ---
 
 ## Theme Architecture

@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 4
+---
+
 ## Overview
 
 Autocomplete provides an input field augmented with a popover suggestion list that filters options as the user types. It supports keyboard navigation, async data fetching, and single or multi-select modes. Use Autocomplete when the user must select from a known set of values but the list is too large for a standard Select or Combobox — think city names, product SKUs, or user tags. It excels in scenarios where the user knows roughly what they are looking for but benefits from narrowing results progressively. Do not use Autocomplete when the option set is small enough to display in a Select, or when the user must see all available options to make a decision. Autocomplete hides the full list by design, which can mislead users if they are unaware of the available range.

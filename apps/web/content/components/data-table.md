@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 18
+---
+
 ## Overview
 
 DataTable is a feature-rich table component built on @tanstack/react-table for sorting, filtering, pagination, column visibility toggle, row selection, infinite scroll, and server-side operations. It handles loading, empty, and error states natively. Use DataTable whenever you need to present tabular data that requires user interaction — sorting by columns, filtering rows, selecting items for batch operations, or paginating through large datasets. It is designed for data-dense interfaces like admin panels, reporting dashboards, and inventory management. Do not use DataTable for simple lists of fewer than ten items that do not require sorting or filtering; a plain Card or Stack layout is more appropriate. DataTable is also not suitable for complex tree data or nested row expansion without custom configuration.

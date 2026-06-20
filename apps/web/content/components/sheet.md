@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 37
+---
+
 ## Overview
 
 Sheet provides a lightweight slide-in panel for secondary content that does not require the full commitment of a modal dialog. It slides in from the edge of the viewport and overlays the page content with an optional backdrop. Use sheets for mobile navigation menus, contextual settings panels, notification feeds, filter panels, and quick-edit interfaces. Do not use sheets for critical confirmations, forms that require full attention, or content that needs to remain open across page navigation — those scenarios call for Dialog or a dedicated page.

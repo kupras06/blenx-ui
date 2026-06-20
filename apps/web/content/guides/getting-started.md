@@ -11,6 +11,9 @@ keywords:
   - first component
   - dependency chain
 status: "stable"
+navigation:
+  group: guides
+  order: 1
 ---
 
 ## Overview

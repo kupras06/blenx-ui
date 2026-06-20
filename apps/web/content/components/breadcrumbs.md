@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 8
+---
+
 ## Overview
 
 Breadcrumbs displays the page hierarchy as a navigational trail with separators between each level. It helps users understand their current location within the application and provides quick access to ancestor pages. Use breadcrumbs in multi-level navigation structures — documentation sites, admin panels, SaaS dashboards, and e-commerce category trees. They are the secondary navigation pattern, supplementing the primary navigation rather than replacing it. Do not use breadcrumbs for flat sites with only one or two levels; the visual weight is unnecessary and the utility is minimal. Breadcrumbs are also inappropriate for step-based flows like checkout wizards, where stepper or progress indicator components better convey sequence.

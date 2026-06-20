@@ -2,6 +2,11 @@ import { defineCollection, defineConfig } from "@content-collections/core";
 import { compileMDX } from "@content-collections/mdx";
 import { z } from "zod";
 
+const NavigationMeta = z.object({
+  group: z.enum(["components", "guides", "blocks"]),
+  order: z.number(),
+});
+
 const GuideSchema = z.object({
   title: z.string(),
   description: z.string(),
@@ -14,6 +19,7 @@ const GuideSchema = z.object({
   order: z.number().default(999),
   keywords: z.array(z.string()).default([]),
   status: z.enum(["draft", "stable", "deprecated"]).default("stable"),
+  navigation: NavigationMeta,
 });
 
 const ComponentMetaSchema = z.object({
@@ -34,6 +40,7 @@ const ComponentMetaSchema = z.object({
     "typography",
     "primitives",
   ]).optional().default("primitives"),
+  navigation: NavigationMeta,
 });
 
 const BlockMetaSchema = z.object({
@@ -44,6 +51,7 @@ const BlockMetaSchema = z.object({
   status: z.enum(["alpha", "beta", "stable", "deprecated"]).optional().default("stable"),
   keywords: z.array(z.string()).default([]),
   order: z.number().default(999),
+  navigation: NavigationMeta,
 });
 
 const components = defineCollection({

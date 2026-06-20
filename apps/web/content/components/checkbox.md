@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 12
+---
+
 ## Overview
 
 Checkbox presents a binary choice with an associated label, supporting checked, unchecked, and indeterminate states. It includes built-in validation support and accessible labeling. Use checkboxes for multi-select scenarios where users can choose zero, one, or many options from a set — settings panels, permission tables, filter lists, and terms acceptance. The indeterminate state represents a parent checkbox in a tree where some children are selected and others are not. Do not use Checkbox for mutually exclusive options where only one choice is valid; use Radio for that pattern. Checkbox is also inappropriate for toggling a single setting on or off; use Switch instead, as it better communicates immediate activation.

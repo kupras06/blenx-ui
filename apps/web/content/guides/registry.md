@@ -13,6 +13,9 @@ keywords:
   - custom registry
   - source files
 status: "stable"
+navigation:
+  group: guides
+  order: 6
 ---
 
 ## Registry Architecture

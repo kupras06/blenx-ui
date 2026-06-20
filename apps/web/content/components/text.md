@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 46
+---
+
 ## Overview
 
 Text provides the typography primitive for rendering all textual content in the Blenx system. It offers a range of semantic variants from heading levels h1 through h6, body text variants, captions, and code snippets, with props for color, alignment, and truncation. Use Text for every visible text node in the application to ensure consistent typography, responsive scaling, and theme compliance. Avoid applying raw font styles or HTML heading elements outside of the Text component — doing so bypasses theme tokens and creates visual inconsistency.

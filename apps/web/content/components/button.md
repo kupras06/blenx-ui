@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 9
+---
+
 ## Overview
 
 Button triggers actions and is the most frequently used interactive element in any application. It supports multiple variants (solid, outline, ghost, soft, link), intents (primary, neutral, success, warning, danger, info), sizes, a loading state, and named icon slots (start, end). Use Button for form submissions, dialog triggers, navigation actions, and any click-initiated operation. The variant and intent system maps visual weight to action importance: solid primary for primary actions, ghost for low-priority actions, and danger for destructive operations. Do not use Button for navigation between pages when a semantic link element is more appropriate — use Link for actual URL navigation. Buttons are also inappropriate for toggling persistent states; use Toggle for that pattern.

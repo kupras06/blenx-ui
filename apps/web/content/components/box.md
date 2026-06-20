@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 7
+---
+
 ## Overview
 
 Box is the lowest-level layout primitive in Blenx. It renders a single DOM element with access to style props for padding, margin, display, and other common CSS properties through StyleX. Every other layout component — Grid, Container, Card — is composed on top of Box. Use Box when you need a generic container for spacing, alignment, or background styling without semantic meaning. It is the foundation for all custom layouts and the escape hatch when higher-level components do not fit your use case. Do not use Box when a semantic HTML element is more appropriate — prefer `section`, `nav`, `main`, or `article` for document structure. Box is intentionally generic and carries no semantic weight.

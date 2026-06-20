@@ -13,6 +13,9 @@ keywords:
   - pre-1.0
   - template literals
 status: "stable"
+navigation:
+  group: guides
+  order: 8
 ---
 
 ## What Blenx Intentionally Does Not Solve

@@ -1,3 +1,9 @@
+---
+navigation:
+  group: components
+  order: 16
+---
+
 ## Overview
 
 Command implements a command palette — a search-driven interface for triggering actions, navigating pages, and discovering features. Users invoke it with a keyboard shortcut (typically Cmd+K or Ctrl+K), type to filter commands, and select an action to execute. Command is organized into groups of related actions, each with an optional keyboard shortcut hint. Use Command to accelerate power users, reduce navigation friction, and expose features that might otherwise be buried in menus. It is most valuable in complex applications with many views and actions — project management tools, IDEs, admin dashboards, and design tools. Do not use Command as a replacement for primary navigation or as the only way to access critical functionality. Command is also inappropriate for simple applications with fewer than ten actions.

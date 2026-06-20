@@ -13,6 +13,9 @@ keywords:
   - maintainability
   - tradeoffs
 status: "stable"
+navigation:
+  group: guides
+  order: 7
 ---
 
 ## Consistency
