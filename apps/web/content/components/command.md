@@ -8,7 +8,7 @@ navigation:
 
 ## Overview
 
-Command implements a command palette — a search-driven interface for triggering actions, navigating pages, and discovering features.  Users invoke it with a keyboard shortcut (typically Cmd+K or Ctrl+K), type to filter commands, and select an action to execute.  Command is organized into groups of related actions, each with an optional keyboard shortcut hint.
+Command implements a command palette — a search-driven interface for triggering actions, navigating pages, and discovering features. Users invoke it with a keyboard shortcut (typically Cmd+K or Ctrl+K), type to filter commands, and select an action to execute. Command is organized into groups of related actions, each with an optional keyboard shortcut hint.
 
 ## Demo
 

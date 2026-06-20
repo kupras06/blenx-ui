@@ -8,7 +8,7 @@ navigation:
 
 ## Overview
 
-Table renders structured data in a grid of rows and columns using styled native HTML table elements.  It supports header groups, body rows, sorting indicators, and responsive overflow handling.  Use tables for data comparison, financial reports, user lists, activity logs, and any dataset where users need to scan, compare, and reference values across multiple records.
+Table renders structured data in a grid of rows and columns using styled native HTML table elements. It supports header groups, body rows, sorting indicators, and responsive overflow handling. Use tables for data comparison, financial reports, user lists, activity logs, and any dataset where users need to scan, compare, and reference values across multiple records.
 
 ## Demo
 

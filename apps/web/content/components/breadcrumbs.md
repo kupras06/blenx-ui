@@ -8,7 +8,7 @@ navigation:
 
 ## Overview
 
-Breadcrumbs displays the page hierarchy as a navigational trail with separators between each level.  It helps users understand their current location within the application and provides quick access to ancestor pages.  Use breadcrumbs in multi-level navigation structures — documentation sites, admin panels, SaaS dashboards, and e-commerce category trees.
+Breadcrumbs displays the page hierarchy as a navigational trail with separators between each level. It helps users understand their current location within the application and provides quick access to ancestor pages. Use breadcrumbs in multi-level navigation structures — documentation sites, admin panels, SaaS dashboards, and e-commerce category trees.
 
 ## Installation
 

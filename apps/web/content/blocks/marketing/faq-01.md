@@ -1,0 +1,34 @@
+---
+title: FAQ Section
+group: marketing
+order: 4
+default: false
+---
+
+## Overview
+
+Faq-01 is an accordion-based frequently asked questions section that organizes Q&A pairs into a compact, expandable list. Each item consists of a clickable question header and an expandable panel containing the answer, with smooth height animations on open and close. The block supports an optional search feature that filters items in real time, highlighting matching questions and hiding non-matching ones as the user types. The `items` prop accepts an array of question-and-answer objects, giving you full control over the content without coupling the block to any CMS or data source. The `enableSearch` prop toggles the search input on or off, making the block equally suitable for small sets of common questions and large knowledge bases that demand filtering.
+
+## When To Use
+
+Use faq-01 on any page where users commonly seek answers to repetitive questions — pricing pages, documentation sidebars, support portals, product feature pages, and onboarding flows. The accordion pattern is especially effective when you have 5 to 20 questions, allowing users to scan the full list of questions and open only the ones relevant to them. For very large sets of questions (over 50), enable the search feature so users can narrow down results without excessive scrolling. Do not use this block when the answers are long enough to warrant their own dedicated pages, when you need a multi-column layout for side-by-side Q&A comparison, or when users need to keep multiple answers visible simultaneously — accordions collapse one item when another opens.
+
+## Customization
+
+The `items` prop accepts an array of objects with `question` and `answer` fields, both supporting plain text or inline HTML for links and formatting. The `enableSearch` boolean toggles the search input, which defaults to `false` to keep the block simple for small FAQ sets. The `searchPlaceholder` prop customizes the search input placeholder text. The `defaultOpenIndex` prop accepts a number (or `null`) to specify which item is expanded by default — useful for highlighting the most common question or linking to a specific answer from another page. The `allowMultiple` prop, when set to `true`, permits multiple accordion items to remain open simultaneously, deviating from the standard single-open accordion behavior. Animation duration follows your theme's motion tokens and is configurable via the `animationDuration` prop.
+
+## Accessibility Notes
+
+Each accordion header is a `<button>` element with `aria-expanded` reflecting its open or closed state and `aria-controls` pointing to the associated answer panel. The answer panels have `role="region"` and `aria-labelledby` referencing the header button, creating an explicit association. The search input, when enabled, has a `label` or `aria-label` of "Search frequently asked questions." Filtered results are announced via a live region that updates with the count of visible questions — for example, "Showing 5 of 12 questions." Keyboard navigation follows the accordion pattern: `Enter` or `Space` toggles the focused item, `Tab` moves between headers, and no arrow-key navigation is provided to avoid conflict with scroll behavior. Focus is not automatically moved to the panel content on expand, preserving the user's scroll position.
+
+## Composition
+
+Faq-01 composes a `Section` wrapper with an optional `Heading` for the section title (e.g., "Frequently Asked Questions"). Each accordion item uses a `Collapsible` component internally, with a `Button`-styled header for the question and a `Text` or `RichText` component for the answer panel. When `enableSearch` is true, an `Input` component with a `MagnifyingGlass` icon prepended renders above the accordion list. The entire list is wrapped in a `Stack` component with consistent spacing between items. An empty-state message appears when the search filter produces no results, reading "No matching questions found."
+
+## Best Practices
+
+Write questions from the user's perspective using their likely phrasing — "How do I reset my password?" is better than "Password reset procedure." Keep answers concise and actionable; if an answer exceeds 150 words, consider splitting it into multiple items or linking to a dedicated documentation page. Enable `allowMultiple` only when the answers are short enough that having two panels visible simultaneously does not create excessive scroll length. Use the `defaultOpenIndex` to pre-expand the most popular question, which can reduce bounce rates by immediately answering the visitor's likely concern. Ensure the search feature indexes both questions and answers so users can find relevant content even when they search for terms that appear only in the response.
+
+## Limitations
+
+Faq-01 does not support nested accordions (an accordion within an accordion), categorization with tabbed groups, or hierarchical question organization. The search filter is client-side and operates on the pre-loaded items list — it cannot search a remote data source or support server-side pagination. When `enableSearch` is active, the block does not highlight matching terms within the question or answer text. The accordion animation uses fixed duration rather than content-aware timing, so very tall answer panels may feel rushed while short ones feel slow. There is no built-in analytics to track which questions users open most frequently, though you could add click handlers externally through the items' render props.

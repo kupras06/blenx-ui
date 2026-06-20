@@ -24,11 +24,11 @@ const staticSections: SidebarSection[] = [
   {
     title: "Blocks",
     links: [
-      { to: "/blocks", label: "All Blocks" },
-      { to: "/blocks/authentication", label: "Authentication" },
-      { to: "/blocks/application-states", label: "Application States" },
-      { to: "/blocks/marketing", label: "Marketing" },
-      { to: "/blocks/dashboard", label: "Dashboard" },
+      { to: "/docs/blocks", label: "All Blocks" },
+      { to: "/docs/blocks/authentication", label: "Authentication" },
+      { to: "/docs/blocks/application-states", label: "Application States" },
+      { to: "/docs/blocks/marketing", label: "Marketing" },
+      { to: "/docs/blocks/dashboard", label: "Dashboard" },
     ],
   },
 ];
@@ -52,7 +52,7 @@ function DocsSidebar({ onClose }: { onClose?: () => void }) {
   const guideLinks: SidebarLink[] = allGuides
     .sort((a, b) => a.navigation.order - b.navigation.order)
     .map((g) => ({
-      to: g.navigation.link ?? `/docs/${g._meta.path}`,
+      to: g.navigation.link ?? `/docs/guides/${g._meta.path}`,
       label: g.title,
     }));
 

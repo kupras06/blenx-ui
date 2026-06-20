@@ -8,7 +8,7 @@ navigation:
 
 ## Overview
 
-Container provides a responsive content width constraint and horizontal centering for page-level layouts.  It caps the maximum width of its children at a configurable breakpoint and centers them within the viewport using auto margins.  Use Container as the outermost wrapper for page content to ensure consistent reading widths across different screen sizes.
+Container provides a responsive content width constraint and horizontal centering for page-level layouts. It caps the maximum width of its children at a configurable breakpoint and centers them within the viewport using auto margins. Use Container as the outermost wrapper for page content to ensure consistent reading widths across different screen sizes.
 
 ## Installation
 

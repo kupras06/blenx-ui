@@ -8,7 +8,7 @@ navigation:
 
 ## Overview
 
-Avatar displays user profile images with automatic fallback to initials when the image fails to load or is not provided.  It is built on Base UI Avatar primitives, which handle image loading states and fallback rendering accessibly.  Use Avatar to represent people in user lists, comment threads, team grids, and chat interfaces.
+Avatar displays user profile images with automatic fallback to initials when the image fails to load or is not provided. It is built on Base UI Avatar primitives, which handle image loading states and fallback rendering accessibly. Use Avatar to represent people in user lists, comment threads, team grids, and chat interfaces.
 
 ## Installation
 

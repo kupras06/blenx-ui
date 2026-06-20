@@ -8,7 +8,7 @@ navigation:
 
 ## Overview
 
-Autocomplete provides an input field augmented with a popover suggestion list that filters options as the user types.  It supports keyboard navigation, async data fetching, and single or multi-select modes.  Use Autocomplete when the user must select from a known set of values but the list is too large for a standard Select or Combobox — think city names, product SKUs, or user tags.
+Autocomplete provides an input field augmented with a popover suggestion list that filters options as the user types. It supports keyboard navigation, async data fetching, and single or multi-select modes. Use Autocomplete when the user must select from a known set of values but the list is too large for a standard Select or Combobox — think city names, product SKUs, or user tags.
 
 ## Installation
 

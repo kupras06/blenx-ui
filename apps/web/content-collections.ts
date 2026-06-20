@@ -44,20 +44,52 @@ const ComponentMetaSchema = z.object({
 });
 
 const BlockMetaSchema = z.object({
+  title: z.string(),
+  group: z.enum([
+    "application-states",
+    "authentication",
+    "dashboard",
+    "marketing",
+    "headers",
+    "tables",
+  ]),
+  order: z.number(),
+  default: z.boolean().default(false),
   name: z.string().optional().default(""),
-  title: z.string().optional().default(""),
   description: z.string().optional().default(""),
   category: z.string().optional().default(""),
   status: z.enum(["alpha", "beta", "stable", "deprecated"]).optional().default("stable"),
   keywords: z.array(z.string()).default([]),
-  navigation: NavigationMeta,
+  navigation: NavigationMeta.optional(),
   content: z.string(),
 });
-const TocItems = z.array(z.object({
-  depth: z.number(),
+
+const BlockGroupSchema = z.object({
+  slug: z.string(),
   title: z.string(),
-  slug: z.string()
-}))
+  description: z.string(),
+  order: z.number(),
+});
+
+const TocItems = z.array(
+  z.object({
+    depth: z.number(),
+    title: z.string(),
+    slug: z.string(),
+  }),
+);
+
+const blockGroups = defineCollection({
+  name: "blockGroups",
+  directory: "content/block-groups",
+  include: "*.json",
+  schema: z.any(),
+  transform: async (document) => {
+    const raw = JSON.parse(document.content);
+    return BlockGroupSchema.parse(raw);
+  },
+});
+
 const components = defineCollection({
   name: "components",
   directory: "content/components",
@@ -66,7 +98,7 @@ const components = defineCollection({
   transform: async (document, context) => ({
     ...document,
     mdx: await compileMDX(context, document),
-    toc: TocItems.parse(extractHeadings(document.content))
+    toc: TocItems.parse(extractHeadings(document.content)),
   }),
 });
 
@@ -78,7 +110,7 @@ const blocks = defineCollection({
   transform: async (document, context) => ({
     ...document,
     mdx: await compileMDX(context, document),
-    toc: TocItems.parse(extractHeadings(document.content))
+    toc: TocItems.parse(extractHeadings(document.content)),
   }),
 });
 
@@ -90,10 +122,10 @@ const guides = defineCollection({
   transform: async (document, context) => ({
     ...document,
     mdx: await compileMDX(context, document),
-    toc: TocItems.parse(extractHeadings(document.content))
+    toc: TocItems.parse(extractHeadings(document.content)),
   }),
 });
 
 export default defineConfig({
-  content: [components, blocks, guides],
+  content: [components, blockGroups, blocks, guides],
 });

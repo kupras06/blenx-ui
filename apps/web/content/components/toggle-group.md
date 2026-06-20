@@ -8,7 +8,7 @@ navigation:
 
 ## Overview
 
-Toggle Group manages a collection of toggle buttons where users can select multiple options within a category.  It supports both enforced minimum selection and unconstrained multiple selection.  Use toggle groups for filter categories where multiple filters can be active simultaneously, feature tag selection, multi-criteria view customization, and any scenario where users need to select several options from a related set.
+Toggle Group manages a collection of toggle buttons where users can select multiple options within a category. It supports both enforced minimum selection and unconstrained multiple selection. Use toggle groups for filter categories where multiple filters can be active simultaneously, feature tag selection, multi-criteria view customization, and any scenario where users need to select several options from a related set.
 
 ## Installation
 

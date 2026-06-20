@@ -8,7 +8,7 @@ navigation:
 
 ## Overview
 
-Select presents a list of options from which the user chooses one value.  It supports both native browser select rendering and a custom dropdown implementation with option groups, placeholder text, disabled states, and validation feedback.  Use selects when the user must choose from multiple options (typically more than five) and space constraints make radio buttons or segmented controls impractical.
+Select presents a list of options from which the user chooses one value. It supports both native browser select rendering and a custom dropdown implementation with option groups, placeholder text, disabled states, and validation feedback. Use selects when the user must choose from multiple options (typically more than five) and space constraints make radio buttons or segmented controls impractical.
 
 ## Demo
 

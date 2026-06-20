@@ -8,7 +8,7 @@ navigation:
 
 ## Overview
 
-Card is a surface-level container that groups related content and actions into a single visual unit.  It provides sub-components for header, body, footer, title, and description, enabling structured layouts without manual arrangement.  Use cards to present discrete pieces of content — user profiles, dashboard widgets, product listings, and detail panels.
+Card is a surface-level container that groups related content and actions into a single visual unit. It provides sub-components for header, body, footer, title, and description, enabling structured layouts without manual arrangement. Use cards to present discrete pieces of content — user profiles, dashboard widgets, product listings, and detail panels.
 
 ## Demo
 

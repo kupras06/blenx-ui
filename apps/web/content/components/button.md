@@ -8,7 +8,7 @@ navigation:
 
 ## Overview
 
-Button triggers actions and is the most frequently used interactive element in any application.  It supports multiple variants (solid, outline, ghost, soft, link), intents (primary, neutral, success, warning, danger, info), sizes, a loading state, and named icon slots (start, end).  Use Button for form submissions, dialog triggers, navigation actions, and any click-initiated operation.
+Button triggers actions and is the most frequently used interactive element in any application. It supports multiple variants (solid, outline, ghost, soft, link), intents (primary, neutral, success, warning, danger, info), sizes, a loading state, and named icon slots (start, end). Use Button for form submissions, dialog triggers, navigation actions, and any click-initiated operation.
 
 ## Demo
 

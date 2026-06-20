@@ -8,7 +8,7 @@ navigation:
 
 ## Overview
 
-Drawer is a slide-in panel that emerges from any edge of the viewport — left, right, top, or bottom — providing a secondary surface for content and actions.  It is built on Base UI Dialog primitives, inheriting accessible focus trapping and backdrop management.  Use Drawer for navigation menus on mobile, detail panels that reference data on the current page, filter panels, and multi-step workflows that benefit from staying in context.
+Drawer is a slide-in panel that emerges from any edge of the viewport — left, right, top, or bottom — providing a secondary surface for content and actions. It is built on Base UI Dialog primitives, inheriting accessible focus trapping and backdrop management. Use Drawer for navigation menus on mobile, detail panels that reference data on the current page, filter panels, and multi-step workflows that benefit from staying in context.
 
 ## Demo
 

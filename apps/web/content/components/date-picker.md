@@ -8,7 +8,7 @@ navigation:
 
 ## Overview
 
-DatePicker combines the Calendar component with a Popover and a text input trigger, enabling users to select a date through either visual calendar navigation or direct text input.  It displays the selected date in a formatted input field and opens the calendar on click or focus.  Use DatePicker when users need to enter a date within a form context — booking systems, date-of-birth fields, scheduling interfaces, and date range filters.
+DatePicker combines the Calendar component with a Popover and a text input trigger, enabling users to select a date through either visual calendar navigation or direct text input. It displays the selected date in a formatted input field and opens the calendar on click or focus. Use DatePicker when users need to enter a date within a form context — booking systems, date-of-birth fields, scheduling interfaces, and date range filters.
 
 ## Installation
 

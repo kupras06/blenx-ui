@@ -8,7 +8,7 @@ navigation:
 
 ## Overview
 
-Box is the lowest-level layout primitive in Blenx.  It renders a single DOM element with access to style props for padding, margin, display, and other common CSS properties through StyleX.  Every other layout component — Grid, Container, Card — is composed on top of Box.
+Box is the lowest-level layout primitive in Blenx. It renders a single DOM element with access to style props for padding, margin, display, and other common CSS properties through StyleX. Every other layout component — Grid, Container, Card — is composed on top of Box.
 
 ## Installation
 

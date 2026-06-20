@@ -8,7 +8,7 @@ navigation:
 
 ## Overview
 
-Splitter creates resizable panel layouts where users can adjust the relative size of adjacent content areas by dragging a divider handle.  It supports horizontal and vertical splitting, initial panel sizes, minimum and maximum size constraints, and collapsed states.  Use splitters in code editors with preview panes, email clients with list and detail views, dashboard layouts with adjustable widget areas, and any interface where users benefit from controlling content distribution.
+Splitter creates resizable panel layouts where users can adjust the relative size of adjacent content areas by dragging a divider handle. It supports horizontal and vertical splitting, initial panel sizes, minimum and maximum size constraints, and collapsed states. Use splitters in code editors with preview panes, email clients with list and detail views, dashboard layouts with adjustable widget areas, and any interface where users benefit from controlling content distribution.
 
 ## Installation
 

@@ -1,0 +1,6 @@
+{
+  "slug": "authentication",
+  "title": "Authentication",
+  "description": "Sign-in, sign-up, and password recovery patterns.",
+  "order": 2
+}

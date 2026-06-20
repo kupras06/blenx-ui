@@ -8,7 +8,7 @@ navigation:
 
 ## Overview
 
-Toggle provides a two-state button that switches between active and inactive visual states.  It communicates whether a feature, filter, or mode is currently enabled.  Use toggles for toolbar mode switches, filter enablement, view option toggles, and feature flags in settings interfaces.
+Toggle provides a two-state button that switches between active and inactive visual states. It communicates whether a feature, filter, or mode is currently enabled. Use toggles for toolbar mode switches, filter enablement, view option toggles, and feature flags in settings interfaces.
 
 ## Installation
 

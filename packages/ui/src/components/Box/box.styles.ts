@@ -73,11 +73,11 @@ export const boxHeightStyles = stylex.create({
   },
   "25svh": {
     maxHeight: "25svh",
-   height: "25svh",
+    height: "25svh",
   },
   "40svh": {
     maxHeight: "40svh",
-   height: "40svh",
+    height: "40svh",
   },
   "60svh": {
     maxHeight: "60svh",

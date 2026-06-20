@@ -8,7 +8,7 @@ navigation:
 
 ## Overview
 
-The Input component captures single-line text from users.  It serves as the foundational form control in Blenx, supporting variants, sizes, placeholder text, disabled state, and validation feedback.  Use inputs for any scenario requiring short-form text entry — names, email addresses, search queries, URLs, or numeric values.
+The Input component captures single-line text from users. It serves as the foundational form control in Blenx, supporting variants, sizes, placeholder text, disabled state, and validation feedback. Use inputs for any scenario requiring short-form text entry — names, email addresses, search queries, URLs, or numeric values.
 
 ## Demo
 

@@ -8,7 +8,7 @@ navigation:
 
 ## Overview
 
-Grid is a CSS Grid layout primitive that enables complex two-dimensional layouts with rows and columns.  It provides a declarative API for defining grid templates, gaps, and item placement using theme tokens.  Use Grid for page-level layouts with multiple regions, card grids, dashboard layouts, and any layout that requires simultaneous control over horizontal and vertical alignment.
+Grid is a CSS Grid layout primitive that enables complex two-dimensional layouts with rows and columns. It provides a declarative API for defining grid templates, gaps, and item placement using theme tokens. Use Grid for page-level layouts with multiple regions, card grids, dashboard layouts, and any layout that requires simultaneous control over horizontal and vertical alignment.
 
 ## Installation
 

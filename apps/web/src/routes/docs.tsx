@@ -5,8 +5,10 @@ import { DocsToc } from "@/components/docs/DocsToc";
 import { Box, Container, HStack, ScrollArea, Sheet, SheetPopup } from "@blenx-dev/ui/components";
 import { useSidebarStore } from "@/stores/docs-sidebar";
 import { useDocsTocStore } from "@/stores/docs-toc";
+import { DefaultCatchBoundary } from "@/components/DefaultCatchBoundary";
 export const Route = createFileRoute("/docs")({
   component: DocsLayout,
+  errorComponent:DefaultCatchBoundary
 });
 
 function DrawerSidebar() {

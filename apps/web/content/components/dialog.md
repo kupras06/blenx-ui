@@ -8,7 +8,7 @@ navigation:
 
 ## Overview
 
-Dialog is a modal overlay that presents content requiring user attention or input while blocking interaction with the rest of the page.  It is built on Base UI Dialog primitives for accessible focus trapping, dismiss handling, and backdrop management.  Use Dialog for forms, confirmations, detail views, and any workflow where the user should focus on a single task before returning to the main interface.
+Dialog is a modal overlay that presents content requiring user attention or input while blocking interaction with the rest of the page. It is built on Base UI Dialog primitives for accessible focus trapping, dismiss handling, and backdrop management. Use Dialog for forms, confirmations, detail views, and any workflow where the user should focus on a single task before returning to the main interface.
 
 ## Demo
 

@@ -8,7 +8,7 @@ navigation:
 
 ## Overview
 
-Progress visualizes the completion status of an ongoing operation.  It supports determinate mode for known progress values and indeterminate mode for operations of unknown duration.  Use progress bars for file uploads, multi-step form submissions, data loading, export generation, and any process where the user benefits from knowing that work is progressing.
+Progress visualizes the completion status of an ongoing operation. It supports determinate mode for known progress values and indeterminate mode for operations of unknown duration. Use progress bars for file uploads, multi-step form submissions, data loading, export generation, and any process where the user benefits from knowing that work is progressing.
 
 ## Installation
 

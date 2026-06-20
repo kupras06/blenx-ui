@@ -64,9 +64,7 @@ function Installation({ registryName }: InstallationProps) {
             <ul {...stylex.props(listStyles.list)}>
               {files.map((f) => (
                 <li key={f.target} {...stylex.props(listStyles.item)}>
-                  <code {...stylex.props(listStyles.code)}>
-                    {cleanTarget(f.target)}
-                  </code>
+                  <code {...stylex.props(listStyles.code)}>{cleanTarget(f.target)}</code>
                 </li>
               ))}
             </ul>

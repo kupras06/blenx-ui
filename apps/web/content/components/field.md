@@ -8,7 +8,7 @@ navigation:
 
 ## Overview
 
-Field wraps form controls with label, help text, and error message layout, providing consistent form structure and accessible associations.  It acts as the single source of truth for form field metadata — every interactive input in a form should be wrapped in Field to ensure proper labeling and validation feedback.  Use Field everywhere you place a form control — text inputs, selects, checkboxes, radio groups, date pickers, and custom form widgets.
+Field wraps form controls with label, help text, and error message layout, providing consistent form structure and accessible associations. It acts as the single source of truth for form field metadata — every interactive input in a form should be wrapped in Field to ensure proper labeling and validation feedback. Use Field everywhere you place a form control — text inputs, selects, checkboxes, radio groups, date pickers, and custom form widgets.
 
 ## Installation
 

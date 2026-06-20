@@ -8,7 +8,7 @@ navigation:
 
 ## Overview
 
-Stack is a flexbox layout primitive that arranges children in a single direction with consistent spacing.  It provides HStack for horizontal layouts and VStack for vertical layouts, with props for gap, alignment, distribution, and wrapping.  Use stack as the primary building block for page sections, form layouts, toolbar arrangements, card content, and any linear arrangement of components.
+Stack is a flexbox layout primitive that arranges children in a single direction with consistent spacing. It provides HStack for horizontal layouts and VStack for vertical layouts, with props for gap, alignment, distribution, and wrapping. Use stack as the primary building block for page sections, form layouts, toolbar arrangements, card content, and any linear arrangement of components.
 
 ## Installation
 

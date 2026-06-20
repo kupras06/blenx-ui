@@ -8,7 +8,7 @@ navigation:
 
 ## Overview
 
-Tabs organizes content into separate panels where only one panel is visible at a time, with navigation controls presented as a tab list.  It supports horizontal and vertical tab arrangements, keyboard navigation between tabs, and dynamic tab panel content.  Use tabs to partition settings pages, split documentation views, separate data visualization modes, and organize form sections that are too long for a single scroll.
+Tabs organizes content into separate panels where only one panel is visible at a time, with navigation controls presented as a tab list. It supports horizontal and vertical tab arrangements, keyboard navigation between tabs, and dynamic tab panel content. Use tabs to partition settings pages, split documentation views, separate data visualization modes, and organize form sections that are too long for a single scroll.
 
 ## Demo
 

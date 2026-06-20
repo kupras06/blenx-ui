@@ -8,7 +8,7 @@ navigation:
 
 ## Overview
 
-Spinner communicates ongoing loading activity through a rotating indicator animation.  It provides size variants and optional label support for accessible loading announcements.  Use spinners for content loading, form submission feedback, page transitions, and any asynchronous operation where a determinate progress indicator is not appropriate.
+Spinner communicates ongoing loading activity through a rotating indicator animation. It provides size variants and optional label support for accessible loading announcements. Use spinners for content loading, form submission feedback, page transitions, and any asynchronous operation where a determinate progress indicator is not appropriate.
 
 ## Installation
 

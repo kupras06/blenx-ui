@@ -8,7 +8,7 @@ navigation:
 
 ## Overview
 
-Badge is a small visual indicator that communicates counts, status, or labels adjacent to an element.  It supports multiple intents (primary, neutral, success, warning, danger, info) and size variants.  Use badges to display unread notification counts, tag content with metadata labels, or indicate system status.
+Badge is a small visual indicator that communicates counts, status, or labels adjacent to an element. It supports multiple intents (primary, neutral, success, warning, danger, info) and size variants. Use badges to display unread notification counts, tag content with metadata labels, or indicate system status.
 
 ## Demo
 

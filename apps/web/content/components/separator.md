@@ -8,7 +8,7 @@ navigation:
 
 ## Overview
 
-Separator renders a visual dividing line that distinguishes content sections, groups related elements, or creates visual hierarchy within layouts.  It supports horizontal and vertical orientations with configurable tone variants.  Use separators to divide form sections, separate menu item groups, distinguish sidebar navigation categories, or split content regions within a Surface or Card.
+Separator renders a visual dividing line that distinguishes content sections, groups related elements, or creates visual hierarchy within layouts. It supports horizontal and vertical orientations with configurable tone variants. Use separators to divide form sections, separate menu item groups, distinguish sidebar navigation categories, or split content regions within a Surface or Card.
 
 ## Installation
 

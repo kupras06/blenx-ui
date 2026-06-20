@@ -8,7 +8,7 @@ navigation:
 
 ## Overview
 
-Scroll Area provides a custom scrollbar wrapper that delivers consistent scrolling behavior and appearance across browsers and operating systems.  It addresses the problem of native scrollbar inconsistency — macOS overlays thin scrollbars that can be difficult to discover, while Windows renders wide, obtrusive scrollbars that disrupt layout.  Use Scroll Area in code editors, chat panels, long lists, data tables, and any container where scrollable content meets custom-styled surfaces.
+Scroll Area provides a custom scrollbar wrapper that delivers consistent scrolling behavior and appearance across browsers and operating systems. It addresses the problem of native scrollbar inconsistency — macOS overlays thin scrollbars that can be difficult to discover, while Windows renders wide, obtrusive scrollbars that disrupt layout. Use Scroll Area in code editors, chat panels, long lists, data tables, and any container where scrollable content meets custom-styled surfaces.
 
 ## Installation
 

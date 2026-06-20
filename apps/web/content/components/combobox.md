@@ -8,7 +8,7 @@ navigation:
 
 ## Overview
 
-Combobox merges a text input with a selectable options list, combining the flexibility of free-text entry with the precision of constrained selection.  Users can type to filter options, navigate with arrow keys, and select with Enter or click.  Use Combobox when users need to select from a list but may also need to enter a custom value not in the list — think tag inputs, recipient selectors, or country pickers with typing support.
+Combobox merges a text input with a selectable options list, combining the flexibility of free-text entry with the precision of constrained selection. Users can type to filter options, navigate with arrow keys, and select with Enter or click. Use Combobox when users need to select from a list but may also need to enter a custom value not in the list — think tag inputs, recipient selectors, or country pickers with typing support.
 
 ## Installation
 

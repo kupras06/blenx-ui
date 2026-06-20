@@ -8,7 +8,7 @@ navigation:
 
 ## Overview
 
-Icon is a wrapper component for Phosphor icons that provides consistent sizing, coloring, and accessibility defaults.  It renders the specified icon with the correct viewBox and stroke weight, inheriting or overriding color and size from props.  Use Icon whenever you need a visual symbol in the interface — navigation items, button slots, status indicators, empty state illustrations, and decorative elements.
+Icon is a wrapper component for Phosphor icons that provides consistent sizing, coloring, and accessibility defaults. It renders the specified icon with the correct viewBox and stroke weight, inheriting or overriding color and size from props. Use Icon whenever you need a visual symbol in the interface — navigation items, button slots, status indicators, empty state illustrations, and decorative elements.
 
 ## Demo
 

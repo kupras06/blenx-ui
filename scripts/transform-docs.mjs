@@ -15,11 +15,7 @@ function capitalize(s) {
 }
 
 function titleFromFilename(filename) {
-  return filename
-    .replace(/\.md$/, "")
-    .split("-")
-    .map(capitalize)
-    .join(" ");
+  return filename.replace(/\.md$/, "").split("-").map(capitalize).join(" ");
 }
 
 function truncateToSentences(text, maxSentences) {
@@ -107,9 +103,7 @@ function parseSections(body) {
 }
 
 function sectionsToBody(sections) {
-  return sections
-    .map(([heading, content]) => `## ${heading}\n\n${content}`)
-    .join("\n\n");
+  return sections.map(([heading, content]) => `## ${heading}\n\n${content}`).join("\n\n");
 }
 
 const files = readdirSync(DOCS_DIR).filter((f) => f.endsWith(".md"));
@@ -182,7 +176,7 @@ for (const file of files) {
 
   // Preserve original frontmatter lines and inject title/description after first line
   const fmLines = frontmatterRaw.split("\n");
-  
+
   // Build new frontmatter
   let newFrontmatter = "---\n";
   newFrontmatter += `title: "${title}"\n`;

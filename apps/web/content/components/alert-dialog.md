@@ -8,7 +8,7 @@ navigation:
 
 ## Overview
 
-Alert Dialog is a modal dialog variant designed for urgent confirmations and critical actions that require the user's immediate attention.  It is built on Base UI Dialog primitives with the AlertDialog pattern, ensuring proper focus trapping, backdrop blocking, and dismiss prevention.  Use Alert Dialog when an action has destructive or irreversible consequences — deleting a resource, discarding unsaved changes, or confirming a payment.
+Alert Dialog is a modal dialog variant designed for urgent confirmations and critical actions that require the user's immediate attention. It is built on Base UI Dialog primitives with the AlertDialog pattern, ensuring proper focus trapping, backdrop blocking, and dismiss prevention. Use Alert Dialog when an action has destructive or irreversible consequences — deleting a resource, discarding unsaved changes, or confirming a payment.
 
 ## Demo
 

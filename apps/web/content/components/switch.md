@@ -8,7 +8,7 @@ navigation:
 
 ## Overview
 
-Switch provides a binary toggle control for turning a setting on or off.  It renders with a visual track and thumb that animate between checked and unchecked states, clearly communicating the current boolean value.  Use switches for settings and preferences — notifications on or off, dark mode toggle, feature enablement, and any binary configuration where the effect is immediate.
+Switch provides a binary toggle control for turning a setting on or off. It renders with a visual track and thumb that animate between checked and unchecked states, clearly communicating the current boolean value. Use switches for settings and preferences — notifications on or off, dark mode toggle, feature enablement, and any binary configuration where the effect is immediate.
 
 ## Demo
 

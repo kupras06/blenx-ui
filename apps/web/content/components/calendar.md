@@ -8,7 +8,7 @@ navigation:
 
 ## Overview
 
-Calendar renders a date grid with month navigation, supporting single date, date range, and multiple date selection modes.  It provides keyboard navigation for power users and accessible announcements for screen readers.  Use Calendar when users need to view or select dates within a structured monthly layout — booking systems, scheduling interfaces, date-filtered reports, and birth date pickers.
+Calendar renders a date grid with month navigation, supporting single date, date range, and multiple date selection modes. It provides keyboard navigation for power users and accessible announcements for screen readers. Use Calendar when users need to view or select dates within a structured monthly layout — booking systems, scheduling interfaces, date-filtered reports, and birth date pickers.
 
 ## Installation
 

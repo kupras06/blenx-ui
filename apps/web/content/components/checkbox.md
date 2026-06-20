@@ -8,7 +8,7 @@ navigation:
 
 ## Overview
 
-Checkbox presents a binary choice with an associated label, supporting checked, unchecked, and indeterminate states.  It includes built-in validation support and accessible labeling.  Use checkboxes for multi-select scenarios where users can choose zero, one, or many options from a set — settings panels, permission tables, filter lists, and terms acceptance.
+Checkbox presents a binary choice with an associated label, supporting checked, unchecked, and indeterminate states. It includes built-in validation support and accessible labeling. Use checkboxes for multi-select scenarios where users can choose zero, one, or many options from a set — settings panels, permission tables, filter lists, and terms acceptance.
 
 ## Installation
 

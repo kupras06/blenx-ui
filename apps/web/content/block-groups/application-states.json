@@ -1,0 +1,6 @@
+{
+  "slug": "application-states",
+  "title": "Application States",
+  "description": "Reusable blocks for loading, empty, and error states.",
+  "order": 1
+}
