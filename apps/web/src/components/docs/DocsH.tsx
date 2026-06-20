@@ -9,15 +9,14 @@ const styles = stylex.create({
     opacity: {
       default: 0,
       ":hover": 1,
-      [stylex.when.anySibling(":hover")]: 1,
       [stylex.when.ancestor(":hover")]: 1,
     },
     marginLeft: 8,
-    fontSize: "inherit",
-    fontWeight: "inherit",
-    color: {
-      default: "var(--docs-heading-anchor)",
-      [":hover"]: "var(--docs-heading-anchor-hover)",
+    fontSize:"0.7em",  
+  fontWeight: 400,     verticalAlign: "middle",
+   color: {
+      default: "color-mix(in srgb, var(--docs-heading-anchor) 65%, transparent)",
+      ":hover": "var(--docs-heading-anchor-hover)",
     },
     textDecoration: "none",
     userSelect: "none",
@@ -57,7 +56,7 @@ function DocsHeading({
   };
 
   return (
-    <Box position="relative" id={headingId}>
+    <Box position="relative" id={headingId} {...stylex.props(stylex.defaultMarker())}>
       <Text variant={as}>
         {children}
         {headingId && as !== "h1" && (
