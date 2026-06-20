@@ -5,6 +5,7 @@ import { z } from "zod";
 const NavigationMeta = z.object({
   group: z.enum(["components", "guides", "blocks"]),
   order: z.number(),
+  link: z.string().optional(),
 });
 
 const GuideSchema = z.object({
@@ -16,7 +17,6 @@ const GuideSchema = z.object({
     "Customization",
     "Advanced",
   ]),
-  order: z.number().default(999),
   keywords: z.array(z.string()).default([]),
   status: z.enum(["draft", "stable", "deprecated"]).default("stable"),
   navigation: NavigationMeta,
@@ -26,7 +26,6 @@ const ComponentMetaSchema = z.object({
   component: z.string().optional().default(""),
   title: z.string().optional().default(""),
   description: z.string().optional().default(""),
-  order: z.number().default(999),
   status: z.enum(["alpha", "beta", "stable", "deprecated"]).optional().default("stable"),
   keywords: z.array(z.string()).default([]),
   category: z.enum([
@@ -50,7 +49,6 @@ const BlockMetaSchema = z.object({
   category: z.string().optional().default(""),
   status: z.enum(["alpha", "beta", "stable", "deprecated"]).optional().default("stable"),
   keywords: z.array(z.string()).default([]),
-  order: z.number().default(999),
   navigation: NavigationMeta,
 });
 
