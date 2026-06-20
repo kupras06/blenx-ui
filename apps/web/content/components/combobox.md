@@ -28,6 +28,14 @@ Enabling `allowCustomValue` without validation leads to data quality issues — 
 
 The input should clearly show when it has focus and when the popover is open, typically with a visible outline or ring. Filtered options should highlight the matching substring so users see why each option appeared. Selected items in multi-select mode should use the same chip styling as Badge with a dismiss button. The popover should match the input width for a seamless visual connection. The option list should be scrolled to keep the active option visible during keyboard navigation.
 
+## Installation
+
+<Installation registryName="combobox" />
+
+## API Reference
+
+<ApiReference />
+
 ## Limitations
 
 Combobox does not support option grouping with headers. If you need categorized options, consider using a Select with optgroups or a custom grouped list. The popover uses virtual scrolling only when the number of options exceeds a threshold; extremely large lists may cause performance issues on initial render. The component does not provide built-in debouncing for async options filtering. When `allowCustomValue` is enabled, there is no built-in way to distinguish user-entered values from selected options after the fact.

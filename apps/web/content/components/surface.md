@@ -30,6 +30,14 @@ Applying elevation to every Surface on the page creates a flat-looking design wh
 
 Surface variants map to the theme's layer system: sunken uses the lowest background emphasis, raised uses the page background, and elevated uses a slightly lighter or darker shade depending on the theme. Border radius follows the system scale consistently across all surfaces. The `elevation` prop corresponds to shadow depth: zero for flat surfaces, increasing in both spread and blur for higher values. Background color, not shadow, is the primary differentiator between surface levels in dark themes where shadows are less perceptible.
 
+## Installation
+
+<Installation registryName="surface" />
+
+## API Reference
+
+<ApiReference />
+
 ## Limitations
 
 Surface does not handle scrolling — use Scroll Area as a child for scrollable content. The component does not support dynamic or interactive variants; hover and active states are not built in. Surface is purely a container and does not affect the layout or positioning of its children. Excessive use of different elevation levels within the same view can create visual inconsistency.

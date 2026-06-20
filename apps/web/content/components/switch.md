@@ -34,6 +34,22 @@ The switch track should be wide enough to clearly accommodate the thumb in both 
 
 Applying a Switch to control a single item within a list while the list also has a master toggle creates ambiguous parent-child relationships. Using a Switch without a label for icon-only settings panels assumes the icon alone communicates the setting's purpose.
 
+## Demo
+
+<DemoRenderer registryName="switch" />
+
+## Installation
+
+<Installation registryName="switch" />
+
+## API Reference
+
+<ApiReference />
+
+## Accessibility
+
+<Accessibility keyboard={["Enter", "Space"]} aria={["aria-checked", "aria-labelledby"]} />
+
 ## Limitations
 
 Switch does not support an indeterminate or mixed state — it is strictly binary. The component does not provide built-in label rendering; labels must be provided externally. Switch does not support form validation or error states since it represents a preference rather than validated input.

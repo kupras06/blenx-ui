@@ -28,6 +28,18 @@ Overusing alerts dilutes their impact. If every form submission produces an aler
 
 Alerts should occupy the full width of their container with sufficient padding to distinguish them from surrounding content. The left border accent and icon color should match the intent — green for success, amber for warning, red for error, blue for info. Text contrast within alerts must meet WCAG AA standards; do not reduce opacity on alert text for visual effect. Dismissible alerts should place the close button in the top-right corner, visually separated from the message content.
 
+## Installation
+
+<Installation registryName="alert" />
+
+## API Reference
+
+<ApiReference />
+
+## Accessibility
+
+<Accessibility aria={["role", "aria-live"]} />
+
 ## Limitations
 
 Alert does not support auto-dismiss behavior. If you need a notification that disappears after a timeout, use a toast implementation instead. Alerts do not stack; if multiple alerts need to appear simultaneously, render them as siblings in a container and manage layout manually. The component does not manage focus — when an alert appears dynamically, you must handle focus management yourself if the alert is critical.

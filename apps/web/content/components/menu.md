@@ -30,6 +30,18 @@ Nesting submenus beyond two levels creates a poor user experience — the menus 
 
 The menu surface uses elevated elevation tokens with a subtle shadow to indicate it sits above the page content. Item height matches the medium button height for consistency. Hover and focus states share the same visual treatment so mouse and keyboard users see the same feedback. The active state is a slightly darker shade of the hover background.
 
+## Installation
+
+<Installation registryName="menu" />
+
+## API Reference
+
+<ApiReference />
+
+## Accessibility
+
+<Accessibility keyboard={["ArrowUp", "ArrowDown", "Enter", "Escape"]} aria={["role", "aria-orientation"]} />
+
 ## Limitations
 
 Menu does not support virtualized lists, so very long item lists may overflow the viewport. Submenu positioning can become problematic near viewport edges despite flip logic — placing menus that open submenus away from the screen edge is recommended. The component does not provide built-in search or filtering for long lists of items.

@@ -28,6 +28,14 @@ Assuming all users understand color spaces. Preset colors and the visual picker 
 
 The popover should be wide enough to comfortably accommodate the saturation panel, hue slider, and input fields without scrolling. Preset swatches should be arranged in a grid with equal spacing and a visible border for white or light colors. The saturation-brightness panel should have a crosshair cursor indicating the current position. Input labels for HEX and RGB should be compact but clear. The trigger button should clearly display the current color with a checkerboard pattern for transparency if supported. All interactive elements within the popover should be keyboard accessible.
 
+## Installation
+
+<Installation registryName="colorpicker" />
+
+## API Reference
+
+<ApiReference />
+
 ## Limitations
 
 Color Picker does not support alpha/opacity channels. If you need transparency, extend the component externally or accept the color as RGBA with a separate opacity slider. The saturation-brightness panel uses a fixed gradient map and does not support custom gamuts or color spaces like LAB or CMYK. The component also does not provide color contrast ratio calculations or palette generation. For color blindness simulation or accessibility checking, the consumer must implement those features separately.

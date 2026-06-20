@@ -30,6 +30,18 @@ Showing a spinner overlaid on the entire page for a small data fetch creates an 
 
 The spinner color uses the current text color by default, adapting to the parent element's color context. The stroke width should be proportional to the size — thinner for small spinners, slightly thicker for large ones. The animation should use CSS transforms rather than animating SVG attributes for better performance. The spinner must not flicker or pulse — only rotation is permitted. The component should not have any background or padding of its own, fitting naturally within its parent.
 
+## Installation
+
+<Installation registryName="spinner" />
+
+## API Reference
+
+<ApiReference />
+
+## Accessibility
+
+<Accessibility aria={["role", "aria-label"]} />
+
 ## Limitations
 
 Spinner does not display determinate progress — use Progress for percentage-based indicators. The animation cannot be paused or stopped programmatically; visibility and rendering are controlled by the parent. The component does not provide built-in overlay or centering behavior — those must be handled by the parent layout container.

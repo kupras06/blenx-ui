@@ -28,6 +28,14 @@ Relying on Avatar as the sole identifier in lists. Users with identical initials
 
 Avatars should be uniformly sized within a given context — mixing 32px and 40px avatars in the same list looks unpolished. The status indicator should be a solid circle with a subtle ring that matches the background color to create a cutout effect. Group overlap should be consistent, typically exposing 60–70% of each adjacent avatar. Initials should use the same font weight as the surrounding text but in a color that provides sufficient contrast against the background fill.
 
+## Installation
+
+<Installation registryName="avatar" />
+
+## API Reference
+
+<ApiReference />
+
 ## Limitations
 
 Avatar does not support image cropping or editing workflows. It accepts pre-processed images only. The status indicator is purely visual and does not emit events or manage real-time presence data — integrate with your presence system separately. AvatarGroup has a maximum display count; exceeding this threshold shows a "+N" overflow indicator but does not provide interaction for viewing the full list.

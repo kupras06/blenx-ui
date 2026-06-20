@@ -30,6 +30,18 @@ Using a horizontal separator as a heading underline rather than dedicated typogr
 
 The separator line width follows the theme's border-width token. Color uses the border color token at the appropriate emphasis level for the chosen tone. Horizontal separators should span the full width of their container by default, with optional `inset` or `insetStart`/`insetEnd` margin variants. Vertical separators match the height of their container or a specified `length`. Margins above and below the separator should be consistent with the spacing scale relative to the content it divides.
 
+## Installation
+
+<Installation registryName="separator" />
+
+## API Reference
+
+<ApiReference />
+
+## Accessibility
+
+<Accessibility aria={["role", "aria-orientation"]} />
+
 ## Limitations
 
 Separator does not render a visible line when the container has no explicit height (vertical) or width (horizontal). The component does not support labels, icons, or text within the separator line — use a different pattern for titled dividers. The separator is purely visual and does not affect layout spacing; margins must be handled by the parent container.

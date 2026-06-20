@@ -28,6 +28,14 @@ Wrapping every element in a Box creates a deeply nested DOM tree that harms perf
 
 Box should not introduce any visual styles by default. It is a transparent wrapper that only applies what you explicitly define. When applying backgrounds, ensure contrast with foreground content meets WCAG standards. Responsive props should follow the same breakpoint order as the rest of the system — small, medium, large. Keep prop usage declarative and consistent; using `padding` instead of `paddingInline` when you mean horizontal padding introduces unnecessary specificity.
 
+## Installation
+
+<Installation registryName="box" />
+
+## API Reference
+
+<ApiReference />
+
 ## Limitations
 
 Box provides no layout logic of its own. It does not handle overflow, scrolling, or content visibility. Complex layouts with conditional rendering, sticky positioning, or overflow behavior require additional configuration. Box does not enforce accessibility requirements — a `div` with `onClick` is not a button. For interactive containers, use the appropriate semantic component instead. Box also does not participate in any state management or lifecycle patterns.

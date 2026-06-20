@@ -30,6 +30,22 @@ Loading all tab panel content simultaneously instead of lazy-loading visible pan
 
 The active tab indicator can be an underline, a filled background, or an outlined treatment — but it must be consistent across all tabs in the application. The indicator should animate smoothly when switching between tabs. Inactive tabs use a lower-emphasis text color and no background treatment. The tab panel should have sufficient padding to feel distinct from the tab list. Horizontal tabs are preferred for most layouts; vertical tabs should be reserved for settings panels with many categories.
 
+## Demo
+
+<DemoRenderer registryName="tabs" />
+
+## Installation
+
+<Installation registryName="tabs" />
+
+## API Reference
+
+<ApiReference />
+
+## Accessibility
+
+<Accessibility keyboard={["ArrowLeft", "ArrowRight", "Home", "End"]} aria={["role", "aria-orientation", "aria-selected", "aria-labelledby", "role"]} />
+
 ## Limitations
 
 Tabs does not support draggable reordering of tabs. The component does not provide overflow behavior for overflowing tab lists — tabs scroll horizontally or wrap, both of which are non-standard patterns. Closable tabs are not supported; for tab-closing patterns, implement custom tab management with dynamic tab lists. Nested tabs beyond two levels create confusing visual hierarchies and should be avoided.

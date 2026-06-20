@@ -28,6 +28,22 @@ Using the wrong weight variant for the context — fill icons in a toolbar compe
 
 Icons should align with the baseline of adjacent text. The icon bounding box should match the text line height at each size tier. Use consistent stroke weight across the same interface tier — toolbar icons should all use the same weight, as should navigation icons and inline indicators. Icon color should match the semantic intent of the surrounding text or control. Disabled icons should use the same reduced opacity as disabled text. The clickable area of an icon-only button should be larger than the icon itself, achieved through the parent Button's padding, not Icon's size.
 
+## Demo
+
+<DemoRenderer registryName="icon" />
+
+## Installation
+
+<Installation registryName="icon" />
+
+## API Reference
+
+<ApiReference />
+
+## Accessibility
+
+<Accessibility aria={["aria-hidden"]} />
+
 ## Limitations
 
 Icon only supports Phosphor icon library. Non-Phosphor SVGs cannot be used through the Icon component. The component does not support animated icons or icon spritesheets. Custom icon sizes outside the defined theme tokens must use raw CSS values and may not align with typography consistently. Icon also does not support multi-color icons beyond the single `color` prop — duotone and fill weights that use multiple colors are rendered as a single color override. For complex multi-color icons, render the SVG directly.

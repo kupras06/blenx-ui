@@ -30,6 +30,14 @@ Nesting splitters beyond two levels creates a confusing drag hierarchy where use
 
 The handle width should be generous enough to target easily — at least 8px for cursor-based interaction, wider for touch targets. The grip indicator should be subtle: a small ridge or dotted line centered in the handle area. The handle hover state should use a highlight color that indicates interactivity without being distracting. Panel backgrounds can optionally differ to visually distinguish content areas, especially in code-preview layouts. The collapse and expand animation should complete within 200 milliseconds.
 
+## Installation
+
+<Installation registryName="splitter" />
+
+## API Reference
+
+<ApiReference />
+
 ## Limitations
 
 Splitter only supports two panels at a time. Multi-panel layouts must be constructed through nesting, which can complicate state management. The component does not provide built-in responsive behavior — panels do not automatically stack on narrow viewports. Touch interaction with the handle can be imprecise on mobile devices due to the fine motor control required.

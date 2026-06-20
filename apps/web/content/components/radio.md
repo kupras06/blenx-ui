@@ -30,6 +30,18 @@ Using radios for a binary choice that could be a Switch is a missed opportunity 
 
 The radio indicator uses a filled circle for the selected state and an empty circle for the unselected state, following platform convention. The label text should be placed to the right of the indicator in left-to-right locales. Disabled radios reduce opacity and suppress the hover state. Focus-visible styles appear on the radio indicator, not the label, to follow native form control behavior.
 
+## Installation
+
+<Installation registryName="radio" />
+
+## API Reference
+
+<ApiReference />
+
+## Accessibility
+
+<Accessibility keyboard={["ArrowUp", "ArrowDown"]} aria={["aria-checked", "aria-labelledby"]} />
+
 ## Limitations
 
 Radio does not support deselection — once an option is selected, it cannot be unselected without selecting another option or explicitly resetting the group value. The component does not support inline error messages for individual radio options; validation is communicated at the group level. Custom radio indicator rendering is not supported; only the built-in circle indicator is available.

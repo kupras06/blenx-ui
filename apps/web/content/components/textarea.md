@@ -30,6 +30,14 @@ Setting `rows` to a single row defeats the purpose of a textarea and confuses us
 
 The textarea height should be sufficient to display at least three lines of text at the chosen font size. The padding and font size match the Input component of the corresponding size for consistency within forms. The resize handle should be visible and located at the bottom-right corner in left-to-right layouts. Validation colors and focus ring treatment match the Input component exactly, ensuring visual consistency across all form controls.
 
+## Installation
+
+<Installation registryName="textarea" />
+
+## API Reference
+
+<ApiReference />
+
 ## Limitations
 
 Textarea does not support rich text formatting, markdown preview, or WYSIWYG editing. The auto-resize feature may cause layout shifts when the textarea grows beyond its initial boundaries. Character count display does not enforce the limit — validation must be handled externally. The component renders a native `<textarea>` element, so browser-specific behaviors like spellcheck and autocorrect remain controlled by the user's browser settings.

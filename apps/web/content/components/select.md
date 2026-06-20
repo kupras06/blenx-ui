@@ -30,6 +30,22 @@ Using the placeholder as a de facto label leaves screen reader users without con
 
 The chevron icon uses the system's low-emphasis color to avoid competing with the selected value text. The custom dropdown surface elevation matches Menu and Popover for consistent layering. Option height is calibrated for comfortable touch targeting at the medium size. The focus ring applies to the trigger element and matches the Input focus ring treatment for visual consistency within forms.
 
+## Demo
+
+<DemoRenderer registryName="select" />
+
+## Installation
+
+<Installation registryName="select" />
+
+## API Reference
+
+<ApiReference />
+
+## Accessibility
+
+<Accessibility keyboard={["ArrowUp", "ArrowDown", "Enter", "Escape"]} aria={["role", "aria-expanded", "aria-labelledby"]} />
+
 ## Limitations
 
 The native variant offers limited customization — chevron icon and some padding are adjustable, but the dropdown appearance is controlled by the operating system. Multi-select is not supported; for multiple selections, use a Checkbox group or a Tag-based multi-select pattern. The custom variant does not support search or filtering of options, making it unsuitable for lists exceeding 30 items without an external search mechanism.

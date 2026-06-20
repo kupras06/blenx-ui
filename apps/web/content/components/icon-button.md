@@ -30,6 +30,22 @@ Icon buttons inherit the same color mapping as text buttons in the variant syste
 
 Using icon buttons for primary or sole navigation actions where labels improve discoverability is a frequent error. Another is neglecting focus-visible styles, which leaves keyboard users without a visible indication of the active element. Relying on title attributes instead of `aria-label` for accessibility also reduces screen reader compatibility.
 
+## Installation
+
+<Installation registryName="icon-button" />
+
+## API Reference
+
+<ApiReference />
+
+## Accessibility
+
+<Accessibility keyboard={["Enter", "Space"]} aria={["aria-label", "aria-disabled"]} />
+
+## Demo
+
+<DemoRenderer registryName="icon-button" />
+
 ## Limitations
 
 Icon buttons cannot accommodate text labels, making them unsuitable for actions that require verbal clarification. The fixed square aspect ratio may cause layout issues in containers with non-standard heights. Complex or multi-step actions should not be hidden behind an icon-only trigger.

@@ -28,6 +28,14 @@ Omitting the `name` prop breaks form serialization and accessibility references.
 
 Labels should use a font weight that is distinct from the input text — typically semibold or medium. The label and control should be vertically aligned when using horizontal layout. The space between the label and the control should be consistent across all field types. Error messages should use the danger intent color with an icon, and should appear in the same position for every field to prevent layout shift. Help text should use a smaller font size and a muted color. The required indicator (asterisk) should be the same color as the label and positioned immediately after the label text.
 
+## Installation
+
+<Installation registryName="field" />
+
+## API Reference
+
+<ApiReference />
+
 ## Limitations
 
 Field does not support inline validation with real-time error display as the user types — error messages are set externally. The component does not handle form-level validation logic or submission. Field also does not manage field grouping for radio groups or checkbox groups beyond wrapping each individual control — use a parent container with a group label for grouped controls. The horizontal layout may not be suitable for narrow viewports; responsive adjustments must be managed by the parent form layout.

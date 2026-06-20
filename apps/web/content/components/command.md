@@ -28,6 +28,22 @@ Overloading the command palette with every possible action creates noise and def
 
 The command palette should be centered on screen with a backdrop that dims the underlying content. The search input should be auto-focused when the palette opens. Search results should scroll within a fixed height container — typically showing six to eight visible items before scrolling. Active item highlighting should use the primary intent color for clear visual feedback. Group headers should be visually distinct from items using uppercase, smaller, or lighter text. The keyboard shortcut display should be right-aligned within each item.
 
+## Demo
+
+<DemoRenderer registryName="command" />
+
+## Installation
+
+<Installation registryName="command" />
+
+## API Reference
+
+<ApiReference />
+
+## Accessibility
+
+<Accessibility keyboard={["ArrowDown", "ArrowUp", "Enter", "Escape"]} aria={["role", "combobox", "listbox", "option", "aria-selected", "aria-expanded", "aria-haspopup"]} />
+
 ## Limitations
 
 Command does not support inline documentation or help text for items — the label and optional description must be self-explanatory. The component does not persist recently used or frequently used commands for ranking; items are always displayed in the defined order. Nested pages are limited to one level of depth — deeper hierarchies require custom implementation. Command also does not support async item loading; all items must be provided upfront.

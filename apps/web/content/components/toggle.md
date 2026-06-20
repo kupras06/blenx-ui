@@ -30,6 +30,18 @@ Using a Toggle where a Switch is more appropriate — switches are for settings,
 
 The pressed state should use a filled or colored treatment that clearly differentiates from the unpressed outline or ghost treatment. The transition between states should be instant since it represents an immediate mode change. Toggle height and width should match adjacent toolbar buttons for alignment. The active state should be visually contained within the button bounds, not expanding beyond the pressed state's footprint.
 
+## Installation
+
+<Installation registryName="toggle" />
+
+## API Reference
+
+<ApiReference />
+
+## Accessibility
+
+<Accessibility aria={["aria-pressed"]} />
+
 ## Limitations
 
 Toggle does not support intermediate or indeterminate states. The component does not provide a built-in label — labels must be provided externally as children or adjacent elements. Toggle is not suitable for mutually exclusive options within a group; use Toggle Group or Segmented Control for that pattern.

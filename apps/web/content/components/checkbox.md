@@ -28,6 +28,18 @@ Using Checkbox for a single binary option that takes immediate effect, like enab
 
 The checkbox box should be large enough to be easily clickable — minimum 20px by 20px at the default size. The checked and indeterminate states should use the primary intent color with a white checkmark or dash for contrast. Focus outlines should be visible around the entire control including the label, not just the box. Disabled checkboxes should reduce opacity but remain legible — the label should still be readable. Validation error styling should wrap both the checkbox and its label with a colored border or background rather than just the box.
 
+## Installation
+
+<Installation registryName="checkbox" />
+
+## API Reference
+
+<ApiReference />
+
+## Accessibility
+
+<Accessibility keyboard={["Space"]} aria={["aria-checked", "aria-labelledby"]} />
+
 ## Limitations
 
 Checkbox does not support a tri-state value API — the `checked` prop remains boolean, and indeterminate is managed separately. The component does not include a group-level state manager; you must manage the selected set in your parent component. Checkbox also does not handle native form submission — serialize state manually for form integration. The indeterminate state is purely visual and cannot be set as the default for an uncontrolled checkbox.

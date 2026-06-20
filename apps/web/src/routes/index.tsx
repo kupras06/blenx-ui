@@ -132,37 +132,37 @@ const comparisonRows: ComparisonRow[] = [
 
 const docLinks = [
   {
-    to: "/docs/installation" as const,
+    to: "installation",
     title: "Installation",
     desc: "Configure your project and install components.",
   },
   {
-    to: "/docs/styling" as const,
+    to: "styling",
     title: "Styling",
     desc: "How StyleX works in Blenx UI.",
   },
   {
-    to: "/docs/installation" as const,
+    to: "installation",
     title: "Components",
     desc: "Browse all available components.",
   },
   {
-    to: "/docs/theming" as const,
+    to: "theming",
     title: "Theming",
     desc: "Customize light and dark themes.",
   },
   {
-    to: "/docs/primitives" as const,
+    to: "primitives",
     title: "Primitives",
     desc: "Base UI component architecture.",
   },
   {
-    to: "/docs/primitives" as const,
+    to: "primitives",
     title: "Accessibility",
     desc: "WAI-ARIA compliance and keyboard navigation.",
   },
   {
-    to: "/docs/limitations" as const,
+    to: "limitations",
     title: "Limitations",
     desc: "Important constraints and tradeoffs.",
   },
@@ -454,7 +454,9 @@ function HomeComponent() {
                 size="large"
                 variant="solid"
                 radius="small"
-                render={<Link to="/docs/installation" />}
+                render={<Link to="/docs/$guide" params={{
+                  guide: 'getting-started'
+                }} />}
               >
                 Get Started <ArrowRightIcon weight="bold" />
               </Button>
@@ -462,7 +464,9 @@ function HomeComponent() {
                 size="large"
                 variant="outline"
                 radius="small"
-                render={<Link to="/docs/installation" />}
+                render={<Link to="/docs/$guide" params={{
+                  guide: 'installation'
+                }} />}
               >
                 Browse Components
               </Button>
@@ -661,7 +665,12 @@ function HomeComponent() {
             {docLinks.map((link) => (
               <Surface
                 key={link.to + link.title}
-                render={<Link to={link.to} />}
+                render={<Link
+                  to="/docs/$guide" params={{
+                    guide: link.to
+                  }}
+
+                />}
                 variant="outline"
                 padding="medium"
                 interactive
@@ -698,7 +707,9 @@ function HomeComponent() {
                 size="large"
                 variant="solid"
                 radius="small"
-                render={<Link to="/docs/installation" />}
+                 render={<Link to="/docs/$guide" params={{
+                  guide: 'installation'
+                }} />}
               >
                 Get Started <ArrowRightIcon weight="bold" />
               </Button>
@@ -706,7 +717,9 @@ function HomeComponent() {
                 size="large"
                 variant="outline"
                 radius="small"
-                render={<Link to="/docs/installation" />}
+                  render={<Link to="/docs/$guide" params={{
+                  guide: 'installation'
+                }} />}
               >
                 View Components
               </Button>

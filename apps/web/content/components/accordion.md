@@ -28,6 +28,22 @@ Putting essential CTAs inside collapsed panels is the most common misuse. Users 
 
 Use the accordion as a scannable content structure rather than a content-hiding mechanism. The visual design should distinguish between collapsed and expanded states through rotation of the chevron icon and subtle background or border changes on the active item. Padding inside panels should be generous enough to accommodate content without feeling cramped when expanded. Maintain consistent spacing between items — typically equal to or greater than the internal padding of a panel to reinforce the grouping.
 
+## Demo
+
+<DemoRenderer registryName="accordion" />
+
+## Installation
+
+<Installation registryName="accordion" />
+
+## API Reference
+
+<ApiReference />
+
+## Accessibility
+
+<Accessibility keyboard={["Enter", "Space"]} aria={["aria-expanded", "aria-controls", "aria-labelledby"]} />
+
 ## Limitations
 
 Accordion does not support virtualized panels. Rendering hundreds of sections with complex children will degrade performance, as all panel content mounts and unmounts based on open state. If you need to render a large list, prefer alternatives like tabs or a scrollable flat layout. The animation system relies on a known height for smooth transitions; dynamically sized content that changes after mount may cause visual jumps. In rare cases, you may need to trigger a remount to recalculate the animation bounds.

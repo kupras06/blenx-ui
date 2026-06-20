@@ -30,6 +30,14 @@ Using heading variants for text that is not a heading inflates the document outl
 
 The type scale uses a modular scale with consistent ratios between levels. Line height decreases as font size decreases: headings use tighter line height, body text uses more generous line height for readability. Font weight follows convention: headings use bold (600-700), body text uses regular (400), and captions may use medium (500) for readability at small sizes. Color contrast against all possible background surfaces must meet WCAG AA standards.
 
+## Installation
+
+<Installation registryName="text" />
+
+## API Reference
+
+<ApiReference />
+
 ## Limitations
 
 Text does not support multi-line clamping for truncation — only single-line truncation with ellipsis is available. The component does not handle rich text, markdown rendering, or HTML content. For formatted text blocks, render HTML or markdown separately and use Text for individual styled segments. Text cannot automatically detect and style links, emails, or phone numbers within content — external parsing is required.

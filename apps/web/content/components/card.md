@@ -28,6 +28,18 @@ Making every card on the page a different size and layout pattern creates visual
 
 Card borders should be subtle enough to define boundaries without competing with content. The border radius should match other surface-level components for consistency. Padding inside cards should follow a consistent rhythm — use the same token for header, body, and footer padding. Elevation (box-shadow) should be reserved for interactive cards that lift on hover; static informational cards should use a border instead. The title-to-description spacing should be tighter than the card's outer padding to reinforce the heading hierarchy.
 
+## Demo
+
+<DemoRenderer registryName="card" />
+
+## Installation
+
+<Installation registryName="card" />
+
+## API Reference
+
+<ApiReference />
+
 ## Limitations
 
 Card does not support collapsible or expandable sections internally — use Accordion within the body for that pattern. Cards have a fixed layout within their container; they do not reflow content based on viewport beyond standard responsive breakpoints. Card also does not manage overflow behavior — if content exceeds the card bounds, implement scrolling or truncation manually. Cards are not interactive by default; adding click handlers requires managing focus and keyboard interaction externally.

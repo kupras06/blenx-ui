@@ -30,6 +30,18 @@ Placing interactive content inside a popover that does not close automatically a
 
 The popover surface should be visually distinguishable from the page content through elevation shadow and background color, but should not obscure the trigger so much that the context is lost. Corner radius should match the surface component's default value. The arrow indicator, when enabled, should point to the center of the trigger along the relevant axis. Padding inside the popover follows the surface padding scale.
 
+## Installation
+
+<Installation registryName="popover" />
+
+## API Reference
+
+<ApiReference />
+
+## Accessibility
+
+<Accessibility keyboard={["Escape"]} aria={["role", "aria-labelledby", "aria-describedby"]} />
+
 ## Limitations
 
 Popovers are inherently ephemeral — content inside a popover is lost when it closes. Do not put forms inside popovers unless the form state is persisted externally. The component does not support nested popovers or coordinated multi-popover layouts. Complex positioning requirements, such as following a moving trigger element, are outside the scope of this component.

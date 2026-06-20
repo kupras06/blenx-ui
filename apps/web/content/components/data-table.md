@@ -28,6 +28,10 @@ Putting too many columns in the table forces horizontal scrolling that obscures 
 
 Table rows should have alternating or subtle hover backgrounds for readability. Column headers should be sticky when scrolling vertically. Sort indicators should clearly show the active sort direction with an arrow icon. Selected rows should have a distinct background color that is visible but not distracting. Pagination controls should show the total count and allow direct page input. The page size selector should offer options appropriate to the data density — 10, 25, 50, and 100 are standard. Loading states should preserve the table structure to prevent layout shift.
 
+## API Reference
+
+<ApiReference />
+
 ## Limitations
 
 DataTable does not support column reordering via drag-and-drop out of the box. Editable cells require custom implementation using the cell renderer pattern. Tree or hierarchical data with expandable rows is not supported natively. The infinite scroll mode does not support reverse scrolling for chat-like interfaces. DataTable also does not provide built-in export to CSV or Excel — implement export logic separately using the current data and column definitions. The virtualization layer activates only after a configurable row threshold; extremely large datasets may need manual virtualizer configuration.

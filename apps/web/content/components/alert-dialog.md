@@ -28,6 +28,22 @@ Using Alert Dialog for non-destructive actions dilutes its urgency. A "Success" 
 
 The Alert Dialog backdrop should be darker and less transparent than a standard Dialog backdrop to convey urgency. Center the dialog in the viewport and cap its width to prevent long line lengths that hinder readability of the message. The confirm button should align to the right, following the action—cancel order convention. Use danger color for the confirm button only when the action is destructive; for non-destructive confirmations, use the primary intent instead. Maintain generous padding around the message to give users space to read before acting.
 
+## Demo
+
+<DemoRenderer registryName="alert-dialog" />
+
+## Installation
+
+<Installation registryName="alert-dialog" />
+
+## API Reference
+
+<ApiReference />
+
+## Accessibility
+
+<Accessibility keyboard={["Escape"]} aria={["role", "aria-modal", "aria-labelledby", "aria-describedby"]} />
+
 ## Limitations
 
 Alert Dialog does not support nested interactive elements beyond the confirm and cancel buttons. It cannot be dismissed by clicking outside — only by explicit cancel or confirm actions. The component does not include an undo mechanism; if you need undo, design that into the underlying action rather than the dialog. Alert Dialog also requires a visible cancel option; a dialog with only a confirm button is a blocking modal and should be audited for accessibility compliance.

@@ -28,6 +28,18 @@ Displaying a zero count is misleading. If the count is zero, conditionally rende
 
 Badge overlap should be intentional but not obstructive. The offset should preserve readability of the parent element's content. Text badges require more horizontal padding than count badges due to variable character widths. The border radius should be fully rounded for count badges (pill shape) but slightly less rounded for text badges to differentiate their purpose. Maintain consistent badge placement across the application — users should learn to look for badges in predictable locations.
 
+## Demo
+
+<DemoRenderer registryName="badge" />
+
+## Installation
+
+<Installation registryName="badge" />
+
+## API Reference
+
+<ApiReference />
+
 ## Limitations
 
 Badge does not support animations for count changes. If you need animated transitions (e.g., a notification count incrementing), implement that through a separate animation wrapper. The overlay positioning assumes a single badge per parent element; multiple overlapped badges on the same element will conflict. Badge does not manage its own visibility — controlling when a badge appears or disappears is the consumer's responsibility.

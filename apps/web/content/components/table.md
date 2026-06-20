@@ -30,6 +30,22 @@ Placing interactive elements like buttons inside every table cell creates a nois
 
 Row height should be consistent within the table, with sufficient padding for touch targeting in action columns. Horizontal borders between rows provide clear separation without the visual weight of vertical borders between columns. Header cells use a subtle background that distinguishes them from data rows without competing with the content. The sort indicator icon uses the system's low-emphasis color when inactive and the brand color when the column is actively sorted.
 
+## Demo
+
+<DemoRenderer registryName="table" />
+
+## Installation
+
+<Installation registryName="table" />
+
+## API Reference
+
+<ApiReference />
+
+## Accessibility
+
+<Accessibility aria={["role", "aria-colcount"]} />
+
 ## Limitations
 
 Table does not support virtualized rendering — very large datasets (thousands of rows) will impact performance. The component does not provide built-in column resizing, drag-to-reorder, or column visibility controls. Inline editing within table cells is not supported; editing should be handled through an external mechanism like a Sheet or Dialog. Responsive behavior is limited to horizontal scrolling; tables do not automatically reflow into card layouts on small screens.

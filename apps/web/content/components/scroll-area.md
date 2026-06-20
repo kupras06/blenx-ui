@@ -30,6 +30,14 @@ Applying Scroll Area to the root document body is not supported — the componen
 
 The scrollbar thumb should use a low-emphasis color token with rounded corners for a polished appearance. Track width should be narrow — 6px to 8px — to minimize content occlusion. The hover state of the thumb should be slightly wider and more opaque to improve targeting. The corner where horizontal and vertical scrollbars meet should be visually handled, either by hiding it or rendering a consistent corner element.
 
+## Installation
+
+<Installation registryName="scroll-area" />
+
+## API Reference
+
+<ApiReference />
+
 ## Limitations
 
 Scroll Area does not support touch-device scrollbar customization on most mobile browsers, which ignore CSS scrollbar customization. The component does not provide scroll-to, scroll-into-view, or animated scrolling APIs — those must be implemented with the underlying DOM element ref. Custom scrollbar implementations can interfere with browser-level scrolling optimizations on some platforms.

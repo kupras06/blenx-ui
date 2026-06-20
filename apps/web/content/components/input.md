@@ -30,6 +30,18 @@ Relying on placeholder text as the sole label forces users to remember the expec
 
 The input height and padding are calibrated to match Button heights of the corresponding size, ensuring alignment when the two appear side by side. Validation colors use the same token palette as Alert components, maintaining visual consistency across feedback surfaces. Focus rings use a 2px offset outline with the theme's focus-ring color and should never be removed — they are critical for keyboard accessibility.
 
+## Demo
+
+<DemoRenderer registryName="input" />
+
+## Installation
+
+<Installation registryName="input" />
+
+## API Reference
+
+<ApiReference />
+
 ## Limitations
 
 Input renders a single native `<input>` element and does not support masking, formatting, or complex input composition out of the box. For password fields with visibility toggles, compose Input with an Icon Button inside an Input Group rather than relying on built-in functionality. The underlying DOM element is not abstracted, so native browser behaviors like autofill and spellcheck remain controlled by the browser.

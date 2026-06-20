@@ -30,6 +30,18 @@ Using a slider for a binary or trinary choice wastes interaction effort — a Se
 
 The track height should be thin relative to the thumb size so the thumb is the primary interactive target. The filled portion of the track uses the brand color to indicate the active selection, while the unfilled portion uses a low-emphasis surface color. The thumb should be large enough for touch interaction — at least 44x44 points. Focus-visible rings appear around the thumb during keyboard interaction. Tick marks should align with step positions and use a consistent height and color.
 
+## Installation
+
+<Installation registryName="slider" />
+
+## API Reference
+
+<ApiReference />
+
+## Accessibility
+
+<Accessibility keyboard={["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"]} aria={["role", "aria-valuenow", "aria-valuemin", "aria-valuemax"]} />
+
 ## Limitations
 
 Slider does not support non-linear scales or logarithmic ranges — the value distribution is always linear. Range mode cannot accommodate more than two thumbs. The component is not suitable for very large ranges where the user cannot meaningfully distinguish between adjacent values. Touch interaction can be imprecise on small screens, making the slider better suited for desktop and tablet viewports.

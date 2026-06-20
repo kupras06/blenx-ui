@@ -28,6 +28,14 @@ Forgetting to handle the case where no options match the query. Display a clear 
 
 The popover should match the input width to create a seamless visual connection between the field and the suggestion list. Highlight the matching substring in each suggestion to give users visual feedback on why an option appeared. The loading state should show a subtle spinner or skeleton inside the popover rather than a full-page loader. Keep the suggestion list to a reasonable height — five to eight visible items — and scroll the rest to avoid overwhelming the user.
 
+## Installation
+
+<Installation registryName="autocomplete" />
+
+## API Reference
+
+<ApiReference />
+
 ## Limitations
 
 Autocomplete does not support grouped options. If you need categorized suggestions, consider using Combobox instead. The virtualized list only activates when the option count exceeds a threshold, but extremely large datasets (tens of thousands) will still cause performance degradation on initial render. Async mode delegates debouncing to the consumer; the component does not provide a built-in debounce utility. Network errors during async search must be handled by the consumer — the component surfaces errors through the `onError` callback but does not retry automatically.

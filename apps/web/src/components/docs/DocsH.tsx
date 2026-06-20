@@ -9,12 +9,13 @@ const styles = stylex.create({
     opacity: {
       default: 0,
       ":hover": 1,
-      [stylex.when.ancestor(":hover")]: 1,
+      [stylex.when.ancestor(":hover")]: 0.7,
     },
     marginLeft: 8,
-    fontSize:"0.7em",  
-  fontWeight: 400,     verticalAlign: "middle",
-   color: {
+    fontSize: "0.7em",
+    fontWeight: 400,
+    verticalAlign: "middle",
+    color: {
       default: "color-mix(in srgb, var(--docs-heading-anchor) 65%, transparent)",
       ":hover": "var(--docs-heading-anchor-hover)",
     },

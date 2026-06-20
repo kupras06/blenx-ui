@@ -30,6 +30,18 @@ Assuming all codes are purely numeric locks out users whose authentication syste
 
 Each slot should be large enough to display the full character at the chosen size without clipping. The spacing between slots should be generous enough to visually distinguish individual positions while keeping the group visually cohesive. Focus ring treatment should apply only to the active slot, using the system's focus ring token for consistency with other form controls. Completed slots should maintain their default appearance to avoid implying a success state prematurely.
 
+## Demo
+
+<DemoRenderer registryName="otpfield" />
+
+## Installation
+
+<Installation registryName="otpfield" />
+
+## API Reference
+
+<ApiReference />
+
 ## Limitations
 
 OTP Field does not support fractional or partial paste — the pasted value must match the slot count exactly. It is not suitable for codes longer than 8 characters due to horizontal space constraints. The component assumes a linear input flow and does not support alternative entry methods like QR code scanning or deep-link code capture.

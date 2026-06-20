@@ -28,6 +28,14 @@ Forgetting to handle the case where the user types an invalid date — always va
 
 The input field should clearly show its purpose with a calendar icon on the right side. The selected date should be formatted in a human-readable pattern that matches the rest of the application. The popover arrow should point to the input field, creating a clear visual connection. The calendar should align with the input's left edge or center, depending on available space. On mobile, consider the popover position to avoid the calendar being cropped by the viewport edge. The "Today" button should be prominent for quick reset navigation.
 
+## Installation
+
+<Installation registryName="datepicker" />
+
+## API Reference
+
+<ApiReference />
+
 ## Limitations
 
 DatePicker does not support time selection — datetime inputs require composing DatePicker with a separate TimeInput. The component operates in the browser's local time zone; dates are always represented as local Date objects. The popover position is fixed and may overflow on small viewports if not configured with appropriate placement. DatePicker also does not support non-Gregorian calendars. The range selection mode requires two clicks for each range; drag-to-select is not supported.

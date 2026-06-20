@@ -30,6 +30,14 @@ Placing interactive elements inside the prefix or suffix that trigger unexpected
 
 The group container uses the same border radius and stroke color as the inner Input, with adornments visually inset to avoid doubling borders. The height of the group is determined by the Input size prop, and adornments are vertically centered. Padding inside adornments is tighter than the Input itself — typically 8px horizontal versus 12px for the input text area.
 
+## Installation
+
+<Installation registryName="inputgroup" />
+
+## API Reference
+
+<ApiReference />
+
 ## Limitations
 
 Input Group does not support adornments on both sides when the input is in a dense or compact size — the resulting field width is insufficient for meaningful text entry. The component does not handle adornment overflow: if the combined width of adornments and input exceeds the container, clipping occurs without scroll behavior.

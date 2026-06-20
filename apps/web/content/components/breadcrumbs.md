@@ -28,6 +28,18 @@ Using breadcrumbs as primary navigation is the most common mistake. Users rely o
 
 The breadcrumb separator should be visually lightweight — a simple character or small icon — to avoid competing with the actual links. The current page label should use the same text color as the page heading but a lighter font weight to distinguish it from ancestor links. Collapsed items should be indicated with an ellipsis that expands the full trail on click or hover. Ensure interactive breadcrumb items have a visible hover state and meet minimum touch target size on mobile. The entire breadcrumb component should be compact, typically occupying no more than 40px of vertical space.
 
+## Installation
+
+<Installation registryName="breadcrumbs" />
+
+## API Reference
+
+<ApiReference />
+
+## Accessibility
+
+<Accessibility aria={["aria-label", "aria-current"]} />
+
 ## Limitations
 
 Breadcrumbs does not support multi-line wrapping. If the full breadcrumb trail overflows, items are truncated rather than wrapped to the next line. The component does not provide automatic path generation — the breadcrumb hierarchy must be constructed and passed explicitly. Breadcrumbs also do not support context menus on intermediate items for quick sibling navigation; that pattern requires a custom implementation.

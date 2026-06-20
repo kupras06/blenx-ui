@@ -30,6 +30,14 @@ Applying margins directly to children inside a Stack defeats the purpose of the 
 
 Stack uses no background, border, or padding of its own — it is purely a layout container. Spacing gaps should follow the 4px or 8px grid system used throughout the theme. Wrapped HStacks should have consistent row gap and column gap values, not mixing gap values between the two axes. The default alignment is `center` for HStack (aligning items vertically) and `stretch` for VStack (making children fill the cross-axis width).
 
+## Installation
+
+<Installation registryName="stack" />
+
+## API Reference
+
+<ApiReference />
+
 ## Limitations
 
 Stack does not support responsive direction changes — an HStack cannot automatically become a VStack at a breakpoint. For that behavior, compose two Stack instances and show them conditionally or use CSS media queries externally. Stack does not provide grid capabilities; use CSS Grid or a grid component for two-dimensional layouts. The gap prop applies uniformly between all children — individual child spacing differences require wrapping children in intermediate containers.

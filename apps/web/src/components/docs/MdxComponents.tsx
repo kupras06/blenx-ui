@@ -14,6 +14,7 @@ import { Installation } from "./Installation";
 import * as stylex from "@stylexjs/stylex";
 import { theme } from "@blenx-dev/ui/lib/theme/contract.stylex";
 import { borderRadius, fontSize } from "@blenx-dev/ui/lib/theme/tokens.stylex";
+import { Spinner } from "@blenx-dev/ui/components";
 
 const inlineCodeStyles = stylex.create({
   code: {
@@ -117,6 +118,7 @@ const mdxComponents = {
   Installation,
   ApiReference: DocApiReference,
   Accessibility: DocAccessibility,
+  Spinner:Spinner
 };
 
 export { mdxComponents };

@@ -30,6 +30,14 @@ Using Toggle Group for single-selection when Segmented Control or Radio Group wo
 
 Toggle Group distributes space evenly among toggles for a balanced appearance. The spacing between toggles should be tighter than the spacing between groups to visually associate related toggles. Selected toggles should use a consistent active treatment across the group, using the same color and fill pattern. The group container itself has no background or border — the visual grouping is achieved through proximity and consistent heading placement.
 
+## Installation
+
+<Installation registryName="togglegroup" />
+
+## API Reference
+
+<ApiReference />
+
 ## Limitations
 
 Toggle Group does not support draggable reordering of its items. The component does not provide a select-all or deselect-all behavior — this must be implemented externally. The `single` selection mode does not allow deselection of the only selected item, which differs from Radio Group behavior. The group does not support mixed or indeterminate selection states.

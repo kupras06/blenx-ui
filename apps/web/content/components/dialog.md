@@ -28,6 +28,22 @@ Using Dialog for content that fits naturally on the page forces users into an un
 
 The backdrop should be semi-transparent, dark enough to provide visual separation but light enough that users can still perceive the page context. Dialog content should have consistent padding across header, body, and footer. The header border-bottom and footer border-top visually separate the content sections. The close button should be positioned in the top-right corner of the dialog header. Border radius should match other surface components. The dialog should be vertically centered in the viewport with a maximum height that leaves margin from the top and bottom edges.
 
+## Demo
+
+<DemoRenderer registryName="dialog" />
+
+## Installation
+
+<Installation registryName="dialog" />
+
+## API Reference
+
+<ApiReference />
+
+## Accessibility
+
+<Accessibility keyboard={["Escape"]} aria={["role", "aria-modal", "aria-labelledby", "aria-describedby"]} />
+
 ## Limitations
 
 Dialog does not support resizing or dragging. It cannot be minimized to reveal underlying content. Stacking multiple dialogs is not supported — only one dialog can be open at a time. Dialog also does not manage unsaved changes detection; implement before-close confirmation logic using `onOpenChange` if needed. The component renders in a portal and may require additional z-index configuration when used alongside other portal-based components.

@@ -28,6 +28,18 @@ Using Drawer for content that is better suited to Dialog — long forms with man
 
 The drawer should slide in with a smooth animation over 200–300ms. The backdrop should be present for right, left, and bottom drawers but can be omitted for top drawers used as notification panels. The content area should have adequate padding consistent with other Blenx surfaces. A subtle border or shadow on the leading edge of the drawer helps it feel like a surface sliding over the page. The close button should be in the header, consistent with Dialog placement. On mobile, drawers should typically use the full viewport width or height minus safe area insets.
 
+## Demo
+
+<DemoRenderer registryName="drawer" />
+
+## Installation
+
+<Installation registryName="drawer" />
+
+## API Reference
+
+<ApiReference />
+
 ## Limitations
 
 Drawer does not support resizing by the user. It cannot be converted to a floating panel or undocked from the viewport edge. Nesting drawers is not supported. Drawer does not persist open state across navigation — it must be managed at the page level. The slide animation uses CSS transforms and may conflict with other animated elements on the same compositing layer. Drawer also does not support swipe-to-dismiss gestures on touch devices; dismissal requires the close button, Escape key, or backdrop click.

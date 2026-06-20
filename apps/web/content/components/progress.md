@@ -30,6 +30,18 @@ Animating the progress bar from 0 to 100 without real progress data is deceptive
 
 The track color should use the lowest emphasis token to avoid competing with content. The fill color uses the brand or success token for positive connotation. Animation speed for indeterminate mode should be calm — fast animations create a sense of urgency. The corner radius of both track and fill should match to maintain a unified appearance. Border radius on the bar should be half the height for a pill shape.
 
+## Installation
+
+<Installation registryName="progress" />
+
+## API Reference
+
+<ApiReference />
+
+## Accessibility
+
+<Accessibility aria={["role", "aria-valuenow", "aria-valuemin", "aria-valuemax"]} />
+
 ## Limitations
 
 Progress does not support stacked or segmented progress bars — each instance tracks a single operation. The component does not provide built-in cancel or pause controls. Real-time progress updates require external state management; the component merely reflects the value it receives.

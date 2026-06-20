@@ -28,6 +28,14 @@ Applying background colors or borders to Container creates visual breakage becau
 
 Container should not have visible styles of its own — no background, border, or shadow. It is purely a layout constraint tool. The space between the container edge and the viewport edge should be consistent on all pages, achieved through Container's own padding or a parent element's padding. On mobile viewports, Container should effectively have no max-width constraint, allowing content to use the full screen width minus padding. The transition from constrained to full-width should occur smoothly at the defined breakpoint.
 
+## Installation
+
+<Installation registryName="container" />
+
+## API Reference
+
+<ApiReference />
+
 ## Limitations
 
 Container does not support negative margins or overflow behavior — it clips content that exceeds its bounds unless `overflow` is set separately. It also does not handle sticky positioning or z-index management. Container is not responsive in terms of switching between constrained and unconstrained modes — it always applies a max width. For sections that should be full-width on some breakpoints and constrained on others, implement custom logic or use the breakpoint props system.

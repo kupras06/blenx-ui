@@ -28,6 +28,14 @@ Relying on Color Swatch alone to convey information is the most common mistake. 
 
 The circular shape should have a consistent diameter relative to the accompanying text — typically the same height as the text or slightly larger. Borders on light colors should use a neutral gray that provides contrast without competing with the swatch color. Multiple swatches in a row should have equal gaps between them, typically matching the swatch radius. The swatch should be perfectly round — maintain a 1:1 aspect ratio. For a transparent or no-color state, display a subtle checkerboard pattern or a dashed outline.
 
+## Installation
+
+<Installation registryName="color-swatch" />
+
+## API Reference
+
+<ApiReference />
+
 ## Limitations
 
 Color Swatch does not support custom shapes beyond the default circle. It cannot display gradients or patterns — only solid colors. There is no built-in color format conversion; the component renders whatever CSS color string is provided. Color Swatch also does not validate color strings — invalid values render as transparent. The component has no interactive capabilities and no state management for selection or hover states.

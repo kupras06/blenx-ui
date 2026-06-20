@@ -28,6 +28,14 @@ Using Grid when Flexbox (Stack) would suffice for simple one-dimensional layouts
 
 Grid gaps should follow the theme's spacing scale for visual consistency with other layout components. Column counts should decrease predictably at breakpoints — a four-column grid becomes three, then two, then one, rather than jumping directly from four to one. Items in a grid should have consistent min-widths to prevent single-column items from becoming too wide on large screens. The grid should not introduce scrollbars unless explicitly configured — ensure items have appropriate overflow handling. Alignment properties should be used intentionally to create visual order, not as defaults for every grid.
 
+## Installation
+
+<Installation registryName="grid" />
+
+## API Reference
+
+<ApiReference />
+
 ## Limitations
 
 Grid does not support subgrid behavior — child grid items cannot inherit the parent grid's column tracks. If you need subgrid, apply a separate Grid definition to the child. The component does not support grid auto-flow with dense packing for masonry-style layouts — implement masonry patterns with a dedicated library. Grid also lacks support for named grid lines or areas as props; use CSS class overrides for advanced grid template areas. The component does not provide debugging tools for visualizing grid lines during development.
