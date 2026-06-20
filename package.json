@@ -24,7 +24,8 @@
     "build": "turbo build",
     "check-types": "turbo check-types",
     "dev:web": "turbo dev",
-    "check": "oxlint && oxfmt --write"
+    "check": "oxlint && oxfmt --write",
+    "generate:registry": "tsx scripts/generate-docs-manifest.ts"
   },
   "dependencies": {
     "@blenx-dev/env": "workspace:*",

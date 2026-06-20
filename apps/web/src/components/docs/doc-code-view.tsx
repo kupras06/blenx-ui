@@ -85,21 +85,25 @@ function DocCodeView({ code, title, language, files }: DocCodeViewProps) {
   return (
     <Surface variant="sunken" maxWidth="viewport">
       {isMultiFile ? (
-        <HStack justify="between" padding="xsmall" align="center">
-          <SegmentedControl
-            variant="default"
-            value={activeIndex.toString()}
-            radius="xsmall"
-            onValueChange={(value) => {
-              setActiveIndex(Number(value));
-              setHighlighted(null);
-            }}
-            options={activeFiles.map((file, idx) => ({
-              value: `${idx}`,
-              label: file.title || `File ${idx + 1}`,
-            }))}
-          />
-          <CopyButton value={activeFile.code} />
+        <HStack padding="xsmall" align="center" overflow="hidden">
+          <div style={{ overflowX: "auto", flex: 1, minWidth: 0, whiteSpace: "nowrap" }}>
+            <SegmentedControl
+              variant="default"
+              value={activeIndex.toString()}
+              radius="xsmall"
+              onValueChange={(value) => {
+                setActiveIndex(Number(value));
+                setHighlighted(null);
+              }}
+              options={activeFiles.map((file, idx) => ({
+                value: `${idx}`,
+                label: file.title || `File ${idx + 1}`,
+              }))}
+            />
+          </div>
+          <div style={{ flexShrink: 0 }}>
+            <CopyButton value={activeFile.code} />
+          </div>
         </HStack>
       ) : (
         <HStack justify="between" padding="xsmall" align="center">
