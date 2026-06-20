@@ -166,7 +166,9 @@ function RootDocument() {
 						</Box>
 					</Container>
 				</QueryClientProvider>
+				{!import.meta.dev ?
 				<Analytics />
+			: null}
 				<Scripts />
 			</body>
 		</html>

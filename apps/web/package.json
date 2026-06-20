@@ -10,6 +10,7 @@
   "dependencies": {
     "@base-ui/react": "^1.5.0",
     "@cloudflare/vite-plugin": "^1.26.0",
+    "@content-collections/mdx": "^0.2.2",
     "@phosphor-icons/react": "^2.1.10",
     "@shikijs/core": "^4.2.0",
     "@shikijs/engine-javascript": "^4.2.0",
