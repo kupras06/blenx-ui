@@ -52,7 +52,7 @@ function BlocksRouteOption() {
     <Button
       size="xsmall"
       variant={isBlocksActive ? "soft" : "ghost"}
-      render={<Link to="/blocks" />}
+      render={<Link to="/docs/blocks" />}
       nativeButton={false}
     >
       Blocks
@@ -152,9 +152,9 @@ function Header() {
   const isHomeActive = pathname === "/";
   return (
     <>
-      <Container size="full" paddingX="medium" paddingY="none">
+      <Container size="3xl" paddingY="none" paddingX="xxsmall">
         <HStack align="center" justify="between" paddingY="xsmall">
-          <HStack align="center" justify="between" gap="xxsmall">
+          <HStack align="center" justify="between" gap="xxsmall" paddingLeft="none">
             <ClientOnly>{isDocsActive && <DocsRouteSidebarOption />}</ClientOnly>
             <Link to="/" {...stylex.props(styles.logo, isHomeActive && styles.activeLink)}>
               <BrandLogo size={30} />

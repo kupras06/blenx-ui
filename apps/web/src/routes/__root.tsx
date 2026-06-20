@@ -9,7 +9,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { Header, ThemeEffect } from "@/components/header";
-import { Box, Container } from "@blenx-dev/ui/components";
+import { Container } from "@blenx-dev/ui/components";
 import { darkTheme } from "@/lib/app-theme.stylex";
 import { theme } from "@blenx-dev/ui/lib/theme/contract.stylex";
 import { fonts } from "@blenx-dev/ui/lib/theme/tokens.stylex";
@@ -155,12 +155,10 @@ function RootDocument() {
           <ThemeEffect />
         </ClientOnly>
         <QueryClientProvider client={queryClient}>
-          <Container size="full">
             <Header />
-            <Box render={<main />} grow>
+            <Container size={"3xl"} render={<main />} grow>
               <Outlet />
-            </Box>
-          </Container>
+            </Container>
         </QueryClientProvider>
         {!import.meta.dev ? <Analytics /> : null}
         <Scripts />

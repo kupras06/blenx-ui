@@ -2,6 +2,7 @@ import * as stylex from "@stylexjs/stylex";
 import { Link, useLocation } from "@tanstack/react-router";
 import { allGuides, allComponents } from "content-collections";
 import { Box, Surface, Text, VStack } from "@blenx-dev/ui/components";
+import { BlocksSidebar } from "./blocks-sidebar";
 
 interface SidebarLink {
   to: string;
@@ -68,6 +69,9 @@ function DocsSidebar({ onClose }: { onClose?: () => void }) {
     { title: "Components", links: componentLinks },
     ...staticSections,
   ];
+  const isBlockRoute = pathname.startsWith('/docs/blocks')
+  if (isBlockRoute)
+    return <BlocksSidebar />
 
   return (
     <Surface variant="sunken">

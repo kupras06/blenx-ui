@@ -31,9 +31,9 @@ const styles = stylex.create({
     border: `1px solid ${theme.border}`,
   },
   navLinkActive: {
-    backgroundColor: theme.surfacePrimary,
+    backgroundColor: theme.surface,
     color: theme.contentPrimary,
-    borderColor: theme.borderActive,
+    borderColor: theme.border,
   },
 });
 
@@ -75,7 +75,7 @@ function BlockVariantPage() {
             return (
               <Link
                 key={v._meta.path}
-                to="/blocks/$group/$variant"
+                to="/docs/blocks/$group/$variant"
                 params={{ group, variant: vSlug }}
                 {...stylex.props(styles.navLink, isActive && styles.navLinkActive)}
               >

@@ -23,35 +23,15 @@ function BlocksSidebar({ onClose }: { onClose?: () => void }) {
             .sort((a, b) => a.order - b.order);
           return (
             <Box key={group.slug}>
-              <Text variant="body2" weight="semibold">
-                {group.title}
-              </Text>
+              <Text variant={isActive ? "h4" : "h6"}>{group.title}</Text>
               <VStack gap="xxsmall">
-                <Surface
-                  variant={isActive ? "outline" : "sunken"}
-                  radius="small"
-                  paddingY="xxsmall"
-                  paddingX="xsmall"
-                  render={
-                    <Link
-                      {...stylex.props(styles.link)}
-                      to="/docs/blocks/$group"
-                      params={{ group: group.slug }}
-                      onClick={onClose}
-                    />
-                  }
-                >
-                  <Text variant="body2" color={isActive ? "primary" : "secondary"}>
-                    {group.title}
-                  </Text>
-                </Surface>
                 {variants.map((variant) => {
                   const vSlug = variant._meta.path.replace(`${group.slug}/`, "");
-                  const isVariantActive = pathname === `/blocks/${group.slug}/${vSlug}`;
+                  const isVariantActive = pathname === `/docs/blocks/${group.slug}/${vSlug}`;
                   return (
                     <Surface
                       key={variant._meta.path}
-                      variant={isVariantActive ? "outline" : "sunken"}
+                      variant={isVariantActive ? "default" : "sunken"}
                       radius="small"
                       paddingY="xxsmall"
                       paddingX="xsmall"
