@@ -17,15 +17,6 @@ Blenx is built around a different philosophy:
 - Accessibility built-in
 - StyleX-first architecture
 
-| Feature                     | Blenx | Traditional UI Libraries |
-| --------------------------- | ----- | ------------------------ |
-| Own the source code         | ✅    | ❌                       |
-| Copy into project           | ✅    | ❌                       |
-| Accessible primitives       | ✅    | Varies                   |
-| Fully customizable          | ✅    | Limited                  |
-| Registry-first distribution | ✅    | ❌                       |
-| StyleX-native               | ✅    | Rare                     |
-
 ## Features
 
 - ⚡ Registry-first component distribution
@@ -50,46 +41,13 @@ Blenx is built around a different philosophy:
 
 ## Core Components
 
-### Layout
-
-- Box
-- Stack
-- Grid
-- Container
-- Surface
-
-### Forms
-
-- Button
-- Input
-- Textarea
-- Checkbox
-- Radio Group
-- Select
-- Switch
-
-### Overlay
-
-- Dialog
-- Drawer
-- Popover
-- Tooltip
-
-### Navigation
-
-- Tabs
-- Accordion
-- Breadcrumb
-
-### Data Display
-
-- Avatar
-- Badge
-- Card
-- Alert
-- Skeleton
-
-More components are continuously being added.
+| Layout | Forms | Overlay | Navigation | Data Display |
+|----------|----------|----------|----------|----------|
+| Box | Button | Dialog | Tabs | Avatar |
+| Stack | Input | Drawer | Accordion | Badge |
+| Grid | Select | Popover | Breadcrumb | Card |
+| Container | Checkbox | Tooltip |  | Alert |
+| Surface | Switch |  |  | Skeleton |
 
 ## Philosophy
 
