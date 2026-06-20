@@ -12,6 +12,7 @@ import {
   resolveDisplayStyles,
   type BorderRadiusProp,
   type LayoutProps,
+  borderRadiusStyles,
 } from "@blenx-dev/ui/utils/layout.styles";
 import type { _BaseDivProps } from "@blenx-dev/ui/utils/stylex.utils";
 import { boxSizeStyles, boxStyles } from "./box.styles";
@@ -93,6 +94,8 @@ function Box({ render, ...props }: BoxProps) {
   const [boxProps, htmlProps] = splitBoxProps(props, BOX_PROP_KEYS);
   const paddingStyles = resolvePaddingStyles(boxProps);
   const marginStyles = resolveMarginStyles(boxProps);
+    const resolvedRadius = boxProps.borderRadius ?? boxProps.radius;
+  
   const displayStyles = resolveDisplayStyles(boxProps);
   const stylexProps = stylex.props(
     themeTransition.root,
@@ -104,6 +107,8 @@ function Box({ render, ...props }: BoxProps) {
     Boolean(boxProps.withBorder) && boxStyles.withBorder,
     ...paddingStyles,
     ...marginStyles,
+      resolvedRadius && borderRadiusStyles[resolvedRadius],
+
     ...displayStyles,
 
     boxProps.maxWidth && typeof boxProps.maxWidth === "number"

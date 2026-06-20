@@ -1,7 +1,6 @@
 "use client";
 
 import { CalendarBlankIcon } from "@phosphor-icons/react";
-import { format } from "date-fns";
 import { useRef, useState } from "react";
 import { Button } from "../Button/button";
 import { Calendar } from "../Calendar/calendar";
@@ -17,6 +16,7 @@ import {
 type Props = {
   value: Date | undefined;
   onChange: (date: Date | undefined) => void;
+  format?: (date: Date | undefined) => string;
   label?: string;
   placeholder?: string;
   error?: string;
@@ -27,6 +27,7 @@ export function DatePicker({
   value,
   onChange,
   label,
+  format,
   placeholder = "Pick a date",
   error,
   disabled,
@@ -58,7 +59,7 @@ export function DatePicker({
           render={<Button type="button" variant="outline" fullWidth />}
         >
           <CalendarBlankIcon size={18} />
-          {value ? format(value, "PPP") : placeholder}
+          {value ? format?.(value) ?? value.toString() : placeholder}
         </PopoverTrigger>
         <PopoverCompound.Portal>
           <PopoverPositioner sideOffset={6} side="bottom" align="start">

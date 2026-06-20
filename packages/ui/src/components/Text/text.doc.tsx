@@ -25,7 +25,6 @@ export function ColorsStory() {
     <Stack gap="small">
       <Text color="primary">Primary color</Text>
       <Text color="secondary">Secondary color</Text>
-      <Text color="accent">Accent color</Text>
       <Text color="disabled">Disabled color</Text>
       <Text color="error">Error color</Text>
     </Stack>

@@ -51,7 +51,7 @@ export function DataTablePagination<TData>({ table }: DataTablePaginationProps<T
             .map((page, idx, filtered) => {
               const pageIdx = page - 1;
               const isActive = pageIdx === pageIndex;
-              const showGap = idx > 0 && page - filtered[idx - 1] > 1;
+              const showGap = idx > 0 && (page - filtered[idx - 1]!) > 1;
               return (
                 <div key={`page-${page.toString()}`} {...stylex.props(styles.pageWrap)}>
                   {showGap && <span {...stylex.props(styles.ellipsis)}>...</span>}

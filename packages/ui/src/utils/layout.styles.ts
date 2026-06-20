@@ -4,10 +4,10 @@ import {
   bgColorStyles,
   colorStyles,
   zIndexStyles,
+  type ColorProps,
   type MarginProps,
   type PaddingProps,
 } from "./base.styles";
-import type { BoxProps } from "@/components/ui";
 
 export const displayStyles = stylex.create({
   block: { display: "block" },
@@ -268,13 +268,11 @@ export function resolveMarginStyles(marginProps: MarginProps) {
   ];
 }
 
-export function resolveDisplayStyles(boxProps: BoxProps) {
-  const resolvedRadius = boxProps.borderRadius ?? boxProps.radius;
+export function resolveDisplayStyles(boxProps: ColorProps & LayoutProps) {
   return [
     boxProps.color && colorStyles[boxProps.color],
     boxProps.backgroundColor && bgColorStyles[boxProps.backgroundColor],
     boxProps.zIndex && zIndexStyles[boxProps.zIndex],
-    resolvedRadius && borderRadiusStyles[resolvedRadius],
     boxProps.zIndex && zIndexStyles[boxProps.zIndex],
     boxProps.display && displayStyles[boxProps.display],
     boxProps.overflow && overflowStyles[boxProps.overflow],

@@ -1,9 +1,10 @@
 import { ClientOnly, createFileRoute, Outlet } from "@tanstack/react-router";
 import { useMediaQuery } from "@uidotdev/usehooks";
 import { DocsSidebar } from "@/components/docs-sidebar";
-import { DocTOC } from "@/components/docs/doc-toc";
+import { DocsToc } from "@/components/docs/DocsToc";
 import { Box, Container, HStack, ScrollArea, Sheet, SheetPopup } from "@blenx-dev/ui/components";
 import { useSidebarStore } from "@/stores/docs-sidebar";
+import { useDocsTocStore } from "@/stores/docs-toc";
 export const Route = createFileRoute("/docs")({
   component: DocsLayout,
 });
@@ -38,6 +39,11 @@ function RenderSidebarNavs() {
     </>
   );
 }
+function TocSection() {
+  const items = useDocsTocStore((st) => st.items);
+  return <DocsToc items={items} />;
+}
+
 function DocsLayout() {
   return (
     <Container padding="medium">
@@ -51,7 +57,7 @@ function DocsLayout() {
           </ScrollArea>
         </Box>
         <ClientOnly>
-          <DocTOC />
+          <TocSection />
         </ClientOnly>
       </HStack>
     </Container>

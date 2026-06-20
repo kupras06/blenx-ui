@@ -1,6 +1,7 @@
 import { defineCollection, defineConfig } from "@content-collections/core";
 import { compileMDX } from "@content-collections/mdx";
 import { z } from "zod";
+import { extractHeadings } from "./src/utils/extractHeadings";
 
 const NavigationMeta = z.object({
   group: z.enum(["components", "guides", "blocks"]),
@@ -14,6 +15,7 @@ const GuideSchema = z.object({
   category: z.enum(["Getting Started", "Guides", "Customization", "Advanced"]),
   keywords: z.array(z.string()).default([]),
   status: z.enum(["draft", "stable", "deprecated"]).default("stable"),
+  content: z.string(),
   navigation: NavigationMeta,
 });
 
@@ -23,6 +25,7 @@ const ComponentMetaSchema = z.object({
   description: z.string().optional().default(""),
   status: z.enum(["alpha", "beta", "stable", "deprecated"]).optional().default("stable"),
   keywords: z.array(z.string()).default([]),
+  content: z.string(),
   category: z
     .enum([
       "layout",
@@ -48,6 +51,7 @@ const BlockMetaSchema = z.object({
   status: z.enum(["alpha", "beta", "stable", "deprecated"]).optional().default("stable"),
   keywords: z.array(z.string()).default([]),
   navigation: NavigationMeta,
+  content: z.string(),
 });
 
 const components = defineCollection({
@@ -58,6 +62,7 @@ const components = defineCollection({
   transform: async (document, context) => ({
     ...document,
     mdx: await compileMDX(context, document),
+    toc: extractHeadings(document.content),
   }),
 });
 
@@ -69,6 +74,7 @@ const blocks = defineCollection({
   transform: async (document, context) => ({
     ...document,
     mdx: await compileMDX(context, document),
+    toc: extractHeadings(document.content),
   }),
 });
 
@@ -80,6 +86,7 @@ const guides = defineCollection({
   transform: async (document, context) => ({
     ...document,
     mdx: await compileMDX(context, document),
+    toc: extractHeadings(document.content),
   }),
 });
 

@@ -118,7 +118,7 @@ const mdxComponents = {
   Installation,
   ApiReference: DocApiReference,
   Accessibility: DocAccessibility,
-  Spinner:Spinner
+  Spinner: Spinner,
 };
 
 export { mdxComponents };

@@ -106,7 +106,7 @@ function calculateSizes(panelProps: SplitterPanelProps[], storageKey?: string): 
 
   for (let i = 0; i < count; i++) {
     const p = panelProps[i];
-    const sz = p.size ?? p.defaultSize;
+    const sz = p?.size ?? p?.defaultSize;
     if (sz != null) {
       result[i] = sz;
       usedSize += sz;
@@ -124,7 +124,7 @@ function calculateSizes(panelProps: SplitterPanelProps[], storageKey?: string): 
   const total = result.reduce((a, b) => a + b, 0);
   if (Math.abs(total - 100) > 0.01 && total > 0) {
     for (let i = 0; i < count; i++) {
-      result[i] = (result[i] / total) * 100;
+      result[i] = ((result[i] as number) / total) * 100;
     }
   }
 
@@ -230,8 +230,8 @@ export function Splitter({
         const deltaPct = (deltaPx / availablePx) * 100;
 
         const newSizes = [...startSizes];
-        let left = startSizes[handleIndex] + deltaPct;
-        let right = startSizes[handleIndex + 1] - deltaPct;
+        let left = (startSizes[handleIndex] ?? 0) + deltaPct;
+        let right = (startSizes[handleIndex + 1] ?? 0) - deltaPct;
 
         const cLeft = panelConstraintsRef.current[handleIndex];
         const cRight = panelConstraintsRef.current[handleIndex + 1];
@@ -304,8 +304,8 @@ export function Splitter({
 
       const currentSizes = sizesRef.current;
       const newSizes = [...currentSizes];
-      let left = currentSizes[handleIndex] + delta;
-      let right = currentSizes[handleIndex + 1] - delta;
+      let left = (currentSizes[handleIndex] ?? 0) + delta;
+      let right = (currentSizes[handleIndex + 1] ?? 0) - delta;
 
       const cLeft = panelConstraintsRef.current[handleIndex];
       const cRight = panelConstraintsRef.current[handleIndex + 1];
