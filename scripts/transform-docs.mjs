@@ -39,25 +39,25 @@ const SECTION_ORDER = [
 
 const REGISTRY_NAME_MAP = {
   "color-picker": "colorpicker",
+  "color-swatch": "color-swatch",
+  "data-table": "data-table",
   "date-picker": "datepicker",
   "icon-button": "icon-button",
   "input-group": "inputgroup",
   "otp-field": "otpfield",
-  "toggle-group": "togglegroup",
-  "segmented-control": "segmented-control",
   "scroll-area": "scroll-area",
-  "data-table": "data-table",
-  "color-swatch": "color-swatch",
+  "segmented-control": "segmented-control",
+  "toggle-group": "togglegroup",
 };
 
-const EXCLUDED_SECTIONS = ["Best Practices", "Common Mistakes"];
+const EXCLUDED_SECTIONS = new Set(["Best Practices", "Common Mistakes"]);
 
 function reorderSections(sections) {
   const known = {};
   const unknown = [];
 
   for (const [heading, content] of sections) {
-    if (EXCLUDED_SECTIONS.includes(heading)) {
+    if (EXCLUDED_SECTIONS.has(heading)) {
       continue;
     }
     if (SECTION_ORDER.includes(heading)) {
@@ -110,7 +110,7 @@ const files = readdirSync(DOCS_DIR).filter((f) => f.endsWith(".md"));
 
 for (const file of files) {
   const filepath = join(DOCS_DIR, file);
-  let content = readFileSync(filepath, "utf-8");
+  let content = readFileSync(filepath, "utf8");
 
   // Parse frontmatter
   const fmMatch = content.match(/^---\n([\s\S]*?)\n---\n/);
