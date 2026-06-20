@@ -15,9 +15,9 @@ import {
   borderRadiusStyles,
 } from "@blenx-dev/ui/utils/layout.styles";
 import type { _BaseDivProps } from "@blenx-dev/ui/utils/stylex.utils";
-import { boxSizeStyles, boxStyles } from "./box.styles";
+import { boxWidthStyles, boxStyles } from "./box.styles";
 
-type BoxSize = keyof typeof boxSizeStyles;
+type BoxSize = keyof typeof boxWidthStyles;
 type _BaseBoxPrpos = LayoutProps &
   SpacingProps &
   ColorProps & {
@@ -29,12 +29,21 @@ type _BaseBoxPrpos = LayoutProps &
     radius?: BorderRadiusProp;
     borderRadius?: BorderRadiusProp;
     withBorder?: boolean;
-    maxWidth?: BoxSize | number;
+    maxWidth?: BoxSize | number | string;
     style?: stylex.StyleXStyles;
   };
 type BoxProps = _BaseDivProps & _BaseBoxPrpos;
 
-const isBoxSize = (value: BoxSize | number): value is BoxSize => typeof value !== "number";
+const isBoxSize = (value: unknown): value is BoxSize =>
+  Object.keys(boxWidthStyles).includes(value as BoxSize);
+const resolveBoxWidthStyle = (value: BoxProps["maxWidth"]) => [
+  value ? boxStyles.fullWidth : null,
+  isBoxSize(value)
+    ? boxWidthStyles[value]
+    : typeof value === "number" || (typeof value === "string" && !isBoxSize(value))
+      ? boxStyles.maxWidth(value as number | string)
+      : null,
+];
 const BOX_PROP_KEYS = [
   ...new Set<keyof _BaseBoxPrpos>([
     "display",
@@ -94,9 +103,11 @@ function Box({ render, ...props }: BoxProps) {
   const [boxProps, htmlProps] = splitBoxProps(props, BOX_PROP_KEYS);
   const paddingStyles = resolvePaddingStyles(boxProps);
   const marginStyles = resolveMarginStyles(boxProps);
-    const resolvedRadius = boxProps.borderRadius ?? boxProps.radius;
-  
+  const resolvedRadius = boxProps.borderRadius ?? boxProps.radius;
+
   const displayStyles = resolveDisplayStyles(boxProps);
+  const appliedBoxWidthStyles = resolveBoxWidthStyle(boxProps.maxWidth);
+
   const stylexProps = stylex.props(
     themeTransition.root,
     boxStyles.root,
@@ -107,15 +118,9 @@ function Box({ render, ...props }: BoxProps) {
     Boolean(boxProps.withBorder) && boxStyles.withBorder,
     ...paddingStyles,
     ...marginStyles,
-      resolvedRadius && borderRadiusStyles[resolvedRadius],
-
+    resolvedRadius && borderRadiusStyles[resolvedRadius],
     ...displayStyles,
-
-    boxProps.maxWidth && typeof boxProps.maxWidth === "number"
-      ? boxStyles.maxWidth(boxProps.maxWidth)
-      : null,
-    boxProps.maxWidth && isBoxSize(boxProps.maxWidth) ? boxSizeStyles[boxProps.maxWidth] : null,
-    Boolean(boxProps.maxWidth) && boxStyles.fullWidth,
+    ...appliedBoxWidthStyles,
     boxProps.style,
   );
   const mergedProps = mergeProps(htmlProps, stylexProps);

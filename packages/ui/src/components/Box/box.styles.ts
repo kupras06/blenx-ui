@@ -26,12 +26,12 @@ export const boxStyles = stylex.create({
   shrink: {
     flexShrink: 0,
   },
-  maxWidth: (value: number) => ({
-    maxWidth: `${value}px`,
+  maxWidth: (value: number | string) => ({
+    maxWidth: value,
   }),
 });
 
-export const boxSizeStyles = stylex.create({
+export const boxWidthStyles = stylex.create({
   xxs: { maxWidth: 240 },
   xs: { maxWidth: 320 },
   sm: { maxWidth: 480 },
@@ -49,8 +49,12 @@ export const boxSizeStyles = stylex.create({
     width: "100%",
   },
   viewport: {
-    width: "100svw",
-    maxWidth: "100svw",
+    width: "90svw",
+    maxWidth: "90svw",
+  },
+  maxViewPort: {
+    width: "98svw",
+    maxWidth: "98svw",
   },
 });
 

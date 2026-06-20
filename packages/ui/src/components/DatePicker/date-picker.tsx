@@ -59,7 +59,7 @@ export function DatePicker({
           render={<Button type="button" variant="outline" fullWidth />}
         >
           <CalendarBlankIcon size={18} />
-          {value ? format?.(value) ?? value.toString() : placeholder}
+          {value ? (format?.(value) ?? value.toString()) : placeholder}
         </PopoverTrigger>
         <PopoverCompound.Portal>
           <PopoverPositioner sideOffset={6} side="bottom" align="start">

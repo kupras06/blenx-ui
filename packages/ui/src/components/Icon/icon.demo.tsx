@@ -43,7 +43,7 @@ export function IconDemo() {
           <Icon color="secondary">
             <PaperPlaneTiltIcon />
           </Icon>
-          <Icon >
+          <Icon>
             <PaperPlaneTiltIcon />
           </Icon>
           <Icon color="error">
