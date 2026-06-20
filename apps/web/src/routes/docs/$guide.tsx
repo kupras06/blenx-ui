@@ -1,18 +1,21 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, notFound } from "@tanstack/react-router";
 import { allGuides } from "content-collections";
 import { MDXContent } from "@content-collections/mdx/react";
 import { Box, Text, VStack } from "@blenx-dev/ui/components";
 import { DocHeading } from "@/components/docs/doc-heading";
 
-export const Route = createFileRoute("/docs/")({
-	component: DocsHome,
+export const Route = createFileRoute("/docs/$guide")({
+	component: GuideDoc,
+	notFoundComponent: () => <Text variant="h2">Guide not found</Text>,
 });
 
-function DocsHome() {
-	const overview = allGuides.find(
-		(g) => g._meta.path === "overview" || g.navigation.link === "/docs",
+function GuideDoc() {
+	const { guide } = Route.useParams();
+	const doc = allGuides.find(
+		(g) => g._meta.path === guide || g.navigation.link === `/docs/${guide}`,
 	);
-	const doc = overview ?? allGuides.sort((a, b) => a.navigation.order - b.navigation.order)[0];
+
+	if (!doc) throw notFound();
 
 	return (
 		<VStack gap="large">
