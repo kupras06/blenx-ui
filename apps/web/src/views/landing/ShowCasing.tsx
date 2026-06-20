@@ -1,0 +1,245 @@
+import {
+  AccordionHeader,
+  AccordionItem,
+  AccordionPanel,
+  AccordionRoot,
+  AccordionTrigger,
+  Alert,
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+  Badge,
+  Box,
+  Button,
+  Card,
+  CardBody,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogPanel,
+  DialogTitle,
+  DialogTrigger,
+  Grid,
+  HStack,
+  Input,
+  Surface,
+  Tabs,
+  TabsList,
+  TabsPanel,
+  TabsTab,
+  Text,
+  VStack,
+} from "@blenx-dev/ui/components";
+import { ArrowRightIcon, CheckIcon, FileCodeIcon, GearIcon } from "@phosphor-icons/react";
+
+function ShowcaseAccordion() {
+  return (
+    <AccordionRoot defaultValue={["item-1"]}>
+      <AccordionItem value="item-1">
+        <AccordionHeader>
+          <AccordionTrigger>What is Blenx UI?</AccordionTrigger>
+        </AccordionHeader>
+        <AccordionPanel>
+          <Box padding="small">
+            <Text variant="body2" color="secondary">
+              A registry-first React component library built with StyleX and Base UI.
+            </Text>
+          </Box>
+        </AccordionPanel>
+      </AccordionItem>
+      <AccordionItem value="item-2">
+        <AccordionHeader>
+          <AccordionTrigger>How do I install it?</AccordionTrigger>
+        </AccordionHeader>
+        <AccordionPanel>
+          <Box padding="small">
+            <Text variant="body2" color="secondary">
+              Use the shadcn CLI to add components directly to your project.
+            </Text>
+          </Box>
+        </AccordionPanel>
+      </AccordionItem>
+    </AccordionRoot>
+  );
+}
+function ShowcaseTabs() {
+  return (
+    <Tabs variant="underline" defaultValue="code">
+      <TabsList>
+        <TabsTab value="code">Code</TabsTab>
+        <TabsTab value="preview">Preview</TabsTab>
+      </TabsList>
+      <TabsPanel value="code">
+        <Box paddingY="small">
+          <Text variant="body2" color="secondary">
+            Install and customize components with zero configuration.
+          </Text>
+        </Box>
+      </TabsPanel>
+      <TabsPanel value="preview">
+        <Box paddingY="small">
+          <Text variant="body2" color="secondary">
+            Live preview of your components as you build.
+          </Text>
+        </Box>
+      </TabsPanel>
+    </Tabs>
+  );
+}
+function ShowcaseButtons() {
+  return (
+    <HStack gap="small" wrap>
+      <Button size="small" variant="solid">
+        Solid
+      </Button>
+      <Button size="small" variant="outline">
+        Outline
+      </Button>
+      <Button size="small" variant="ghost">
+        Ghost
+      </Button>
+    </HStack>
+  );
+}
+
+function ShowcaseInput() {
+  return (
+    <VStack gap="small" fullWidth>
+      <Input placeholder="Type something…" />
+      <HStack gap="small">
+        <Button size="small" variant="solid">
+          Submit
+        </Button>
+        <Button size="small" variant="ghost">
+          Cancel
+        </Button>
+      </HStack>
+    </VStack>
+  );
+}
+function ShowcaseAlert() {
+  return (
+    <VStack gap="xsmall" fullWidth>
+      <Alert variant="info" icon={<FileCodeIcon size={16} />}>
+        <Text variant="body3">Components are copied to your project.</Text>
+      </Alert>
+      <Alert variant="success" icon={<CheckIcon size={16} />}>
+        <Text variant="body3">Zero vendor lock-in guaranteed.</Text>
+      </Alert>
+      <Alert variant="warning" icon={<GearIcon size={16} />}>
+        <Text variant="body3">Fully customizable source code.</Text>
+      </Alert>
+    </VStack>
+  );
+}
+function ShowcaseAvatar() {
+  return (
+    <HStack gap="small" align="center">
+      <Avatar size="medium" radius="full">
+        <AvatarImage src="https://i.pravatar.cc/80?u=blenx" alt="User" />
+        <AvatarFallback>BL</AvatarFallback>
+      </Avatar>
+      <VStack gap="xxsmall">
+        <Text variant="body2" weight="semibold">
+          Blenx UI
+        </Text>
+        <Badge variant="primary">Active</Badge>
+      </VStack>
+    </HStack>
+  );
+}
+
+function ShowcaseCard() {
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>Quick Start</CardTitle>
+        <CardDescription>Get up and running in seconds.</CardDescription>
+      </CardHeader>
+      <CardBody>
+        <Text variant="body2" color="secondary">
+          Add components to your project with a single CLI command. No configuration required.
+        </Text>
+      </CardBody>
+      <CardFooter>
+        <Button size="small" variant="outline" fullWidth>
+          Learn more <ArrowRightIcon weight="bold" />
+        </Button>
+      </CardFooter>
+    </Card>
+  );
+}
+
+function ShowcaseDialog() {
+  return (
+    <Dialog>
+      <DialogTrigger render={<Button size="small" variant="outline" />}>Open Dialog</DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Confirm Action</DialogTitle>
+          <DialogDescription>Are you sure you want to proceed?</DialogDescription>
+        </DialogHeader>
+        <DialogPanel>
+          <Text variant="body2">
+            This demonstrates a working dialog component using Base UI and StyleX.
+          </Text>
+        </DialogPanel>
+        <DialogFooter>
+          <HStack gap="small" justify="end" wrap>
+            <DialogClose render={<Button size="small" variant="ghost" />}>Cancel</DialogClose>
+            <Button size="small">Confirm</Button>
+          </HStack>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+  );
+}
+const showcaseItems = [
+  { title: "Buttons", component: ShowcaseButtons },
+  { title: "Dialog", component: ShowcaseDialog },
+  { title: "Tabs", component: ShowcaseTabs },
+  { title: "Accordion", component: ShowcaseAccordion },
+  { title: "Card", component: ShowcaseCard },
+  { title: "Avatar & Badge", component: ShowcaseAvatar },
+  { title: "Alert", component: ShowcaseAlert },
+  { title: "Input", component: ShowcaseInput },
+];
+export function ShowCaseComponents() {
+  return (
+    <VStack gap="large">
+      <VStack gap="small" align="center">
+        <Text variant="h2" align="center" size="xlarge">
+          Components you'll actually use.
+        </Text>
+        <Box maxWidth={560}>
+          <Text variant="body2" color="secondary" align="center" size="large">
+            Production-ready components built with accessibility and customization in mind. All
+            interactive.
+          </Text>
+        </Box>
+      </VStack>
+      <Grid columns={3} gap="large">
+        {showcaseItems.map((item) => {
+          const DemoComponent = item.component;
+          return (
+            <Surface key={item.title} variant="outline" padding="medium">
+              <VStack gap="small">
+                <Text variant="body2" weight="semibold">
+                  {item.title}
+                </Text>
+                <DemoComponent />
+              </VStack>
+            </Surface>
+          );
+        })}
+      </Grid>
+    </VStack>
+  );
+}
