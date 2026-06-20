@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { DocHeading } from "@/components/docs/doc-heading";
-import { Box, CodeBlock, Separator, Text, VStack } from "@blenx-dev/ui/components";;
-
+import { Box, Separator, Text, VStack } from "@blenx-dev/ui/components";;
+import { CodeBlock } from "@/components/ui/CodeBlock/code-block";	
 export const Route = createFileRoute("/docs/limitations")({
 	component: LimitationsDoc,
 });

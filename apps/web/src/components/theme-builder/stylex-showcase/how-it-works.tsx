@@ -1,4 +1,5 @@
-import { Accordion, Box, CodeBlock, Text } from "@blenx-dev/ui/components";;
+import { CodeBlock } from "@/components/ui/CodeBlock/code-block";
+import { Accordion, Box, Text } from "@blenx-dev/ui/components";;
 
 const semanticCode = `// Semantic tokens (what you edit)
 export const theme = stylex.defineVars({
@@ -30,7 +31,7 @@ export function HowItWorks() {
 			<Accordion.Panel>
 				<Text variant="p">
 					Blenx UI uses{" "}
-					<Text variant="code" color="accent">
+					<Text variant="code" >
 						StyleX
 					</Text>{" "}
 					for its design system. StyleX compiles CSS at build time, enabling
@@ -41,15 +42,15 @@ export function HowItWorks() {
 						Semantic tokens
 					</Text>{" "}
 					(like{" "}
-					<Text variant="code" color="accent">
+					<Text variant="code" >
 						primary
 					</Text>
 					,{" "}
-					<Text variant="code" color="accent">
+					<Text variant="code" >
 						background
 					</Text>
 					) define the visual identity. These are declared with{" "}
-					<Text variant="code" color="accent">
+					<Text variant="code" >
 						stylex.defineVars()
 					</Text>
 					:
@@ -64,7 +65,7 @@ export function HowItWorks() {
 					(like font sizes, spacing) are design primitives that stay consistent
 					across themes:
 				</Text>
-				<Text variant="code" color="accent">
+				<Text variant="code" >
 					stylex.defineVars():
 				</Text>
 				<Box paddingY="medium">
@@ -73,12 +74,12 @@ export function HowItWorks() {
 				<Text variant="p">
 					When you customize tokens in the Theme Builder, the preview wraps
 					components in a{" "}
-					<Text variant="code" color="accent">
+					<Text variant="code" >
 						div
 					</Text>{" "}
 					with inline CSS custom properties that override the semantic var
 					values. This avoids{" "}
-					<Text variant="code" color="accent">
+					<Text variant="code" >
 						stylex.createTheme()
 					</Text>{" "}
 					at runtime (which must be a static call per StyleX rules).
@@ -86,7 +87,7 @@ export function HowItWorks() {
 				<Text variant="p">
 					To export your custom theme for use in your own project, use the
 					Export panel to generate a static{" "}
-					<Text variant="code" color="accent">
+					<Text variant="code" >
 						stylex.createTheme()
 					</Text>{" "}
 					call:

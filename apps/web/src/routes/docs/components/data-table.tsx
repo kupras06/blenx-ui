@@ -2,14 +2,13 @@ import { createFileRoute } from "@tanstack/react-router";
 import { DocHeading } from "@/components/docs/doc-heading";
 import {
 	Box,
-	CodeBlock,
 	Grid,
 	Separator,
 	Table,
 	Text,
 	VStack,
 } from "@blenx-dev/ui/components";;
-
+import { CodeBlock } from "@/components/ui/CodeBlock/code-block";	
 export const Route = createFileRoute("/docs/components/data-table")({
 	component: DataTableDoc,
 });

@@ -1,14 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { DocHeading } from "@/components/docs/doc-heading";
 import {
-	CodeBlock,
 	Grid,
 	Separator,
 	Surface,
 	Text,
 	VStack,
 } from "@blenx-dev/ui/components";;
-
+import { CodeBlock } from "@/components/ui/CodeBlock/code-block";	
 export const Route = createFileRoute("/docs/primitives")({
 	component: PrimitivesDoc,
 });

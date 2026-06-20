@@ -1,9 +1,8 @@
 import { CheckIcon, CopySimpleIcon } from "@phosphor-icons/react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { highlightCode } from "@/lib/syntax-highlight";
-import { Button } from "../Button/button";
-import { Box } from "../Box/box";
-import { Surface } from "../Surface/surface";
+import { Box, Button, Surface } from "@blenx-dev/ui/components";
+
 interface CodeBlockProps {
 	code: string;
 	language?: string;

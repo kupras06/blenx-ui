@@ -1,8 +1,6 @@
-import { Badge, CodeBlock } from "../ui";
-import { Separator } from "../ui/Separator/separator";
-import { HStack, VStack } from "../ui/Stack/stack";
-import { Text } from "../ui/Text/text";
+import { CodeBlock } from "@/components/ui/CodeBlock/code-block";
 import { DocCodeView } from "./doc-code-view";
+import { HStack, VStack ,Text,Separator,Badge} from "@blenx-dev/ui/components";
 
 interface RegistryFile {
 	target: string;
