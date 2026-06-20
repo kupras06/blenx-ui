@@ -1,6 +1,6 @@
 import * as stylex from "@stylexjs/stylex";
-import { VStack, HStack } from "@/components/ui/Stack/stack";
-import { Progress } from "@/components/ui/Progress/progress";
+import { VStack, HStack } from "@blenx-dev/ui/components/Stack/stack";
+import { Progress } from "@blenx-dev/ui/components/Progress/progress";
 import type { PropsWithStylex } from "@/utils/stylex.utils";
 import { skeletonStyles } from "./loading-state-01.styles";
 

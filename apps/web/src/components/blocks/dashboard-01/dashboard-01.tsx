@@ -1,10 +1,10 @@
-import { Button } from "@/components/ui/Button/button";
-import { Text } from "@/components/ui/Text/text";
-import { Card, CardBody, CardTitle } from "@/components/ui/Card/card";
-import { Table } from "@/components/ui/Table/table";
-import { Badge } from "@/components/ui/Badge/badge";
-import { Surface } from "@/components/ui/Surface/surface";
-import type { Column } from "@/components/ui/Table/table";
+import { Button } from "@blenx-dev/ui/components/Button/button";
+import { Text } from "@blenx-dev/ui/components/Text/text";
+import { Card, CardBody, CardTitle } from "@blenx-dev/ui/components/Card/card";
+import { Table } from "@blenx-dev/ui/components/Table/table";
+import { Badge } from "@blenx-dev/ui/components/Badge/badge";
+import { Surface } from "@blenx-dev/ui/components/Surface/surface";
+import type { Column } from "@blenx-dev/ui/components/Table/table";
 import type { PropsWithStylex } from "@/utils/stylex.utils";
 import { Container, Grid, HStack, VStack } from "@blenx-dev/ui/components";;
 

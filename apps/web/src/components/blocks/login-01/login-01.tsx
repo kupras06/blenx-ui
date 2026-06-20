@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/components/ui/Button/button";
-import { Input, Label } from "@/components/ui/Input/input";
-import { Text } from "@/components/ui/Text/text";
-import { Checkbox } from "@/components/ui/Checkbox/checkbox";
-import { Separator } from "@/components/ui/Separator/separator";
-import { Card, CardBody } from "@/components/ui/Card/card";
+import { Button } from "@blenx-dev/ui/components/Button/button";
+import { Input, Label } from "@blenx-dev/ui/components/Input/input";
+import { Text } from "@blenx-dev/ui/components/Text/text";
+import { Checkbox } from "@blenx-dev/ui/components/Checkbox/checkbox";
+import { Separator } from "@blenx-dev/ui/components/Separator/separator";
+import { Card, CardBody } from "@blenx-dev/ui/components/Card/card";
 import type { PropsWithStylex } from "@/utils/stylex.utils";
 import { Container, Field, FieldLabel, HStack, VStack } from "@blenx-dev/ui/components";;
 

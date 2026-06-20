@@ -10,6 +10,7 @@
   "dependencies": {
     "@base-ui/react": "^1.5.0",
     "@cloudflare/vite-plugin": "^1.26.0",
+    "@content-collections/mdx": "^0.2.2",
     "@phosphor-icons/react": "^2.1.10",
     "@shikijs/core": "^4.2.0",
     "@shikijs/engine-javascript": "^4.2.0",
@@ -36,11 +37,13 @@
     "react-day-picker": "^10.0.1",
     "react-dom": "^19.2.0",
     "shiki": "^4.2.0",
-    "zod": "^4.3.6",
+    "zod": "^4.4.3",
     "zustand": "^5.0.14",
     "zustand-utils": "^2.1.1"
   },
   "devDependencies": {
+    "@content-collections/core": "^0.15.2",
+    "@content-collections/vite": "^0.3.0",
     "@shikijs/types": "^4.2.0",
     "@stylexjs/babel-plugin": "^0.19.0",
     "@stylexjs/unplugin": "^0.19.0",

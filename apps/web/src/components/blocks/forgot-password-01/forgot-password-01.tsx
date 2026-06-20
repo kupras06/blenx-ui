@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/components/ui/Button/button";
-import { Input } from "@/components/ui/Input/input";
-import { Text } from "@/components/ui/Text/text";
-import { Card, CardBody } from "@/components/ui/Card/card";
+import { Button } from "@blenx-dev/ui/components/Button/button";
+import { Input } from "@blenx-dev/ui/components/Input/input";
+import { Text } from "@blenx-dev/ui/components/Text/text";
+import { Card, CardBody } from "@blenx-dev/ui/components/Card/card";
 import type { PropsWithStylex } from "@/utils/stylex.utils";
 import {
 	Box,

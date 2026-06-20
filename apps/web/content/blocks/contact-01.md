@@ -1,0 +1,33 @@
+---
+navigation:
+  group: blocks
+  order: 12
+---
+
+## Overview
+
+Contact-01 is a contact page block that pairs a standard inquiry form with an optional sidebar showing contact information such as email, phone, address, and social links. The form collects the sender's name, email address, subject line, and a message body in a textarea, with client-side validation on all fields before submission. The `onSubmit` callback receives the complete form payload and returns a promise, allowing the parent to handle AJAX form submission, redirect to a thank-you page, or trigger a confirmation toast. The information sidebar is rendered from a `contactInfo` prop that accepts structured data for the contact details, making it easy to localize or pull from a CMS. The form and sidebar adapt to a two-column layout on desktop and stack vertically on mobile, ensuring the contact form remains the primary interaction target on all devices.
+
+## When To Use
+
+Use contact-01 as the primary contact page for any business, SaaS product, or organization that needs to receive general inquiries from visitors. It is appropriate for customer support contact pages, sales inquiry forms, partnership request pages, and general "get in touch" pages. The sidebar information makes it especially useful for businesses with physical locations or multiple contact channels they want to promote alongside the form. Avoid using contact-01 when you need a support ticket system with category selection, priority levels, or file attachments — the block is designed for general inquiries only. It is also not suitable for pages that need an embedded chat widget or knowledge base search as the primary contact method rather than an email form.
+
+## Customization
+
+The `onSubmit` handler receives the form data as an object with `name`, `email`, `subject`, and `message` fields. The `contactInfo` prop accepts an optional object with `email`, `phone`, `address`, and `hours` fields, each displayed as a labeled row in the sidebar — omit the prop to hide the sidebar entirely and use the full width for the form. The `successMessage` prop controls the confirmation text shown after a successful submission, with a default of "Thank you for your message. We'll get back to you soon." Each form field's label and placeholder are customizable through string props like `nameLabel`, `namePlaceholder`, `emailLabel`, and so on. The `subjectOptions` prop accepts an array of predefined subject choices rendered as a `Select` dropdown, or you can omit it to use a free-text `Input` for the subject field.
+
+## Accessibility Notes
+
+The contact form uses proper `<form>` semantics with all inputs having associated `<label>` elements. The textarea includes `aria-describedby` linking to the character limit hint if one is configured (via a `maxMessageLength` prop). Error messages are associated to their respective inputs through `aria-describedby` and are announced by screen readers upon validation failure. The submit button transitions to a loading state with `aria-busy="true"` during submission and the label changes to "Sending..." The contact information sidebar uses definition list semantics (`<dl>`, `<dt>`, `<dd>`) for each contact detail, which provides a clear structure for screen reader navigation. Social links in the sidebar include the platform name in their accessible text rather than relying solely on an icon.
+
+## Composition
+
+Contact-01 composes a `Section` wrapper with a `Grid` that splits into two columns on desktop. The form column contains `Input` components for name, email, and subject, a `Textarea` for the message body, and a `Button` for submission. When `subjectOptions` is provided, the subject field renders as a `Select` component instead of a free-text `Input`. The information sidebar column contains a `Stack` of contact detail rows, each composed of an `Icon`, a `Text` label (bold), and a `Text` value. Social links render as a row of `IconButton` components or `Anchor` elements depending on whether you want just icons or labeled links. The success state replaces the form with a `CheckCircle` icon, a `Heading` confirmation message, and a `Text` follow-up note.
+
+## Best Practices
+
+Always show a clear success confirmation after form submission — the default behavior replaces the form with a thank-you message, but you can also redirect to a dedicated confirmation page via the `onSubmit` handler. Implement server-side honeypot fields or rate limiting on the submission endpoint since the block does not include bot protection. Provide the `contactInfo` sidebar whenever possible — users who visit a contact page often prefer alternative channels like phone or live chat, and proactively displaying those options reduces friction. Set `maxMessageLength` to something reasonable like 2000 characters and show a live character counter below the textarea so users know when they are approaching the limit.
+
+## Limitations
+
+Contact-01 does not support file uploads, CAPTCHA (reCAPTCHA, Turnstile, or hCaptcha), or structured support ticket fields like priority, category, or order number. The contact information sidebar supports a fixed set of fields and cannot be extended with custom data types without modifying the block. The form does not support multi-step flows — for example, first selecting a department and then showing department-specific fields. There is no draft persistence, so a user who accidentally navigates away loses their partially composed message. The block is not designed for high-volume support portals where ticket management, auto-responses, and SLA tracking are expected.

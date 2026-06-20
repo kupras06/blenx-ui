@@ -11,7 +11,6 @@ import {
 	SheetPopup,
 } from "@blenx-dev/ui/components";;
 import { useSidebarStore } from "@/stores/docs-sidebar";
-
 export const Route = createFileRoute("/docs")({
 	component: DocsLayout,
 });
