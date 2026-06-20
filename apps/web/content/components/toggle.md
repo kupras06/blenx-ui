@@ -1,4 +1,6 @@
 ---
+title: "Toggle"
+description: "Toggle provides a two-state button that switches between active and inactive visual states."
 navigation:
   group: components
   order: 48
@@ -6,7 +8,15 @@ navigation:
 
 ## Overview
 
-Toggle provides a two-state button that switches between active and inactive visual states. It communicates whether a feature, filter, or mode is currently enabled. Use toggles for toolbar mode switches, filter enablement, view option toggles, and feature flags in settings interfaces. Do not use toggles for actions with immediate side effects — use a Button for those. Toggles are for persistent state, not transient actions.
+Toggle provides a two-state button that switches between active and inactive visual states.  It communicates whether a feature, filter, or mode is currently enabled.  Use toggles for toolbar mode switches, filter enablement, view option toggles, and feature flags in settings interfaces.
+
+## Installation
+
+<Installation registryName="toggle" />
+
+## Source Code
+
+<SourceCode registryName="toggle" />
 
 ## Usage
 
@@ -18,21 +28,9 @@ Toggle renders as a button element that maintains a pressed state through `aria-
 
 Toggles frequently appear inside Toggle Groups for multi-selection patterns. In toolbar layouts, individual Toggles sit beside other toolbar controls like Icon Buttons and Selects. A single Toggle paired with a Text label forms a simplified Switch alternative for inline settings. Toggles are used inside Surface containers for filter panels, where each Toggle represents an active filter category. The HStack component arranges multiple toggles with consistent spacing.
 
-## Best Practices
-
-Clearly communicate what the toggled state means through visible label text or a tooltip. Use an icon alongside or instead of text only when the icon is universally understood in the application context. Provide a visual difference between pressed and unpressed states that does not rely on color alone — include shape, fill, or border changes as additional cues. Group related toggles using Toggle Group rather than placing individual toggles adjacent to each other.
-
-## Common Mistakes
-
-Using a Toggle where a Switch is more appropriate — switches are for settings, toggles are for toolbar modes and filters. A frequent error is not resetting toggle state when the user navigates away and returns, leaving stale filters active. Relying on color alone to distinguish pressed from unpressed states excludes users with color vision deficiencies.
-
 ## Design Guidelines
 
 The pressed state should use a filled or colored treatment that clearly differentiates from the unpressed outline or ghost treatment. The transition between states should be instant since it represents an immediate mode change. Toggle height and width should match adjacent toolbar buttons for alignment. The active state should be visually contained within the button bounds, not expanding beyond the pressed state's footprint.
-
-## Installation
-
-<Installation registryName="toggle" />
 
 ## API Reference
 

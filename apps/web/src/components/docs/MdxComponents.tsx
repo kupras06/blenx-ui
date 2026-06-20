@@ -6,10 +6,10 @@ import { DocsUl, DocsOl, DocsLi } from "./DocsList";
 import { DocsLink } from "./DocsLink";
 import { DocsTable } from "./DocsTable";
 import { CodeBlock } from "./CodeBlock";
-import { Callout } from "./Callout";
 import { DocApiReference } from "./doc-api-reference";
 import { DocAccessibility } from "./doc-accessibility";
 import { DocDemoRenderer } from "./doc-demo-renderer";
+import { DocSourceCode } from "./doc-source-code";
 import { Installation } from "./Installation";
 import * as stylex from "@stylexjs/stylex";
 import { theme } from "@blenx-dev/ui/lib/theme/contract.stylex";
@@ -113,9 +113,9 @@ const mdxComponents = {
   tr: Tr,
   th: Th,
   td: Td,
-  Callout,
   DemoRenderer: DocDemoRenderer,
   Installation,
+  SourceCode: DocSourceCode,
   ApiReference: DocApiReference,
   Accessibility: DocAccessibility,
   Spinner: Spinner,

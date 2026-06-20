@@ -1,4 +1,6 @@
 ---
+title: "Scroll Area"
+description: "Scroll Area provides a custom scrollbar wrapper that delivers consistent scrolling behavior and appearance across browsers and operating systems."
 navigation:
   group: components
   order: 33
@@ -6,7 +8,15 @@ navigation:
 
 ## Overview
 
-Scroll Area provides a custom scrollbar wrapper that delivers consistent scrolling behavior and appearance across browsers and operating systems. It addresses the problem of native scrollbar inconsistency — macOS overlays thin scrollbars that can be difficult to discover, while Windows renders wide, obtrusive scrollbars that disrupt layout. Use Scroll Area in code editors, chat panels, long lists, data tables, and any container where scrollable content meets custom-styled surfaces. Only apply it when the default browser scrollbar creates a visual or usability problem.
+Scroll Area provides a custom scrollbar wrapper that delivers consistent scrolling behavior and appearance across browsers and operating systems.  It addresses the problem of native scrollbar inconsistency — macOS overlays thin scrollbars that can be difficult to discover, while Windows renders wide, obtrusive scrollbars that disrupt layout.  Use Scroll Area in code editors, chat panels, long lists, data tables, and any container where scrollable content meets custom-styled surfaces.
+
+## Installation
+
+<Installation registryName="scroll-area" />
+
+## Source Code
+
+<SourceCode registryName="scroll-area" />
 
 ## Usage
 
@@ -18,21 +28,9 @@ The component wraps content inside a container that hides the native scrollbar a
 
 Scroll Area wraps practically any block-level content — Text blocks, Tables, Data lists, Chat message groups, and Code blocks. It is frequently used inside Surface containers where the native scrollbar would break the visual consistency of the border. In layout patterns with Splitter, both panels typically use Scroll Area to ensure consistent scroll behavior. The component does not affect layout sizing; it scrolls when the content overflows the defined dimensions.
 
-## Best Practices
-
-Set explicit dimensions on the Scroll Area container — without a defined height or width, the component has nothing to scroll against. Use overflow detection through CSS to decide when scrolling is necessary; Scroll Area applies `overflow: auto` to the internal viewport. Consider the scrollbar size impact on content width: the custom scrollbar consumes less space than native Windows scrollbars but more than macOS overlay scrollbars. Test scroll performance with large content sets to ensure the custom scrollbar implementation does not introduce jank.
-
-## Common Mistakes
-
-Applying Scroll Area to the root document body is not supported — the component requires a container with constrained dimensions. A common oversight is forgetting to handle horizontal overflow when content width exceeds the container, which results in hidden content without a visible scroll indicator. Overriding the scrollbar styles with CSS without understanding the component's internal DOM structure can break the scrollbar rendering.
-
 ## Design Guidelines
 
 The scrollbar thumb should use a low-emphasis color token with rounded corners for a polished appearance. Track width should be narrow — 6px to 8px — to minimize content occlusion. The hover state of the thumb should be slightly wider and more opaque to improve targeting. The corner where horizontal and vertical scrollbars meet should be visually handled, either by hiding it or rendering a consistent corner element.
-
-## Installation
-
-<Installation registryName="scroll-area" />
 
 ## API Reference
 

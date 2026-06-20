@@ -87,7 +87,7 @@ function DocsSidebar({ onClose }: { onClose?: () => void }) {
                       : pathname === link.to || pathname.startsWith(link.to + "/");
                 return (
                   <Surface
-                    variant={isActive ? "outline" : "sunken"}
+                    variant={isActive ? "default" : "sunken"}
                     radius="small"
                     paddingY="xxsmall"
                     paddingX="xsmall"

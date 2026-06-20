@@ -18,7 +18,7 @@ navigation:
 
 ## Overview
 
-Blenx is a headless-styled React component library built on StyleX. It uses a shadcn-style registry for distribution—meaning you own the code. Every component is installed directly into your project as source files, not imported from an opaque npm package. You get full control over styling, behavior, and bundling with zero lock-in.
+Blenx is a styled React component library built on StyleX. It uses a shadcn-style registry for distribution—meaning you own the code. Every component is installed directly into your project as source files, not imported from an opaque npm package. You get full control over styling, behavior, and bundling with zero lock-in.
 
 This guide walks through installation, project structure, adding your first component, and setting up your development workflow.
 

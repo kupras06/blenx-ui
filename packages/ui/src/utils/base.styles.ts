@@ -80,7 +80,7 @@ export type ColorProps = {
 
 export const themeTransition = stylex.create({
   root: {
-    transitionProperty: "background-color, border-color, color, box-shadow",
+    transitionProperty: "background-color, color, box-shadow",
     transitionDuration: "200ms",
     transitionTimingFunction: "ease",
   },

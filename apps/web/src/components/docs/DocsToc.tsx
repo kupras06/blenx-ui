@@ -53,7 +53,7 @@ const itemStyles = stylex.create({
     display: "block",
     paddingBlock: spacing["1"],
     paddingInlineEnd: spacing.small,
-    fontSize: fontSize.xsmall,
+    fontSize: fontSize.small,
     lineHeight: lineHeight.snug,
     color: theme.contentSecondary,
     textDecoration: "none",

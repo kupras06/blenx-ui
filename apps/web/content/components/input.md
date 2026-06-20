@@ -1,4 +1,6 @@
 ---
+title: "Input"
+description: "Input component captures single-line text from users."
 navigation:
   group: components
   order: 26
@@ -6,7 +8,19 @@ navigation:
 
 ## Overview
 
-The Input component captures single-line text from users. It serves as the foundational form control in Blenx, supporting variants, sizes, placeholder text, disabled state, and validation feedback. Use inputs for any scenario requiring short-form text entry — names, email addresses, search queries, URLs, or numeric values. Avoid inputs for multi-line content, formatted text, or cases requiring rich input masking beyond basic constraints.
+The Input component captures single-line text from users.  It serves as the foundational form control in Blenx, supporting variants, sizes, placeholder text, disabled state, and validation feedback.  Use inputs for any scenario requiring short-form text entry — names, email addresses, search queries, URLs, or numeric values.
+
+## Demo
+
+<DemoRenderer registryName="input" />
+
+## Installation
+
+<Installation registryName="input" />
+
+## Source Code
+
+<SourceCode registryName="input" />
 
 ## Usage
 
@@ -18,25 +32,9 @@ Input renders a native `<input>` element underneath with consistent styling appl
 
 Inputs are frequently paired with Input Group to add prefix or suffix adornments such as icons, buttons, or text labels. They work with the Surface component to provide contextual backgrounds in filters and search panels. Within forms, Inputs sit inside label-element wrappers and are often accompanied by Text components for hints or error messages. The `id` prop should match a corresponding `htmlFor` on the label for accessibility.
 
-## Best Practices
-
-Always associate a visible label with each input using the `id` and `htmlFor` pattern — placeholder text is not a substitute for a label. Use the appropriate `type` attribute (`email`, `url`, `tel`, `number`) to enable mobile keyboards and browser autofill. Maintain consistent sizing across a form by using the same `size` prop on all inputs in a group. Provide clear error messages that explain how to fix the problem, not just that a problem exists.
-
-## Common Mistakes
-
-Relying on placeholder text as the sole label forces users to remember the expected value after the placeholder disappears on input. Overriding browser-native validation with custom logic without considering accessibility is another common issue. Using the `number` type without handling the implications of `step`, `min`, and `max` values can produce unexpected form behavior.
-
 ## Design Guidelines
 
 The input height and padding are calibrated to match Button heights of the corresponding size, ensuring alignment when the two appear side by side. Validation colors use the same token palette as Alert components, maintaining visual consistency across feedback surfaces. Focus rings use a 2px offset outline with the theme's focus-ring color and should never be removed — they are critical for keyboard accessibility.
-
-## Demo
-
-<DemoRenderer registryName="input" />
-
-## Installation
-
-<Installation registryName="input" />
 
 ## API Reference
 

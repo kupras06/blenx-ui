@@ -53,7 +53,11 @@ const BlockMetaSchema = z.object({
   navigation: NavigationMeta,
   content: z.string(),
 });
-
+const TocItems = z.array(z.object({
+  depth: z.number(),
+  title: z.string(),
+  slug: z.string()
+}))
 const components = defineCollection({
   name: "components",
   directory: "content/components",
@@ -62,7 +66,7 @@ const components = defineCollection({
   transform: async (document, context) => ({
     ...document,
     mdx: await compileMDX(context, document),
-    toc: extractHeadings(document.content),
+    toc: TocItems.parse(extractHeadings(document.content))
   }),
 });
 
@@ -74,7 +78,7 @@ const blocks = defineCollection({
   transform: async (document, context) => ({
     ...document,
     mdx: await compileMDX(context, document),
-    toc: extractHeadings(document.content),
+    toc: TocItems.parse(extractHeadings(document.content))
   }),
 });
 
@@ -86,7 +90,7 @@ const guides = defineCollection({
   transform: async (document, context) => ({
     ...document,
     mdx: await compileMDX(context, document),
-    toc: extractHeadings(document.content),
+    toc: TocItems.parse(extractHeadings(document.content))
   }),
 });
 
