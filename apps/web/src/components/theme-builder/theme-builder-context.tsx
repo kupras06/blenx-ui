@@ -1,4 +1,4 @@
-import type { theme } from "@/lib/theme/contract.stylex";
+import type { theme } from "@blenx-dev/ui/lib/theme/contract.stylex";
 import { create } from "zustand";
 import { createContext } from "zustand-utils";
 

@@ -1,6 +1,6 @@
 import type { Column } from "@blenx-dev/ui/components";;
 import { Accordion, Table, Text } from "@blenx-dev/ui/components";;
-import { theme } from "@/lib/theme/contract.stylex";
+import { theme } from "@blenx-dev/ui/lib/theme/contract.stylex";
 import { componentTokenMap } from "../preview/component-token-map";
 import { useThemeBuilder } from "../theme-builder-context";
 
@@ -55,9 +55,9 @@ export function TokenTable() {
 	const rowData: TokenRow[] = displayTokens.map(({ key, label }) => {
 		const value =
 			key === "fontSize"
-				? tokens.baseFontSize
+				? tokens.fontSize
 				: key === "borderRadius"
-					? tokens.radius
+					? tokens.borderRadius
 					: (tokens[key as keyof typeof tokens]?.toString() ?? "-");
 
 		const components = Object.entries(componentTokenMap)
@@ -73,7 +73,7 @@ export function TokenTable() {
 			key: "label",
 			header: "Token",
 			cell: (row) => (
-				<Text variant="body3" color="accent">
+				<Text variant="body3" color="primary">
 					{row.label}
 				</Text>
 			),

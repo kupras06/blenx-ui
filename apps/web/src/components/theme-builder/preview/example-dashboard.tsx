@@ -23,8 +23,8 @@ import {
 	Text,
 	VStack,
 } from "@blenx-dev/ui/components";;
-import { theme } from "@/lib/theme/contract.stylex";
-import { fontSize, spacing } from "@/lib/theme/tokens.stylex";
+import { theme } from "@blenx-dev/ui/lib/theme/contract.stylex";
+import { fontSize, spacing } from "@blenx-dev/ui/lib/theme/tokens.stylex";
 
 const styles = stylex.create({
 	kpiGrid: {

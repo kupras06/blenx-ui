@@ -1,8 +1,8 @@
 import { memo } from "react";
 import * as stylex from "@stylexjs/stylex";
 import { Text } from "@blenx-dev/ui/components";;
-import { theme } from "@/lib/theme/contract.stylex";
-import { borderRadius, fontSize, spacing } from "@/lib/theme/tokens.stylex";
+import { theme } from "@blenx-dev/ui/lib/theme/contract.stylex";
+import { borderRadius, fontSize, spacing } from "@blenx-dev/ui/lib/theme/tokens.stylex";
 import { getComponentsForToken } from "../preview/component-token-map";
 import { useThemeBuilder } from "../theme-builder-context";
 

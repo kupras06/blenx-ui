@@ -7,7 +7,7 @@ import {
 import * as stylex from "@stylexjs/stylex";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { GITHUB_URL } from "@/constants";
-import { fontSize } from "@/lib/theme/tokens.stylex";
+import { fontSize } from "@blenx-dev/ui/lib/theme/tokens.stylex";
 import type { Column } from "@blenx-dev/ui/components/Table/table";
 import {
 	AccordionHeader,

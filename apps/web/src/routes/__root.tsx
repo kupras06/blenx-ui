@@ -11,8 +11,8 @@ import {
 import { Header, ThemeEffect } from "@/components/header";
 import { Box, Container } from "@blenx-dev/ui/components";;
 import { darkTheme } from "@/lib/app-theme.stylex";
-import { theme } from "@/lib/theme/contract.stylex";
-import { fonts } from "@/lib/theme/tokens.stylex";
+import { theme } from "@blenx-dev/ui/lib/theme/contract.stylex";
+import { fonts } from "@blenx-dev/ui/lib/theme/tokens.stylex";
 import appCss from "@/app.css?url";
 import { Analytics } from "@vercel/analytics/react"
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(

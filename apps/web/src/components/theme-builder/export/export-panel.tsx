@@ -12,7 +12,7 @@ import {
 	Text,
 	VStack,
 } from "@blenx-dev/ui/components";;
-import { theme } from "@/lib/theme/contract.stylex";
+import { theme } from "@blenx-dev/ui/lib/theme/contract.stylex";
 import { useThemeBuilder } from "../theme-builder-context";
 
 export function ExportPanel() {
@@ -38,9 +38,9 @@ export function ExportPanel() {
 			.map(([key]) => {
 				const value =
 					key === "fontSize"
-						? tokens.baseFontSize
+						? tokens.fontSize
 						: key === "borderRadius"
-							? tokens.radius
+							? tokens.borderRadius
 							: tokens[key as keyof typeof tokens]?.toString();
 				if (!value) return null;
 				return `    ${key}: "${value}",`;
@@ -101,7 +101,7 @@ ${themeEntries.join("\n")}
 					</VStack>
 
 					{copied === "stylex" && (
-						<Text color="accent">StyleX theme code copied to clipboard!</Text>
+						<Text color="primary">StyleX theme code copied to clipboard!</Text>
 					)}
 
 					<Separator />

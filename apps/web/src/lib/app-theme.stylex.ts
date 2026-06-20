@@ -1,5 +1,5 @@
-import { theme } from "@/lib/theme/contract.stylex";
-import { borderRadius } from "@/lib/theme/tokens.stylex";
+import { theme } from "@blenx-dev/ui/lib/theme/contract.stylex";
+import { borderRadius } from "@blenx-dev/ui/lib/theme/tokens.stylex";
 import * as stylex from "@stylexjs/stylex";
 
 const lightValues = {

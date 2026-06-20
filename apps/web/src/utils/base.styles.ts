@@ -1,7 +1,7 @@
 import * as stylex from "@stylexjs/stylex";
-import { theme } from "@/lib/theme/contract.stylex";
+import { theme } from "@blenx-dev/ui/lib/theme/contract.stylex";
 import type { paddingTopStyles } from "./layout.styles";
-import { zIndexVars } from "@/lib/theme/tokens.stylex";
+import { zIndexVars } from "@blenx-dev/ui/lib/theme/tokens.stylex";
 
 export const colorStyles = stylex.create({
 	primary: { color: theme.contentPrimary },

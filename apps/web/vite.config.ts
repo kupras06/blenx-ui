@@ -27,8 +27,7 @@ const config = defineConfig(({ command, mode }) => {
 				runtimeInjection: false,
 				aliases: {
 					"@/*": path.join(__dirname, "./src/*"),
-					"@/ui": path.join(__dirname, "./src/components/ui"),
-					"@/lib/theme/*": path.join(__dirname, "./src/lib/theme/*"),
+					"@blenx-dev/ui/*": path.join(__dirname, "../../packages/ui/src/*"),
 				},
 			}),
 			 contentCollections(),
