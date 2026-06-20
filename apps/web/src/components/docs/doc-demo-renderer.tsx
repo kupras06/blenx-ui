@@ -1,8 +1,7 @@
 import { lazy, Suspense } from "react";
 import { demoImports } from "@/docs-demo-registry";
-import { Separator } from "../ui/Separator/separator";
-import { Text } from "../ui/Text/text";
-import { VStack } from "../ui/Stack/stack";
+import { Separator, Text, VStack } from "@blenx-dev/ui/components";
+
 
 export interface DemoItem {
 	name: string;

@@ -6,7 +6,7 @@ import {
 	MenuSeparator,
 	MenuTrigger,
 } from "@blenx-dev/ui/components";;
-import { theme } from "@/lib/theme/contract.stylex";
+import { theme } from "@blenx-dev/ui/lib/theme/contract.stylex";
 import { ListIcon } from "@phosphor-icons/react";
 import * as stylex from "@stylexjs/stylex";
 import type { Table } from "@tanstack/react-table";

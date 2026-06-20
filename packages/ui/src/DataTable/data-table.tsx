@@ -27,9 +27,9 @@ import { DataTableLoading } from "./data-table-loading";
 import { DataTablePagination } from "./data-table-pagination";
 import { DataTableToolbar } from "./data-table-toolbar";
 import type { DataTableProps, RowAction, TableFeatures } from "./types";
-import { theme } from "@/lib/theme/contract.stylex";
-import { fontSize, fontWeight, spacing } from "@/lib/theme/tokens.stylex";
-import { Button, Spinner } from "../ui";
+import { theme } from "@blenx-dev/ui/lib/theme/contract.stylex";
+import { fontSize, fontWeight, spacing } from "@blenx-dev/ui/lib/theme/tokens.stylex";
+import { Button, Spinner } from "@blenx-dev/ui/components";
 
 // ─── Size constants ──────────────────────────────────────────────────────────
 

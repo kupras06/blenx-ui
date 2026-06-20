@@ -1,6 +1,6 @@
 import * as stylex from "@stylexjs/stylex";
-import { fontSize, theme } from "@/lib/theme/theme.stylex";
-import { Spinner } from "../ui";
+import { fontSize, theme } from "@blenx-dev/ui/lib/theme/theme.stylex";
+import { Spinner } from "@blenx-dev/ui/components";
 import type { TableSize } from "./types";
 
 interface DataTableLoadingProps {

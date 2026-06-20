@@ -5,10 +5,7 @@ import {
 	Button,
 	HStack,
 	ScrollArea,
-	SegmentedControl,
-	Surface,
-	Text,
-} from "../ui";
+	SegmentedControl, Surface, Text,  } from "@blenx-dev/ui/components";
 
 interface CodeFile {
 	code: string;

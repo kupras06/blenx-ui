@@ -1,6 +1,6 @@
 import { FolderOpenIcon } from "@phosphor-icons/react";
 import * as stylex from "@stylexjs/stylex";
-import { fontSize, spacing, theme } from "@/lib/theme/theme.stylex";
+import { fontSize, spacing, theme } from "@blenx-dev/ui/lib/theme/theme.stylex";
 
 interface DataTableEmptyProps {
 	/** Custom message to display */

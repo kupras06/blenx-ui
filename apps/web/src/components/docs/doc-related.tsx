@@ -1,7 +1,9 @@
 import * as stylex from "@stylexjs/stylex";
 import { useNavigate } from "@tanstack/react-router";
-import { Badge } from "../ui/Badge/badge";
-import { HStack } from "../ui/Stack/stack";
+import {
+	Badge,
+	HStack,
+	  } from "@blenx-dev/ui/components";
 
 const clickableBadge = stylex.create({
 	clickable: {

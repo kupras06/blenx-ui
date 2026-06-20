@@ -1,6 +1,6 @@
 import * as stylex from "@stylexjs/stylex";
-import { fontSize, spacing, theme } from "@/lib/theme/theme.stylex";
-import { Button, Spinner } from "../ui";
+import { Button, Spinner } from "@blenx-dev/ui/components";
+import { fontSize, spacing, theme } from "@blenx-dev/ui/lib/theme/theme.stylex";
 import type { InfiniteScrollConfig } from "./types";
 import { useInfiniteScroll } from "./use-infinite-scroll";
 

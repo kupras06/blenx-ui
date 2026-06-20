@@ -1,5 +1,5 @@
 import { Button, Input } from "@blenx-dev/ui/components";;
-import { spacing } from "@/lib/theme/tokens.stylex";
+import { spacing } from "@blenx-dev/ui/lib/theme/tokens.stylex";
 import * as stylex from "@stylexjs/stylex";
 import type { Table } from "@tanstack/react-table";
 import { DataTableColumnToggle } from "./data-table-column-toggle";
