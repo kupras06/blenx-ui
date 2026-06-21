@@ -1,4 +1,3 @@
-import { CodeBlock } from "@/components/ui/CodeBlock/code-block";
 import {
   Alert,
   Box,
@@ -13,6 +12,7 @@ import {
   VStack,
 } from "@blenx-dev/ui/components";
 import { FileCodeIcon } from "@phosphor-icons/react";
+import { CodeBlock } from "../docs/mdx-components/CodeBlock";
 
 const INSTALL_COMMAND = `npx shadcn@latest add https://blenx-ui.vercel.app/reg/button.json`;
 const features = [

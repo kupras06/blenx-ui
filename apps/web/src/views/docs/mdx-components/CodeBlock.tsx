@@ -67,19 +67,23 @@ function CodeBlock({
   }, [code]);
 
   return (
-    <Surface variant="sunken" borderRadius="medium">
-      <HStack
-        align="center"
-        justify="between"
-        paddingLeft="small"
-        paddingY="xxsmall"
-        paddingRight="xxsmall"
-      >
-        <Text variant="h6" color="secondary">
-          {title ? title : null}
-        </Text>
+    <Surface variant="sunken" borderRadius="medium" position="relative" paddingRight="xlarge">
+      {title ? (
+        <HStack
+          align="center"
+          justify="between"
+          paddingLeft="small"
+          paddingY="xxsmall"
+          paddingRight="xxsmall"
+        >
+          <Text variant="h6" color="secondary">
+            {title ? title : null}
+          </Text>
+        </HStack>
+      ) : null}
+      <Box position="absolute" top="xsmall" right="xsmall">
         <CopyButton padding="none" onClick={handleCopy} />
-      </HStack>
+      </Box>
       <Box
         style={styles.scroll}
         render={<div />}

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { highlightCode } from "@/lib/syntax-highlight";
 import {
+  Box,
   CopyButton,
   HStack,
   ScrollArea,
@@ -73,7 +74,7 @@ function DocCodeView({ code, title, language, files }: DocCodeViewProps) {
   const isMultiFile = activeFiles.length > 1;
 
   return (
-    <Surface variant="sunken" maxWidth="viewport">
+    <Surface variant="sunken" maxWidth="viewport" position="relative">
       {isMultiFile ? (
         <HStack padding="xsmall" align="center" overflow="hidden">
           <div style={{ overflowX: "auto", flex: 1, minWidth: 0, whiteSpace: "nowrap" }}>
@@ -91,9 +92,6 @@ function DocCodeView({ code, title, language, files }: DocCodeViewProps) {
               }))}
             />
           </div>
-          <div style={{ flexShrink: 0 }}>
-            <CopyHandler value={activeFile.code} />
-          </div>
         </HStack>
       ) : (
         <HStack justify="between" padding="xsmall" align="center">
@@ -105,9 +103,12 @@ function DocCodeView({ code, title, language, files }: DocCodeViewProps) {
             )}
             <Text variant="caption">{lang}</Text>
           </HStack>
-          <CopyButton value={activeFile.code} />
         </HStack>
       )}
+      <Box position="absolute" top="xsmall" right="xsmall">
+        <CopyHandler value={activeFile.code} />
+      </Box>
+
       <ScrollArea height="60svh">
         <div
           dangerouslySetInnerHTML={{

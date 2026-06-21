@@ -1,4 +1,4 @@
-import { CodeBlock } from "@/components/ui/CodeBlock/code-block";
+import { CodeBlock } from "@/views/docs/mdx-components/CodeBlock";
 import { Accordion, Box, Text } from "@blenx-dev/ui/components";
 
 const semanticCode = `// Semantic tokens (what you edit)

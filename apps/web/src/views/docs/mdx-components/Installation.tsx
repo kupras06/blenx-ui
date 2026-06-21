@@ -1,11 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import * as stylex from "@stylexjs/stylex";
-import { CodeBlock } from "@/components/ui/CodeBlock/code-block";
 import { Badge, HStack, Separator, Text, VStack } from "@blenx-dev/ui/components";
 import { theme } from "@blenx-dev/ui/theme/contract.stylex";
 import { borderRadius, fontSize } from "@blenx-dev/ui/theme/tokens.stylex";
 import { DocsH3 } from "./DocHeaders";
 import { docsQueries } from "@/lib/docs-api";
+import { CodeBlock } from "./CodeBlock";
 
 interface InstallationProps {
   registryName: string;
