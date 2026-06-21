@@ -8,7 +8,7 @@ import { accordionStyles } from "./accordion.styles";
 
 type AccordionRootProps = PropsWithStylex<AccordionPrimitive.Root.Props>;
 
-export function AccordionRoot({ children, style, ...props }: AccordionRootProps) {
+function AccordionRoot({ children, style, ...props }: AccordionRootProps) {
   return (
     <AccordionPrimitive.Root
       className={(state) => {
@@ -28,7 +28,7 @@ export function AccordionRoot({ children, style, ...props }: AccordionRootProps)
 
 type AccordionItemProps = PropsWithStylex<AccordionPrimitive.Item.Props>;
 
-export function AccordionItem({ children, style, ...props }: AccordionItemProps) {
+function AccordionItem({ children, style, ...props }: AccordionItemProps) {
   return (
     <AccordionPrimitive.Item
       className={(state) => {
@@ -48,7 +48,7 @@ export function AccordionItem({ children, style, ...props }: AccordionItemProps)
 
 type AccordionHeaderProps = PropsWithStylex<AccordionPrimitive.Header.Props>;
 
-export function AccordionHeader({ children, style, ...props }: AccordionHeaderProps) {
+function AccordionHeader({ children, style, ...props }: AccordionHeaderProps) {
   return (
     <AccordionPrimitive.Header
       className={stylex.props(accordionStyles.header, style).className ?? ""}
@@ -61,7 +61,7 @@ export function AccordionHeader({ children, style, ...props }: AccordionHeaderPr
 
 type AccordionTriggerProps = PropsWithStylex<AccordionPrimitive.Trigger.Props>;
 
-export function AccordionTrigger({ children, style, ...props }: AccordionTriggerProps) {
+function AccordionTrigger({ children, style, ...props }: AccordionTriggerProps) {
   return (
     <AccordionPrimitive.Trigger
       className={(state) => {
@@ -82,7 +82,7 @@ export function AccordionTrigger({ children, style, ...props }: AccordionTrigger
 
 type AccordionPanelProps = PropsWithStylex<AccordionPrimitive.Panel.Props>;
 
-export function AccordionPanel({ children, style, ...props }: AccordionPanelProps) {
+function AccordionPanel({ children, style, ...props }: AccordionPanelProps) {
   return (
     <AccordionPrimitive.Panel
       className={(state) => {
@@ -99,7 +99,14 @@ export function AccordionPanel({ children, style, ...props }: AccordionPanelProp
     </AccordionPrimitive.Panel>
   );
 }
-
+export { AccordionPanel, AccordionTrigger, AccordionHeader, AccordionItem, AccordionRoot };
+export type {
+  AccordionPanelProps,
+  AccordionTriggerProps,
+  AccordionHeaderProps,
+  AccordionItemProps,
+  AccordionRootProps,
+};
 export const Accordion = {
   Root: AccordionRoot,
   Item: AccordionItem,

@@ -19,6 +19,7 @@ export const demoImports: Record<string, () => Promise<Record<string, unknown>>>
   "signup-01": () => import("@/components/blocks/signup-01/signup-01.demo"),
   "verify-email-01": () => import("@/components/blocks/verify-email-01/verify-email-01.demo"),
   accordion: () => import("@blenx-dev/ui/components/Accordion/accordion.demo"),
+  alert: () => import("@blenx-dev/ui/components/Alert/alert.demo"),
   "alert-dialog": () => import("@blenx-dev/ui/components/AlertDialog/alert-dialog.demo"),
   badge: () => import("@blenx-dev/ui/components/Badge/badge.demo"),
   button: () => import("@blenx-dev/ui/components/Button/button.demo"),

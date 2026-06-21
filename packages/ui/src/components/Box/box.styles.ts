@@ -11,7 +11,7 @@ export const boxStyles = stylex.create({
     borderWidth: "1px",
     borderStyle: "solid",
     borderRadius: theme.borderRadius,
-    borderColor: theme.border,
+    borderColor: "inherit",
   },
   fullWidth: {
     width: "100%",

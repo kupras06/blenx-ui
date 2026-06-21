@@ -16,12 +16,21 @@ export const colorStyles = stylex.create({
 export const bgColorStyles = stylex.create({
   primary: { backgroundColor: theme.primary },
   secondary: { backgroundColor: theme.secondary },
-  surface: { backgroundColor: theme.surface },
   disabled: { backgroundColor: theme.surfaceSubtle },
   error: { backgroundColor: theme.sentimentNegativeSubtle },
   success: { backgroundColor: theme.sentimentPositiveSubtle },
   warning: { backgroundColor: theme.sentimentWarningSubtle },
   info: { backgroundColor: theme.sentimentInfoSubtle },
+});
+
+export const borderColorStyles = stylex.create({
+  primary: { borderColor: theme.primary },
+  secondary: { borderColor: theme.secondary },
+  disabled: { borderColor: theme.surfaceSubtle },
+  error: { borderColor: theme.sentimentNegativeSubtle },
+  success: { borderColor: theme.sentimentPositiveSubtle },
+  warning: { borderColor: theme.sentimentWarningSubtle },
+  info: { borderColor: theme.sentimentInfoSubtle },
 });
 export const zIndexStyles = stylex.create({
   base: {
@@ -76,6 +85,7 @@ export type SpacingProps = PaddingProps & MarginProps;
 export type ColorProps = {
   color?: keyof typeof colorStyles;
   backgroundColor?: keyof typeof bgColorStyles;
+  borderColor?: keyof typeof bgColorStyles;
 };
 
 export const themeTransition = stylex.create({

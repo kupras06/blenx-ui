@@ -4,6 +4,8 @@ import { spacing } from "#theme/tokens.stylex";
 export const stackDirectionStyles = stylex.create({
   column: { flexDirection: "column" },
   row: { flexDirection: "row" },
+  "row-inverse": { flexDirection: "row-reverse" },
+  "column-inverse": { flexDirection: "column-reverse" },
 });
 
 export const stackGapStyles = stylex.create({

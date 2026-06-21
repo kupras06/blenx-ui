@@ -10,6 +10,10 @@ navigation:
 
 The Alert component delivers contextual feedback messages to users in response to an action or system event. It supports four intents — info, success, warning, and error — each with distinct color mapping and iconography to communicate severity at a glance. Use alerts to confirm successful operations, warn about potential issues, notify users of state changes, or surface errors that need attention.
 
+## Demo
+
+<DemoRenderer registryName="alert" />
+
 ## Installation
 
 <Installation registryName="alert" />

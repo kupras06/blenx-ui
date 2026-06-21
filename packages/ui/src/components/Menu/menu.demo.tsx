@@ -32,3 +32,9 @@ export function DefaultStory() {
     </Menu>
   );
 }
+export const demos = [
+  {
+    name: "Default",
+    component: DefaultStory,
+  },
+];

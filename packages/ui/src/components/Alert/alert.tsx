@@ -1,16 +1,19 @@
-import { mergeProps, useRender } from "@base-ui/react";
+import { mergeProps } from "@base-ui/react";
 import * as stylex from "@stylexjs/stylex";
 import type { ReactNode } from "react";
-import type { PropsWithStylex } from "#utils/stylex.utils";
-import { alertStyles, alertVariantStyles } from "./alert.styles";
+import type { _BaseDivProps } from "#utils/stylex.utils";
+import { type BoxProps } from "../Box/box";
+import { HStack, VStack } from "../Stack/stack";
+import { Text } from "../Text";
+import type { ColorProps } from "#utils/base.styles";
 
-export type AlertVariant = keyof typeof alertVariantStyles;
-
-type Props = PropsWithStylex<useRender.ComponentProps<"div">> & {
+type Props = BoxProps & {
   /** Visual variant of the alert */
-  variant?: AlertVariant;
+  variant?: ColorProps["backgroundColor"];
   /** Optional icon to display */
   icon?: ReactNode;
+  title?: string;
+  description?: string;
 };
 
 /**
@@ -19,31 +22,34 @@ type Props = PropsWithStylex<useRender.ComponentProps<"div">> & {
  * Supports `info`, `success`, `warning`, and `error` variants.
  * Optionally accepts an `icon` rendered before the message content.
  */
-export function Alert({ variant = "info", icon, style, render, children, ...props }: Props) {
-  const sx = stylex.props(alertStyles.root, alertVariantStyles[variant], style);
-  const merged = mergeProps(
-    props,
-    {
-      children: (
-        <>
-          {icon && <span {...stylex.props(alertIconStyles.root)}>{icon}</span>}
-          <span {...stylex.props(alertIconStyles.content)}>{children}</span>
-        </>
-      ),
-    },
-    sx,
+function Alert({ variant = "info", icon, style, title, description, children, ...props }: Props) {
+  const sx = stylex.props(style);
+  const merged = mergeProps(props, sx);
+  return (
+    <HStack
+      padding="small"
+      align={icon ? "start" : "center"}
+      {...merged}
+      color={variant}
+      backgroundColor={variant}
+      borderColor={variant}
+    >
+      {icon}
+      <VStack gap="none">
+        {title ? (
+          <Text variant="h6" padding="none" margin="none" color={variant}>
+            {title}
+          </Text>
+        ) : null}
+        {description ? (
+          <Text span color={variant} weight="regular">
+            {description}
+          </Text>
+        ) : null}
+        {children}
+      </VStack>
+    </HStack>
   );
-  return useRender({ defaultTagName: "div", props: merged, render });
 }
 
-const alertIconStyles = stylex.create({
-  root: {
-    flexShrink: 0,
-    display: "flex",
-    alignItems: "center",
-    lineHeight: 0,
-  },
-  content: {
-    flex: 1,
-  },
-});
+export { Alert };

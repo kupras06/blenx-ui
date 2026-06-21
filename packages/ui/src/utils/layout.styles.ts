@@ -2,6 +2,7 @@ import * as stylex from "@stylexjs/stylex";
 import { borderRadius, spacing } from "#theme/tokens.stylex";
 import {
   bgColorStyles,
+  borderColorStyles,
   colorStyles,
   zIndexStyles,
   type ColorProps,
@@ -272,6 +273,7 @@ export function resolveDisplayStyles(boxProps: ColorProps & LayoutProps) {
   return [
     boxProps.color && colorStyles[boxProps.color],
     boxProps.backgroundColor && bgColorStyles[boxProps.backgroundColor],
+    boxProps.borderColor && borderColorStyles[boxProps.borderColor],
     boxProps.zIndex && zIndexStyles[boxProps.zIndex],
     boxProps.zIndex && zIndexStyles[boxProps.zIndex],
     boxProps.display && displayStyles[boxProps.display],
