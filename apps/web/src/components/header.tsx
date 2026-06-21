@@ -160,8 +160,8 @@ function Header() {
   const isHomeActive = pathname === "/";
   return (
     <>
-      <Container size="3xl" paddingY="none" paddingX="xxsmall">
-        <HStack align="center" justify="between" paddingY="xsmall">
+      <Container size="3xl" py="none" px="xxsmall">
+        <HStack align="center" justify="between" py="xsmall">
           <HStack align="center" justify="between" gap="xxsmall" paddingLeft="none">
             <ClientOnly>{isDocsActive && <DocsRouteSidebarOption />}</ClientOnly>
             <Link to="/" {...stylex.props(styles.logo, isHomeActive && styles.activeLink)}>

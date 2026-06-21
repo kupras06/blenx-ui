@@ -1,24 +1,23 @@
 import type { BoxProps } from "../Box/box";
 import { Box } from "../Box/box";
-import { containerStyles } from "./container.styles";
+import clsx from "clsx";
+import { containerRecipe } from "./container.css";
+import type { RecipeVariants } from "@vanilla-extract/recipes";
+export type ContainerVariants = RecipeVariants<typeof containerRecipe>;
 
-type Props = BoxProps & {
-  size?: BoxProps["maxWidth"];
-  center?: boolean;
-  content?: "center" | "top";
-};
-
-export function Container({ size, center = true, content, style, ...props }: Props) {
+type Props = BoxProps & ContainerVariants;
+export function Container({ size, centered = true, contentCentered, ...props }: Props) {
   return (
     <Box
       maxWidth={size}
       {...props}
-      style={[
-        containerStyles.root,
-        content === "center" ? containerStyles.contentCenter : null,
-        center ? containerStyles.center : null,
-        style,
-      ]}
+      className={clsx(
+        containerRecipe({
+          size,
+          centered,
+          contentCentered,
+        }),
+      )}
     />
   );
 }

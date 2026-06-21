@@ -1,47 +1,17 @@
-import { mergeProps } from "@base-ui/react/merge-props";
 import { useRender } from "@base-ui/react/use-render";
-import * as stylex from "@stylexjs/stylex";
-import { themeTransition, type ColorProps, type SpacingProps } from "#utils/base.styles";
-import {
-  resolvePaddingStyles,
-  resolveMarginStyles,
-  resolveDisplayStyles,
-  type BorderRadiusProp,
-  type LayoutProps,
-  borderRadiusStyles,
-} from "#utils/layout.styles";
 import type { _BaseDivProps } from "#utils/stylex.utils";
-import { boxWidthStyles, boxStyles } from "./box.styles";
+import { boxSprinkles, type BoxSprinkles } from "./box.css";
+import clsx from "clsx";
 
-type BoxSize = keyof typeof boxWidthStyles;
-type _BaseBoxPrpos = LayoutProps &
-  SpacingProps &
-  ColorProps & {
-    fullWidth?: boolean;
-    fullHeight?: boolean;
-    grow?: boolean;
-    shrink?: boolean;
-    // @deprecated use borderRadius instead
-    radius?: BorderRadiusProp;
-    borderRadius?: BorderRadiusProp;
-    withBorder?: boolean;
-    maxWidth?: BoxSize | number | string;
-    style?: stylex.StyleXStyles;
-  };
-type BoxProps = _BaseDivProps & _BaseBoxPrpos;
+type BoxStylingProps = BoxSprinkles & {
+  fullWidth?: boolean;
+  fullHeight?: boolean;
+  withBorder?: boolean;
+};
+type BoxProps = _BaseDivProps & BoxStylingProps;
 
-const isBoxSize = (value: unknown): value is BoxSize =>
-  Object.keys(boxWidthStyles).includes(value as BoxSize);
-const resolveBoxWidthStyle = (value: BoxProps["maxWidth"]) => [
-  value ? boxStyles.fullWidth : null,
-  isBoxSize(value)
-    ? boxWidthStyles[value]
-    : typeof value === "number" || (typeof value === "string" && !isBoxSize(value))
-      ? boxStyles.maxWidth(value as number | string)
-      : null,
-];
 const BOX_PROP_KEYS = [
-  ...new Set<keyof _BaseBoxPrpos>([
+  ...new Set<keyof BoxStylingProps>([
     "display",
     "fullWidth",
     "fullHeight",
@@ -63,7 +33,6 @@ const BOX_PROP_KEYS = [
     "marginRight",
     "radius",
     "borderRadius",
-    "style",
     "withBorder",
     "maxWidth",
     "color",
@@ -75,6 +44,7 @@ const BOX_PROP_KEYS = [
     "bottom",
     "right",
     "left",
+    "borderColor",
   ]),
 ];
 
@@ -95,37 +65,26 @@ function splitBoxProps<T extends Record<string, unknown>, K extends keyof T>(
 
   return [picked, omitted] as const;
 }
-function Box({ render, ...props }: BoxProps) {
-  const [boxProps, htmlProps] = splitBoxProps(props, BOX_PROP_KEYS);
-  const paddingStyles = resolvePaddingStyles(boxProps);
-  const marginStyles = resolveMarginStyles(boxProps);
-  const resolvedRadius = boxProps.borderRadius ?? boxProps.radius;
+function Box({ render, className, ...props }: BoxProps) {
+  const [{ withBorder, fullWidth, ...styleProps }, htmlProps] = splitBoxProps(props, BOX_PROP_KEYS);
 
-  const displayStyles = resolveDisplayStyles(boxProps);
-  const appliedBoxWidthStyles = resolveBoxWidthStyle(boxProps.maxWidth);
-
-  const stylexProps = stylex.props(
-    themeTransition.root,
-    boxStyles.root,
-    Boolean(boxProps.fullWidth) && boxStyles.fullWidth,
-    Boolean(boxProps.fullHeight) && boxStyles.fullHeight,
-    Boolean(boxProps.grow) && boxStyles.grow,
-    Boolean(boxProps.shrink) && boxStyles.shrink,
-    Boolean(boxProps.withBorder) && boxStyles.withBorder,
-    ...paddingStyles,
-    ...marginStyles,
-    ...displayStyles,
-    ...appliedBoxWidthStyles,
-    resolvedRadius && borderRadiusStyles[resolvedRadius],
-    boxProps.style,
-  );
-  const mergedProps = mergeProps(htmlProps, stylexProps);
   return useRender({
     defaultTagName: "div",
-    props: mergedProps,
     render,
+    props: {
+      ...htmlProps,
+      className: clsx(
+        boxSprinkles({
+          ...styleProps,
+          width: fullWidth ? "full" : styleProps.width,
+          // borderWidth: withBorder ? "1px": 'px',
+          // borderStyle: "solid",
+          borderColor: withBorder ? "default" : styleProps.borderColor,
+        }),
+        className,
+      ),
+    },
   });
 }
-
 export type { BoxProps };
 export { Box };
