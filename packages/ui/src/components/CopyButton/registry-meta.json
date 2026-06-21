@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "copy-button",
+  "type": "registry:ui",
+  "title": "CopyButton",
+  "description": "Copy button component using IconButton from Blenx UI.",
+  "registryDependencies": ["icon-button"],
+  "files": [
+    {
+      "file": "copy-button.tsx",
+      "type": "registry:ui",
+      "target": "@ui/CopyButton/copy-button.tsx"
+    }
+  ]
+}

@@ -1,61 +1,23 @@
 import * as stylex from "@stylexjs/stylex";
 import { Link, useLocation } from "@tanstack/react-router";
-import { allGuides, allComponents } from "content-collections";
 import { Box, Surface, Text, VStack } from "@blenx-dev/ui/components";
 import { BlocksSidebar } from "./blocks-sidebar";
-
-interface SidebarLink {
-  to: string;
-  label: string;
-}
-
-interface SidebarSection {
-  title: string;
-  links: SidebarLink[];
-}
-
-const staticSections: SidebarSection[] = [
-  {
-    title: "Customization",
-    links: [{ to: "/theme-builder", label: "Theme Builder" }],
-  },
-];
-
-function formatLabel(slug: string): string {
-  return slug
-    .split("-")
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(" ");
-}
+import { useDocsData } from "@/views/docs/DocsDataProvider";
 
 const styles = stylex.create({
   link: {
     textDecoration: "none",
   },
 });
-
+const isLintActive = (link: string, pathname: string) =>
+  link === "/docs"
+    ? pathname === "/docs" || pathname === "/docs/"
+    : link === "/blocks"
+      ? pathname === "/blocks" || pathname.startsWith("/blocks/")
+      : pathname === link || pathname.startsWith(link + "/");
 function DocsSidebar({ onClose }: { onClose?: () => void }) {
   const { pathname } = useLocation();
-
-  const guideLinks: SidebarLink[] = allGuides
-    .sort((a, b) => a.navigation.order - b.navigation.order)
-    .map((g) => ({
-      to: g.navigation.link ?? `/docs/guides/${g._meta.path}`,
-      label: g.title,
-    }));
-
-  const componentLinks: SidebarLink[] = [...allComponents]
-    .sort((a, b) => a.navigation.order - b.navigation.order)
-    .map((c) => ({
-      to: `/docs/components/${c._meta.path}`,
-      label: formatLabel(c._meta.path),
-    }));
-
-  const allSections: SidebarSection[] = [
-    { title: "Guides", links: guideLinks },
-    { title: "Components", links: componentLinks },
-    ...staticSections,
-  ];
+  const allSections = useDocsData((st) => st.allSections);
   const isBlockRoute = pathname.startsWith("/docs/blocks");
   if (isBlockRoute) return <BlocksSidebar />;
 
@@ -69,12 +31,7 @@ function DocsSidebar({ onClose }: { onClose?: () => void }) {
             </Text>
             <VStack gap="xxsmall">
               {section.links.map((link) => {
-                const isActive =
-                  link.to === "/docs"
-                    ? pathname === "/docs" || pathname === "/docs/"
-                    : link.to === "/blocks"
-                      ? pathname === "/blocks" || pathname.startsWith("/blocks/")
-                      : pathname === link.to || pathname.startsWith(link.to + "/");
+                const isActive = isLintActive(link.to, pathname);
                 return (
                   <Surface
                     variant={isActive ? "default" : "sunken"}

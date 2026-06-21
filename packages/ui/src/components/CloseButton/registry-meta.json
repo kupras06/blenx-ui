@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "close-button",
+  "type": "registry:ui",
+  "title": "CloseButton",
+  "description": "Close button component using IconButton from Blenx UI.",
+  "registryDependencies": ["icon-button"],
+  "files": [
+    {
+      "file": "close-button.tsx",
+      "type": "registry:ui",
+      "target": "@ui/CloseButton/close-button.tsx"
+    }
+  ]
+}

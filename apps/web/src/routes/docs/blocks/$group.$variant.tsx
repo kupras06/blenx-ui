@@ -1,11 +1,10 @@
-import { useEffect } from "react";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { allBlocks, allBlockGroups } from "content-collections";
 import { MDXContent } from "@content-collections/mdx/react";
 import { Separator, Text, VStack } from "@blenx-dev/ui/components";
 import { DocsContent } from "@/views/docs/DocsContent";
+import { useDocsData } from "@/views/docs/DocsDataProvider";
 import { mdxComponents } from "@/views/docs/MdxComponents";
-import { useDocsTocStore } from "@/stores/docs-toc";
 import * as stylex from "@stylexjs/stylex";
 import { theme } from "@blenx-dev/ui/theme/contract.stylex";
 import { borderRadius, fontSize, spacing } from "@blenx-dev/ui/theme/tokens.stylex";
@@ -39,20 +38,18 @@ const styles = stylex.create({
 
 function BlockVariantPage() {
   const { group, variant } = Route.useParams();
-  const setItems = useDocsTocStore((st) => st.setItems);
+  const { setTocItems } = useDocsData();
 
   const blockGroup = allBlockGroups.find((g) => g.slug === group);
   const doc = allBlocks.find((b) => b.group === group && b._meta.path === `${group}/${variant}`);
 
   const variants = allBlocks.filter((b) => b.group === group).sort((a, b) => a.order - b.order);
 
-  useEffect(() => {
-    if (doc?.toc) {
-      setItems(doc.toc);
-    } else {
-      setItems([]);
-    }
-  }, [doc, setItems]);
+  if (doc?.toc) {
+    setTocItems(doc.toc);
+  } else {
+    setTocItems([]);
+  }
 
   if (!blockGroup || !doc) throw notFound();
 

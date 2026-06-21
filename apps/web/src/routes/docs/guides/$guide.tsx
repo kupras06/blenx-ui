@@ -1,11 +1,10 @@
-import { useEffect } from "react";
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { allGuides } from "content-collections";
 import { MDXContent } from "@content-collections/mdx/react";
 import { Box, Text } from "@blenx-dev/ui/components";
 import { DocsContent } from "@/views/docs/DocsContent";
+import { useDocsData } from "@/views/docs/DocsDataProvider";
 import { mdxComponents } from "@/views/docs/MdxComponents";
-import { useDocsTocStore } from "@/stores/docs-toc";
 import type { TocItem } from "@/utils/extractHeadings";
 
 export const Route = createFileRoute("/docs/guides/$guide")({
@@ -24,19 +23,17 @@ interface GuideDoc {
 
 function GuideDoc() {
   const { guide } = Route.useParams();
+  const { setTocItems } = useDocsData();
+
   const doc = allGuides.find(
     (g) => g._meta.path === guide || g.navigation.link === `/docs/guides/${guide}`,
   ) as GuideDoc | undefined;
 
-  const setItems = useDocsTocStore((st) => st.setItems);
-
-  useEffect(() => {
-    if (doc?.toc) {
-      setItems(doc.toc);
-    } else {
-      setItems([]);
-    }
-  }, [doc, setItems]);
+  if (doc?.toc) {
+    setTocItems(doc.toc);
+  } else {
+    setTocItems([]);
+  }
 
   if (!doc) throw notFound();
 

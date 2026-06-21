@@ -33,14 +33,10 @@ export const docsQueries = {
       staleTime: 5 * 60 * 1000,
     }),
   registry: (name: string) =>
-    queryOptions<RegistryJson | null>({
+    queryOptions<RegistryJson>({
       queryKey: docsKeys.registry(name),
       queryFn: async () => {
-        try {
-          return await fetchJson<RegistryJson>(`/reg/${name}.json`);
-        } catch {
-          return null;
-        }
+        return await fetchJson<RegistryJson>(`/reg/${name}.json`);
       },
       staleTime: 5 * 60 * 1000,
     }),

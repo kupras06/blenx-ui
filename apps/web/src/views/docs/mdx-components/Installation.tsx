@@ -1,22 +1,11 @@
-import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import * as stylex from "@stylexjs/stylex";
 import { CodeBlock } from "@/components/ui/CodeBlock/code-block";
 import { Badge, HStack, Separator, Text, VStack } from "@blenx-dev/ui/components";
 import { theme } from "@blenx-dev/ui/theme/contract.stylex";
 import { borderRadius, fontSize } from "@blenx-dev/ui/theme/tokens.stylex";
 import { DocsH3 } from "./DocHeaders";
-
-interface RegistryMeta {
-  name: string;
-  type: string;
-  title: string;
-  description: string;
-  registryDependencies?: string[];
-  files: Array<{
-    target: string;
-    content?: string;
-  }>;
-}
+import { docsQueries } from "@/lib/docs-api";
 
 interface InstallationProps {
   registryName: string;
@@ -27,19 +16,11 @@ function cleanTarget(target: string): string {
 }
 
 function Installation({ registryName }: InstallationProps) {
-  const [registry, setRegistry] = useState<RegistryMeta | null>(null);
-
-  useEffect(() => {
-    fetch(`/reg/${registryName}.json`)
-      .then((r) => (r.ok ? r.json() : null))
-      .then((data) => {
-        setRegistry(data);
-      })
-      .catch(() => {});
-  }, [registryName]);
+  const registryQuery = useQuery(docsQueries.registry(registryName));
 
   const cliUrl = `https://blenx-ui.vercel.app/reg/${registryName}.json`;
   const cliCode = `npx shadcn@latest add "${cliUrl}"`;
+  const registry = registryQuery.data ?? null;
   const dependencies = registry?.registryDependencies ?? [];
   const files = registry?.files ?? [];
 

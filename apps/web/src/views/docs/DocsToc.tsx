@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import * as stylex from "@stylexjs/stylex";
-import { Box, Text } from "@blenx-dev/ui/components";
+import { Box, Text, VStack } from "@blenx-dev/ui/components";
 import { theme } from "@blenx-dev/ui/theme/contract.stylex";
 import {
   borderRadius,
@@ -14,6 +14,8 @@ import {
   spacing,
 } from "@blenx-dev/ui/theme/tokens.stylex";
 import type { TocItem } from "@/utils/extractHeadings";
+import { HStack, IconButton } from "@blenx-dev/ui";
+import { CopyIcon } from "@phosphor-icons/react";
 
 interface DocsTocProps {
   items: TocItem[];
@@ -151,7 +153,15 @@ export function DocsToc({ items }: DocsTocProps) {
     clearTimeout(timeoutRef.current);
     timeoutRef.current = setTimeout(() => setCopiedId(null), 2000);
   }, []);
-
+  function handleCopy(e: React.MouseEvent<HTMLButtonElement, MouseEvent>, slug: string) {
+    e.preventDefault();
+    const url = new URL(globalThis.location.href);
+    url.hash = slug;
+    navigator.clipboard.writeText(url.toString());
+    setCopiedId(slug);
+    clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => setCopiedId(null), 2000);
+  }
   if (items.length === 0) return null;
 
   return (
@@ -160,12 +170,12 @@ export function DocsToc({ items }: DocsTocProps) {
         On this page
       </Text>
       <Box render={<nav />} aria-label="Table of contents">
-        <ul {...stylex.props(tocStyles.list)}>
+        <VStack gap="none">
           {items.map((item) => {
             const isActive = item.slug === activeId;
             const depthClass = item.depth === 3 ? "depthH3" : "depthH2";
             return (
-              <li key={item.slug}>
+              <HStack render={<li />} key={item.slug} justify="between" align="center">
                 <a
                   {...stylex.props(
                     itemStyles.item,
@@ -179,10 +189,17 @@ export function DocsToc({ items }: DocsTocProps) {
                 >
                   {item.title}
                 </a>
-              </li>
+                <IconButton
+                  padding="none"
+                  variant="ghost"
+                  onClick={(e) => handleCopy(e, item.slug)}
+                >
+                  <CopyIcon />
+                </IconButton>
+              </HStack>
             );
           })}
-        </ul>
+        </VStack>
       </Box>
     </Box>
   );

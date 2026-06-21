@@ -1,16 +1,11 @@
-import { ClientOnly, createFileRoute, Outlet } from "@tanstack/react-router";
-import { useMediaQuery } from "@uidotdev/usehooks";
+import { DefaultCatchBoundary } from "@/components/DefaultCatchBoundary";
 import { DocsSidebar } from "@/components/docs-sidebar";
 import { DocsToc } from "@/views/docs/DocsToc";
+import { DocsDataProviderWithQuery, useDocsData } from "@/views/docs/DocsDataProvider";
+import { useMediaQuery } from "@uidotdev/usehooks";
 import { Box, Container, HStack, ScrollArea, Sheet, SheetPopup } from "@blenx-dev/ui/components";
+import { ClientOnly, createFileRoute, Outlet } from "@tanstack/react-router";
 import { useSidebarStore } from "@/stores/docs-sidebar";
-import { useDocsTocStore } from "@/stores/docs-toc";
-import { DefaultCatchBoundary } from "@/components/DefaultCatchBoundary";
-export const Route = createFileRoute("/docs")({
-  component: DocsLayout,
-  errorComponent: DefaultCatchBoundary,
-});
-
 function DrawerSidebar() {
   const sidebarOpen = useSidebarStore((st) => st.isOpen);
   const setOpen = useSidebarStore((st) => st.setOpen);
@@ -42,26 +37,33 @@ function RenderSidebarNavs() {
   );
 }
 function TocSection() {
-  const items = useDocsTocStore((st) => st.items);
+  const items = useDocsData((st) => st.tocItems);
   return <DocsToc items={items} />;
 }
 
-function DocsLayout() {
+function DocsLayoutWithProvider() {
   return (
-    <Container paddingY="medium">
-      <HStack>
-        <ClientOnly>
-          <RenderSidebarNavs />
-        </ClientOnly>
-        <Box grow maxWidth="viewport">
-          <ScrollArea height="90svh">
-            <Outlet />
-          </ScrollArea>
-        </Box>
-        <ClientOnly>
-          <TocSection />
-        </ClientOnly>
-      </HStack>
-    </Container>
+    <DocsDataProviderWithQuery>
+      <Container paddingY="medium">
+        <HStack>
+          <ClientOnly>
+            <RenderSidebarNavs />
+          </ClientOnly>
+          <Box grow maxWidth="viewport">
+            <ScrollArea height="90svh">
+              <Outlet />
+            </ScrollArea>
+          </Box>
+          <ClientOnly>
+            <TocSection />
+          </ClientOnly>
+        </HStack>
+      </Container>
+    </DocsDataProviderWithQuery>
   );
 }
+
+export const Route = createFileRoute("/docs")({
+  component: DocsLayoutWithProvider,
+  errorComponent: DefaultCatchBoundary,
+});

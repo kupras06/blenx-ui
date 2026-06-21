@@ -1,15 +1,6 @@
-import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { docsQueries } from "@/lib/docs-api";
 import { DocCodeView } from "./doc-code-view";
-
-interface RegistryFile {
-  target: string;
-  content?: string;
-}
-
-interface RegistryMeta {
-  name: string;
-  files: RegistryFile[];
-}
 
 interface DocSourceCodeProps {
   registryName: string;
@@ -20,16 +11,8 @@ function cleanTarget(target: string): string {
 }
 
 function DocSourceCode({ registryName }: DocSourceCodeProps) {
-  const [registry, setRegistry] = useState<RegistryMeta | null>(null);
-
-  useEffect(() => {
-    fetch(`/reg/${registryName}.json`)
-      .then((r) => (r.ok ? r.json() : null))
-      .then((data) => {
-        setRegistry(data);
-      })
-      .catch(() => {});
-  }, [registryName]);
+  const registryQuery = useQuery(docsQueries.registry(registryName));
+  const registry = registryQuery.data ?? null;
 
   if (!registry) return null;
 
