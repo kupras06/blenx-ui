@@ -6,14 +6,14 @@ import { mergeProps } from "@base-ui/react/merge-props";
 import { Radio as RadioPrimitive } from "@base-ui/react/radio";
 import { RadioGroup as RadioGroupPrimitive } from "@base-ui/react/radio-group";
 import { useRender } from "@base-ui/react/use-render";
-import { ArrowRightIcon, XIcon } from "@phosphor-icons/react";
+import { ArrowRightIcon } from "@phosphor-icons/react";
 import * as stylex from "@stylexjs/stylex";
 import type React from "react";
 import { createContext, useContext, useMemo } from "react";
 import type { _BaseDivProps, PropsWithStylex } from "#utils/stylex.utils";
 import { ScrollArea } from "../ScrollArea/scroll-area";
 import { drawerStyles } from "./drawer.styles";
-import { IconButton } from "../IconButton/icon-button";
+import { CloseButton } from "../CloseButton";
 
 type DrawerPosition = "right" | "left" | "top" | "bottom";
 
@@ -152,10 +152,8 @@ export function DrawerPopup({
           {showCloseButton && (
             <DrawerPrimitive.Close
               aria-label="Close"
-              render={<IconButton variant="ghost" style={drawerStyles.closeButton} />}
-            >
-              <XIcon />
-            </DrawerPrimitive.Close>
+              render={<CloseButton variant="ghost" style={drawerStyles.closeButton} />}
+            />
           )}{" "}
           {children}
           {showBar && <DrawerBar />}

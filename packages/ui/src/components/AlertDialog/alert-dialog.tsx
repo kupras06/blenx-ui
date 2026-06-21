@@ -8,8 +8,7 @@ import type React from "react";
 import type { _BaseDivProps, PropsWithStylex } from "#utils/stylex.utils";
 import { ScrollArea } from "../ScrollArea/scroll-area";
 import { alertDialogStyles } from "./alert-dialog.styles";
-import { IconButton } from "../IconButton/icon-button";
-import { XIcon } from "@phosphor-icons/react";
+import { CloseButton } from "../CloseButton";
 
 function AlertDialog(props: AlertDialogPrimitive.Root.Props): React.ReactElement {
   return <AlertDialogPrimitive.Root {...props} />;
@@ -88,11 +87,9 @@ function AlertDialogPopup({
             <AlertDialogPrimitive.Close
               aria-label="Close"
               {...stylex.props(alertDialogStyles.closeButton)}
-              render={<IconButton variant="ghost" style={alertDialogStyles.closeButton} />}
+              render={<CloseButton variant="ghost" style={alertDialogStyles.closeButton} />}
               {...closeProps}
-            >
-              <XIcon />
-            </AlertDialogPrimitive.Close>
+            />
           )}
           {children}
         </AlertDialogPrimitive.Popup>

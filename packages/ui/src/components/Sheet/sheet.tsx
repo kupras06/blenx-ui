@@ -3,13 +3,12 @@
 import { Dialog as SheetPrimitive } from "@base-ui/react/dialog";
 import { mergeProps } from "@base-ui/react/merge-props";
 import { useRender } from "@base-ui/react/use-render";
-import { XIcon } from "@phosphor-icons/react";
 import * as stylex from "@stylexjs/stylex";
 import type React from "react";
 import type { _BaseDivProps, PropsWithStylex } from "#utils/stylex.utils";
 import { ScrollArea } from "../ScrollArea/scroll-area";
 import { sheetStyles } from "./sheet.styles";
-import { IconButton } from "../IconButton/icon-button";
+import { CloseButton } from "../CloseButton";
 
 type Side = "right" | "left" | "top" | "bottom";
 
@@ -107,11 +106,9 @@ export function SheetPopup({
           {showCloseButton && (
             <SheetPrimitive.Close
               aria-label="Close"
-              render={<IconButton variant="ghost" style={sheetStyles.closeButton} />}
+              render={<CloseButton variant="ghost" style={sheetStyles.closeButton} />}
               {...closeProps}
-            >
-              <XIcon />
-            </SheetPrimitive.Close>
+            />
           )}
         </SheetPrimitive.Popup>
       </SheetViewport>

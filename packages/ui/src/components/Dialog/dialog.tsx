@@ -3,20 +3,12 @@
 import { Dialog as DialogPrimitive } from "@base-ui/react/dialog";
 import { mergeProps } from "@base-ui/react/merge-props";
 import { useRender } from "@base-ui/react/use-render";
-import { XIcon } from "@phosphor-icons/react";
 import * as stylex from "@stylexjs/stylex";
 import type React from "react";
 import type { _BaseDivProps, PropsWithStylex } from "#utils/stylex.utils";
 import { ScrollArea } from "../ScrollArea/scroll-area";
 import { dialogStyles } from "./dialog.styles";
-import { IconButton } from "../IconButton/icon-button";
-
-type ClassNameProp<State> = string | ((state: State) => string | undefined);
-
-function mergeClassName<State>(baseClassName: string, className?: ClassNameProp<State>) {
-  const resolvedClassName = typeof className === "function" ? className({} as State) : className;
-  return [baseClassName, resolvedClassName].filter(Boolean).join(" ");
-}
+import { CloseButton } from "../CloseButton";
 
 const DialogCreateHandle: typeof DialogPrimitive.createHandle = DialogPrimitive.createHandle;
 
@@ -90,11 +82,9 @@ export function DialogPopup({
           {showCloseButton && (
             <DialogPrimitive.Close
               aria-label="Close"
-              render={<IconButton variant="ghost" style={dialogStyles.closeButton} />}
+              render={<CloseButton variant="ghost" style={dialogStyles.closeButton} />}
               {...closeProps}
-            >
-              <XIcon />
-            </DialogPrimitive.Close>
+            />
           )}
         </DialogPrimitive.Popup>
       </DialogViewport>
@@ -102,16 +92,15 @@ export function DialogPopup({
   );
 }
 
-type HeaderProps = useRender.ComponentProps<"div">;
+type HeaderProps = PropsWithStylex<useRender.ComponentProps<"div">>;
 
-export function DialogHeader({ className, render, ...props }: HeaderProps): React.ReactElement {
-  const headerProps = stylex.props(dialogStyles.header);
+export function DialogHeader({ style, render, ...props }: HeaderProps): React.ReactElement {
+  const headerProps = stylex.props(dialogStyles.header, style);
   return useRender({
     defaultTagName: "div",
     props: mergeProps<"div">(
       {
         ...headerProps,
-        className: mergeClassName(headerProps.className ?? "", className),
         "data-slot": "dialog-header",
       } as never,
       props,
@@ -170,14 +159,18 @@ export function DialogDescription(props: DialogPrimitive.Description.Props): Rea
 }
 
 function DialogPanel({
-  className,
   scrollFade = true,
   render,
+  style,
   ...props
-}: useRender.ComponentProps<"div"> & {
+}: _BaseDivProps & {
   scrollFade?: boolean;
 }): React.ReactElement {
-  const panelProps = stylex.props(dialogStyles.panel, scrollFade && dialogStyles.panelScrollFade);
+  const panelProps = stylex.props(
+    dialogStyles.panel,
+    scrollFade && dialogStyles.panelScrollFade,
+    style,
+  );
   return (
     <ScrollArea scrollFade={scrollFade}>
       {useRender({
@@ -185,7 +178,6 @@ function DialogPanel({
         props: mergeProps<"div">(
           {
             ...panelProps,
-            className: mergeClassName(panelProps.className ?? "", className),
             "data-slot": "dialog-panel",
           } as never,
           props,

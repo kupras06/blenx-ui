@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import * as stylex from "@stylexjs/stylex";
-import { Box, Text, VStack } from "@blenx-dev/ui/components";
+import { Box, CopyButton, Text, VStack } from "@blenx-dev/ui/components";
 import { theme } from "@blenx-dev/ui/theme/contract.stylex";
 import {
   borderRadius,
@@ -14,7 +14,7 @@ import {
   spacing,
 } from "@blenx-dev/ui/theme/tokens.stylex";
 import type { TocItem } from "@/utils/extractHeadings";
-import { HStack, IconButton } from "@blenx-dev/ui";
+import { HStack } from "@blenx-dev/ui";
 import { CopyIcon } from "@phosphor-icons/react";
 
 interface DocsTocProps {
@@ -135,8 +135,7 @@ export function DocsToc({ items }: DocsTocProps) {
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>(undefined);
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
-  const handleClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, slug: string) => {
-    e.preventDefault();
+  const handleClick = useCallback((slug: string, shouldCopy = false) => {
     const el = document.getElementById(slug);
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -144,7 +143,7 @@ export function DocsToc({ items }: DocsTocProps) {
       url.hash = slug;
       globalThis.history.replaceState({}, "", url.toString());
     }
-
+    if (!shouldCopy) return;
     // Copy URL to clipboard on click (future deep linking)
     const url = new URL(globalThis.location.href);
     url.hash = slug;
@@ -153,15 +152,6 @@ export function DocsToc({ items }: DocsTocProps) {
     clearTimeout(timeoutRef.current);
     timeoutRef.current = setTimeout(() => setCopiedId(null), 2000);
   }, []);
-  function handleCopy(e: React.MouseEvent<HTMLButtonElement, MouseEvent>, slug: string) {
-    e.preventDefault();
-    const url = new URL(globalThis.location.href);
-    url.hash = slug;
-    navigator.clipboard.writeText(url.toString());
-    setCopiedId(slug);
-    clearTimeout(timeoutRef.current);
-    timeoutRef.current = setTimeout(() => setCopiedId(null), 2000);
-  }
   if (items.length === 0) return null;
 
   return (
@@ -183,19 +173,25 @@ export function DocsToc({ items }: DocsTocProps) {
                     isActive && itemStyles.active,
                   )}
                   href={`#${item.slug}`}
-                  onClick={(e) => handleClick(e, item.slug)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleClick(item.slug);
+                  }}
                   aria-current={isActive ? "true" : undefined}
                   title={copiedId === item.slug ? "Copied!" : `Navigate to ${item.title}`}
                 >
                   {item.title}
                 </a>
-                <IconButton
+                <CopyButton
                   padding="none"
                   variant="ghost"
-                  onClick={(e) => handleCopy(e, item.slug)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleClick(item.slug, true);
+                  }}
                 >
                   <CopyIcon />
-                </IconButton>
+                </CopyButton>
               </HStack>
             );
           })}
