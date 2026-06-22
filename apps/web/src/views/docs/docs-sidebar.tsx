@@ -22,22 +22,20 @@ function DocsSidebar({ onClose }: { onClose?: () => void }) {
   if (isBlockRoute) return <BlocksSidebar />;
 
   return (
-    <Surface variant="sunken">
+    <Surface variant="sunken" grow={1}>
       <VStack gap="medium" padding="medium">
         {allSections.map((section) => (
           <Box key={section.title}>
-            <Text variant="body2" weight="semibold">
-              {section.title}
-            </Text>
+            <Text variant="h3">{section.title}</Text>
             <VStack gap="xxsmall">
               {section.links.map((link) => {
                 const isActive = isLintActive(link.to, pathname);
                 return (
                   <Surface
                     variant={isActive ? "default" : "sunken"}
-                    borderRadius="xsmall"
-                    paddingY="xxsmall"
-                    paddingX="xsmall"
+                    borderRadius="xxsmall"
+                    paddingY="xs"
+                    paddingX="sm"
                     key={link.to}
                     render={<Link {...stylex.props(styles.link)} to={link.to} onClick={onClose} />}
                   >

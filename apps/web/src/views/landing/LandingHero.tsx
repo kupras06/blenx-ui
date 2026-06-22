@@ -12,7 +12,7 @@ export function LandingHero() {
           <br />
           for StyleX.
         </Text>
-        <Box maxWidth={640}>
+        <Box maxWidth={640} px={"2xl"}>
           <Text variant="body1" size="large" color="secondary" align="center">
             Accessible React components built with StyleX and Base UI. Copy the source. Own the
             code. Build without vendor lock-in.

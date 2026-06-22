@@ -7,17 +7,19 @@ export const containerRecipe = recipe({
   },
   variants: {
     size: {
-      xxs: { maxWidth: "240px" },
-      xs: { maxWidth: "320px" },
-      sm: { maxWidth: "480px" },
-      md: { maxWidth: "640px" },
-      lg: { maxWidth: "768px" },
-      xl: { maxWidth: "1024px" },
-      "2xl": { maxWidth: "1280px" },
+      xxs: {
+        maxWidth: "240px",
+        width: "240px",
+      },
+      xs: { maxWidth: "320px", width: "320px" },
+      sm: { maxWidth: "480px", width: "480px" },
+      md: { maxWidth: "640px", width: "640px" },
+      lg: { maxWidth: "768px", width: "768px" },
+      xl: { maxWidth: "1024px", width: "1024px" },
+      "2xl": { maxWidth: "1280px", width: "1280px" },
       "3xl": { maxWidth: "1440px" },
       full: { maxWidth: "100%" },
     },
-
     centered: {
       true: {
         marginLeft: "auto",

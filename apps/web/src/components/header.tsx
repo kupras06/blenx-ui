@@ -4,7 +4,7 @@ import { ClientOnly, Link, useLocation } from "@tanstack/react-router";
 import { useMediaQuery, useLocalStorage } from "@uidotdev/usehooks";
 import { GITHUB_URL } from "@/constants";
 import { theme } from "@blenx-dev/ui/theme/contract.stylex";
-import { fontSize, letterSpacing, spacing } from "@blenx-dev/ui/theme/tokens.stylex";
+import { fontSize, letterSpacing } from "@blenx-dev/ui/theme/tokens.stylex";
 import { useSidebarStore } from "@/stores/docs-sidebar";
 import { Button, Container, HStack, IconButton, Separator } from "@blenx-dev/ui/components";
 import { darkTheme, lightTheme } from "@/lib/app-theme.css";
@@ -18,17 +18,6 @@ const styles = stylex.create({
     fontSize: fontSize.large,
     letterSpacing: letterSpacing.tight,
     lineHeight: 1,
-  },
-  link: {
-    textDecoration: "none",
-    color: theme.contentSecondary,
-    lineHeight: 1,
-    paddingBlock: spacing["1"],
-    fontSize: fontSize.small,
-  },
-  activeLink: {
-    color: theme.contentPrimary,
-    fontWeight: 600,
   },
 });
 function DocsRouteOption() {
@@ -146,14 +135,13 @@ function Header() {
   const { pathname } = useLocation();
   const isDocsActive = pathname.startsWith("/docs");
   const isBlocksActive = pathname.startsWith("/blocks");
-  const isHomeActive = pathname === "/";
   return (
     <>
-      <Container size="3xl" py="small" px="xxsmall">
+      <Container size="2xl" py="small" px="xxsmall">
         <HStack align="center" justify="between" py="xsmall">
           <HStack align="center" justify="between" gap="xxsmall" paddingLeft="none">
             <ClientOnly>{isDocsActive && <DocsRouteSidebarOption />}</ClientOnly>
-            <Link to="/" {...stylex.props(styles.logo, isHomeActive && styles.activeLink)}>
+            <Link to="/" {...stylex.props(styles.logo)}>
               <BrandLogo size={30} />
             </Link>
           </HStack>
@@ -175,7 +163,6 @@ function Header() {
                     target="_blank"
                     aria-label="Project Github URL"
                     rel="noopener noreferrer"
-                    {...stylex.props(styles.link)}
                   />
                 }
               >

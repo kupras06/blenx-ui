@@ -36,14 +36,15 @@ export function Text({
   textAlign,
   weight,
   className,
+  color = "primary",
   style,
-  size = "medium",
+  size,
   render,
   span,
   transform = "none",
   ...props
 }: TextProps): React.ReactElement {
-  const [baseStyles, htmlProps] = applyBaseSprinkles(props);
+  const [baseStyles, htmlProps] = applyBaseSprinkles({ ...props, color });
   const rootCls = clsx(
     baseStyles,
     textVariants({ variant, textAlign, weight, transform, size }),

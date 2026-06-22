@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "types": "./src/index.ts",
   "imports": {
     "#utils/*": "./src/utils/*",
     "#theme/*": "./src/theme/*",
@@ -10,12 +11,31 @@
   },
   "exports": {
     "./globals.css": "./src/styles/globals.css",
-    "./lib/*": "./src/lib/*",
-    "./components": "./src/components/index.ts",
-    "./components/*": "./src/components/*",
-    ".": "./src/index.ts",
-    "./theme/*": "./src/theme/*",
-    "./postcss.config": "./postcss.config.mjs"
+    "./lib/*": {
+      "types": "./src/lib/*",
+      "default": "./src/lib/*"
+    },
+    "./components": {
+      "types": "./src/components/index.ts",
+      "default": "./src/components/index.ts"
+    },
+    "./components/*": {
+      "types": "./src/components/*",
+      "default": "./src/components/*"
+    },
+    "./theme/*": {
+      "types": "./src/theme/*",
+      "default": "./src/theme/*"
+    },
+    "./utils/*": {
+      "types": "./src/utils/*",
+      "default": "./src/utils/*"
+    },
+    "./postcss.config": "./postcss.config.mjs",
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
   },
   "scripts": {
     "check-types": "tsc --noEmit"

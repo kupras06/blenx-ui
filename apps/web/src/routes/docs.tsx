@@ -27,7 +27,7 @@ function RenderSidebarNavs() {
       {isSmallDevice ? (
         <DrawerSidebar />
       ) : (
-        <Container size="screen" backgroundColor="error">
+        <Container size="full">
           <ScrollArea height="90svh">
             <DocsSidebar />
           </ScrollArea>
@@ -44,12 +44,12 @@ function TocSection() {
 function DocsLayoutWithProvider() {
   return (
     <DocsDataProviderWithQuery>
-      <Container paddingY="medium">
+      <Container size="2xl" centered py="medium">
         <HStack>
           <ClientOnly>
             <RenderSidebarNavs />
           </ClientOnly>
-          <Box grow maxWidth="viewport">
+          <Box grow={1}>
             <ScrollArea height="90svh">
               <Outlet />
             </ScrollArea>

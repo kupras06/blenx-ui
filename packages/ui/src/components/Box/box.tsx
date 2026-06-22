@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { applyBaseSprinkles } from "#utils/styles.js";
 import type { BaseSprinkles } from "#utils/sprinkles.css.js";
 
-type BoxProps = _BaseDivProps & BaseSprinkles;
+type BoxProps = useRender.ComponentProps<"div"> & BaseSprinkles;
 
 function Box({ render, className, ...props }: BoxProps) {
   const [styleProps, htmlProps] = applyBaseSprinkles(props);
