@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { theme } from "#theme/contract.css";
+import { themeContract } from "#theme/contract.css";
 import { fontSize, fontWeight, spacing } from "#theme/tokens.css";
 
 export const root = style({
@@ -24,7 +24,7 @@ export const monthCaption = style({
 export const captionLabel = style({
   fontSize: fontSize.medium,
   fontWeight: fontWeight.semibold,
-  color: theme.contentPrimary,
+  color: themeContract.contentPrimary,
   margin: 0,
   padding: 0,
 });
@@ -51,19 +51,19 @@ export const buttonNav = style({
   WebkitTapHighlightColor: "transparent",
   width: 28,
   height: 28,
-  borderRadius: theme.borderRadius,
+  borderRadius: themeContract.borderRadius,
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  color: theme.contentSecondary,
+  color: themeContract.contentSecondary,
   cursor: "pointer",
   flexShrink: 0,
   selectors: {
     "&:hover": {
-      backgroundColor: theme.backgroundSubtle,
+      backgroundColor: themeContract.backgroundSubtle,
     },
     "&:focus-visible": {
-      boxShadow: `0 0 0 2px ${theme.focusRing}`,
+      boxShadow: `0 0 0 2px ${themeContract.focusRing}`,
     },
   },
 });
@@ -76,7 +76,7 @@ export const monthGrid = style({
 export const weekday = style({
   fontSize: fontSize.xsmall,
   fontWeight: fontWeight.medium,
-  color: theme.contentSecondary,
+  color: themeContract.contentSecondary,
   textAlign: "center",
   verticalAlign: "middle",
   padding: spacing.xxsmall,
@@ -104,12 +104,12 @@ export const dayButton = style({
   minHeight: 32,
   maxWidth: 36,
   maxHeight: 36,
-  borderRadius: theme.borderRadius,
+  borderRadius: themeContract.borderRadius,
   border: "none",
   backgroundColor: "transparent",
   cursor: "pointer",
   fontSize: fontSize.small,
-  color: theme.contentPrimary,
+  color: themeContract.contentPrimary,
   outline: "none",
   margin: "0 auto",
   padding: 0,
@@ -120,21 +120,21 @@ export const dayButton = style({
   transitionTimingFunction: "ease",
   selectors: {
     "&:hover": {
-      backgroundColor: theme.backgroundSubtle,
+      backgroundColor: themeContract.backgroundSubtle,
     },
     "&:focus-visible": {
-      boxShadow: `0 0 0 2px ${theme.focusRing}`,
+      boxShadow: `0 0 0 2px ${themeContract.focusRing}`,
     },
   },
 });
 
 export const dayButtonSelected = style({
-  backgroundColor: theme.primary,
-  color: theme.contentOnPrimary,
+  backgroundColor: themeContract.primary,
+  color: themeContract.contentOnPrimary,
   fontWeight: fontWeight.semibold,
   selectors: {
     "&:hover": {
-      backgroundColor: theme.primary,
+      backgroundColor: themeContract.primary,
     },
   },
 });
@@ -144,7 +144,7 @@ export const dayButtonToday = style({
 });
 
 export const dayButtonDisabled = style({
-  color: theme.contentDisabled,
+  color: themeContract.contentDisabled,
   cursor: "not-allowed",
   opacity: 0.5,
   selectors: {
@@ -155,7 +155,7 @@ export const dayButtonDisabled = style({
 });
 
 export const dayButtonOutside = style({
-  color: theme.contentDisabled,
+  color: themeContract.contentDisabled,
   opacity: 0.5,
 });
 
@@ -171,18 +171,18 @@ export const dropdowns = style({
 
 export const dropdown = style({
   appearance: "none",
-  backgroundColor: theme.backgroundSubtle,
-  border: `1px solid ${theme.border}`,
-  borderRadius: theme.borderRadius,
-  color: theme.contentPrimary,
+  backgroundColor: themeContract.backgroundSubtle,
+  border: `1px solid ${themeContract.border}`,
+  borderRadius: themeContract.borderRadius,
+  color: themeContract.contentPrimary,
   fontSize: fontSize.small,
   padding: `${spacing.xxsmall} ${spacing.small}`,
   cursor: "pointer",
   outline: "none",
   selectors: {
     "&:focus-visible": {
-      borderColor: theme.borderStrong,
-      boxShadow: `0 0 0 2px ${theme.borderStrong}`,
+      borderColor: themeContract.borderStrong,
+      boxShadow: `0 0 0 2px ${themeContract.borderStrong}`,
     },
   },
 });

@@ -17,7 +17,7 @@ export type SeparatorProps = Omit<SeparatorPrimitive.Props, "className" | "style
 export function Separator({
   orientation = "horizontal",
   label,
-  tone = "strong",
+  tone = "subtle",
   className,
   style,
   ...props

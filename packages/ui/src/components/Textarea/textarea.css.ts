@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { theme } from "#theme/contract.css";
+import { themeContract } from "#theme/contract.css";
 
 export const shell = style({
   display: "inline-flex",
@@ -7,10 +7,10 @@ export const shell = style({
   position: "relative",
   borderStyle: "solid",
   borderWidth: 1,
-  borderColor: theme.border,
-  borderRadius: theme.borderRadius,
-  backgroundColor: theme.surface,
-  color: theme.contentPrimary,
+  borderColor: themeContract.border,
+  borderRadius: themeContract.borderRadius,
+  backgroundColor: themeContract.surface,
+  color: themeContract.contentPrimary,
   boxShadow: "0 1px 2px rgba(0,0,0,0.04)",
   boxSizing: "border-box",
   outline: "none",
@@ -18,14 +18,14 @@ export const shell = style({
   transitionDuration: "150ms",
   selectors: {
     "&:has(:focus-visible)": {
-      borderColor: theme.borderStrong,
-      boxShadow: `0 0 0 3px ${theme.borderStrong}`,
+      borderColor: themeContract.borderStrong,
+      boxShadow: `0 0 0 3px ${themeContract.borderStrong}`,
     },
     "&:has([aria-invalid])": {
-      borderColor: theme.sentimentNegative,
+      borderColor: themeContract.sentimentNegative,
     },
     "&:has([aria-invalid]:focus-visible)": {
-      boxShadow: `0 0 0 3px ${theme.sentimentNegative}`,
+      boxShadow: `0 0 0 3px ${themeContract.sentimentNegative}`,
     },
     "&:has(:disabled)": {
       opacity: 0.64,
@@ -47,7 +47,7 @@ export const textarea = style({
   lineHeight: 1.5,
   outline: "none",
   resize: "none",
-  color: theme.contentPrimary,
+  color: themeContract.contentPrimary,
   backgroundColor: "transparent",
 });
 

@@ -15,7 +15,7 @@ import {
   scrollbarVertical,
   thumb,
 } from "./scroll-area.css";
-import { applyBoxHeightStyle, type NamedHeight } from "#utils/heights";
+import { type NamedHeight } from "#utils/heights";
 
 type ScrollAreaProps = ScrollAreaPrimitive.Root.Props & {
   scrollFade?: boolean;
@@ -36,13 +36,12 @@ function ScrollArea({
   style,
   ...props
 }: ScrollAreaProps): React.ReactElement {
-  const heightStyle = applyBoxHeightStyle(height);
   const dynamicHeight: React.CSSProperties =
-    typeof height === "string" && !heightStyle ? { height, maxHeight: height } : {};
+    typeof height === "string" ? { height, maxHeight: height } : {};
   return (
     <ScrollAreaPrimitive.Root
       className={clsx(root, className)}
-      style={{ ...heightStyle, ...dynamicHeight, ...style }}
+      style={{ ...dynamicHeight, ...style }}
       data-slot="scroll-area-root"
       {...props}
     >

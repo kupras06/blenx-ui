@@ -31,7 +31,7 @@ export type TextVariant = keyof typeof variantTag;
 
 export type TextProps = BoxProps & {
   variant?: TextVariant;
-  align?: "left" | "center" | "right";
+  textAlign?: "left" | "center" | "right";
   weight?: "regular" | "medium" | "semibold" | "bold";
   transform?: "uppercase" | "capitalize" | "none" | "lowercase";
   size?:
@@ -52,11 +52,11 @@ export type TextProps = BoxProps & {
 export function Text({
   variant = "body1",
   color,
-  align,
+  textAlign,
   weight,
   className,
   style,
-  size: textSize,
+  size: textSize = "medium",
   render,
   span,
   transform = "none",
@@ -66,10 +66,10 @@ export function Text({
   const rootCls = clsx(
     base,
     variantRecipe({ variant }),
-    align && alignRecipe({ align }),
+    textAlign && alignRecipe({ textAlign }),
     weight && weightRecipe({ weight }),
-    transform !== "none" && transformRecipe({ transform }),
-    textSize && sizeRecipe({ size: textSize }),
+    transformRecipe({ transform }),
+    sizeRecipe({ size: textSize }),
     className,
   );
 

@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
-import { theme } from "#theme/contract.css";
+import { themeContract } from "#theme/contract.css";
 import { fontSize, spacing } from "#theme/tokens.css";
 
 export const root = style({
@@ -15,14 +15,14 @@ export const input = recipe({
     alignItems: "center",
     justifyContent: "center",
     textAlign: "center",
-    borderRadius: theme.borderRadius,
+    borderRadius: themeContract.borderRadius,
     borderWidth: 1,
     borderStyle: "solid",
-    borderColor: theme.border,
-    backgroundColor: theme.background,
-    color: theme.contentPrimary,
+    borderColor: themeContract.border,
+    backgroundColor: themeContract.background,
+    color: themeContract.contentPrimary,
     outline: "none",
-    caretColor: theme.primary,
+    caretColor: themeContract.primary,
     transition: "box-shadow 0.15s ease, border-color 0.15s ease",
     padding: 0,
     margin: 0,
@@ -47,7 +47,7 @@ export const input = recipe({
 });
 
 export const separator = style({
-  backgroundColor: theme.border,
+  backgroundColor: themeContract.border,
   borderRadius: "999px",
   width: spacing["3"],
   height: spacing["0.5"],

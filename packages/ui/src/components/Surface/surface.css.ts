@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
-import { theme } from "#theme/contract.css";
+import { themeContract } from "#theme/contract.css";
 
 export const base = style({
   textDecoration: "none",
@@ -10,21 +10,21 @@ export const variant = recipe({
   variants: {
     variant: {
       default: {
-        backgroundColor: theme.surface,
-        borderRadius: theme.borderRadius,
+        backgroundColor: themeContract.surface,
+        borderRadius: themeContract.borderRadius,
       },
       outline: {
-        backgroundColor: theme.surface,
+        backgroundColor: themeContract.surface,
         borderWidth: 1,
         borderStyle: "solid",
-        borderColor: theme.border,
+        borderColor: themeContract.border,
       },
       raised: {
-        backgroundColor: theme.surfaceRaised,
-        boxShadow: theme.shadowMd,
+        backgroundColor: themeContract.surfaceRaised,
+        boxShadow: themeContract.shadowMd,
       },
       sunken: {
-        backgroundColor: theme.surfaceSubtle,
+        backgroundColor: themeContract.surfaceSubtle,
       },
     },
   },
@@ -34,10 +34,10 @@ export const interactive = style({
   cursor: "pointer",
   selectors: {
     "&:hover": {
-      backgroundColor: theme.surfaceHover,
+      backgroundColor: themeContract.surfaceHover,
     },
     "&:focus-visible": {
-      outline: `2px solid ${theme.focusRing}`,
+      outline: `2px solid ${themeContract.focusRing}`,
       outlineOffset: "2px",
     },
   },

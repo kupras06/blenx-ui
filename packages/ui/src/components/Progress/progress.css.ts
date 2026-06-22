@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { theme } from "#theme/contract.css";
+import { themeContract } from "#theme/contract.css";
 import { borderRadius, duration, fontSize, fontWeight, spacing } from "#theme/tokens.css";
 
 export const root = style({
@@ -15,12 +15,12 @@ export const track = style({
   width: "100%",
   overflow: "hidden",
   borderRadius: borderRadius.full,
-  backgroundColor: theme.surface,
+  backgroundColor: themeContract.surface,
 });
 
 export const indicator = style({
   height: "100%",
-  backgroundColor: theme.primary,
+  backgroundColor: themeContract.primary,
   borderRadius: borderRadius.full,
   transitionProperty: "width, background-color",
   transitionDuration: duration.slow,

@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
-import { theme } from "#theme/contract.css";
+import { themeContract } from "#theme/contract.css";
 import {
   borderRadius,
   fonts,
@@ -14,7 +14,7 @@ import {
 export const base = style({
   margin: 0,
   textDecoration: "none",
-  color: theme.contentOnPrimary,
+  color: themeContract.contentOnPrimary,
 });
 
 export const variant = recipe({
@@ -136,7 +136,7 @@ export const variant = recipe({
         lineHeight: lineHeight.normal,
         fontWeight: fontWeight.regular,
         margin: 0,
-        backgroundColor: theme.backgroundSubtle,
+        backgroundColor: themeContract.backgroundSubtle,
         padding: spacing["1"],
         borderRadius: borderRadius.small,
       },
@@ -146,7 +146,7 @@ export const variant = recipe({
 
 export const align = recipe({
   variants: {
-    align: {
+    textAlign: {
       left: { textAlign: "left" },
       center: { textAlign: "center" },
       right: { textAlign: "right" },

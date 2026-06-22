@@ -1,12 +1,12 @@
 import { style } from "@vanilla-extract/css";
-import { theme } from "#theme/contract.css";
+import { themeContract } from "#theme/contract.css";
 import { borderRadius, borderWidth, fontSize, fontWeight, spacing } from "#theme/tokens.css";
 
 export const inputGroup = style({
   position: "relative",
   width: "100%",
   minWidth: 0,
-  color: theme.contentPrimary,
+  color: themeContract.contentPrimary,
 });
 
 export const inputSize = style({
@@ -98,10 +98,10 @@ export const popupShell = style({
   maxWidth: "var(--available-width)",
   borderWidth: borderWidth.thin,
   borderStyle: "solid",
-  borderColor: theme.border,
+  borderColor: themeContract.border,
   borderRadius: borderRadius.large,
-  backgroundColor: theme.surface,
-  boxShadow: theme.shadowLg,
+  backgroundColor: themeContract.surface,
+  boxShadow: themeContract.shadowLg,
   transformOrigin: "var(--transform-origin)",
   transitionProperty: "transform, opacity",
   transitionDuration: "150ms",
@@ -112,7 +112,7 @@ export const popup = style({
   flex: 1,
   flexDirection: "column",
   maxHeight: "min(var(--available-height), 23rem)",
-  color: theme.contentPrimary,
+  color: themeContract.contentPrimary,
 });
 
 export const group = style({
@@ -124,7 +124,7 @@ export const separator = style({
   height: "1px",
   marginBlock: spacing.xsmall,
   marginInline: spacing.small,
-  backgroundColor: theme.border,
+  backgroundColor: themeContract.border,
 });
 
 export const groupLabel = style({
@@ -132,14 +132,14 @@ export const groupLabel = style({
   paddingInline: spacing["2"],
   fontSize: fontSize.xsmall,
   fontWeight: fontWeight.medium,
-  color: theme.contentSecondary,
+  color: themeContract.contentSecondary,
 });
 
 export const empty = style({
   padding: spacing.small,
   textAlign: "center",
   fontSize: fontSize.small,
-  color: theme.contentSecondary,
+  color: themeContract.contentSecondary,
 });
 
 export const list = style({
@@ -151,7 +151,7 @@ export const status = style({
   paddingBlock: spacing.small,
   fontSize: fontSize.xsmall,
   fontWeight: fontWeight.medium,
-  color: theme.contentSecondary,
+  color: themeContract.contentSecondary,
 });
 
 export const item = style({

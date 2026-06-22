@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
-import { theme } from "#theme/contract.css";
+import { themeContract } from "#theme/contract.css";
 import { spacing } from "#theme/tokens.css";
 import { borderRadius } from "#theme/tokens.css";
 
@@ -8,9 +8,9 @@ export const root = style({
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
-  borderRadius: theme.borderRadius,
-  backgroundColor: theme.backgroundSubtle,
-  color: theme.contentSecondary,
+  borderRadius: themeContract.borderRadius,
+  backgroundColor: themeContract.backgroundSubtle,
+  color: themeContract.contentSecondary,
   overflow: "hidden",
   flexShrink: 0,
   outline: "none",
@@ -34,8 +34,8 @@ export const fallback = style({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  backgroundColor: theme.backgroundSubtle,
-  color: theme.contentSecondary,
+  backgroundColor: themeContract.backgroundSubtle,
+  color: themeContract.contentSecondary,
   fontSize: 12,
   outline: "none",
   border: "none",

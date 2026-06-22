@@ -1,6 +1,6 @@
-import { createGlobalThemeContract } from "@vanilla-extract/css";
+import { createThemeContract } from "@vanilla-extract/css";
 
-export const theme = createGlobalThemeContract({
+export const themeContract = createThemeContract({
   primary: "primary",
   primarySubtle: "primary-subtle",
   secondary: "secondary",

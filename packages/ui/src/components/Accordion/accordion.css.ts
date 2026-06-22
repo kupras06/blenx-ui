@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { theme } from "#theme/contract.css";
+import { themeContract } from "#theme/contract.css";
 import {
   borderRadius,
   borderWidth,
@@ -25,7 +25,7 @@ export const rootVertical = style({
 export const item = style({
   borderBottomWidth: borderWidth.thin,
   borderBottomStyle: "solid",
-  borderBottomColor: theme.borderSubtle,
+  borderBottomColor: themeContract.borderSubtle,
 });
 
 export const itemDisabled = style({
@@ -49,7 +49,7 @@ export const trigger = style({
   fontSize: fontSize.small,
   lineHeight: lineHeight.normal,
   fontWeight: fontWeight.medium,
-  color: theme.contentPrimary,
+  color: themeContract.contentPrimary,
   backgroundColor: "transparent",
   border: "none",
   borderRadius: borderRadius.small,
@@ -66,17 +66,17 @@ export const trigger = style({
   transitionTimingFunction: easing.standard,
   selectors: {
     "&:hover": {
-      backgroundColor: theme.surfaceHover,
+      backgroundColor: themeContract.surfaceHover,
     },
     "&:focus-visible": {
-      outline: `2px solid ${theme.focusRing}`,
+      outline: `2px solid ${themeContract.focusRing}`,
     },
   },
 });
 
 export const triggerIcon = style({
   flexShrink: 0,
-  color: theme.contentSecondary,
+  color: themeContract.contentSecondary,
   transform: "rotate(0deg)",
   transitionProperty: "transform",
   transitionDuration: duration.normal,

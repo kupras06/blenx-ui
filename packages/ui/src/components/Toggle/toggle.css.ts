@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
-import { theme } from "#theme/contract.css";
+import { themeContract } from "#theme/contract.css";
 import { borderRadius, borderWidth, fontSize, fontWeight, spacing } from "#theme/tokens.css";
 
 export const base = style({
@@ -13,7 +13,7 @@ export const base = style({
   whiteSpace: "nowrap",
   borderStyle: "solid",
   borderWidth: 1,
-  borderRadius: theme.borderRadius,
+  borderRadius: themeContract.borderRadius,
   fontWeight: fontWeight.medium,
   fontSize: fontSize.small,
   lineHeight: 1.4,
@@ -24,7 +24,7 @@ export const base = style({
   transition: "box-shadow 0.15s ease",
   selectors: {
     "&:focus-visible": {
-      boxShadow: `0 0 0 2px ${theme.focusRing}`,
+      boxShadow: `0 0 0 2px ${themeContract.focusRing}`,
     },
     "&:disabled": {
       pointerEvents: "none",
@@ -62,13 +62,13 @@ export const variant = recipe({
     variant: {
       default: {
         borderColor: "transparent",
-        color: theme.contentPrimary,
-        backgroundColor: theme.surface,
+        color: themeContract.contentPrimary,
+        backgroundColor: themeContract.surface,
       },
       outline: {
-        borderColor: theme.border,
-        color: theme.contentPrimary,
-        backgroundColor: theme.backgroundSubtle,
+        borderColor: themeContract.border,
+        color: themeContract.contentPrimary,
+        backgroundColor: themeContract.backgroundSubtle,
       },
     },
   },
@@ -76,12 +76,12 @@ export const variant = recipe({
 
 export const pressed = {
   default: style({
-    backgroundColor: theme.surfaceRaised,
+    backgroundColor: themeContract.surfaceRaised,
   }),
   outline: style({
     outlineWidth: borderWidth.thin,
-    backgroundColor: theme.surfaceOverlay,
-    borderColor: theme.borderStrong,
+    backgroundColor: themeContract.surfaceOverlay,
+    borderColor: themeContract.borderStrong,
   }),
 };
 

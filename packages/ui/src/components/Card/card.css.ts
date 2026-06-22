@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { theme } from "#theme/contract.css";
+import { themeContract } from "#theme/contract.css";
 import { spacing } from "#theme/tokens.css";
 
 export const padding = {
@@ -15,7 +15,7 @@ export const sectionBase = style({
 export const sectionHeader = style({
   borderBottomWidth: 1,
   borderBottomStyle: "solid",
-  borderBottomColor: theme.borderSubtle,
+  borderBottomColor: themeContract.borderSubtle,
 });
 
 export const sectionBody = style({
@@ -25,7 +25,7 @@ export const sectionBody = style({
 export const sectionFooter = style({
   borderTopWidth: 1,
   borderTopStyle: "solid",
-  borderTopColor: theme.borderSubtle,
+  borderTopColor: themeContract.borderSubtle,
 });
 
 export const sectionPadding = {
@@ -36,15 +36,15 @@ export const sectionPadding = {
 
 export const title = style({
   margin: 0,
-  color: theme.contentPrimary,
-  fontSize: theme.fontSize,
+  color: themeContract.contentPrimary,
+  fontSize: themeContract.fontSize,
   fontWeight: 600,
   lineHeight: 1.3,
 });
 
 export const description = style({
   margin: 0,
-  color: theme.contentSecondary,
-  fontSize: theme.fontSize,
+  color: themeContract.contentSecondary,
+  fontSize: themeContract.fontSize,
   lineHeight: 1.5,
 });

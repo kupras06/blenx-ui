@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { theme } from "#theme/contract.css";
+import { themeContract } from "#theme/contract.css";
 import { borderRadius, spacing } from "#theme/tokens.css";
 
 export const root = style({
@@ -9,7 +9,7 @@ export const root = style({
   alignItems: "center",
   padding: spacing.xxsmall,
   borderRadius: borderRadius.full,
-  backgroundColor: theme.border,
+  backgroundColor: themeContract.border,
   cursor: "pointer",
   transitionProperty: "background-color",
   transitionDuration: "150ms",
@@ -17,13 +17,13 @@ export const root = style({
     "&:focus-visible": {
       outlineWidth: 2,
       outlineStyle: "solid",
-      outlineColor: theme.borderStrong,
+      outlineColor: themeContract.borderStrong,
     },
   },
 });
 
 export const rootChecked = style({
-  backgroundColor: theme.primary,
+  backgroundColor: themeContract.primary,
 });
 
 export const rootDisabled = style({
@@ -35,13 +35,13 @@ export const thumb = style({
   width: spacing.large,
   height: spacing.large,
   borderRadius: borderRadius.full,
-  backgroundColor: theme.primary,
+  backgroundColor: themeContract.primary,
   transitionProperty: "transform, background-color",
   transitionDuration: "150ms",
   transform: "translateX(0)",
 });
 
 export const thumbChecked = style({
-  backgroundColor: theme.surface,
+  backgroundColor: themeContract.surface,
   transform: `translateX(${spacing.large})`,
 });

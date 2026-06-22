@@ -10,7 +10,6 @@ import {
 } from "@tanstack/react-router";
 import { Header, ThemeEffect } from "@/components/header";
 import { Container } from "@blenx-dev/ui/components";
-import { darkTheme } from "@/lib/app-theme.stylex";
 import { theme } from "@blenx-dev/ui/theme/contract.stylex";
 import { fonts } from "@blenx-dev/ui/theme/tokens.stylex";
 import appCss from "@/app.css?url";
@@ -121,11 +120,16 @@ function RootDocument() {
   const { queryClient } = Route.useRouteContext();
 
   return (
-    <html lang="en" {...stylex.props(darkTheme)}>
+    <html lang="en">
       <head>
         <HeadContent />
         <meta property="og:image" content="https://blenx-ui.vercel.app/og" />
         <meta name="twitter:image" content="https://blenx-ui.vercel.app/og" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("theme")||"light";document.documentElement.classList.add("stylex-"+t);document.documentElement.setAttribute("data-theme",t)}catch(e){}})();`,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

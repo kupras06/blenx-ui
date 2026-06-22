@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { theme } from "#theme/contract.css";
+import { themeContract } from "#theme/contract.css";
 import { borderRadius, borderWidth, fontSize } from "#theme/tokens.css";
 
 export const disabled = style({
@@ -30,7 +30,7 @@ export const track = style({
   flexGrow: 1,
   userSelect: "none",
   borderRadius: borderRadius.full,
-  backgroundColor: theme.border,
+  backgroundColor: themeContract.border,
 });
 
 export const trackHorizontal = style({
@@ -45,7 +45,7 @@ export const trackVertical = style({
 export const indicator = style({
   userSelect: "none",
   borderRadius: borderRadius.full,
-  backgroundColor: theme.primary,
+  backgroundColor: themeContract.primary,
 });
 
 export const thumb = style({
@@ -55,17 +55,17 @@ export const thumb = style({
   borderRadius: borderRadius.full,
   borderWidth: borderWidth.thin,
   borderStyle: "solid",
-  borderColor: theme.border,
-  backgroundColor: theme.surface,
+  borderColor: themeContract.border,
+  backgroundColor: themeContract.surface,
   outline: "none",
   transitionProperty: "box-shadow, transform",
   transitionDuration: "150ms",
   width: 16,
   height: 16,
-  boxShadow: theme.shadowSm,
+  boxShadow: themeContract.shadowSm,
   selectors: {
     "&:has(:focus-visible)": {
-      boxShadow: `0 0 0 3px ${theme.focusRing}`,
+      boxShadow: `0 0 0 3px ${themeContract.focusRing}`,
     },
   },
 });

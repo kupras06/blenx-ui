@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { theme } from "#theme/contract.css";
+import { themeContract } from "#theme/contract.css";
 import { borderRadius, borderWidth, fontSize, fontWeight, spacing } from "#theme/tokens.css";
 
 export const swipeArea = style({
@@ -96,10 +96,10 @@ export const popup = style({
   minWidth: 0,
   width: "100%",
   boxSizing: "border-box",
-  backgroundColor: theme.surface,
-  color: theme.contentPrimary,
+  backgroundColor: themeContract.surface,
+  color: themeContract.contentPrimary,
   borderStyle: "solid",
-  borderColor: theme.border,
+  borderColor: themeContract.border,
   outline: "none",
   willChange: "transform",
   transitionProperty: "transform, box-shadow, height, background-color, margin, padding",
@@ -114,7 +114,7 @@ export const popup = style({
 });
 
 export const popupDefault = style({
-  boxShadow: theme.shadowLg,
+  boxShadow: themeContract.shadowLg,
 });
 
 export const popupStraight = style({
@@ -197,8 +197,8 @@ export const footer = style({
 export const footerDefault = style({
   borderTopWidth: borderWidth.thin,
   borderTopStyle: "solid",
-  borderTopColor: theme.borderSubtle,
-  backgroundColor: theme.backgroundSubtle,
+  borderTopColor: themeContract.borderSubtle,
+  backgroundColor: themeContract.backgroundSubtle,
   paddingTop: spacing.medium,
   paddingBottom: spacing.medium,
 });
@@ -217,7 +217,7 @@ export const title = style({
 export const description = style({
   fontSize: fontSize.small,
   lineHeight: 1.4,
-  color: theme.contentSecondary,
+  color: themeContract.contentSecondary,
 });
 
 export const panel = style({
@@ -280,7 +280,7 @@ export const menuItem = style({
   borderRadius: borderRadius.small,
   border: "none",
   backgroundColor: "transparent",
-  color: theme.contentPrimary,
+  color: themeContract.contentPrimary,
   fontSize: fontSize.medium,
   textAlign: "left",
   cursor: "default",
@@ -288,12 +288,12 @@ export const menuItem = style({
 });
 
 export const menuItemDestructive = style({
-  color: theme.sentimentNegative,
+  color: themeContract.sentimentNegative,
 });
 
 export const separator = style({
   height: "1px",
-  backgroundColor: theme.borderSubtle,
+  backgroundColor: themeContract.borderSubtle,
   marginTop: spacing.xsmall,
   marginBottom: spacing.xsmall,
 });
@@ -310,7 +310,7 @@ export const menuGroupLabel = style({
   paddingRight: spacing.small,
   fontSize: fontSize.xsmall,
   fontWeight: fontWeight.medium,
-  color: theme.contentSecondary,
+  color: themeContract.contentSecondary,
 });
 
 export const menuTrigger = style({
@@ -325,7 +325,7 @@ export const menuTrigger = style({
   borderRadius: borderRadius.small,
   backgroundColor: "transparent",
   border: "none",
-  color: theme.contentPrimary,
+  color: themeContract.contentPrimary,
 });
 
 export const menuTriggerIcon = style({
@@ -346,7 +346,7 @@ export const menuCheckbox = style({
   borderRadius: borderRadius.small,
   backgroundColor: "transparent",
   border: "none",
-  color: theme.contentPrimary,
+  color: themeContract.contentPrimary,
 });
 
 export const menuCheckboxDefault = style({
@@ -369,14 +369,14 @@ export const menuCheckboxSwitchIndicator = style({
   alignItems: "center",
   padding: "2px",
   borderRadius: borderRadius.full,
-  backgroundColor: theme.borderSubtle,
+  backgroundColor: themeContract.borderSubtle,
 });
 
 export const menuCheckboxSwitchThumb = style({
   width: "14px",
   height: "14px",
   borderRadius: borderRadius.full,
-  backgroundColor: theme.background,
+  backgroundColor: themeContract.background,
 });
 
 export const menuCheckboxIndicator = style({
@@ -399,7 +399,7 @@ export const menuRadio = style({
   borderRadius: borderRadius.small,
   backgroundColor: "transparent",
   border: "none",
-  color: theme.contentPrimary,
+  color: themeContract.contentPrimary,
   gridTemplateColumns: "1rem 1fr",
 });
 

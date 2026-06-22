@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { theme } from "#theme/contract.css";
+import { themeContract } from "#theme/contract.css";
 import { duration } from "#theme/tokens.css";
 
 export const HANDLE_SIZE = 8;
@@ -36,22 +36,22 @@ export const handle = style({
   alignItems: "center",
   justifyContent: "center",
   flexShrink: 0,
-  backgroundColor: theme.borderSubtle,
+  backgroundColor: themeContract.borderSubtle,
   transitionProperty: "background-color",
   transitionDuration: duration.fast,
   outline: "none",
   selectors: {
     "&:hover": {
-      backgroundColor: theme.border,
+      backgroundColor: themeContract.border,
     },
     "&:focus-visible": {
-      backgroundColor: theme.primary,
+      backgroundColor: themeContract.primary,
     },
   },
 });
 
 export const handleActive = style({
-  backgroundColor: theme.primary,
+  backgroundColor: themeContract.primary,
 });
 
 export const handleDisabled = style({

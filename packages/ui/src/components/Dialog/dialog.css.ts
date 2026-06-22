@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { theme } from "#theme/contract.css";
+import { themeContract } from "#theme/contract.css";
 import { borderRadius, borderWidth, spacing } from "#theme/tokens.css";
 
 export const backdrop = style({
@@ -42,10 +42,10 @@ export const popup = style({
   transformOrigin: "center",
   borderWidth: borderWidth.thin,
   borderStyle: "solid",
-  borderColor: theme.border,
+  borderColor: themeContract.border,
   borderRadius: borderRadius.xlarge,
-  backgroundColor: theme.surface,
-  color: theme.contentPrimary,
+  backgroundColor: themeContract.surface,
+  color: themeContract.contentPrimary,
   boxSizing: "border-box",
   opacity: "calc(1 - var(--nested-dialogs))",
   outline: "none",
@@ -125,8 +125,8 @@ export const footer = style({
 export const footerDefault = style({
   borderTopWidth: borderWidth.thin,
   borderTopStyle: "solid",
-  borderTopColor: theme.borderSubtle,
-  backgroundColor: theme.backgroundSubtle,
+  borderTopColor: themeContract.borderSubtle,
+  backgroundColor: themeContract.backgroundSubtle,
   paddingTop: spacing.medium,
   paddingBottom: spacing.medium,
 });
@@ -140,13 +140,13 @@ export const title = style({
   fontSize: "20px",
   lineHeight: 1,
   fontWeight: 600,
-  color: theme.contentPrimary,
+  color: themeContract.contentPrimary,
 });
 
 export const description = style({
   fontSize: "14px",
   lineHeight: 1.4,
-  color: theme.contentSecondary,
+  color: themeContract.contentSecondary,
 });
 
 export const panel = style({

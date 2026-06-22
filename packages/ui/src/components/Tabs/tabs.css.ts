@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { theme } from "#theme/contract.css";
+import { themeContract } from "#theme/contract.css";
 import {
   borderRadius,
   duration,
@@ -47,7 +47,7 @@ export const listDefault = style({
   backgroundColor: "transparent",
   borderBottomWidth: 1,
   borderBottomStyle: "solid",
-  borderBottomColor: theme.borderSubtle,
+  borderBottomColor: themeContract.borderSubtle,
   borderRadius: 0,
 });
 
@@ -57,7 +57,7 @@ export const listUnderline = style({
   gap: spacing.large,
   borderBottomWidth: 1,
   borderBottomStyle: "solid",
-  borderBottomColor: theme.borderSubtle,
+  borderBottomColor: themeContract.borderSubtle,
   padding: 0,
 });
 
@@ -71,7 +71,7 @@ export const listUnderlineVertical = style({
   backgroundColor: "transparent",
   borderRightWidth: 1,
   borderRightStyle: "solid",
-  borderRightColor: theme.borderSubtle,
+  borderRightColor: themeContract.borderSubtle,
   borderRadius: 0,
 });
 
@@ -81,24 +81,24 @@ export const listVertical = style({
   minWidth: 220,
   borderRightWidth: 1,
   borderRightStyle: "solid",
-  borderRightColor: theme.borderSubtle,
+  borderRightColor: themeContract.borderSubtle,
 });
 
 export const tabActiveVertical = style({
-  color: theme.contentPrimary,
+  color: themeContract.contentPrimary,
   fontWeight: fontWeight.semibold,
-  backgroundColor: theme.backgroundSubtle,
+  backgroundColor: themeContract.backgroundSubtle,
   borderRightWidth: 2,
   borderRightStyle: "solid",
-  borderRightColor: theme.secondary,
+  borderRightColor: themeContract.secondary,
 });
 
 export const tabUnderlineActive = style({
-  color: theme.contentPrimary,
+  color: themeContract.contentPrimary,
   fontWeight: fontWeight.semibold,
   borderBottomWidth: 2,
   borderBottomStyle: "solid",
-  borderBottomColor: theme.contentPrimary,
+  borderBottomColor: themeContract.contentPrimary,
 });
 
 export const listGhost = style({
@@ -109,17 +109,17 @@ export const listGhost = style({
 export const tabGhost = style({
   padding: `${spacing.small} ${spacing.medium}`,
   borderRadius: borderRadius.medium,
-  color: theme.contentSecondary,
+  color: themeContract.contentSecondary,
   selectors: {
     "&:hover": {
-      backgroundColor: theme.backgroundSubtle,
+      backgroundColor: themeContract.backgroundSubtle,
     },
   },
 });
 
 export const tabGhostActive = style({
-  backgroundColor: theme.backgroundSubtle,
-  color: theme.contentPrimary,
+  backgroundColor: themeContract.backgroundSubtle,
+  color: themeContract.contentPrimary,
   fontWeight: fontWeight.semibold,
 });
 
@@ -127,27 +127,27 @@ export const listSegmented = style({
   display: "flex",
   gap: spacing.xxsmall,
   padding: spacing.xxsmall,
-  backgroundColor: theme.backgroundSubtle,
+  backgroundColor: themeContract.backgroundSubtle,
   borderWidth: 1,
   borderStyle: "solid",
-  borderColor: theme.borderSubtle,
+  borderColor: themeContract.borderSubtle,
   borderRadius: borderRadius.large,
 });
 
 export const tabSegmented = style({
   padding: `${spacing.small} ${spacing.medium}`,
   borderRadius: borderRadius.medium,
-  color: theme.contentSecondary,
+  color: themeContract.contentSecondary,
   selectors: {
     "&:hover": {
-      backgroundColor: theme.surface,
+      backgroundColor: themeContract.surface,
     },
   },
 });
 
 export const tabSegmentedActive = style({
-  backgroundColor: theme.surface,
-  color: theme.contentOnPrimary,
+  backgroundColor: themeContract.surface,
+  color: themeContract.contentOnPrimary,
   fontWeight: fontWeight.semibold,
 });
 
@@ -178,7 +178,7 @@ export const tabDefault = style({
   position: "relative",
   padding: `${spacing.small} ${spacing.medium}`,
   borderRadius: 0,
-  color: theme.contentSecondary,
+  color: themeContract.contentSecondary,
   fontSize: fontSize.small,
   fontWeight: fontWeight.medium,
   lineHeight: 1.2,
@@ -186,11 +186,11 @@ export const tabDefault = style({
   backgroundColor: "transparent",
   selectors: {
     "&:hover": {
-      color: theme.contentPrimary,
-      backgroundColor: theme.backgroundSubtle,
+      color: themeContract.contentPrimary,
+      backgroundColor: themeContract.backgroundSubtle,
     },
     "&:focus-visible": {
-      boxShadow: `inset 0 -2px 0 ${theme.secondary}`,
+      boxShadow: `inset 0 -2px 0 ${themeContract.secondary}`,
     },
   },
 });
@@ -201,7 +201,7 @@ export const tabVertical = style({
 });
 
 export const tabActive = style({
-  color: theme.contentPrimary,
+  color: themeContract.contentPrimary,
   fontWeight: fontWeight.semibold,
 });
 
@@ -211,24 +211,24 @@ export const tabDisabled = style({
 });
 
 export const tabActiveDefault = style({
-  color: theme.contentPrimary,
+  color: themeContract.contentPrimary,
   fontWeight: fontWeight.semibold,
   backgroundColor: "transparent",
   borderBottomWidth: 2,
   borderBottomStyle: "solid",
-  borderBottomColor: theme.secondary,
+  borderBottomColor: themeContract.secondary,
 });
 
 export const tabUnderline = style({
   padding: `${spacing.small} 0`,
   borderRadius: 0,
-  color: theme.contentSecondary,
+  color: themeContract.contentSecondary,
   fontSize: fontSize.small,
   fontWeight: fontWeight.medium,
   backgroundColor: "transparent",
   selectors: {
     "&:hover": {
-      color: theme.contentPrimary,
+      color: themeContract.contentPrimary,
     },
   },
 });
@@ -245,7 +245,7 @@ export const indicatorDefault = style({
 export const indicatorUnderline = style({
   zIndex: 0,
   borderRadius: borderRadius.full,
-  backgroundColor: theme.secondary,
+  backgroundColor: themeContract.secondary,
 });
 
 export const panel = style({

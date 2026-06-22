@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { theme } from "#theme/contract.css";
+import { themeContract } from "#theme/contract.css";
 import { borderRadius, borderWidth, spacing } from "#theme/tokens.css";
 
 export const root = style({
@@ -13,14 +13,14 @@ export const root = style({
   borderRadius: borderRadius.small,
   borderWidth: borderWidth.thin,
   borderStyle: "solid",
-  borderColor: theme.border,
-  backgroundColor: theme.background,
+  borderColor: themeContract.border,
+  backgroundColor: themeContract.background,
   outline: "none",
   transitionProperty: "box-shadow",
   transitionDuration: "150ms",
   selectors: {
     "&:focus-visible": {
-      boxShadow: `0 0 0 2px ${theme.focusRing}`,
+      boxShadow: `0 0 0 2px ${themeContract.focusRing}`,
     },
   },
   "@media": {
@@ -53,16 +53,16 @@ export const indicator = style({
   alignItems: "center",
   justifyContent: "center",
   borderRadius: borderRadius.small,
-  color: theme.contentOnPrimary,
+  color: themeContract.contentOnPrimary,
 });
 
 export const indicatorChecked = style({
-  backgroundColor: theme.primary,
-  color: theme.contentOnPrimary,
+  backgroundColor: themeContract.primary,
+  color: themeContract.contentOnPrimary,
 });
 
 export const indicatorIndeterminate = style({
-  color: theme.contentPrimary,
+  color: themeContract.contentPrimary,
 });
 
 export const icon = style({

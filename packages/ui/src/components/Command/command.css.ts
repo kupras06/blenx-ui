@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { theme } from "#theme/contract.css";
+import { themeContract } from "#theme/contract.css";
 import { borderRadius, fontSize, fontWeight, spacing } from "#theme/tokens.css";
 
 export const root = style({
@@ -8,12 +8,12 @@ export const root = style({
   width: "100%",
   maxHeight: "100%",
   overflow: "hidden",
-  backgroundColor: theme.surface,
+  backgroundColor: themeContract.surface,
   borderWidth: 1,
   borderStyle: "solid",
-  borderColor: theme.border,
+  borderColor: themeContract.border,
   borderRadius: borderRadius.large,
-  boxShadow: theme.shadowLg,
+  boxShadow: themeContract.shadowLg,
   boxSizing: "border-box",
   outline: "none",
 });
@@ -26,7 +26,7 @@ export const inputWrapper = style({
   paddingRight: spacing.small,
   borderBottomWidth: 1,
   borderBottomStyle: "solid",
-  borderBottomColor: theme.borderSubtle,
+  borderBottomColor: themeContract.borderSubtle,
   boxSizing: "border-box",
 });
 
@@ -34,7 +34,7 @@ export const inputIcon = style({
   display: "flex",
   alignItems: "center",
   flexShrink: 0,
-  color: theme.contentDisabled,
+  color: themeContract.contentDisabled,
 });
 
 export const input = style({
@@ -45,10 +45,10 @@ export const input = style({
   backgroundColor: "transparent",
   fontSize: fontSize.small,
   fontFamily: "inherit",
-  color: theme.contentPrimary,
+  color: themeContract.contentPrimary,
   selectors: {
     "&::placeholder": {
-      color: theme.contentDisabled,
+      color: themeContract.contentDisabled,
     },
   },
 });
@@ -71,7 +71,7 @@ export const groupHeading = style({
   paddingRight: spacing.small,
   fontSize: fontSize.xsmall,
   fontWeight: fontWeight.semibold,
-  color: theme.contentSecondary,
+  color: themeContract.contentSecondary,
 });
 
 export const item = style({
@@ -87,26 +87,26 @@ export const item = style({
   borderRadius: borderRadius.small,
   fontSize: fontSize.small,
   lineHeight: "1.4",
-  color: theme.contentPrimary,
+  color: themeContract.contentPrimary,
   cursor: "pointer",
   userSelect: "none",
   outline: "none",
   selectors: {
     "&:hover": {
-      backgroundColor: theme.backgroundSubtle,
+      backgroundColor: themeContract.backgroundSubtle,
     },
     "&:focus-visible": {
-      boxShadow: `0 0 0 2px ${theme.focusRing}`,
+      boxShadow: `0 0 0 2px ${themeContract.focusRing}`,
     },
   },
 });
 
 export const itemActive = style({
-  backgroundColor: theme.backgroundSubtle,
+  backgroundColor: themeContract.backgroundSubtle,
 });
 
 export const itemDisabled = style({
-  color: theme.contentDisabled,
+  color: themeContract.contentDisabled,
   cursor: "default",
   selectors: {
     "&:hover": {
@@ -119,7 +119,7 @@ export const separator = style({
   height: 1,
   marginTop: spacing.xsmall,
   marginBottom: spacing.xsmall,
-  backgroundColor: theme.borderSubtle,
+  backgroundColor: themeContract.borderSubtle,
 });
 
 export const empty = style({
@@ -127,5 +127,5 @@ export const empty = style({
   paddingBottom: spacing.large,
   textAlign: "center",
   fontSize: fontSize.small,
-  color: theme.contentSecondary,
+  color: themeContract.contentSecondary,
 });

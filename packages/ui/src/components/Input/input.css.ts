@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { theme } from "#theme/contract.css";
+import { themeContract } from "#theme/contract.css";
 import { spacing } from "#theme/tokens.css";
 
 export const label = style({
@@ -8,7 +8,7 @@ export const label = style({
   gap: 4,
   lineHeight: 1.4,
   fontWeight: 400,
-  color: theme.contentSecondary,
+  color: themeContract.contentSecondary,
 });
 
 export const input = style({
@@ -20,28 +20,28 @@ export const input = style({
   paddingRight: spacing.medium,
   fontSize: 16,
   lineHeight: 1.5,
-  color: theme.contentPrimary,
-  backgroundColor: theme.surface,
+  color: themeContract.contentPrimary,
+  backgroundColor: themeContract.surface,
   borderWidth: 1,
   borderStyle: "solid",
-  borderColor: theme.border,
-  borderRadius: theme.borderRadius,
+  borderColor: themeContract.border,
+  borderRadius: themeContract.borderRadius,
   outline: "none",
   selectors: {
     "&::placeholder": {
-      color: theme.contentDisabled,
+      color: themeContract.contentDisabled,
     },
     "&:disabled": {
       opacity: 0.5,
       cursor: "not-allowed",
     },
     "&:focus-visible": {
-      borderColor: theme.borderStrong,
-      boxShadow: `0 0 0 2px ${theme.borderStrong}`,
+      borderColor: themeContract.borderStrong,
+      boxShadow: `0 0 0 2px ${themeContract.borderStrong}`,
     },
     "&:focus-visible[aria-invalid='true']": {
-      borderColor: theme.sentimentNegative,
-      boxShadow: `0 0 0 3px ${theme.sentimentNegative}`,
+      borderColor: themeContract.sentimentNegative,
+      boxShadow: `0 0 0 3px ${themeContract.sentimentNegative}`,
     },
   },
 });
@@ -63,11 +63,11 @@ export const inputLg = style({
 });
 
 export const inputError = style({
-  borderColor: theme.sentimentNegative,
+  borderColor: themeContract.sentimentNegative,
 });
 
 export const error = style({
   fontSize: 12,
   lineHeight: 1.4,
-  color: theme.sentimentNegative,
+  color: themeContract.sentimentNegative,
 });

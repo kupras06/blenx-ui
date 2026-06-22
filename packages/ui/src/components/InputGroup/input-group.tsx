@@ -7,7 +7,7 @@ import { Radio as RadioPrimitive } from "@base-ui/react/radio";
 import { RadioGroup as RadioGroupPrimitive } from "@base-ui/react/radio-group";
 import clsx from "clsx";
 import type * as React from "react";
-import type { _BaseDivProps } from "#utils/types";
+import type { _BaseDivProps, PropsWithClassName } from "#utils/types";
 import {
   group,
   addon,
@@ -23,7 +23,7 @@ import {
 
 type Align = "inline-start" | "inline-end" | "block-start" | "block-end";
 
-type InputGroupProps = _BaseDivProps;
+type InputGroupProps = PropsWithClassName<useRender.ComponentProps<"fieldset">>;
 
 function InputGroup({ className, ...props }: InputGroupProps): React.ReactElement {
   return <fieldset className={clsx(group, className)} data-slot="input-group" {...props} />;

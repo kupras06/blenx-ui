@@ -1,36 +1,36 @@
 import { recipe } from "@vanilla-extract/recipes";
-import { theme } from "#theme/contract.css";
+import { themeContract } from "#theme/contract.css";
 import { spacing } from "#theme/tokens.css";
 
 export const badgeRecipe = recipe({
   base: {
     display: "inline-block",
     padding: spacing.xsmall,
-    borderRadius: theme.borderRadius,
+    borderRadius: themeContract.borderRadius,
     fontSize: 12,
     lineHeight: 1.2,
   },
   variants: {
     variant: {
       default: {
-        backgroundColor: theme.surfaceRaised,
-        color: theme.contentPrimary,
+        backgroundColor: themeContract.surfaceRaised,
+        color: themeContract.contentPrimary,
       },
       primary: {
-        backgroundColor: theme.primary,
-        color: theme.contentOnPrimary,
+        backgroundColor: themeContract.primary,
+        color: themeContract.contentOnPrimary,
       },
       secondary: {
-        backgroundColor: theme.secondary,
-        color: theme.contentPrimary,
+        backgroundColor: themeContract.secondary,
+        color: themeContract.contentPrimary,
       },
       danger: {
-        backgroundColor: theme.sentimentNegative,
-        color: theme.contentOnPrimary,
+        backgroundColor: themeContract.sentimentNegative,
+        color: themeContract.contentOnPrimary,
       },
       sucess: {
-        backgroundColor: theme.sentimentPositive,
-        color: theme.contentOnPrimary,
+        backgroundColor: themeContract.sentimentPositive,
+        color: themeContract.contentOnPrimary,
       },
     },
   },

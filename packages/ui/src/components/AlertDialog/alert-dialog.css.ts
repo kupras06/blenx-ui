@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { theme } from "#theme/contract.css";
+import { themeContract } from "#theme/contract.css";
 import { borderWidth, fontSize, fontWeight, lineHeight, spacing } from "#theme/tokens.css";
 
 export const backdrop = style({
@@ -32,14 +32,14 @@ export const popup = style({
   transformOrigin: "center",
   borderWidth: borderWidth.thin,
   borderStyle: "solid",
-  borderColor: theme.border,
-  borderRadius: theme.borderRadius,
-  backgroundColor: theme.surface,
-  color: theme.contentPrimary,
+  borderColor: themeContract.border,
+  borderRadius: themeContract.borderRadius,
+  backgroundColor: themeContract.surface,
+  color: themeContract.contentPrimary,
   boxSizing: "border-box",
   opacity: "calc(1 - var(--nested-dialogs))",
   outline: "none",
-  boxShadow: theme.shadowLg,
+  boxShadow: themeContract.shadowLg,
   transitionProperty: "opacity, translate",
   transitionDuration: "200ms",
   transitionTimingFunction: "ease-in-out",
@@ -113,8 +113,8 @@ export const footer = style({
 export const footerDefault = style({
   borderTopWidth: borderWidth.thin,
   borderTopStyle: "solid",
-  borderTopColor: theme.borderSubtle,
-  backgroundColor: theme.backgroundSubtle,
+  borderTopColor: themeContract.borderSubtle,
+  backgroundColor: themeContract.backgroundSubtle,
   paddingTop: spacing.medium,
   paddingBottom: spacing.medium,
 });
@@ -128,13 +128,13 @@ export const title = style({
   fontSize: fontSize.large,
   lineHeight: lineHeight.tight,
   fontWeight: fontWeight.semibold,
-  color: theme.contentPrimary,
+  color: themeContract.contentPrimary,
 });
 
 export const description = style({
   fontSize: fontSize.small,
   lineHeight: lineHeight.normal,
-  color: theme.contentSecondary,
+  color: themeContract.contentSecondary,
 });
 
 export const panel = style({

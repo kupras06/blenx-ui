@@ -1,6 +1,6 @@
 import { recipe } from "@vanilla-extract/recipes";
 import { style } from "@vanilla-extract/css";
-import { theme } from "#theme/contract.css";
+import { themeContract } from "#theme/contract.css";
 import { fontSize, fontWeight, spacing } from "#theme/tokens.css";
 
 export const separator = recipe({
@@ -15,8 +15,8 @@ export const separator = recipe({
       vertical: { width: 1, height: "100%" },
     },
     tone: {
-      subtle: { color: theme.borderSubtle },
-      strong: { color: theme.borderStrong },
+      subtle: { color: themeContract.borderSubtle },
+      strong: { color: themeContract.borderStrong },
     },
   },
   defaultVariants: {
@@ -52,7 +52,7 @@ export const withLabel = style({
 export const label = style({
   paddingLeft: spacing.xsmall,
   paddingRight: spacing.xsmall,
-  color: theme.contentSecondary,
+  color: themeContract.contentSecondary,
   fontSize: fontSize.xsmall,
   fontWeight: fontWeight.medium,
   lineHeight: 1.2,

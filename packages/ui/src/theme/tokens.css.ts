@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { theme } from "./contract.css";
+import { themeContract } from "./contract.css";
 
 export const borderRadius = {
   xsmall: "2px",
@@ -117,7 +117,7 @@ export const primitives = {
     outline: "none",
     selectors: {
       "&:focus-visible": {
-        outline: `2px solid ${theme.focusRing}`,
+        outline: `2px solid ${themeContract.focusRing}`,
       },
     },
   }),

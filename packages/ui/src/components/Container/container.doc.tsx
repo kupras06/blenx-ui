@@ -6,19 +6,19 @@ export function SizesStory() {
   return (
     <VStack gap="medium">
       <Text variant="h4">Container — sm</Text>
-      <Container size="sm" center>
+      <Container size="sm" centered>
         <div style={{ background: "var(--surface)", padding: 16, borderRadius: 8 }}>
           <Text variant="body2">Small container (max 640px)</Text>
         </div>
       </Container>
       <Text variant="h4">Container — md</Text>
-      <Container size="md" center>
+      <Container size="md" centered>
         <div style={{ background: "var(--surface)", padding: 16, borderRadius: 8 }}>
           <Text variant="body2">Medium container (max 768px)</Text>
         </div>
       </Container>
       <Text variant="h4">Container — full</Text>
-      <Container size="full" center>
+      <Container size="full" centered>
         <div style={{ background: "var(--surface)", padding: 16, borderRadius: 8 }}>
           <Text variant="body2">Full width container</Text>
         </div>

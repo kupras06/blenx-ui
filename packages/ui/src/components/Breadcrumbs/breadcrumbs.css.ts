@@ -1,11 +1,11 @@
 import { style } from "@vanilla-extract/css";
-import { theme } from "#theme/contract.css";
+import { themeContract } from "#theme/contract.css";
 
 export const root = style({
   display: "flex",
   alignItems: "center",
   gap: "4px",
-  color: theme.contentSecondary,
+  color: themeContract.contentSecondary,
   fontSize: 14,
 });
 
@@ -14,8 +14,8 @@ export const list = style({
   flexWrap: "wrap",
   alignItems: "center",
   gap: 6,
-  fontSize: theme.fontSize,
-  color: theme.contentSecondary,
+  fontSize: themeContract.fontSize,
+  color: themeContract.contentSecondary,
   "@media": {
     "screen and (min-width: 768px)": {
       gap: 10,
@@ -38,14 +38,14 @@ export const link = style({
   transitionTimingFunction: "ease",
   selectors: {
     "&:hover": {
-      color: theme.contentPrimary,
+      color: themeContract.contentPrimary,
     },
   },
 });
 
 export const page = style({
   fontWeight: 400,
-  color: theme.contentPrimary,
+  color: themeContract.contentPrimary,
 });
 
 export const separator = style({

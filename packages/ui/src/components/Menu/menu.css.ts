@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { theme } from "#theme/contract.css";
+import { themeContract } from "#theme/contract.css";
 import { borderRadius, fontSize, fontWeight, letterSpacing, spacing } from "#theme/tokens.css";
 
 export const trigger = style({
@@ -20,18 +20,18 @@ export const trigger = style({
   transition: "background-color 0.15s ease, box-shadow 0.15s ease",
   selectors: {
     "&:focus-visible": {
-      boxShadow: `0 0 0 2px ${theme.borderStrong}`,
+      boxShadow: `0 0 0 2px ${themeContract.borderStrong}`,
     },
   },
 });
 
 export const popup = style({
-  backgroundColor: theme.surface,
+  backgroundColor: themeContract.surface,
   borderWidth: 1,
   borderStyle: "solid",
-  borderColor: theme.borderSubtle,
+  borderColor: themeContract.borderSubtle,
   borderRadius: borderRadius.large,
-  boxShadow: theme.shadowXl,
+  boxShadow: themeContract.shadowXl,
   zIndex: 1000,
   padding: spacing.xsmall,
   display: "flex",
@@ -48,8 +48,8 @@ export const item = style({
   gap: spacing.small,
   minHeight: 24,
   padding: `${spacing.xsmall} ${spacing.small}`,
-  borderRadius: theme.borderRadius,
-  color: theme.contentPrimary,
+  borderRadius: themeContract.borderRadius,
+  color: themeContract.contentPrimary,
   fontSize: fontSize.small,
   fontWeight: fontWeight.medium,
   lineHeight: 1.2,
@@ -63,41 +63,41 @@ export const item = style({
   transition: "background-color 0.15s ease, color 0.15s ease",
   selectors: {
     "&:hover": {
-      backgroundColor: theme.backgroundSubtle,
-      color: theme.contentPrimary,
+      backgroundColor: themeContract.backgroundSubtle,
+      color: themeContract.contentPrimary,
     },
     "&:focus-visible": {
-      backgroundColor: theme.backgroundSubtle,
-      color: theme.contentPrimary,
-      boxShadow: `0 0 0 2px ${theme.borderStrong} inset`,
+      backgroundColor: themeContract.backgroundSubtle,
+      color: themeContract.contentPrimary,
+      boxShadow: `0 0 0 2px ${themeContract.borderStrong} inset`,
     },
     "&:active": {
-      backgroundColor: theme.borderSubtle,
+      backgroundColor: themeContract.borderSubtle,
     },
   },
 });
 
 export const itemDestructive = style({
-  color: theme.sentimentNegative,
+  color: themeContract.sentimentNegative,
   selectors: {
     "&:hover": {
-      backgroundColor: theme.sentimentNegativeSubtle,
-      color: theme.sentimentNegative,
+      backgroundColor: themeContract.sentimentNegativeSubtle,
+      color: themeContract.sentimentNegative,
     },
     "&:focus-visible": {
-      backgroundColor: theme.sentimentNegativeSubtle,
-      color: theme.sentimentNegative,
-      boxShadow: `0 0 0 2px ${theme.sentimentNegative} inset`,
+      backgroundColor: themeContract.sentimentNegativeSubtle,
+      color: themeContract.sentimentNegative,
+      boxShadow: `0 0 0 2px ${themeContract.sentimentNegative} inset`,
     },
     "&:active": {
-      backgroundColor: theme.sentimentNegativeSubtle,
+      backgroundColor: themeContract.sentimentNegativeSubtle,
     },
   },
 });
 
 export const separator = style({
   height: 1,
-  backgroundColor: theme.borderSubtle,
+  backgroundColor: themeContract.borderSubtle,
   border: "none",
 });
 
@@ -105,7 +105,7 @@ export const groupLabel = style({
   padding: `${spacing.small} ${spacing.medium} ${spacing.xsmall}`,
   fontSize: fontSize.xsmall,
   fontWeight: fontWeight.semibold,
-  color: theme.contentSecondary,
+  color: themeContract.contentSecondary,
   textTransform: "uppercase",
   letterSpacing: letterSpacing.wide,
 });
@@ -116,7 +116,7 @@ export const inset = style({
 
 export const shortcut = style({
   marginLeft: "auto",
-  color: theme.contentDisabled,
+  color: themeContract.contentDisabled,
   fontSize: fontSize.xsmall,
   fontWeight: fontWeight.medium,
 });

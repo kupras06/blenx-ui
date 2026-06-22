@@ -45,9 +45,9 @@ export function WeightsStory() {
 export function AlignmentsStory() {
   return (
     <Stack gap="small">
-      <Text align="left">Left aligned</Text>
-      <Text align="center">Center aligned</Text>
-      <Text align="right">Right aligned</Text>
+      <Text textAlign="left">Left aligned</Text>
+      <Text textAlign="center">Center aligned</Text>
+      <Text textAlign="right">Right aligned</Text>
     </Stack>
   );
 }

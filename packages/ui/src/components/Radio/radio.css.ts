@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { theme } from "#theme/contract.css";
+import { themeContract } from "#theme/contract.css";
 import { borderRadius, borderWidth, spacing } from "#theme/tokens.css";
 
 export const root = style({
@@ -13,14 +13,14 @@ export const root = style({
   borderRadius: borderRadius.full,
   borderWidth: borderWidth.thin,
   borderStyle: "solid",
-  borderColor: theme.border,
-  backgroundColor: theme.background,
+  borderColor: themeContract.border,
+  backgroundColor: themeContract.background,
   outline: "none",
   transitionProperty: "box-shadow",
   transitionDuration: "150ms",
   selectors: {
     "&:focus-visible": {
-      boxShadow: `0 0 0 2px ${theme.focusRing}`,
+      boxShadow: `0 0 0 2px ${themeContract.focusRing}`,
     },
   },
   "@media": {
@@ -56,14 +56,14 @@ export const indicator = style({
 
 export const indicatorChecked = style({
   display: "flex",
-  backgroundColor: theme.primary,
+  backgroundColor: themeContract.primary,
 });
 
 export const dot = style({
   width: 8,
   height: 8,
   borderRadius: borderRadius.full,
-  backgroundColor: theme.contentOnPrimary,
+  backgroundColor: themeContract.contentOnPrimary,
   "@media": {
     "screen and (min-width: 640px)": {
       width: 6,

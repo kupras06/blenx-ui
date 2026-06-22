@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { theme } from "#theme/contract.css";
+import { themeContract } from "#theme/contract.css";
 import { borderRadius, borderWidth, fontSize, fontWeight, spacing } from "#theme/tokens.css";
 
 export const backdrop = style({
@@ -20,12 +20,12 @@ export const popup = style({
   width: "max(var(--anchor-width), 240px)",
   maxWidth: "calc(100vw - 16px)",
   padding: spacing.small,
-  backgroundColor: theme.surface,
+  backgroundColor: themeContract.surface,
   borderWidth: borderWidth.thin,
   borderStyle: "solid",
-  borderColor: theme.border,
+  borderColor: themeContract.border,
   borderRadius: borderRadius.large,
-  boxShadow: theme.shadowLg,
+  boxShadow: themeContract.shadowLg,
   outline: "none",
   transformOrigin: "var(--transform-origin)",
   transitionProperty: "opacity, scale",
@@ -58,10 +58,10 @@ export const arrow = style({
 export const arrowFill = style({
   width: "100%",
   height: "100%",
-  backgroundColor: theme.surface,
+  backgroundColor: themeContract.surface,
   borderWidth: borderWidth.thin,
   borderStyle: "solid",
-  borderColor: theme.border,
+  borderColor: themeContract.border,
   borderRadius: 2,
   transform: "rotate(45deg)",
 });
@@ -69,14 +69,14 @@ export const arrowFill = style({
 export const title = style({
   fontSize: fontSize.medium,
   fontWeight: fontWeight.semibold,
-  color: theme.contentPrimary,
+  color: themeContract.contentPrimary,
   margin: 0,
   paddingBottom: spacing.xsmall,
 });
 
 export const description = style({
   fontSize: fontSize.small,
-  color: theme.contentSecondary,
+  color: themeContract.contentSecondary,
   margin: 0,
   paddingBottom: spacing.xsmall,
 });

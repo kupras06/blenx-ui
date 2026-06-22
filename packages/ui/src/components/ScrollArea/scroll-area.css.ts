@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { theme } from "#theme/contract.css";
+import { themeContract } from "#theme/contract.css";
 import { spacing } from "#theme/tokens.css";
 
 export const root = style({
@@ -10,14 +10,14 @@ export const root = style({
 
 export const viewport = style({
   height: "100%",
-  borderRadius: theme.borderRadius,
+  borderRadius: themeContract.borderRadius,
   outline: "none",
   boxSizing: "border-box",
   overscrollBehaviorY: "contain",
   overscrollBehaviorX: "contain",
   selectors: {
     "&:focus-visible": {
-      boxShadow: `0 0 0 2px ${theme.borderStrong}`,
+      boxShadow: `0 0 0 2px ${themeContract.borderStrong}`,
     },
   },
 });
@@ -73,6 +73,6 @@ export const scrollbarVertical = style({
 export const thumb = style({
   position: "relative",
   flexGrow: 1,
-  borderRadius: theme.borderRadius,
+  borderRadius: themeContract.borderRadius,
   backgroundColor: "rgba(0, 0, 0, 0.2)",
 });

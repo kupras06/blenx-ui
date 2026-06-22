@@ -374,6 +374,7 @@ export function DrawerMenuItem({
   ...props
 }: _BaseDivProps & {
   variant?: "default" | "destructive";
+  disabled?: boolean;
 }): React.ReactElement {
   return useRender({
     defaultTagName: "button",

@@ -1,11 +1,11 @@
 import { style } from "@vanilla-extract/css";
-import { theme } from "#theme/contract.css";
+import { themeContract } from "#theme/contract.css";
 import { borderRadius, fontSize, fontWeight, spacing } from "#theme/tokens.css";
 
 export const label = style({
   fontSize: fontSize.xsmall,
   fontWeight: fontWeight.semibold,
-  color: theme.contentSecondary,
+  color: themeContract.contentSecondary,
   paddingBottom: spacing.xsmall,
   paddingLeft: spacing.xsmall,
   paddingRight: spacing.xsmall,
@@ -25,29 +25,29 @@ export const trigger = style({
   fontSize: fontSize.small,
   lineHeight: "1.5",
   fontFamily: "inherit",
-  color: theme.contentPrimary,
-  backgroundColor: theme.surface,
+  color: themeContract.contentPrimary,
+  backgroundColor: themeContract.surface,
   borderWidth: 1,
   borderStyle: "solid",
-  borderColor: theme.border,
+  borderColor: themeContract.border,
   borderRadius: borderRadius.medium,
   outline: "none",
   cursor: "pointer",
   transition: "border-color 0.15s ease, box-shadow 0.15s ease",
   selectors: {
     "&:hover": {
-      borderColor: theme.borderStrong,
+      borderColor: themeContract.borderStrong,
     },
     "&:focus-visible": {
-      borderColor: theme.primary,
-      boxShadow: `0 0 0 2px ${theme.focusRing}`,
+      borderColor: themeContract.primary,
+      boxShadow: `0 0 0 2px ${themeContract.focusRing}`,
     },
     "&:disabled": {
       opacity: 0.5,
       cursor: "not-allowed",
     },
     "&[data-placeholder]": {
-      color: theme.contentDisabled,
+      color: themeContract.contentDisabled,
     },
   },
 });
@@ -71,7 +71,7 @@ export const triggerLg = style({
 export const icon = style({
   display: "flex",
   alignItems: "center",
-  color: theme.contentSecondary,
+  color: themeContract.contentSecondary,
   flexShrink: 0,
 });
 
@@ -80,12 +80,12 @@ export const popup = style({
   maxHeight: 300,
   paddingTop: spacing.xsmall,
   paddingBottom: spacing.xsmall,
-  backgroundColor: theme.surface,
+  backgroundColor: themeContract.surface,
   borderWidth: 1,
   borderStyle: "solid",
-  borderColor: theme.border,
+  borderColor: themeContract.border,
   borderRadius: borderRadius.large,
-  boxShadow: theme.shadowLg,
+  boxShadow: themeContract.shadowLg,
   zIndex: 1400,
   minWidth: "var(--anchor-width)",
   maxWidth: "var(--available-width)",
@@ -113,28 +113,28 @@ export const item = style({
   borderRadius: borderRadius.small,
   fontSize: fontSize.small,
   lineHeight: "1.4",
-  color: theme.contentPrimary,
+  color: themeContract.contentPrimary,
   cursor: "pointer",
   userSelect: "none",
   selectors: {
     "&:hover": {
-      backgroundColor: theme.backgroundSubtle,
+      backgroundColor: themeContract.backgroundSubtle,
     },
     "&[data-highlighted]": {
-      backgroundColor: theme.backgroundSubtle,
+      backgroundColor: themeContract.backgroundSubtle,
     },
     "&[data-selected]": {
-      backgroundColor: theme.primary,
-      color: theme.contentOnPrimary,
+      backgroundColor: themeContract.primary,
+      color: themeContract.contentOnPrimary,
     },
     "&[data-selected]:hover": {
-      backgroundColor: theme.primary,
+      backgroundColor: themeContract.primary,
     },
     "&[data-selected][data-highlighted]": {
-      backgroundColor: theme.primary,
+      backgroundColor: themeContract.primary,
     },
     "&[data-disabled]": {
-      color: theme.contentDisabled,
+      color: themeContract.contentDisabled,
       cursor: "default",
     },
     "&[data-disabled]:hover": {
@@ -154,7 +154,7 @@ export const separator = style({
   height: 1,
   marginTop: spacing.xsmall,
   marginBottom: spacing.xsmall,
-  backgroundColor: theme.borderSubtle,
+  backgroundColor: themeContract.borderSubtle,
 });
 
 export const groupLabel = style({
@@ -164,7 +164,7 @@ export const groupLabel = style({
   paddingRight: spacing.small,
   fontSize: fontSize.xsmall,
   fontWeight: fontWeight.semibold,
-  color: theme.contentSecondary,
+  color: themeContract.contentSecondary,
 });
 
 export const scrollArrow = style({
@@ -173,11 +173,11 @@ export const scrollArrow = style({
   justifyContent: "center",
   width: "100%",
   height: 24,
-  color: theme.contentSecondary,
+  color: themeContract.contentSecondary,
   cursor: "pointer",
   selectors: {
     "&:hover": {
-      backgroundColor: theme.backgroundSubtle,
+      backgroundColor: themeContract.backgroundSubtle,
     },
   },
 });

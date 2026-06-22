@@ -1,12 +1,12 @@
 import { style } from "@vanilla-extract/css";
-import { theme } from "#theme/contract.css";
+import { themeContract } from "#theme/contract.css";
 import { borderRadius, borderWidth, fontSize, fontWeight, spacing } from "#theme/tokens.css";
 
 export const inputGroup = style({
   position: "relative",
   width: "100%",
   minWidth: 0,
-  color: theme.contentPrimary,
+  color: themeContract.contentPrimary,
 });
 
 export const inputSm = style({
@@ -90,10 +90,10 @@ export const popupShell = style({
   maxWidth: "var(--available-width)",
   borderWidth: borderWidth.thin,
   borderStyle: "solid",
-  borderColor: theme.border,
+  borderColor: themeContract.border,
   borderRadius: borderRadius.large,
-  backgroundColor: theme.surface,
-  boxShadow: theme.shadowLg,
+  backgroundColor: themeContract.surface,
+  boxShadow: themeContract.shadowLg,
   transformOrigin: "var(--transform-origin)",
   transitionProperty: "transform, opacity",
   transitionDuration: "150ms",
@@ -112,14 +112,14 @@ export const popup = style({
   flex: 1,
   flexDirection: "column",
   maxHeight: "min(var(--available-height), 23rem)",
-  color: theme.contentPrimary,
+  color: themeContract.contentPrimary,
 });
 
 export const separator = style({
   height: "1px",
   marginBlock: spacing.xsmall,
   marginInline: spacing.small,
-  backgroundColor: theme.border,
+  backgroundColor: themeContract.border,
   selectors: {
     "&:last-child": {
       display: "none",
@@ -137,14 +137,14 @@ export const groupLabel = style({
   paddingInline: spacing.small,
   fontSize: fontSize.xsmall,
   fontWeight: fontWeight.medium,
-  color: theme.contentSecondary,
+  color: themeContract.contentSecondary,
 });
 
 export const empty = style({
   padding: spacing.small,
   textAlign: "center",
   fontSize: fontSize.medium,
-  color: theme.contentSecondary,
+  color: themeContract.contentSecondary,
 });
 
 export const row = style({
@@ -173,7 +173,7 @@ export const status = style({
   paddingBlock: spacing.small,
   fontSize: fontSize.xsmall,
   fontWeight: fontWeight.medium,
-  color: theme.contentSecondary,
+  color: themeContract.contentSecondary,
   selectors: {
     "&:empty": {
       margin: 0,
@@ -198,15 +198,15 @@ export const item = style({
   fontSize: fontSize.medium,
   selectors: {
     "&:hover": {
-      backgroundColor: theme.surfaceHover,
+      backgroundColor: themeContract.surfaceHover,
     },
     "&[data-disabled]": {
       pointerEvents: "none",
       opacity: 0.64,
     },
     "&[data-highlighted]": {
-      backgroundColor: theme.surfaceHover,
-      color: theme.contentPrimary,
+      backgroundColor: themeContract.surfaceHover,
+      color: themeContract.contentPrimary,
     },
   },
 });
@@ -234,25 +234,25 @@ export const chips = style({
   padding: "calc(4px - 1px)",
   borderWidth: borderWidth.thin,
   borderStyle: "solid",
-  borderColor: theme.border,
+  borderColor: themeContract.border,
   borderRadius: borderRadius.large,
-  backgroundColor: theme.background,
-  color: theme.contentPrimary,
+  backgroundColor: themeContract.background,
+  color: themeContract.contentPrimary,
   boxShadow: "0 1px 2px rgba(0, 0, 0, 0.04)",
   outline: "none",
   transitionProperty: "border-color, box-shadow",
   transitionDuration: "150ms",
   selectors: {
     "&:focus-within": {
-      borderColor: theme.borderStrong,
-      boxShadow: `0 0 0 2px ${theme.borderStrong}`,
+      borderColor: themeContract.borderStrong,
+      boxShadow: `0 0 0 2px ${themeContract.borderStrong}`,
     },
     "&:has([aria-invalid='true'])": {
-      borderColor: theme.sentimentNegative,
+      borderColor: themeContract.sentimentNegative,
     },
     "&:has([aria-invalid='true']:focus-visible)": {
-      borderColor: theme.sentimentNegative,
-      boxShadow: `0 0 0 2px ${theme.sentimentNegative}`,
+      borderColor: themeContract.sentimentNegative,
+      boxShadow: `0 0 0 2px ${themeContract.sentimentNegative}`,
     },
     "&:has(:disabled)": {
       opacity: 0.64,
@@ -290,10 +290,10 @@ export const chipsInput = style({
   paddingInlineEnd: spacing.xsmall,
   fontSize: fontSize.medium,
   lineHeight: 1.5,
-  color: theme.contentPrimary,
+  color: themeContract.contentPrimary,
   selectors: {
     "&::placeholder": {
-      color: theme.contentDisabled,
+      color: themeContract.contentDisabled,
     },
     "&:disabled": {
       opacity: 0.5,
@@ -309,8 +309,8 @@ export const chip = style({
   display: "inline-flex",
   alignItems: "center",
   borderRadius: borderRadius.medium,
-  backgroundColor: theme.surfaceHover,
-  color: theme.contentPrimary,
+  backgroundColor: themeContract.surfaceHover,
+  color: themeContract.contentPrimary,
   paddingInlineStart: spacing.small,
   fontSize: fontSize.small,
   fontWeight: fontWeight.medium,

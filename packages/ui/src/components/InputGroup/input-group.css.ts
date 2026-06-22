@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { theme } from "#theme/contract.css";
+import { themeContract } from "#theme/contract.css";
 import { borderRadius, fontSize, spacing } from "#theme/tokens.css";
 
 export const group = style({
@@ -11,8 +11,8 @@ export const group = style({
   borderRadius: borderRadius.large,
   borderWidth: 1,
   borderStyle: "solid",
-  borderColor: theme.border,
-  color: theme.contentPrimary,
+  borderColor: themeContract.border,
+  color: themeContract.contentPrimary,
   fontSize: fontSize.small,
   boxSizing: "border-box",
   minHeight: "40px",
@@ -21,15 +21,15 @@ export const group = style({
   transitionDuration: "150ms",
   selectors: {
     "&:focus-within": {
-      borderColor: theme.borderStrong,
-      boxShadow: `0 0 0 2px ${theme.borderStrong}`,
+      borderColor: themeContract.borderStrong,
+      boxShadow: `0 0 0 2px ${themeContract.borderStrong}`,
     },
     "&:has([aria-invalid='true'])": {
-      borderColor: theme.sentimentNegative,
+      borderColor: themeContract.sentimentNegative,
     },
     "&:has([aria-invalid='true']:focus-visible)": {
-      borderColor: theme.sentimentNegative,
-      boxShadow: `0 0 0 2px ${theme.sentimentNegative}`,
+      borderColor: themeContract.sentimentNegative,
+      boxShadow: `0 0 0 2px ${themeContract.sentimentNegative}`,
     },
     "&:has(:disabled)": {
       opacity: 0.64,
@@ -47,7 +47,7 @@ export const addon = style({
   justifyContent: "center",
   cursor: "text",
   flexShrink: 0,
-  color: theme.contentSecondary,
+  color: themeContract.contentSecondary,
   userSelect: "none",
   fontSize: fontSize.small,
   selectors: {
@@ -98,7 +98,7 @@ export const text = style({
   gap: spacing.small,
   whiteSpace: "nowrap",
   lineHeight: 1,
-  color: theme.contentSecondary,
+  color: themeContract.contentSecondary,
 });
 
 export const menu = style({
@@ -120,12 +120,12 @@ export const input = style({
   paddingRight: "8px",
   borderWidth: 0,
   fontSize: fontSize.small,
-  color: theme.contentPrimary,
+  color: themeContract.contentPrimary,
   boxSizing: "border-box",
   lineHeight: 1.5,
   selectors: {
     "&::placeholder": {
-      color: theme.contentDisabled,
+      color: themeContract.contentDisabled,
     },
     "&:disabled": {
       opacity: 0.5,
@@ -147,11 +147,11 @@ export const textarea = style({
   paddingLeft: "10px",
   paddingRight: "10px",
   fontSize: fontSize.small,
-  color: theme.contentPrimary,
+  color: themeContract.contentPrimary,
   resize: "none",
   selectors: {
     "&::placeholder": {
-      color: theme.contentDisabled,
+      color: themeContract.contentDisabled,
     },
   },
 });
