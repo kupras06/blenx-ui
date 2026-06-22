@@ -1,15 +1,11 @@
 import { useRender } from "@base-ui/react/use-render";
 import clsx from "clsx";
 import type React from "react";
-import {
-  base,
-  variant as variantRecipe,
-  align as alignRecipe,
-  weight as weightRecipe,
-  transform as transformRecipe,
-  size as sizeRecipe,
-} from "./text.css";
-import { Box, type BoxProps } from "../Box/box";
+import { textVariants } from "./text.css";
+import type { RecipeVariants } from "@vanilla-extract/recipes";
+import { applyBaseSprinkles } from "#utils/styles";
+import type { BaseSprinkles } from "#utils/sprinkles.css";
+import type { _BaseDivProps } from "#utils/types";
 
 const variantTag = {
   h1: "h1",
@@ -18,72 +14,51 @@ const variantTag = {
   h4: "h4",
   h5: "h5",
   h6: "h6",
-  body1: "div",
-  body2: "div",
-  body3: "div",
-  body4: "div",
-  caption: "div",
-  creatorNote: "p",
-  p: "p",
-  code: "code",
-} as const satisfies Record<string, keyof React.JSX.IntrinsicElements>;
-export type TextVariant = keyof typeof variantTag;
 
-export type TextProps = BoxProps & {
-  variant?: TextVariant;
-  textAlign?: "left" | "center" | "right";
-  weight?: "regular" | "medium" | "semibold" | "bold";
-  transform?: "uppercase" | "capitalize" | "none" | "lowercase";
-  size?:
-    | "xxsmall"
-    | "xsmall"
-    | "small"
-    | "medium"
-    | "large"
-    | "xlarge"
-    | "xxlarge"
-    | "xxxlarge"
-    | "huge"
-    | "massive"
-    | "titanic";
-  span?: boolean;
-};
+  body1: "p",
+  body2: "p",
+  body3: "p",
+  body4: "p",
+  p: "p",
+
+  caption: "span",
+  creatorNote: "aside",
+  code: "code",
+  div: "div",
+} as const satisfies Record<string, keyof React.JSX.IntrinsicElements>;
+
+export type TextProps = _BaseDivProps &
+  BaseSprinkles &
+  RecipeVariants<typeof textVariants> & { span?: boolean };
 
 export function Text({
   variant = "body1",
-  color = "default",
   textAlign,
   weight,
   className,
   style,
-  size: textSize = "medium",
+  size = "medium",
   render,
   span,
   transform = "none",
-  children,
   ...props
 }: TextProps): React.ReactElement {
+  const [baseStyles, htmlProps] = applyBaseSprinkles(props);
   const rootCls = clsx(
-    base,
-    variantRecipe({ variant }),
-    textAlign && alignRecipe({ textAlign }),
-    weight && weightRecipe({ weight }),
-    transformRecipe({ transform }),
-    sizeRecipe({ size: textSize }),
+    baseStyles,
+    textVariants({ variant, textAlign, weight, transform, size }),
     className,
   );
-
   if (span) {
     return useRender({
       defaultTagName: "span",
-      props: { className: rootCls, style, children, ...props },
+      props: { className: rootCls, style, ...htmlProps },
       render,
     });
   }
-
-  return (
-    <Box render={render} className={rootCls} style={style} color={color} {...props}>
-      {children}
-    </Box>
-  );
+  return useRender({
+    defaultTagName: variantTag[variant],
+    props: { className: rootCls, style, ...htmlProps },
+    render,
+  });
 }

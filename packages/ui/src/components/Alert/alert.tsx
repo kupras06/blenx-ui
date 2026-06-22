@@ -1,10 +1,11 @@
 import type { ReactNode } from "react";
 import { Text } from "../Text";
+import type { RecipeVariants } from "@vanilla-extract/recipes";
+import { alertVariants } from "./alert.css";
+import clsx from "clsx";
+import { HStack, VStack } from "../Stack/stack";
 
-type Variant = "info" | "success" | "warning" | "error";
-
-type Props = {
-  variant?: Variant;
+type Props = RecipeVariants<typeof alertVariants> & {
   icon?: ReactNode;
   title?: string;
   description?: string;
@@ -13,59 +14,25 @@ type Props = {
   className?: string;
 };
 
-const variantVars: Record<Variant, { bg: string; fg: string; border: string }> = {
-  info: {
-    bg: "var(--sentiment-info-subtle)",
-    fg: "var(--sentiment-info)",
-    border: "var(--sentiment-info)",
-  },
-  success: {
-    bg: "var(--sentiment-positive-subtle)",
-    fg: "var(--sentiment-positive)",
-    border: "var(--sentiment-positive)",
-  },
-  warning: {
-    bg: "var(--sentiment-warning-subtle)",
-    fg: "var(--sentiment-warning)",
-    border: "var(--sentiment-warning)",
-  },
-  error: {
-    bg: "var(--sentiment-negative-subtle)",
-    fg: "var(--sentiment-negative)",
-    border: "var(--sentiment-negative)",
-  },
-};
-
-function Alert({ variant = "info", icon, style, title, description, children, className }: Props) {
-  const vars = variantVars[variant];
+function Alert({ variant = "info", icon, title, description, children, className }: Props) {
   return (
-    <div
-      className={className}
-      style={{
-        display: "flex",
-        alignItems: icon ? "flex-start" : "center",
-        gap: "12px",
-        padding: "12px",
-        backgroundColor: vars.bg,
-        border: `1px solid ${vars.border}`,
-        borderRadius: "8px",
-        color: vars.fg,
-        fontSize: "14px",
-        lineHeight: 1.5,
-        ...style,
-      }}
+    <HStack
+      align={icon ? "start" : "center"}
+      gap="xsmall"
+      p="small"
+      className={clsx(alertVariants({ variant }), className)}
     >
       {icon}
-      <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
+      <VStack gap="xxsmall">
         {title ? (
           <Text variant="h6" padding="none" margin="none">
             {title}
           </Text>
         ) : null}
-        {description ? <span style={{ color: vars.fg }}>{description}</span> : null}
+        {description ? <span style={{ color: "currentColor" }}>{description}</span> : null}
         {children}
-      </div>
-    </div>
+      </VStack>
+    </HStack>
   );
 }
 

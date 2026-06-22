@@ -1,29 +1,19 @@
 import clsx from "clsx";
 import type { BoxProps } from "../Box/box";
 import { Box } from "../Box/box";
-import { base, interactive, variant } from "./surface.css";
+import { variantRecipe } from "./surface.css";
+import type { RecipeVariants } from "@vanilla-extract/recipes";
+type SurfaceProps = BoxProps & RecipeVariants<typeof variantRecipe>;
 
-type SurfaceVariant = "default" | "outline" | "raised" | "sunken";
-type SurfaceProps = BoxProps & {
-  variant?: SurfaceVariant;
-  interactive?: boolean;
-};
-
-function Surface({
-  variant: v = "default",
-  interactive: int,
-  className,
-  style,
-  ...props
-}: SurfaceProps) {
+function Surface({ variant, interactive, className, style, ...props }: SurfaceProps) {
   return (
     <Box
-      className={clsx(base, variant({ variant: v }), int && interactive, className)}
+      className={clsx(variantRecipe({ variant, interactive }), className)}
       style={style}
       {...props}
     />
   );
 }
 
-export type { SurfaceProps, SurfaceVariant };
+export type { SurfaceProps };
 export { Surface };

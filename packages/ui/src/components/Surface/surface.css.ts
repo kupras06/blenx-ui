@@ -1,12 +1,8 @@
-import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
 import { themeContract } from "#theme/contract.css";
 
-export const base = style({
-  textDecoration: "none",
-});
-
-export const variant = recipe({
+export const variantRecipe = recipe({
+  base: { textDecoration: "none" },
   variants: {
     variant: {
       default: {
@@ -27,18 +23,19 @@ export const variant = recipe({
         backgroundColor: themeContract.surfaceSubtle,
       },
     },
-  },
-});
-
-export const interactive = style({
-  cursor: "pointer",
-  selectors: {
-    "&:hover": {
-      backgroundColor: themeContract.surfaceHover,
-    },
-    "&:focus-visible": {
-      outline: `2px solid ${themeContract.focusRing}`,
-      outlineOffset: "2px",
+    interactive: {
+      true: {
+        cursor: "pointer",
+        selectors: {
+          "&:hover": {
+            backgroundColor: themeContract.surfaceHover,
+          },
+          "&:focus-visible": {
+            outline: `2px solid ${themeContract.focusRing}`,
+            outlineOffset: "2px",
+          },
+        },
+      },
     },
   },
 });

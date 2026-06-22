@@ -1,3 +1,4 @@
+import { themeContract } from "#theme/contract.css.js";
 import { defineProperties, createSprinkles } from "@vanilla-extract/sprinkles";
 
 export const spacing = {
@@ -14,6 +15,7 @@ export const spacing = {
   large: "16px",
   xl: "64px",
   xlarge: "80px",
+  huge: "96px",
   "2xl": "96px",
   "3xl": "128px",
   massive: "144px",
@@ -48,14 +50,14 @@ const containerWidths = {
 };
 
 const colors = {
-  primary: "var(--primary)",
+  primary: themeContract.contentPrimary,
   default: "currentColor",
-  secondary: "var(--secondary)",
-  disabled: "var(--content-disabled)",
-  error: "var(--sentiment-negative)",
-  success: "var(--sentiment-positive)",
-  warning: "var(--sentiment-warning)",
-  info: "var(--sentiment-info)",
+  secondary: themeContract.contentSecondary,
+  disabled: themeContract.contentDisabled,
+  error: themeContract.sentimentNegative,
+  success: themeContract.sentimentPositive,
+  warning: themeContract.sentimentWarning,
+  info: themeContract.sentimentInfo,
 } as const;
 
 const responsiveConditions = {
@@ -106,7 +108,16 @@ const layoutProperties = defineProperties({
 const colorProperties = defineProperties({
   properties: {
     color: colors,
-    backgroundColor: colors,
+    backgroundColor: {
+      primary: themeContract.primary,
+      default: "inherit",
+      secondary: themeContract.secondary,
+      disabled: themeContract.contentDisabled,
+      error: themeContract.sentimentNegativeSubtle,
+      success: themeContract.sentimentPositiveSubtle,
+      warning: themeContract.sentimentWarningSubtle,
+      info: themeContract.sentimentInfoSubtle,
+    },
     borderColor: colors,
   },
 });

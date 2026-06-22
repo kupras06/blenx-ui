@@ -1,5 +1,5 @@
 import { DefaultCatchBoundary } from "@/components/DefaultCatchBoundary";
-import { DocsSidebar } from "@/components/docs-sidebar";
+import { DocsSidebar } from "@/views/docs/docs-sidebar";
 import { DocsToc } from "@/views/docs/DocsToc";
 import { DocsDataProviderWithQuery, useDocsData } from "@/views/docs/DocsDataProvider";
 import { useMediaQuery } from "@uidotdev/usehooks";
@@ -27,7 +27,7 @@ function RenderSidebarNavs() {
       {isSmallDevice ? (
         <DrawerSidebar />
       ) : (
-        <Container size="xxs">
+        <Container size="screen" backgroundColor="error">
           <ScrollArea height="90svh">
             <DocsSidebar />
           </ScrollArea>

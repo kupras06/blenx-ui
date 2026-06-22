@@ -19,6 +19,7 @@ export function applyBaseSprinkles(
       htmlProps[key] = value;
     }
   }
-
+  sprinkleProps.color = sprinkleProps.color || "default";
+  sprinkleProps.backgroundColor = sprinkleProps.backgroundColor || "default";
   return [baseSprinkles(sprinkleProps), htmlProps];
 }

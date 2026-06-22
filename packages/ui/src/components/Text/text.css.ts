@@ -1,4 +1,3 @@
-import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
 import { themeContract } from "#theme/contract.css";
 import {
@@ -11,13 +10,12 @@ import {
   spacing,
 } from "#theme/tokens.css";
 
-export const base = style({
-  margin: 0,
-  textDecoration: "none",
-  color: themeContract.contentOnPrimary,
-});
-
-export const variant = recipe({
+export const textVariants = recipe({
+  base: {
+    margin: 0,
+    textDecoration: "none",
+    color: themeContract.contentOnPrimary,
+  },
   variants: {
     variant: {
       h1: {
@@ -141,43 +139,23 @@ export const variant = recipe({
         borderRadius: borderRadius.small,
       },
     },
-  },
-});
-
-export const align = recipe({
-  variants: {
     textAlign: {
       left: { textAlign: "left" },
       center: { textAlign: "center" },
       right: { textAlign: "right" },
     },
-  },
-});
-
-export const weight = recipe({
-  variants: {
     weight: {
       regular: { fontWeight: fontWeight.regular },
       medium: { fontWeight: fontWeight.medium },
       semibold: { fontWeight: fontWeight.semibold },
       bold: { fontWeight: fontWeight.bold },
     },
-  },
-});
-
-export const transform = recipe({
-  variants: {
     transform: {
       uppercase: { textTransform: "uppercase" },
       capitalize: { textTransform: "capitalize" },
       none: { textTransform: "none" },
       lowercase: { textTransform: "lowercase" },
     },
-  },
-});
-
-export const size = recipe({
-  variants: {
     size: {
       xxsmall: { fontSize: spacing.xxsmall, lineHeight: lineHeight.tight },
       xsmall: { fontSize: spacing.xsmall, lineHeight: lineHeight.tight },
