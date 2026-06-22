@@ -2,17 +2,71 @@
 
 import { Checkbox as CheckboxPrimitive } from "@base-ui/react/checkbox";
 import { Drawer as DrawerPrimitive } from "@base-ui/react/drawer";
-import { mergeProps } from "@base-ui/react/merge-props";
 import { Radio as RadioPrimitive } from "@base-ui/react/radio";
 import { RadioGroup as RadioGroupPrimitive } from "@base-ui/react/radio-group";
 import { useRender } from "@base-ui/react/use-render";
 import { ArrowRightIcon } from "@phosphor-icons/react";
-import * as stylex from "@stylexjs/stylex";
+import clsx from "clsx";
 import type React from "react";
 import { createContext, useContext, useMemo } from "react";
-import type { _BaseDivProps, PropsWithStylex } from "#utils/stylex.utils";
+import type { _BaseDivProps } from "#utils/types";
 import { ScrollArea } from "../ScrollArea/scroll-area";
-import { drawerStyles } from "./drawer.styles";
+import {
+  swipeArea,
+  swipeAreaBottom,
+  swipeAreaTop,
+  swipeAreaLeft,
+  swipeAreaRight,
+  backdrop,
+  viewport,
+  viewportBottom,
+  viewportTop,
+  viewportLeft,
+  viewportRight,
+  viewportInset,
+  popup,
+  popupDefault,
+  popupStraight,
+  popupInset,
+  popupBottom,
+  popupTop,
+  popupLeft,
+  popupRight,
+  closeButton as closeButtonStyle,
+  header,
+  footer,
+  footerDefault,
+  footerBare,
+  title,
+  description,
+  panel,
+  bar,
+  barHorizontal,
+  barVertical,
+  barTop,
+  barBottom,
+  barLeft,
+  barRight,
+  menu,
+  menuItem,
+  menuItemDestructive,
+  separator,
+  menuGroup,
+  menuGroupLabel,
+  menuTrigger,
+  menuTriggerIcon,
+  menuCheckbox,
+  menuCheckboxDefault,
+  menuCheckboxSwitch,
+  menuCheckboxSwitchLabel,
+  menuCheckboxSwitchIndicator,
+  menuCheckboxSwitchThumb,
+  menuCheckboxIndicator,
+  menuCheckboxLabel,
+  menuRadio,
+  menuRadioIndicator,
+  menuRadioLabel,
+} from "./drawer.css";
 import { CloseButton } from "../CloseButton";
 
 type DrawerPosition = "right" | "left" | "top" | "bottom";
@@ -58,101 +112,115 @@ export function DrawerClose(props: DrawerPrimitive.Close.Props): React.ReactElem
 }
 
 export function DrawerSwipeArea({
-  style,
+  className,
   position: positionProp,
   ...props
-}: PropsWithStylex<
-  DrawerPrimitive.SwipeArea.Props & {
-    position?: DrawerPosition;
-  }
->): React.ReactElement {
+}: DrawerPrimitive.SwipeArea.Props & {
+  position?: DrawerPosition;
+}): React.ReactElement {
   const { position: contextPosition } = useContext(DrawerContext);
-  const position = positionProp ?? contextPosition;
-  const swipeAreaProps = stylex.props(
-    drawerStyles.swipeArea,
-    position === "bottom" && drawerStyles.swipeAreaBottom,
-    position === "top" && drawerStyles.swipeAreaTop,
-    position === "left" && drawerStyles.swipeAreaLeft,
-    position === "right" && drawerStyles.swipeAreaRight,
-    style,
-  );
+  const resolvedPosition = positionProp ?? contextPosition;
 
-  return <DrawerPrimitive.SwipeArea {...swipeAreaProps} data-slot="drawer-swipe-area" {...props} />;
+  return (
+    <DrawerPrimitive.SwipeArea
+      className={clsx(
+        swipeArea,
+        resolvedPosition === "bottom" && swipeAreaBottom,
+        resolvedPosition === "top" && swipeAreaTop,
+        resolvedPosition === "left" && swipeAreaLeft,
+        resolvedPosition === "right" && swipeAreaRight,
+        className,
+      )}
+      data-slot="drawer-swipe-area"
+      {...props}
+    />
+  );
 }
 
 export function DrawerBackdrop({
-  style,
+  className,
   ...props
-}: PropsWithStylex<DrawerPrimitive.Backdrop.Props>): React.ReactElement {
-  const backdropProps = stylex.props(drawerStyles.backdrop, style);
-  return <DrawerPrimitive.Backdrop {...backdropProps} data-slot="drawer-backdrop" {...props} />;
+}: DrawerPrimitive.Backdrop.Props): React.ReactElement {
+  return (
+    <DrawerPrimitive.Backdrop
+      className={clsx(backdrop, className)}
+      data-slot="drawer-backdrop"
+      {...props}
+    />
+  );
 }
 
 export function DrawerViewport({
-  style,
-  position,
+  className,
+  position: positionProp,
   variant = "default",
   ...props
-}: PropsWithStylex<
-  DrawerPrimitive.Viewport.Props & {
-    position?: DrawerPosition;
-    variant?: "default" | "straight" | "inset";
-  }
->): React.ReactElement {
-  const viewportProps = stylex.props(
-    drawerStyles.viewport,
-    position === "bottom" && drawerStyles.viewportBottom,
-    position === "top" && drawerStyles.viewportTop,
-    position === "left" && drawerStyles.viewportLeft,
-    position === "right" && drawerStyles.viewportRight,
-    variant === "inset" && drawerStyles.viewportInset,
-    style,
-  );
+}: DrawerPrimitive.Viewport.Props & {
+  position?: DrawerPosition;
+  variant?: "default" | "straight" | "inset";
+}): React.ReactElement {
+  const { position: contextPosition } = useContext(DrawerContext);
+  const resolvedPosition = positionProp ?? contextPosition;
 
-  return <DrawerPrimitive.Viewport {...viewportProps} data-slot="drawer-viewport" {...props} />;
+  return (
+    <DrawerPrimitive.Viewport
+      className={clsx(
+        viewport,
+        resolvedPosition === "bottom" && viewportBottom,
+        resolvedPosition === "top" && viewportTop,
+        resolvedPosition === "left" && viewportLeft,
+        resolvedPosition === "right" && viewportRight,
+        variant === "inset" && viewportInset,
+        className,
+      )}
+      data-slot="drawer-viewport"
+      {...props}
+    />
+  );
 }
 
 export function DrawerPopup({
-  style,
   children,
   showCloseButton = false,
   position: positionProp,
   variant = "default",
   showBar = false,
   portalProps,
+  className,
   ...props
-}: PropsWithStylex<
-  DrawerPrimitive.Popup.Props & {
-    showCloseButton?: boolean;
-    position?: DrawerPosition;
-    variant?: "default" | "straight" | "inset";
-    showBar?: boolean;
-    portalProps?: DrawerPrimitive.Portal.Props;
-  }
->): React.ReactElement {
+}: DrawerPrimitive.Popup.Props & {
+  showCloseButton?: boolean;
+  position?: DrawerPosition;
+  variant?: "default" | "straight" | "inset";
+  showBar?: boolean;
+  portalProps?: DrawerPrimitive.Portal.Props;
+}): React.ReactElement {
   const { position: contextPosition } = useContext(DrawerContext);
-  const position = positionProp ?? contextPosition;
-  const popupProps = stylex.props(
-    drawerStyles.popup,
-    position === "bottom" && drawerStyles.popupBottom,
-    position === "top" && drawerStyles.popupTop,
-    position === "left" && drawerStyles.popupLeft,
-    position === "right" && drawerStyles.popupRight,
-    variant === "default" && drawerStyles.popupDefault,
-    variant === "straight" && drawerStyles.popupStraight,
-    variant === "inset" && drawerStyles.popupInset,
-    style,
-  );
+  const resolvedPosition = positionProp ?? contextPosition;
 
   return (
     <DrawerPortal {...portalProps}>
       <DrawerBackdrop />
-      <DrawerViewport position={position} variant={variant}>
-        <DrawerPrimitive.Popup {...popupProps} data-slot="drawer-popup" {...props}>
+      <DrawerViewport position={resolvedPosition} variant={variant}>
+        <DrawerPrimitive.Popup
+          className={clsx(
+            popup,
+            resolvedPosition === "bottom" && popupBottom,
+            resolvedPosition === "top" && popupTop,
+            resolvedPosition === "left" && popupLeft,
+            resolvedPosition === "right" && popupRight,
+            variant === "default" && popupDefault,
+            variant === "straight" && popupStraight,
+            variant === "inset" && popupInset,
+            className,
+          )}
+          data-slot="drawer-popup"
+          {...props}
+        >
           {showCloseButton && (
             <DrawerPrimitive.Close
               aria-label="Close"
-              render={<CloseButton variant="ghost" style={drawerStyles.closeButton} />}
+              render={<CloseButton variant="ghost" className={closeButtonStyle} />}
             />
           )}{" "}
           {children}
@@ -164,29 +232,26 @@ export function DrawerPopup({
 }
 
 export function DrawerHeader({
-  style,
+  className,
   allowSelection = false,
   render,
   ...props
 }: _BaseDivProps & {
   allowSelection?: boolean;
 }): React.ReactElement {
-  const headerProps = stylex.props(drawerStyles.header, style);
   return useRender({
     defaultTagName: "div",
-    props: mergeProps<"div">(
-      {
-        ...headerProps,
-        "data-slot": "drawer-header",
-      } as never,
-      props,
-    ),
+    props: {
+      className: clsx(header, className),
+      "data-slot": "drawer-header",
+      ...props,
+    } as never,
     render: allowSelection ? <DrawerContent render={render} /> : render,
   });
 }
 
 export function DrawerFooter({
-  style,
+  className,
   variant = "default",
   allowSelection = true,
   render,
@@ -195,40 +260,30 @@ export function DrawerFooter({
   variant?: "default" | "bare";
   allowSelection?: boolean;
 }): React.ReactElement {
-  const footerProps = stylex.props(
-    drawerStyles.footer,
-    variant === "default" && drawerStyles.footerDefault,
-    variant === "bare" && drawerStyles.footerBare,
-    style,
-  );
-
   return useRender({
     defaultTagName: "div",
-    props: mergeProps<"div">(
-      {
-        ...footerProps,
-        "data-slot": "drawer-footer",
-      } as never,
-      props,
-    ),
+    props: {
+      className: clsx(
+        footer,
+        variant === "default" && footerDefault,
+        variant === "bare" && footerBare,
+        className,
+      ),
+      "data-slot": "drawer-footer",
+      ...props,
+    } as never,
     render: allowSelection ? <DrawerContent render={render} /> : render,
   });
 }
 
 export function DrawerTitle(props: DrawerPrimitive.Title.Props): React.ReactElement {
-  return (
-    <DrawerPrimitive.Title
-      {...stylex.props(drawerStyles.title)}
-      data-slot="drawer-title"
-      {...props}
-    />
-  );
+  return <DrawerPrimitive.Title className={title} data-slot="drawer-title" {...props} />;
 }
 
 export function DrawerDescription(props: DrawerPrimitive.Description.Props): React.ReactElement {
   return (
     <DrawerPrimitive.Description
-      {...stylex.props(drawerStyles.description)}
+      className={description}
       data-slot="drawer-description"
       {...props}
     />
@@ -236,27 +291,24 @@ export function DrawerDescription(props: DrawerPrimitive.Description.Props): Rea
 }
 
 export function DrawerPanel({
-  style,
   scrollFade = true,
   scrollable = true,
   allowSelection = true,
   render,
+  className,
   ...props
 }: _BaseDivProps & {
   scrollFade?: boolean;
   scrollable?: boolean;
   allowSelection?: boolean;
 }): React.ReactElement {
-  const panelProps = stylex.props(drawerStyles.panel, style);
   const content = useRender({
     defaultTagName: "div",
-    props: mergeProps<"div">(
-      {
-        ...panelProps,
-        "data-slot": "drawer-panel",
-      } as never,
-      props,
-    ),
+    props: {
+      className: clsx(panel, className),
+      "data-slot": "drawer-panel",
+      ...props,
+    } as never,
     render: allowSelection ? <DrawerContent render={render} /> : render,
   });
 
@@ -268,7 +320,7 @@ export function DrawerPanel({
 }
 
 export function DrawerBar({
-  style,
+  className,
   position: positionProp,
   render,
   ...props
@@ -276,135 +328,111 @@ export function DrawerBar({
   position?: DrawerPosition;
 }): React.ReactElement {
   const { position: contextPosition } = useContext(DrawerContext);
-  const position = positionProp ?? contextPosition;
-  const horizontal = position === "left" || position === "right";
-  const barProps = stylex.props(
-    drawerStyles.bar,
-    horizontal && drawerStyles.barHorizontal,
-    !horizontal && drawerStyles.barVertical,
-    position === "top" && drawerStyles.barTop,
-    position === "bottom" && drawerStyles.barBottom,
-    position === "left" && drawerStyles.barLeft,
-    position === "right" && drawerStyles.barRight,
-    style,
-  );
+  const resolvedPosition = positionProp ?? contextPosition;
+  const isHorizontal = resolvedPosition === "left" || resolvedPosition === "right";
 
   return useRender({
     defaultTagName: "div",
-    props: mergeProps<"div">(
-      {
-        ...barProps,
-        "aria-hidden": true,
-        "data-slot": "drawer-bar",
-      } as never,
-      props,
-    ),
+    props: {
+      className: clsx(
+        bar,
+        isHorizontal && barHorizontal,
+        !isHorizontal && barVertical,
+        resolvedPosition === "top" && barTop,
+        resolvedPosition === "bottom" && barBottom,
+        resolvedPosition === "left" && barLeft,
+        resolvedPosition === "right" && barRight,
+        className,
+      ),
+      "aria-hidden": true,
+      "data-slot": "drawer-bar",
+      ...props,
+    } as never,
     render,
   });
 }
 
 export const DrawerContent: typeof DrawerPrimitive.Content = DrawerPrimitive.Content;
 
-export function DrawerMenu({
-  style,
-  render,
-  ...props
-}: PropsWithStylex<useRender.ComponentProps<"nav">>): React.ReactElement {
-  const menuProps = stylex.props(drawerStyles.menu, style);
+export function DrawerMenu({ className, render, ...props }: _BaseDivProps): React.ReactElement {
   return useRender({
     defaultTagName: "nav",
-    props: mergeProps<"nav">(
-      {
-        ...menuProps,
-        "data-slot": "drawer-menu",
-      } as never,
-      props,
-    ),
+    props: {
+      className: clsx(menu, className),
+      "data-slot": "drawer-menu",
+      ...props,
+    } as never,
     render,
   });
 }
 
 export function DrawerMenuItem({
-  style,
+  className,
   variant = "default",
   render,
   disabled,
   ...props
-}: PropsWithStylex<
-  useRender.ComponentProps<"button"> & {
-    variant?: "default" | "destructive";
-  }
->): React.ReactElement {
-  const itemProps = stylex.props(
-    drawerStyles.menuItem,
-    variant === "destructive" && drawerStyles.menuItemDestructive,
-    style,
-  );
+}: _BaseDivProps & {
+  variant?: "default" | "destructive";
+}): React.ReactElement {
   return useRender({
     defaultTagName: "button",
-    props: mergeProps<"button">(
-      {
-        ...itemProps,
-        "data-slot": "drawer-menu-item",
-        "data-variant": variant,
-        disabled,
-        type: "button" as const,
-      } as never,
-      props,
-    ),
+    props: {
+      className: clsx(menuItem, variant === "destructive" && menuItemDestructive, className),
+      "data-slot": "drawer-menu-item",
+      "data-variant": variant,
+      disabled,
+      type: "button" as const,
+      ...props,
+    } as never,
     render,
   });
 }
 
 export function DrawerMenuSeparator({
-  style,
+  className,
   render,
   ...props
 }: _BaseDivProps): React.ReactElement {
-  const separatorProps = stylex.props(drawerStyles.separator, style);
   return useRender({
     defaultTagName: "div",
-    props: mergeProps<"div">(
-      {
-        ...separatorProps,
-        "data-slot": "drawer-menu-separator",
-      } as never,
-      props,
-    ),
+    props: {
+      className: clsx(separator, className),
+      "data-slot": "drawer-menu-separator",
+      ...props,
+    } as never,
     render,
   });
 }
 
-export function DrawerMenuGroup({ style, render, ...props }: _BaseDivProps): React.ReactElement {
-  const groupProps = stylex.props(drawerStyles.menuGroup, style);
+export function DrawerMenuGroup({
+  className,
+  render,
+  ...props
+}: _BaseDivProps): React.ReactElement {
   return useRender({
     defaultTagName: "div",
-    props: mergeProps<"div">(
-      {
-        ...groupProps,
-        "data-slot": "drawer-menu-group",
-      } as never,
-      props,
-    ),
+    props: {
+      className: clsx(menuGroup, className),
+      "data-slot": "drawer-menu-group",
+      ...props,
+    } as never,
     render,
   });
 }
 
 export function DrawerMenuGroupLabel({
-  style,
+  className,
   render,
   ...props
 }: _BaseDivProps): React.ReactElement {
-  const labelProps = stylex.props(drawerStyles.menuGroupLabel, style);
   return useRender({
     defaultTagName: "div",
-    props: mergeProps<"div">(
-      {
-        ...labelProps,
-        "data-slot": "drawer-menu-group-label",
-      } as never,
-      props,
-    ),
+    props: {
+      className: clsx(menuGroupLabel, className),
+      "data-slot": "drawer-menu-group-label",
+      ...props,
+    } as never,
     render,
   });
 }
@@ -414,15 +442,14 @@ export function DrawerMenuTrigger({
   children,
   ...props
 }: DrawerPrimitive.Trigger.Props): React.ReactElement {
-  const triggerProps = stylex.props(drawerStyles.menuTrigger);
   return (
     <DrawerTrigger
-      className={[triggerProps.className, className].filter(Boolean).join(" ")}
+      className={clsx(menuTrigger, className)}
       data-slot="drawer-menu-trigger"
       {...props}
     >
       {children}
-      <ArrowRightIcon {...stylex.props(drawerStyles.menuTriggerIcon)} />
+      <ArrowRightIcon className={menuTriggerIcon} />
     </DrawerTrigger>
   );
 }
@@ -441,15 +468,15 @@ export function DrawerMenuCheckboxItem({
   variant?: "default" | "switch";
   render?: React.ReactElement;
 }): React.ReactElement {
-  const checkboxProps = stylex.props(
-    drawerStyles.menuCheckbox,
-    variant === "switch" && drawerStyles.menuCheckboxSwitch,
-    variant !== "switch" && drawerStyles.menuCheckboxDefault,
-  );
   return (
     <CheckboxPrimitive.Root
       checked={checked}
-      className={[checkboxProps.className, className].filter(Boolean).join(" ")}
+      className={clsx(
+        menuCheckbox,
+        variant === "switch" && menuCheckboxSwitch,
+        variant !== "switch" && menuCheckboxDefault,
+        className,
+      )}
       data-slot="drawer-menu-checkbox-item"
       defaultChecked={defaultChecked}
       disabled={disabled}
@@ -459,17 +486,14 @@ export function DrawerMenuCheckboxItem({
     >
       {variant === "switch" ? (
         <>
-          <span {...stylex.props(drawerStyles.menuCheckboxSwitchLabel)}>{children}</span>
-          <CheckboxPrimitive.Indicator
-            {...stylex.props(drawerStyles.menuCheckboxSwitchIndicator)}
-            keepMounted
-          >
-            <span {...stylex.props(drawerStyles.menuCheckboxSwitchThumb)} />
+          <span className={menuCheckboxSwitchLabel}>{children}</span>
+          <CheckboxPrimitive.Indicator className={menuCheckboxSwitchIndicator} keepMounted>
+            <span className={menuCheckboxSwitchThumb} />
           </CheckboxPrimitive.Indicator>
         </>
       ) : (
         <>
-          <CheckboxPrimitive.Indicator {...stylex.props(drawerStyles.menuCheckboxIndicator)}>
+          <CheckboxPrimitive.Indicator className={menuCheckboxIndicator}>
             <svg
               fill="none"
               height="24"
@@ -485,7 +509,7 @@ export function DrawerMenuCheckboxItem({
               <path d="M5.252 12.7 10.2 18.63 18.748 5.37" />
             </svg>
           </CheckboxPrimitive.Indicator>
-          <span {...stylex.props(drawerStyles.menuCheckboxLabel)}>{children}</span>
+          <span className={menuCheckboxLabel}>{children}</span>
         </>
       )}
     </CheckboxPrimitive.Root>
@@ -496,10 +520,9 @@ export function DrawerMenuRadioGroup({
   className,
   ...props
 }: RadioGroupPrimitive.Props): React.ReactElement {
-  const radioGroupProps = stylex.props(drawerStyles.menuGroup);
   return (
     <RadioGroupPrimitive
-      className={[radioGroupProps.className, className].filter(Boolean).join(" ")}
+      className={clsx(menuGroup, className)}
       data-slot="drawer-menu-radio-group"
       {...props}
     />
@@ -517,17 +540,16 @@ function DrawerMenuRadioItem({
   value: string;
   render?: React.ReactElement;
 }): React.ReactElement {
-  const radioProps = stylex.props(drawerStyles.menuRadio);
   return (
     <RadioPrimitive.Root
-      className={[radioProps.className, className].filter(Boolean).join(" ")}
+      className={clsx(menuRadio, className)}
       data-slot="drawer-menu-radio-item"
       disabled={disabled}
       render={render}
       value={value}
       {...props}
     >
-      <RadioPrimitive.Indicator {...stylex.props(drawerStyles.menuRadioIndicator)}>
+      <RadioPrimitive.Indicator className={menuRadioIndicator}>
         <svg
           fill="none"
           height="24"
@@ -543,7 +565,7 @@ function DrawerMenuRadioItem({
           <path d="M5.252 12.7 10.2 18.63 18.748 5.37" />
         </svg>
       </RadioPrimitive.Indicator>
-      <span {...stylex.props(drawerStyles.menuRadioLabel)}>{children}</span>
+      <span className={menuRadioLabel}>{children}</span>
     </RadioPrimitive.Root>
   );
 }

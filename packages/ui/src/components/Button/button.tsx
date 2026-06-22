@@ -1,29 +1,39 @@
-import { mergeProps } from "@base-ui/react/merge-props";
 import { Button as ButtonPrimitive } from "@base-ui/react/button";
-import * as stylex from "@stylexjs/stylex";
-import { borderRadiusStyles } from "#utils/layout.styles";
-import type { PropsWithStylex } from "#utils/stylex.utils";
+import clsx from "clsx";
+import { borderRadius } from "#theme/tokens.css";
 import { Spinner } from "../Spinner/spinner";
 import {
-  buttonIntentStyles,
-  buttonSizes,
-  buttonStyles,
-  buttonVariantStyles,
-} from "./button.styles";
+  base,
+  fullWidth as fullWidthStyle,
+  size as sizeRecipe,
+  intent as intentRecipe,
+  variant as variantRecipe,
+} from "./button.css";
 
-type _BaseUIButtonProps = PropsWithStylex<ButtonPrimitive.Props>;
+const borderRadiusMap = {
+  none: "0px",
+  xsmall: borderRadius.xsmall,
+  small: borderRadius.small,
+  medium: borderRadius.medium,
+  large: borderRadius.large,
+  xlarge: borderRadius.xlarge,
+  xxlarge: borderRadius.xxlarge,
+  full: borderRadius.full,
+};
+
+type _BaseUIButtonProps = ButtonPrimitive.Props;
 
 const NEW_VARIANTS = ["solid", "soft", "outline", "ghost", "link"] as const;
 type NewVariant = (typeof NEW_VARIANTS)[number];
-type ButtonIntent = keyof typeof buttonIntentStyles;
+type ButtonIntent = "primary" | "neutral" | "success" | "warning" | "danger" | "info" | "mono";
 
-type ButtonProps = PropsWithStylex<_BaseUIButtonProps> & {
+type ButtonProps = _BaseUIButtonProps & {
   variant?: NewVariant;
   intent?: ButtonIntent;
-  size?: keyof typeof buttonSizes;
+  size?: "xsmall" | "small" | "icon" | "medium" | "large";
   disabled?: boolean;
   loading?: boolean;
-  radius?: keyof typeof borderRadiusStyles;
+  radius?: keyof typeof borderRadiusMap;
   fullWidth?: boolean;
 };
 
@@ -36,30 +46,34 @@ function Button({
   loading,
   fullWidth,
   radius,
-  style,
+  className,
   ...props
 }: ButtonProps) {
   const isDisabled = Boolean(loading || disabledProp);
   const resolvedVariant = intent === "mono" ? "soft" : variant;
 
-  const defaultProps = {
-    ...stylex.props(
-      buttonIntentStyles[intent ?? "primary"],
-      buttonStyles.base,
-      fullWidth && buttonStyles.fullWidth,
-      buttonSizes[size],
-      buttonVariantStyles[resolvedVariant],
-      radius && borderRadiusStyles[radius],
-      style,
-    ),
-    "aria-disabled": loading || undefined,
-    "data-loading": loading ? "" : undefined,
-    "data-slot": "button",
-    nativeButton: !props.render,
-    disabled: isDisabled,
-  };
+  const rootCls = clsx(
+    base,
+    fullWidth && fullWidthStyle,
+    sizeRecipe({ size }),
+    intent && intentRecipe({ intent: intent ?? "primary" }),
+    variantRecipe({ variant: resolvedVariant }),
+    className,
+  );
+
+  const rootStyle = radius ? { borderRadius: borderRadiusMap[radius] } : undefined;
+
   return (
-    <ButtonPrimitive {...mergeProps<"button">(defaultProps, props)}>
+    <ButtonPrimitive
+      className={rootCls}
+      style={rootStyle}
+      aria-disabled={loading || undefined}
+      data-loading={loading ? "" : undefined}
+      data-slot="button"
+      nativeButton={!props.render}
+      disabled={isDisabled}
+      {...props}
+    >
       {loading && <Spinner data-slot="button-loading-indicator" />}
       {children}
     </ButtonPrimitive>

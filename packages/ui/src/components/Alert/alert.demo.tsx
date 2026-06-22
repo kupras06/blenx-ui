@@ -14,7 +14,6 @@ function AlertDemo() {
       />
       <Alert
         variant="warning"
-        withBorder
         icon={<WarningIcon />}
         title="Warning"
         description="This is a warning alert"
@@ -25,7 +24,7 @@ function AlertDemo() {
         title="Error"
         description="This is an error alert"
       />
-      <Alert variant="error" icon={<SkullIcon />} withBorder>
+      <Alert variant="error" icon={<SkullIcon />}>
         GOne
       </Alert>
     </VStack>

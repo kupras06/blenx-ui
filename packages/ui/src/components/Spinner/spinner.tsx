@@ -1,13 +1,15 @@
 import { CircleNotchIcon } from "@phosphor-icons/react";
-import * as stylex from "@stylexjs/stylex";
+import clsx from "clsx";
 import type React from "react";
-import type { PropsWithStylex } from "#utils/stylex.utils";
-import { spinnerStyles } from "./spinner.styles";
+import { spinner } from "./spinner.css";
 
-type Props = PropsWithStylex<React.ComponentProps<typeof CircleNotchIcon>>;
+type Props = Omit<React.ComponentProps<typeof CircleNotchIcon>, "className" | "style"> & {
+  className?: string;
+  style?: React.CSSProperties;
+};
 
-export function Spinner({ style, ...props }: Props): React.ReactElement {
+export function Spinner({ className, style, ...props }: Props): React.ReactElement {
   return (
-    <CircleNotchIcon weight="bold" {...props} {...stylex.props(spinnerStyles.spinner, style)} />
+    <CircleNotchIcon weight="bold" className={clsx(spinner, className)} style={style} {...props} />
   );
 }

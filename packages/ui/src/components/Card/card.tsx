@@ -1,86 +1,88 @@
-import { mergeProps, useRender } from "@base-ui/react";
-import * as stylex from "@stylexjs/stylex";
-import type { _BaseDivProps, PropsWithStylex } from "#utils/stylex.utils";
+import { useRender } from "@base-ui/react";
+import clsx from "clsx";
+import type { _BaseDivProps } from "#utils/types";
 import { Surface, type SurfaceProps } from "../Surface/surface";
-import { cardPaddingStyles, cardSectionStyles, cardTextStyles } from "./card.styles";
+import {
+  title as titleStyle,
+  description as descriptionStyle,
+  sectionBase,
+  sectionHeader,
+  sectionBody,
+  sectionFooter,
+  sectionPadding,
+} from "./card.css";
 
 type CardProps = SurfaceProps;
 
-type SectionPadding = keyof typeof cardPaddingStyles;
-
 type CardSectionProps = _BaseDivProps & {
-  padding?: SectionPadding;
+  padding?: "small" | "medium" | "large";
 };
+
 function Card(props: CardProps) {
   return <Surface padding="medium" withBorder variant="sunken" {...props} />;
 }
-function CardHeader({ render, padding = "medium", style, ...props }: CardSectionProps) {
-  const stylexProps = stylex.props(
-    cardSectionStyles.base,
-    cardSectionStyles.header,
-    cardPaddingStyles[padding],
-    style,
-  );
-  const mergedProps = mergeProps(stylexProps, props);
+
+function CardHeader({ render, padding = "medium", className, style, ...props }: CardSectionProps) {
   return useRender({
     defaultTagName: "div",
-    props: mergedProps,
+    props: {
+      className: clsx(sectionBase, sectionHeader, sectionPadding[padding], className),
+      style,
+      ...props,
+    },
     render,
   });
 }
 
-function CardBody({ render, padding = "medium", style, ...props }: CardSectionProps) {
-  const stylexProps = stylex.props(
-    cardSectionStyles.base,
-    cardSectionStyles.body,
-    cardPaddingStyles[padding],
-    style,
-  );
-  const mergedProps = mergeProps(stylexProps, props);
+function CardBody({ render, padding = "medium", className, style, ...props }: CardSectionProps) {
   return useRender({
     defaultTagName: "div",
-    props: mergedProps,
+    props: {
+      className: clsx(sectionBase, sectionBody, sectionPadding[padding], className),
+      style,
+      ...props,
+    },
     render,
   });
 }
 
-function CardFooter({ render, padding = "medium", style, ...props }: CardSectionProps) {
-  const stylexProps = stylex.props(
-    cardSectionStyles.base,
-    cardSectionStyles.footer,
-    cardPaddingStyles[padding],
-    style,
-  );
-  const mergedProps = mergeProps(stylexProps, props);
+function CardFooter({ render, padding = "medium", className, style, ...props }: CardSectionProps) {
   return useRender({
     defaultTagName: "div",
-    props: mergedProps,
+    props: {
+      className: clsx(sectionBase, sectionFooter, sectionPadding[padding], className),
+      style,
+      ...props,
+    },
     render,
   });
 }
 
-type CardTitleProps = PropsWithStylex<useRender.ComponentProps<"h1">>;
+type CardTitleProps = useRender.ComponentProps<"h1"> & {
+  className?: string;
+  style?: React.CSSProperties;
+};
 
-function CardTitle({ render, style, ...props }: CardTitleProps) {
-  const stylexProps = stylex.props(cardTextStyles.title, style);
-  const mergedProps = mergeProps(stylexProps, props);
+function CardTitle({ render, className, style, ...props }: CardTitleProps) {
   return useRender({
     defaultTagName: "div",
-    props: mergedProps,
+    props: { className: clsx(titleStyle, className), style, ...props },
     render,
   });
 }
 
-type CardDescriptionProps = PropsWithStylex<useRender.ComponentProps<"p">>;
+type CardDescriptionProps = useRender.ComponentProps<"p"> & {
+  className?: string;
+  style?: React.CSSProperties;
+};
 
-function CardDescription({ render, style, ...props }: CardDescriptionProps) {
-  const stylexProps = stylex.props(cardTextStyles.description, style);
-  const mergedProps = mergeProps(stylexProps, props);
+function CardDescription({ render, className, style, ...props }: CardDescriptionProps) {
   return useRender({
     defaultTagName: "div",
-    props: mergedProps,
+    props: { className: clsx(descriptionStyle, className), style, ...props },
     render,
   });
 }
+
 export type { CardProps, CardDescriptionProps, CardSectionProps, CardTitleProps };
 export { Card, CardDescription, CardTitle, CardFooter, CardBody, CardHeader };

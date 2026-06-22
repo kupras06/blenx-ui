@@ -1,7 +1,7 @@
 // oxlint-disable max-statements
 "use client";
 
-import * as stylex from "@stylexjs/stylex";
+import clsx from "clsx";
 import React, {
   createContext,
   useCallback,
@@ -11,7 +11,18 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { HANDLE_SIZE, splitterStyles } from "./splitter.styles";
+import {
+  HANDLE_SIZE,
+  root,
+  rootHorizontal,
+  rootVertical,
+  rootDisabled,
+  panel,
+  handle,
+  handleActive,
+  handleHorizontal,
+  handleVertical,
+} from "./splitter.css";
 
 // ─── Public types ──────────────────────────────────────────────────────────
 
@@ -23,12 +34,12 @@ export interface SplitterPanelProps {
   collapsible?: boolean;
   collapsedSize?: number;
   children?: React.ReactNode;
-  style?: stylex.StyleXStyles;
+  className?: string;
 }
 
 export interface SplitterHandleProps {
   disabled?: boolean;
-  style?: stylex.StyleXStyles;
+  className?: string;
 }
 
 export interface SplitterProps {
@@ -39,7 +50,7 @@ export interface SplitterProps {
   onResizeStart?: () => void;
   onResize?: (sizes: number[]) => void;
   onResizeEnd?: (sizes: number[]) => void;
-  style?: stylex.StyleXStyles;
+  className?: string;
 }
 
 // ─── Internal types ────────────────────────────────────────────────────────
@@ -139,13 +150,13 @@ function clamp(value: number, min: number, max: number): number {
 
 export function Splitter({
   orientation = "horizontal",
-  disabled = false,
+  disabled: isDisabled = false,
   storageKey,
   children,
   onResizeStart,
   onResize,
   onResizeEnd,
-  style,
+  className,
 }: SplitterProps) {
   const rootRef = useRef<HTMLDivElement>(null);
   const panelConstraintsRef = useRef<(PanelConstraints | undefined)[]>([]);
@@ -204,7 +215,7 @@ export function Splitter({
   // ── Pointer resize ─────────────────────────────────────────────────────
   const handlePointerDown = useCallback(
     (handleIndex: number, e: React.PointerEvent) => {
-      if (disabled) return;
+      if (isDisabled) return;
       e.preventDefault();
 
       const root = rootRef.current;
@@ -280,13 +291,13 @@ export function Splitter({
       document.body.style.userSelect = "none";
       document.body.style.pointerEvents = "none";
     },
-    [disabled, orientation, panelCount],
+    [isDisabled, orientation, panelCount],
   );
 
   // ── Keyboard resize ────────────────────────────────────────────────────
   const handleKeyDown = useCallback(
     (handleIndex: number, e: React.KeyboardEvent) => {
-      if (disabled) return;
+      if (isDisabled) return;
 
       let delta = 0;
       const step = e.shiftKey ? 10 : 1;
@@ -340,14 +351,14 @@ export function Splitter({
       setSizes(newSizes);
       onResizeRef.current?.(newSizes);
     },
-    [disabled, orientation],
+    [isDisabled, orientation],
   );
 
   // ── Context value ──────────────────────────────────────────────────────
   const ctxValue = useMemo<InternalCtxValue>(
     () => ({
       orientation,
-      disabled,
+      disabled: isDisabled,
       sizes,
       panelConstraintsRef,
       panelRefs,
@@ -355,7 +366,7 @@ export function Splitter({
       handlePointerDown,
       handleKeyDown,
     }),
-    [orientation, disabled, sizes, handlePointerDown, handleKeyDown],
+    [orientation, isDisabled, sizes, handlePointerDown, handleKeyDown],
   );
 
   // ── Render children with indices ──────────────────────────────────────
@@ -390,13 +401,11 @@ export function Splitter({
     <InternalCtx.Provider value={ctxValue}>
       <div
         ref={rootRef}
-        {...stylex.props(
-          splitterStyles.root,
-          orientation === "horizontal"
-            ? splitterStyles.rootHorizontal
-            : splitterStyles.rootVertical,
-          disabled && splitterStyles.rootDisabled,
-          style,
+        className={clsx(
+          root,
+          orientation === "horizontal" ? rootHorizontal : rootVertical,
+          isDisabled && rootDisabled,
+          className,
         )}
         data-orientation={orientation}
       >
@@ -416,7 +425,7 @@ export function SplitterPanel({
   collapsible: _collapsible = false,
   collapsedSize: _collapsedSize = 0,
   children,
-  style,
+  className,
   __panelIndex,
 }: SplitterPanelProps & { __panelIndex?: number }) {
   const ctx = useInternalCtx();
@@ -438,7 +447,7 @@ export function SplitterPanel({
       ref={(el) => {
         ctx.panelRefs.current[index] = el;
       }}
-      {...stylex.props(splitterStyles.panel, style)}
+      className={clsx(panel, className)}
       style={{ flex: `${panelSize} 0 0` }}
       data-slot="splitter-panel"
     >
@@ -451,7 +460,7 @@ export function SplitterPanel({
 
 export function SplitterHandle({
   disabled: handleDisabled,
-  style,
+  className,
   __handleIndex,
 }: SplitterHandleProps & { __handleIndex?: number }) {
   const ctx = useInternalCtx();
@@ -494,14 +503,12 @@ export function SplitterHandle({
       aria-disabled={handleDisabled || ctx.disabled || undefined}
       onPointerDown={onPointerDown}
       onKeyDown={onKeyDown}
-      {...stylex.props(
-        splitterStyles.handle,
-        ctx.orientation === "horizontal"
-          ? splitterStyles.handleHorizontal
-          : splitterStyles.handleVertical,
-        active && splitterStyles.handleActive,
-        (handleDisabled || ctx.disabled) && splitterStyles.handleDisabled,
-        style,
+      className={clsx(
+        handle,
+        ctx.orientation === "horizontal" ? handleHorizontal : handleVertical,
+        active && handleActive,
+        (handleDisabled || ctx.disabled) && handleDisabled,
+        className,
       )}
       data-slot="splitter-handle"
     />

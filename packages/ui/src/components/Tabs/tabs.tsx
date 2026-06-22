@@ -1,20 +1,37 @@
 import { Tabs as TabsPrimitive } from "@base-ui/react/tabs";
-import * as stylex from "@stylexjs/stylex";
+import clsx from "clsx";
 import * as React from "react";
-import type { PropsWithStylex } from "#utils/stylex.utils";
-import { tabsStyles } from "./tabs.styles";
+import {
+  root,
+  rootVertical,
+  list,
+  listUnderline,
+  listGhost,
+  listSegmented,
+  tab,
+  tabUnderline,
+  tabGhost,
+  tabSegmented,
+  tabVertical,
+  tabUnderlineActive,
+  tabGhostActive,
+  tabSegmentedActive,
+  tabDisabled,
+  panel,
+  panelVertical,
+} from "./tabs.css";
 
 type TabsVariant = "underline" | "ghost" | "segmented";
 
-type TabsRootProps = PropsWithStylex<TabsPrimitive.Root.Props> & {
+type TabsRootProps = TabsPrimitive.Root.Props & {
   variant?: TabsVariant;
 };
 
-type TabsListProps = PropsWithStylex<TabsPrimitive.List.Props> & {};
+type TabsListProps = TabsPrimitive.List.Props;
 
-type TabsTabProps = PropsWithStylex<TabsPrimitive.Tab.Props>;
+type TabsTabProps = TabsPrimitive.Tab.Props;
 
-type TabsPanelProps = PropsWithStylex<TabsPrimitive.Panel.Props>;
+type TabsPanelProps = TabsPrimitive.Panel.Props;
 
 type TabsContextValue = {
   variant: TabsVariant;
@@ -28,20 +45,13 @@ function useTabsContext(): TabsContextValue {
   return React.useContext(TabsContext) ?? { variant: DEFAULT_VARIANT };
 }
 
-export function Tabs({ children, style, variant = DEFAULT_VARIANT, ...props }: TabsRootProps) {
+export function Tabs({ children, variant = DEFAULT_VARIANT, ...props }: TabsRootProps) {
   const contextValue = React.useMemo(() => ({ variant }), [variant]);
 
   return (
     <TabsContext.Provider value={contextValue}>
       <TabsPrimitive.Root
-        className={(state) => {
-          const base = stylex.props(
-            tabsStyles.root,
-            state.orientation === "vertical" && tabsStyles.rootVertical,
-            style,
-          );
-          return base.className ?? "";
-        }}
+        className={(state) => clsx(root, state.orientation === "vertical" && rootVertical)}
         {...props}
       >
         {children}
@@ -50,52 +60,42 @@ export function Tabs({ children, style, variant = DEFAULT_VARIANT, ...props }: T
   );
 }
 
-export function TabsList({ style, ...props }: TabsListProps) {
+export function TabsList({ className, ...props }: TabsListProps) {
   const { variant } = useTabsContext();
 
   return (
     <TabsPrimitive.List
-      className={(state) => {
-        const isVertical = state.orientation === "vertical";
-
-        const base = stylex.props(
-          tabsStyles.list,
-          isVertical && tabsStyles.listVertical,
-
-          variant === "underline" && tabsStyles.listUnderline,
-          variant === "ghost" && tabsStyles.listGhost,
-          variant === "segmented" && tabsStyles.listSegmented,
-          style,
-        );
-
-        return base.className;
-      }}
+      className={clsx(
+        list,
+        variant === "underline" && listUnderline,
+        variant === "ghost" && listGhost,
+        variant === "segmented" && listSegmented,
+        className,
+      )}
       {...props}
     />
   );
 }
 
-export function TabsTab({ style, ...props }: TabsTabProps) {
+export function TabsTab({ className, ...props }: TabsTabProps) {
   const { variant } = useTabsContext();
 
   return (
     <TabsPrimitive.Tab
-      className={(state) => {
-        const base = stylex.props(
-          tabsStyles.tab,
-          variant === "underline" && tabsStyles.tabUnderline,
-          variant === "ghost" && tabsStyles.tabGhost,
-          variant === "segmented" && tabsStyles.tabSegmented,
-          state.orientation === "vertical" && tabsStyles.tabVertical,
-          state.active && variant === "underline" && tabsStyles.tabUnderlineActive,
-          state.active && variant === "ghost" && tabsStyles.tabGhostActive,
-          state.active && variant === "segmented" && tabsStyles.tabSegmentedActive,
-          state.disabled && tabsStyles.tabDisabled,
-          style,
-        );
-
-        return base.className ?? "";
-      }}
+      className={(state) =>
+        clsx(
+          tab,
+          variant === "underline" && tabUnderline,
+          variant === "ghost" && tabGhost,
+          variant === "segmented" && tabSegmented,
+          state.orientation === "vertical" && tabVertical,
+          state.active && variant === "underline" && tabUnderlineActive,
+          state.active && variant === "ghost" && tabGhostActive,
+          state.active && variant === "segmented" && tabSegmentedActive,
+          state.disabled && tabDisabled,
+          className,
+        )
+      }
       {...props}
     />
   );
@@ -105,17 +105,12 @@ export function TabsIndicator() {
   return null;
 }
 
-function TabsPanel({ style, ...props }: TabsPanelProps) {
+function TabsPanel({ className, ...props }: TabsPanelProps) {
   return (
     <TabsPrimitive.Panel
-      className={(state) => {
-        const base = stylex.props(
-          tabsStyles.panel,
-          state.orientation === "vertical" && tabsStyles.panelVertical,
-          style,
-        );
-        return base.className ?? "";
-      }}
+      className={(state) =>
+        clsx(panel, state.orientation === "vertical" && panelVertical, className)
+      }
       {...props}
     />
   );

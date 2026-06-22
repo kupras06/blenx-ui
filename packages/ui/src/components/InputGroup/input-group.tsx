@@ -1,22 +1,32 @@
 "use client";
 
-import { mergeProps, useRender } from "@base-ui/react";
+import { useRender } from "@base-ui/react";
 import { Checkbox as CheckboxPrimitive } from "@base-ui/react/checkbox";
 import { Input as InputPrimitive } from "@base-ui/react/input";
 import { Radio as RadioPrimitive } from "@base-ui/react/radio";
 import { RadioGroup as RadioGroupPrimitive } from "@base-ui/react/radio-group";
-import * as stylex from "@stylexjs/stylex";
+import clsx from "clsx";
 import type * as React from "react";
-import type { _BaseDivProps, PropsWithStylex } from "#utils/stylex.utils";
-import { inputGroupStyles } from "./input-group.styles";
+import type { _BaseDivProps } from "#utils/types";
+import {
+  group,
+  addon,
+  addonInlineStart,
+  addonInlineEnd,
+  addonBlockStart,
+  addonBlockEnd,
+  text as textStyle,
+  menu,
+  input as inputStyle,
+  textarea as textareaStyle,
+} from "./input-group.css";
 
 type Align = "inline-start" | "inline-end" | "block-start" | "block-end";
 
-type InputGroupProps = PropsWithStylex<React.ComponentProps<"fieldset">>;
+type InputGroupProps = _BaseDivProps;
 
-function InputGroup({ style, ...props }: InputGroupProps): React.ReactElement {
-  const groupStyleProps = stylex.props(inputGroupStyles.group, style);
-  return <fieldset {...groupStyleProps} data-slot="input-group" {...props} />;
+function InputGroup({ className, ...props }: InputGroupProps): React.ReactElement {
+  return <fieldset className={clsx(group, className)} data-slot="input-group" {...props} />;
 }
 
 type InputGroupAddonProps = _BaseDivProps & {
@@ -25,22 +35,19 @@ type InputGroupAddonProps = _BaseDivProps & {
 
 function InputGroupAddon({
   align = "inline-start",
-  style,
+  className,
   ...props
 }: InputGroupAddonProps): React.ReactElement {
-  const addonStyleProps = stylex.props(
-    inputGroupStyles.addon,
-    align === "inline-start" && inputGroupStyles.addonInlineStart,
-    align === "inline-end" && inputGroupStyles.addonInlineEnd,
-    align === "block-start" && inputGroupStyles.addonBlockStart,
-    align === "block-end" && inputGroupStyles.addonBlockEnd,
-    style,
-  );
-
   return (
-    // Biome-ignore lint/a11y/noStaticElementInteractions: div acts as a focus proxy for the inner input
     <div
-      {...addonStyleProps}
+      className={clsx(
+        addon,
+        align === "inline-start" && addonInlineStart,
+        align === "inline-end" && addonInlineEnd,
+        align === "block-start" && addonBlockStart,
+        align === "block-end" && addonBlockEnd,
+        className,
+      )}
       data-align={align}
       data-slot="input-group-addon"
       role="presentation"
@@ -67,8 +74,7 @@ function InputGroupAddon({
 type InputGroupTextProps = React.ComponentProps<"span">;
 
 function InputGroupText({ className, ...props }: InputGroupTextProps): React.ReactElement {
-  const textProps = stylex.props(inputGroupStyles.text);
-  return <span className={[textProps.className, className].filter(Boolean).join(" ")} {...props} />;
+  return <span className={clsx(textStyle, className)} {...props} />;
 }
 
 type InputGroupInputProps = Omit<
@@ -77,22 +83,15 @@ type InputGroupInputProps = Omit<
 >;
 
 function InputGroupInput({ className, ...props }: InputGroupInputProps): React.ReactElement {
-  const inputProps = stylex.props(inputGroupStyles.input);
   return (
-    <InputPrimitive
-      {...inputProps}
-      className={[inputProps.className, className].filter(Boolean).join(" ")}
-      data-slot="input-control"
-      {...props}
-    />
+    <InputPrimitive className={clsx(inputStyle, className)} data-slot="input-control" {...props} />
   );
 }
 
 type InputGroupTextareaProps = Omit<React.ComponentPropsWithoutRef<"textarea">, "style">;
 
 function InputGroupTextarea({ ...props }: InputGroupTextareaProps): React.ReactElement {
-  const textareaProps = stylex.props(inputGroupStyles.textarea);
-  return <textarea {...textareaProps} rows={4} data-slot="textarea-control" {...props} />;
+  return <textarea className={textareaStyle} rows={4} data-slot="textarea-control" {...props} />;
 }
 
 function InputGroupMenu({
@@ -100,17 +99,13 @@ function InputGroupMenu({
   render,
   ...props
 }: useRender.ComponentProps<"nav">): React.ReactElement {
-  const menuProps = stylex.props(inputGroupStyles.menu);
   return useRender({
     defaultTagName: "nav",
-    props: mergeProps<"nav">(
-      {
-        ...menuProps,
-        className: [menuProps.className, className].filter(Boolean).join(" "),
-        "data-slot": "input-group-menu",
-      } as never,
-      props,
-    ),
+    props: {
+      className: clsx(menu, className),
+      "data-slot": "input-group-menu",
+      ...props,
+    } as never,
     render,
   });
 }

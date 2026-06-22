@@ -13,13 +13,22 @@ import {
   useState,
   useRef,
 } from "react";
-import * as stylex from "@stylexjs/stylex";
+import clsx from "clsx";
 import { MagnifyingGlass } from "@phosphor-icons/react";
-import { commandStyles } from "./command.styles";
-
-/* ---------------------------------------------------------------------------
- * Types
- * ------------------------------------------------------------------------- */
+import {
+  root,
+  inputWrapper,
+  inputIcon,
+  input as inputStyle,
+  list,
+  empty,
+  group as groupStyle,
+  groupHeading,
+  item,
+  itemActive,
+  itemDisabled,
+  separator,
+} from "./command.css";
 
 interface CommandItemData {
   id: string;
@@ -39,10 +48,6 @@ interface CommandContextValue {
   listboxId: string;
 }
 
-/* ---------------------------------------------------------------------------
- * Context
- * ------------------------------------------------------------------------- */
-
 const CommandContext = createContext<CommandContextValue | null>(null);
 
 function useCommandContext() {
@@ -53,15 +58,11 @@ function useCommandContext() {
   return ctx;
 }
 
-/* ---------------------------------------------------------------------------
- * Command — Root
- * ------------------------------------------------------------------------- */
-
 interface CommandProps {
   children: ReactNode;
   onItemSelect?: (value: string) => void;
   className?: string;
-  style?: stylex.StyleXStyles;
+  style?: React.CSSProperties;
 }
 
 let listboxIdCounter = 0;
@@ -134,8 +135,8 @@ export function Command({ children, onItemSelect, className, style }: CommandPro
         aria-expanded
         aria-haspopup="listbox"
         aria-controls={listboxId}
-        {...stylex.props(commandStyles.root, style)}
-        className={className}
+        className={clsx(root, className)}
+        style={style}
       >
         {children}
       </div>
@@ -143,17 +144,17 @@ export function Command({ children, onItemSelect, className, style }: CommandPro
   );
 }
 
-/* ---------------------------------------------------------------------------
- * CommandInput
- * ------------------------------------------------------------------------- */
-
 interface CommandInputProps {
   placeholder?: string;
   className?: string;
-  style?: stylex.StyleXStyles;
+  style?: React.CSSProperties;
 }
 
-export function CommandInput({ placeholder = "Search…", className, style }: CommandInputProps) {
+export function CommandInput({
+  placeholder = "Search\u2026",
+  className,
+  style,
+}: CommandInputProps) {
   const { query, setQuery } = useCommandContext();
 
   const handleKeyDown = useCallback(
@@ -179,12 +180,12 @@ export function CommandInput({ placeholder = "Search…", className, style }: Co
   );
 
   return (
-    <div {...stylex.props(commandStyles.inputWrapper, style)} className={className}>
-      <span {...stylex.props(commandStyles.inputIcon)}>
+    <div className={clsx(inputWrapper, className)} style={style}>
+      <span className={inputIcon}>
         <MagnifyingGlass size={16} weight="regular" />
       </span>
       <input
-        {...stylex.props(commandStyles.input)}
+        className={inputStyle}
         role="searchbox"
         placeholder={placeholder}
         value={query}
@@ -198,14 +199,10 @@ export function CommandInput({ placeholder = "Search…", className, style }: Co
   );
 }
 
-/* ---------------------------------------------------------------------------
- * CommandList
- * ------------------------------------------------------------------------- */
-
 interface CommandListProps {
   children: ReactNode;
   className?: string;
-  style?: stylex.StyleXStyles;
+  style?: React.CSSProperties;
 }
 
 export function CommandList({ children, className, style }: CommandListProps) {
@@ -258,8 +255,8 @@ export function CommandList({ children, className, style }: CommandListProps) {
       id={listboxId}
       role="listbox"
       tabIndex={-1}
-      {...stylex.props(commandStyles.list, style)}
-      className={className}
+      className={clsx(list, className)}
+      style={style}
       onKeyDown={handleKeyDown}
     >
       {children}
@@ -267,14 +264,10 @@ export function CommandList({ children, className, style }: CommandListProps) {
   );
 }
 
-/* ---------------------------------------------------------------------------
- * CommandEmpty
- * ------------------------------------------------------------------------- */
-
 interface CommandEmptyProps {
   children?: ReactNode;
   className?: string;
-  style?: stylex.StyleXStyles;
+  style?: React.CSSProperties;
 }
 
 export function CommandEmpty({ children, className, style }: CommandEmptyProps) {
@@ -282,7 +275,7 @@ export function CommandEmpty({ children, className, style }: CommandEmptyProps) 
 
   if (query.trim() && filteredItems.length === 0) {
     return (
-      <div {...stylex.props(commandStyles.empty, style)} className={className}>
+      <div className={clsx(empty, className)} style={style}>
         {children ?? "No results found."}
       </div>
     );
@@ -291,34 +284,21 @@ export function CommandEmpty({ children, className, style }: CommandEmptyProps) 
   return null;
 }
 
-/* ---------------------------------------------------------------------------
- * CommandGroup
- * ------------------------------------------------------------------------- */
-
 interface CommandGroupProps {
   heading?: string;
   children: ReactNode;
   className?: string;
-  style?: stylex.StyleXStyles;
+  style?: React.CSSProperties;
 }
 
 export function CommandGroup({ heading, children, className, style }: CommandGroupProps) {
   return (
-    <div
-      role="group"
-      aria-label={heading}
-      {...stylex.props(commandStyles.group, style)}
-      className={className}
-    >
-      {heading && <div {...stylex.props(commandStyles.groupHeading)}>{heading}</div>}
+    <div role="group" aria-label={heading} className={clsx(groupStyle, className)} style={style}>
+      {heading && <div className={groupHeading}>{heading}</div>}
       {children}
     </div>
   );
 }
-
-/* ---------------------------------------------------------------------------
- * CommandItem
- * ------------------------------------------------------------------------- */
 
 interface CommandItemProps {
   value: string;
@@ -326,7 +306,7 @@ interface CommandItemProps {
   disabled?: boolean;
   children?: ReactNode;
   className?: string;
-  style?: stylex.StyleXStyles;
+  style?: React.CSSProperties;
 }
 
 export function CommandItem({
@@ -405,13 +385,8 @@ export function CommandItem({
       aria-disabled={disabled}
       data-value={value}
       tabIndex={-1}
-      {...stylex.props(
-        commandStyles.item,
-        isActive && commandStyles.itemActive,
-        disabled && commandStyles.itemDisabled,
-        style,
-      )}
-      className={className}
+      className={clsx(item, isActive && itemActive, disabled && itemDisabled, className)}
+      style={style}
       onClick={handleClick}
       onKeyDown={handleKeyDown}
       onMouseEnter={handleMouseEnter}
@@ -421,13 +396,9 @@ export function CommandItem({
   );
 }
 
-/* ---------------------------------------------------------------------------
- * CommandSeparator
- * ------------------------------------------------------------------------- */
-
 interface CommandSeparatorProps {
   className?: string;
-  style?: stylex.StyleXStyles;
+  style?: React.CSSProperties;
 }
 
 export function CommandSeparator({ className, style }: CommandSeparatorProps) {
@@ -435,8 +406,8 @@ export function CommandSeparator({ className, style }: CommandSeparatorProps) {
     <div
       role="separator"
       aria-orientation="horizontal"
-      {...stylex.props(commandStyles.separator, style)}
-      className={className}
+      className={clsx(separator, className)}
+      style={style}
     />
   );
 }

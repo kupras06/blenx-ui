@@ -1,13 +1,13 @@
 import { OTPField as OTPFieldPreview } from "@base-ui/react/otp-field";
-import * as stylex from "@stylexjs/stylex";
+import clsx from "clsx";
 import type React from "react";
-import { otpFieldStyles, otpInputStyles, otpSeparatorStyles } from "./otp-field.styles";
+import { root, input as inputRecipe, separator } from "./otp-field.css";
 
 type OTPFieldSize = "default" | "lg";
 
 type OTPFieldProps = Omit<React.ComponentProps<typeof OTPFieldPreview.Root>, "style"> & {
   size?: OTPFieldSize;
-  style?: stylex.StyleXStyles;
+  className?: string;
 };
 
 type OTPFieldInputProps = Omit<
@@ -15,38 +15,32 @@ type OTPFieldInputProps = Omit<
   "style" | "size"
 > & {
   size?: OTPFieldSize;
-  style?: stylex.StyleXStyles;
+  className?: string;
 };
 
 type OTPFieldSeparatorProps = {
-  style?: stylex.StyleXStyles;
+  className?: string;
 };
 
-export function OTPField({ size = "default", style, ...props }: OTPFieldProps) {
+export function OTPField({ size = "default", className, ...props }: OTPFieldProps) {
   return (
     <OTPFieldPreview.Root
-      {...stylex.props(otpFieldStyles.root, style)}
+      className={clsx(root, className)}
       data-size={size}
       {...(props as React.ComponentProps<typeof OTPFieldPreview.Root>)}
     />
   );
 }
 
-export function OTPFieldInput({ size = "default", style, ...props }: OTPFieldInputProps) {
-  const sizeStyle =
-    size === "lg"
-      ? (otpInputStyles.lg as stylex.StyleXStyles)
-      : (otpInputStyles.default as stylex.StyleXStyles);
+export function OTPFieldInput({ size = "default", className, ...props }: OTPFieldInputProps) {
   return (
     <OTPFieldPreview.Input
-      {...stylex.props(otpInputStyles.base, sizeStyle, style)}
+      className={clsx(inputRecipe({ size }), className)}
       {...(props as React.ComponentProps<typeof OTPFieldPreview.Input>)}
     />
   );
 }
 
-export function OTPFieldSeparator({ style }: OTPFieldSeparatorProps) {
-  return (
-    <OTPFieldPreview.Separator render={<div {...stylex.props(otpSeparatorStyles.base, style)} />} />
-  );
+export function OTPFieldSeparator({ className }: OTPFieldSeparatorProps) {
+  return <OTPFieldPreview.Separator render={<div className={clsx(separator, className)} />} />;
 }

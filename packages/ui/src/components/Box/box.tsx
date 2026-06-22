@@ -1,5 +1,5 @@
 import { useRender } from "@base-ui/react/use-render";
-import type { _BaseDivProps } from "#utils/stylex.utils";
+import type { _BaseDivProps } from "#utils/types";
 import { boxSprinkles, type BoxSprinkles } from "./box.css";
 import clsx from "clsx";
 
@@ -10,79 +10,42 @@ type BoxStylingProps = BoxSprinkles & {
 };
 type BoxProps = _BaseDivProps & BoxStylingProps;
 
-const BOX_PROP_KEYS = [
-  ...new Set<keyof BoxStylingProps>([
-    "display",
-    "fullWidth",
-    "fullHeight",
-    "grow",
-    "shrink",
-    "padding",
-    "paddingX",
-    "paddingY",
-    "paddingTop",
-    "paddingBottom",
-    "paddingLeft",
-    "paddingRight",
-    "margin",
-    "marginX",
-    "marginY",
-    "marginTop",
-    "marginBottom",
-    "marginLeft",
-    "marginRight",
-    "radius",
-    "borderRadius",
-    "withBorder",
-    "maxWidth",
-    "color",
-    "backgroundColor",
-    "zIndex",
-    "overflow",
-    "position",
-    "top",
-    "bottom",
-    "right",
-    "left",
-    "borderColor",
-  ]),
-];
+const BOX_PROP_KEYS = [...boxSprinkles.properties, "withBorder", "fullWidth"];
+type BoxPropKeys = (typeof BOX_PROP_KEYS)[number];
 
-function splitBoxProps<T extends Record<string, unknown>, K extends keyof T>(
-  props: T,
-  keys: readonly K[],
-) {
-  const picked = {} as Pick<T, K>;
-  const omitted = {} as Omit<T, K>;
+export const BOX_PROP_SET = new Set<string>(BOX_PROP_KEYS);
+function splitProps(
+  props: Record<string, unknown>,
+): [Record<BoxPropKeys, unknown>, Record<string, unknown>] {
+  const sprinkleProps: Record<BoxPropKeys, unknown> = {};
+  const htmlProps: Record<string, unknown> = {};
 
-  for (const key in props) {
-    if (keys.includes(key as unknown as K)) {
-      picked[key as unknown as K] = props[key] as unknown as T[K];
+  for (const [key, value] of Object.entries(props)) {
+    if (BOX_PROP_SET.has(key)) {
+      sprinkleProps[key as BoxPropKeys] = value;
     } else {
-      (omitted as Record<string, unknown>)[key] = props[key];
+      htmlProps[key] = value;
     }
   }
 
-  return [picked, omitted] as const;
+  return [sprinkleProps, htmlProps];
 }
 function Box({ render, className, ...props }: BoxProps) {
-  const [{ withBorder, fullWidth, ...styleProps }, htmlProps] = splitBoxProps(props, BOX_PROP_KEYS);
+  const [{ withBorder, fullWidth, ...styleProps }, htmlProps] = splitProps(props);
 
+  if (fullWidth) {
+    styleProps.width = "full";
+  }
+
+  if (withBorder) {
+    styleProps.borderColor = "default";
+  }
   return useRender({
     defaultTagName: "div",
     render,
     props: {
       ...htmlProps,
-      className: clsx(
-        boxSprinkles({
-          ...styleProps,
-          width: fullWidth ? "full" : styleProps.width,
-          // borderWidth: withBorder ? "1px": 'px',
-          // borderStyle: "solid",
-          borderColor: withBorder ? "default" : styleProps.borderColor,
-        }),
-        className,
-      ),
+      className: clsx(boxSprinkles(styleProps), className),
     },
   });
 }

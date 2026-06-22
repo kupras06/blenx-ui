@@ -1,35 +1,34 @@
-import { mergeProps } from "@base-ui/react";
 import { Separator as SeparatorPrimitive } from "@base-ui/react/separator";
-import * as stylex from "@stylexjs/stylex";
+import clsx from "clsx";
 import type * as React from "react";
-import { separatorStyles } from "./separator.styles";
+import { separator, withLabel, label as labelStyle } from "./separator.css";
 
 type Orientation = "horizontal" | "vertical";
 type SeparatorTone = "subtle" | "strong";
 
-export type SeparatorProps = Omit<SeparatorPrimitive.Props, "style"> & {
+export type SeparatorProps = Omit<SeparatorPrimitive.Props, "className" | "style"> & {
   orientation?: Orientation;
   label?: React.ReactNode;
   tone?: SeparatorTone;
-  style?: stylex.StyleXStyles;
+  className?: string;
+  style?: React.CSSProperties;
 };
 
 export function Separator({
   orientation = "horizontal",
   label,
   tone = "strong",
+  className,
   style,
   ...props
 }: SeparatorProps) {
-  const toneStyle = tone === "strong" ? separatorStyles.strong : separatorStyles.subtle;
-  let defaultProps = {};
+  const baseCls = separator({ orientation, tone });
   if (orientation === "horizontal" && label) {
-    defaultProps = stylex.props(separatorStyles.base, separatorStyles.withLabel, toneStyle, style);
-  } else if (orientation === "horizontal")
-    defaultProps = stylex.props(separatorStyles.base, separatorStyles.horizontal, toneStyle, style);
-  else
-    defaultProps = stylex.props(separatorStyles.base, separatorStyles.vertical, toneStyle, style);
-
-  const mergedProps = mergeProps(props, defaultProps);
-  return <SeparatorPrimitive {...mergedProps} />;
+    return (
+      <SeparatorPrimitive className={clsx(baseCls, withLabel, className)} style={style} {...props}>
+        <span className={labelStyle}>{label}</span>
+      </SeparatorPrimitive>
+    );
+  }
+  return <SeparatorPrimitive className={clsx(baseCls, className)} style={style} {...props} />;
 }

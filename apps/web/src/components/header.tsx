@@ -160,7 +160,7 @@ function Header() {
   const isHomeActive = pathname === "/";
   return (
     <>
-      <Container size="3xl" py="none" px="xxsmall">
+      <Container size="3xl" py="small" px="xxsmall">
         <HStack align="center" justify="between" py="xsmall">
           <HStack align="center" justify="between" gap="xxsmall" paddingLeft="none">
             <ClientOnly>{isDocsActive && <DocsRouteSidebarOption />}</ClientOnly>

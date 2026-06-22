@@ -1,126 +1,126 @@
 import { Autocomplete as AutocompletePrimitive } from "@base-ui/react/autocomplete";
-import { mergeProps } from "@base-ui/react/merge-props";
 import { CaretUpDownIcon } from "@phosphor-icons/react";
-import * as stylex from "@stylexjs/stylex";
+import clsx from "clsx";
 import type React from "react";
-import type { PropsWithStylex } from "#utils/stylex.utils";
 import { Input } from "../Input/input";
 import { ScrollArea } from "../ScrollArea/scroll-area";
-import { autoCompleteInputSize, autoCompleteStyles } from "./autocomplete.styles";
+import {
+  inputGroup,
+  inputSizeSm,
+  inputSizeDefault,
+  inputSizeLg,
+  startAddon,
+  startAddonDefault,
+  startAddonSmall,
+  adornment,
+  adornmentSmall,
+  adornmentDefault,
+  adornmentEndSmall,
+  adornmentEndDefault,
+  positioner,
+  popupShell,
+  popup,
+  group,
+  separator,
+  groupLabel,
+  empty,
+  list,
+  status,
+  item,
+} from "./autocomplete.css";
 import { CloseButton } from "../CloseButton";
 
 const Autocomplete: typeof AutocompletePrimitive.Root = AutocompletePrimitive.Root;
 
 export function AutocompleteItem(props: AutocompletePrimitive.Item.Props): React.ReactElement {
-  const itemProps = mergeProps(props, stylex.props(autoCompleteStyles.item));
-  return <AutocompletePrimitive.Item data-slot="autocomplete-item" {...itemProps} />;
+  return <AutocompletePrimitive.Item className={item} data-slot="autocomplete-item" {...props} />;
 }
 
-export function AutocompleteSeparator({
-  style,
-  ...props
-}: PropsWithStylex<AutocompletePrimitive.Separator.Props>): React.ReactElement {
-  const separatorProps = mergeProps(props, stylex.props(autoCompleteStyles.separator, style));
-  return <AutocompletePrimitive.Separator data-slot="autocomplete-separator" {...separatorProps} />;
+export function AutocompleteSeparator(
+  props: AutocompletePrimitive.Separator.Props,
+): React.ReactElement {
+  return (
+    <AutocompletePrimitive.Separator
+      className={separator}
+      data-slot="autocomplete-separator"
+      {...props}
+    />
+  );
 }
 
-export function AutocompleteGroup({
-  style,
-  ...props
-}: PropsWithStylex<AutocompletePrimitive.Group.Props>): React.ReactElement {
-  const groupProps = mergeProps(props, stylex.props(autoCompleteStyles.group, style));
-  return <AutocompletePrimitive.Group data-slot="autocomplete-group" {...groupProps} />;
+export function AutocompleteGroup(props: AutocompletePrimitive.Group.Props): React.ReactElement {
+  return (
+    <AutocompletePrimitive.Group className={group} data-slot="autocomplete-group" {...props} />
+  );
 }
 
 function AutocompleteInput({
   showTrigger = false,
   showClear = false,
-  style,
-  startAddon,
+  startAddon: startAddonNode,
   size,
   triggerProps,
   clearProps,
   render: renderProp,
+  className,
   ...props
-}: PropsWithStylex<
-  Omit<AutocompletePrimitive.Input.Props, "size"> & {
-    showTrigger?: boolean;
-    showClear?: boolean;
-    startAddon?: React.ReactNode;
-    size?: "sm" | "default" | "lg";
-    ref?: React.Ref<HTMLInputElement>;
-    triggerProps?: AutocompletePrimitive.Trigger.Props;
-    clearProps?: AutocompletePrimitive.Clear.Props;
-  }
->): React.ReactElement {
+}: Omit<AutocompletePrimitive.Input.Props, "size"> & {
+  showTrigger?: boolean;
+  showClear?: boolean;
+  startAddon?: React.ReactNode;
+  size?: "sm" | "default" | "lg";
+  ref?: React.Ref<HTMLInputElement>;
+  triggerProps?: AutocompletePrimitive.Trigger.Props;
+  clearProps?: AutocompletePrimitive.Clear.Props;
+}): React.ReactElement {
   const resolvedSize = size ?? "default";
-  const inputProps = mergeProps(
-    props,
-    stylex.props(
-      resolvedSize === "sm"
-        ? autoCompleteInputSize.sm
-        : resolvedSize === "lg"
-          ? autoCompleteInputSize.lg
-          : autoCompleteInputSize.defaultSize,
-      style,
-    ),
-  );
-  const triggerButtonProps = mergeProps(
-    triggerProps ?? {},
-    stylex.props(
-      autoCompleteStyles.adornment,
-      resolvedSize === "sm"
-        ? autoCompleteStyles.adornmentSmall
-        : autoCompleteStyles.adornmentDefault,
-      resolvedSize === "sm"
-        ? autoCompleteStyles.adornmentEndSmall
-        : autoCompleteStyles.adornmentEndDefault,
-      autoCompleteStyles.adornmentHiddenWhenClear,
-    ),
-  );
-  const clearButtonProps = mergeProps(
-    clearProps ?? {},
-    stylex.props(
-      autoCompleteStyles.adornment,
-      resolvedSize === "sm"
-        ? autoCompleteStyles.adornmentSmall
-        : autoCompleteStyles.adornmentDefault,
-      resolvedSize === "sm"
-        ? autoCompleteStyles.adornmentEndSmall
-        : autoCompleteStyles.adornmentEndDefault,
-    ),
+  const inputCls = clsx(
+    resolvedSize === "sm" ? inputSizeSm : resolvedSize === "lg" ? inputSizeLg : inputSizeDefault,
+    className,
   );
 
   return (
-    <AutocompletePrimitive.InputGroup
-      {...stylex.props(autoCompleteStyles.inputGroup, style)}
-      data-slot="autocomplete-input-group"
-    >
-      {startAddon && (
+    <AutocompletePrimitive.InputGroup className={inputGroup} data-slot="autocomplete-input-group">
+      {startAddonNode && (
         <div
           aria-hidden="true"
-          {...stylex.props(
-            autoCompleteStyles.startAddon,
-            resolvedSize === "sm"
-              ? autoCompleteStyles.startAddonSmall
-              : autoCompleteStyles.startAddonDefault,
-          )}
+          className={clsx(startAddon, resolvedSize === "sm" ? startAddonSmall : startAddonDefault)}
           data-slot="autocomplete-start-addon"
         >
-          {startAddon}
+          {startAddonNode}
         </div>
       )}
       <AutocompletePrimitive.Input
         data-slot="autocomplete-input"
         render={renderProp ?? <Input />}
-        {...inputProps}
+        className={inputCls}
+        {...props}
       />
       {showTrigger && (
-        <AutocompleteTrigger {...triggerButtonProps}>
+        <AutocompletePrimitive.Trigger
+          className={clsx(
+            adornment,
+            resolvedSize === "sm" ? adornmentSmall : adornmentDefault,
+            resolvedSize === "sm" ? adornmentEndSmall : adornmentEndDefault,
+          )}
+          data-slot="autocomplete-trigger"
+          {...triggerProps}
+        >
           <CaretUpDownIcon size={resolvedSize === "sm" ? 16 : 18} weight="regular" />
-        </AutocompleteTrigger>
+        </AutocompletePrimitive.Trigger>
       )}
-      {showClear && <AutocompleteClear {...clearButtonProps} render={<CloseButton />} />}
+      {showClear && (
+        <AutocompletePrimitive.Clear
+          className={clsx(
+            adornment,
+            resolvedSize === "sm" ? adornmentSmall : adornmentDefault,
+            resolvedSize === "sm" ? adornmentEndSmall : adornmentEndDefault,
+          )}
+          data-slot="autocomplete-clear"
+          render={<CloseButton />}
+          {...clearProps}
+        />
+      )}
     </AutocompletePrimitive.InputGroup>
   );
 }
@@ -143,24 +143,19 @@ export function AutocompletePopup({
   anchor?: AutocompletePrimitive.Positioner.Props["anchor"];
   portalProps?: AutocompletePrimitive.Portal.Props;
 }): React.ReactElement {
-  const shellClassName = [stylex.props(autoCompleteStyles.popupShell).className, className]
-    .filter(Boolean)
-    .join(" ");
-  const popupProps = mergeProps(props, stylex.props(autoCompleteStyles.popup));
-
   return (
     <AutocompletePrimitive.Portal {...portalProps}>
       <AutocompletePrimitive.Positioner
         align={align}
         alignOffset={alignOffset}
         anchor={anchor}
+        className={positioner}
         data-slot="autocomplete-positioner"
         side={side}
         sideOffset={sideOffset}
-        {...stylex.props(autoCompleteStyles.positioner)}
       >
-        <span className={shellClassName}>
-          <AutocompletePrimitive.Popup data-slot="autocomplete-popup" {...popupProps}>
+        <span className={clsx(popupShell, className)}>
+          <AutocompletePrimitive.Popup className={popup} data-slot="autocomplete-popup" {...props}>
             {children}
           </AutocompletePrimitive.Popup>
         </span>
@@ -169,108 +164,60 @@ export function AutocompletePopup({
   );
 }
 
-export function AutocompleteGroupLabel({
-  className,
-  ...props
-}: AutocompletePrimitive.GroupLabel.Props): React.ReactElement {
-  const groupLabelProps = mergeProps(props, stylex.props(autoCompleteStyles.groupLabel));
-  const { className: mergedClassName, ...groupLabelRest } = groupLabelProps;
-  const combinedClassName = [mergedClassName, className].filter(Boolean).join(" ");
+export function AutocompleteGroupLabel(
+  props: AutocompletePrimitive.GroupLabel.Props,
+): React.ReactElement {
   return (
     <AutocompletePrimitive.GroupLabel
-      className={combinedClassName}
+      className={groupLabel}
       data-slot="autocomplete-group-label"
-      {...groupLabelRest}
+      {...props}
     />
   );
 }
 
-export function AutocompleteEmpty({
-  className,
-  ...props
-}: AutocompletePrimitive.Empty.Props): React.ReactElement {
-  const emptyProps = mergeProps(props, stylex.props(autoCompleteStyles.empty));
-  const { className: mergedClassName, ...emptyRest } = emptyProps;
-  const combinedClassName = [mergedClassName, className].filter(Boolean).join(" ");
+export function AutocompleteEmpty(props: AutocompletePrimitive.Empty.Props): React.ReactElement {
   return (
-    <AutocompletePrimitive.Empty
-      className={combinedClassName}
-      data-slot="autocomplete-empty"
-      {...emptyRest}
-    />
+    <AutocompletePrimitive.Empty className={empty} data-slot="autocomplete-empty" {...props} />
   );
 }
 
-export function AutocompleteRow({
-  className,
-  ...props
-}: AutocompletePrimitive.Row.Props): React.ReactElement {
-  return (
-    <AutocompletePrimitive.Row className={className} data-slot="autocomplete-row" {...props} />
-  );
+export function AutocompleteRow(props: AutocompletePrimitive.Row.Props): React.ReactElement {
+  return <AutocompletePrimitive.Row data-slot="autocomplete-row" {...props} />;
 }
 
-export function AutocompleteValue({
-  ...props
-}: AutocompletePrimitive.Value.Props): React.ReactElement {
+export function AutocompleteValue(props: AutocompletePrimitive.Value.Props): React.ReactElement {
   return <AutocompletePrimitive.Value data-slot="autocomplete-value" {...props} />;
 }
 
-export function AutocompleteList({
-  className,
-  ...props
-}: AutocompletePrimitive.List.Props): React.ReactElement {
-  const listProps = mergeProps(props, stylex.props(autoCompleteStyles.list));
-  const { className: mergedClassName, ...listRest } = listProps;
-  const combinedClassName = [mergedClassName, className].filter(Boolean).join(" ");
+export function AutocompleteList(props: AutocompletePrimitive.List.Props): React.ReactElement {
   return (
     <ScrollArea scrollbarGutter scrollFade>
-      <AutocompletePrimitive.List
-        className={combinedClassName}
-        data-slot="autocomplete-list"
-        {...listRest}
-      />
+      <AutocompletePrimitive.List className={list} data-slot="autocomplete-list" {...props} />
     </ScrollArea>
   );
 }
 
-export function AutocompleteClear({
-  ...props
-}: AutocompletePrimitive.Clear.Props): React.ReactElement {
+export function AutocompleteClear(props: AutocompletePrimitive.Clear.Props): React.ReactElement {
   return <AutocompletePrimitive.Clear data-slot="autocomplete-clear" {...props} />;
 }
 
-export function AutocompleteStatus({
-  className,
-  ...props
-}: AutocompletePrimitive.Status.Props): React.ReactElement {
-  const statusProps = mergeProps(props, stylex.props(autoCompleteStyles.status));
-  const { className: mergedClassName, ...statusRest } = statusProps;
-  const combinedClassName = [mergedClassName, className].filter(Boolean).join(" ");
+export function AutocompleteStatus(props: AutocompletePrimitive.Status.Props): React.ReactElement {
   return (
-    <AutocompletePrimitive.Status
-      className={combinedClassName}
-      data-slot="autocomplete-status"
-      {...statusRest}
-    />
+    <AutocompletePrimitive.Status className={status} data-slot="autocomplete-status" {...props} />
   );
 }
 
-export function AutocompleteCollection({
-  ...props
-}: AutocompletePrimitive.Collection.Props): React.ReactElement {
+export function AutocompleteCollection(
+  props: AutocompletePrimitive.Collection.Props,
+): React.ReactElement {
   return <AutocompletePrimitive.Collection data-slot="autocomplete-collection" {...props} />;
 }
 
-export function AutocompleteTrigger({
-  children,
-  ...props
-}: AutocompletePrimitive.Trigger.Props): React.ReactElement {
-  return (
-    <AutocompletePrimitive.Trigger data-slot="autocomplete-trigger" {...props}>
-      {children}
-    </AutocompletePrimitive.Trigger>
-  );
+export function AutocompleteTrigger(
+  props: AutocompletePrimitive.Trigger.Props,
+): React.ReactElement {
+  return <AutocompletePrimitive.Trigger data-slot="autocomplete-trigger" {...props} />;
 }
 
 export const useAutocompleteFilter: typeof AutocompletePrimitive.useFilter =

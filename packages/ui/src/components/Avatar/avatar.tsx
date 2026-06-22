@@ -1,38 +1,48 @@
 import { Avatar as AvatarPrimitive, type AvatarRootProps } from "@base-ui/react/avatar";
-import * as stylex from "@stylexjs/stylex";
-import { borderRadiusStyles } from "#utils/layout.styles";
-import type { PropsWithStylex } from "#utils/stylex.utils";
-import { avatarStyles, avataSizeStyles } from "./avatar.styles";
+import clsx from "clsx";
+import { root, image, fallback, size as sizeRecipe, radius as radiusRecipe } from "./avatar.css";
 
-interface AvatarProps extends PropsWithStylex<AvatarRootProps> {
-  size?: keyof typeof avataSizeStyles;
-  radius?: keyof typeof borderRadiusStyles;
+interface AvatarProps extends AvatarRootProps {
+  size?: "small" | "medium" | "large" | "xlarge" | "hero";
+  radius?: "none" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | "full";
+  className?: string;
+  style?: React.CSSProperties;
 }
 
-type AvatarImageProps = PropsWithStylex<AvatarPrimitive.Image.Props>;
+type AvatarImageProps = AvatarPrimitive.Image.Props & {
+  className?: string;
+  style?: React.CSSProperties;
+};
 
-type AvatarFallbackProps = PropsWithStylex<AvatarPrimitive.Fallback.Props>;
+type AvatarFallbackProps = AvatarPrimitive.Fallback.Props & {
+  className?: string;
+  style?: React.CSSProperties;
+};
 
-function Avatar({ children, size, style, radius }: AvatarProps) {
-  const rootCn = stylex.props(
-    avatarStyles.root,
-    size && avataSizeStyles[size],
-    radius && borderRadiusStyles[radius],
-    style,
+function Avatar({ children, size, radius: r, className, style }: AvatarProps) {
+  return (
+    <AvatarPrimitive.Root
+      className={clsx(
+        root,
+        size && sizeRecipe({ size }),
+        r && radiusRecipe({ radius: r }),
+        className,
+      )}
+      style={style}
+    >
+      {children}
+    </AvatarPrimitive.Root>
   );
-
-  return <AvatarPrimitive.Root {...rootCn}>{children}</AvatarPrimitive.Root>;
 }
 
-function AvatarImage({ src, alt, style, ...props }: AvatarImageProps) {
-  const imgCn = stylex.props(avatarStyles.image, style);
-
-  return <AvatarPrimitive.Image src={src} alt={alt} {...imgCn} {...props} />;
+function AvatarImage({ className, style, ...props }: AvatarImageProps) {
+  return <AvatarPrimitive.Image className={clsx(image, className)} style={style} {...props} />;
 }
 
-function AvatarFallback({ style, ...props }: AvatarFallbackProps) {
-  const renderedStyles = stylex.props(avatarStyles.fallback, style);
-  return <AvatarPrimitive.Fallback {...renderedStyles} {...props} />;
+function AvatarFallback({ className, style, ...props }: AvatarFallbackProps) {
+  return (
+    <AvatarPrimitive.Fallback className={clsx(fallback, className)} style={style} {...props} />
+  );
 }
 
 export type { AvatarFallbackProps, AvatarImageProps, AvatarProps };

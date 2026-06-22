@@ -2,41 +2,43 @@
 
 import { Radio as RadioPrimitive } from "@base-ui/react/radio";
 import { RadioGroup as RadioGroupPrimitive } from "@base-ui/react/radio-group";
-import * as stylex from "@stylexjs/stylex";
-import { radioStyles } from "./radio.styles";
+import clsx from "clsx";
+import { group, root, rootDisabled, indicator, indicatorChecked, dot } from "./radio.css";
 
-type RadioGroupProps = Omit<RadioGroupPrimitive.Props, "style"> & {
-  style?: stylex.StyleXStyles;
+type RadioGroupProps = Omit<RadioGroupPrimitive.Props, "style" | "className"> & {
+  className?: string;
+  style?: React.CSSProperties;
 };
 
-type RadioProps = Omit<RadioPrimitive.Root.Props, "style"> & {
-  style?: stylex.StyleXStyles;
+type RadioProps = Omit<RadioPrimitive.Root.Props, "style" | "className"> & {
+  className?: string;
+  style?: React.CSSProperties;
 };
 
-export function RadioGroup({ style, ...props }: RadioGroupProps) {
+export function RadioGroup({ className, style, ...props }: RadioGroupProps) {
   return (
     <RadioGroupPrimitive
-      {...stylex.props(radioStyles.group, style)}
+      className={clsx(group, className)}
+      style={style}
       data-slot="radio-group"
       {...props}
     />
   );
 }
 
-export function Radio({ style, ...props }: RadioProps) {
+export function Radio({ className, style, ...props }: RadioProps) {
   return (
     <RadioPrimitive.Root
       {...props}
       render={(rootProps, { checked, disabled }) => (
         <span
           {...rootProps}
-          {...stylex.props(radioStyles.root, disabled && radioStyles.rootDisabled, style)}
+          className={clsx(root, disabled && rootDisabled, className)}
+          style={style}
           data-slot="radio"
         >
-          <RadioPrimitive.Indicator
-            {...stylex.props(radioStyles.indicator, checked && radioStyles.indicatorChecked)}
-          >
-            {checked && <span {...stylex.props(radioStyles.dot)} />}
+          <RadioPrimitive.Indicator className={clsx(indicator, checked && indicatorChecked)}>
+            {checked && <span className={dot} />}
           </RadioPrimitive.Indicator>
         </span>
       )}

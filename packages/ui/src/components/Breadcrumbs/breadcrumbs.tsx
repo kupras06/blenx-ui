@@ -2,53 +2,66 @@
 
 import { mergeProps, useRender } from "@base-ui/react";
 import { CaretRightIcon, DotsThreeIcon } from "@phosphor-icons/react";
-import * as stylex from "@stylexjs/stylex";
+import clsx from "clsx";
 import type { ComponentPropsWithoutRef } from "react";
-import type { PropsWithStylex } from "#utils/stylex.utils";
-import { breadcrumbsStyles } from "./breadcrumbs.styles";
+import { root, list, item, link, page, separator, ellipsis, srOnly } from "./breadcrumbs.css";
 
-type NavProps = PropsWithStylex<useRender.ComponentProps<"nav">>;
+type NavProps = useRender.ComponentProps<"nav"> & {
+  className?: string;
+  style?: React.CSSProperties;
+};
 
-export function Breadcrumb({ style, render, ...props }: NavProps) {
-  const sx = stylex.props(breadcrumbsStyles.root, style);
-  const merged = mergeProps(props, sx, { "aria-label": "breadcrumb" });
+export function Breadcrumb({ className, style, render, ...props }: NavProps) {
+  const merged = mergeProps({ className: clsx(root, className), style }, props, {
+    "aria-label": "breadcrumb",
+  });
   return useRender({ defaultTagName: "nav", props: merged, render });
 }
 
-type OlProps = PropsWithStylex<ComponentPropsWithoutRef<"ol">>;
+type OlProps = ComponentPropsWithoutRef<"ol"> & {
+  className?: string;
+  style?: React.CSSProperties;
+};
 
-export function BreadcrumbList({ style, ...props }: OlProps) {
-  return <ol {...stylex.props(breadcrumbsStyles.list, style)} {...props} />;
+export function BreadcrumbList({ className, style, ...props }: OlProps) {
+  return <ol className={clsx(list, className)} style={style} {...props} />;
 }
 
-type LiProps = PropsWithStylex<ComponentPropsWithoutRef<"li">>;
+type LiProps = ComponentPropsWithoutRef<"li"> & {
+  className?: string;
+  style?: React.CSSProperties;
+};
 
-export function BreadcrumbItem({ style, ...props }: LiProps) {
-  return <li {...stylex.props(breadcrumbsStyles.item, style)} {...props} />;
+export function BreadcrumbItem({ className, style, ...props }: LiProps) {
+  return <li className={clsx(item, className)} style={style} {...props} />;
 }
 
-type LinkProps = PropsWithStylex<useRender.ComponentProps<"a">>;
+type LinkProps = useRender.ComponentProps<"a"> & {
+  className?: string;
+  style?: React.CSSProperties;
+};
 
-export function BreadcrumbLink({ style, render, ...props }: LinkProps) {
-  const defaultProps = {
-    ...stylex.props(breadcrumbsStyles.link, style),
-  };
-  const merged = mergeProps(defaultProps, props);
+export function BreadcrumbLink({ className, style, render, ...props }: LinkProps) {
+  const merged = mergeProps({ className: clsx(link, className), style }, props);
   return useRender({ defaultTagName: "a", props: merged, render });
 }
 
-type SpanProps = PropsWithStylex<ComponentPropsWithoutRef<"span">>;
+type SpanProps = ComponentPropsWithoutRef<"span"> & {
+  className?: string;
+  style?: React.CSSProperties;
+};
 
-export function BreadcrumbPage({ style, ...props }: SpanProps) {
-  return <span {...stylex.props(breadcrumbsStyles.page, style)} aria-current="page" {...props} />;
+export function BreadcrumbPage({ className, style, ...props }: SpanProps) {
+  return <span className={clsx(page, className)} style={style} aria-current="page" {...props} />;
 }
 
-export function BreadcrumbSeparator({ children, style, ...props }: LiProps) {
+export function BreadcrumbSeparator({ children, className, style, ...props }: LiProps) {
   return (
     <li
       role="presentation"
       aria-hidden="true"
-      {...stylex.props(breadcrumbsStyles.separator, style)}
+      className={clsx(separator, className)}
+      style={style}
       {...props}
     >
       {children ?? <CaretRightIcon size={16} />}
@@ -56,11 +69,11 @@ export function BreadcrumbSeparator({ children, style, ...props }: LiProps) {
   );
 }
 
-export function BreadcrumbEllipsis({ style, ...props }: SpanProps) {
+export function BreadcrumbEllipsis({ className, style, ...props }: SpanProps) {
   return (
-    <span role="presentation" {...stylex.props(breadcrumbsStyles.ellipsis, style)} {...props}>
+    <span role="presentation" className={clsx(ellipsis, className)} style={style} {...props}>
       <DotsThreeIcon size={16} />
-      <span {...stylex.props(breadcrumbsStyles.srOnly)}>More</span>
+      <span className={srOnly}>More</span>
     </span>
   );
 }

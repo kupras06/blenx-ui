@@ -1,16 +1,11 @@
-import * as stylex from "@stylexjs/stylex";
+import clsx from "clsx";
 import { Button, type ButtonProps } from "../Button/button";
+import { base } from "./icon-button.css";
 
 type IconButtonProps = Omit<ButtonProps, "size">;
 
-export const iconButtonStyles = stylex.create({
-  base: {
-    maxWidth: "100px",
-    width: "fit-content",
-  },
-});
-export function IconButton({ style, ...props }: IconButtonProps) {
-  return <Button {...props} size="icon" style={[iconButtonStyles.base, style]} />;
+export function IconButton({ className, ...props }: IconButtonProps) {
+  return <Button {...props} size="icon" className={clsx(base, className)} />;
 }
 
 export type { IconButtonProps };

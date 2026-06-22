@@ -1,10 +1,9 @@
 "use client";
 
 import { Popover as PopoverPrimitive } from "@base-ui/react/popover";
-import * as stylex from "@stylexjs/stylex";
+import clsx from "clsx";
 import type React from "react";
-import type { PropsWithStylex } from "#utils/stylex.utils";
-import { popoverStyles } from "./popover.styles";
+import { backdrop, positioner, popup, arrow, arrowFill, title, description } from "./popover.css";
 
 export const PopoverCreateHandle: typeof PopoverPrimitive.createHandle =
   PopoverPrimitive.createHandle;
@@ -29,14 +28,20 @@ export function PopoverPositioner({
   sideOffset = 4,
   side = "bottom",
   align = "center",
+  className,
+  style,
   ...props
-}: PopoverPrimitive.Positioner.Props): React.ReactElement {
+}: PopoverPrimitive.Positioner.Props & {
+  className?: string;
+  style?: React.CSSProperties;
+}): React.ReactElement {
   return (
     <PopoverPrimitive.Positioner
       sideOffset={sideOffset}
       side={side}
       align={align}
-      {...stylex.props(popoverStyles.positioner)}
+      className={clsx(positioner, className)}
+      style={style}
       data-slot="popover-positioner"
       {...props}
     />
@@ -44,14 +49,19 @@ export function PopoverPositioner({
 }
 
 export function PopoverPopup({
+  className,
   style,
   ...props
-}: PropsWithStylex<PopoverPrimitive.Popup.Props>): React.ReactElement {
+}: PopoverPrimitive.Popup.Props & {
+  className?: string;
+  style?: React.CSSProperties;
+}): React.ReactElement {
   return (
     <PopoverPortal>
       <PopoverPositioner>
         <PopoverPrimitive.Popup
-          {...stylex.props(popoverStyles.popup, style)}
+          className={clsx(popup, className)}
+          style={style}
           data-slot="popover-popup"
           {...props}
         />
@@ -62,40 +72,24 @@ export function PopoverPopup({
 
 export function PopoverArrow(props: PopoverPrimitive.Arrow.Props): React.ReactElement {
   return (
-    <PopoverPrimitive.Arrow
-      {...stylex.props(popoverStyles.arrow)}
-      data-slot="popover-arrow"
-      {...props}
-    >
-      <div {...stylex.props(popoverStyles.arrowFill)} />
+    <PopoverPrimitive.Arrow className={arrow} data-slot="popover-arrow" {...props}>
+      <div className={arrowFill} />
     </PopoverPrimitive.Arrow>
   );
 }
 
 export function PopoverBackdrop(props: PopoverPrimitive.Backdrop.Props): React.ReactElement {
-  return (
-    <PopoverPrimitive.Backdrop
-      {...stylex.props(popoverStyles.backdrop)}
-      data-slot="popover-backdrop"
-      {...props}
-    />
-  );
+  return <PopoverPrimitive.Backdrop className={backdrop} data-slot="popover-backdrop" {...props} />;
 }
 
 export function PopoverTitle(props: PopoverPrimitive.Title.Props): React.ReactElement {
-  return (
-    <PopoverPrimitive.Title
-      {...stylex.props(popoverStyles.title)}
-      data-slot="popover-title"
-      {...props}
-    />
-  );
+  return <PopoverPrimitive.Title className={title} data-slot="popover-title" {...props} />;
 }
 
 export function PopoverDescription(props: PopoverPrimitive.Description.Props): React.ReactElement {
   return (
     <PopoverPrimitive.Description
-      {...stylex.props(popoverStyles.description)}
+      className={description}
       data-slot="popover-description"
       {...props}
     />

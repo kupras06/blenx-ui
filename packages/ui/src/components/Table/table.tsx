@@ -1,31 +1,31 @@
-import type { StyleXStyles } from "@stylexjs/stylex";
-import * as stylex from "@stylexjs/stylex";
+import clsx from "clsx";
 import type { ReactNode } from "react";
-import { tableColorStyles, tableStyles } from "./table.styles";
-
-// ─── Types ───────────────────────────────────────────────────────────────────
+import {
+  root,
+  head,
+  header,
+  cell,
+  wrapper,
+  alignLeft,
+  alignCenter,
+  alignRight,
+  colorSecondary,
+} from "./table.css";
+import * as tableCss from "./table.css";
 
 export interface Column<TData> {
-  /** Unique identifier for the column */
   key: keyof TData;
-  /** Header label */
   header: ReactNode;
-  /** Render function for the cell */
   cell?: (row: TData) => ReactNode;
-  /** Optional custom width */
   width?: string;
-  /** Optional text alignment */
   align?: "left" | "center" | "right";
-  /** Extra props to spread onto each <td> for this column */
   cellProps?: Record<string, unknown>;
 }
 
 export interface TableProps<TData> {
   columnData: Column<TData>[];
   rowData: TData[];
-  /** Optional stable row key (field name). Defaults to index. */
   rowKey?: keyof TData & string;
-  /** Optional callback for per-row props (events, styles, attributes) */
   getRowProps?: (
     row: TData,
     index: number,
@@ -35,44 +35,24 @@ export interface TableProps<TData> {
     style?: React.CSSProperties;
     [key: string]: unknown;
   };
-  /** Optional wrapper box style */
-  style?: StyleXStyles;
+  style?: React.CSSProperties;
   className?: string;
   color?: "secondary";
 }
 
-// ─── Internal styled sub-components ──────────────────────────────────────────
+const cellAlignMap = {
+  left: alignLeft,
+  center: alignCenter,
+  right: alignRight,
+} as const;
 
-const cellAlignStyles = stylex.create({
-  left: { textAlign: "left" },
-  center: { textAlign: "center" },
-  right: { textAlign: "right" },
-});
-
-/**
- * A simple styled Table component.
- *
- * Takes column definitions and row data and renders a styled HTML table.
- * No pagination, sorting, or filtering — just a styled presentation layer.
- *
- * @example
- * ```tsx
- * <Table
- *   columnData={[
- *     { key: 'name', header: 'Name', cell: (row) => row.name },
- *     { key: 'email', header: 'Email', cell: (row) => row.email },
- *   ]}
- *   rowData={users}
- *   rowKey="id"
- * />
- * ```
- */
 function getCellValue<TData>(col: Column<TData>, row: TData): React.ReactNode {
   if (col?.cell) {
     return col.cell(row);
   }
   return row[col.key] as React.ReactNode;
 }
+
 export function Table<TData>({
   columnData,
   rowData,
@@ -83,18 +63,15 @@ export function Table<TData>({
   color,
 }: TableProps<TData>) {
   return (
-    <div
-      {...stylex.props(tableStyles.wrapper, color && tableColorStyles[color], style)}
-      className={className}
-    >
-      <table {...stylex.props(tableStyles.root, color && tableColorStyles[color])}>
-        <thead {...stylex.props(tableStyles.head)}>
+    <div className={clsx(wrapper, color && colorSecondary, className)} style={style}>
+      <table className={clsx(root, color && colorSecondary)}>
+        <thead className={head}>
           <tr>
             {columnData.map((col) => (
               <th
                 key={col.key.toString()}
                 style={col.width ? { width: col.width } : undefined}
-                {...stylex.props(tableStyles.header, col.align && cellAlignStyles[col.align])}
+                className={clsx(header, col.align && cellAlignMap[col.align])}
               >
                 {col.header}
               </th>
@@ -102,18 +79,31 @@ export function Table<TData>({
           </tr>
         </thead>
         <tbody>
-          {rowData.map((row, index) => {
-            const key = rowKey ? (row[rowKey] as string) : index.toString();
-            const rowProps = getRowProps?.(row, index);
+          {rowData.map((dataRow, index) => {
+            const key = rowKey ? (dataRow[rowKey] as string) : index.toString();
+            const rowProps = getRowProps?.(dataRow, index);
             return (
-              <tr key={key} {...rowProps} {...stylex.props(tableStyles.row)}>
+              <tr
+                key={key}
+                {...rowProps}
+                className={clsx(
+                  tableCss.row,
+                  (rowProps as Record<string, unknown> | undefined)?.className as
+                    | string
+                    | undefined,
+                )}
+              >
                 {columnData.map((col) => (
                   <td
                     key={col.key.toString()}
                     {...col.cellProps}
-                    {...stylex.props(tableStyles.cell, col.align && cellAlignStyles[col.align])}
+                    className={clsx(
+                      cell,
+                      col.align && cellAlignMap[col.align],
+                      (col.cellProps?.className as string | undefined) || undefined,
+                    )}
                   >
-                    {getCellValue(col, row)}
+                    {getCellValue(col, dataRow)}
                   </td>
                 ))}
               </tr>

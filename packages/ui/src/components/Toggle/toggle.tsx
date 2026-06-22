@@ -1,52 +1,56 @@
 "use client";
 
 import { Toggle as TogglePrimitive } from "@base-ui/react/toggle";
-import * as stylex from "@stylexjs/stylex";
-import { type BorderRadiusProp, borderRadiusStyles } from "#utils/layout.styles";
-import type { PropsWithStylex } from "#utils/stylex.utils";
-import {
-  togglePressedStyles,
-  toggleSizeStyles,
-  toggleStyles,
-  toggleVariantStyles,
-} from "./toggle.styles";
+import clsx from "clsx";
+import { base, pressed, radius, size, variant } from "./toggle.css";
 
 export type ToggleVariant = "default" | "outline";
 export type ToggleSize = "default" | "sm" | "lg";
+export type ToggleRadius =
+  | "none"
+  | "xsmall"
+  | "small"
+  | "medium"
+  | "large"
+  | "xlarge"
+  | "xxlarge"
+  | "full";
 
-export interface ToggleProps extends PropsWithStylex<TogglePrimitive.Props> {
+export interface ToggleProps extends Omit<TogglePrimitive.Props, "className" | "style"> {
   variant?: ToggleVariant;
   size?: ToggleSize;
-  style?: stylex.StyleXStyles;
-  radius?: BorderRadiusProp;
+  className?: string;
+  style?: React.CSSProperties;
+  radius?: ToggleRadius;
 }
 
 export function Toggle({
   children,
+  className,
   style,
-  variant = "default",
-  radius,
-  size = "default",
+  variant: v = "default",
+  radius: r,
+  size: s = "default",
   ...props
 }: ToggleProps) {
-  const variantStyle = toggleVariantStyles[variant];
-  const sizeStyle = toggleSizeStyles[size];
   return (
     <TogglePrimitive
       data-slot="toggle"
       {...props}
-      render={(renderProps, toggleState) => {
-        const pressedStyle = togglePressedStyles[variant];
-        const renderStyles = stylex.props(
-          toggleStyles.base,
-          variantStyle,
-          sizeStyle,
-          radius && borderRadiusStyles[radius],
-          toggleState.pressed && pressedStyle,
-          style,
-        );
+      render={(renderProps, state) => {
         return (
-          <button {...renderProps} {...renderStyles}>
+          <button
+            {...renderProps}
+            className={clsx(
+              base,
+              size({ size: s }),
+              variant({ variant: v }),
+              state.pressed && pressed[v],
+              r && radius({ radius: r }),
+              className,
+            )}
+            style={style}
+          >
             {children}
           </button>
         );

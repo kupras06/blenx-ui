@@ -2,43 +2,57 @@
 
 import { Checkbox as CheckboxPrimitive } from "@base-ui/react/checkbox";
 import { CheckboxGroup as CheckboxGroupPrimitive } from "@base-ui/react/checkbox-group";
-import * as stylex from "@stylexjs/stylex";
-import type { PropsWithStylex } from "#utils/stylex.utils";
-import { checkboxStyles } from "./checkbox.styles";
+import clsx from "clsx";
+import {
+  group,
+  root,
+  rootDisabled,
+  indicator,
+  indicatorChecked,
+  indicatorIndeterminate,
+  icon,
+} from "./checkbox.css";
 
-type CheckboxGroupProps = PropsWithStylex<CheckboxGroupPrimitive.Props>;
+type CheckboxGroupProps = CheckboxGroupPrimitive.Props & {
+  className?: string;
+  style?: React.CSSProperties;
+};
 
-type CheckboxProps = PropsWithStylex<CheckboxPrimitive.Root.Props>;
+type CheckboxProps = Omit<CheckboxPrimitive.Root.Props, "style" | "className"> & {
+  className?: string;
+  style?: React.CSSProperties;
+};
 
-export function CheckboxGroup({ style, ...props }: CheckboxGroupProps) {
-  return <CheckboxGroupPrimitive {...stylex.props(checkboxStyles.group, style)} {...props} />;
+export function CheckboxGroup({ className, style, ...props }: CheckboxGroupProps) {
+  return <CheckboxGroupPrimitive className={clsx(group, className)} style={style} {...props} />;
 }
 
-function Checkbox({ style, ...props }: CheckboxProps) {
+function Checkbox({ className, style, ...props }: CheckboxProps) {
   return (
     <CheckboxPrimitive.Root
       {...props}
       render={(rootProps, { disabled }) => (
         <span
           {...rootProps}
-          {...stylex.props(checkboxStyles.root, disabled && checkboxStyles.rootDisabled, style)}
+          className={clsx(root, disabled && rootDisabled, className)}
+          style={style}
           data-slot="checkbox"
         >
           <CheckboxPrimitive.Indicator
             render={(_indicatorProps, state) => (
               <span
                 {..._indicatorProps}
-                {...stylex.props(
-                  checkboxStyles.indicator,
-                  state.checked && checkboxStyles.indicatorChecked,
-                  state.indeterminate && checkboxStyles.indicatorIndeterminate,
+                className={clsx(
+                  indicator,
+                  state.checked && indicatorChecked,
+                  state.indeterminate && indicatorIndeterminate,
                 )}
                 data-slot="checkbox-indicator"
               >
                 {state.indeterminate ? (
                   <svg
                     aria-hidden="true"
-                    {...stylex.props(checkboxStyles.icon)}
+                    className={icon}
                     fill="none"
                     height="24"
                     stroke="currentColor"
@@ -54,7 +68,7 @@ function Checkbox({ style, ...props }: CheckboxProps) {
                 ) : (
                   <svg
                     aria-hidden="true"
-                    {...stylex.props(checkboxStyles.icon)}
+                    className={icon}
                     fill="none"
                     height="24"
                     stroke="currentColor"

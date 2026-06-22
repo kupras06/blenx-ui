@@ -1,54 +1,71 @@
-import { mergeProps } from "@base-ui/react";
-import * as stylex from "@stylexjs/stylex";
 import type { ReactNode } from "react";
-import type { _BaseDivProps } from "#utils/stylex.utils";
-import { type BoxProps } from "../Box/box";
-import { HStack, VStack } from "../Stack/stack";
 import { Text } from "../Text";
-import type { ColorProps } from "#utils/base.styles";
 
-type Props = BoxProps & {
-  /** Visual variant of the alert */
-  variant?: ColorProps["backgroundColor"];
-  /** Optional icon to display */
+type Variant = "info" | "success" | "warning" | "error";
+
+type Props = {
+  variant?: Variant;
   icon?: ReactNode;
   title?: string;
   description?: string;
+  children?: ReactNode;
+  style?: React.CSSProperties;
+  className?: string;
 };
 
-/**
- * Alert component for displaying contextual feedback messages.
- *
- * Supports `info`, `success`, `warning`, and `error` variants.
- * Optionally accepts an `icon` rendered before the message content.
- */
-function Alert({ variant = "info", icon, style, title, description, children, ...props }: Props) {
-  const sx = stylex.props(style);
-  const merged = mergeProps(props, sx);
+const variantVars: Record<Variant, { bg: string; fg: string; border: string }> = {
+  info: {
+    bg: "var(--sentiment-info-subtle)",
+    fg: "var(--sentiment-info)",
+    border: "var(--sentiment-info)",
+  },
+  success: {
+    bg: "var(--sentiment-positive-subtle)",
+    fg: "var(--sentiment-positive)",
+    border: "var(--sentiment-positive)",
+  },
+  warning: {
+    bg: "var(--sentiment-warning-subtle)",
+    fg: "var(--sentiment-warning)",
+    border: "var(--sentiment-warning)",
+  },
+  error: {
+    bg: "var(--sentiment-negative-subtle)",
+    fg: "var(--sentiment-negative)",
+    border: "var(--sentiment-negative)",
+  },
+};
+
+function Alert({ variant = "info", icon, style, title, description, children, className }: Props) {
+  const vars = variantVars[variant];
   return (
-    <HStack
-      padding="small"
-      align={icon ? "start" : "center"}
-      {...merged}
-      color={variant}
-      backgroundColor={variant}
-      borderColor={variant}
+    <div
+      className={className}
+      style={{
+        display: "flex",
+        alignItems: icon ? "flex-start" : "center",
+        gap: "12px",
+        padding: "12px",
+        backgroundColor: vars.bg,
+        border: `1px solid ${vars.border}`,
+        borderRadius: "8px",
+        color: vars.fg,
+        fontSize: "14px",
+        lineHeight: 1.5,
+        ...style,
+      }}
     >
       {icon}
-      <VStack gap="none">
+      <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
         {title ? (
-          <Text variant="h6" padding="none" margin="none" color={variant}>
+          <Text variant="h6" padding="none" margin="none">
             {title}
           </Text>
         ) : null}
-        {description ? (
-          <Text span color={variant} weight="regular">
-            {description}
-          </Text>
-        ) : null}
+        {description ? <span style={{ color: vars.fg }}>{description}</span> : null}
         {children}
-      </VStack>
-    </HStack>
+      </div>
+    </div>
   );
 }
 

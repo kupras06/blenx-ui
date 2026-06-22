@@ -1,2 +1,2 @@
-export * from "./text";
-export * from "./text.styles";
+export { Text } from "./text";
+export type { TextProps, TextVariant } from "./text";

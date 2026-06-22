@@ -1,29 +1,26 @@
 "use client";
 
-import { mergeProps } from "@base-ui/react";
 import { Field as FieldPrimitive } from "@base-ui/react/field";
-import * as stylex from "@stylexjs/stylex";
+import clsx from "clsx";
 import type * as React from "react";
-import { textareaStyles } from "./textarea.styles";
+import { shell, textarea, textareaLg, textareaSm } from "./textarea.css";
 
 export type TextareaProps = React.ComponentPropsWithoutRef<"textarea"> &
   React.RefAttributes<HTMLTextAreaElement> & {
     size?: "sm" | "default" | "lg" | number;
+    className?: string;
+    style?: React.CSSProperties;
   };
 
-export function Textarea({ size = "default", ref, ...props }: TextareaProps): React.ReactElement {
-  const shellProps = stylex.props(textareaStyles.shell);
-  const textareaProps = {
-    ...props,
-    ...stylex.props(
-      textareaStyles.textarea,
-      size === "sm" && textareaStyles.textareaSm,
-      size === "lg" && textareaStyles.textareaLg,
-    ),
-  };
-
+export function Textarea({
+  size = "default",
+  className,
+  style,
+  ref,
+  ...props
+}: TextareaProps): React.ReactElement {
   return (
-    <span {...shellProps} data-size={size} data-slot="textarea-control">
+    <span className={shell} data-size={size} data-slot="textarea-control" style={style}>
       <FieldPrimitive.Control
         ref={ref}
         value={props.value}
@@ -34,8 +31,14 @@ export function Textarea({ size = "default", ref, ...props }: TextareaProps): Re
         render={(defaultProps: React.ComponentProps<"textarea">) => (
           <textarea
             ref={ref}
-            {...mergeProps(defaultProps, textareaProps)}
+            className={clsx(
+              textarea,
+              size === "sm" && textareaSm,
+              size === "lg" && textareaLg,
+              className,
+            )}
             data-slot="textarea"
+            {...defaultProps}
             {...props}
           />
         )}

@@ -1,9 +1,21 @@
 import { Select as SelectPrimitive } from "@base-ui/react/select";
 import { CaretDownIcon, CaretUpIcon, CheckIcon } from "@phosphor-icons/react";
-import * as stylex from "@stylexjs/stylex";
+import clsx from "clsx";
 import type * as React from "react";
 import { Field, FieldError, FieldLabel } from "../Field/field";
-import { selectStyles } from "./select.styles";
+import {
+  groupLabel,
+  icon as iconStyle,
+  item as itemStyle,
+  itemIndicator,
+  label as labelStyle,
+  popup,
+  scrollArrow,
+  separator as separatorStyle,
+  trigger as triggerStyle,
+  triggerLg,
+  triggerSm,
+} from "./select.css";
 
 type SelectSize = "sm" | "default" | "lg";
 
@@ -16,20 +28,28 @@ export function SelectRoot({ children, ...props }: SelectRootProps) {
 }
 
 export function SelectLabel(props: SelectPrimitive.Label.Props) {
-  return <SelectPrimitive.Label {...stylex.props(selectStyles.label)} {...props} />;
+  return <SelectPrimitive.Label className={labelStyle} {...props} />;
 }
 
 export function SelectTrigger({
   size = "default",
+  className,
+  style,
   ...props
-}: SelectPrimitive.Trigger.Props & { size?: SelectSize }) {
+}: SelectPrimitive.Trigger.Props & {
+  size?: SelectSize;
+  className?: string;
+  style?: React.CSSProperties;
+}) {
   return (
     <SelectPrimitive.Trigger
-      {...stylex.props(
-        selectStyles.trigger,
-        size === "sm" && selectStyles.triggerSm,
-        size === "lg" && selectStyles.triggerLg,
+      className={clsx(
+        triggerStyle,
+        size === "sm" && triggerSm,
+        size === "lg" && triggerLg,
+        className,
       )}
+      style={style}
       {...props}
     />
   );
@@ -41,7 +61,7 @@ export function SelectValue({ placeholder, ...props }: SelectPrimitive.Value.Pro
 
 export function SelectIcon(props: SelectPrimitive.Icon.Props) {
   return (
-    <SelectPrimitive.Icon {...stylex.props(selectStyles.icon)} {...props}>
+    <SelectPrimitive.Icon className={iconStyle} {...props}>
       <CaretDownIcon size={16} />
     </SelectPrimitive.Icon>
   );
@@ -56,7 +76,7 @@ export function SelectPositioner({ sideOffset = 4, ...props }: SelectPrimitive.P
 }
 
 export function SelectPopup(props: SelectPrimitive.Popup.Props) {
-  return <SelectPrimitive.Popup {...stylex.props(selectStyles.popup)} {...props} />;
+  return <SelectPrimitive.Popup className={popup} {...props} />;
 }
 
 export function SelectList(props: SelectPrimitive.List.Props) {
@@ -68,8 +88,8 @@ export function SelectItem({
   ...props
 }: SelectPrimitive.Item.Props & { children: React.ReactNode }) {
   return (
-    <SelectPrimitive.Item {...stylex.props(selectStyles.item)} {...props}>
-      <SelectPrimitive.ItemIndicator {...stylex.props(selectStyles.itemIndicator)}>
+    <SelectPrimitive.Item className={itemStyle} {...props}>
+      <SelectPrimitive.ItemIndicator className={itemIndicator}>
         <CheckIcon size={14} weight="bold" />
       </SelectPrimitive.ItemIndicator>
       <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
@@ -78,7 +98,7 @@ export function SelectItem({
 }
 
 export function SelectSeparator(props: SelectPrimitive.Separator.Props) {
-  return <SelectPrimitive.Separator {...stylex.props(selectStyles.separator)} {...props} />;
+  return <SelectPrimitive.Separator className={separatorStyle} {...props} />;
 }
 
 export function SelectGroup(props: SelectPrimitive.Group.Props) {
@@ -86,12 +106,12 @@ export function SelectGroup(props: SelectPrimitive.Group.Props) {
 }
 
 export function SelectGroupLabel(props: SelectPrimitive.GroupLabel.Props) {
-  return <SelectPrimitive.GroupLabel {...stylex.props(selectStyles.groupLabel)} {...props} />;
+  return <SelectPrimitive.GroupLabel className={groupLabel} {...props} />;
 }
 
 export function SelectScrollUpArrow(props: SelectPrimitive.ScrollUpArrow.Props) {
   return (
-    <SelectPrimitive.ScrollUpArrow {...stylex.props(selectStyles.scrollArrow)} {...props}>
+    <SelectPrimitive.ScrollUpArrow className={scrollArrow} {...props}>
       <CaretUpIcon size={12} />
     </SelectPrimitive.ScrollUpArrow>
   );
@@ -99,7 +119,7 @@ export function SelectScrollUpArrow(props: SelectPrimitive.ScrollUpArrow.Props) 
 
 export function SelectScrollDownArrow(props: SelectPrimitive.ScrollDownArrow.Props) {
   return (
-    <SelectPrimitive.ScrollDownArrow {...stylex.props(selectStyles.scrollArrow)} {...props}>
+    <SelectPrimitive.ScrollDownArrow className={scrollArrow} {...props}>
       <CaretDownIcon size={12} />
     </SelectPrimitive.ScrollDownArrow>
   );

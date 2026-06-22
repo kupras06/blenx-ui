@@ -1,12 +1,41 @@
 import { Combobox as ComboboxPrimitive } from "@base-ui/react/combobox";
-import { mergeProps } from "@base-ui/react/merge-props";
 import { CaretUpDownIcon, CheckIcon, XIcon } from "@phosphor-icons/react";
-import * as stylex from "@stylexjs/stylex";
+import clsx from "clsx";
 import * as React from "react";
-import type { PropsWithStylex } from "#utils/stylex.utils";
 import { Input } from "../Input/input";
 import { ScrollArea } from "../ScrollArea/scroll-area";
-import { comboboxStyles } from "./combobox.styles";
+import {
+  inputGroup,
+  inputSm,
+  inputDefault,
+  inputLg,
+  startAddon,
+  startAddonSm,
+  startAddonDefault,
+  adornment,
+  adornmentSm,
+  adornmentDefault,
+  adornmentEndSm,
+  adornmentEndDefault,
+  positioner,
+  popupShell,
+  popup,
+  separator,
+  group,
+  groupLabel,
+  empty,
+  row,
+  list,
+  status,
+  item,
+  itemIndicator,
+  itemContent,
+  chips,
+  chipsStartAddon,
+  chipsInput,
+  chip,
+  chipRemove,
+} from "./combobox.css";
 import { CloseButton } from "../CloseButton";
 
 type InputSize = "sm" | "default" | "lg" | number;
@@ -38,42 +67,44 @@ export function Combobox<Value, Multiple extends boolean | undefined = false>(
 }
 
 export function ComboboxChipsInput({
-  style,
   size,
+  className,
   ...props
-}: PropsWithStylex<
-  ComboboxPrimitive.Input.Props & {
-    size?: InputSize;
-    ref?: React.Ref<HTMLInputElement>;
-  }
->): React.ReactElement {
+}: ComboboxPrimitive.Input.Props & {
+  size?: InputSize;
+  ref?: React.Ref<HTMLInputElement>;
+}): React.ReactElement {
   const resolvedSize = size ?? "default";
-  const inputProps = mergeProps(props, stylex.props(comboboxStyles.chipsInput, style));
   return (
     <ComboboxPrimitive.Input
+      className={clsx(chipsInput, className)}
       data-size={typeof resolvedSize === "string" ? resolvedSize : undefined}
       data-slot="combobox-chips-input"
       size={typeof resolvedSize === "number" ? resolvedSize : undefined}
-      {...inputProps}
+      {...props}
     />
   );
 }
-type ComboboxTriggerProps = PropsWithStylex<ComboboxPrimitive.Trigger.Props>;
-export function ComboboxTrigger({ ...props }: ComboboxTriggerProps): React.ReactElement {
-  const styleProps = stylex.props(props.style);
+
+type ComboboxTriggerProps = ComboboxPrimitive.Trigger.Props;
+export function ComboboxTrigger({ className, ...props }: ComboboxTriggerProps): React.ReactElement {
   return (
-    <ComboboxPrimitive.Trigger data-slot="combobox-trigger" {...mergeProps(props, styleProps)} />
+    <ComboboxPrimitive.Trigger className={className} data-slot="combobox-trigger" {...props} />
   );
 }
-type ComboboxClearProps = PropsWithStylex<ComboboxPrimitive.Clear.Props>;
+
+type ComboboxClearProps = ComboboxPrimitive.Clear.Props;
 export function ComboboxClear({
-  style,
+  className,
   children,
   ...props
 }: ComboboxClearProps): React.ReactElement {
-  const clearProps = mergeProps(props, stylex.props(comboboxStyles.adornment, style));
   return (
-    <ComboboxPrimitive.Clear data-slot="combobox-clear" {...clearProps}>
+    <ComboboxPrimitive.Clear
+      className={clsx(adornment, className)}
+      data-slot="combobox-clear"
+      {...props}
+    >
       {children ?? <XIcon size={18} weight="regular" />}
     </ComboboxPrimitive.Clear>
   );
@@ -82,84 +113,75 @@ export function ComboboxClear({
 export function ComboboxInput({
   showTrigger = true,
   showClear = false,
-  startAddon,
+  startAddon: startAddonNode,
   size,
-  style,
   triggerProps,
   clearProps,
   render: renderProp,
+  className,
   ...props
-}: PropsWithStylex<
-  Omit<ComboboxPrimitive.Input.Props, "size"> & {
-    showTrigger?: boolean;
-    showClear?: boolean;
-    startAddon?: React.ReactNode;
-    size?: InputSize;
-    ref?: React.Ref<HTMLInputElement>;
-    triggerProps?: ComboboxTriggerProps;
-    clearProps?: ComboboxClearProps;
-  }
->): React.ReactElement {
+}: Omit<ComboboxPrimitive.Input.Props, "size"> & {
+  showTrigger?: boolean;
+  showClear?: boolean;
+  startAddon?: React.ReactNode;
+  size?: InputSize;
+  ref?: React.Ref<HTMLInputElement>;
+  triggerProps?: ComboboxPrimitive.Trigger.Props;
+  clearProps?: ComboboxPrimitive.Clear.Props;
+}): React.ReactElement {
   const resolvedSize = size ?? "default";
   const renderSize = resolvedSize === "sm" || resolvedSize === "lg" ? resolvedSize : "default";
-  const inputProps = mergeProps(
-    props,
-    stylex.props(
-      resolvedSize === "sm"
-        ? comboboxStyles.inputSm
-        : resolvedSize === "lg"
-          ? comboboxStyles.inputLg
-          : comboboxStyles.inputDefault,
-      style,
-    ),
-  );
-  const triggerStyleProps = stylex.props(
-    comboboxStyles.adornment,
-    resolvedSize === "sm" ? comboboxStyles.adornmentSm : comboboxStyles.adornmentDefault,
-    resolvedSize === "sm" ? comboboxStyles.adornmentEndSm : comboboxStyles.adornmentEndDefault,
-    comboboxStyles.adornmentHiddenWhenClear,
-    triggerProps?.style,
-  );
-  const clearStyleProps = stylex.props(
-    comboboxStyles.adornment,
-    resolvedSize === "sm" ? comboboxStyles.adornmentSm : comboboxStyles.adornmentDefault,
-    resolvedSize === "sm" ? comboboxStyles.adornmentEndSm : comboboxStyles.adornmentEndDefault,
-    clearProps?.style,
-  );
-  const startAddonStyleProps = stylex.props(
-    comboboxStyles.startAddon,
-    resolvedSize === "sm" ? comboboxStyles.startAddonSm : comboboxStyles.startAddonDefault,
+  const inputCls = clsx(
+    resolvedSize === "sm" ? inputSm : resolvedSize === "lg" ? inputLg : inputDefault,
+    className,
   );
 
   return (
-    <ComboboxPrimitive.InputGroup
-      {...stylex.props(comboboxStyles.inputGroup)}
-      data-slot="combobox-input-group"
-    >
-      {startAddon && (
-        <div aria-hidden="true" {...startAddonStyleProps} data-slot="combobox-start-addon">
-          {startAddon}
+    <ComboboxPrimitive.InputGroup className={inputGroup} data-slot="combobox-input-group">
+      {startAddonNode && (
+        <div
+          aria-hidden="true"
+          className={clsx(startAddon, resolvedSize === "sm" ? startAddonSm : startAddonDefault)}
+          data-slot="combobox-start-addon"
+        >
+          {startAddonNode}
         </div>
       )}
       <ComboboxPrimitive.Input
         data-slot="combobox-input"
         render={renderProp ?? <Input size={renderSize} />}
-        {...inputProps}
+        className={inputCls}
+        {...props}
       />
       {showTrigger && (
-        <ComboboxTrigger {...mergeProps(triggerProps, triggerStyleProps)}>
+        <ComboboxPrimitive.Trigger
+          className={clsx(
+            adornment,
+            resolvedSize === "sm" ? adornmentSm : adornmentDefault,
+            resolvedSize === "sm" ? adornmentEndSm : adornmentEndDefault,
+          )}
+          data-slot="combobox-trigger"
+          {...triggerProps}
+        >
           <CaretUpDownIcon size={resolvedSize === "sm" ? 16 : 18} weight="regular" />
-        </ComboboxTrigger>
+        </ComboboxPrimitive.Trigger>
       )}
       {showClear && (
-        <ComboboxClear {...mergeProps(clearProps, clearStyleProps)} render={<CloseButton />} />
+        <ComboboxClear
+          className={clsx(
+            adornment,
+            resolvedSize === "sm" ? adornmentSm : adornmentDefault,
+            resolvedSize === "sm" ? adornmentEndSm : adornmentEndDefault,
+          )}
+          render={<CloseButton />}
+          {...clearProps}
+        />
       )}
     </ComboboxPrimitive.InputGroup>
   );
 }
 
 export function ComboboxPopup({
-  style,
   children,
   side = "bottom",
   sideOffset = 4,
@@ -167,8 +189,9 @@ export function ComboboxPopup({
   align = "start",
   anchor: anchorProp,
   portalProps,
+  className,
   ...props
-}: PropsWithStylex<ComboboxPrimitive.Popup.Props> & {
+}: ComboboxPrimitive.Popup.Props & {
   align?: ComboboxPrimitive.Positioner.Props["align"];
   sideOffset?: ComboboxPrimitive.Positioner.Props["sideOffset"];
   alignOffset?: ComboboxPrimitive.Positioner.Props["alignOffset"];
@@ -178,8 +201,6 @@ export function ComboboxPopup({
 }): React.ReactElement {
   const { chipsRef } = React.useContext(ComboboxContext);
   const anchor = anchorProp ?? chipsRef;
-  const shellProps = stylex.props(comboboxStyles.popupShell, style);
-  const popupProps = mergeProps(props, stylex.props(comboboxStyles.popup));
 
   return (
     <ComboboxPrimitive.Portal {...portalProps}>
@@ -187,13 +208,13 @@ export function ComboboxPopup({
         align={align}
         alignOffset={alignOffset}
         anchor={anchor}
+        className={positioner}
         data-slot="combobox-positioner"
         side={side}
         sideOffset={sideOffset}
-        {...stylex.props(comboboxStyles.positioner)}
       >
-        <span {...shellProps}>
-          <ComboboxPrimitive.Popup data-slot="combobox-popup" {...popupProps}>
+        <span className={clsx(popupShell, className)}>
+          <ComboboxPrimitive.Popup className={popup} data-slot="combobox-popup" {...props}>
             {children}
           </ComboboxPrimitive.Popup>
         </span>
@@ -203,115 +224,88 @@ export function ComboboxPopup({
 }
 
 export function ComboboxItem({
-  style,
   children,
+  className,
   ...props
-}: PropsWithStylex<ComboboxPrimitive.Item.Props>): React.ReactElement {
-  const itemProps = mergeProps(props, stylex.props(comboboxStyles.item, style));
+}: ComboboxPrimitive.Item.Props): React.ReactElement {
   return (
-    <ComboboxPrimitive.Item data-slot="combobox-item" {...itemProps}>
-      <ComboboxPrimitive.ItemIndicator {...stylex.props(comboboxStyles.itemIndicator)}>
+    <ComboboxPrimitive.Item className={clsx(item, className)} data-slot="combobox-item" {...props}>
+      <ComboboxPrimitive.ItemIndicator className={itemIndicator}>
         <CheckIcon size={16} weight="bold" />
       </ComboboxPrimitive.ItemIndicator>
-      <div {...stylex.props(comboboxStyles.itemContent)}>{children}</div>
+      <div className={itemContent}>{children}</div>
     </ComboboxPrimitive.Item>
   );
 }
 
-export function ComboboxSeparator({
-  style,
-  ...props
-}: PropsWithStylex<ComboboxPrimitive.Separator.Props>): React.ReactElement {
-  const separatorProps = mergeProps(props, stylex.props(comboboxStyles.separator, style));
-  return <ComboboxPrimitive.Separator data-slot="combobox-separator" {...separatorProps} />;
+export function ComboboxSeparator(props: ComboboxPrimitive.Separator.Props): React.ReactElement {
+  return (
+    <ComboboxPrimitive.Separator className={separator} data-slot="combobox-separator" {...props} />
+  );
 }
 
-export function ComboboxGroup({
-  style,
-  ...props
-}: PropsWithStylex<ComboboxPrimitive.Group.Props>): React.ReactElement {
-  const groupProps = mergeProps(props, stylex.props(comboboxStyles.group, style));
-  return <ComboboxPrimitive.Group data-slot="combobox-group" {...groupProps} />;
+export function ComboboxGroup(props: ComboboxPrimitive.Group.Props): React.ReactElement {
+  return <ComboboxPrimitive.Group className={group} data-slot="combobox-group" {...props} />;
 }
 
-export function ComboboxGroupLabel({
-  style,
-  ...props
-}: PropsWithStylex<ComboboxPrimitive.GroupLabel.Props>): React.ReactElement {
-  const groupLabelProps = mergeProps(props, stylex.props(comboboxStyles.groupLabel, style));
-  return <ComboboxPrimitive.GroupLabel data-slot="combobox-group-label" {...groupLabelProps} />;
+export function ComboboxGroupLabel(props: ComboboxPrimitive.GroupLabel.Props): React.ReactElement {
+  return (
+    <ComboboxPrimitive.GroupLabel
+      className={groupLabel}
+      data-slot="combobox-group-label"
+      {...props}
+    />
+  );
 }
 
-export function ComboboxEmpty({
-  style,
-  ...props
-}: PropsWithStylex<ComboboxPrimitive.Empty.Props>): React.ReactElement {
-  const emptyProps = mergeProps(props, stylex.props(comboboxStyles.empty, style));
-  return <ComboboxPrimitive.Empty data-slot="combobox-empty" {...emptyProps} />;
+export function ComboboxEmpty(props: ComboboxPrimitive.Empty.Props): React.ReactElement {
+  return <ComboboxPrimitive.Empty className={empty} data-slot="combobox-empty" {...props} />;
 }
 
-export function ComboboxRow({
-  style,
-  ...props
-}: PropsWithStylex<ComboboxPrimitive.Row.Props>): React.ReactElement {
-  const rowProps = mergeProps(props, stylex.props(comboboxStyles.row, style));
-  return <ComboboxPrimitive.Row data-slot="combobox-row" {...rowProps} />;
+export function ComboboxRow(props: ComboboxPrimitive.Row.Props): React.ReactElement {
+  return <ComboboxPrimitive.Row className={row} data-slot="combobox-row" {...props} />;
 }
 
-export function ComboboxValue({ ...props }: ComboboxPrimitive.Value.Props): React.ReactElement {
+export function ComboboxValue(props: ComboboxPrimitive.Value.Props): React.ReactElement {
   return <ComboboxPrimitive.Value data-slot="combobox-value" {...props} />;
 }
 
-export function ComboboxList({
-  style,
-  ...props
-}: PropsWithStylex<ComboboxPrimitive.List.Props>): React.ReactElement {
-  const listProps = mergeProps(props, stylex.props(comboboxStyles.list, style));
+export function ComboboxList(props: ComboboxPrimitive.List.Props): React.ReactElement {
   return (
     <ScrollArea scrollbarGutter scrollFade>
-      <ComboboxPrimitive.List data-slot="combobox-list" {...listProps} />
+      <ComboboxPrimitive.List className={list} data-slot="combobox-list" {...props} />
     </ScrollArea>
   );
 }
 
-export function ComboboxStatus({
-  style,
-  ...props
-}: PropsWithStylex<ComboboxPrimitive.Status.Props>): React.ReactElement {
-  const statusProps = mergeProps(props, stylex.props(comboboxStyles.status, style));
-  return <ComboboxPrimitive.Status data-slot="combobox-status" {...statusProps} />;
+export function ComboboxStatus(props: ComboboxPrimitive.Status.Props): React.ReactElement {
+  return <ComboboxPrimitive.Status className={status} data-slot="combobox-status" {...props} />;
 }
 
-export function ComboboxCollection({
-  ...props
-}: ComboboxPrimitive.Collection.Props): React.ReactElement {
+export function ComboboxCollection(props: ComboboxPrimitive.Collection.Props): React.ReactElement {
   return <ComboboxPrimitive.Collection data-slot="combobox-collection" {...props} />;
 }
 
 export function ComboboxChips({
-  style,
   children,
-  startAddon,
+  startAddon: startAddonNode,
+  className,
   ...props
-}: PropsWithStylex<ComboboxPrimitive.Chips.Props> & {
+}: ComboboxPrimitive.Chips.Props & {
   startAddon?: React.ReactNode;
 }): React.ReactElement {
   const { chipsRef } = React.useContext(ComboboxContext);
-  const chipsProps = mergeProps(props, stylex.props(comboboxStyles.chips, style));
 
   return (
     <ComboboxPrimitive.Chips
       data-slot="combobox-chips"
       ref={chipsRef as React.Ref<HTMLDivElement> | null}
-      {...chipsProps}
+      className={clsx(chips, className)}
+      {...props}
     >
-      {startAddon && (
-        <div
-          aria-hidden="true"
-          data-slot="combobox-start-addon"
-          {...stylex.props(comboboxStyles.chipsStartAddon)}
-        >
-          {startAddon}
+      {startAddonNode && (
+        <div aria-hidden="true" data-slot="combobox-start-addon" className={chipsStartAddon}>
+          {startAddonNode}
         </div>
       )}
       {children}
@@ -320,16 +314,15 @@ export function ComboboxChips({
 }
 
 export function ComboboxChip({
-  style,
   children,
   removeProps,
+  className,
   ...props
-}: PropsWithStylex<ComboboxPrimitive.Chip.Props> & {
-  removeProps?: PropsWithStylex<ComboboxPrimitive.ChipRemove.Props>;
+}: ComboboxPrimitive.Chip.Props & {
+  removeProps?: ComboboxPrimitive.ChipRemove.Props;
 }): React.ReactElement {
-  const chipProps = mergeProps(props, stylex.props(comboboxStyles.chip, style));
   return (
-    <ComboboxPrimitive.Chip data-slot="combobox-chip" {...chipProps}>
+    <ComboboxPrimitive.Chip className={clsx(chip, className)} data-slot="combobox-chip" {...props}>
       {children}
       <ComboboxChipRemove {...removeProps} />
     </ComboboxPrimitive.Chip>
@@ -337,16 +330,15 @@ export function ComboboxChip({
 }
 
 function ComboboxChipRemove({
-  style,
+  className,
   ...props
-}: PropsWithStylex<ComboboxPrimitive.ChipRemove.Props>): React.ReactElement {
-  const renderStyles = stylex.props(comboboxStyles.chipRemove, style);
-  const chipRemoveProps = mergeProps(props, renderStyles);
+}: ComboboxPrimitive.ChipRemove.Props): React.ReactElement {
   return (
     <ComboboxPrimitive.ChipRemove
       aria-label="Remove"
+      className={clsx(chipRemove, className)}
       data-slot="combobox-chip-remove"
-      {...chipRemoveProps}
+      {...props}
     >
       <XIcon size={16} weight="regular" />
     </ComboboxPrimitive.ChipRemove>

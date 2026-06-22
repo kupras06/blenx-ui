@@ -1,17 +1,14 @@
-import { mergeProps } from "@base-ui/react/merge-props";
 import { useRender } from "@base-ui/react/use-render";
-import * as stylex from "@stylexjs/stylex";
+import clsx from "clsx";
 import type React from "react";
-import { colorStyles } from "#utils/base.styles";
-import type { PropsWithStylex } from "#utils/stylex.utils";
 import {
-  fontSizeStyles,
-  textAlignStyles,
-  textStyles,
-  textTransformStyles,
-  textVarianttyles,
-  textWeightStyles,
-} from "./text.styles";
+  base,
+  variant as variantRecipe,
+  align as alignRecipe,
+  weight as weightRecipe,
+  transform as transformRecipe,
+  size as sizeRecipe,
+} from "./text.css";
 import { Box, type BoxProps } from "../Box/box";
 
 const variantTag = {
@@ -32,49 +29,61 @@ const variantTag = {
 } as const satisfies Record<string, keyof React.JSX.IntrinsicElements>;
 export type TextVariant = keyof typeof variantTag;
 
-export type TextProps = PropsWithStylex<
-  BoxProps & {
-    variant?: TextVariant;
-    color?: keyof typeof colorStyles;
-    align?: keyof typeof textAlignStyles;
-    weight?: keyof typeof textWeightStyles;
-    transform?: keyof typeof textTransformStyles;
-    size?: keyof typeof fontSizeStyles;
-    style?: stylex.StyleXStyles;
-    span?: boolean;
-  }
->;
+export type TextProps = BoxProps & {
+  variant?: TextVariant;
+  align?: "left" | "center" | "right";
+  weight?: "regular" | "medium" | "semibold" | "bold";
+  transform?: "uppercase" | "capitalize" | "none" | "lowercase";
+  size?:
+    | "xxsmall"
+    | "xsmall"
+    | "small"
+    | "medium"
+    | "large"
+    | "xlarge"
+    | "xxlarge"
+    | "xxxlarge"
+    | "huge"
+    | "massive"
+    | "titanic";
+  span?: boolean;
+};
 
 export function Text({
   variant = "body1",
-  color = "primary",
+  color,
   align,
   weight,
+  className,
   style,
-  size,
+  size: textSize,
   render,
   span,
   transform = "none",
   children,
   ...props
 }: TextProps): React.ReactElement {
-  const sx = stylex.props(
-    textStyles.base,
-    textTransformStyles[transform],
-    textVarianttyles[variant],
-    color && colorStyles[color],
-    align && textAlignStyles[align],
-    weight && textWeightStyles[weight],
-    size && fontSizeStyles[size],
-    style,
+  const rootCls = clsx(
+    base,
+    variantRecipe({ variant }),
+    align && alignRecipe({ align }),
+    weight && weightRecipe({ weight }),
+    transform !== "none" && transformRecipe({ transform }),
+    textSize && sizeRecipe({ size: textSize }),
+    className,
   );
-  const merged = mergeProps({ children, ...props }, sx);
+
   if (span) {
     return useRender({
       defaultTagName: "span",
-      props: merged,
+      props: { className: rootCls, style, children, ...props },
       render,
     });
   }
-  return <Box render={render} {...merged} />;
+
+  return (
+    <Box render={render} className={rootCls} style={style} color={color} {...props}>
+      {children}
+    </Box>
+  );
 }

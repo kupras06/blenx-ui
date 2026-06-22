@@ -1,13 +1,26 @@
 "use client";
 
 import { AlertDialog as AlertDialogPrimitive } from "@base-ui/react/alert-dialog";
-import { mergeProps } from "@base-ui/react/merge-props";
 import { useRender } from "@base-ui/react/use-render";
-import * as stylex from "@stylexjs/stylex";
+import clsx from "clsx";
 import type React from "react";
-import type { _BaseDivProps, PropsWithStylex } from "#utils/stylex.utils";
+import type { _BaseDivProps } from "#utils/types";
 import { ScrollArea } from "../ScrollArea/scroll-area";
-import { alertDialogStyles } from "./alert-dialog.styles";
+import {
+  backdrop,
+  viewport,
+  popup,
+  viewportShellBottomStickOnMobile,
+  popupBottomStickOnMobile,
+  closeButton as closeButtonStyle,
+  header,
+  footer,
+  footerDefault,
+  footerBare,
+  title,
+  description,
+  panel,
+} from "./alert-dialog.css";
 import { CloseButton } from "../CloseButton";
 
 function AlertDialog(props: AlertDialogPrimitive.Root.Props): React.ReactElement {
@@ -29,7 +42,7 @@ function AlertDialogPortal(props: AlertDialogPrimitive.Portal.Props): React.Reac
 function AlertDialogBackdrop(props: AlertDialogPrimitive.Backdrop.Props): React.ReactElement {
   return (
     <AlertDialogPrimitive.Backdrop
-      {...stylex.props(alertDialogStyles.backdrop)}
+      className={backdrop}
       data-slot="alert-dialog-backdrop"
       {...props}
     />
@@ -37,37 +50,32 @@ function AlertDialogBackdrop(props: AlertDialogPrimitive.Backdrop.Props): React.
 }
 
 function AlertDialogViewport(
-  props: PropsWithStylex<AlertDialogPrimitive.Viewport.Props> & {
+  props: AlertDialogPrimitive.Viewport.Props & {
     bottomStickOnMobile?: boolean;
   },
 ): React.ReactElement {
-  const { bottomStickOnMobile, style, ...restProps } = props;
+  const { bottomStickOnMobile, className, ...restProps } = props;
   return (
     <AlertDialogPrimitive.Viewport
-      {...stylex.props(
-        alertDialogStyles.viewport,
-        bottomStickOnMobile && alertDialogStyles.viewportShellBottomStickOnMobile,
-        style,
-      )}
+      className={clsx(viewport, bottomStickOnMobile && viewportShellBottomStickOnMobile, className)}
       data-slot="alert-dialog-viewport"
       {...restProps}
     />
   );
 }
-type AlertDialogPopupProps = PropsWithStylex<
-  AlertDialogPrimitive.Popup.Props & {
-    showCloseButton?: boolean;
-    closeProps?: AlertDialogPrimitive.Close.Props;
-    bottomStickOnMobile?: boolean;
-  }
->;
+
+type AlertDialogPopupProps = AlertDialogPrimitive.Popup.Props & {
+  showCloseButton?: boolean;
+  closeProps?: AlertDialogPrimitive.Close.Props;
+  bottomStickOnMobile?: boolean;
+};
 
 function AlertDialogPopup({
   children,
-  style,
   bottomStickOnMobile = true,
   showCloseButton = true,
   closeProps,
+  className,
   ...props
 }: AlertDialogPopupProps): React.ReactElement {
   return (
@@ -75,19 +83,15 @@ function AlertDialogPopup({
       <AlertDialogBackdrop />
       <AlertDialogViewport bottomStickOnMobile={bottomStickOnMobile}>
         <AlertDialogPrimitive.Popup
-          {...stylex.props(
-            alertDialogStyles.popup,
-            bottomStickOnMobile && alertDialogStyles.popupBottomStickOnMobile,
-            style,
-          )}
+          className={clsx(popup, bottomStickOnMobile && popupBottomStickOnMobile, className)}
           data-slot="alert-dialog-popup"
           {...props}
         >
           {showCloseButton && (
             <AlertDialogPrimitive.Close
               aria-label="Close"
-              {...stylex.props(alertDialogStyles.closeButton)}
-              render={<CloseButton variant="ghost" style={alertDialogStyles.closeButton} />}
+              className={closeButtonStyle}
+              render={<CloseButton variant="ghost" className={closeButtonStyle} />}
               {...closeProps}
             />
           )}
@@ -100,17 +104,14 @@ function AlertDialogPopup({
 
 type HeaderProps = _BaseDivProps;
 
-function AlertDialogHeader({ render, style, ...props }: HeaderProps): React.ReactElement {
-  const headerProps = stylex.props(alertDialogStyles.header, style);
+function AlertDialogHeader({ className, render, ...props }: HeaderProps): React.ReactElement {
   return useRender({
     defaultTagName: "div",
-    props: mergeProps<"div">(
-      {
-        ...headerProps,
-        "data-slot": "alert-dialog-header",
-      } as never,
-      props,
-    ),
+    props: {
+      className: clsx(header, className),
+      "data-slot": "alert-dialog-header",
+      ...props,
+    } as never,
     render,
   });
 }
@@ -120,44 +121,35 @@ type FooterProps = _BaseDivProps & {
 };
 
 function AlertDialogFooter({
-  style,
+  className,
   variant = "default",
   render,
   ...props
 }: FooterProps): React.ReactElement {
-  const footerProps = stylex.props(
-    alertDialogStyles.footer,
-    variant === "default" && alertDialogStyles.footerDefault,
-    variant === "bare" && alertDialogStyles.footerBare,
-    style,
-  );
   return useRender({
     defaultTagName: "div",
-    props: mergeProps<"div">(
-      {
-        ...footerProps,
-        "data-slot": "alert-dialog-footer",
-      } as never,
-      props,
-    ),
+    props: {
+      className: clsx(
+        footer,
+        variant === "default" && footerDefault,
+        variant === "bare" && footerBare,
+        className,
+      ),
+      "data-slot": "alert-dialog-footer",
+      ...props,
+    } as never,
     render,
   });
 }
 
 function AlertDialogTitle(props: AlertDialogPrimitive.Title.Props): React.ReactElement {
-  return (
-    <AlertDialogPrimitive.Title
-      {...stylex.props(alertDialogStyles.title)}
-      data-slot="alert-dialog-title"
-      {...props}
-    />
-  );
+  return <AlertDialogPrimitive.Title className={title} data-slot="alert-dialog-title" {...props} />;
 }
 
 function AlertDialogDescription(props: AlertDialogPrimitive.Description.Props): React.ReactElement {
   return (
     <AlertDialogPrimitive.Description
-      {...stylex.props(alertDialogStyles.description)}
+      className={description}
       data-slot="alert-dialog-description"
       {...props}
     />
@@ -165,29 +157,22 @@ function AlertDialogDescription(props: AlertDialogPrimitive.Description.Props): 
 }
 
 function AlertDialogPanel({
-  style,
   scrollFade = true,
   render,
+  className,
   ...props
 }: _BaseDivProps & {
   scrollFade?: boolean;
 }): React.ReactElement {
-  const panelProps = stylex.props(
-    alertDialogStyles.panel,
-    scrollFade && alertDialogStyles.panelScrollFade,
-    style,
-  );
   return (
     <ScrollArea scrollFade={scrollFade}>
       {useRender({
         defaultTagName: "div",
-        props: mergeProps<"div">(
-          {
-            ...panelProps,
-            "data-slot": "alert-dialog-panel",
-          } as never,
-          props,
-        ),
+        props: {
+          className: clsx(panel, className),
+          "data-slot": "alert-dialog-panel",
+          ...props,
+        } as never,
         render,
       })}
     </ScrollArea>

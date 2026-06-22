@@ -1,12 +1,14 @@
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import stylex from "@stylexjs/unplugin";
+import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
 
 export default defineConfig({
   plugins: [
     stylex.vite({
       useCSSLayers: true,
     }),
+    vanillaExtractPlugin(),
     dts({
       entryRoot: "src",
       outDirs: "dist",

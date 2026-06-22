@@ -1,51 +1,98 @@
 "use client";
 
 import { Field as FieldPrimitive } from "@base-ui/react/field";
-import * as stylex from "@stylexjs/stylex";
+import clsx from "clsx";
 import type React from "react";
-import type { PropsWithStylex } from "#utils/stylex.utils";
-import { fieldStyles } from "./field.styles";
+import { field, label, item, description, error } from "./field.css";
 
 export function Field({
+  className,
   style,
   ...props
-}: PropsWithStylex<FieldPrimitive.Root.Props>): React.ReactElement {
-  const fieldProps = stylex.props(fieldStyles.field, style);
-  return <FieldPrimitive.Root {...fieldProps} data-slot="field" {...props} />;
+}: FieldPrimitive.Root.Props & {
+  className?: string;
+  style?: React.CSSProperties;
+}): React.ReactElement {
+  return (
+    <FieldPrimitive.Root
+      className={clsx(field, className)}
+      style={style}
+      data-slot="field"
+      {...props}
+    />
+  );
 }
 
 export function FieldLabel({
+  className,
   style,
   ...props
-}: PropsWithStylex<FieldPrimitive.Label.Props>): React.ReactElement {
-  const labelProps = stylex.props(fieldStyles.label, style);
-  return <FieldPrimitive.Label {...labelProps} data-slot="field-label" {...props} />;
+}: FieldPrimitive.Label.Props & {
+  className?: string;
+  style?: React.CSSProperties;
+}): React.ReactElement {
+  return (
+    <FieldPrimitive.Label
+      className={clsx(label, className)}
+      style={style}
+      data-slot="field-label"
+      {...props}
+    />
+  );
 }
 
 export function FieldItem({
+  className,
   style,
   ...props
-}: PropsWithStylex<FieldPrimitive.Item.Props>): React.ReactElement {
-  const itemProps = stylex.props(fieldStyles.item, style);
-  return <FieldPrimitive.Item {...itemProps} data-slot="field-item" {...props} />;
+}: FieldPrimitive.Item.Props & {
+  className?: string;
+  style?: React.CSSProperties;
+}): React.ReactElement {
+  return (
+    <FieldPrimitive.Item
+      className={clsx(item, className)}
+      style={style}
+      data-slot="field-item"
+      {...props}
+    />
+  );
 }
 
 export function FieldDescription({
+  className,
   style,
   ...props
-}: PropsWithStylex<FieldPrimitive.Description.Props>): React.ReactElement {
-  const descriptionProps = stylex.props(fieldStyles.description, style);
+}: FieldPrimitive.Description.Props & {
+  className?: string;
+  style?: React.CSSProperties;
+}): React.ReactElement {
   return (
-    <FieldPrimitive.Description {...descriptionProps} data-slot="field-description" {...props} />
+    <FieldPrimitive.Description
+      className={clsx(description, className)}
+      style={style}
+      data-slot="field-description"
+      {...props}
+    />
   );
 }
 
 function FieldError({
+  className,
   style,
   ...props
-}: PropsWithStylex<FieldPrimitive.Error.Props>): React.ReactElement {
-  const errorProps = stylex.props(fieldStyles.error, style);
-  return <FieldPrimitive.Error {...errorProps} data-slot="field-error" {...props} />;
+}: FieldPrimitive.Error.Props & {
+  className?: string;
+  style?: React.CSSProperties;
+}): React.ReactElement {
+  return (
+    <FieldPrimitive.Error
+      className={clsx(error, className)}
+      style={style}
+      data-slot="field-error"
+      {...props}
+    />
+  );
 }
 
 export const FieldControl: typeof FieldPrimitive.Control = FieldPrimitive.Control;

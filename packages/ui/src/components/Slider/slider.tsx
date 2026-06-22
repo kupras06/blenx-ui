@@ -1,68 +1,73 @@
 "use client";
 
 import { Slider as SliderPrimitive } from "@base-ui/react/slider";
-import * as stylex from "@stylexjs/stylex";
+import clsx from "clsx";
 import * as React from "react";
 import {
-  sliderControlStyles,
-  sliderStyles,
-  sliderTrackStyles,
-  thumbStateStyles,
-} from "./slider.styles";
+  disabled,
+  control,
+  controlHorizontal,
+  controlVertical,
+  track,
+  trackHorizontal,
+  trackVertical,
+  indicator,
+  thumb,
+  thumbDragging,
+  value,
+} from "./slider.css";
 
 type SliderProps = Omit<SliderPrimitive.Root.Props, "style"> & {
-  style?: stylex.StyleXStyles;
+  className?: string;
 };
 
 type SliderValueProps = Omit<SliderPrimitive.Value.Props, "style"> & {
-  style?: stylex.StyleXStyles;
+  className?: string;
 };
 
 function Slider({
   className,
   children,
   defaultValue,
-  value,
+  value: controlledValue,
   min = 0,
   max = 100,
-  style,
   ...props
 }: SliderProps): React.ReactElement {
   const values = React.useMemo(() => {
-    if (value !== undefined) {
-      return Array.isArray(value) ? value : [value];
+    if (controlledValue !== undefined) {
+      return Array.isArray(controlledValue) ? controlledValue : [controlledValue];
     }
     if (defaultValue !== undefined) {
       return Array.isArray(defaultValue) ? defaultValue : [defaultValue];
     }
     return [min];
-  }, [value, defaultValue, min]);
+  }, [controlledValue, defaultValue, min]);
   const orientation = props.orientation || "horizontal";
-  const rootProps = stylex.props(props.disabled && sliderStyles.disabled, style);
 
   return (
     <SliderPrimitive.Root
-      className={[rootProps.className, className].filter(Boolean).join(" ")}
+      className={clsx(props.disabled && disabled, className)}
       defaultValue={defaultValue}
       max={max}
       min={min}
       thumbAlignment="edge"
-      value={value}
+      value={controlledValue}
       {...props}
     >
       {children}
       <SliderPrimitive.Control
-        className={stylex.props(sliderStyles.control, sliderControlStyles[orientation]).className}
+        className={clsx(
+          control,
+          orientation === "horizontal" ? controlHorizontal : controlVertical,
+        )}
         data-slot="slider-control"
       >
         <SliderPrimitive.Track
-          className={stylex.props(sliderStyles.track, sliderTrackStyles[orientation]).className}
+          className={clsx(track, orientation === "horizontal" ? trackHorizontal : trackVertical)}
           data-slot="slider-track"
         >
-          <SliderPrimitive.Indicator
-            className={stylex.props(sliderStyles.indicator).className}
-            data-slot="slider-indicator"
-          />
+          <SliderPrimitive.Indicator className={indicator} data-slot="slider-indicator" />
           {Array.from({ length: values.length }, (_, index) => (
             <SliderPrimitive.Thumb
               index={index}
@@ -70,16 +75,12 @@ function Slider({
               render={(thumbRenderProps, state) => (
                 <div
                   {...thumbRenderProps}
-                  className={[
+                  className={clsx(
                     thumbRenderProps.className,
-                    stylex.props(
-                      sliderStyles.thumb,
-                      state.dragging && thumbStateStyles.dragging,
-                      state.disabled && sliderStyles.disabled,
-                    ).className,
-                  ]
-                    .filter(Boolean)
-                    .join(" ")}
+                    thumb,
+                    state.dragging && thumbDragging,
+                    state.disabled && disabled,
+                  )}
                 />
               )}
             />
@@ -90,15 +91,9 @@ function Slider({
   );
 }
 
-function SliderValue({ className, style, ...props }: SliderValueProps): React.ReactElement {
+function SliderValue({ className, ...props }: SliderValueProps): React.ReactElement {
   return (
-    <SliderPrimitive.Value
-      className={[stylex.props(sliderStyles.value, style).className, className]
-        .filter(Boolean)
-        .join(" ")}
-      data-slot="slider-value"
-      {...props}
-    />
+    <SliderPrimitive.Value className={clsx(value, className)} data-slot="slider-value" {...props} />
   );
 }
 

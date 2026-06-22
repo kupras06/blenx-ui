@@ -1,21 +1,20 @@
-import * as stylex from "@stylexjs/stylex";
-import { colorSwatchStyles } from "./color-swatch.styles";
-
 type Props = {
   color: string;
   size?: number;
-  style?: stylex.StyleXStyles;
+  style?: React.CSSProperties;
+  className?: string;
 };
 
-export function ColorSwatch({ color, size = 16, style }: Props) {
+export function ColorSwatch({ color, size = 16, style, className }: Props) {
   return (
     <span
-      {...stylex.props(colorSwatchStyles.base, style)}
+      className={className}
       style={{
         width: size,
         height: size,
         backgroundColor: color,
         borderRadius: 4,
+        ...style,
       }}
     />
   );

@@ -1,22 +1,28 @@
-import * as stylex from "@stylexjs/stylex";
+import clsx from "clsx";
 import type { BoxProps } from "../Box/box";
 import { Box } from "../Box/box";
-import { surfaceInteractiveStyles, surfaceStyles, surfaceVariantStyles } from "./surface.styles";
+import { base, interactive, variant } from "./surface.css";
 
-type SurfaceVariant = keyof typeof surfaceVariantStyles;
+type SurfaceVariant = "default" | "outline" | "raised" | "sunken";
 type SurfaceProps = BoxProps & {
   variant?: SurfaceVariant;
   interactive?: boolean;
 };
 
-function Surface({ variant = "default", interactive, style, ...props }: SurfaceProps) {
-  const resolvedStyles = stylex.props(
-    surfaceStyles.base,
-    surfaceVariantStyles[variant],
-    interactive && surfaceInteractiveStyles.base,
-    style,
+function Surface({
+  variant: v = "default",
+  interactive: int,
+  className,
+  style,
+  ...props
+}: SurfaceProps) {
+  return (
+    <Box
+      className={clsx(base, variant({ variant: v }), int && interactive, className)}
+      style={style}
+      {...props}
+    />
   );
-  return <Box {...resolvedStyles} {...props} />;
 }
 
 export type { SurfaceProps, SurfaceVariant };

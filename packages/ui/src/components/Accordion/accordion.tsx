@@ -2,23 +2,24 @@
 
 import { Accordion as AccordionPrimitive } from "@base-ui/react/accordion";
 import { CaretUpDownIcon } from "@phosphor-icons/react";
-import * as stylex from "@stylexjs/stylex";
-import type { PropsWithStylex } from "#utils/stylex.utils";
-import { accordionStyles } from "./accordion.styles";
+import clsx from "clsx";
+import {
+  root,
+  rootVertical,
+  item,
+  itemDisabled,
+  header,
+  trigger,
+  triggerIcon,
+  panel,
+} from "./accordion.css";
 
-type AccordionRootProps = PropsWithStylex<AccordionPrimitive.Root.Props>;
+type AccordionRootProps = AccordionPrimitive.Root.Props;
 
-function AccordionRoot({ children, style, ...props }: AccordionRootProps) {
+function AccordionRoot({ children, className, ...props }: AccordionRootProps) {
   return (
     <AccordionPrimitive.Root
-      className={(state) => {
-        const base = stylex.props(
-          accordionStyles.root,
-          state.orientation === "vertical" && accordionStyles.rootVertical,
-          style,
-        );
-        return base.className ?? "";
-      }}
+      className={(state) => clsx(root, state.orientation === "vertical" && rootVertical, className)}
       {...props}
     >
       {children}
@@ -26,19 +27,12 @@ function AccordionRoot({ children, style, ...props }: AccordionRootProps) {
   );
 }
 
-type AccordionItemProps = PropsWithStylex<AccordionPrimitive.Item.Props>;
+type AccordionItemProps = AccordionPrimitive.Item.Props;
 
-function AccordionItem({ children, style, ...props }: AccordionItemProps) {
+function AccordionItem({ children, className, ...props }: AccordionItemProps) {
   return (
     <AccordionPrimitive.Item
-      className={(state) => {
-        const base = stylex.props(
-          accordionStyles.item,
-          state.disabled && accordionStyles.itemDisabled,
-          style,
-        );
-        return base.className ?? "";
-      }}
+      className={(state) => clsx(item, state.disabled && itemDisabled, className)}
       {...props}
     >
       {children}
@@ -46,59 +40,37 @@ function AccordionItem({ children, style, ...props }: AccordionItemProps) {
   );
 }
 
-type AccordionHeaderProps = PropsWithStylex<AccordionPrimitive.Header.Props>;
+type AccordionHeaderProps = AccordionPrimitive.Header.Props;
 
-function AccordionHeader({ children, style, ...props }: AccordionHeaderProps) {
+function AccordionHeader({ children, className, ...props }: AccordionHeaderProps) {
   return (
-    <AccordionPrimitive.Header
-      className={stylex.props(accordionStyles.header, style).className ?? ""}
-      {...props}
-    >
+    <AccordionPrimitive.Header className={clsx(header, className)} {...props}>
       {children}
     </AccordionPrimitive.Header>
   );
 }
 
-type AccordionTriggerProps = PropsWithStylex<AccordionPrimitive.Trigger.Props>;
+type AccordionTriggerProps = AccordionPrimitive.Trigger.Props;
 
-function AccordionTrigger({ children, style, ...props }: AccordionTriggerProps) {
+function AccordionTrigger({ children, className, ...props }: AccordionTriggerProps) {
   return (
-    <AccordionPrimitive.Trigger
-      className={(state) => {
-        const base = stylex.props(
-          accordionStyles.trigger,
-          state.open && accordionStyles.triggerOpen,
-          style,
-        );
-        return base.className ?? "";
-      }}
-      {...props}
-    >
-      <CaretUpDownIcon size={16} {...stylex.props(accordionStyles.triggerIcon)} />
+    <AccordionPrimitive.Trigger className={clsx(trigger, className)} {...props}>
+      <CaretUpDownIcon size={16} className={triggerIcon} />
       {children}
     </AccordionPrimitive.Trigger>
   );
 }
 
-type AccordionPanelProps = PropsWithStylex<AccordionPrimitive.Panel.Props>;
+type AccordionPanelProps = AccordionPrimitive.Panel.Props;
 
-function AccordionPanel({ children, style, ...props }: AccordionPanelProps) {
+function AccordionPanel({ children, className, ...props }: AccordionPanelProps) {
   return (
-    <AccordionPrimitive.Panel
-      className={(state) => {
-        const base = stylex.props(
-          accordionStyles.panel,
-          state.open && accordionStyles.panelOpen,
-          style,
-        );
-        return base.className ?? "";
-      }}
-      {...props}
-    >
+    <AccordionPrimitive.Panel className={clsx(panel, className)} {...props}>
       {children}
     </AccordionPrimitive.Panel>
   );
 }
+
 export { AccordionPanel, AccordionTrigger, AccordionHeader, AccordionItem, AccordionRoot };
 export type {
   AccordionPanelProps,

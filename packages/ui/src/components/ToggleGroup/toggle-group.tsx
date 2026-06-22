@@ -1,9 +1,8 @@
 "use client";
 
 import { ToggleGroup as ToggleGroupPrimitive } from "@base-ui/react/toggle-group";
-import * as stylex from "@stylexjs/stylex";
+import clsx from "clsx";
 import * as React from "react";
-import type { PropsWithStylex } from "#utils/stylex.utils";
 import type { SeparatorProps } from "../Separator/separator";
 import { Separator } from "../Separator/separator";
 import {
@@ -12,7 +11,15 @@ import {
   type ToggleSize,
   type ToggleVariant,
 } from "../Toggle/toggle";
-import { toggleGroupStyles } from "./toggle-group.styles";
+import {
+  groupBase,
+  groupHorizontal,
+  groupVertical,
+  groupDefault,
+  groupOutline,
+  outlineItemHorizontal,
+  outlineItemVertical,
+} from "./toggle-group.css";
 
 type ToggleGroupVariant = ToggleVariant;
 type ToggleGroupSize = ToggleSize;
@@ -25,15 +32,16 @@ type ToggleGroupContextValue = {
 
 export const ToggleGroupContext = React.createContext<ToggleGroupContextValue | null>(null);
 
-export type ToggleGroupProps = PropsWithStylex<
-  ToggleGroupPrimitive.Props & {
-    variant?: ToggleGroupVariant;
-    size?: ToggleGroupSize;
-    orientation?: "horizontal" | "vertical";
-  }
->;
+export type ToggleGroupProps = ToggleGroupPrimitive.Props & {
+  variant?: ToggleGroupVariant;
+  size?: ToggleGroupSize;
+  orientation?: "horizontal" | "vertical";
+  className?: string;
+  style?: React.CSSProperties;
+};
 
 export function ToggleGroup({
+  className,
   style,
   variant = "default",
   size = "default",
@@ -49,16 +57,15 @@ export function ToggleGroup({
     [variant, size, orientation],
   );
 
-  const groupProps = stylex.props(
-    toggleGroupStyles.groupBase,
-    isHorizontal ? toggleGroupStyles.groupHorizontal : toggleGroupStyles.groupVertical,
-    isOutline ? toggleGroupStyles.groupOutline : toggleGroupStyles.groupDefault,
-    style,
-  );
-
   return (
     <ToggleGroupPrimitive
-      {...groupProps}
+      className={clsx(
+        groupBase,
+        isHorizontal ? groupHorizontal : groupVertical,
+        isOutline ? groupOutline : groupDefault,
+        className,
+      )}
+      style={style}
       data-slot="toggle-group"
       data-variant={variant}
       data-size={size}
@@ -71,17 +78,18 @@ export function ToggleGroup({
 }
 
 export function ToggleGroupItem({
+  className,
   style,
   children,
   variant,
   size,
   ...props
-}: PropsWithStylex<
-  ToggleComponentProps & {
-    variant?: ToggleGroupVariant;
-    size?: ToggleGroupSize;
-  }
->): React.ReactElement {
+}: ToggleComponentProps & {
+  variant?: ToggleGroupVariant;
+  size?: ToggleGroupSize;
+  className?: string;
+  style?: React.CSSProperties;
+}): React.ReactElement {
   const context = React.useContext(ToggleGroupContext);
 
   const resolvedVariant = variant ?? context?.variant ?? "default";
@@ -89,17 +97,13 @@ export function ToggleGroupItem({
   const orientation = context?.orientation ?? "horizontal";
   const isOutline = resolvedVariant === "outline";
 
-  const itemProps = stylex.props(
-    isOutline &&
-      (orientation === "horizontal"
-        ? toggleGroupStyles.outlineItemHorizontal
-        : toggleGroupStyles.outlineItemVertical),
-    style,
-  );
-
   return (
     <ToggleComponent
-      {...itemProps}
+      className={clsx(
+        isOutline && (orientation === "horizontal" ? outlineItemHorizontal : outlineItemVertical),
+        className,
+      )}
+      style={style}
       data-size={resolvedSize}
       data-variant={resolvedVariant}
       size={resolvedSize}
@@ -123,5 +127,5 @@ export function ToggleGroupSeparator({
   const resolvedOrientation =
     orientation ?? (context?.orientation === "vertical" ? "horizontal" : "vertical");
 
-  return <Separator className={className} orientation={resolvedOrientation} {...props} />;
+  return <Separator className={clsx(className)} orientation={resolvedOrientation} {...props} />;
 }

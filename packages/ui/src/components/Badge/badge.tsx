@@ -1,15 +1,13 @@
-import { mergeProps } from "@base-ui/react";
-import * as stylex from "@stylexjs/stylex";
-import type { PropsWithStylex } from "#utils/stylex.utils";
-import { badgeStyles, badgeVariantStyles } from "./badge.styles";
+import clsx from "clsx";
+import { badgeRecipe } from "./badge.css";
 import { Box, type BoxProps } from "../Box/box";
 
-type Props = PropsWithStylex<BoxProps> & {
-  variant?: keyof typeof badgeVariantStyles;
+type Variant = "default" | "primary" | "secondary" | "danger" | "sucess";
+
+type Props = BoxProps & {
+  variant?: Variant;
 };
 
-export function Badge({ variant = "default", style, ...props }: Props) {
-  const sx = stylex.props(badgeStyles.root, badgeVariantStyles[variant], style);
-  const merged = mergeProps(props, sx);
-  return <Box {...merged} />;
+export function Badge({ variant = "default", className, style, ...props }: Props) {
+  return <Box className={clsx(badgeRecipe({ variant }), className)} style={style} {...props} />;
 }

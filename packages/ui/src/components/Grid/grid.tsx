@@ -1,49 +1,51 @@
-import * as stylex from "@stylexjs/stylex";
+import clsx from "clsx";
 import { Box, type BoxProps } from "../Box/box";
-import { stackGapStyles as gridGapStyles } from "../Stack/stack.styles";
-import {
-  gridAlignStyles,
-  gridColumnStyles,
-  gridJustifyStyles,
-  gridSpanStyles,
-  gridStyles,
-} from "./grid.styles";
+import { gridRecipe, gridGapVariants, gridSpanVariants, gridItem } from "./grid.css";
+import type { RecipeVariants } from "@vanilla-extract/recipes";
 
-type SpacingToken = keyof typeof gridGapStyles;
+type GridVariants = RecipeVariants<typeof gridRecipe>;
+type SpacingToken = keyof typeof gridGapVariants;
 
-export type GridProps = BoxProps & {
-  columns?: keyof typeof gridColumnStyles;
-  gap?: SpacingToken;
-  align?: "start" | "center" | "end" | "stretch";
-  justify?: "start" | "center" | "end" | "stretch";
-};
+export type GridProps = Omit<BoxProps, "gap"> &
+  GridVariants & {
+    gap?: SpacingToken;
+  };
 
 export type GridItemProps = BoxProps & {
-  span?: keyof typeof gridSpanStyles;
+  span?: keyof typeof gridSpanVariants;
 };
 
 function Grid({
   gap: gapProp = "medium",
-  columns: columnsProp,
-  align: alignProp,
-  justify: justifyProp,
+  columns,
+  align,
+  justify,
+  className,
   style,
   ...props
 }: GridProps) {
-  const resolvedStyles = stylex.props(
-    columnsProp && gridColumnStyles[columnsProp],
-    gridGapStyles[gapProp],
-    alignProp && gridAlignStyles[alignProp],
-    justifyProp && gridJustifyStyles[justifyProp],
-    style,
+  return (
+    <Box
+      display="grid"
+      className={clsx(
+        gridRecipe({ columns, align, justify }),
+        gapProp && gridGapVariants[gapProp],
+        className,
+      )}
+      style={style}
+      {...props}
+    />
   );
-
-  return <Box display="grid" {...props} {...resolvedStyles} />;
 }
 
-function GridItem({ span: spanProp, style, ...props }: GridItemProps) {
-  const resolvedStyles = stylex.props(gridStyles.item, spanProp && gridSpanStyles[spanProp], style);
-  return <Box {...props} {...resolvedStyles} />;
+function GridItem({ span: spanProp, className, style, ...props }: GridItemProps) {
+  return (
+    <Box
+      className={clsx(gridItem, spanProp && gridSpanVariants[spanProp], className)}
+      style={style}
+      {...props}
+    />
+  );
 }
 
 export { Grid, GridItem };

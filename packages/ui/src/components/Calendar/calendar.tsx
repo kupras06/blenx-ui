@@ -1,11 +1,29 @@
 "use client";
 
 import { CaretLeftIcon, CaretRightIcon, CaretUpDownIcon } from "@phosphor-icons/react";
-import * as stylex from "@stylexjs/stylex";
+import clsx from "clsx";
 import { useEffect, useRef } from "react";
 import { DayPicker, type DayPickerProps } from "react-day-picker";
 import { Button } from "../Button/button";
-import { calendarStyles } from "./calendar.styles";
+import {
+  root,
+  months,
+  monthCaption,
+  captionLabel,
+  nav,
+  buttonNav,
+  monthGrid,
+  weekday,
+  day,
+  dayButton,
+  dayButtonSelected,
+  dayButtonToday,
+  dayButtonDisabled,
+  dayButtonOutside,
+  footer,
+  dropdowns,
+  dropdown,
+} from "./calendar.css";
 
 function StyledDayButton({
   day: _day,
@@ -29,43 +47,39 @@ function StyledDayButton({
   const isDisabled = modifiers.disabled;
   const isOutside = modifiers.outside;
 
-  const composed = stylex.props(
-    calendarStyles.dayButton,
-    isSelected && calendarStyles.dayButtonSelected,
-    isToday && calendarStyles.dayButtonToday,
-    isDisabled && calendarStyles.dayButtonDisabled,
-    isOutside && calendarStyles.dayButtonOutside,
+  const composed = clsx(
+    dayButton,
+    isSelected && dayButtonSelected,
+    isToday && dayButtonToday,
+    isDisabled && dayButtonDisabled,
+    isOutside && dayButtonOutside,
+    className,
   );
 
-  const combinedClassName = [className, composed.className].filter(Boolean).join(" ");
-
-  return <button ref={ref} className={combinedClassName} {...props} />;
+  return <button ref={ref} className={composed} {...props} />;
 }
 
 function Calendar({ className, components: userComponents, ...props }: DayPickerProps) {
-  const rootClassName = stylex.props(calendarStyles.root).className;
-  const root = [rootClassName, className].filter(Boolean).join(" ");
-
   const classNames = {
-    root,
-    months: stylex.props(calendarStyles.months).className,
-    month: stylex.props(calendarStyles.month).className,
-    month_caption: stylex.props(calendarStyles.monthCaption).className,
-    caption_label: stylex.props(calendarStyles.captionLabel).className,
-    nav: stylex.props(calendarStyles.nav).className,
-    button_previous: stylex.props(calendarStyles.buttonNav).className,
-    button_next: stylex.props(calendarStyles.buttonNav).className,
-    chevron: stylex.props(calendarStyles.chevron).className,
-    month_grid: stylex.props(calendarStyles.monthGrid).className,
+    root: clsx(root, className),
+    months: months,
+    month: "",
+    month_caption: monthCaption,
+    caption_label: captionLabel,
+    nav: nav,
+    button_previous: buttonNav,
+    button_next: buttonNav,
+    chevron: "",
+    month_grid: monthGrid,
     weekdays: "",
-    weekday: stylex.props(calendarStyles.weekday).className,
+    weekday: weekday,
     weeks: "",
     week: "",
-    day: stylex.props(calendarStyles.day).className,
+    day: day,
     day_button: "",
-    footer: stylex.props(calendarStyles.footer).className,
-    dropdowns: stylex.props(calendarStyles.dropdowns).className,
-    dropdown: stylex.props(calendarStyles.dropdown).className,
+    footer: footer,
+    dropdowns: dropdowns,
+    dropdown: dropdown,
     dropdown_root: "",
     months_dropdown: "",
     years_dropdown: "",

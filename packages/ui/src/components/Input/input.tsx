@@ -1,38 +1,34 @@
 import { Input as InputPrimitive } from "@base-ui/react/input";
-import { mergeProps } from "@base-ui/react/merge-props";
 import { useRender } from "@base-ui/react/use-render";
-import * as stylex from "@stylexjs/stylex";
+import clsx from "clsx";
 import type * as React from "react";
 import { useId } from "react";
-import type { PropsWithStylex } from "#utils/stylex.utils";
-import { inputStyles } from "./input.styles";
+import { input, inputSm, inputLg, inputError, label } from "./input.css";
 
 type InputSize = "sm" | "default" | "lg";
 type _BaseInputProps = Omit<InputPrimitive.Props & React.RefAttributes<HTMLInputElement>, "size">;
-export type InputProps = PropsWithStylex<_BaseInputProps> & {
+export type InputProps = _BaseInputProps & {
   size?: InputSize;
   error?: string;
-  wrapperStyle?: stylex.StyleXStyles;
+  wrapperStyle?: React.CSSProperties;
+  className?: string;
+  style?: React.CSSProperties;
 };
 
-type LabelProps = PropsWithStylex<useRender.ComponentProps<"label">> & {
-  style?: stylex.StyleXStyles;
+type LabelProps = useRender.ComponentProps<"label"> & {
+  className?: string;
+  style?: React.CSSProperties;
 };
 
-export function Label({ render, style, ...props }: LabelProps): React.ReactElement {
-  const defaultProps = {
-    ...stylex.props(inputStyles.label, style),
-    "data-slot": "label",
-  };
-
+export function Label({ render, className, style, ...props }: LabelProps): React.ReactElement {
   return useRender({
     defaultTagName: "label",
-    props: mergeProps<"label">(defaultProps, props),
+    props: { className: clsx(label, className), style, "data-slot": "label", ...props },
     render,
   });
 }
 
-export function Input({ error, style, size = "default", ...props }: InputProps) {
+export function Input({ error, className, style, size = "default", ...props }: InputProps) {
   const generatedId = useId();
   const fieldId = props.id ?? generatedId;
 
@@ -40,13 +36,14 @@ export function Input({ error, style, size = "default", ...props }: InputProps) 
     <InputPrimitive
       id={fieldId}
       data-slot="input"
-      {...stylex.props(
-        inputStyles.input,
-        size === "sm" && inputStyles.inputSm,
-        size === "lg" && inputStyles.inputLg,
-        error ? inputStyles.inputError : null,
-        style,
+      className={clsx(
+        input,
+        size === "sm" && inputSm,
+        size === "lg" && inputLg,
+        error ? inputError : null,
+        className,
       )}
+      style={style}
       {...props}
     />
   );

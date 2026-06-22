@@ -1,13 +1,34 @@
 "use client";
 
 import { Dialog as SheetPrimitive } from "@base-ui/react/dialog";
-import { mergeProps } from "@base-ui/react/merge-props";
 import { useRender } from "@base-ui/react/use-render";
-import * as stylex from "@stylexjs/stylex";
+import clsx from "clsx";
 import type React from "react";
-import type { _BaseDivProps, PropsWithStylex } from "#utils/stylex.utils";
+import type { _BaseDivProps } from "#utils/types";
 import { ScrollArea } from "../ScrollArea/scroll-area";
-import { sheetStyles } from "./sheet.styles";
+import {
+  backdrop,
+  viewport,
+  viewportBottom,
+  viewportTop,
+  viewportLeft,
+  viewportRight,
+  viewportInset,
+  popup,
+  popupBottom,
+  popupTop,
+  popupLeft,
+  popupRight,
+  popupInset,
+  closeButton as closeButtonStyle,
+  header,
+  footer,
+  footerDefault,
+  footerBare,
+  title,
+  description,
+  panel,
+} from "./sheet.css";
 import { CloseButton } from "../CloseButton";
 
 type Side = "right" | "left" | "top" | "bottom";
@@ -25,41 +46,39 @@ export function SheetClose(props: SheetPrimitive.Close.Props): React.ReactElemen
 }
 
 export function SheetBackdrop({
-  style,
+  className,
   ...props
-}: PropsWithStylex<SheetPrimitive.Backdrop.Props>): React.ReactElement {
+}: SheetPrimitive.Backdrop.Props): React.ReactElement {
   return (
     <SheetPrimitive.Backdrop
-      {...stylex.props(sheetStyles.backdrop, style)}
+      className={clsx(backdrop, className)}
       data-slot="sheet-backdrop"
       {...props}
     />
   );
 }
 
-type SheetViewportProps = PropsWithStylex<
-  SheetPrimitive.Viewport.Props & {
-    side?: Side;
-    variant?: "default" | "inset";
-  }
->;
+type SheetViewportProps = SheetPrimitive.Viewport.Props & {
+  side?: Side;
+  variant?: "default" | "inset";
+};
 
 export function SheetViewport({
-  style,
+  className,
   side,
   variant = "default",
   ...props
 }: SheetViewportProps): React.ReactElement {
   return (
     <SheetPrimitive.Viewport
-      {...stylex.props(
-        sheetStyles.viewport,
-        side === "bottom" && sheetStyles.viewportBottom,
-        side === "top" && sheetStyles.viewportTop,
-        side === "left" && sheetStyles.viewportLeft,
-        side === "right" && sheetStyles.viewportRight,
-        variant === "inset" && sheetStyles.viewportInset,
-        style,
+      className={clsx(
+        viewport,
+        side === "bottom" && viewportBottom,
+        side === "top" && viewportTop,
+        side === "left" && viewportLeft,
+        side === "right" && viewportRight,
+        variant === "inset" && viewportInset,
+        className,
       )}
       data-slot="sheet-viewport"
       {...props}
@@ -68,36 +87,34 @@ export function SheetViewport({
 }
 
 export function SheetPopup({
-  style,
   children,
   showCloseButton = true,
   side = "right",
   variant = "default",
   closeProps,
   portalProps,
+  className,
   ...props
-}: PropsWithStylex<
-  SheetPrimitive.Popup.Props & {
-    showCloseButton?: boolean;
-    side?: Side;
-    variant?: "default" | "inset";
-    closeProps?: SheetPrimitive.Close.Props;
-    portalProps?: SheetPrimitive.Portal.Props;
-  }
->): React.ReactElement {
+}: SheetPrimitive.Popup.Props & {
+  showCloseButton?: boolean;
+  side?: Side;
+  variant?: "default" | "inset";
+  closeProps?: SheetPrimitive.Close.Props;
+  portalProps?: SheetPrimitive.Portal.Props;
+}): React.ReactElement {
   return (
     <SheetPortal {...portalProps}>
       <SheetBackdrop />
       <SheetViewport side={side} variant={variant}>
         <SheetPrimitive.Popup
-          {...stylex.props(
-            sheetStyles.popup,
-            side === "bottom" && sheetStyles.popupBottom,
-            side === "top" && sheetStyles.popupTop,
-            side === "left" && sheetStyles.popupLeft,
-            side === "right" && sheetStyles.popupRight,
-            variant === "inset" && sheetStyles.popupInset,
-            style,
+          className={clsx(
+            popup,
+            side === "bottom" && popupBottom,
+            side === "top" && popupTop,
+            side === "left" && popupLeft,
+            side === "right" && popupRight,
+            variant === "inset" && popupInset,
+            className,
           )}
           data-slot="sheet-popup"
           {...props}
@@ -106,7 +123,7 @@ export function SheetPopup({
           {showCloseButton && (
             <SheetPrimitive.Close
               aria-label="Close"
-              render={<CloseButton variant="ghost" style={sheetStyles.closeButton} />}
+              render={<CloseButton variant="ghost" className={closeButtonStyle} />}
               {...closeProps}
             />
           )}
@@ -116,19 +133,16 @@ export function SheetPopup({
   );
 }
 
-type HeaderProps = useRender.ComponentProps<"div">;
+type HeaderProps = _BaseDivProps;
 
-export function SheetHeader({ render, ...props }: HeaderProps): React.ReactElement {
-  const headerProps = stylex.props(sheetStyles.header);
+export function SheetHeader({ className, render, ...props }: HeaderProps): React.ReactElement {
   return useRender({
     defaultTagName: "div",
-    props: mergeProps<"div">(
-      {
-        ...headerProps,
-        "data-slot": "sheet-header",
-      } as never,
-      props,
-    ),
+    props: {
+      className: clsx(header, className),
+      "data-slot": "sheet-header",
+      ...props,
+    } as never,
     render,
   });
 }
@@ -138,43 +152,34 @@ type FooterProps = _BaseDivProps & {
 };
 
 export function SheetFooter({
-  style,
+  className,
   variant = "default",
   render,
   ...props
 }: FooterProps): React.ReactElement {
-  const footerProps = stylex.props(
-    sheetStyles.footer,
-    variant === "default" && sheetStyles.footerDefault,
-    variant === "bare" && sheetStyles.footerBare,
-    style,
-  );
   return useRender({
     defaultTagName: "div",
-    props: mergeProps<"div">(
-      {
-        ...footerProps,
-        "data-slot": "sheet-footer",
-      } as never,
-      props,
-    ),
+    props: {
+      className: clsx(
+        footer,
+        variant === "default" && footerDefault,
+        variant === "bare" && footerBare,
+        className,
+      ),
+      "data-slot": "sheet-footer",
+      ...props,
+    } as never,
     render,
   });
 }
 
 export function SheetTitle(props: SheetPrimitive.Title.Props): React.ReactElement {
-  return (
-    <SheetPrimitive.Title {...stylex.props(sheetStyles.title)} data-slot="sheet-title" {...props} />
-  );
+  return <SheetPrimitive.Title className={title} data-slot="sheet-title" {...props} />;
 }
 
 export function SheetDescription(props: SheetPrimitive.Description.Props): React.ReactElement {
   return (
-    <SheetPrimitive.Description
-      {...stylex.props(sheetStyles.description)}
-      data-slot="sheet-description"
-      {...props}
-    />
+    <SheetPrimitive.Description className={description} data-slot="sheet-description" {...props} />
   );
 }
 
@@ -183,23 +188,20 @@ type PanelProps = _BaseDivProps & {
 };
 
 export function SheetPanel({
-  style,
   scrollFade = true,
   render,
+  className,
   ...props
 }: PanelProps): React.ReactElement {
-  const panelProps = stylex.props(sheetStyles.panel, style);
   return (
     <ScrollArea scrollFade={scrollFade}>
       {useRender({
         defaultTagName: "div",
-        props: mergeProps<"div">(
-          {
-            ...panelProps,
-            "data-slot": "sheet-panel",
-          } as never,
-          props,
-        ),
+        props: {
+          className: clsx(panel, className),
+          "data-slot": "sheet-panel",
+          ...props,
+        } as never,
         render,
       })}
     </ScrollArea>
