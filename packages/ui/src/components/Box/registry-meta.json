@@ -9,11 +9,6 @@
       "file": "box.tsx",
       "type": "registry:ui",
       "target": "@ui/Box/box.tsx"
-    },
-    {
-      "file": "box.styles.ts",
-      "type": "registry:file",
-      "target": "@ui/Box/box.styles.ts"
     }
   ]
 }

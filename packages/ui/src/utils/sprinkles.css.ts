@@ -203,7 +203,7 @@ const responsiveSpacingProperties = defineProperties({
   },
 });
 
-export const sprinkles = createSprinkles(
+export const baseSprinkles = createSprinkles(
   layoutProperties,
   responsiveSpacingProperties,
   colorProperties,
@@ -211,4 +211,8 @@ export const sprinkles = createSprinkles(
   positionProperties,
 );
 
-export type Sprinkles = Parameters<typeof sprinkles>[0];
+export type BaseSprinkles = Parameters<typeof baseSprinkles>[0] & {
+  fullWidth?: boolean;
+  fullHeight?: boolean;
+  withBorder?: boolean;
+};

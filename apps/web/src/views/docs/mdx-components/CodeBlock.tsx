@@ -82,7 +82,7 @@ function CodeBlock({
         </HStack>
       ) : null}
       <Box position="absolute" top="xsmall" right="xsmall">
-        <CopyButton padding="none" onClick={handleCopy} />
+        <CopyButton p="none" onClick={handleCopy} />
       </Box>
       <Box
         style={styles.scroll}

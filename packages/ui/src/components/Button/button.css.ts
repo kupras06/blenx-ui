@@ -40,10 +40,6 @@ export const base = style({
   },
 });
 
-export const fullWidth = style({
-  width: "100%",
-});
-
 export const size = recipe({
   variants: {
     size: {

@@ -137,7 +137,7 @@ export const variant = recipe({
         fontWeight: fontWeight.regular,
         margin: 0,
         backgroundColor: themeContract.backgroundSubtle,
-        padding: spacing["1"],
+        padding: spacing["xxlarge"],
         borderRadius: borderRadius.small,
       },
     },
