@@ -61,13 +61,11 @@ const colors = {
 } as const;
 
 const responsiveConditions = {
-  mobile: {},
-  tablet: {
-    "@media": "screen and (min-width: 768px)",
-  },
-  desktop: {
-    "@media": "screen and (min-width: 1280px)",
-  },
+  base: {},
+  sm: { "@media": "screen and (min-width: 640px)" },
+  md: { "@media": "screen and (min-width: 768px)" },
+  lg: { "@media": "screen and (min-width: 1280px)" },
+  xl: { "@media": "screen and (min-width: 1536px)" },
 } as const;
 
 const layoutProperties = defineProperties({
@@ -131,7 +129,7 @@ const colorProperties = defineProperties({
 
 const flexProperties = defineProperties({
   conditions: responsiveConditions,
-  defaultCondition: "mobile",
+  defaultCondition: "base",
   properties: {
     flex: ["none", 1],
     flexGrow: { 0: 0, 1: 1 },
@@ -177,7 +175,7 @@ const positionProperties = defineProperties({
 
 const responsiveSpacingProperties = defineProperties({
   conditions: responsiveConditions,
-  defaultCondition: "mobile",
+  defaultCondition: "base",
   properties: {
     padding: spacing,
     paddingTop: spacing,
@@ -206,6 +204,38 @@ const responsiveSpacingProperties = defineProperties({
     marginY: ["marginTop", "marginBottom"],
   },
 });
+
+/* ── Grid properties ── */
+
+const columnValues: Record<number, string> = {};
+for (let i = 1; i <= 12; i++) {
+  columnValues[i] = `repeat(${i}, minmax(0, 1fr))`;
+}
+
+const gridProperties = defineProperties({
+  conditions: responsiveConditions,
+  defaultCondition: "base",
+  properties: {
+    gridTemplateColumns: columnValues,
+    gridAutoFlow: {
+      row: "row",
+      column: "column",
+      dense: "dense",
+      "row dense": "row dense",
+      "column dense": "column dense",
+    },
+    alignItems: ["start", "center", "end", "stretch", "baseline"],
+    justifyItems: ["start", "center", "end", "stretch"],
+  },
+  shorthands: {
+    columns: ["gridTemplateColumns"],
+    flow: ["gridAutoFlow"],
+    align: ["alignItems"],
+    justify: ["justifyItems"],
+  },
+});
+
+export const gridSprinkles = createSprinkles(responsiveSpacingProperties, gridProperties);
 
 export const baseSprinkles = createSprinkles(
   layoutProperties,

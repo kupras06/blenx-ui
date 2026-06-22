@@ -1,25 +1,24 @@
 import clsx from "clsx";
 import { Box, type BoxProps } from "../Box/box";
-import { gridRecipe, gridGapVariants, gridSpanVariants, gridItem } from "./grid.css";
-import type { RecipeVariants } from "@vanilla-extract/recipes";
+import { gridSprinkles } from "../../utils/sprinkles.css";
+import { gridSpanVariants, gridItem } from "./grid.css";
 
-type GridVariants = RecipeVariants<typeof gridRecipe>;
-type SpacingToken = keyof typeof gridGapVariants;
+type GridSprinkles = Parameters<typeof gridSprinkles>[0];
 
-export type GridProps = Omit<BoxProps, "gap"> &
-  GridVariants & {
-    gap?: SpacingToken;
-  };
+export type GridProps = Omit<BoxProps, "columns" | "gap" | "align"> & GridSprinkles;
 
 export type GridItemProps = BoxProps & {
   span?: keyof typeof gridSpanVariants;
 };
 
 function Grid({
-  gap: gapProp = "medium",
   columns,
+  flow,
   align,
   justify,
+  gap,
+  rowGap,
+  columnGap,
   className,
   style,
   ...props
@@ -28,8 +27,15 @@ function Grid({
     <Box
       display="grid"
       className={clsx(
-        gridRecipe({ columns, align, justify }),
-        gapProp && gridGapVariants[gapProp],
+        gridSprinkles({
+          columns,
+          flow,
+          align,
+          justify,
+          gap,
+          rowGap,
+          columnGap,
+        }),
         className,
       )}
       style={style}

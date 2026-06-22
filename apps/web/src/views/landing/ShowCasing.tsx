@@ -225,7 +225,7 @@ export function ShowCaseComponents() {
           </Text>
         </Box>
       </VStack>
-      <Grid columns={3} gap="large">
+      <Grid columns={{ base: 1, md: 2, lg: 3 }} gap="large">
         {showcaseItems.map((item) => {
           const DemoComponent = item.component;
           return (
