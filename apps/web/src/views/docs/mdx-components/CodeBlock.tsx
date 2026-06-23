@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { highlightCode } from "@/lib/syntax-highlight";
 import { Box, CopyButton, HStack, Surface, Text } from "@blenx-dev/ui/components";
-import { codeScroll } from "@/lib/styles.css";
-
 interface CodeBlockProps {
   code: string;
   language?: string;
@@ -17,12 +15,7 @@ function escapeHtml(code: string): string {
     .replace(/>/g, "&gt;")}</code></pre>`;
 }
 
-function CodeBlock({
-  code,
-  language = "typescript",
-  title,
-  highlightLines: _highlightLines,
-}: CodeBlockProps) {
+function CodeBlock({ code, language = "typescript", title }: CodeBlockProps) {
   const [highlighted, setHighlighted] = useState<string | null>(null);
   const mountedRef = useRef(true);
   useEffect(() => {
@@ -38,15 +31,9 @@ function CodeBlock({
   }, [code, language]);
 
   return (
-    <Surface variant="sunken" borderRadius="medium" position="relative" paddingRight="xlarge">
+    <Surface variant="sunken" borderRadius="medium" position="relative">
       {title ? (
-        <HStack
-          align="center"
-          justify="between"
-          paddingLeft="small"
-          paddingY="xxsmall"
-          paddingRight="xxsmall"
-        >
+        <HStack align="center" justify="between" paddingLeft="small" paddingY="xxsmall">
           <Text variant="h6" color="secondary">
             {title ? title : null}
           </Text>
@@ -56,7 +43,6 @@ function CodeBlock({
         <CopyButton p="none" copyValue={code} />
       </Box>
       <Box
-        className={codeScroll}
         render={<div />}
         dangerouslySetInnerHTML={{
           __html: highlighted ?? escapeHtml(code),

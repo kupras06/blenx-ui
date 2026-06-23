@@ -25,7 +25,7 @@ export function CopyButton({ copyValue, onClick, ...props }: CopyButtonProps) {
 
   return (
     <IconButton
-      variant="ghost"
+      variant="soft"
       {...props}
       title={copied ? "Copied!" : `Copy ${copyValue ?? ""}`}
       onClick={handleClick}

@@ -144,7 +144,7 @@ export const variant = recipe({
         fontSize: fontSize.small,
       },
       icon: {
-        padding: `${spacing.xxsmall} ${spacing.xxsmall}`,
+        padding: `${spacing.xsmall} ${spacing.xsmall}`,
       },
       medium: { padding: `${spacing.small} ${spacing.medium}` },
       large: {
@@ -164,12 +164,12 @@ export const variant = recipe({
         },
       },
       soft: {
-        backgroundColor: `color-mix(in srgb, ${intentVars.softHoverBg} 30%, transparent)`,
+        backgroundColor: `color-mix(in srgb, ${intentVars.softBg} 30%, transparent)`,
         color: intentVars.solidBg,
         borderColor: "transparent",
         selectors: {
           "&:hover:not(:disabled)": {
-            borderColor: `color-mix(in srgb, ${intentVars.border} 80%, transparent)`,
+            backgroundColor: `color-mix(in srgb, ${intentVars.solidHoverBg} 20%, transparent)`,
           },
         },
       },
