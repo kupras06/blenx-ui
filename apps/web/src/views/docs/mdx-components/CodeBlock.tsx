@@ -31,7 +31,7 @@ function CodeBlock({ code, language = "typescript", title }: CodeBlockProps) {
   }, [code, language]);
 
   return (
-    <Surface variant="sunken" borderRadius="medium" position="relative">
+    <Surface variant="sunken" borderRadius="medium" position="relative" width="full">
       {title ? (
         <HStack align="center" justify="between" paddingLeft="small" paddingY="xxsmall">
           <Text variant="h6" color="secondary">
@@ -44,6 +44,7 @@ function CodeBlock({ code, language = "typescript", title }: CodeBlockProps) {
       </Box>
       <Box
         render={<div />}
+        overflow="auto"
         dangerouslySetInnerHTML={{
           __html: highlighted ?? escapeHtml(code),
         }}

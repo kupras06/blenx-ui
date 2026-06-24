@@ -89,9 +89,7 @@ function AlertDialogPopup({
           {showCloseButton && (
             <AlertDialogPrimitive.Close
               aria-label="Close"
-              render={
-                <CloseButton position="absolute" top="xsmall" left="xsmall" variant="ghost" />
-              }
+              render={<CloseButton position="absolute" top="small" right="small" variant="ghost" />}
               {...closeProps}
             />
           )}

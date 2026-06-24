@@ -1,7 +1,6 @@
 import { style } from "@vanilla-extract/css";
 import { themeContract } from "#theme/contract.css";
 import {
-  borderRadius,
   borderWidth,
   duration,
   easing,
@@ -48,7 +47,7 @@ export const trigger = style({
   color: themeContract.contentPrimary,
   backgroundColor: "transparent",
   border: "none",
-  borderRadius: borderRadius.small,
+  borderRadius: themeContract.borderRadius,
   appearance: "none",
   fontFamily: "inherit",
   textAlign: "left",

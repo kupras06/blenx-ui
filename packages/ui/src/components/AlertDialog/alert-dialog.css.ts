@@ -29,6 +29,7 @@ export const popup = style({
   width: "100%",
   maxWidth: "28rem",
   minHeight: 0,
+  maxHeight: "calc(100svh - 80px)",
   transformOrigin: "center",
   borderWidth: borderWidth.thin,
   borderStyle: "solid",
@@ -71,7 +72,7 @@ export const popupBottomStickOnMobile = style({
     "(max-width: 768px)": {
       width: "100%",
       maxWidth: "100%",
-      maxHeight: "90svh",
+      maxHeight: "70svh",
       borderBottomLeftRadius: 0,
       borderBottomRightRadius: 0,
     },
@@ -87,18 +88,18 @@ export const closeButton = style({
 export const header = style({
   display: "flex",
   flexDirection: "column",
-  gap: spacing.small,
-  padding: spacing.large,
+  gap: spacing.xxsmall,
+  padding: spacing.medium,
   boxSizing: "border-box",
-  paddingBottom: spacing.small,
+  paddingBottom: spacing.xsmall,
 });
 
 export const footer = style({
   display: "flex",
   flexDirection: "column-reverse",
   gap: spacing.small,
-  paddingLeft: spacing.large,
-  paddingRight: spacing.large,
+  paddingLeft: spacing.medium,
+  paddingRight: spacing.medium,
   boxSizing: "border-box",
   "@media": {
     "(min-width: 640px)": {
@@ -139,7 +140,7 @@ export const description = style({
 
 export const panel = style({
   boxSizing: "border-box",
-  padding: spacing.large,
-  paddingTop: spacing.xsmall,
-  paddingBottom: spacing.xsmall,
+  padding: spacing.medium,
+  paddingTop: spacing.xxsmall,
+  paddingBottom: spacing.xxsmall,
 });
