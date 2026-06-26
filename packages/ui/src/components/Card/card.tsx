@@ -1,4 +1,3 @@
-import type { _BaseDivProps } from "#utils/types";
 import { Surface, type SurfaceProps } from "../Surface/surface";
 
 import { HStack, type HStackProps } from "../Stack/stack";

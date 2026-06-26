@@ -1,4 +1,4 @@
-import { Button, Spinner } from "#components";
+import { Button, Spinner } from "../components";
 import type { InfiniteScrollConfig } from "./types";
 import { useInfiniteScroll } from "./use-infinite-scroll";
 import * as styles from "./data-table.css";

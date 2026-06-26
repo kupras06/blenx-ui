@@ -69,7 +69,7 @@ export function ErrorState01({ icon, title, message, error, onRetry, secondaryAc
           </Button>
           {showDetails && (
             <Surface variant="sunken" padding="medium" maxWidth="sm">
-              <Text align="left" color="secondary">
+              <Text textAlign="left" color="secondary">
                 {errorMessage}
                 {errorStack ? `\n\n${errorStack}` : null}
               </Text>

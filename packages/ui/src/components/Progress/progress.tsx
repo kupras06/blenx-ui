@@ -2,8 +2,8 @@
 
 import { Progress as ProgressPrimitive } from "@base-ui/react/progress";
 import clsx from "clsx";
-import type { _BaseDivProps } from "#utils/types";
 import * as styles from "./progress.css";
+import type { _BaseDivProps } from "../../utils/types";
 
 type ProgressRootProps = _BaseDivProps & ProgressPrimitive.Root.Props;
 

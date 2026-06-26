@@ -26,7 +26,7 @@ import { DataTableLoading } from "./data-table-loading";
 import { DataTablePagination } from "./data-table-pagination";
 import { DataTableToolbar } from "./data-table-toolbar";
 import type { DataTableProps, RowAction, TableFeatures } from "./types";
-import { Button, Spinner } from "#components";
+import { Button, Spinner } from "../components";
 import * as styles from "./data-table.css";
 
 const DEFAULT_FEATURES: TableFeatures = {

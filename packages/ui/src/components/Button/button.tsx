@@ -2,9 +2,9 @@ import { Button as ButtonPrimitive } from "@base-ui/react/button";
 import clsx from "clsx";
 import { Spinner } from "../Spinner/spinner";
 import { variant as variantRecipe } from "./button.css";
-import { applyBaseSprinkles } from "#utils/ve-style.utils.js";
-import type { BaseSprinkles } from "#utils/sprinkles.css.js";
 import type { RecipeVariants } from "@vanilla-extract/recipes";
+import type { BaseSprinkles } from "../../utils/sprinkles.css";
+import { applyBaseSprinkles } from "../../utils/ve-style.utils";
 
 type ButtonVariants = RecipeVariants<typeof variantRecipe>;
 

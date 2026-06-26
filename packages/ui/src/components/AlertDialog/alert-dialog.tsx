@@ -4,7 +4,7 @@ import { AlertDialog as AlertDialogPrimitive } from "@base-ui/react/alert-dialog
 import { useRender } from "@base-ui/react/use-render";
 import clsx from "clsx";
 import type React from "react";
-import type { _BaseDivProps } from "#utils/types";
+import type { _BaseDivProps } from "../../utils/types";
 import { ScrollArea } from "../ScrollArea/scroll-area";
 import {
   backdrop,

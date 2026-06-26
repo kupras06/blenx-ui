@@ -1,4 +1,4 @@
-import { Button, Input } from "#components";
+import { Button, Input } from "../components";
 import type { Table } from "@tanstack/react-table";
 import { DataTableColumnToggle } from "./data-table-column-toggle";
 import type { BulkAction, TableFeatures } from "./types";

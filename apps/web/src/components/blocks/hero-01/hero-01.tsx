@@ -35,8 +35,8 @@ export function Hero01({
         align="center"
         gap={"xxxlarge"}
         direction={{
-          mobile: "column",
-          tablet: "row",
+          base: "column",
+          lg: "row",
         }}
       >
         <VStack>

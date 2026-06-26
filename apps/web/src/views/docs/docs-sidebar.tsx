@@ -1,7 +1,7 @@
-import { Link, useLocation, useMatches } from "@tanstack/react-router";
-import { Box, Surface, Text, VStack } from "@blenx-dev/ui/components";
 import type { SidebarSection } from "@/views/docs/docs-utils";
 import { sidebarLink } from "@/lib/styles.css";
+import { Box, Surface, Text, VStack } from "@blenx-dev/ui/components";
+import { Link, useLocation, useMatches } from "@tanstack/react-router";
 
 const isLinkActive = (link: string, pathname: string) =>
   link === "/docs"
@@ -10,11 +10,22 @@ const isLinkActive = (link: string, pathname: string) =>
       ? pathname === "/blocks" || pathname.startsWith("/blocks/")
       : pathname === link || pathname.startsWith(link + "/");
 
+function getSidebarSections(
+  matches: ReadonlyArray<{ context: Record<string, unknown> }>,
+): SidebarSection[] {
+  for (let i = matches.length - 1; i >= 0; i--) {
+    const ctx = matches[i].context as { sidebarSections?: unknown };
+    if (Array.isArray(ctx.sidebarSections)) {
+      return ctx.sidebarSections as SidebarSection[];
+    }
+  }
+  return [];
+}
+
 function DocsSidebar({ onClose }: { onClose?: () => void }) {
   const { pathname } = useLocation();
-  const matches = useMatches();
-  const sidebarSections: SidebarSection[] =
-    [...matches].reverse().find((m) => m.context.sidebarSections)?.context.sidebarSections ?? [];
+  const matches = useMatches() as ReadonlyArray<{ context: Record<string, unknown> }>;
+  const sidebarSections = getSidebarSections(matches);
 
   return (
     <Surface variant="sunken" fullWidth>

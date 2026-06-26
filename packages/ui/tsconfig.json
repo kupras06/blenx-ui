@@ -3,11 +3,7 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
-    "types": [],
-    "paths": {
-      "#utils/*": ["./src/utils/*"],
-      "#components": ["./src/components/index.ts"]
-    }
+    "types": []
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules"]

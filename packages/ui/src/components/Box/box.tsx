@@ -1,9 +1,8 @@
 import { useRender } from "@base-ui/react/use-render";
-import type { _BaseDivProps } from "#utils/types";
 import clsx from "clsx";
-import { applyBaseSprinkles } from "#utils/ve-style.utils.js";
-import type { BaseSprinkles } from "#utils/sprinkles.css.js";
 import { baseBox } from "./box.css";
+import type { BaseSprinkles } from "../../utils/sprinkles.css";
+import { applyBaseSprinkles } from "../../utils/ve-style.utils";
 
 type BoxProps = useRender.ComponentProps<"div"> & BaseSprinkles;
 

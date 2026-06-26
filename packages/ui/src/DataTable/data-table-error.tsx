@@ -1,6 +1,6 @@
-import { Button } from "#components";
 import { WarningCircleIcon } from "@phosphor-icons/react";
 import * as styles from "./data-table.css";
+import { Button } from "../components";
 
 interface DataTableErrorProps {
   message?: string;

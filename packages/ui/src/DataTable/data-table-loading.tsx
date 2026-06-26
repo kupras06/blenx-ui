@@ -1,4 +1,4 @@
-import { Spinner } from "#components";
+import { Spinner } from "../components";
 import type { TableSize } from "./types";
 import * as styles from "./data-table.css";
 

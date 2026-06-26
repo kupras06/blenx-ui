@@ -9,7 +9,6 @@ import { ArrowRightIcon } from "@phosphor-icons/react";
 import clsx from "clsx";
 import type React from "react";
 import { createContext, useContext, useMemo } from "react";
-import type { _BaseDivProps } from "#utils/types";
 import { ScrollArea } from "../ScrollArea/scroll-area";
 import {
   swipeArea,
@@ -68,6 +67,7 @@ import {
   menuRadioLabel,
 } from "./drawer.css";
 import { CloseButton } from "../CloseButton";
+import type { _BaseDivProps } from "../../utils/types";
 
 type DrawerPosition = "right" | "left" | "top" | "bottom";
 

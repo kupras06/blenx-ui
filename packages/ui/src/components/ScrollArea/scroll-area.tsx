@@ -15,7 +15,7 @@ import {
   scrollbarVertical,
   thumb,
 } from "./scroll-area.css";
-import { type NamedHeight } from "#utils/heights";
+import type { NamedHeight } from "../../utils/heights";
 
 type ScrollAreaProps = ScrollAreaPrimitive.Root.Props & {
   scrollFade?: boolean;

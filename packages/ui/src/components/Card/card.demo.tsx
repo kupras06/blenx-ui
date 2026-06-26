@@ -77,7 +77,7 @@ export function ProductCardDemo() {
   return (
     <Card>
       <Box
-        height="180px"
+        height="auto"
         width="full"
         backgroundColor="info"
         style={{

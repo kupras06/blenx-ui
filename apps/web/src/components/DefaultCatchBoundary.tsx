@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 
 export function DefaultCatchBoundary({ error }: { error: Error }) {
   return (
-    <Container padding="huge" center>
+    <Container padding="huge" centered>
       <VStack align="center" gap="medium">
         <VStack align="center" gap="xxsmall">
           <Text variant="h1">Something went wrong</Text>

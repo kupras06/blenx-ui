@@ -4,10 +4,6 @@
   "private": true,
   "type": "module",
   "types": "./src/index.ts",
-  "imports": {
-    "#utils/*": "./src/utils/*",
-    "#components": "./src/components/index.ts"
-  },
   "exports": {
     "./globals.css": "./src/styles/globals.css",
     "./lib/*": {

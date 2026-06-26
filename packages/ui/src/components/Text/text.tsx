@@ -3,8 +3,8 @@ import clsx from "clsx";
 import type React from "react";
 import { textVariants } from "./text.css";
 import type { RecipeVariants } from "@vanilla-extract/recipes";
-import { applyBaseSprinkles } from "#utils/ve-style.utils.js";
-import type { BaseSprinkles } from "#utils/sprinkles.css";
+import type { BaseSprinkles } from "../../utils/sprinkles.css";
+import { applyBaseSprinkles } from "../../utils/ve-style.utils";
 const variantTag = {
   h1: "h1",
   h2: "h2",

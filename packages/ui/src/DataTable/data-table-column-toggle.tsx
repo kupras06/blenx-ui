@@ -1,8 +1,8 @@
-import { Button, Menu, MenuItem, MenuPopup, MenuSeparator, MenuTrigger } from "#components";
 import { themeContract } from "@blenx-dev/theme/contract.css";
 import { ListIcon } from "@phosphor-icons/react";
 import type { Table } from "@tanstack/react-table";
 import * as styles from "./data-table.css";
+import { Button, Menu, MenuItem, MenuPopup, MenuSeparator, MenuTrigger } from "../components";
 
 interface DataTableColumnToggleProps<TData> {
   table: Table<TData>;

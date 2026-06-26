@@ -1,4 +1,4 @@
-import { Accordion, Text } from "#components";
+import { Accordion, Text } from "../components";
 
 export function AccordionDemo() {
   return (

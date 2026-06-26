@@ -9,19 +9,6 @@ const radiusOptions = [
   { value: "pill", label: "Pill" },
 ];
 
-const spacingOptions = [
-  { value: "compact", label: "Compact" },
-  { value: "default", label: "Default" },
-  { value: "comfortable", label: "Comfortable" },
-];
-
-const shadowOptions = [
-  { value: "none", label: "None" },
-  { value: "subtle", label: "Subtle" },
-  { value: "medium", label: "Medium" },
-  { value: "strong", label: "Strong" },
-];
-
 export function NonColorControls() {
   const tokens = useThemeBuilder((s) => s.tokens);
   const updateToken = useThemeBuilder((s) => s.updateToken);
@@ -36,25 +23,9 @@ export function NonColorControls() {
           <Box>
             <Text variant="h5">Border Radius</Text>
             <SegmentedControl
-              value={tokens.radius}
-              onValueChange={(value) => updateToken("radius", value)}
+              value={tokens.borderRadius}
+              onValueChange={(value) => updateToken("borderRadius", value)}
               options={radiusOptions}
-            />
-          </Box>
-          <Box>
-            <Text variant="h5">Spacing</Text>
-            <SegmentedControl
-              value={tokens.spacing}
-              onValueChange={(value) => updateToken("spacing", value)}
-              options={spacingOptions}
-            />
-          </Box>
-          <Box>
-            <Text variant="h5">Shadow Intensity</Text>
-            <SegmentedControl
-              value={tokens.shadowIntensity}
-              onValueChange={(value) => updateToken("shadowIntensity", value)}
-              options={shadowOptions}
             />
           </Box>
         </VStack>

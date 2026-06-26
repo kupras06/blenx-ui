@@ -4,7 +4,6 @@ import { Dialog as DialogPrimitive } from "@base-ui/react/dialog";
 import { useRender } from "@base-ui/react/use-render";
 import clsx from "clsx";
 import type React from "react";
-import type { _BaseDivProps } from "#utils/types";
 import { ScrollArea } from "../ScrollArea/scroll-area";
 import {
   backdrop,
@@ -22,6 +21,7 @@ import {
   panel,
 } from "./dialog.css";
 import { CloseButton } from "../CloseButton";
+import type { _BaseDivProps } from "../../utils/types";
 
 const DialogCreateHandle: typeof DialogPrimitive.createHandle = DialogPrimitive.createHandle;
 
