@@ -7,7 +7,7 @@ export type ContainerVariants = RecipeVariants<typeof containerRecipe>;
 
 type Props = BoxProps & ContainerVariants;
 export type ContainerProps = Props;
-export function Container({ size, centered = true, contentCentered, ...props }: Props) {
+export function Container({ size, centered = true, contentCentered, className, ...props }: Props) {
   return (
     <Box
       {...props}
@@ -18,6 +18,7 @@ export function Container({ size, centered = true, contentCentered, ...props }: 
           centered,
           contentCentered,
         }),
+        className,
       )}
     />
   );

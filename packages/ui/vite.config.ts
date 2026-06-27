@@ -8,6 +8,7 @@ export default defineConfig({
     dts({
       entryRoot: "src",
       outDirs: "dist",
+      exclude: ["**/*.demo.*", "**/*.doc.*"],
     }),
   ],
 
@@ -29,8 +30,13 @@ export default defineConfig({
         /^@phosphor-icons\/react/,
         /^@tanstack\/react-table/,
         /^@tanstack\/react-query/,
+        /^@vanilla-extract\/recipes/,
+        /^@vanilla-extract\/css/,
+        /^@vanilla-extract\/recipes/,
+        /^@vanilla-extract\/sprinkles/,
         /react-colorful/,
         /react-day-picker/,
+        /clsx/,
       ],
 
       output: {

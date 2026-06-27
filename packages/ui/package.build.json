@@ -19,6 +19,9 @@
     },
     "./globals.css": "./dist/styles/globals.css"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@blenx-dev/theme": "^1.0.0",
     "@base-ui/react": "^1.0.0",

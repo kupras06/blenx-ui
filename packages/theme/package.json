@@ -1,6 +1,6 @@
 {
   "name": "@blenx-dev/theme",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "files": [
     "**/*"
   ],
@@ -15,7 +15,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "vite build"
+    "build": "vite build && bun scripts/generate-package.ts"
   },
   "dependencies": {
     "@vanilla-extract/css": "^1.20.1"
