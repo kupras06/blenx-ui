@@ -22,7 +22,6 @@
       "types": "./src/utils/*",
       "default": "./src/utils/*"
     },
-    "./postcss.config": "./postcss.config.mjs",
     ".": {
       "types": "./src/index.ts",
       "default": "./src/index.ts"
@@ -30,7 +29,7 @@
   },
   "scripts": {
     "check-types": "tsc --noEmit",
-    "build:vite": "vite build"
+    "build": "vite build && cp package.build.json dist/package.json"
   },
   "dependencies": {
     "@base-ui/react": "^1.0.0",
