@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { Text } from "@blenx-dev/ui/components";
+import { Text } from "@blenx-dev/components";
 import { getComponentsForToken } from "../preview/component-token-map";
 import { useThemeBuilder } from "../theme-builder-context";
 import { impactPanel, impactEmpty, impactList, impactChip } from "@/lib/styles.css";

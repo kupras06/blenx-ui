@@ -1,4 +1,4 @@
-import { Box, Grid, Surface, Text, VStack } from "@blenx-dev/ui/components";
+import { Box, Grid, Surface, Text, VStack } from "@blenx-dev/components";
 import { Link } from "@tanstack/react-router";
 
 const docLinks = [

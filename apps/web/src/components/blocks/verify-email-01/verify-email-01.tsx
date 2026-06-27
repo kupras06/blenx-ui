@@ -13,7 +13,7 @@ import {
   OTPField,
   OTPFieldInput,
   VStack,
-} from "@blenx-dev/ui/components";
+} from "@blenx-dev/components";
 
 const DIGIT_COUNT = 6;
 

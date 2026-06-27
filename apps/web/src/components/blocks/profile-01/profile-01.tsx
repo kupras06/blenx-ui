@@ -8,7 +8,7 @@ import { Card, CardBody, CardHeader, CardTitle } from "@blenx-dev/ui/components/
 import { Switch } from "@blenx-dev/ui/components/Switch/switch";
 import { HStack, VStack } from "@blenx-dev/ui/components/Stack/stack";
 import type { CSSProperties } from "react";
-import { Box, Container, Field, FieldLabel } from "@blenx-dev/ui/components";
+import { Box, Container, Field, FieldLabel } from "@blenx-dev/components";
 
 type NotificationSetting = {
   key: string;

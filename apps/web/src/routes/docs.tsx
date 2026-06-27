@@ -2,7 +2,7 @@ import { DefaultCatchBoundary } from "@/components/DefaultCatchBoundary";
 import { DocsSidebar } from "@/views/docs/docs-sidebar";
 import { DocsToc } from "@/views/docs/DocsToc";
 import { useMediaQuery } from "@uidotdev/usehooks";
-import { Box, Container, HStack, ScrollArea, Sheet, SheetPopup } from "@blenx-dev/ui/components";
+import { Box, Container, HStack, ScrollArea, Sheet, SheetPopup } from "@blenx-dev/components";
 import { ClientOnly, createFileRoute, Outlet, useMatches } from "@tanstack/react-router";
 import { useSidebarStore } from "@/stores/docs-sidebar";
 

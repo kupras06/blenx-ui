@@ -1,6 +1,6 @@
 import type { SidebarSection } from "@/views/docs/docs-utils";
 import { sidebarLink } from "@/lib/styles.css";
-import { Box, Surface, Text, VStack } from "@blenx-dev/ui/components";
+import { Box, Surface, Text, VStack } from "@blenx-dev/components";
 import { Link, useLocation, useMatches } from "@tanstack/react-router";
 
 const isLinkActive = (link: string, pathname: string) =>

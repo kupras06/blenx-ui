@@ -22,8 +22,7 @@
     "paths": {
       "@/*": ["./src/*"],
       "@blenx-dev/theme/*": ["../../packages/theme/src/*"],
-      "@blenx-dev/ui": ["../../packages/ui/src/index.ts"],
-      "@blenx-dev/ui/components": ["../../packages/ui/src/components/index.ts"],
+      "@blenx-dev/components": ["../../packages/ui/src/components/index.ts"],
       "@blenx-dev/ui/*": ["../../packages/ui/src/*"],
       "content-collections": ["./.content-collections/generated"]
     }

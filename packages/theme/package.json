@@ -1,42 +1,40 @@
 {
   "name": "@blenx-dev/theme",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.0.1",
+  "files": [
+    "**/*"
+  ],
   "type": "module",
+  "sideEffects": false,
   "exports": {
-    "./contract.css": {
-      "types": "./src/contract.css.ts",
-      "default": "./src/contract.css.ts"
+    "./contract": {
+      "types": "./contract.css.d.ts",
+      "import": "./contract.css.js"
     },
-    "./contract.css.js": {
-      "types": "./src/contract.css.ts",
-      "default": "./src/contract.css.ts"
+    "./tokens": {
+      "types": "./tokens.css.d.ts",
+      "import": "./tokens.css.js"
     },
-    "./tokens.css": {
-      "types": "./src/tokens.css.ts",
-      "default": "./src/tokens.css.ts"
-    },
-    "./tokens.css.js": {
-      "types": "./src/tokens.css.ts",
-      "default": "./src/tokens.css.ts"
-    },
-    "./light-theme.css": {
-      "types": "./src/light-theme.css.ts",
-      "default": "./src/light-theme.css.ts"
-    },
-    "./light-theme.css.js": {
-      "types": "./src/light-theme.css.ts",
-      "default": "./src/light-theme.css.ts"
+    "./light-theme": {
+      "types": "./light-theme.css.d.ts",
+      "import": "./light-theme.css.js"
     }
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
-    "check-types": "tsc --noEmit"
+    "build": "vite build"
   },
   "dependencies": {
     "@vanilla-extract/css": "^1.20.1"
   },
   "devDependencies": {
     "@blenx-dev/config": "workspace:*",
-    "typescript": "catalog:"
+    "@vanilla-extract/vite-plugin": "^5.2.3",
+    "tsup": "^8.5.1",
+    "typescript": "catalog:",
+    "vite": "^8.1.0",
+    "vite-plugin-dts": "^5.0.3"
   }
 }

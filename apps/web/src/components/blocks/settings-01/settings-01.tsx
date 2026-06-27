@@ -8,7 +8,7 @@ import { Card, CardBody, CardHeader, CardTitle } from "@blenx-dev/ui/components/
 import { Switch } from "@blenx-dev/ui/components/Switch/switch";
 import { Separator } from "@blenx-dev/ui/components/Separator/separator";
 import { Tabs, TabsList, TabsTab, TabsPanel } from "@blenx-dev/ui/components/Tabs/tabs";
-import { Box, Container, Field, FieldLabel, HStack, VStack } from "@blenx-dev/ui/components";
+import { Box, Container, Field, FieldLabel, HStack, VStack } from "@blenx-dev/components";
 
 export function Settings01() {
   const [language, setLanguage] = useState("en");

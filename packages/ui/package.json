@@ -1,5 +1,5 @@
 {
-  "name": "@blenx-dev/ui",
+  "name": "@blenx-dev/components",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -29,7 +29,7 @@
   },
   "scripts": {
     "check-types": "tsc --noEmit",
-    "build": "vite build && cp package.build.json dist/package.json"
+    "build": "vite build && bun scripts/generate-package.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.0.0",
@@ -52,6 +52,7 @@
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "@vanilla-extract/vite-plugin": "^5.2.2",
+    "fs-extra": "^11.3.5",
     "tailwindcss": "^4.1.18",
     "typescript": "catalog:"
   }

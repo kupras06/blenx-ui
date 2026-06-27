@@ -11,8 +11,8 @@ import { DocAccessibility } from "./mdx-components/doc-accessibility";
 import { DocDemoRenderer } from "./mdx-components/doc-demo-renderer";
 import { DocSourceCode } from "./mdx-components/doc-source-code";
 import { Installation } from "./mdx-components/Installation";
-import { Spinner, Text } from "@blenx-dev/ui/components";
-import { type TextProps } from "@blenx-dev/ui/components";
+import { Spinner, Text } from "@blenx-dev/components";
+import { type TextProps } from "@blenx-dev/components";
 import { tableHeaderRow, tableHeaderCell, tableCell } from "@/lib/styles.css";
 
 function InlineCode(props: TextProps) {

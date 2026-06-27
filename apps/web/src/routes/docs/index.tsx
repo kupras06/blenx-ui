@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { allComponents, allGuides } from "content-collections";
 import { MDXContent } from "@content-collections/mdx/react";
-import { Box, Text } from "@blenx-dev/ui/components";
+import { Box, Text } from "@blenx-dev/components";
 import { DocsContent } from "@/views/docs/DocsContent";
 import { formatLabel } from "@/views/docs/docs-utils";
 import { mdxComponents } from "@/views/docs/MdxComponents";

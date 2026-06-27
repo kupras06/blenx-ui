@@ -6,7 +6,7 @@ import { Text } from "@blenx-dev/ui/components/Text/text";
 import { VStack, HStack } from "@blenx-dev/ui/components/Stack/stack";
 import { Surface } from "@blenx-dev/ui/components/Surface/surface";
 import type { CSSProperties } from "react";
-import { Icon } from "@blenx-dev/ui/components";
+import { Icon } from "@blenx-dev/components";
 
 type Action = {
   label: string;

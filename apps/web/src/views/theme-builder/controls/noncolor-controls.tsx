@@ -1,4 +1,4 @@
-import { Accordion, Box, SegmentedControl, Text, VStack } from "@blenx-dev/ui/components";
+import { Accordion, Box, SegmentedControl, Text, VStack } from "@blenx-dev/components";
 import { useThemeBuilder } from "../theme-builder-context";
 
 const radiusOptions = [

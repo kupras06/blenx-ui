@@ -1,5 +1,5 @@
 import { useMemo, useRef, useState } from "react";
-import { Separator, Text } from "@blenx-dev/ui/components";
+import { Separator, Text } from "@blenx-dev/components";
 import { slugify, extractTextFromChildren } from "@/lib/slug";
 import type React from "react";
 import { headingAnchor } from "@/lib/styles.css";

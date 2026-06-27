@@ -1,5 +1,5 @@
 import type React from "react";
-import { Box } from "@blenx-dev/ui/components";
+import { Box } from "@blenx-dev/components";
 import { tableScroll, tableView } from "@/lib/styles.css";
 
 interface DocsTableProps {

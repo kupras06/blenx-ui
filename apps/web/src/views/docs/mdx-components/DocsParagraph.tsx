@@ -1,5 +1,5 @@
 import type React from "react";
-import { Text } from "@blenx-dev/ui/components";
+import { Text } from "@blenx-dev/components";
 import { docsParagraph } from "@/lib/styles.css";
 
 interface DocsParagraphProps {

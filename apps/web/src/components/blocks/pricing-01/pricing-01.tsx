@@ -7,7 +7,7 @@ import { Card, CardBody, CardHeader } from "@blenx-dev/ui/components/Card/card";
 import { Badge } from "@blenx-dev/ui/components/Badge/badge";
 import { Switch } from "@blenx-dev/ui/components/Switch/switch";
 import { CheckIcon } from "@phosphor-icons/react";
-import { Container, HStack, Icon, VStack } from "@blenx-dev/ui/components";
+import { Container, HStack, Icon, VStack } from "@blenx-dev/components";
 import type { CSSProperties } from "react";
 
 type Plan = {

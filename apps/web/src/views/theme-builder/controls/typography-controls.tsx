@@ -1,4 +1,4 @@
-import { Accordion, HStack, Slider, Text, VStack } from "@blenx-dev/ui/components";
+import { Accordion, HStack, Slider, Text, VStack } from "@blenx-dev/components";
 import { useThemeBuilder } from "../theme-builder-context";
 
 export function TypographyControls() {

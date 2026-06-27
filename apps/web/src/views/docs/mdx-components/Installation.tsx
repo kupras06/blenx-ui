@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { Badge, HStack, Separator, Text, VStack } from "@blenx-dev/ui/components";
+import { Badge, HStack, Separator, Text, VStack } from "@blenx-dev/components";
 import { DocsH3 } from "./DocHeaders";
 import { docsQueries } from "@/lib/docs-api";
 import { CodeSnippet } from "./CodeBlock";

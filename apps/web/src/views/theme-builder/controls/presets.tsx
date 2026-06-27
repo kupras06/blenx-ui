@@ -1,4 +1,4 @@
-import { Accordion, Box, ColorSwatch, Grid, HStack, Surface, Text } from "@blenx-dev/ui/components";
+import { Accordion, Box, ColorSwatch, Grid, HStack, Surface, Text } from "@blenx-dev/components";
 import { useThemeBuilder } from "../theme-builder-context";
 import { presets } from "./presets-data";
 

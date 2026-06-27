@@ -10,7 +10,7 @@ import {
   Table,
   Text,
   VStack,
-} from "@blenx-dev/ui/components";
+} from "@blenx-dev/components";
 import { ShowCaseComponents } from "@/views/landing/ShowCasing";
 import { LandingHero } from "@/views/landing/LandingHero";
 import { BlenxFeatures, InstallSection } from "@/views/landing/FeaturesSection";

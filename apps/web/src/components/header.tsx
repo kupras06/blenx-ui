@@ -3,7 +3,7 @@ import { ClientOnly, Link, useLocation } from "@tanstack/react-router";
 import { useMediaQuery, useLocalStorage } from "@uidotdev/usehooks";
 import { GITHUB_URL } from "@/constants";
 import { useSidebarStore } from "@/stores/docs-sidebar";
-import { Button, Container, HStack, IconButton, Separator } from "@blenx-dev/ui/components";
+import { Button, Container, HStack, IconButton, Separator } from "@blenx-dev/components";
 import { darkTheme, lightTheme } from "@/lib/app-theme.css";
 import { useEffect } from "react";
 import { logoStyles } from "@/lib/styles.css";

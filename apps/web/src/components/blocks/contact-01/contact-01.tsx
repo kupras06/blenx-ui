@@ -16,7 +16,7 @@ import {
   Icon,
   Select,
   VStack,
-} from "@blenx-dev/ui/components";
+} from "@blenx-dev/components";
 import { PaperPlaneTiltIcon } from "@phosphor-icons/react";
 
 type ContactInfo = {

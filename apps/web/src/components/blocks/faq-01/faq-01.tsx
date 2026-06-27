@@ -10,7 +10,7 @@ import {
   AccordionPanel,
 } from "@blenx-dev/ui/components/Accordion/accordion";
 import type { CSSProperties } from "react";
-import { Box, Container, Input, VStack } from "@blenx-dev/ui/components";
+import { Box, Container, Input, VStack } from "@blenx-dev/components";
 
 type FaqItem = {
   question: string;

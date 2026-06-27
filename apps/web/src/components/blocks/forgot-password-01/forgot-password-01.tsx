@@ -6,7 +6,7 @@ import { Input } from "@blenx-dev/ui/components/Input/input";
 import { Text } from "@blenx-dev/ui/components/Text/text";
 import { Card, CardBody } from "@blenx-dev/ui/components/Card/card";
 import type { CSSProperties } from "react";
-import { Box, Container, Field, FieldLabel, HStack, VStack } from "@blenx-dev/ui/components";
+import { Box, Container, Field, FieldLabel, HStack, VStack } from "@blenx-dev/components";
 
 type Props = {
   title?: string;

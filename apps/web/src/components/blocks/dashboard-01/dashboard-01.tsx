@@ -6,7 +6,7 @@ import { Badge } from "@blenx-dev/ui/components/Badge/badge";
 import { Surface } from "@blenx-dev/ui/components/Surface/surface";
 import type { Column } from "@blenx-dev/ui/components/Table/table";
 import type { CSSProperties } from "react";
-import { Container, Grid, HStack, VStack } from "@blenx-dev/ui/components";
+import { Container, Grid, HStack, VStack } from "@blenx-dev/components";
 
 type Kpi = {
   label: string;

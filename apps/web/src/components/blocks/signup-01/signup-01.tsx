@@ -15,7 +15,7 @@ import {
   HStack,
   Separator,
   VStack,
-} from "@blenx-dev/ui/components";
+} from "@blenx-dev/components";
 
 type SocialProvider = {
   provider: string;

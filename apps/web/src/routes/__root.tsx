@@ -8,7 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { Header, ThemeEffect } from "@/components/header";
-import { Container } from "@blenx-dev/ui/components";
+import { Container } from "@blenx-dev/components";
 import appCss from "@/app.css?url";
 import { Analytics } from "@vercel/analytics/react";
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
