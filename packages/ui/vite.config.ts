@@ -27,6 +27,8 @@ export default defineConfig({
         /^@stylexjs\/stylex$/,
         /^@base-ui\/react/,
         /^@phosphor-icons\/react/,
+        /^@tanstack\/react-table/,
+        /^@tanstack\/react-query/,
         /react-colorful/,
         /react-day-picker/,
       ],
