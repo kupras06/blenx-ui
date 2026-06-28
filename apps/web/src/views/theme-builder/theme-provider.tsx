@@ -12,9 +12,9 @@ const radiusMap: Record<string, string> = {
   pill: radiusTokens.full,
 };
 
-function cx(name: string) {
-  return name.slice(4, -1);
-}
+const contractKeyToVarName = (contractValue: string): string => {
+  return contractValue.replace(/^var\(|\)$/g, "");
+};
 
 export function ThemePreviewProvider({ children }: { children: ReactNode }) {
   const tokens = useThemeBuilder((s) => s.tokens);
@@ -24,6 +24,7 @@ export function ThemePreviewProvider({ children }: { children: ReactNode }) {
     const entries: Array<[string, string]> = [
       [themeContract.primary, tokens.primary],
       [themeContract.primarySubtle, tokens.primarySubtle],
+      [themeContract.primaryHover, tokens.primaryHover],
       [themeContract.secondary, tokens.secondary],
       [themeContract.background, tokens.background],
       [themeContract.backgroundSubtle, tokens.backgroundSubtle],
@@ -38,15 +39,20 @@ export function ThemePreviewProvider({ children }: { children: ReactNode }) {
       [themeContract.contentPrimary, tokens.contentPrimary],
       [themeContract.contentSecondary, tokens.contentSecondary],
       [themeContract.contentDisabled, tokens.contentDisabled],
+      [themeContract.contentAccent, tokens.contentAccent],
       [themeContract.contentOnPrimary, tokens.contentOnPrimary],
       [themeContract.sentimentNegative, tokens.sentimentNegative],
       [themeContract.sentimentNegativeSubtle, tokens.sentimentNegativeSubtle],
+      [themeContract.sentimentNegativeHover, tokens.sentimentNegativeHover],
       [themeContract.sentimentPositive, tokens.sentimentPositive],
       [themeContract.sentimentPositiveSubtle, tokens.sentimentPositiveSubtle],
+      [themeContract.sentimentPositiveHover, tokens.sentimentPositiveHover],
       [themeContract.sentimentWarning, tokens.sentimentWarning],
       [themeContract.sentimentWarningSubtle, tokens.sentimentWarningSubtle],
+      [themeContract.sentimentWarningHover, tokens.sentimentWarningHover],
       [themeContract.sentimentInfo, tokens.sentimentInfo],
       [themeContract.sentimentInfoSubtle, tokens.sentimentInfoSubtle],
+      [themeContract.sentimentInfoHover, tokens.sentimentInfoHover],
       [themeContract.focusRing, tokens.focusRing],
       [themeContract.shadowSm, tokens.shadowSm],
       [themeContract.shadowMd, tokens.shadowMd],
@@ -54,9 +60,11 @@ export function ThemePreviewProvider({ children }: { children: ReactNode }) {
       [themeContract.shadowXl, tokens.shadowXl],
       [themeContract.fontSize, tokens.fontSize],
       [themeContract.borderRadius, radiusMap[tokens.borderRadius] ?? radiusTokens.md],
+      [themeContract.hoverOverlay, tokens.hoverOverlay],
+      [themeContract.hoverOverlaySoft, tokens.hoverOverlaySoft],
     ];
     for (const [k, v] of entries) {
-      vars[cx(k)] = v;
+      vars[contractKeyToVarName(k)] = v;
     }
     return vars;
   }, [tokens]);

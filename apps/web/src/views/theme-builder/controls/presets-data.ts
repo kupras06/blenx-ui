@@ -6,8 +6,13 @@ export interface ThemePreset {
   tokens: Partial<ThemeTokens>;
 }
 const lightDefaults: Partial<ThemeTokens> = {
-  borderRadius: "0.5rem",
+  borderRadius: "medium",
   fontSize: "14px",
+
+  contentAccent: "#000000",
+  contentOnPrimary: "#ffffff",
+
+  primaryHover: "#1a1a1a",
 
   sentimentPositive: "#22c55e",
   sentimentPositiveSubtle: "rgba(34,197,94,0.12)",
@@ -35,8 +40,13 @@ const lightDefaults: Partial<ThemeTokens> = {
 };
 
 const darkDefaults: Partial<ThemeTokens> = {
-  borderRadius: "0.5rem",
+  borderRadius: "medium",
   fontSize: "14px",
+
+  contentAccent: "#f5f3ef",
+  contentOnPrimary: "#0f0e0c",
+
+  primaryHover: "#e7e3dc",
 
   sentimentPositive: "#22c55e",
   sentimentPositiveSubtle: "rgba(34,197,94,0.12)",
@@ -198,6 +208,7 @@ export const presets: ThemePreset[] = [
     name: "Nord",
     colors: ["#2e3440", "#3b4252", "#434c5e", "#d8dee9", "#88c0d0"],
     tokens: {
+      ...darkDefaults,
       primary: "#d8dee9",
       primarySubtle: "#e5e9f0",
       secondary: "#88c0d0",

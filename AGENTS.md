@@ -5,9 +5,9 @@
 - **All changes must go through a PR.** Never commit or push directly to `main`. Always create a feature branch, push it, and open a pull request.
 - PRs should reference the relevant issue number (e.g., `Closes #N`).
 
-## StyleX Authoring
+## Vanilla Extract Authoring
 
-Whenever writing or editing StyleX styles, reference `@stylex-authoring.md` for syntax, patterns, and conventions (pseudo-classes, media queries, themes, dynamic styles, etc.).
+Whenever writing or editing theme/style files, reference `.clinerules` for Vanilla Extract conventions (themes, contracts, responsive patterns, pseudo-classes, etc.).
 
 ## State Management
 
@@ -46,12 +46,14 @@ const actions = useMyStore((s) => s.actions)
 
 ## Theme System
 
-- Theme is defined via StyleX contract (`src/lib/theme/contract.stylex.ts`) with `stylex.defineVars()`.
-- Two themes are created with `stylex.createTheme` in `src/lib/app-theme.stylex.ts`: `lightTheme` and `darkTheme`.
-- Theme mode is managed by zustand store `src/stores/theme.ts` (`useThemeStore`), persisted to `localStorage` under key `"theme"`.
+- Theme is defined via Vanilla Extract contract (`packages/theme/src/contract.css.ts`) with `createThemeContract()`.
+- Two themes are created with `createTheme` in `packages/theme/src/light-theme.css.ts`: a light theme and a dark theme variant.
+- App-level themes are in `apps/web/src/lib/app-theme.css.ts` (`lightTheme` / `darkTheme` class names).
+- Design token primitives (spacing, font-sizes, radii, etc.) live in `packages/theme/src/tokens.css.ts`.
+- Theme mode is managed by zustand store (scoped store pattern via `zustand-utils/createContext`).
 - An inline `<script>` in `<head>` sets `color-scheme` on `<html>` from localStorage before any rendering.
 - A `<meta name="color-scheme" content="dark light">` tag is included in the document head.
-- Theme toggle button in `src/components/header.tsx` (`ThemeToggle` component) uses sun/moon icons from `@phosphor-icons/react`.
+- Theme toggle button uses sun/moon icons from `@phosphor-icons/react`.
 
 ## Lint & Format
 

@@ -6,7 +6,8 @@
   "exports": {
     "./contract": "./src/contract.css.ts",
     "./tokens": "./src/tokens.css.ts",
-    "./light-theme": "./src/light-theme.css.ts"
+    "./light-theme": "./src/light-theme.css.ts",
+    "./reset": "./src/reset.css.ts"
   },
   "publishConfig": {
     "access": "public"

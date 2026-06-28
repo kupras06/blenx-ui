@@ -14,6 +14,14 @@ import {
 } from "@blenx-dev/ui";
 import { useThemeBuilder } from "../theme-builder-context";
 
+const borderRadiusValues: Record<string, string> = {
+  none: "0px",
+  small: "4px",
+  medium: "8px",
+  large: "12px",
+  pill: "999px",
+};
+
 export function ExportPanel() {
   const tokens = useThemeBuilder((s) => s.tokens);
   const resetTokens = useThemeBuilder((s) => s.resetTokens);
@@ -26,22 +34,19 @@ export function ExportPanel() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "blenx-themeContract.json";
+    a.download = "blenx-theme.json";
     a.click();
     URL.revokeObjectURL(url);
   }, [tokens]);
 
   const generateThemeCode = useCallback(() => {
     const themeEntries = Object.entries(tokens)
-      .filter(([key]) => key !== "__varGroupHash__")
-      .map(([key]) => {
-        const value =
-          key === "fontSize"
-            ? tokens.fontSize
-            : key === "borderRadius"
-              ? tokens.borderRadius
-              : tokens[key as keyof typeof tokens]?.toString();
+      .map(([key, value]) => {
         if (!value) return null;
+        if (key === "borderRadius") {
+          const resolved = borderRadiusValues[value] ?? value;
+          return `  ${key}: "${resolved}",`;
+        }
         return `  ${key}: "${value}",`;
       })
       .filter(Boolean) as string[];

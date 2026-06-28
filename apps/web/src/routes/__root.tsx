@@ -10,6 +10,7 @@ import {
 import { Header, ThemeEffect } from "@/components/header";
 import { Container, Separator } from "@blenx-dev/ui";
 import appCss from "@/app.css?url";
+import "@blenx-dev/theme/reset";
 import { Analytics } from "@vercel/analytics/react";
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
