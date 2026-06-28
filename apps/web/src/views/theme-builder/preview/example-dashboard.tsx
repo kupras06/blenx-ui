@@ -17,6 +17,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
+  Grid,
   Surface,
   Table,
   Text,
@@ -105,7 +106,7 @@ const activities = [
 export const ExampleDashboard = memo(() => (
   <VStack gap="none">
     {/* KPI Cards */}
-    <div className={kpiGrid}>
+    <Grid rowGap={"sm"} columnGap={"md"} className={kpiGrid} columns={{ base: 2, lg: 4 }}>
       {kpis.map((kpi) => (
         <Card key={kpi.label} padding="md">
           <Text variant="caption" color="secondary">
@@ -118,7 +119,7 @@ export const ExampleDashboard = memo(() => (
           </div>
         </Card>
       ))}
-    </div>
+    </Grid>
 
     {/* Activity Table */}
     <Card padding="md">

@@ -1,6 +1,6 @@
 import { globalStyle, style } from "@vanilla-extract/css";
 import { themeContract } from "@blenx-dev/theme/contract";
-import { borderRadius, fontSize, letterSpacing, spacing } from "@blenx-dev/theme/tokens";
+import { borderRadius, fontSize, spacing } from "@blenx-dev/theme/tokens";
 
 /* ── Hero01 ── */
 
@@ -10,20 +10,6 @@ export const heroImage = style({
   height: "auto",
   borderRadius: themeContract.borderRadius,
   objectFit: "cover",
-});
-
-/* ── Routes/Index ── */
-
-export const sectionTitle = style({
-  fontSize: fontSize.displayLg,
-  lineHeight: 1.2,
-  fontWeight: 700,
-  letterSpacing: "-0.03em",
-});
-
-export const centeredBox = style({
-  marginLeft: "auto",
-  marginRight: "auto",
 });
 
 /* ── Docs Sidebar ── */
@@ -384,13 +370,4 @@ export const impactChip = style({
   color: themeContract.primary,
   fontSize: fontSize.xs,
   fontWeight: 500,
-});
-
-export const logoStyles = style({
-  textDecoration: "none",
-  color: themeContract.contentPrimary,
-  fontWeight: 700,
-  fontSize: fontSize.lg,
-  letterSpacing: letterSpacing.tight,
-  lineHeight: 1,
 });

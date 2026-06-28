@@ -3,10 +3,9 @@ import { ClientOnly, Link, useLocation } from "@tanstack/react-router";
 import { useMediaQuery, useLocalStorage } from "@uidotdev/usehooks";
 import { GITHUB_URL } from "@/constants";
 import { useSidebarStore } from "@/stores/docs-sidebar";
-import { Button, Container, HStack, IconButton, Separator } from "@blenx-dev/ui";
+import { Button, HStack, IconButton } from "@blenx-dev/ui";
 import { darkTheme, lightTheme } from "@/lib/app-theme.css";
 import { useEffect } from "react";
-import { logoStyles } from "@/lib/styles.css";
 
 function DocsRouteOption() {
   const { pathname } = useLocation();
@@ -124,44 +123,39 @@ function Header() {
   const isDocsActive = pathname.startsWith("/docs");
   const isBlocksActive = pathname.startsWith("/blocks");
   return (
-    <>
-      <Container size="2xl" py="xs" px="md">
-        <HStack align="center" justify="between" py="xs">
-          <HStack align="center" justify="between" gap="xxs" paddingLeft="none">
-            <ClientOnly>{isDocsActive && <DocsRouteSidebarOption />}</ClientOnly>
-            <Link to="/" className={logoStyles}>
-              <BrandLogo size={30} />
-            </Link>
-          </HStack>
-          <HStack align="center" gap="xs">
-            <ClientOnly>
-              {!isDocsActive && <DocsRouteOption />}
-              {isDocsActive && <BlocksRouteOption />}
-              <ThemeToggle />
-            </ClientOnly>
+    <HStack align="center" justify="between" py="xs">
+      <HStack align="center" justify="between" gap="xxs" paddingLeft="none">
+        <ClientOnly>{isDocsActive && <DocsRouteSidebarOption />}</ClientOnly>
+        <Link to="/">
+          <BrandLogo size={30} />
+        </Link>
+      </HStack>
+      <HStack align="center" gap="xs">
+        <ClientOnly>
+          {!isDocsActive && <DocsRouteOption />}
+          {isDocsActive && <BlocksRouteOption />}
+          <ThemeToggle />
+        </ClientOnly>
 
-            {!isDocsActive && !isBlocksActive && (
-              <Button
-                size="xs"
-                nativeButton={false}
-                variant="link"
-                render={
-                  <a
-                    href={GITHUB_URL}
-                    target="_blank"
-                    aria-label="Project Github URL"
-                    rel="noopener noreferrer"
-                  />
-                }
-              >
-                GitHub &rarr;
-              </Button>
-            )}
-          </HStack>
-        </HStack>
-      </Container>
-      <Separator />
-    </>
+        {!isDocsActive && !isBlocksActive && (
+          <Button
+            size="xs"
+            nativeButton={false}
+            variant="link"
+            render={
+              <a
+                href={GITHUB_URL}
+                target="_blank"
+                aria-label="Project Github URL"
+                rel="noopener noreferrer"
+              />
+            }
+          >
+            GitHub &rarr;
+          </Button>
+        )}
+      </HStack>
+    </HStack>
   );
 }
 

@@ -178,8 +178,6 @@ const responsiveSpacingProperties = defineProperties({
     marginLeft: spacing,
     marginRight: spacing,
     gap: spacing,
-    rowGap: spacing,
-    columnGap: spacing,
   },
   shorthands: {
     padding: ["paddingTop", "paddingBottom", "paddingLeft", "paddingRight"],
@@ -216,6 +214,8 @@ const gridProperties = defineProperties({
       "row dense": "row dense",
       "column dense": "column dense",
     },
+    rowGap: spacing,
+    columnGap: spacing,
     alignItems: ["start", "center", "end", "stretch", "baseline"],
     justifyItems: ["start", "center", "end", "stretch"],
   },
@@ -224,6 +224,7 @@ const gridProperties = defineProperties({
     flow: ["gridAutoFlow"],
     align: ["alignItems"],
     justify: ["justifyItems"],
+    gap: ["rowGap", "columnGap"],
   },
 });
 

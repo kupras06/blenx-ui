@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type { Column } from "@blenx-dev/ui/components/Table/table";
-import { sectionTitle, centeredBox } from "@/lib/styles.css";
-import { Box, Container, HStack, Separator, Surface, Table, Text, VStack } from "@blenx-dev/ui";
+import { Container, HStack, Separator, Surface, Table, Text, VStack } from "@blenx-dev/ui";
 import { ShowCaseComponents } from "@/views/landing/ShowCasing";
 import { LandingHero } from "@/views/landing/LandingHero";
 import { BlenxFeatures, InstallSection } from "@/views/landing/FeaturesSection";
@@ -82,69 +81,67 @@ export const Route = createFileRoute("/")({
 
 function HomeComponent() {
   return (
-    <Container size="3xl" paddingX="md" paddingY="massive">
-      <VStack gap="xxxl">
-        <LandingHero />
+    <VStack gap="xxxl" paddingX="md" paddingY="massive">
+      <LandingHero />
 
-        <Separator tone="subtle" />
-        <ShowCaseComponents />
-        <Separator tone="subtle" />
-        <InstallSection />
+      <Separator tone="subtle" />
+      <ShowCaseComponents />
+      <Separator tone="subtle" />
+      <InstallSection />
 
-        {/* ─── Component Showcase ────────────────────────────────────── */}
+      {/* ─── Component Showcase ────────────────────────────────────── */}
 
-        <Separator tone="subtle" />
+      <Separator tone="subtle" />
 
-        {/* ─── Why Blenx ─────────────────────────────────────────────── */}
-        <BlenxFeatures />
+      {/* ─── Why Blenx ─────────────────────────────────────────────── */}
+      <BlenxFeatures />
 
-        <Separator tone="subtle" />
+      <Separator tone="subtle" />
 
-        {/* ─── Comparison ────────────────────────────────────────────── */}
-        <VStack gap="lg">
-          <VStack gap="sm" align="center">
-            <Text variant="h2" align="center" className={sectionTitle}>
-              How we compare
+      {/* ─── Comparison ────────────────────────────────────────────── */}
+      <VStack gap="lg">
+        <VStack gap="sm" align="center">
+          <Text variant="h2" align="center" size="xxl">
+            How we compare
+          </Text>
+          <Container maxWidth={560} centered>
+            <Text variant="body2" color="secondary" align="center" size="lg">
+              See how Blenx compares to traditional UI libraries.
             </Text>
-            <Box maxWidth={560} className={centeredBox}>
-              <Text variant="body2" color="secondary" align="center" size="lg">
-                See how Blenx compares to traditional UI libraries.
-              </Text>
-            </Box>
-          </VStack>
-          <Container content="center" maxWidth="lg" overflow="auto">
-            <Table columnData={comparisonColumns} rowData={comparisonRows} rowKey="feature" />
           </Container>
         </VStack>
-
-        <Separator tone="subtle" />
-
-        {/* ─── Social Proof ──────────────────────────────────────────── */}
-        <HStack gap="md" justify="center" wrap>
-          {metrics.map((metric) => (
-            <Surface key={metric.label} variant="raised" paddingY="sm" paddingX="md">
-              <HStack gap="xs" align="center">
-                <Text variant="body2" weight="semibold">
-                  {metric.value}
-                </Text>
-                <Text variant="body3" color="secondary">
-                  {metric.label}
-                </Text>
-              </HStack>
-            </Surface>
-          ))}
-        </HStack>
-
-        <Separator tone="subtle" />
-
-        {/* ─── Documentation ─────────────────────────────────────────── */}
-        <LandingPageDocumentation />
-
-        <Separator tone="subtle" />
-
-        {/* ─── Final CTA ─────────────────────────────────────────────── */}
-        <LandingPageCTA />
+        <Container content="center" maxWidth="lg" overflow="auto">
+          <Table columnData={comparisonColumns} rowData={comparisonRows} rowKey="feature" />
+        </Container>
       </VStack>
-    </Container>
+
+      <Separator tone="subtle" />
+
+      {/* ─── Social Proof ──────────────────────────────────────────── */}
+      <HStack gap="md" justify="center" wrap>
+        {metrics.map((metric) => (
+          <Surface key={metric.label} variant="raised" paddingY="sm" paddingX="md">
+            <HStack gap="xs" align="center">
+              <Text variant="body2" weight="semibold">
+                {metric.value}
+              </Text>
+              <Text variant="body3" color="secondary">
+                {metric.label}
+              </Text>
+            </HStack>
+          </Surface>
+        ))}
+      </HStack>
+
+      <Separator tone="subtle" />
+
+      {/* ─── Documentation ─────────────────────────────────────────── */}
+      <LandingPageDocumentation />
+
+      <Separator tone="subtle" />
+
+      {/* ─── Final CTA ─────────────────────────────────────────────── */}
+      <LandingPageCTA />
+    </VStack>
   );
 }

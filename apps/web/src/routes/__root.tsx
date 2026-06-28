@@ -8,7 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { Header, ThemeEffect } from "@/components/header";
-import { Container } from "@blenx-dev/ui";
+import { Container, Separator } from "@blenx-dev/ui";
 import appCss from "@/app.css?url";
 import { Analytics } from "@vercel/analytics/react";
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
@@ -137,8 +137,11 @@ function RootDocument() {
           <ThemeEffect />
         </ClientOnly>
         <QueryClientProvider client={queryClient}>
-          <Header />
-          <Container size={"3xl"} render={<main />} px={"md"} color="secondary">
+          <Container size="4xl" py="xs" px="md">
+            <Header />
+          </Container>
+          <Separator />
+          <Container size={"4xl"} render={<main />} color="secondary">
             <Outlet />
           </Container>
         </QueryClientProvider>

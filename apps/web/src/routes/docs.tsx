@@ -133,21 +133,19 @@ function DocsPrevNext() {
 
 function DocsLayout() {
   return (
-    <Container size="2xl" centered py="md">
-      <HStack>
-        <ClientOnly>
-          <RenderSidebarNavs />
-        </ClientOnly>
-        <Box grow={1}>
-          <ScrollArea height="90svh">
-            <Outlet />
-          </ScrollArea>
-        </Box>
-        <ClientOnly>
-          <TocSection />
-        </ClientOnly>
-      </HStack>
-    </Container>
+    <HStack py="md">
+      <ClientOnly>
+        <RenderSidebarNavs />
+      </ClientOnly>
+      <Box grow={1}>
+        <ScrollArea height="90svh">
+          <Outlet />
+        </ScrollArea>
+      </Box>
+      <ClientOnly>
+        <TocSection />
+      </ClientOnly>
+    </HStack>
   );
 }
 

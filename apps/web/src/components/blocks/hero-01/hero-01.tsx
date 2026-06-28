@@ -1,9 +1,9 @@
 import { Button } from "@blenx-dev/ui/components/Button/button";
 import { Text } from "@blenx-dev/ui/components/Text/text";
 import { HStack, VStack, Stack } from "@blenx-dev/ui/components/Stack/stack";
-import { heroImage } from "./hero-01.styles";
 import { ImageIcon } from "@phosphor-icons/react";
 import { Container, Icon } from "@blenx-dev/ui";
+import { heroImage } from "@/lib/styles.css";
 
 type Cta = {
   label: string;

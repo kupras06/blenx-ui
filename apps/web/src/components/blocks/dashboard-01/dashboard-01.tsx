@@ -1,10 +1,10 @@
-import { Button } from "@blenx-dev/ui/components/Button/button";
-import { Text } from "@blenx-dev/ui/components/Text/text";
-import { Card, CardBody, CardTitle } from "@blenx-dev/ui/components/Card/card";
-import { Table } from "@blenx-dev/ui/components/Table/table";
-import { Badge } from "@blenx-dev/ui/components/Badge/badge";
-import { Surface } from "@blenx-dev/ui/components/Surface/surface";
-import type { Column } from "@blenx-dev/ui/components/Table/table";
+import { Button } from "@blenx-dev/ui/components/Button";
+import { Text } from "@blenx-dev/ui/components/Text";
+import { Card, CardBody, CardTitle } from "@blenx-dev/ui/components/Card";
+import { Table } from "@blenx-dev/ui/components/Table";
+import { Badge } from "@blenx-dev/ui/components/Badge";
+import { Surface } from "@blenx-dev/ui/components/Surface";
+import type { Column } from "@blenx-dev/ui/components/Table";
 import type { CSSProperties } from "react";
 import { Container, Grid, HStack, VStack } from "@blenx-dev/ui";
 
@@ -110,7 +110,7 @@ export function Dashboard01({
   ];
 
   return (
-    <Container aria-label="Dashboard">
+    <Container size="full" aria-label="Dashboard">
       <VStack>
         <VStack>
           <HStack justify="between" align="center">
@@ -125,9 +125,9 @@ export function Dashboard01({
           </HStack>
         </VStack>
 
-        <Grid aria-label="Key metrics" columns={4}>
+        <Grid aria-label="Key metrics" columns={{ base: 2, lg: 4 }} gap={"sm"}>
           {kpis.map((kpi) => (
-            <Card render={<li />} key={kpi.label}>
+            <Card key={kpi.label}>
               <CardBody>
                 <Text variant="caption" size="md" color="secondary">
                   {kpi.label}
