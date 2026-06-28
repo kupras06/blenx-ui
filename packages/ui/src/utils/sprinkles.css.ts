@@ -87,6 +87,7 @@ const layoutProperties = defineProperties({
       none: "none",
     },
     borderRadius: {
+      default: themeContract.borderRadius,
       none: "0",
       xxsmall: "2px",
       xsmall: "4px",
@@ -176,12 +177,10 @@ const responsiveSpacingProperties = defineProperties({
   conditions: responsiveConditions,
   defaultCondition: "base",
   properties: {
-    padding: spacing,
     paddingTop: spacing,
     paddingBottom: spacing,
     paddingLeft: spacing,
     paddingRight: spacing,
-    margin: spacing,
     marginTop: spacing,
     marginBottom: spacing,
     marginLeft: spacing,
@@ -191,11 +190,13 @@ const responsiveSpacingProperties = defineProperties({
     columnGap: spacing,
   },
   shorthands: {
+    padding: ["paddingTop", "paddingBottom", "paddingLeft", "paddingRight"],
     p: ["paddingTop", "paddingBottom", "paddingLeft", "paddingRight"],
     paddingX: ["paddingLeft", "paddingRight"],
     px: ["paddingLeft", "paddingRight"],
     py: ["paddingTop", "paddingBottom"],
     paddingY: ["paddingTop", "paddingBottom"],
+    margin: ["marginTop", "marginBottom", "marginLeft", "marginRight"],
     m: ["marginTop", "marginBottom", "marginLeft", "marginRight"],
     marginX: ["marginLeft", "marginRight"],
     mx: ["marginLeft", "marginRight"],
@@ -234,7 +235,13 @@ const gridProperties = defineProperties({
   },
 });
 
-export const gridSprinkles = createSprinkles(responsiveSpacingProperties, gridProperties);
+export const gridSprinkles = createSprinkles(
+  colorProperties,
+  positionProperties,
+  layoutProperties,
+  responsiveSpacingProperties,
+  gridProperties,
+);
 
 export const baseSprinkles = createSprinkles(
   layoutProperties,
