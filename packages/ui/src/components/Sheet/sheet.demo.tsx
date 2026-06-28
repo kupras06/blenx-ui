@@ -15,12 +15,12 @@ import {
 
 export function SheetDemo() {
   return (
-    <VStack gap="medium">
+    <VStack gap="md">
       <Text variant="h6">Sheet</Text>
       <Sheet>
         <SheetTrigger
           render={
-            <Button variant="outline" size="small">
+            <Button variant="outline" size="sm">
               Open Sheet
             </Button>
           }
@@ -31,7 +31,7 @@ export function SheetDemo() {
             <SheetDescription>Make changes to your profile information.</SheetDescription>
           </SheetHeader>
           <SheetPanel>
-            <VStack gap="small">
+            <VStack gap="sm">
               <Text variant="body2">Name</Text>
               <Text variant="body2" color="secondary">
                 Your display name as it appears to others.
@@ -39,7 +39,7 @@ export function SheetDemo() {
             </VStack>
           </SheetPanel>
           <SheetFooter>
-            <HStack gap="small" justify="end" wrap>
+            <HStack gap="sm" justify="end" wrap>
               <SheetClose render={<Button variant="ghost" />}>Cancel</SheetClose>
               <Button>Save</Button>
             </HStack>

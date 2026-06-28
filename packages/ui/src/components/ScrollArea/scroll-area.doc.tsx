@@ -6,11 +6,11 @@ import { ScrollArea } from "./scroll-area";
 export function DefaultStory() {
   return (
     <Card
-      padding="small"
+      padding="sm"
       // Style={{ height: 200, maxWidth: 300 }}
     >
       <ScrollArea>
-        <Stack gap="small" padding="medium">
+        <Stack gap="sm" padding="md">
           {Array.from({ length: 20 }, (_, i) => (
             // Biome-ignore lint/suspicious/noArrayIndexKey: noArrayIndexKey
             <Text key={i} variant="body2">
@@ -26,11 +26,11 @@ export function DefaultStory() {
 export function WithFadeStory() {
   return (
     <Card
-      padding="small"
+      padding="sm"
       // Style={{ height: 200, maxWidth: 300 }}
     >
       <ScrollArea scrollFade>
-        <Stack gap="small" padding="medium">
+        <Stack gap="sm" padding="md">
           {Array.from({ length: 20 }, (_, i) => (
             // Biome-ignore lint/suspicious/noArrayIndexKey: noArrayIndexKey
             <Text key={i} variant="body2">

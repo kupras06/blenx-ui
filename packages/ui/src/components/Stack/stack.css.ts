@@ -5,14 +5,14 @@ export const stackRecipe = recipe({
   variants: {
     gap: {
       none: { gap: 0 },
-      xxsmall: { gap: spacing.xxsmall },
-      xsmall: { gap: spacing.xsmall },
-      small: { gap: spacing.small },
-      medium: { gap: spacing.medium },
-      large: { gap: spacing.large },
-      xlarge: { gap: spacing.xlarge },
-      xxlarge: { gap: spacing.xxlarge },
-      xxxlarge: { gap: spacing.xxxlarge },
+      xxs: { gap: spacing.xxs },
+      xs: { gap: spacing.xs },
+      sm: { gap: spacing.sm },
+      md: { gap: spacing.md },
+      lg: { gap: spacing.lg },
+      xl: { gap: spacing.xl },
+      xxl: { gap: spacing.xxl },
+      xxxl: { gap: spacing.xxxl },
       huge: { gap: spacing.huge },
       massive: { gap: spacing.massive },
     },
@@ -37,6 +37,6 @@ export const stackRecipe = recipe({
     },
   },
   defaultVariants: {
-    gap: "medium",
+    gap: "md",
   },
 });

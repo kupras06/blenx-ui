@@ -24,7 +24,7 @@ function buildGuideSections(): SidebarSection[] {
   ];
 }
 
-export const Route = createFileRoute("/docs/guides")({
+export const Route = createFileRoute("/docs/guides/$guide")({
   beforeLoad: () => ({
     sidebarSections: buildGuideSections(),
   }),

@@ -4,9 +4,9 @@ import { Grid, GridItem } from "./grid";
 
 export function ColumnsStory() {
   return (
-    <Stack gap="medium">
+    <Stack gap="md">
       <Text variant="h4">3 columns</Text>
-      <Grid columns={3} gap="small">
+      <Grid columns={3} gap="sm">
         <GridItem>
           <div
             style={{
@@ -81,7 +81,7 @@ export function ColumnsStory() {
         </GridItem>
       </Grid>
       <Text variant="h4">4 columns with spans</Text>
-      <Grid columns={4} gap="small">
+      <Grid columns={4} gap="sm">
         <GridItem span={2}>
           <div
             style={{

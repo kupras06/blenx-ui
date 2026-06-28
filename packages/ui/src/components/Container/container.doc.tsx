@@ -4,7 +4,7 @@ import { Container } from "./container";
 
 export function SizesStory() {
   return (
-    <VStack gap="medium">
+    <VStack gap="md">
       <Text variant="h4">Container — sm</Text>
       <Container size="sm" centered>
         <div style={{ background: "var(--surface)", padding: 16, borderRadius: 8 }}>

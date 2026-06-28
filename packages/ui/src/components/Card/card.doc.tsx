@@ -4,8 +4,8 @@ import { Card, CardBody, CardDescription, CardFooter, CardHeader, CardTitle } fr
 
 export function DefaultStory() {
   return (
-    <Stack gap="medium">
-      <Card padding="medium">
+    <Stack gap="md">
+      <Card padding="md">
         <CardHeader>
           <CardTitle>Card Title</CardTitle>
           <CardDescription>Card description text</CardDescription>
@@ -25,20 +25,20 @@ export function DefaultStory() {
 
 export function PaddingVariantsStory() {
   return (
-    <Stack gap="medium">
-      <Card padding="small">
-        <CardHeader padding="small">
+    <Stack gap="md">
+      <Card padding="sm">
+        <CardHeader padding="sm">
           <CardTitle>Small</CardTitle>
         </CardHeader>
-        <CardBody padding="small">
+        <CardBody padding="sm">
           <Text variant="body2">Small padding variant</Text>
         </CardBody>
       </Card>
-      <Card padding="large">
-        <CardHeader padding="large">
+      <Card padding="lg">
+        <CardHeader padding="lg">
           <CardTitle>Large</CardTitle>
         </CardHeader>
-        <CardBody padding="large">
+        <CardBody padding="lg">
           <Text variant="body2">Large padding variant</Text>
         </CardBody>
       </Card>

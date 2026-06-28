@@ -80,12 +80,12 @@ export function Pricing01({
 
   return (
     <Container paddingY="huge" size="full">
-      <VStack align="center" gap="small">
+      <VStack align="center" gap="sm">
         <Text variant="h2">{title}</Text>
         <Text variant="body1" color="secondary">
           {description}
         </Text>
-        <HStack align="center" gap="xsmall" marginY="medium">
+        <HStack align="center" gap="xs" marginY="md">
           <Text variant="body2" color="secondary">
             Monthly
           </Text>
@@ -123,9 +123,9 @@ export function Pricing01({
             </CardHeader>
             <CardBody>
               <VStack justify="between">
-                <VStack gap="xsmall">
+                <VStack gap="xs">
                   {plan.features.map((feature) => (
-                    <HStack gap="xsmall" align="center" key={feature}>
+                    <HStack gap="xs" align="center" key={feature}>
                       <Icon color="success">
                         <CheckIcon />
                       </Icon>

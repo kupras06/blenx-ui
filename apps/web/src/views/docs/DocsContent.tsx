@@ -7,8 +7,8 @@ interface DocsContentProps {
 
 function DocsContent({ children }: DocsContentProps) {
   return (
-    <Box marginBottom="large">
-      <VStack gap="medium">{children}</VStack>
+    <Box marginBottom="lg">
+      <VStack gap="md">{children}</VStack>
     </Box>
   );
 }

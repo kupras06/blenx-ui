@@ -489,7 +489,7 @@ function RowActionsCell<TData>({ row, actions }: RowActionsCellProps<TData>) {
           <Button
             key={`row-action-${i.toString()}`}
             variant="ghost"
-            size="small"
+            size="sm"
             disabled={isDisabled}
             onClick={(e) => {
               e.stopPropagation();

@@ -10,7 +10,7 @@ export const root = style({
   flexShrink: 0,
   width: 18,
   height: 18,
-  borderRadius: borderRadius.small,
+  borderRadius: borderRadius.sm,
   borderWidth: borderWidth.thin,
   borderStyle: "solid",
   borderColor: themeContract.border,
@@ -40,7 +40,7 @@ export const group = style({
   display: "flex",
   flexDirection: "column",
   alignItems: "flex-start",
-  gap: spacing.small,
+  gap: spacing.sm,
 });
 
 export const indicator = style({
@@ -52,7 +52,7 @@ export const indicator = style({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  borderRadius: borderRadius.small,
+  borderRadius: borderRadius.sm,
   color: themeContract.contentOnPrimary,
 });
 

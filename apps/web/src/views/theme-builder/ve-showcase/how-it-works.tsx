@@ -42,7 +42,7 @@ export function HowItWorks() {
           the visual identity. These are declared with{" "}
           <Text variant="code">createThemeContract()</Text>:
         </Text>
-        <Box paddingY="medium">
+        <Box paddingY="md">
           <CodeBlock code={semanticCode} />
         </Box>
         <Text variant="p">
@@ -52,7 +52,7 @@ export function HowItWorks() {
           (like font sizes, spacing) are design primitives that stay consistent across themes:
         </Text>
         <Text variant="code">createThemeContract():</Text>
-        <Box paddingY="medium">
+        <Box paddingY="md">
           <CodeBlock code={concreteCode} />
         </Box>
         <Text variant="p">

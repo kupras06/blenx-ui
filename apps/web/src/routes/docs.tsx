@@ -61,7 +61,7 @@ function RenderSidebarNavs() {
 function TocSection() {
   return (
     <Container size="xxs" centered render={<aside />} aria-label="On this page">
-      <VStack gap="medium">
+      <VStack gap="md">
         <HStack align="center" justify="between">
           <Text variant="caption" color="secondary" transform="uppercase">
             On this page
@@ -108,7 +108,7 @@ function DocsPrevNext() {
   const next = currentIndex < allLinks.length - 1 ? allLinks[currentIndex + 1] : null;
 
   return (
-    <HStack gap="xxsmall" align="center">
+    <HStack gap="xxs" align="center">
       <IconButton
         intent="neutral"
         fullWidth
@@ -133,7 +133,7 @@ function DocsPrevNext() {
 
 function DocsLayout() {
   return (
-    <Container size="2xl" centered py="medium">
+    <Container size="2xl" centered py="md">
       <HStack>
         <ClientOnly>
           <RenderSidebarNavs />

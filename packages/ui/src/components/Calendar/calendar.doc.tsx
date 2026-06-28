@@ -3,7 +3,7 @@ import { Calendar } from "./calendar";
 
 export function DefaultStory() {
   return (
-    <Stack gap="small">
+    <Stack gap="sm">
       <Calendar mode="single" selected={new Date()} onSelect={() => {}} />
     </Stack>
   );

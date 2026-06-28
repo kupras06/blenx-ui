@@ -109,7 +109,7 @@ export function VerifyEmail01({
               </Button>
             </VStack>
 
-            <HStack align="center" justify="center" gap="medium">
+            <HStack align="center" justify="center" gap="md">
               <Text variant="caption" span>
                 Didn&apos;t receive the code?{" "}
               </Text>
@@ -118,7 +118,7 @@ export function VerifyEmail01({
                   Resend in {cooldown}s
                 </Text>
               ) : (
-                <Button type="button" variant="link" size="xsmall" onClick={handleResend}>
+                <Button type="button" variant="link" size="xs" onClick={handleResend}>
                   Resend code
                 </Button>
               )}

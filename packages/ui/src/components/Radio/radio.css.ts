@@ -39,7 +39,7 @@ export const rootDisabled = style({
 export const group = style({
   display: "flex",
   flexDirection: "column",
-  gap: spacing.small,
+  gap: spacing.sm,
 });
 
 export const indicator = style({

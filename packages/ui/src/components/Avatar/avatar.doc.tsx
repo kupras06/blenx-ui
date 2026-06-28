@@ -3,17 +3,17 @@ import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
 
 export function SizesStory() {
   return (
-    <Stack gap="medium" direction="row" align="center">
-      <Avatar size="small">
+    <Stack gap="md" direction="row" align="center">
+      <Avatar size="sm">
         <AvatarFallback>JD</AvatarFallback>
       </Avatar>
-      <Avatar size="medium">
+      <Avatar size="md">
         <AvatarFallback>AB</AvatarFallback>
       </Avatar>
-      <Avatar size="large">
+      <Avatar size="lg">
         <AvatarFallback>CD</AvatarFallback>
       </Avatar>
-      <Avatar size="xlarge">
+      <Avatar size="xl">
         <AvatarFallback>EF</AvatarFallback>
       </Avatar>
     </Stack>
@@ -22,8 +22,8 @@ export function SizesStory() {
 
 export function WithImageStory() {
   return (
-    <Stack gap="medium" direction="row" align="center">
-      <Avatar size="large">
+    <Stack gap="md" direction="row" align="center">
+      <Avatar size="lg">
         <AvatarImage src="https://i.pravatar.cc/150?u=avatar" alt="User avatar" />
         <AvatarFallback>JD</AvatarFallback>
       </Avatar>

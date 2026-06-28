@@ -87,14 +87,14 @@ ${themeEntries.join("\n")}
       </Accordion.Header>
       <Accordion.Panel>
         <VStack>
-          <VStack gap="small">
-            <Button variant="outline" size="small" onClick={generateJSON}>
+          <VStack gap="sm">
+            <Button variant="outline" size="sm" onClick={generateJSON}>
               Export JSON
             </Button>
-            <Button variant="outline" size="small" onClick={copyJSON}>
+            <Button variant="outline" size="sm" onClick={copyJSON}>
               {copied === "json" ? "Copied!" : "Copy JSON"}
             </Button>
-            <Button variant="outline" size="small" onClick={copyThemeCode}>
+            <Button variant="outline" size="sm" onClick={copyThemeCode}>
               {copied === "ve" ? "Copied!" : "Copy VE Theme"}
             </Button>
           </VStack>
@@ -106,7 +106,7 @@ ${themeEntries.join("\n")}
           <AlertDialog open={showReset} onOpenChange={setShowReset}>
             <AlertDialogTrigger
               render={
-                <Button intent="danger" size="small" fullWidth>
+                <Button intent="danger" size="sm" fullWidth>
                   Reset to Defaults
                 </Button>
               }
@@ -119,7 +119,7 @@ ${themeEntries.join("\n")}
                   undone.
                 </AlertDialogDescription>
               </AlertDialogHeader>
-              <VStack gap="small" padding="medium">
+              <VStack gap="sm" padding="md">
                 <Button intent="danger" fullWidth onClick={handleReset}>
                   Reset
                 </Button>

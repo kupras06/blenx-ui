@@ -28,11 +28,11 @@ export const indicator = style({
 });
 
 export const progressLabel = style({
-  fontSize: fontSize.medium,
+  fontSize: fontSize.md,
   fontWeight: fontWeight.medium,
 });
 
 export const value = style({
-  fontSize: fontSize.small,
+  fontSize: fontSize.sm,
   fontVariantNumeric: "tabular-nums",
 });

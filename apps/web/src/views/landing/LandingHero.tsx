@@ -5,24 +5,24 @@ import { Link } from "@tanstack/react-router";
 
 export function LandingHero() {
   return (
-    <Container size="3xl" paddingX="medium" paddingTop="large" paddingBottom="massive">
-      <VStack gap="large" align="center">
-        <Text variant="h1" textAlign="center" size="xxlarge">
+    <Container size="3xl" paddingX="md" paddingTop="lg" paddingBottom="massive">
+      <VStack gap="lg" align="center">
+        <Text variant="h1" textAlign="center" size="xxl">
           The shadcn/ui experience
           <br />
           for Vanilla Extract.
         </Text>
         <Box maxWidth={640} px={"2xl"}>
-          <Text variant="body1" size="large" color="secondary" textAlign="center">
+          <Text variant="body1" size="lg" color="secondary" textAlign="center">
             Accessible React components built with Vanilla Extract and Base UI. Copy the source. Own
             the code. Build without vendor lock-in.
           </Text>
         </Box>
-        <HStack gap="medium" wrap justify="center">
+        <HStack gap="md" wrap justify="center">
           <Button
-            size="large"
+            size="lg"
             variant="solid"
-            radius="small"
+            radius="sm"
             render={
               <Link
                 to="/docs/guides/$guide"
@@ -35,9 +35,9 @@ export function LandingHero() {
             Get Started <ArrowRightIcon weight="bold" />
           </Button>
           <Button
-            size="large"
+            size="lg"
             variant="outline"
-            radius="small"
+            radius="sm"
             render={
               <Link
                 to="/docs/guides/$guide"
@@ -50,9 +50,9 @@ export function LandingHero() {
             Browse Components
           </Button>
           <Button
-            size="large"
+            size="lg"
             variant="ghost"
-            radius="small"
+            radius="sm"
             render={
               <a href={GITHUB_URL} target="_blank" rel="noreferrer" aria-label="View on GitHub" />
             }
@@ -60,7 +60,7 @@ export function LandingHero() {
             GitHub ↗
           </Button>
         </HStack>
-        <HStack gap="small" wrap justify="center">
+        <HStack gap="sm" wrap justify="center">
           <Badge
             variant="secondary"
             // style={styles.badgePill}

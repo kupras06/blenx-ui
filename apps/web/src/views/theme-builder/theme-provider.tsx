@@ -6,9 +6,9 @@ import { useThemeBuilder } from "./theme-builder-context";
 
 const radiusMap: Record<string, string> = {
   none: "0px",
-  small: radiusTokens.small,
-  medium: radiusTokens.medium,
-  large: radiusTokens.large,
+  small: radiusTokens.sm,
+  medium: radiusTokens.md,
+  large: radiusTokens.lg,
   pill: radiusTokens.full,
 };
 
@@ -53,7 +53,7 @@ export function ThemePreviewProvider({ children }: { children: ReactNode }) {
       [themeContract.shadowLg, tokens.shadowLg],
       [themeContract.shadowXl, tokens.shadowXl],
       [themeContract.fontSize, tokens.fontSize],
-      [themeContract.borderRadius, radiusMap[tokens.borderRadius] ?? radiusTokens.medium],
+      [themeContract.borderRadius, radiusMap[tokens.borderRadius] ?? radiusTokens.md],
     ];
     for (const [k, v] of entries) {
       vars[cx(k)] = v;

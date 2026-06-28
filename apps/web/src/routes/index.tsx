@@ -82,8 +82,8 @@ export const Route = createFileRoute("/")({
 
 function HomeComponent() {
   return (
-    <Container size="3xl" paddingX="medium" paddingY="massive">
-      <VStack gap="xxxlarge">
+    <Container size="3xl" paddingX="md" paddingY="massive">
+      <VStack gap="xxxl">
         <LandingHero />
 
         <Separator tone="subtle" />
@@ -101,13 +101,13 @@ function HomeComponent() {
         <Separator tone="subtle" />
 
         {/* ─── Comparison ────────────────────────────────────────────── */}
-        <VStack gap="large">
-          <VStack gap="small" align="center">
+        <VStack gap="lg">
+          <VStack gap="sm" align="center">
             <Text variant="h2" align="center" className={sectionTitle}>
               How we compare
             </Text>
             <Box maxWidth={560} className={centeredBox}>
-              <Text variant="body2" color="secondary" align="center" size="large">
+              <Text variant="body2" color="secondary" align="center" size="lg">
                 See how Blenx compares to traditional UI libraries.
               </Text>
             </Box>
@@ -120,10 +120,10 @@ function HomeComponent() {
         <Separator tone="subtle" />
 
         {/* ─── Social Proof ──────────────────────────────────────────── */}
-        <HStack gap="medium" justify="center" wrap>
+        <HStack gap="md" justify="center" wrap>
           {metrics.map((metric) => (
-            <Surface key={metric.label} variant="raised" paddingY="small" paddingX="medium">
-              <HStack gap="xsmall" align="center">
+            <Surface key={metric.label} variant="raised" paddingY="sm" paddingX="md">
+              <HStack gap="xs" align="center">
                 <Text variant="body2" weight="semibold">
                   {metric.value}
                 </Text>

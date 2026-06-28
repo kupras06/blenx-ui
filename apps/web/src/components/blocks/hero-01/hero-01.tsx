@@ -33,7 +33,7 @@ export function Hero01({
     <Container content="center">
       <Stack
         align="center"
-        gap={"xxxlarge"}
+        gap={"xxxl"}
         direction={{
           base: "column",
           lg: "row",
@@ -49,7 +49,7 @@ export function Hero01({
             </Text>
           )}
           {(primaryCta || secondaryCta) && (
-            <HStack gap="small" align="center" wrap>
+            <HStack gap="sm" align="center" wrap>
               {primaryCta && (
                 <Button onClick={primaryCta.handleClick} fullWidth>
                   {primaryCta.label}

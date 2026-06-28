@@ -20,8 +20,8 @@ export const fetchingBar = style({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  padding: spacing.small,
-  gap: spacing.small,
+  padding: spacing.sm,
+  gap: spacing.sm,
 });
 
 export const fetchingText = style({
@@ -32,7 +32,7 @@ export const fetchingText = style({
 export const tableContainer = style({
   overflowX: "auto",
   overflowY: "auto",
-  borderRadius: borderRadius.medium,
+  borderRadius: borderRadius.md,
   borderWidth: 1,
   borderStyle: "solid",
   borderColor: themeContract.border,
@@ -113,7 +113,7 @@ export const td = style({
   paddingBottom: 10,
   paddingLeft: 12,
   paddingRight: 12,
-  fontSize: fontSize.small,
+  fontSize: fontSize.sm,
   color: themeContract.contentPrimary,
   borderBottomWidth: 1,
   borderBottomStyle: "solid",
@@ -206,7 +206,7 @@ export const loadingFooter = style({
 
 export const loadingText = style({
   color: themeContract.contentSecondary,
-  fontSize: fontSize.small,
+  fontSize: fontSize.sm,
 });
 
 // ─── Column toggle ───────────────────────────────────────────────────────────
@@ -262,10 +262,10 @@ export const emptyContainer = style({
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
-  paddingTop: spacing.xxxlarge,
-  paddingBottom: spacing.xxxlarge,
-  paddingLeft: spacing.medium,
-  paddingRight: spacing.medium,
+  paddingTop: spacing.xxxl,
+  paddingBottom: spacing.xxxl,
+  paddingLeft: spacing.md,
+  paddingRight: spacing.md,
   gap: 12,
 });
 
@@ -275,14 +275,14 @@ export const iconWrap = style({
 
 export const message = style({
   color: themeContract.contentSecondary,
-  fontSize: fontSize.small,
+  fontSize: fontSize.sm,
   lineHeight: 1.5,
   textAlign: "center",
   margin: 0,
 });
 
 export const actionWrap = style({
-  marginTop: spacing.xsmall,
+  marginTop: spacing.xs,
 });
 
 // ─── Error state ─────────────────────────────────────────────────────────────
@@ -292,16 +292,16 @@ export const errorContainer = style({
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
-  paddingTop: spacing.xxxlarge,
-  paddingBottom: spacing.xxxlarge,
-  paddingLeft: spacing.medium,
-  paddingRight: spacing.medium,
+  paddingTop: spacing.xxxl,
+  paddingBottom: spacing.xxxl,
+  paddingLeft: spacing.md,
+  paddingRight: spacing.md,
   gap: 12,
 });
 
 export const errorMessage = style({
   color: themeContract.sentimentNegative,
-  fontSize: fontSize.small,
+  fontSize: fontSize.sm,
   lineHeight: 1.5,
   textAlign: "center",
   margin: 0,
@@ -313,31 +313,31 @@ export const sentinel = style({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  padding: spacing.medium,
+  padding: spacing.md,
   minHeight: 48,
 });
 
 export const loadingInline = style({
   display: "flex",
   alignItems: "center",
-  gap: spacing.small,
+  gap: spacing.sm,
 });
 
 export const loaderLoadingText = style({
   color: themeContract.contentSecondary,
-  fontSize: fontSize.small,
+  fontSize: fontSize.sm,
 });
 
 export const noMore = style({
   color: themeContract.contentDisabled,
-  fontSize: fontSize.small,
+  fontSize: fontSize.sm,
 });
 
 export const center = style({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  padding: spacing.medium,
+  padding: spacing.md,
 });
 
 // ─── Pagination ──────────────────────────────────────────────────────────────
@@ -346,31 +346,31 @@ export const nav = style({
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
-  paddingTop: spacing.small,
-  paddingBottom: spacing.small,
+  paddingTop: spacing.sm,
+  paddingBottom: spacing.sm,
 });
 
 export const info = style({
   color: themeContract.contentSecondary,
-  fontSize: fontSize.small,
+  fontSize: fontSize.sm,
 });
 
 export const controls = style({
   display: "flex",
   alignItems: "center",
-  gap: spacing.small,
+  gap: spacing.sm,
 });
 
 export const range = style({
   color: themeContract.contentSecondary,
-  fontSize: fontSize.small,
+  fontSize: fontSize.sm,
   whiteSpace: "nowrap",
 });
 
 export const buttonGroup = style({
   display: "flex",
   alignItems: "center",
-  gap: spacing.xsmall,
+  gap: spacing.xs,
 });
 
 export const pageWrap = style({
@@ -381,9 +381,9 @@ export const pageWrap = style({
 
 export const ellipsis = style({
   color: themeContract.contentDisabled,
-  fontSize: fontSize.small,
-  paddingLeft: spacing.xsmall,
-  paddingRight: spacing.xsmall,
+  fontSize: fontSize.sm,
+  paddingLeft: spacing.xs,
+  paddingRight: spacing.xs,
 });
 
 export const pageButton = style({
@@ -397,22 +397,22 @@ export const toolbarContainer = style({
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
-  gap: spacing.medium,
-  paddingTop: spacing.small,
-  paddingBottom: spacing.small,
+  gap: spacing.md,
+  paddingTop: spacing.sm,
+  paddingBottom: spacing.sm,
 });
 
 export const leftGroup = style({
   display: "flex",
   alignItems: "center",
-  gap: spacing.small,
+  gap: spacing.sm,
   flex: 1,
 });
 
 export const rightGroup = style({
   display: "flex",
   alignItems: "center",
-  gap: spacing.small,
+  gap: spacing.sm,
 });
 
 export const searchWrap = style({

@@ -39,7 +39,7 @@ export const tocRoot = style({
   width: "220px",
   flexShrink: 0,
   position: "sticky",
-  top: spacing.large,
+  top: spacing.lg,
   alignSelf: "start",
   maxHeight: "90svh",
   overflowY: "auto",
@@ -65,7 +65,7 @@ export const tableHeaderRow = style({
 export const tableHeaderCell = style({
   padding: "10px 16px",
   fontWeight: 600,
-  fontSize: fontSize.small,
+  fontSize: fontSize.sm,
   textAlign: "left",
   whiteSpace: "nowrap",
   color: themeContract.contentPrimary,
@@ -74,7 +74,7 @@ export const tableHeaderCell = style({
 
 export const tableCell = style({
   padding: "10px 16px",
-  fontSize: fontSize.small,
+  fontSize: fontSize.sm,
   borderBottom: `1px solid ${themeContract.borderSubtle}`,
   color: themeContract.contentSecondary,
   verticalAlign: "top",
@@ -107,15 +107,15 @@ export const installList = style({
 export const installItem = style({
   margin: 0,
   fontFamily: "ui-monospace, SFMono-Regular, monospace",
-  fontSize: fontSize.small,
+  fontSize: fontSize.sm,
 });
 
 export const installCode = style({
   color: themeContract.contentSecondary,
   backgroundColor: themeContract.surfaceSubtle,
   padding: "1px 6px",
-  borderRadius: borderRadius.small,
-  fontSize: fontSize.small,
+  borderRadius: borderRadius.sm,
+  fontSize: fontSize.sm,
 });
 
 /* ── CodeBlock ── */
@@ -127,8 +127,8 @@ export const codeHeader = style({
   padding: "8px 16px",
   backgroundColor: themeContract.surface,
   borderBottom: `1px solid ${themeContract.borderSubtle}`,
-  borderRadius: `${borderRadius.medium} ${borderRadius.medium} 0 0`,
-  fontSize: fontSize.xsmall,
+  borderRadius: `${borderRadius.md} ${borderRadius.md} 0 0`,
+  fontSize: fontSize.xs,
   color: themeContract.contentSecondary,
 });
 
@@ -218,7 +218,7 @@ export const docsTableCode = style({
   fontSize: 13,
   backgroundColor: themeContract.surfaceSubtle,
   padding: "2px 6px",
-  borderRadius: borderRadius.small,
+  borderRadius: borderRadius.sm,
 });
 
 /* ── DocsParagraph ── */
@@ -273,20 +273,20 @@ export const kpiGrid = style({
 });
 
 export const kpiValue = style({
-  fontSize: fontSize.xlarge,
+  fontSize: fontSize.xl,
   fontWeight: 700,
   color: themeContract.contentPrimary,
 });
 
 export const kpiLabel = style({
-  fontSize: fontSize.xsmall,
+  fontSize: fontSize.xs,
   color: themeContract.contentSecondary,
   marginTop: spacing["1"],
 });
 
 export const trendUp = style({
   color: themeContract.sentimentPositive,
-  fontSize: fontSize.xsmall,
+  fontSize: fontSize.xs,
   display: "flex",
   alignItems: "center",
   gap: spacing["1"],
@@ -295,7 +295,7 @@ export const trendUp = style({
 
 export const trendDown = style({
   color: themeContract.sentimentNegative,
-  fontSize: fontSize.xsmall,
+  fontSize: fontSize.xs,
   display: "flex",
   alignItems: "center",
   gap: spacing["1"],
@@ -326,13 +326,13 @@ export const profileInfo = style({
 });
 
 export const profileName = style({
-  fontSize: fontSize.medium,
+  fontSize: fontSize.md,
   fontWeight: 600,
   color: themeContract.contentPrimary,
 });
 
 export const profileEmail = style({
-  fontSize: fontSize.small,
+  fontSize: fontSize.sm,
   color: themeContract.contentSecondary,
 });
 
@@ -348,14 +348,14 @@ export const chartPlaceholder = style({
   justifyContent: "center",
   minHeight: 200,
   color: themeContract.contentDisabled,
-  fontSize: fontSize.small,
+  fontSize: fontSize.sm,
 });
 
 /* ── Impact Summary ── */
 
 export const impactPanel = style({
   padding: spacing["2"],
-  borderRadius: borderRadius.medium,
+  borderRadius: borderRadius.md,
   backgroundColor: themeContract.surfaceRaised,
   borderWidth: 1,
   borderStyle: "solid",
@@ -364,7 +364,7 @@ export const impactPanel = style({
 
 export const impactEmpty = style({
   color: themeContract.contentDisabled,
-  fontSize: fontSize.xsmall,
+  fontSize: fontSize.xs,
   textAlign: "center",
   paddingBlock: spacing["2"],
 });
@@ -382,7 +382,7 @@ export const impactChip = style({
   borderRadius: borderRadius.full,
   backgroundColor: `${themeContract.primary}15`,
   color: themeContract.primary,
-  fontSize: fontSize.xsmall,
+  fontSize: fontSize.xs,
   fontWeight: 500,
 });
 
@@ -390,7 +390,7 @@ export const logoStyles = style({
   textDecoration: "none",
   color: themeContract.contentPrimary,
   fontWeight: 700,
-  fontSize: fontSize.large,
+  fontSize: fontSize.lg,
   letterSpacing: letterSpacing.tight,
   lineHeight: 1,
 });

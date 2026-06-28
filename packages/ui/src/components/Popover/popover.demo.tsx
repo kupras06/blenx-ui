@@ -12,16 +12,16 @@ import {
 
 export function DefaultStory() {
   return (
-    <Stack gap="small" align="start">
+    <Stack gap="sm" align="start">
       <Text variant="body2">Click the button to open a popover</Text>
       <Popover>
         <PopoverTrigger render={<Button variant="outline">Open Popover</Button>} />
         <PopoverPopup>
           <PopoverArrow />
-          <Stack gap="small" padding="medium">
+          <Stack gap="sm" padding="md">
             <PopoverTitle>Popover Title</PopoverTitle>
             <PopoverDescription>This is a popover. It can contain any content.</PopoverDescription>
-            <Button size="small" variant="solid">
+            <Button size="sm" variant="solid">
               Action
             </Button>
           </Stack>

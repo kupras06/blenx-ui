@@ -4,7 +4,7 @@ import { Tabs, TabsList, TabsPanel, TabsTab } from "./tabs";
 
 export function TabsDemo() {
   return (
-    <VStack gap="medium">
+    <VStack gap="md">
       <Tabs defaultValue="tab1">
         <TabsList>
           <TabsTab value="tab1">Overview</TabsTab>

@@ -18,7 +18,7 @@ export function DataTableColumnToggle<TData>({ table }: DataTableColumnTogglePro
 
   return (
     <Menu>
-      <MenuTrigger render={<Button variant="outline" size="small" />}>
+      <MenuTrigger render={<Button variant="outline" size="sm" />}>
         <ListIcon size={16} />
         <span>Columns</span>
       </MenuTrigger>

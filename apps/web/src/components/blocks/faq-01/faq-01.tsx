@@ -44,7 +44,7 @@ export function Faq01({
 
   return (
     <Container size="md">
-      <VStack gap="large">
+      <VStack gap="lg">
         <Box>
           <Text variant="h2" align="center">
             {title}
@@ -81,7 +81,7 @@ export function Faq01({
               ))}
             </AccordionRoot>
           ) : (
-            <Text variant="body1" size="large" color="secondary">
+            <Text variant="body1" size="lg" color="secondary">
               No questions match your search.
             </Text>
           )}

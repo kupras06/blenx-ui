@@ -13,7 +13,7 @@ import {
 export const root = style({
   display: "flex",
   flexDirection: "column",
-  gap: spacing.medium,
+  gap: spacing.md,
   width: "100%",
   border: "none",
   backgroundColor: "transparent",
@@ -25,7 +25,7 @@ export const root = style({
 export const rootVertical = style({
   flexDirection: "row",
   alignItems: "flex-start",
-  gap: spacing.large,
+  gap: spacing.lg,
 });
 
 export const list = style({
@@ -54,7 +54,7 @@ export const listDefault = style({
 export const listUnderline = style({
   display: "flex",
   alignItems: "stretch",
-  gap: spacing.large,
+  gap: spacing.lg,
   borderBottomWidth: 1,
   borderBottomStyle: "solid",
   borderBottomColor: themeContract.borderSubtle,
@@ -67,7 +67,7 @@ export const listUnderlineVertical = style({
   alignItems: "stretch",
   gap: 0,
   padding: 0,
-  paddingRight: spacing.small,
+  paddingRight: spacing.sm,
   backgroundColor: "transparent",
   borderRightWidth: 1,
   borderRightStyle: "solid",
@@ -103,12 +103,12 @@ export const tabUnderlineActive = style({
 
 export const listGhost = style({
   display: "flex",
-  gap: spacing.small,
+  gap: spacing.sm,
 });
 
 export const tabGhost = style({
-  padding: `${spacing.small} ${spacing.medium}`,
-  borderRadius: borderRadius.medium,
+  padding: `${spacing.sm} ${spacing.md}`,
+  borderRadius: borderRadius.md,
   color: themeContract.contentSecondary,
   selectors: {
     "&:hover": {
@@ -125,18 +125,18 @@ export const tabGhostActive = style({
 
 export const listSegmented = style({
   display: "flex",
-  gap: spacing.xxsmall,
-  padding: spacing.xxsmall,
+  gap: spacing.xxs,
+  padding: spacing.xxs,
   backgroundColor: themeContract.backgroundSubtle,
   borderWidth: 1,
   borderStyle: "solid",
   borderColor: themeContract.borderSubtle,
-  borderRadius: borderRadius.large,
+  borderRadius: borderRadius.lg,
 });
 
 export const tabSegmented = style({
-  padding: `${spacing.small} ${spacing.medium}`,
-  borderRadius: borderRadius.medium,
+  padding: `${spacing.sm} ${spacing.md}`,
+  borderRadius: borderRadius.md,
   color: themeContract.contentSecondary,
   selectors: {
     "&:hover": {
@@ -157,7 +157,7 @@ export const tab = style({
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
-  gap: spacing.xsmall,
+  gap: spacing.xs,
   minHeight: 36,
   backgroundColor: "transparent",
   cursor: "pointer",
@@ -176,10 +176,10 @@ export const tab = style({
 
 export const tabDefault = style({
   position: "relative",
-  padding: `${spacing.small} ${spacing.medium}`,
+  padding: `${spacing.sm} ${spacing.md}`,
   borderRadius: 0,
   color: themeContract.contentSecondary,
-  fontSize: fontSize.small,
+  fontSize: fontSize.sm,
   fontWeight: fontWeight.medium,
   lineHeight: 1.2,
   minHeight: 40,
@@ -220,10 +220,10 @@ export const tabActiveDefault = style({
 });
 
 export const tabUnderline = style({
-  padding: `${spacing.small} 0`,
+  padding: `${spacing.sm} 0`,
   borderRadius: 0,
   color: themeContract.contentSecondary,
-  fontSize: fontSize.small,
+  fontSize: fontSize.sm,
   fontWeight: fontWeight.medium,
   backgroundColor: "transparent",
   selectors: {
@@ -250,7 +250,7 @@ export const indicatorUnderline = style({
 
 export const panel = style({
   minWidth: 0,
-  paddingTop: spacing.large,
+  paddingTop: spacing.lg,
   outline: "none",
 });
 

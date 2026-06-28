@@ -14,10 +14,10 @@ export const label = style({
 export const input = style({
   width: "100%",
   boxSizing: "border-box",
-  paddingTop: spacing.small,
-  paddingBottom: spacing.small,
-  paddingLeft: spacing.medium,
-  paddingRight: spacing.medium,
+  paddingTop: spacing.sm,
+  paddingBottom: spacing.sm,
+  paddingLeft: spacing.md,
+  paddingRight: spacing.md,
   fontSize: 16,
   lineHeight: 1.5,
   color: themeContract.contentPrimary,
@@ -47,18 +47,18 @@ export const input = style({
 });
 
 export const inputSm = style({
-  paddingTop: spacing.xsmall,
-  paddingBottom: spacing.xsmall,
-  paddingLeft: spacing.small,
-  paddingRight: spacing.small,
+  paddingTop: spacing.xs,
+  paddingBottom: spacing.xs,
+  paddingLeft: spacing.sm,
+  paddingRight: spacing.sm,
   fontSize: 16,
 });
 
 export const inputLg = style({
-  paddingTop: spacing.medium,
-  paddingBottom: spacing.medium,
-  paddingLeft: spacing.large,
-  paddingRight: spacing.large,
+  paddingTop: spacing.md,
+  paddingBottom: spacing.md,
+  paddingLeft: spacing.lg,
+  paddingRight: spacing.lg,
   fontSize: 16,
 });
 

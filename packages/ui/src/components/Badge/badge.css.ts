@@ -5,7 +5,7 @@ import { spacing } from "@blenx-dev/theme/tokens";
 export const badgeRecipe = recipe({
   base: {
     display: "inline-block",
-    padding: spacing.xsmall,
+    padding: spacing.xs,
     borderRadius: themeContract.borderRadius,
     fontSize: 12,
     lineHeight: 1.2,

@@ -4,7 +4,7 @@ import { Field, FieldError, FieldLabel } from "./field";
 
 export function DefaultStory() {
   return (
-    <Stack gap="medium">
+    <Stack gap="md">
       <Field>
         <FieldLabel>Email</FieldLabel>
         <Input type="email" placeholder="you@example.com" />

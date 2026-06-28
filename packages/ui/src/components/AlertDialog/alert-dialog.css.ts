@@ -17,7 +17,7 @@ export const viewport = style({
   display: "grid",
   gridTemplateRows: "1fr auto 3fr",
   justifyItems: "center",
-  padding: spacing.medium,
+  padding: spacing.md,
   boxSizing: "border-box",
 });
 
@@ -61,7 +61,7 @@ export const viewportShellBottomStickOnMobile = style({
       display: "flex",
       alignItems: "flex-end",
       justifyContent: "center",
-      padding: spacing.small,
+      padding: spacing.sm,
       paddingBottom: 0,
     },
   },
@@ -88,18 +88,18 @@ export const closeButton = style({
 export const header = style({
   display: "flex",
   flexDirection: "column",
-  gap: spacing.xxsmall,
-  padding: spacing.medium,
+  gap: spacing.xxs,
+  padding: spacing.md,
   boxSizing: "border-box",
-  paddingBottom: spacing.xsmall,
+  paddingBottom: spacing.xs,
 });
 
 export const footer = style({
   display: "flex",
   flexDirection: "column-reverse",
-  gap: spacing.small,
-  paddingLeft: spacing.medium,
-  paddingRight: spacing.medium,
+  gap: spacing.sm,
+  paddingLeft: spacing.md,
+  paddingRight: spacing.md,
   boxSizing: "border-box",
   "@media": {
     "(min-width: 640px)": {
@@ -116,31 +116,31 @@ export const footerDefault = style({
   borderTopStyle: "solid",
   borderTopColor: themeContract.borderSubtle,
   backgroundColor: themeContract.backgroundSubtle,
-  paddingTop: spacing.medium,
-  paddingBottom: spacing.medium,
+  paddingTop: spacing.md,
+  paddingBottom: spacing.md,
 });
 
 export const footerBare = style({
-  paddingTop: spacing.medium,
-  paddingBottom: spacing.large,
+  paddingTop: spacing.md,
+  paddingBottom: spacing.lg,
 });
 
 export const title = style({
-  fontSize: fontSize.large,
+  fontSize: fontSize.lg,
   lineHeight: lineHeight.tight,
   fontWeight: fontWeight.semibold,
   color: themeContract.contentPrimary,
 });
 
 export const description = style({
-  fontSize: fontSize.small,
+  fontSize: fontSize.sm,
   lineHeight: lineHeight.normal,
   color: themeContract.contentSecondary,
 });
 
 export const panel = style({
   boxSizing: "border-box",
-  padding: spacing.medium,
-  paddingTop: spacing.xxsmall,
-  paddingBottom: spacing.xxsmall,
+  padding: spacing.md,
+  paddingTop: spacing.xxs,
+  paddingBottom: spacing.xxs,
 });

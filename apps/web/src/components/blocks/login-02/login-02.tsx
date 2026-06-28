@@ -49,7 +49,7 @@ export function Login02({
     <Container content="center" paddingY="huge">
       <Card maxWidth="sm">
         <CardBody>
-          <VStack align="center" gap="small">
+          <VStack align="center" gap="sm">
             {flow === "password" && (
               <Progress value={step === "email" ? 1 : 2} max={2} aria-label="Sign in progress" />
             )}
@@ -70,7 +70,7 @@ export function Login02({
           {step === "email" && (
             <VStack
               render={<form onSubmit={handleEmailSubmit} aria-label="Enter email" />}
-              gap="medium"
+              gap="md"
             >
               <Field>
                 <FieldLabel htmlFor="login2-email">Email</FieldLabel>
@@ -100,9 +100,9 @@ export function Login02({
                 />
               }
               align="start"
-              gap="medium"
+              gap="md"
             >
-              <Button type="button" variant="ghost" size="xsmall" onClick={() => setStep("email")}>
+              <Button type="button" variant="ghost" size="xs" onClick={() => setStep("email")}>
                 <ArrowLeftIcon />
                 {email}
               </Button>
@@ -127,7 +127,7 @@ export function Login02({
           )}
 
           {step === "confirmation" && (
-            <VStack align="center" marginY="medium">
+            <VStack align="center" marginY="md">
               <Text variant="h4">Check your inbox</Text>
               <Text variant="body2">
                 We&apos;ve sent a magic link to <strong>{email}</strong>. Click the link to sign in

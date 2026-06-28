@@ -20,7 +20,7 @@ export const variant = recipe({
     display: "inline-flex",
     alignItems: "center",
     justifyContent: "center",
-    gap: spacing.small,
+    gap: spacing.sm,
     borderStyle: "solid",
     borderWidth: 1,
     borderRadius: themeContract.borderRadius,
@@ -135,21 +135,21 @@ export const variant = recipe({
       },
     },
     size: {
-      xsmall: {
-        padding: `${spacing.xxsmall} ${spacing.xsmall}`,
-        fontSize: fontSize.small,
+      xs: {
+        padding: `${spacing.xxs} ${spacing.xs}`,
+        fontSize: fontSize.sm,
       },
-      small: {
-        padding: `${spacing.xsmall} ${spacing.small}`,
-        fontSize: fontSize.small,
+      sm: {
+        padding: `${spacing.xs} ${spacing.sm}`,
+        fontSize: fontSize.sm,
       },
       icon: {
-        padding: `${spacing.xsmall} ${spacing.xsmall}`,
+        padding: `${spacing.xs} ${spacing.xs}`,
       },
-      medium: { padding: `${spacing.small} ${spacing.medium}` },
-      large: {
-        padding: `${spacing.medium} ${spacing.large}`,
-        fontSize: fontSize.large,
+      md: { padding: `${spacing.sm} ${spacing.md}` },
+      lg: {
+        padding: `${spacing.md} ${spacing.lg}`,
+        fontSize: fontSize.lg,
       },
     },
     variant: {

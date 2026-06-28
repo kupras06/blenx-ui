@@ -29,9 +29,9 @@ function BlockVariantPage() {
   if (!blockGroup || !doc) throw notFound();
 
   return (
-    <Box marginBottom="large">
-      <VStack gap="medium">
-        <VStack gap="small">
+    <Box marginBottom="lg">
+      <VStack gap="md">
+        <VStack gap="sm">
           <Text variant="h1">{blockGroup.title}</Text>
           <Text variant="body2" color="secondary">
             {blockGroup.description}
@@ -43,9 +43,9 @@ function BlockVariantPage() {
         <nav
           style={{
             display: "flex",
-            gap: spacing.xsmall,
+            gap: spacing.xs,
             flexWrap: "wrap",
-            paddingBottom: spacing.medium,
+            paddingBottom: spacing.md,
           }}
         >
           {variants.map((v) => {
@@ -59,9 +59,9 @@ function BlockVariantPage() {
                 style={{
                   textDecoration: "none",
                   color: isActive ? themeContract.contentPrimary : themeContract.contentSecondary,
-                  fontSize: fontSize.small,
+                  fontSize: fontSize.sm,
                   padding: "4px 12px",
-                  borderRadius: borderRadius.small,
+                  borderRadius: borderRadius.sm,
                   border: `1px solid ${themeContract.border}`,
                   backgroundColor: isActive ? themeContract.surface : undefined,
                 }}

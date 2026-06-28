@@ -129,15 +129,9 @@ export function Profile01({
             <CardTitle>Notifications</CardTitle>
           </CardHeader>
           <CardBody>
-            <VStack gap="small">
+            <VStack gap="sm">
               {notifications.map((setting) => (
-                <HStack
-                  key={setting.key}
-                  gap="xsmall"
-                  align="center"
-                  justify="between"
-                  paddingY="small"
-                >
+                <HStack key={setting.key} gap="xs" align="center" justify="between" paddingY="sm">
                   <Box>
                     <Text variant="body2" weight="medium">
                       {setting.title}
@@ -165,7 +159,7 @@ export function Profile01({
           </CardBody>
         </Card>
 
-        <VStack withBorder padding="medium">
+        <VStack withBorder padding="md">
           <Text variant="h5" color="error">
             Danger Zone
           </Text>

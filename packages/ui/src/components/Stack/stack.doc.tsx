@@ -4,15 +4,15 @@ import { HStack, Stack, VStack } from "./stack";
 
 export function VStackStory() {
   return (
-    <VStack gap="small">
+    <VStack gap="sm">
       <Text variant="h4">VStack (column)</Text>
-      <Card padding="small">
+      <Card padding="sm">
         <Text variant="body2">Item 1</Text>
       </Card>
-      <Card padding="small">
+      <Card padding="sm">
         <Text variant="body2">Item 2</Text>
       </Card>
-      <Card padding="small">
+      <Card padding="sm">
         <Text variant="body2">Item 3</Text>
       </Card>
     </VStack>
@@ -21,16 +21,16 @@ export function VStackStory() {
 
 export function HStackStory() {
   return (
-    <Stack gap="medium">
+    <Stack gap="md">
       <Text variant="h4">HStack (row)</Text>
-      <HStack gap="small">
-        <Card padding="small">
+      <HStack gap="sm">
+        <Card padding="sm">
           <Text variant="body2">Item 1</Text>
         </Card>
-        <Card padding="small">
+        <Card padding="sm">
           <Text variant="body2">Item 2</Text>
         </Card>
-        <Card padding="small">
+        <Card padding="sm">
           <Text variant="body2">Item 3</Text>
         </Card>
       </HStack>
@@ -40,14 +40,14 @@ export function HStackStory() {
 
 export function GapVariantsStory() {
   return (
-    <VStack gap="medium">
+    <VStack gap="md">
       <Text variant="h4">Gap sizes</Text>
-      {(["xxsmall", "xsmall", "small", "medium", "large"] as const).map((gap) => (
+      {(["xxs", "xs", "small", "medium", "large"] as const).map((gap) => (
         <HStack key={gap} gap={gap}>
-          <Card padding="small">
+          <Card padding="sm">
             <Text variant="body3">{gap}</Text>
           </Card>
-          <Card padding="small">
+          <Card padding="sm">
             <Text variant="body3">Item</Text>
           </Card>
         </HStack>

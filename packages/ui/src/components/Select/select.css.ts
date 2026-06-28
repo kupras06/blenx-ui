@@ -3,26 +3,26 @@ import { themeContract } from "@blenx-dev/theme/contract";
 import { borderRadius, fontSize, fontWeight, spacing } from "@blenx-dev/theme/tokens";
 
 export const label = style({
-  fontSize: fontSize.xsmall,
+  fontSize: fontSize.xs,
   fontWeight: fontWeight.semibold,
   color: themeContract.contentSecondary,
-  paddingBottom: spacing.xsmall,
-  paddingLeft: spacing.xsmall,
-  paddingRight: spacing.xsmall,
+  paddingBottom: spacing.xs,
+  paddingLeft: spacing.xs,
+  paddingRight: spacing.xs,
 });
 
 export const trigger = style({
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
-  gap: spacing.small,
+  gap: spacing.sm,
   boxSizing: "border-box",
   width: "100%",
-  paddingTop: spacing.small,
-  paddingBottom: spacing.small,
-  paddingLeft: spacing.medium,
-  paddingRight: spacing.small,
-  fontSize: fontSize.small,
+  paddingTop: spacing.sm,
+  paddingBottom: spacing.sm,
+  paddingLeft: spacing.md,
+  paddingRight: spacing.sm,
+  fontSize: fontSize.sm,
   lineHeight: "1.5",
   fontFamily: "inherit",
   color: themeContract.contentPrimary,
@@ -30,7 +30,7 @@ export const trigger = style({
   borderWidth: 1,
   borderStyle: "solid",
   borderColor: themeContract.border,
-  borderRadius: borderRadius.medium,
+  borderRadius: borderRadius.md,
   outline: "none",
   cursor: "pointer",
   transition: "border-color 0.15s ease, box-shadow 0.15s ease",
@@ -53,18 +53,18 @@ export const trigger = style({
 });
 
 export const triggerSm = style({
-  paddingTop: spacing.xsmall,
-  paddingBottom: spacing.xsmall,
-  paddingLeft: spacing.small,
-  paddingRight: spacing.xsmall,
+  paddingTop: spacing.xs,
+  paddingBottom: spacing.xs,
+  paddingLeft: spacing.sm,
+  paddingRight: spacing.xs,
   fontSize: 14,
 });
 
 export const triggerLg = style({
-  paddingTop: spacing.medium,
-  paddingBottom: spacing.medium,
-  paddingLeft: spacing.large,
-  paddingRight: spacing.medium,
+  paddingTop: spacing.md,
+  paddingBottom: spacing.md,
+  paddingLeft: spacing.lg,
+  paddingRight: spacing.md,
   fontSize: 16,
 });
 
@@ -78,13 +78,13 @@ export const icon = style({
 export const popup = style({
   boxSizing: "border-box",
   maxHeight: 300,
-  paddingTop: spacing.xsmall,
-  paddingBottom: spacing.xsmall,
+  paddingTop: spacing.xs,
+  paddingBottom: spacing.xs,
   backgroundColor: themeContract.surface,
   borderWidth: 1,
   borderStyle: "solid",
   borderColor: themeContract.border,
-  borderRadius: borderRadius.large,
+  borderRadius: borderRadius.lg,
   boxShadow: themeContract.shadowLg,
   zIndex: 1400,
   minWidth: "var(--anchor-width)",
@@ -101,17 +101,17 @@ export const popup = style({
 export const item = style({
   display: "flex",
   alignItems: "center",
-  gap: spacing.small,
+  gap: spacing.sm,
   boxSizing: "border-box",
   minHeight: 32,
-  paddingTop: spacing.xsmall,
-  paddingBottom: spacing.xsmall,
-  paddingLeft: spacing.small,
-  paddingRight: spacing.small,
-  marginLeft: spacing.xsmall,
-  marginRight: spacing.xsmall,
-  borderRadius: borderRadius.small,
-  fontSize: fontSize.small,
+  paddingTop: spacing.xs,
+  paddingBottom: spacing.xs,
+  paddingLeft: spacing.sm,
+  paddingRight: spacing.sm,
+  marginLeft: spacing.xs,
+  marginRight: spacing.xs,
+  borderRadius: borderRadius.sm,
+  fontSize: fontSize.sm,
   lineHeight: "1.4",
   color: themeContract.contentPrimary,
   cursor: "pointer",
@@ -152,17 +152,17 @@ export const itemIndicator = style({
 
 export const separator = style({
   height: 1,
-  marginTop: spacing.xsmall,
-  marginBottom: spacing.xsmall,
+  marginTop: spacing.xs,
+  marginBottom: spacing.xs,
   backgroundColor: themeContract.borderSubtle,
 });
 
 export const groupLabel = style({
-  paddingTop: spacing.small,
-  paddingBottom: spacing.xsmall,
-  paddingLeft: spacing.small,
-  paddingRight: spacing.small,
-  fontSize: fontSize.xsmall,
+  paddingTop: spacing.sm,
+  paddingBottom: spacing.xs,
+  paddingLeft: spacing.sm,
+  paddingRight: spacing.sm,
+  fontSize: fontSize.xs,
   fontWeight: fontWeight.semibold,
   color: themeContract.contentSecondary,
 });

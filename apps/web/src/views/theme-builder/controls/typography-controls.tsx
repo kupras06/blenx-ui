@@ -11,7 +11,7 @@ export function TypographyControls() {
         <Accordion.Trigger>Typography</Accordion.Trigger>
       </Accordion.Header>
       <Accordion.Panel>
-        <VStack gap="medium">
+        <VStack gap="md">
           <HStack justify="between">
             <Text variant="body2">Base Font Size</Text>
             <Text variant="body2" color="secondary">

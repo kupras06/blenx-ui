@@ -45,24 +45,24 @@ const features = [
 
 export function BlenxFeatures() {
   return (
-    <VStack gap="xlarge">
-      <VStack gap="small" align="center">
-        <Text variant="h2" align="center" size="xxlarge">
+    <VStack gap="xl">
+      <VStack gap="sm" align="center">
+        <Text variant="h2" align="center" size="xxl">
           Why choose Blenx?
         </Text>
         <Box maxWidth={560}>
-          <Text variant="body2" color="secondary" align="center" size="large">
+          <Text variant="body2" color="secondary" align="center" size="lg">
             A modern approach to component distribution and ownership.
           </Text>
         </Box>
       </VStack>
-      <Grid columns={3} gap="medium">
+      <Grid columns={3} gap="md">
         {features.map((feature) => (
           <Card key={feature.title}>
-            <CardHeader padding="medium">
+            <CardHeader padding="md">
               <CardTitle>{feature.title}</CardTitle>
             </CardHeader>
-            <CardBody padding="medium">
+            <CardBody padding="md">
               <Text variant="body2" color="secondary">
                 {feature.desc}
               </Text>
@@ -95,13 +95,13 @@ const installSteps = [
 export function InstallSection() {
   return (
     <Container>
-      <VStack gap="large" align="center">
-        <VStack gap="small" align="center">
-          <Text variant="h2" align="center" size="xlarge">
+      <VStack gap="lg" align="center">
+        <VStack gap="sm" align="center">
+          <Text variant="h2" align="center" size="xl">
             Install only what you need.
           </Text>
           <Box maxWidth={560}>
-            <Text variant="body2" color="secondary" align="center" size="large">
+            <Text variant="body2" color="secondary" align="center" size="lg">
               Add components directly to your project and own the resulting source code.
             </Text>
           </Box>
@@ -109,11 +109,11 @@ export function InstallSection() {
         <Box maxWidth={640} fullWidth>
           <CodeBlock code={INSTALL_COMMAND} language="bash" />
         </Box>
-        <VStack gap="large">
+        <VStack gap="lg">
           {installSteps.map((step) => (
-            <HStack key={step.number} gap="small" align="start">
+            <HStack key={step.number} gap="sm" align="start">
               <Box>{step.number}</Box>
-              <VStack gap="xxsmall">
+              <VStack gap="xxs">
                 <Text variant="body2" weight="semibold">
                   {step.title}
                 </Text>

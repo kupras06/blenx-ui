@@ -12,7 +12,7 @@ export const root = style({
   borderWidth: 1,
   borderStyle: "solid",
   borderColor: themeContract.border,
-  borderRadius: borderRadius.large,
+  borderRadius: borderRadius.lg,
   boxShadow: themeContract.shadowLg,
   boxSizing: "border-box",
   outline: "none",
@@ -21,9 +21,9 @@ export const root = style({
 export const inputWrapper = style({
   display: "flex",
   alignItems: "center",
-  gap: spacing.small,
-  paddingLeft: spacing.small,
-  paddingRight: spacing.small,
+  gap: spacing.sm,
+  paddingLeft: spacing.sm,
+  paddingRight: spacing.sm,
   borderBottomWidth: 1,
   borderBottomStyle: "solid",
   borderBottomColor: themeContract.borderSubtle,
@@ -43,7 +43,7 @@ export const input = style({
   border: "none",
   outline: "none",
   backgroundColor: "transparent",
-  fontSize: fontSize.small,
+  fontSize: fontSize.sm,
   fontFamily: "inherit",
   color: themeContract.contentPrimary,
   selectors: {
@@ -56,7 +56,7 @@ export const input = style({
 export const list = style({
   overflow: "auto",
   maxHeight: 300,
-  padding: spacing.xsmall,
+  padding: spacing.xs,
 });
 
 export const group = style({
@@ -65,11 +65,11 @@ export const group = style({
 });
 
 export const groupHeading = style({
-  paddingTop: spacing.small,
-  paddingBottom: spacing.xsmall,
-  paddingLeft: spacing.small,
-  paddingRight: spacing.small,
-  fontSize: fontSize.xsmall,
+  paddingTop: spacing.sm,
+  paddingBottom: spacing.xs,
+  paddingLeft: spacing.sm,
+  paddingRight: spacing.sm,
+  fontSize: fontSize.xs,
   fontWeight: fontWeight.semibold,
   color: themeContract.contentSecondary,
 });
@@ -77,15 +77,15 @@ export const groupHeading = style({
 export const item = style({
   display: "flex",
   alignItems: "center",
-  gap: spacing.small,
+  gap: spacing.sm,
   boxSizing: "border-box",
   minHeight: 32,
-  paddingTop: spacing.xsmall,
-  paddingBottom: spacing.xsmall,
-  paddingLeft: spacing.small,
-  paddingRight: spacing.small,
-  borderRadius: borderRadius.small,
-  fontSize: fontSize.small,
+  paddingTop: spacing.xs,
+  paddingBottom: spacing.xs,
+  paddingLeft: spacing.sm,
+  paddingRight: spacing.sm,
+  borderRadius: borderRadius.sm,
+  fontSize: fontSize.sm,
   lineHeight: "1.4",
   color: themeContract.contentPrimary,
   cursor: "pointer",
@@ -117,15 +117,15 @@ export const itemDisabled = style({
 
 export const separator = style({
   height: 1,
-  marginTop: spacing.xsmall,
-  marginBottom: spacing.xsmall,
+  marginTop: spacing.xs,
+  marginBottom: spacing.xs,
   backgroundColor: themeContract.borderSubtle,
 });
 
 export const empty = style({
-  paddingTop: spacing.large,
-  paddingBottom: spacing.large,
+  paddingTop: spacing.lg,
+  paddingBottom: spacing.lg,
   textAlign: "center",
-  fontSize: fontSize.small,
+  fontSize: fontSize.sm,
   color: themeContract.contentSecondary,
 });

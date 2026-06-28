@@ -19,12 +19,12 @@ function Alert({ variant = "info", icon, title, description, children, className
   return (
     <HStack
       align={icon ? "start" : "center"}
-      gap="xsmall"
-      p="small"
+      gap="xs"
+      p="sm"
       className={clsx(alertVariants({ variant }), className)}
     >
       <Box p={"xxs"}>{icon}</Box>
-      <VStack gap="xxsmall">
+      <VStack gap="xxs">
         {title ? (
           <Text variant="h6" padding="none" margin="none" color={variant}>
             {title}

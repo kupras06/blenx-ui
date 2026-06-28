@@ -5,7 +5,7 @@ import { Box, type BoxProps } from "../Box/box";
 import { Text, type TextProps } from "../Text";
 
 function Card(props: SurfaceProps) {
-  return <Surface p="medium" withBorder variant="sunken" {...props} />;
+  return <Surface p="md" withBorder variant="sunken" {...props} />;
 }
 
 function CardHeader(props: BoxProps) {
@@ -17,7 +17,7 @@ function CardBody(props: BoxProps) {
 }
 
 function CardFooter(props: HStackProps) {
-  return <HStack justify="end" gap="small" {...props} />;
+  return <HStack justify="end" gap="sm" {...props} />;
 }
 
 function CardTitle(props: TextProps) {

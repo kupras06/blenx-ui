@@ -3,11 +3,11 @@ import { themeContract } from "@blenx-dev/theme/contract";
 import { borderRadius, spacing } from "@blenx-dev/theme/tokens";
 
 export const root = style({
-  width: spacing.xxlarge,
-  height: spacing.large,
+  width: spacing.xxl,
+  height: spacing.lg,
   display: "inline-flex",
   alignItems: "center",
-  padding: spacing.xxsmall,
+  padding: spacing.xxs,
   borderRadius: borderRadius.full,
   backgroundColor: themeContract.border,
   cursor: "pointer",
@@ -32,8 +32,8 @@ export const rootDisabled = style({
 });
 
 export const thumb = style({
-  width: spacing.large,
-  height: spacing.large,
+  width: spacing.lg,
+  height: spacing.lg,
   borderRadius: borderRadius.full,
   backgroundColor: themeContract.primary,
   transitionProperty: "transform, background-color",
@@ -43,5 +43,5 @@ export const thumb = style({
 
 export const thumbChecked = style({
   backgroundColor: themeContract.surface,
-  transform: `translateX(${spacing.large})`,
+  transform: `translateX(${spacing.lg})`,
 });

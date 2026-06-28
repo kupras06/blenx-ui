@@ -29,9 +29,9 @@ export function ErrorState01({ icon, title, message, error, onRetry, secondaryAc
   const errorStack = typeof error !== "string" ? error?.stack : undefined;
 
   return (
-    <VStack align="center" gap="medium" paddingY="huge" role="alert" aria-live="assertive">
+    <VStack align="center" gap="md" paddingY="huge" role="alert" aria-live="assertive">
       {icon && (
-        <Icon padding="small" backgroundColor="error" color="error" radius="full">
+        <Icon padding="sm" backgroundColor="error" color="error" radius="full">
           {icon}
         </Icon>
       )}
@@ -44,7 +44,7 @@ export function ErrorState01({ icon, title, message, error, onRetry, secondaryAc
         </Text>
       )}
       {(onRetry || secondaryAction) && (
-        <HStack gap="small" align="center" wrap>
+        <HStack gap="sm" align="center" wrap>
           {onRetry && (
             <Button onClick={onRetry} fullWidth>
               Try again
@@ -62,13 +62,13 @@ export function ErrorState01({ icon, title, message, error, onRetry, secondaryAc
           <Button
             onClick={() => setShowDetails(!showDetails)}
             intent="info"
-            size="xsmall"
+            size="xs"
             variant="ghost"
           >
             {showDetails ? "Hide" : "Show"} error details
           </Button>
           {showDetails && (
-            <Surface variant="sunken" padding="medium" maxWidth="sm">
+            <Surface variant="sunken" padding="md" maxWidth="sm">
               <Text textAlign="left" color="secondary">
                 {errorMessage}
                 {errorStack ? `\n\n${errorStack}` : null}

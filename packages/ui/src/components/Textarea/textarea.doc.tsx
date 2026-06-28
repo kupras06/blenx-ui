@@ -4,7 +4,7 @@ import { Textarea } from "./textarea";
 
 export function SizesStory() {
   return (
-    <Stack gap="medium">
+    <Stack gap="md">
       <Text variant="h4">Sizes</Text>
       <Textarea size="sm" placeholder="Small textarea" />
       <Textarea size="default" placeholder="Default textarea" />
@@ -15,7 +15,7 @@ export function SizesStory() {
 
 export function DisabledStory() {
   return (
-    <Stack gap="medium">
+    <Stack gap="md">
       <Text variant="h4">Disabled</Text>
       <Textarea placeholder="Disabled textarea" disabled />
     </Stack>

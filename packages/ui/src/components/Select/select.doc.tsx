@@ -14,7 +14,7 @@ import {
 
 export function DefaultStory() {
   return (
-    <Stack gap="medium">
+    <Stack gap="md">
       <Text variant="h4">Select</Text>
       <Select.Root>
         <SelectTrigger>
@@ -39,7 +39,7 @@ export function DefaultStory() {
 
 export function WithLabelStory() {
   return (
-    <Stack gap="medium">
+    <Stack gap="md">
       <Text variant="h4">With wrapper</Text>
       <Select.Wrapper label="Theme">
         <Select.Root>

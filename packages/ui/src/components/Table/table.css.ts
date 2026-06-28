@@ -14,10 +14,10 @@ export const head = style({
 });
 
 export const header = style({
-  paddingTop: spacing.small,
-  paddingBottom: spacing.small,
-  paddingLeft: spacing.medium,
-  paddingRight: spacing.medium,
+  paddingTop: spacing.sm,
+  paddingBottom: spacing.sm,
+  paddingLeft: spacing.md,
+  paddingRight: spacing.md,
   fontSize: themeContract.fontSize,
   fontWeight: 600,
   color: themeContract.contentSecondary,
@@ -41,10 +41,10 @@ export const row = style({
 });
 
 export const cell = style({
-  paddingTop: spacing.small,
-  paddingBottom: spacing.small,
-  paddingLeft: spacing.medium,
-  paddingRight: spacing.medium,
+  paddingTop: spacing.sm,
+  paddingBottom: spacing.sm,
+  paddingLeft: spacing.md,
+  paddingRight: spacing.md,
   fontSize: themeContract.fontSize,
   borderBottomWidth: 1,
   borderBottomStyle: "solid",

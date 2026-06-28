@@ -3,7 +3,7 @@ import { SegmentedControl } from "./segmented-control";
 
 export function DefaultStory() {
   return (
-    <Stack gap="medium">
+    <Stack gap="md">
       <SegmentedControl
         value="day"
         onValueChange={() => {}}
@@ -14,7 +14,7 @@ export function DefaultStory() {
         ]}
       />
       <SegmentedControl
-        value="small"
+        value="sm"
         onValueChange={() => {}}
         variant="default"
         options={[

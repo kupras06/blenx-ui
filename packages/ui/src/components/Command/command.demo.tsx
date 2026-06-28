@@ -13,7 +13,7 @@ import { Gear, Palette, FileCode } from "@phosphor-icons/react";
 
 export function CommandBasic() {
   return (
-    <VStack gap="small">
+    <VStack gap="sm">
       <Text variant="body2" color="secondary">
         A basic command palette with search filtering.
       </Text>
@@ -34,7 +34,7 @@ export function CommandBasic() {
 
 export function CommandWithGroups() {
   return (
-    <VStack gap="small">
+    <VStack gap="sm">
       <Text variant="body2" color="secondary">
         Command palette with grouped items and custom icons.
       </Text>
@@ -44,19 +44,19 @@ export function CommandWithGroups() {
           <CommandEmpty>No results.</CommandEmpty>
           <CommandGroup heading="Frameworks">
             <CommandItem value="react">
-              <HStack gap="small" align="center">
+              <HStack gap="sm" align="center">
                 <FileCode size={16} />
                 <span>React</span>
               </HStack>
             </CommandItem>
             <CommandItem value="vue">
-              <HStack gap="small" align="center">
+              <HStack gap="sm" align="center">
                 <FileCode size={16} />
                 <span>Vue</span>
               </HStack>
             </CommandItem>
             <CommandItem value="svelte">
-              <HStack gap="small" align="center">
+              <HStack gap="sm" align="center">
                 <FileCode size={16} />
                 <span>Svelte</span>
               </HStack>
@@ -65,19 +65,19 @@ export function CommandWithGroups() {
           <CommandSeparator />
           <CommandGroup heading="Tools">
             <CommandItem value="vite">
-              <HStack gap="small" align="center">
+              <HStack gap="sm" align="center">
                 <Gear size={16} />
                 <span>Vite</span>
               </HStack>
             </CommandItem>
             <CommandItem value="webpack">
-              <HStack gap="small" align="center">
+              <HStack gap="sm" align="center">
                 <Gear size={16} />
                 <span>Webpack</span>
               </HStack>
             </CommandItem>
             <CommandItem value="turbopack">
-              <HStack gap="small" align="center">
+              <HStack gap="sm" align="center">
                 <Gear size={16} />
                 <span>Turbopack</span>
               </HStack>
@@ -86,13 +86,13 @@ export function CommandWithGroups() {
           <CommandSeparator />
           <CommandGroup heading="Themes">
             <CommandItem value="light">
-              <HStack gap="small" align="center">
+              <HStack gap="sm" align="center">
                 <Palette size={16} />
                 <span>Light</span>
               </HStack>
             </CommandItem>
             <CommandItem value="dark">
-              <HStack gap="small" align="center">
+              <HStack gap="sm" align="center">
                 <Palette size={16} />
                 <span>Dark</span>
               </HStack>

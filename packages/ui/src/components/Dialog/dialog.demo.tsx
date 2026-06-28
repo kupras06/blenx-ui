@@ -26,7 +26,7 @@ export function DialogDemo() {
           <Text variant="body2">This action cannot be undone. Please confirm your choice.</Text>
         </DialogPanel>
         <DialogFooter>
-          <HStack gap="small" justify="end" wrap>
+          <HStack gap="sm" justify="end" wrap>
             <DialogClose render={<Button variant="ghost" />}>Cancel</DialogClose>
             <Button>Confirm</Button>
           </HStack>

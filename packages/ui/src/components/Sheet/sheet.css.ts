@@ -27,13 +27,13 @@ export const viewport = style({
 export const viewportBottom = style({
   display: "grid",
   gridTemplateRows: "1fr auto",
-  paddingTop: spacing.xxlarge,
+  paddingTop: spacing.xxl,
 });
 
 export const viewportTop = style({
   display: "grid",
   gridTemplateRows: "auto 1fr",
-  paddingBottom: spacing.xxlarge,
+  paddingBottom: spacing.xxl,
 });
 
 export const viewportLeft = style({
@@ -49,7 +49,7 @@ export const viewportRight = style({
 export const viewportInset = style({
   "@media": {
     "(min-width: 640px)": {
-      padding: spacing.medium,
+      padding: spacing.md,
     },
   },
 });
@@ -91,30 +91,30 @@ export const popup = style({
 export const popupBottom = style({
   gridRowStart: 2,
   borderTopWidth: borderWidth.thin,
-  borderTopLeftRadius: borderRadius.xlarge,
-  borderTopRightRadius: borderRadius.xlarge,
+  borderTopLeftRadius: borderRadius.xl,
+  borderTopRightRadius: borderRadius.xl,
 });
 
 export const popupTop = style({
   borderBottomWidth: borderWidth.thin,
-  borderBottomLeftRadius: borderRadius.xlarge,
-  borderBottomRightRadius: borderRadius.xlarge,
+  borderBottomLeftRadius: borderRadius.xl,
+  borderBottomRightRadius: borderRadius.xl,
 });
 
 export const popupLeft = style({
   width: "calc(100% - 48px)",
   maxWidth: "28rem",
   borderRightWidth: borderWidth.thin,
-  borderTopRightRadius: borderRadius.xlarge,
-  borderBottomRightRadius: borderRadius.xlarge,
+  borderTopRightRadius: borderRadius.xl,
+  borderBottomRightRadius: borderRadius.xl,
 });
 
 export const popupRight = style({
   width: "calc(100% - 48px)",
   maxWidth: "28rem",
   borderLeftWidth: borderWidth.thin,
-  borderTopLeftRadius: borderRadius.xlarge,
-  borderBottomLeftRadius: borderRadius.xlarge,
+  borderTopLeftRadius: borderRadius.xl,
+  borderBottomLeftRadius: borderRadius.xl,
 });
 
 export const popupInset = style({
@@ -125,7 +125,7 @@ export const popupInset = style({
   },
   "@media": {
     "(min-width: 640px)": {
-      borderRadius: borderRadius.xlarge,
+      borderRadius: borderRadius.xl,
       borderWidth: borderWidth.thin,
     },
   },
@@ -133,24 +133,24 @@ export const popupInset = style({
 
 export const closeButton = style({
   position: "absolute",
-  top: spacing.xsmall,
-  insetInlineEnd: spacing.xsmall,
+  top: spacing.xs,
+  insetInlineEnd: spacing.xs,
 });
 
 export const header = style({
   display: "flex",
   flexDirection: "column",
-  gap: spacing.small,
-  padding: spacing.large,
+  gap: spacing.sm,
+  padding: spacing.lg,
   boxSizing: "border-box",
 });
 
 export const footer = style({
   display: "flex",
   flexDirection: "column-reverse",
-  gap: spacing.small,
-  paddingLeft: spacing.large,
-  paddingRight: spacing.large,
+  gap: spacing.sm,
+  paddingLeft: spacing.lg,
+  paddingRight: spacing.lg,
   boxSizing: "border-box",
   "@media": {
     "(min-width: 640px)": {
@@ -165,28 +165,28 @@ export const footerDefault = style({
   borderTopStyle: "solid",
   borderTopColor: themeContract.borderSubtle,
   backgroundColor: themeContract.backgroundSubtle,
-  paddingTop: spacing.medium,
-  paddingBottom: spacing.medium,
+  paddingTop: spacing.md,
+  paddingBottom: spacing.md,
 });
 
 export const footerBare = style({
-  paddingTop: spacing.medium,
-  paddingBottom: spacing.large,
+  paddingTop: spacing.md,
+  paddingBottom: spacing.lg,
 });
 
 export const title = style({
-  fontSize: fontSize.xlarge,
+  fontSize: fontSize.xl,
   lineHeight: 1,
   fontWeight: fontWeight.semibold,
 });
 
 export const description = style({
-  fontSize: fontSize.small,
+  fontSize: fontSize.sm,
   lineHeight: 1.4,
   color: themeContract.contentSecondary,
 });
 
 export const panel = style({
   boxSizing: "border-box",
-  padding: spacing.large,
+  padding: spacing.lg,
 });

@@ -1,13 +1,14 @@
 import { Avatar as AvatarPrimitive, type AvatarRootProps } from "@base-ui/react/avatar";
 import clsx from "clsx";
 import { root, image, fallback, size as sizeRecipe, radius as radiusRecipe } from "./avatar.css";
+import type { RecipeVariants } from "@vanilla-extract/recipes";
 
-interface AvatarProps extends AvatarRootProps {
-  size?: "small" | "medium" | "large" | "xlarge" | "hero";
-  radius?: "none" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | "full";
-  className?: string;
-  style?: React.CSSProperties;
-}
+type AvatarProps = AvatarRootProps &
+  RecipeVariants<typeof sizeRecipe> & {
+    radius?: "none" | "xs" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | "full";
+    className?: string;
+    style?: React.CSSProperties;
+  };
 
 type AvatarImageProps = AvatarPrimitive.Image.Props & {
   className?: string;

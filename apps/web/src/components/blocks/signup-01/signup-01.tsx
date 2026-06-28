@@ -62,7 +62,7 @@ export function Signup01({
     <Container size="sm">
       <Card fullWidth>
         <CardBody>
-          <Box paddingY="medium">
+          <Box paddingY="md">
             {logo && <Box>{logo}</Box>}
             <Text variant="h3">{title}</Text>
             <Text variant="body2" color="secondary">
@@ -141,7 +141,7 @@ export function Signup01({
                   I agree to the{" "}
                   <Button
                     type="button"
-                    size="xsmall"
+                    size="xs"
                     variant="link"
                     onClick={() => {
                       if (termsUrl) window.open(termsUrl, "_blank");
@@ -152,7 +152,7 @@ export function Signup01({
                   and{" "}
                   <Button
                     type="button"
-                    size="xsmall"
+                    size="xs"
                     variant="link"
                     onClick={() => {
                       if (termsUrl) window.open(termsUrl, "_blank");
@@ -170,9 +170,9 @@ export function Signup01({
           </VStack>
 
           {socialProviders && socialProviders.length > 0 && (
-            <VStack gap="small">
+            <VStack gap="sm">
               <Separator label="Or sign up with" tone="subtle" />
-              <HStack gap="small" justify="between" fullWidth>
+              <HStack gap="sm" justify="between" fullWidth>
                 {socialProviders.map((provider) => (
                   <Button
                     key={provider.provider}
@@ -188,9 +188,9 @@ export function Signup01({
           )}
 
           {loginLink && (
-            <HStack gap="xsmall" align="center" justify="center">
+            <HStack gap="xs" align="center" justify="center">
               <Text variant="body2">Already have an account?</Text>
-              <Button variant="link" type="button" onClick={loginLink.handleClick} size="xsmall">
+              <Button variant="link" type="button" onClick={loginLink.handleClick} size="xs">
                 {loginLink.label ?? "Sign in"}
               </Button>
             </HStack>

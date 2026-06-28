@@ -25,7 +25,7 @@ export const viewport = style({
   display: "grid",
   gridTemplateRows: "1fr auto 3fr",
   justifyItems: "center",
-  padding: spacing.medium,
+  padding: spacing.md,
   boxSizing: "border-box",
 });
 
@@ -43,7 +43,7 @@ export const popup = style({
   borderWidth: borderWidth.thin,
   borderStyle: "solid",
   borderColor: themeContract.border,
-  borderRadius: borderRadius.xlarge,
+  borderRadius: borderRadius.xl,
   backgroundColor: themeContract.surface,
   color: themeContract.contentPrimary,
   boxSizing: "border-box",
@@ -75,7 +75,7 @@ export const viewportShellBottomStickOnMobile = style({
       display: "flex",
       alignItems: "flex-end",
       justifyContent: "center",
-      padding: spacing.small,
+      padding: spacing.sm,
       paddingBottom: 0,
     },
   },
@@ -95,19 +95,19 @@ export const popupBottomStickOnMobile = style({
 
 export const closeButton = style({
   position: "absolute",
-  top: spacing.small,
-  insetInlineEnd: spacing.small,
+  top: spacing.sm,
+  insetInlineEnd: spacing.sm,
 });
 
 export const header = style({
   display: "flex",
   flexDirection: "column",
-  gap: spacing.small,
-  padding: spacing.large,
+  gap: spacing.sm,
+  padding: spacing.lg,
   boxSizing: "border-box",
   selectors: {
     "[data-has-panel] &": {
-      paddingBottom: spacing.small,
+      paddingBottom: spacing.sm,
     },
   },
 });
@@ -115,9 +115,9 @@ export const header = style({
 export const footer = style({
   display: "flex",
   flexDirection: "column-reverse",
-  gap: spacing.small,
-  paddingLeft: spacing.large,
-  paddingRight: spacing.large,
+  gap: spacing.sm,
+  paddingLeft: spacing.lg,
+  paddingRight: spacing.lg,
   boxSizing: "border-box",
   paddingBottom: "env(safe-area-inset-bottom)",
 });
@@ -127,13 +127,13 @@ export const footerDefault = style({
   borderTopStyle: "solid",
   borderTopColor: themeContract.borderSubtle,
   backgroundColor: themeContract.backgroundSubtle,
-  paddingTop: spacing.medium,
-  paddingBottom: spacing.medium,
+  paddingTop: spacing.md,
+  paddingBottom: spacing.md,
 });
 
 export const footerBare = style({
-  paddingTop: spacing.medium,
-  paddingBottom: spacing.large,
+  paddingTop: spacing.md,
+  paddingBottom: spacing.lg,
 });
 
 export const title = style({
@@ -151,5 +151,5 @@ export const description = style({
 
 export const panel = style({
   boxSizing: "border-box",
-  padding: spacing.large,
+  padding: spacing.lg,
 });

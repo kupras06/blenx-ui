@@ -32,7 +32,7 @@ function SkeletonBar({ style }: { style?: React.CSSProperties }) {
 
 function TextPattern({ lines = 3 }: { lines?: number }) {
   return (
-    <VStack gap="small">
+    <VStack gap="sm">
       {Array.from({ length: lines }, (_, i) => (
         <SkeletonBar key={i} style={i === lines - 1 ? { width: "60%" } : undefined} />
       ))}
@@ -46,7 +46,7 @@ function CardPattern() {
 
 function TablePattern({ rows = 4 }: { rows?: number }) {
   return (
-    <VStack gap="xsmall">
+    <VStack gap="xs">
       <div className={clsx(skeletonTableHeader, skeletonShimmer)} aria-hidden="true" />
       {Array.from({ length: rows }, (_, i) => (
         <div key={i} className={clsx(skeletonTableRow, skeletonShimmer)} aria-hidden="true" />
@@ -57,7 +57,7 @@ function TablePattern({ rows = 4 }: { rows?: number }) {
 
 function AvatarPattern() {
   return (
-    <HStack gap="medium" align="center">
+    <HStack gap="md" align="center">
       <div className={clsx(skeletonAvatar, skeletonShimmer)} aria-hidden="true" />
       <div className={skeletonAvatarTextGroup}>
         <SkeletonBar />

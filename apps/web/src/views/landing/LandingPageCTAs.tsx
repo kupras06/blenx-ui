@@ -6,23 +6,23 @@ import { Link } from "@tanstack/react-router";
 export function LandingPageCTA() {
   return (
     <Container>
-      <VStack gap="large" align="center">
+      <VStack gap="lg" align="center">
         <Box>
-          <Text variant="h2" align="center" size="xxlarge">
+          <Text variant="h2" align="center" size="xxl">
             Build with components you actually own.
           </Text>
         </Box>
         <Box>
-          <Text variant="body1" size="large" color="secondary" align="center">
+          <Text variant="body1" size="lg" color="secondary" align="center">
             Stop fighting your component library. Install what you need, customize everything, and
             scale with confidence.
           </Text>
         </Box>
-        <HStack gap="medium" wrap justify="center">
+        <HStack gap="md" wrap justify="center">
           <Button
-            size="large"
+            size="lg"
             variant="solid"
-            radius="small"
+            radius="sm"
             render={
               <Link
                 to="/docs/guides/$guide"
@@ -35,9 +35,9 @@ export function LandingPageCTA() {
             Get Started <ArrowRightIcon weight="bold" />
           </Button>
           <Button
-            size="large"
+            size="lg"
             variant="outline"
-            radius="small"
+            radius="sm"
             render={
               <Link
                 to="/docs/guides/$guide"
@@ -50,9 +50,9 @@ export function LandingPageCTA() {
             View Components
           </Button>
           <Button
-            size="large"
+            size="lg"
             variant="ghost"
-            radius="small"
+            radius="sm"
             render={
               <a href={GITHUB_URL} target="_blank" rel="noreferrer" aria-label="View on GitHub" />
             }

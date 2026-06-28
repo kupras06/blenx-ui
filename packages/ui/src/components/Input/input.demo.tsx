@@ -4,14 +4,14 @@ import { Input } from "./input";
 
 export function InputDemo() {
   return (
-    <VStack gap="medium">
-      <VStack gap="medium" padding="medium">
+    <VStack gap="md">
+      <VStack gap="md" padding="md">
         <Text variant="h6">Size</Text>
         <Input size="sm" placeholder="Small input" />
         <Input placeholder="Default input" />
         <Input size="lg" placeholder="Large input" />
       </VStack>
-      <VStack gap="medium" padding="medium">
+      <VStack gap="md" padding="md">
         <Text variant="h4">States</Text>
         <Input placeholder="Normal input" />
         <Input placeholder="Disabled input" disabled />

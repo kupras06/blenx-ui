@@ -17,7 +17,7 @@ import { Box } from "../Box/box";
 
 export function AlertDialogDemo() {
   return (
-    <VStack gap="medium">
+    <VStack gap="md">
       <Text variant="h6">Alert Dialog</Text>
       <Box>
         <AlertDialog>
@@ -44,7 +44,7 @@ export function AlertDialogDemo() {
               </Text>
             </AlertDialogPanel>
             <AlertDialogFooter>
-              <HStack gap="small" justify="end" wrap>
+              <HStack gap="sm" justify="end" wrap>
                 <AlertDialogClose render={<Button variant="ghost" />}>Cancel</AlertDialogClose>
                 <Button intent="danger">Delete</Button>
               </HStack>

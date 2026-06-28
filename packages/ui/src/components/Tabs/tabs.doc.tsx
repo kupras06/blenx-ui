@@ -4,7 +4,7 @@ import { Tabs, TabsList, TabsPanel, TabsTab } from "./tabs";
 
 export function UnderlineStory() {
   return (
-    <Stack gap="medium">
+    <Stack gap="md">
       <Text variant="h4">Underline variant</Text>
       <Tabs defaultValue="tab1">
         <TabsList>
@@ -27,7 +27,7 @@ export function UnderlineStory() {
 
 export function GhostStory() {
   return (
-    <Stack gap="medium">
+    <Stack gap="md">
       <Text variant="h4">Ghost variant</Text>
       <Tabs defaultValue="tab1" variant="ghost">
         <TabsList>
@@ -45,7 +45,7 @@ export function GhostStory() {
 
 export function SegmentedStory() {
   return (
-    <Stack gap="medium">
+    <Stack gap="md">
       <Text variant="h4">Segmented variant</Text>
       <Tabs defaultValue="tab1" variant="segmented">
         <TabsList>

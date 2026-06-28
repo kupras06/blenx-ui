@@ -19,12 +19,12 @@ export const popup = style({
   minWidth: 160,
   width: "max(var(--anchor-width), 240px)",
   maxWidth: "calc(100vw - 16px)",
-  padding: spacing.small,
+  padding: spacing.sm,
   backgroundColor: themeContract.surface,
   borderWidth: borderWidth.thin,
   borderStyle: "solid",
   borderColor: themeContract.border,
-  borderRadius: borderRadius.large,
+  borderRadius: borderRadius.lg,
   boxShadow: themeContract.shadowLg,
   outline: "none",
   transformOrigin: "var(--transform-origin)",
@@ -67,16 +67,16 @@ export const arrowFill = style({
 });
 
 export const title = style({
-  fontSize: fontSize.medium,
+  fontSize: fontSize.md,
   fontWeight: fontWeight.semibold,
   color: themeContract.contentPrimary,
   margin: 0,
-  paddingBottom: spacing.xsmall,
+  paddingBottom: spacing.xs,
 });
 
 export const description = style({
-  fontSize: fontSize.small,
+  fontSize: fontSize.sm,
   color: themeContract.contentSecondary,
   margin: 0,
-  paddingBottom: spacing.xsmall,
+  paddingBottom: spacing.xs,
 });

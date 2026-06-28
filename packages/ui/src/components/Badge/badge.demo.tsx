@@ -4,7 +4,7 @@ import { Badge } from "./badge";
 
 export function BadgeDemo() {
   return (
-    <VStack gap="xsmall">
+    <VStack gap="xs">
       <Text variant="h6">Variants</Text>
       <HStack wrap>
         <Badge variant="default">Default</Badge>

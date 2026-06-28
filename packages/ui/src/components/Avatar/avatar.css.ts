@@ -47,10 +47,10 @@ export const fallback = style({
 export const size = recipe({
   variants: {
     size: {
-      small: { width: spacing.large, height: spacing.large },
-      medium: { width: spacing.xlarge, height: spacing.xlarge },
-      large: { width: spacing.xxlarge, height: spacing.xxlarge },
-      xlarge: { width: spacing.xxxlarge, height: spacing.xxxlarge },
+      sm: { width: spacing.lg, height: spacing.lg },
+      md: { width: spacing.xl, height: spacing.xl },
+      lg: { width: spacing.xxl, height: spacing.xxl },
+      xl: { width: spacing.xxxl, height: spacing.xxxl },
       hero: { width: spacing.titanic, height: spacing.titanic },
     },
   },
@@ -60,12 +60,12 @@ export const radius = recipe({
   variants: {
     radius: {
       none: { borderRadius: 0 },
-      xsmall: { borderRadius: borderRadius.xsmall },
-      small: { borderRadius: borderRadius.small },
-      medium: { borderRadius: borderRadius.medium },
-      large: { borderRadius: borderRadius.large },
-      xlarge: { borderRadius: borderRadius.xlarge },
-      xxlarge: { borderRadius: borderRadius.xxlarge },
+      xs: { borderRadius: borderRadius.xs },
+      small: { borderRadius: borderRadius.sm },
+      medium: { borderRadius: borderRadius.md },
+      large: { borderRadius: borderRadius.lg },
+      xlarge: { borderRadius: borderRadius.xl },
+      xxlarge: { borderRadius: borderRadius.xxl },
       full: { borderRadius: borderRadius.full },
     },
   },

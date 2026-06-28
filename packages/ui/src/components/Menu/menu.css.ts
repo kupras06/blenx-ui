@@ -22,7 +22,7 @@ export const trigger = style({
   fontFamily: "inherit",
   fontSize: "inherit",
   color: "inherit",
-  borderRadius: borderRadius.medium,
+  borderRadius: borderRadius.md,
   transition: "background-color 0.15s ease, box-shadow 0.15s ease",
   selectors: {
     "&:focus-visible": {
@@ -36,10 +36,10 @@ export const popup = style({
   borderWidth: 1,
   borderStyle: "solid",
   borderColor: themeContract.borderSubtle,
-  borderRadius: borderRadius.large,
+  borderRadius: borderRadius.lg,
   boxShadow: themeContract.shadowXl,
   zIndex: 1000,
-  padding: spacing.xsmall,
+  padding: spacing.xs,
   display: "flex",
   gap: spacing["1"],
   flexDirection: "column",
@@ -51,12 +51,12 @@ export const popup = style({
 export const item = style({
   display: "flex",
   alignItems: "center",
-  gap: spacing.small,
+  gap: spacing.sm,
   minHeight: 24,
-  padding: `${spacing.xsmall} ${spacing.small}`,
+  padding: `${spacing.xs} ${spacing.sm}`,
   borderRadius: themeContract.borderRadius,
   color: themeContract.contentPrimary,
-  fontSize: fontSize.small,
+  fontSize: fontSize.sm,
   fontWeight: fontWeight.medium,
   lineHeight: 1.2,
   textDecoration: "none",
@@ -108,8 +108,8 @@ export const separator = style({
 });
 
 export const groupLabel = style({
-  padding: `${spacing.small} ${spacing.medium} ${spacing.xsmall}`,
-  fontSize: fontSize.xsmall,
+  padding: `${spacing.sm} ${spacing.md} ${spacing.xs}`,
+  fontSize: fontSize.xs,
   fontWeight: fontWeight.semibold,
   color: themeContract.contentSecondary,
   textTransform: "uppercase",
@@ -123,6 +123,6 @@ export const inset = style({
 export const shortcut = style({
   marginLeft: "auto",
   color: themeContract.contentDisabled,
-  fontSize: fontSize.xsmall,
+  fontSize: fontSize.xs,
   fontWeight: fontWeight.medium,
 });

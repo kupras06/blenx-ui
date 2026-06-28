@@ -61,13 +61,13 @@ function PreviewPanel({ compact }: { compact: boolean }) {
   return (
     <ScrollArea height="90svh">
       {compact && (
-        <Button variant="ghost" size="small" onClick={toggleSidebar}>
+        <Button variant="ghost" size="sm" onClick={toggleSidebar}>
           <ListIcon size={16} />
           Controls
         </Button>
       )}
 
-      <Box paddingX="xlarge">
+      <Box paddingX="xl">
         <Tabs defaultValue="showcase">
           <TabsList>
             <TabsTab value="showcase">Components</TabsTab>

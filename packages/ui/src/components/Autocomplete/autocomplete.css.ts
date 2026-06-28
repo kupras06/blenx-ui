@@ -58,7 +58,7 @@ export const adornment = style({
   justifyContent: "center",
   flexShrink: 0,
   transform: "translateY(-50%)",
-  borderRadius: borderRadius.medium,
+  borderRadius: borderRadius.md,
   borderWidth: borderWidth.thin,
   borderStyle: "solid",
   borderColor: "transparent",
@@ -99,7 +99,7 @@ export const popupShell = style({
   borderWidth: borderWidth.thin,
   borderStyle: "solid",
   borderColor: themeContract.border,
-  borderRadius: borderRadius.large,
+  borderRadius: borderRadius.lg,
   backgroundColor: themeContract.surface,
   boxShadow: themeContract.shadowLg,
   transformOrigin: "var(--transform-origin)",
@@ -122,34 +122,34 @@ export const group = style({
 
 export const separator = style({
   height: "1px",
-  marginBlock: spacing.xsmall,
-  marginInline: spacing.small,
+  marginBlock: spacing.xs,
+  marginInline: spacing.sm,
   backgroundColor: themeContract.border,
 });
 
 export const groupLabel = style({
   paddingBlock: spacing["1"],
   paddingInline: spacing["2"],
-  fontSize: fontSize.xsmall,
+  fontSize: fontSize.xs,
   fontWeight: fontWeight.medium,
   color: themeContract.contentSecondary,
 });
 
 export const empty = style({
-  padding: spacing.small,
+  padding: spacing.sm,
   textAlign: "center",
-  fontSize: fontSize.small,
+  fontSize: fontSize.sm,
   color: themeContract.contentSecondary,
 });
 
 export const list = style({
-  padding: spacing.xsmall,
+  padding: spacing.xs,
 });
 
 export const status = style({
-  paddingInline: spacing.medium,
-  paddingBlock: spacing.small,
-  fontSize: fontSize.xsmall,
+  paddingInline: spacing.md,
+  paddingBlock: spacing.sm,
+  fontSize: fontSize.xs,
   fontWeight: fontWeight.medium,
   color: themeContract.contentSecondary,
 });
@@ -157,12 +157,12 @@ export const status = style({
 export const item = style({
   display: "flex",
   alignItems: "center",
-  paddingInline: spacing.small,
+  paddingInline: spacing.sm,
   paddingBlock: spacing["1"],
-  borderRadius: borderRadius.medium,
+  borderRadius: borderRadius.md,
   cursor: "default",
   userSelect: "none",
   outline: "none",
   minHeight: "32px",
-  fontSize: fontSize.medium,
+  fontSize: fontSize.md,
 });

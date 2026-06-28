@@ -44,7 +44,7 @@ export function DataTableToolbar<TData>({
               key={`bulk-action-${index.toString()}`}
               variant={action.variant === "destructive" ? "solid" : "outline"}
               intent={action.variant === "destructive" ? "danger" : undefined}
-              size="small"
+              size="sm"
               disabled={action.disabled}
               onClick={() => action.onClick(selectedRows)}
             >

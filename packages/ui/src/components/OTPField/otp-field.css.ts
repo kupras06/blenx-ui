@@ -32,12 +32,12 @@ export const input = recipe({
       default: {
         width: spacing["9"],
         height: spacing["9"],
-        fontSize: fontSize.medium,
+        fontSize: fontSize.md,
       },
       lg: {
         width: spacing["10"],
         height: spacing["10"],
-        fontSize: fontSize.large,
+        fontSize: fontSize.lg,
       },
     },
   },

@@ -117,7 +117,7 @@ export function Dashboard01({
             <Text variant="h3">Dashboard</Text>
             <HStack wrap>
               {actions.map((action) => (
-                <Button key={action.label} variant="soft" size="small" onClick={action.handleClick}>
+                <Button key={action.label} variant="soft" size="sm" onClick={action.handleClick}>
                   {action.label}
                 </Button>
               ))}
@@ -129,14 +129,14 @@ export function Dashboard01({
           {kpis.map((kpi) => (
             <Card render={<li />} key={kpi.label}>
               <CardBody>
-                <Text variant="caption" size="medium" color="secondary">
+                <Text variant="caption" size="md" color="secondary">
                   {kpi.label}
                 </Text>
-                <Text weight="bold" size="xlarge">
+                <Text weight="bold" size="xl">
                   {kpi.value}
                 </Text>
                 {kpi.trend && (
-                  <Text size="small" color={kpi.trend === "up" ? "success" : "error"}>
+                  <Text size="sm" color={kpi.trend === "up" ? "success" : "error"}>
                     {kpi.trend === "up" ? "↑" : "↓"} {kpi.trendValue}
                   </Text>
                 )}
@@ -150,7 +150,7 @@ export function Dashboard01({
             <Card key={chart.title}>
               <CardTitle>{chart.title}</CardTitle>
               <CardBody>
-                <Surface variant="sunken" padding="medium" paddingY="massive" withBorder>
+                <Surface variant="sunken" padding="md" paddingY="massive" withBorder>
                   <Text variant="h5" color="secondary" align="center">
                     Chart
                   </Text>

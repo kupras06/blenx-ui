@@ -78,5 +78,5 @@ export const thumbDragging = style({
 export const value = style({
   display: "flex",
   justifyContent: "flex-end",
-  fontSize: fontSize.small,
+  fontSize: fontSize.sm,
 });

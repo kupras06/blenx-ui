@@ -65,7 +65,7 @@ When a style value depends on a prop or state, use `createVar()` for parametric 
 
 ```tsx
 // Good: conditional application
-<div className={clsx(styles.root, size === "lg" && styles.large)} />;
+<div className={clsx(styles.root, size === "lg" && styles.lg)} />;
 
 // Also good: parametric via CSS custom properties
 import { createVar, style } from "@vanilla-extract/css";
@@ -178,9 +178,9 @@ import { fontSize, spacing, borderRadius } from "@blenx-dev/ui/theme/tokens.css"
 export const root = style({
   color: themeContract.contentPrimary,
   backgroundColor: themeContract.surface,
-  borderRadius: borderRadius.medium,
-  fontSize: fontSize.small,
-  padding: spacing.medium,
+  borderRadius: borderRadius.md,
+  fontSize: fontSize.sm,
+  padding: spacing.md,
 });
 ```
 

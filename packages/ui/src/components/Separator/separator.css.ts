@@ -29,7 +29,7 @@ export const withLabel = style({
   backgroundColor: "transparent",
   display: "flex",
   alignItems: "center",
-  gap: spacing.small,
+  gap: spacing.sm,
   width: "100%",
   selectors: {
     "&::before": {
@@ -50,10 +50,10 @@ export const withLabel = style({
 });
 
 export const label = style({
-  paddingLeft: spacing.xsmall,
-  paddingRight: spacing.xsmall,
+  paddingLeft: spacing.xs,
+  paddingRight: spacing.xs,
   color: themeContract.contentSecondary,
-  fontSize: fontSize.xsmall,
+  fontSize: fontSize.xs,
   fontWeight: fontWeight.medium,
   lineHeight: 1.2,
   whiteSpace: "nowrap",

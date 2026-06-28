@@ -49,7 +49,7 @@ export function TableDemo() {
   ];
 
   return (
-    <VStack gap="medium">
+    <VStack gap="md">
       <Table columnData={columns} rowData={users} rowKey="id" />
     </VStack>
   );

@@ -16,7 +16,7 @@ export function DataTableError({
       <WarningCircleIcon size={48} />
       <p className={styles.errorMessage}>{message}</p>
       {onRetry && (
-        <Button variant="outline" size="small" onClick={onRetry}>
+        <Button variant="outline" size="sm" onClick={onRetry}>
           Retry
         </Button>
       )}

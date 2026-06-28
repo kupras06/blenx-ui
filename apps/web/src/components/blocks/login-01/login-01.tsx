@@ -54,8 +54,8 @@ export function Login01({
   return (
     <Container size="2xl" content="center" paddingY="huge">
       <Card maxWidth="sm" fullWidth>
-        <CardBody padding="medium">
-          <VStack align="center" gap="small">
+        <CardBody padding="md">
+          <VStack align="center" gap="sm">
             <Text variant="h3">{title}</Text>
             <Text variant="body2" color="secondary">
               {description}
@@ -104,7 +104,7 @@ export function Login01({
                   onClick={links.forgotPassword.handleClick}
                   variant="link"
                   intent="info"
-                  size="xsmall"
+                  size="xs"
                 >
                   {links.forgotPassword.label ?? "Forgot password?"}
                 </Button>
@@ -117,12 +117,12 @@ export function Login01({
           </VStack>
 
           {socialProviders && socialProviders.length > 0 && (
-            <VStack gap="medium">
+            <VStack gap="md">
               <Separator label="Or continue with" tone="subtle" />
               <Separator />
               <Separator label="Or continue with" tone="subtle" />
               <Separator />
-              <HStack gap="medium">
+              <HStack gap="md">
                 {socialProviders.map((provider) => (
                   <Button
                     key={provider.provider}
@@ -138,7 +138,7 @@ export function Login01({
           )}
 
           {links?.signUp && (
-            <HStack align="center" justify="center" paddingY="small">
+            <HStack align="center" justify="center" paddingY="sm">
               <Text variant="body2" span>
                 Don&apos;t have an account?{" "}
               </Text>
@@ -147,7 +147,7 @@ export function Login01({
                 onClick={links.signUp.handleClick}
                 variant="link"
                 intent="info"
-                size="xsmall"
+                size="xs"
               >
                 {links.signUp.label ?? "Sign up"}
               </Button>

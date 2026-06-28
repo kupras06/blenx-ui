@@ -4,7 +4,7 @@ import { Separator } from "./separator";
 
 export function HorizontalStory() {
   return (
-    <Stack gap="medium">
+    <Stack gap="md">
       <Text variant="body2">Above</Text>
       <Separator orientation="horizontal" />
       <Text variant="body2">Below</Text>
@@ -14,7 +14,7 @@ export function HorizontalStory() {
 
 export function VerticalStory() {
   return (
-    <Stack direction="row" gap="medium">
+    <Stack direction="row" gap="md">
       <Text variant="body2">Left</Text>
       <Separator orientation="vertical" />
       <Text variant="body2">Right</Text>
@@ -24,7 +24,7 @@ export function VerticalStory() {
 
 export function WithLabelStory() {
   return (
-    <Stack gap="medium">
+    <Stack gap="md">
       <Text variant="body2">Content above</Text>
       <Separator orientation="horizontal" label="Section" />
       <Text variant="body2">Content below</Text>
@@ -34,7 +34,7 @@ export function WithLabelStory() {
 
 export function TonesStory() {
   return (
-    <Stack gap="medium">
+    <Stack gap="md">
       <Text variant="body2">Subtle tone</Text>
       <Separator orientation="horizontal" tone="subtle" />
       <Text variant="body2">Strong tone</Text>

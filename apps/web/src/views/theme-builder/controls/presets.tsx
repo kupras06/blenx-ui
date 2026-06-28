@@ -29,7 +29,7 @@ export function PresetControls() {
                 }}
               />
             }
-            padding="xsmall"
+            padding="xs"
             key={preset.name}
             variant={isActive ? "sunken" : "outline"}
           >

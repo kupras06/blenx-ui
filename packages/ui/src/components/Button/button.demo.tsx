@@ -5,8 +5,8 @@ import { Button } from "./button";
 
 export function ButtonDemo() {
   return (
-    <VStack gap="medium">
-      <Stack gap="small">
+    <VStack gap="md">
+      <Stack gap="sm">
         <Text variant="h6">Variant + Intent</Text>
         <HStack wrap>
           <Button variant="solid" intent="primary">
@@ -30,7 +30,7 @@ export function ButtonDemo() {
         </HStack>
       </Stack>
 
-      <Stack gap="small">
+      <Stack gap="sm">
         <Text variant="h6">Outline + Intents</Text>
         <HStack wrap>
           <Button variant="outline" intent="primary">
@@ -45,7 +45,7 @@ export function ButtonDemo() {
         </HStack>
       </Stack>
 
-      <Stack gap="small">
+      <Stack gap="sm">
         <Text variant="h6">Ghost + Intents</Text>
         <HStack wrap>
           <Button variant="ghost" intent="primary">
@@ -60,7 +60,7 @@ export function ButtonDemo() {
         </HStack>
       </Stack>
 
-      <Stack gap="small">
+      <Stack gap="sm">
         <Text variant="h6">Soft + Intents</Text>
         <HStack wrap>
           <Button variant="soft" intent="warning">
@@ -75,7 +75,7 @@ export function ButtonDemo() {
         </HStack>
       </Stack>
 
-      <Stack gap="small">
+      <Stack gap="sm">
         <Text variant="h6">Link + Intents</Text>
         <HStack wrap>
           <Button variant="link" intent="primary">
@@ -90,16 +90,16 @@ export function ButtonDemo() {
         </HStack>
       </Stack>
 
-      <Stack gap="small">
+      <Stack gap="sm">
         <Text variant="h6">Sizes</Text>
         <HStack wrap>
-          <Button size="small">Small</Button>
-          <Button size="medium">Medium</Button>
-          <Button size="large">Large</Button>
+          <Button size="sm">Small</Button>
+          <Button size="md">Medium</Button>
+          <Button size="lg">Large</Button>
         </HStack>
       </Stack>
 
-      <Stack gap="small">
+      <Stack gap="sm">
         <Text variant="h6">With Icons</Text>
         <HStack wrap>
           <Button>

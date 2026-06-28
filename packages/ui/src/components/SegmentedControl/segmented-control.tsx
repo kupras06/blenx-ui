@@ -1,4 +1,4 @@
-import type { BorderRadiusProp } from "../../utils/types";
+import type { ToggleProps } from "../Toggle/toggle";
 import { ToggleGroup, ToggleGroupItem, type ToggleGroupProps } from "../ToggleGroup/toggle-group";
 
 type Option<T extends string> = {
@@ -10,13 +10,13 @@ type SegmentedControlProps<T extends string> = Omit<ToggleGroupProps, "value" | 
   value: T;
   onValueChange: (value: T) => void;
   options: Option<T>[];
-  radius?: BorderRadiusProp;
+  radius?: ToggleProps["radius"];
 };
 export function SegmentedControl<T extends string>({
   value,
   onValueChange,
   options,
-  radius,
+  radius = "md",
   variant = "outline",
   ...props
 }: SegmentedControlProps<T>) {

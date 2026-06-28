@@ -50,7 +50,7 @@ export const adornment = style({
   justifyContent: "center",
   flexShrink: 0,
   transform: "translateY(-50%)",
-  borderRadius: borderRadius.medium,
+  borderRadius: borderRadius.md,
   borderWidth: borderWidth.thin,
   borderStyle: "solid",
   borderColor: "transparent",
@@ -91,7 +91,7 @@ export const popupShell = style({
   borderWidth: borderWidth.thin,
   borderStyle: "solid",
   borderColor: themeContract.border,
-  borderRadius: borderRadius.large,
+  borderRadius: borderRadius.lg,
   backgroundColor: themeContract.surface,
   boxShadow: themeContract.shadowLg,
   transformOrigin: "var(--transform-origin)",
@@ -117,8 +117,8 @@ export const popup = style({
 
 export const separator = style({
   height: "1px",
-  marginBlock: spacing.xsmall,
-  marginInline: spacing.small,
+  marginBlock: spacing.xs,
+  marginInline: spacing.sm,
   backgroundColor: themeContract.border,
   selectors: {
     "&:last-child": {
@@ -134,16 +134,16 @@ export const group = style({
 
 export const groupLabel = style({
   paddingBlock: "6px",
-  paddingInline: spacing.small,
-  fontSize: fontSize.xsmall,
+  paddingInline: spacing.sm,
+  fontSize: fontSize.xs,
   fontWeight: fontWeight.medium,
   color: themeContract.contentSecondary,
 });
 
 export const empty = style({
-  padding: spacing.small,
+  padding: spacing.sm,
   textAlign: "center",
-  fontSize: fontSize.medium,
+  fontSize: fontSize.md,
   color: themeContract.contentSecondary,
 });
 
@@ -157,21 +157,21 @@ export const value = style({
 });
 
 export const list = style({
-  padding: spacing.xsmall,
+  padding: spacing.xs,
   selectors: {
     "&:not(:empty)": {
-      scrollPaddingBlock: spacing.xsmall,
+      scrollPaddingBlock: spacing.xs,
     },
     "&:has([data-slot='combobox-item'])": {
-      paddingInlineEnd: spacing.small,
+      paddingInlineEnd: spacing.sm,
     },
   },
 });
 
 export const status = style({
-  paddingInline: spacing.medium,
-  paddingBlock: spacing.small,
-  fontSize: fontSize.xsmall,
+  paddingInline: spacing.md,
+  paddingBlock: spacing.sm,
+  fontSize: fontSize.xs,
   fontWeight: fontWeight.medium,
   color: themeContract.contentSecondary,
   selectors: {
@@ -186,16 +186,16 @@ export const item = style({
   display: "grid",
   gridTemplateColumns: "1rem 1fr",
   alignItems: "center",
-  columnGap: spacing.small,
+  columnGap: spacing.sm,
   minHeight: "32px",
-  paddingInlineStart: spacing.small,
-  paddingInlineEnd: spacing.medium,
+  paddingInlineStart: spacing.sm,
+  paddingInlineEnd: spacing.md,
   paddingBlock: spacing["1"],
-  borderRadius: borderRadius.small,
+  borderRadius: borderRadius.sm,
   cursor: "default",
   userSelect: "none",
   outline: "none",
-  fontSize: fontSize.medium,
+  fontSize: fontSize.md,
   selectors: {
     "&:hover": {
       backgroundColor: themeContract.surfaceHover,
@@ -229,13 +229,13 @@ export const chips = style({
   minWidth: 0,
   flexWrap: "wrap",
   alignItems: "center",
-  gap: spacing.xxsmall,
+  gap: spacing.xxs,
   minHeight: "36px",
   padding: "calc(4px - 1px)",
   borderWidth: borderWidth.thin,
   borderStyle: "solid",
   borderColor: themeContract.border,
-  borderRadius: borderRadius.large,
+  borderRadius: borderRadius.lg,
   backgroundColor: themeContract.background,
   color: themeContract.contentPrimary,
   boxShadow: "0 1px 2px rgba(0, 0, 0, 0.04)",
@@ -272,7 +272,7 @@ export const chipsStartAddon = style({
   flexShrink: 0,
   alignItems: "center",
   opacity: 0.8,
-  paddingInlineStart: spacing.small,
+  paddingInlineStart: spacing.sm,
 });
 
 export const chipsStartAddonSm = style({
@@ -286,9 +286,9 @@ export const chipsInput = style({
   outline: "none",
   backgroundColor: "transparent",
   paddingBlock: "6px",
-  paddingInlineStart: spacing.xsmall,
-  paddingInlineEnd: spacing.xsmall,
-  fontSize: fontSize.medium,
+  paddingInlineStart: spacing.xs,
+  paddingInlineEnd: spacing.xs,
+  fontSize: fontSize.md,
   lineHeight: 1.5,
   color: themeContract.contentPrimary,
   selectors: {
@@ -300,7 +300,7 @@ export const chipsInput = style({
       cursor: "not-allowed",
     },
     "&:has(+ [data-slot='combobox-chip'])": {
-      paddingInlineStart: spacing.xxsmall,
+      paddingInlineStart: spacing.xxs,
     },
   },
 });
@@ -308,11 +308,11 @@ export const chipsInput = style({
 export const chip = style({
   display: "inline-flex",
   alignItems: "center",
-  borderRadius: borderRadius.medium,
+  borderRadius: borderRadius.md,
   backgroundColor: themeContract.surfaceHover,
   color: themeContract.contentPrimary,
-  paddingInlineStart: spacing.small,
-  fontSize: fontSize.small,
+  paddingInlineStart: spacing.sm,
+  fontSize: fontSize.sm,
   fontWeight: fontWeight.medium,
   lineHeight: 1.2,
   outline: "none",
@@ -324,7 +324,7 @@ export const chipRemove = style({
   alignItems: "center",
   flexShrink: 0,
   cursor: "pointer",
-  paddingInline: spacing.xsmall,
+  paddingInline: spacing.xs,
   opacity: 0.8,
   selectors: {
     "&:hover": {

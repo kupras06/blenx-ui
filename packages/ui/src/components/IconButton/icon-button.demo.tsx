@@ -5,8 +5,8 @@ import { IconButton } from "./icon-button";
 
 export function IconButtonDemo() {
   return (
-    <VStack gap="medium">
-      <VStack gap="small">
+    <VStack gap="md">
+      <VStack gap="sm">
         <Text variant="h6">Variants</Text>
         <HStack wrap>
           <IconButton aria-label="Send" variant="solid">
@@ -30,7 +30,7 @@ export function IconButtonDemo() {
         </HStack>
       </VStack>
 
-      <VStack gap="small">
+      <VStack gap="sm">
         <Text variant="h6">Intents</Text>
         <HStack wrap>
           <IconButton aria-label="Send" intent="primary">
@@ -51,7 +51,7 @@ export function IconButtonDemo() {
         </HStack>
       </VStack>
 
-      <VStack gap="small">
+      <VStack gap="sm">
         <Text variant="h6">Variant + Intent</Text>
         <HStack wrap>
           <IconButton aria-label="Delete" variant="ghost" intent="danger">
@@ -66,7 +66,7 @@ export function IconButtonDemo() {
         </HStack>
       </VStack>
 
-      <VStack gap="small">
+      <VStack gap="sm">
         <Text variant="h6">Sizes</Text>
         <HStack wrap align="center">
           <IconButton aria-label="Send" variant="outline">
@@ -84,7 +84,7 @@ export function IconButtonDemo() {
         </HStack>
       </VStack>
 
-      <VStack gap="small">
+      <VStack gap="sm">
         <Text variant="h6">States</Text>
         <HStack wrap>
           <IconButton aria-label="Refresh" loading>

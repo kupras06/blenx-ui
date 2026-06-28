@@ -107,7 +107,7 @@ export const ExampleDashboard = memo(() => (
     {/* KPI Cards */}
     <div className={kpiGrid}>
       {kpis.map((kpi) => (
-        <Card key={kpi.label} padding="medium">
+        <Card key={kpi.label} padding="md">
           <Text variant="caption" color="secondary">
             {kpi.label}
           </Text>
@@ -121,7 +121,7 @@ export const ExampleDashboard = memo(() => (
     </div>
 
     {/* Activity Table */}
-    <Card padding="medium">
+    <Card padding="md">
       <CardHeader>
         <CardTitle>Recent Activity</CardTitle>
         <CardDescription>Latest actions across your workspace</CardDescription>
@@ -161,13 +161,13 @@ export const ExampleDashboard = memo(() => (
     {/* User Profile Card + Charts */}
     <div className={dashboardGrid}>
       {/* Profile */}
-      <Card padding="medium">
+      <Card padding="md">
         <CardHeader>
           <CardTitle>User Profile</CardTitle>
         </CardHeader>
         <CardBody>
           <div className={profileContent}>
-            <Avatar size="large">
+            <Avatar size="lg">
               <AvatarFallback>AK</AvatarFallback>
             </Avatar>
             <div className={profileInfo}>
@@ -179,11 +179,11 @@ export const ExampleDashboard = memo(() => (
             </div>
           </div>
           <div className={profileActions}>
-            <Button variant="outline" size="small">
+            <Button variant="outline" size="sm">
               <PencilSimpleLineIcon size={14} />
               Edit
             </Button>
-            <Button intent="danger" size="small">
+            <Button intent="danger" size="sm">
               <TrashSimpleIcon size={14} />
               Delete
             </Button>
@@ -195,7 +195,7 @@ export const ExampleDashboard = memo(() => (
       <Surface variant="outline">
         <CardBody>
           <div className={chartPlaceholder}>
-            <VStack gap="small" align="center">
+            <VStack gap="sm" align="center">
               <ChartBarIcon size={32} />
               <Text variant="body2" color="disabled">
                 Revenue Chart
@@ -210,7 +210,7 @@ export const ExampleDashboard = memo(() => (
       <Surface variant="outline">
         <CardBody>
           <div className={chartPlaceholder}>
-            <VStack gap="small" align="center">
+            <VStack gap="sm" align="center">
               <UsersIcon size={32} />
               <Text variant="body2" color="disabled">
                 User Growth Chart
@@ -223,7 +223,7 @@ export const ExampleDashboard = memo(() => (
       <Surface variant="outline">
         <CardBody>
           <div className={chartPlaceholder}>
-            <VStack gap="small" align="center">
+            <VStack gap="sm" align="center">
               <ChartBarIcon size={32} />
               <Text variant="body2" color="disabled">
                 Conversion Funnel

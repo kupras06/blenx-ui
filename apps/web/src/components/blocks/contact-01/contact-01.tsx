@@ -64,8 +64,8 @@ export function Contact01({
       <Container render={<section />} content="center" size="full" paddingY="huge">
         <Card>
           <CardBody>
-            <VStack align="center" gap="medium">
-              <Icon padding="small" backgroundColor="success" color="success" radius="full">
+            <VStack align="center" gap="md">
+              <Icon padding="sm" backgroundColor="success" color="success" radius="full">
                 <PaperPlaneTiltIcon size={44} />
               </Icon>
               <Text variant="h3">Message sent!</Text>
@@ -84,7 +84,7 @@ export function Contact01({
 
   return (
     <Container render={<section />} content="center" size="full" paddingY="huge">
-      <VStack gap="medium" align="center" justify="center">
+      <VStack gap="md" align="center" justify="center">
         <Box>
           <Text variant="h2" align="center">
             {title}
@@ -93,7 +93,7 @@ export function Contact01({
             {description}
           </Text>
         </Box>
-        <HStack gap="medium">
+        <HStack gap="md">
           <Card>
             <CardBody>
               <VStack render={<form onSubmit={handleSubmit} aria-label="Contact form" />}>
@@ -167,7 +167,7 @@ export function Contact01({
           </Card>
 
           {contactInfo && (
-            <VStack gap="large">
+            <VStack gap="lg">
               {contactInfo.address && (
                 <Box>
                   <Text variant="body3">Address</Text>

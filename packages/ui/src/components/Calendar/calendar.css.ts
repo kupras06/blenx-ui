@@ -17,12 +17,12 @@ export const monthCaption = style({
   alignItems: "center",
   justifyContent: "center",
   position: "relative",
-  paddingBottom: spacing.small,
+  paddingBottom: spacing.sm,
   minHeight: 40,
 });
 
 export const captionLabel = style({
-  fontSize: fontSize.medium,
+  fontSize: fontSize.md,
   fontWeight: fontWeight.semibold,
   color: themeContract.contentPrimary,
   margin: 0,
@@ -36,7 +36,7 @@ export const nav = style({
   alignItems: "center",
   position: "absolute",
   inset: 0,
-  padding: spacing.xsmall,
+  padding: spacing.xs,
   pointerEvents: "none",
   zIndex: 10,
 });
@@ -74,12 +74,12 @@ export const monthGrid = style({
 });
 
 export const weekday = style({
-  fontSize: fontSize.xsmall,
+  fontSize: fontSize.xs,
   fontWeight: fontWeight.medium,
   color: themeContract.contentSecondary,
   textAlign: "center",
   verticalAlign: "middle",
-  padding: spacing.xxsmall,
+  padding: spacing.xxs,
   width: 40,
   height: 32,
   boxSizing: "border-box",
@@ -108,7 +108,7 @@ export const dayButton = style({
   border: "none",
   backgroundColor: "transparent",
   cursor: "pointer",
-  fontSize: fontSize.small,
+  fontSize: fontSize.sm,
   color: themeContract.contentPrimary,
   outline: "none",
   margin: "0 auto",
@@ -160,12 +160,12 @@ export const dayButtonOutside = style({
 });
 
 export const footer = style({
-  paddingTop: spacing.small,
+  paddingTop: spacing.sm,
 });
 
 export const dropdowns = style({
   display: "flex",
-  gap: spacing.xsmall,
+  gap: spacing.xs,
   alignItems: "center",
 });
 
@@ -175,8 +175,8 @@ export const dropdown = style({
   border: `1px solid ${themeContract.border}`,
   borderRadius: themeContract.borderRadius,
   color: themeContract.contentPrimary,
-  fontSize: fontSize.small,
-  padding: `${spacing.xxsmall} ${spacing.small}`,
+  fontSize: fontSize.sm,
+  padding: `${spacing.xxs} ${spacing.sm}`,
   cursor: "pointer",
   outline: "none",
   selectors: {

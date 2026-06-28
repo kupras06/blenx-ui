@@ -30,7 +30,7 @@ function CodeFrame({
   return (
     <Surface
       variant="sunken"
-      borderRadius="medium"
+      borderRadius="md"
       overflow="hidden"
       position="relative"
       width="full"
@@ -44,7 +44,7 @@ function CodeFrame({
               <SegmentedControl
                 variant="default"
                 value={String(activeIndex ?? 0)}
-                radius="xsmall"
+                radius="xs"
                 onValueChange={(value) => {
                   onActiveIndexChange?.(Number(value));
                 }}
@@ -58,7 +58,7 @@ function CodeFrame({
             ) : (
               <>
                 {title ? (
-                  <HStack gap="xsmall" align="center" overflow="hidden">
+                  <HStack gap="xs" align="center" overflow="hidden">
                     <Text variant="h6" color="secondary">
                       {title}
                     </Text>

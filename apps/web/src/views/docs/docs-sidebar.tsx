@@ -29,11 +29,11 @@ function DocsSidebar({ onClose }: { onClose?: () => void }) {
 
   return (
     <Surface variant="sunken" fullWidth>
-      <VStack gap="medium" padding="medium">
+      <VStack gap="md" padding="md">
         {sidebarSections.map((section) => (
           <Box key={section.title}>
             <Text variant="h3">{section.title}</Text>
-            <VStack gap="xxsmall">
+            <VStack gap="xxs">
               {section.links.map((link) => {
                 const isActive = isLinkActive(link.to, pathname);
                 return (

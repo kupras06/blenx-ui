@@ -96,7 +96,7 @@ export function Settings01() {
                 <Separator />
                 <Field>
                   <FieldLabel htmlFor="settings-font-size">Font size</FieldLabel>
-                  <Input id="settings-font-size" defaultValue="Medium" />
+                  <Input id="settings-font-size" defaultValue="md" />
                 </Field>
               </VStack>
             </CardBody>
@@ -143,7 +143,7 @@ export function Settings01() {
               <CardTitle>Billing</CardTitle>
             </CardHeader>
             <CardBody>
-              <VStack gap="small">
+              <VStack gap="sm">
                 <VStack>
                   <HStack justify="between">
                     <Text variant="body2" weight="medium">

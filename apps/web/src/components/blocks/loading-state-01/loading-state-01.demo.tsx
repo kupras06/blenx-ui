@@ -19,7 +19,7 @@ export function LoadingState01AvatarDemo() {
 
 export function LoadingState01AllDemo() {
   return (
-    <VStack gap="large">
+    <VStack gap="lg">
       <LoadingState01 pattern="text" lines={3} label="Loading text" />
       <LoadingState01 pattern="card" label="Loading card" />
       <LoadingState01 pattern="table" rows={3} label="Loading table" />

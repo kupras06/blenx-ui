@@ -29,7 +29,7 @@ export function EmptyState01({
   variant,
 }: Props) {
   const content = (
-    <VStack align="center" gap="medium">
+    <VStack align="center" gap="md">
       {icon && <Box color="secondary">{icon}</Box>}
       <Text variant="h3" weight="semibold" align="center">
         {title}
@@ -40,7 +40,7 @@ export function EmptyState01({
         </Text>
       )}
       {(action || secondaryAction) && (
-        <HStack gap="small" align="center" wrap>
+        <HStack gap="sm" align="center" wrap>
           {action && (
             <Button variant="solid" onClick={action.handleClick} fullWidth>
               {action.label}

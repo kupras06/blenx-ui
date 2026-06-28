@@ -83,8 +83,8 @@ export const viewportRight = style({
 });
 
 export const viewportInset = style({
-  paddingLeft: spacing.medium,
-  paddingRight: spacing.medium,
+  paddingLeft: spacing.md,
+  paddingRight: spacing.md,
 });
 
 export const popup = style({
@@ -129,7 +129,7 @@ export const popupInset = style({
   "@media": {
     "(min-width: 640px)": {
       borderWidth: borderWidth.thin,
-      borderRadius: borderRadius.xlarge,
+      borderRadius: borderRadius.xl,
     },
   },
 });
@@ -137,54 +137,54 @@ export const popupInset = style({
 export const popupBottom = style({
   gridRowStart: 2,
   borderTopWidth: borderWidth.thin,
-  borderTopLeftRadius: borderRadius.xlarge,
-  borderTopRightRadius: borderRadius.xlarge,
+  borderTopLeftRadius: borderRadius.xl,
+  borderTopRightRadius: borderRadius.xl,
 });
 
 export const popupTop = style({
   borderBottomWidth: borderWidth.thin,
-  borderBottomLeftRadius: borderRadius.xlarge,
-  borderBottomRightRadius: borderRadius.xlarge,
+  borderBottomLeftRadius: borderRadius.xl,
+  borderBottomRightRadius: borderRadius.xl,
 });
 
 export const popupLeft = style({
   width: "calc(100% - 48px)",
   maxWidth: "28rem",
   borderRightWidth: borderWidth.thin,
-  borderTopRightRadius: borderRadius.xlarge,
-  borderBottomRightRadius: borderRadius.xlarge,
+  borderTopRightRadius: borderRadius.xl,
+  borderBottomRightRadius: borderRadius.xl,
 });
 
 export const popupRight = style({
   width: "calc(100% - 48px)",
   maxWidth: "28rem",
   borderLeftWidth: borderWidth.thin,
-  borderTopLeftRadius: borderRadius.xlarge,
-  borderBottomLeftRadius: borderRadius.xlarge,
+  borderTopLeftRadius: borderRadius.xl,
+  borderBottomLeftRadius: borderRadius.xl,
 });
 
 export const closeButton = style({
   position: "absolute",
-  top: spacing.small,
-  insetInlineEnd: spacing.small,
+  top: spacing.sm,
+  insetInlineEnd: spacing.sm,
 });
 
 export const header = style({
   display: "flex",
   flexDirection: "column",
-  gap: spacing.small,
-  paddingTop: spacing.large,
-  paddingLeft: spacing.large,
-  paddingRight: spacing.large,
+  gap: spacing.sm,
+  paddingTop: spacing.lg,
+  paddingLeft: spacing.lg,
+  paddingRight: spacing.lg,
   boxSizing: "border-box",
 });
 
 export const footer = style({
   display: "flex",
   flexDirection: "column-reverse",
-  gap: spacing.small,
-  paddingLeft: spacing.large,
-  paddingRight: spacing.large,
+  gap: spacing.sm,
+  paddingLeft: spacing.lg,
+  paddingRight: spacing.lg,
   boxSizing: "border-box",
   "@media": {
     "(min-width: 640px)": {
@@ -199,13 +199,13 @@ export const footerDefault = style({
   borderTopStyle: "solid",
   borderTopColor: themeContract.borderSubtle,
   backgroundColor: themeContract.backgroundSubtle,
-  paddingTop: spacing.medium,
-  paddingBottom: spacing.medium,
+  paddingTop: spacing.md,
+  paddingBottom: spacing.md,
 });
 
 export const footerBare = style({
-  paddingTop: spacing.medium,
-  paddingBottom: spacing.large,
+  paddingTop: spacing.md,
+  paddingBottom: spacing.lg,
 });
 
 export const title = style({
@@ -215,17 +215,17 @@ export const title = style({
 });
 
 export const description = style({
-  fontSize: fontSize.small,
+  fontSize: fontSize.sm,
   lineHeight: 1.4,
   color: themeContract.contentSecondary,
 });
 
 export const panel = style({
   boxSizing: "border-box",
-  paddingTop: spacing.large,
-  paddingLeft: spacing.large,
-  paddingRight: spacing.large,
-  paddingBottom: spacing.large,
+  paddingTop: spacing.lg,
+  paddingLeft: spacing.lg,
+  paddingRight: spacing.lg,
+  paddingBottom: spacing.lg,
 });
 
 export const bar = style({
@@ -233,7 +233,7 @@ export const bar = style({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  padding: spacing.small,
+  padding: spacing.sm,
   touchAction: "none",
 });
 
@@ -271,17 +271,17 @@ export const menu = style({
 export const menuItem = style({
   display: "flex",
   alignItems: "center",
-  gap: spacing.small,
+  gap: spacing.sm,
   minHeight: "36px",
-  paddingTop: spacing.xsmall,
-  paddingBottom: spacing.xsmall,
-  paddingLeft: spacing.small,
-  paddingRight: spacing.small,
-  borderRadius: borderRadius.small,
+  paddingTop: spacing.xs,
+  paddingBottom: spacing.xs,
+  paddingLeft: spacing.sm,
+  paddingRight: spacing.sm,
+  borderRadius: borderRadius.sm,
   border: "none",
   backgroundColor: "transparent",
   color: themeContract.contentPrimary,
-  fontSize: fontSize.medium,
+  fontSize: fontSize.md,
   textAlign: "left",
   cursor: "default",
   outline: "none",
@@ -294,8 +294,8 @@ export const menuItemDestructive = style({
 export const separator = style({
   height: "1px",
   backgroundColor: themeContract.borderSubtle,
-  marginTop: spacing.xsmall,
-  marginBottom: spacing.xsmall,
+  marginTop: spacing.xs,
+  marginBottom: spacing.xs,
 });
 
 export const menuGroup = style({
@@ -304,11 +304,11 @@ export const menuGroup = style({
 });
 
 export const menuGroupLabel = style({
-  paddingTop: spacing.xsmall,
-  paddingBottom: spacing.xsmall,
-  paddingLeft: spacing.small,
-  paddingRight: spacing.small,
-  fontSize: fontSize.xsmall,
+  paddingTop: spacing.xs,
+  paddingBottom: spacing.xs,
+  paddingLeft: spacing.sm,
+  paddingRight: spacing.sm,
+  fontSize: fontSize.xs,
   fontWeight: fontWeight.medium,
   color: themeContract.contentSecondary,
 });
@@ -316,13 +316,13 @@ export const menuGroupLabel = style({
 export const menuTrigger = style({
   display: "flex",
   alignItems: "center",
-  gap: spacing.small,
+  gap: spacing.sm,
   minHeight: "36px",
-  paddingTop: spacing.xsmall,
-  paddingBottom: spacing.xsmall,
-  paddingLeft: spacing.small,
-  paddingRight: spacing.small,
-  borderRadius: borderRadius.small,
+  paddingTop: spacing.xs,
+  paddingBottom: spacing.xs,
+  paddingLeft: spacing.sm,
+  paddingRight: spacing.sm,
+  borderRadius: borderRadius.sm,
   backgroundColor: "transparent",
   border: "none",
   color: themeContract.contentPrimary,
@@ -337,13 +337,13 @@ export const menuTriggerIcon = style({
 export const menuCheckbox = style({
   display: "grid",
   alignItems: "center",
-  gap: spacing.small,
+  gap: spacing.sm,
   minHeight: "36px",
-  paddingTop: spacing.xsmall,
-  paddingBottom: spacing.xsmall,
-  paddingLeft: spacing.small,
-  paddingRight: spacing.small,
-  borderRadius: borderRadius.small,
+  paddingTop: spacing.xs,
+  paddingBottom: spacing.xs,
+  paddingLeft: spacing.sm,
+  paddingRight: spacing.sm,
+  borderRadius: borderRadius.sm,
   backgroundColor: "transparent",
   border: "none",
   color: themeContract.contentPrimary,
@@ -351,12 +351,12 @@ export const menuCheckbox = style({
 
 export const menuCheckboxDefault = style({
   gridTemplateColumns: "1rem 1fr",
-  paddingRight: spacing.medium,
+  paddingRight: spacing.md,
 });
 
 export const menuCheckboxSwitch = style({
   gridTemplateColumns: "1fr auto",
-  paddingRight: spacing.xsmall,
+  paddingRight: spacing.xs,
 });
 
 export const menuCheckboxSwitchLabel = style({
@@ -390,13 +390,13 @@ export const menuCheckboxLabel = style({
 export const menuRadio = style({
   display: "grid",
   alignItems: "center",
-  gap: spacing.small,
+  gap: spacing.sm,
   minHeight: "36px",
-  paddingTop: spacing.xsmall,
-  paddingBottom: spacing.xsmall,
-  paddingLeft: spacing.small,
-  paddingRight: spacing.medium,
-  borderRadius: borderRadius.small,
+  paddingTop: spacing.xs,
+  paddingBottom: spacing.xs,
+  paddingLeft: spacing.sm,
+  paddingRight: spacing.md,
+  borderRadius: borderRadius.sm,
   backgroundColor: "transparent",
   border: "none",
   color: themeContract.contentPrimary,

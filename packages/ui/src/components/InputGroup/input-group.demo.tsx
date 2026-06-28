@@ -12,7 +12,7 @@ import {
 
 export function DefaultStory() {
   return (
-    <Stack gap="medium">
+    <Stack gap="md">
       <Text variant="h4">With icon and button</Text>
       <InputGroup>
         <InputGroupAddon align="inline-start">
@@ -20,7 +20,7 @@ export function DefaultStory() {
         </InputGroupAddon>
         <InputGroupInput placeholder="Search..." />
         <InputGroupAddon align="inline-end">
-          <Button size="small" variant="ghost">
+          <Button size="sm" variant="ghost">
             Go
           </Button>
         </InputGroupAddon>
@@ -31,7 +31,7 @@ export function DefaultStory() {
         </InputGroupAddon>
         <InputGroupTextarea placeholder="Search..." />
         <InputGroupAddon align="block-end">
-          <Button size="small" variant="ghost">
+          <Button size="sm" variant="ghost">
             Go
           </Button>
         </InputGroupAddon>

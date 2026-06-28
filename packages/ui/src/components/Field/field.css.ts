@@ -13,7 +13,7 @@ export const label = style({
   display: "inline-flex",
   alignItems: "center",
   fontWeight: 400,
-  fontSize: fontSize.medium,
+  fontSize: fontSize.md,
   color: "inherit",
 });
 

@@ -26,7 +26,7 @@ Card is a surface-level container that groups related content and actions into a
 
 Wrap content in `Card`, then compose with `CardHeader`, `CardBody`, and `CardFooter` as needed. `CardTitle` and `CardDescription` go inside `CardHeader` to establish the card's heading hierarchy and supplementary text. The header typically contains the title and any primary actions, the body holds the main content, and the footer houses secondary actions or metadata.
 
-`Card` renders a `Surface` with `variant="sunken"`, a border, and `p="medium"` padding by default. `CardHeader`, `CardBody`, and `CardFooter` also apply `p="medium"` padding automatically. Pass the `variant` prop to switch between surface styles — `"default"`, `"outline"`, `"raised"`, or `"sunken"`. Set `interactive` to add hover and focus-visible styles for clickable cards. All sub-components forward their underlying element props (`BoxProps` for header/body, `HStackProps` for footer, `TextProps` for title/description), giving you access to spacing, layout, and color sprinkles.
+`Card` renders a `Surface` with `variant="sunken"`, a border, and `p="md"` padding by default. `CardHeader`, `CardBody`, and `CardFooter` also apply `p="md"` padding automatically. Pass the `variant` prop to switch between surface styles — `"default"`, `"outline"`, `"raised"`, or `"sunken"`. Set `interactive` to add hover and focus-visible styles for clickable cards. All sub-components forward their underlying element props (`BoxProps` for header/body, `HStackProps` for footer, `TextProps` for title/description), giving you access to spacing, layout, and color sprinkles.
 
 ## API Reference
 

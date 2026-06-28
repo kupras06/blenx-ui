@@ -23,8 +23,8 @@ function Installation({ registryName }: InstallationProps) {
   const files = registry?.files ?? [];
 
   return (
-    <VStack gap="medium">
-      <VStack gap="xsmall">
+    <VStack gap="md">
+      <VStack gap="xs">
         <DocsH3>CLI Installation</DocsH3>
         <Text variant="body2" color="secondary">
           Install the component using the shadcn CLI:
@@ -35,7 +35,7 @@ function Installation({ registryName }: InstallationProps) {
       {registry && files.length > 0 && (
         <>
           <Separator />
-          <VStack gap="xsmall">
+          <VStack gap="xs">
             <DocsH3>Manual Installation</DocsH3>
             <Text variant="body2" color="secondary">
               Copy the following files into your project:
@@ -52,7 +52,7 @@ function Installation({ registryName }: InstallationProps) {
       )}
 
       {dependencies.length > 0 && (
-        <VStack gap="small">
+        <VStack gap="sm">
           <Text variant="h6" color="secondary">
             Dependencies
           </Text>

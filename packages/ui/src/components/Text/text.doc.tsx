@@ -3,7 +3,7 @@ import { Text } from "./text";
 
 export function VariantsStory() {
   return (
-    <Stack gap="small">
+    <Stack gap="sm">
       <Text variant="h1">Heading 1</Text>
       <Text variant="h2">Heading 2</Text>
       <Text variant="h3">Heading 3</Text>
@@ -22,7 +22,7 @@ export function VariantsStory() {
 
 export function ColorsStory() {
   return (
-    <Stack gap="small">
+    <Stack gap="sm">
       <Text color="primary">Primary color</Text>
       <Text color="secondary">Secondary color</Text>
       <Text color="disabled">Disabled color</Text>
@@ -33,9 +33,9 @@ export function ColorsStory() {
 
 export function WeightsStory() {
   return (
-    <Stack gap="small">
+    <Stack gap="sm">
       <Text weight="regular">Regular weight</Text>
-      <Text weight="medium">Medium weight</Text>
+      <Text weight="md">Medium weight</Text>
       <Text weight="semibold">Semibold weight</Text>
       <Text weight="bold">Bold weight</Text>
     </Stack>
@@ -44,7 +44,7 @@ export function WeightsStory() {
 
 export function AlignmentsStory() {
   return (
-    <Stack gap="small">
+    <Stack gap="sm">
       <Text textAlign="left">Left aligned</Text>
       <Text textAlign="center">Center aligned</Text>
       <Text textAlign="right">Right aligned</Text>

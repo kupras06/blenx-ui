@@ -40,18 +40,18 @@ const docLinks = [
 ];
 export function LandingPageDocumentation() {
   return (
-    <VStack gap="large">
-      <VStack gap="small" align="center">
+    <VStack gap="lg">
+      <VStack gap="sm" align="center">
         <Text variant="h2" align="center">
           Documentation
         </Text>
         <Box maxWidth={480}>
-          <Text variant="body2" color="secondary" align="center" size="large">
+          <Text variant="body2" color="secondary" align="center" size="lg">
             Everything you need to get started with Blenx UI.
           </Text>
         </Box>
       </VStack>
-      <Grid columns={3} gap="medium">
+      <Grid columns={3} gap="md">
         {docLinks.map((link) => (
           <Surface
             key={link.to + link.title}
@@ -64,10 +64,10 @@ export function LandingPageDocumentation() {
               />
             }
             variant="outline"
-            padding="medium"
+            padding="md"
             interactive
           >
-            <VStack gap="xxsmall">
+            <VStack gap="xxs">
               <Text variant="h5">{link.title}</Text>
               <Text variant="body2" color="secondary">
                 {link.desc}

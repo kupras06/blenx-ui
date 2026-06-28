@@ -4,7 +4,7 @@ import { Input } from "./input";
 
 export function SizesStory() {
   return (
-    <Stack gap="medium">
+    <Stack gap="md">
       <Text variant="h4">Sizess</Text>
       <Input size="sm" placeholder="Small input" />
       <Input size="default" placeholder="Default input" />
@@ -15,7 +15,7 @@ export function SizesStory() {
 
 export function StatesStory() {
   return (
-    <Stack gap="medium">
+    <Stack gap="md">
       <Text variant="h4">States</Text>
       <Input placeholder="Normal input" />
       <Input placeholder="Disabled input" disabled />

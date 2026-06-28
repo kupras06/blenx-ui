@@ -142,7 +142,7 @@ The tokens file defines `fontSize`, `fontWeight`, `lineHeight`, `letterSpacing`,
 
 ```tsx
 createTheme(themeContract, {
-  fontSize: fontSize.medium, // "16px"
+  fontSize: fontSize.md, // "16px"
 });
 ```
 

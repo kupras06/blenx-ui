@@ -32,8 +32,8 @@ export const viewportFade = style({
 });
 
 export const viewportGutter = style({
-  paddingRight: spacing.small,
-  paddingBottom: spacing.small,
+  paddingRight: spacing.sm,
+  paddingBottom: spacing.sm,
 });
 
 export const contentFill = style({
@@ -42,7 +42,7 @@ export const contentFill = style({
 });
 
 export const scrollbar = style({
-  margin: spacing.xsmall,
+  margin: spacing.xs,
   display: "flex",
   opacity: 0,
   boxSizing: "border-box",

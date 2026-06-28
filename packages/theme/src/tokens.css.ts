@@ -2,12 +2,12 @@ import { style } from "@vanilla-extract/css";
 import { themeContract } from "./contract.css";
 
 export const borderRadius = {
-  xsmall: "2px",
-  small: "4px",
-  medium: "8px",
-  large: "12px",
-  xlarge: "16px",
-  xxlarge: "24px",
+  xs: "2px",
+  sm: "4px",
+  md: "8px",
+  lg: "12px",
+  xl: "16px",
+  xxl: "24px",
   full: "999px",
 } as const;
 
@@ -21,14 +21,14 @@ export const fonts = {
 } as const;
 
 export const fontSize = {
-  xxsmall: "10px",
-  xsmall: "12px",
-  small: "14px",
-  medium: "16px",
-  large: "18px",
-  xlarge: "20px",
-  xxlarge: "24px",
-  xxxlarge: "30px",
+  xxs: "10px",
+  xs: "12px",
+  sm: "14px",
+  md: "16px",
+  lg: "18px",
+  xl: "20px",
+  xxl: "24px",
+  xxxl: "30px",
   display: "36px",
   displayLg: "48px",
   hero: "60px",
@@ -61,14 +61,14 @@ export const letterSpacing = {
 
 export const spacing = {
   none: "0px",
-  xxsmall: "4px",
-  xsmall: "8px",
-  small: "12px",
-  medium: "16px",
-  large: "24px",
-  xlarge: "32px",
-  xxlarge: "48px",
-  xxxlarge: "64px",
+  xxs: "4px",
+  xs: "8px",
+  sm: "12px",
+  md: "16px",
+  lg: "24px",
+  xl: "32px",
+  xxl: "48px",
+  xxxl: "64px",
   huge: "80px",
   massive: "96px",
   titanic: "192px",

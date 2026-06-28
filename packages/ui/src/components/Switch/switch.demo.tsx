@@ -4,16 +4,16 @@ import { Switch } from "./switch";
 
 export function SwitchDemo() {
   return (
-    <VStack gap="medium">
-      <HStack gap="medium" align="center">
+    <VStack gap="md">
+      <HStack gap="md" align="center">
         <Switch defaultChecked />
         <Text variant="body2">Airplane Mode</Text>
       </HStack>
-      <HStack gap="medium" align="center">
+      <HStack gap="md" align="center">
         <Switch />
         <Text variant="body2">Wi-Fi</Text>
       </HStack>
-      <HStack gap="medium" align="center">
+      <HStack gap="md" align="center">
         <Switch disabled />
         <Text variant="body2" color="secondary">
           Bluetooth (disabled)

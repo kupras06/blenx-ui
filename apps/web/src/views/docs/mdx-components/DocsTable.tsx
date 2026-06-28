@@ -8,7 +8,7 @@ interface DocsTableProps {
 
 function DocsTable({ children }: DocsTableProps) {
   return (
-    <Box className={tableScroll} borderRadius="medium" withBorder>
+    <Box className={tableScroll} borderRadius="md" withBorder>
       <table className={tableView}>{children}</table>
     </Box>
   );

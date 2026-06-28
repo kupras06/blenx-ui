@@ -39,7 +39,7 @@ export const skeletonTableHeader = style({
   height: 40,
   borderRadius: themeContract.borderRadius,
   backgroundColor: themeContract.surfaceRaised,
-  marginBottom: spacing.xsmall,
+  marginBottom: spacing.xs,
 });
 
 export const skeletonTableRow = style({
@@ -59,19 +59,19 @@ export const skeletonAvatar = style({
 export const skeletonAvatarTextGroup = style({
   display: "flex",
   flexDirection: "column",
-  gap: spacing.xsmall,
+  gap: spacing.xs,
   flex: 1,
 });
 
 export const skeletonContainer = style({
   display: "flex",
   flexDirection: "column",
-  gap: spacing.medium,
-  padding: spacing.medium,
+  gap: spacing.md,
+  padding: spacing.md,
 });
 
 export const skeletonProgressWrapper = style({
-  marginTop: spacing.small,
+  marginTop: spacing.sm,
   width: "100%",
   maxWidth: 300,
 });

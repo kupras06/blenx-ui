@@ -3,7 +3,7 @@ import { ColorSwatch } from "./color-swatch";
 
 export function DefaultStory() {
   return (
-    <HStack gap="medium" align="center">
+    <HStack gap="md" align="center">
       <ColorSwatch color="#C9822A" size={24} />
       <ColorSwatch color="#27AE60" size={24} />
       <ColorSwatch color="#2980B9" size={24} />
@@ -15,7 +15,7 @@ export function DefaultStory() {
 
 export function SizesStory() {
   return (
-    <HStack gap="medium" align="center">
+    <HStack gap="md" align="center">
       <ColorSwatch color="#C9822A" size={16} />
       <ColorSwatch color="#C9822A" size={24} />
       <ColorSwatch color="#C9822A" size={32} />

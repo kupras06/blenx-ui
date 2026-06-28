@@ -3,33 +3,25 @@
 import { Toggle as TogglePrimitive } from "@base-ui/react/toggle";
 import clsx from "clsx";
 import { base, pressed, radius, size, variant } from "./toggle.css";
-
+import type { RecipeVariants } from "@vanilla-extract/recipes";
 export type ToggleVariant = "default" | "outline";
 export type ToggleSize = "default" | "sm" | "lg";
-export type ToggleRadius =
-  | "none"
-  | "xsmall"
-  | "small"
-  | "medium"
-  | "large"
-  | "xlarge"
-  | "xxlarge"
-  | "full";
+export type ToggleRadius = RecipeVariants<typeof radius>;
 
-export interface ToggleProps extends Omit<TogglePrimitive.Props, "className" | "style"> {
-  variant?: ToggleVariant;
-  size?: ToggleSize;
-  className?: string;
-  style?: React.CSSProperties;
-  radius?: ToggleRadius;
-}
+export type ToggleProps = Omit<TogglePrimitive.Props, "className" | "style"> &
+  ToggleRadius & {
+    variant?: ToggleVariant;
+    size?: ToggleSize;
+    className?: string;
+    style?: React.CSSProperties;
+  };
 
 export function Toggle({
   children,
   className,
   style,
   variant: v = "default",
-  radius: r,
+  radius: r = "default",
   size: s = "default",
   ...props
 }: ToggleProps) {

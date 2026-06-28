@@ -27,7 +27,7 @@ export function DataTablePagination<TData>({ table }: DataTablePaginationProps<T
         <div className={styles.buttonGroup}>
           <Button
             variant="outline"
-            size="small"
+            size="sm"
             disabled={!canPreviousPage}
             onClick={() => table.previousPage()}
             aria-label="Previous page"
@@ -52,7 +52,7 @@ export function DataTablePagination<TData>({ table }: DataTablePaginationProps<T
                   <Button
                     variant={isActive ? "solid" : "ghost"}
                     intent={isActive ? "primary" : undefined}
-                    size="small"
+                    size="sm"
                     disabled={isActive}
                     onClick={() => table.setPageIndex(pageIdx)}
                     aria-label={`Page ${page.toString()}`}
@@ -66,7 +66,7 @@ export function DataTablePagination<TData>({ table }: DataTablePaginationProps<T
             })}
           <Button
             variant="outline"
-            size="small"
+            size="sm"
             disabled={!canNextPage}
             onClick={() => table.nextPage()}
             aria-label="Next page"

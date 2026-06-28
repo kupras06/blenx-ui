@@ -11,13 +11,13 @@ function DocAccessibility({ keyboard, aria }: DocAccessibilityProps) {
   }
 
   return (
-    <VStack gap="medium">
+    <VStack gap="md">
       {keyboard && keyboard.length > 0 && (
         <Box>
-          <Text variant="h6" marginBottom="xsmall">
+          <Text variant="h6" marginBottom="xs">
             Keyboard Support
           </Text>
-          <HStack gap="xsmall">
+          <HStack gap="xs">
             {keyboard.map((key) => (
               <Text key={key} variant="code" span>
                 {key}
@@ -29,10 +29,10 @@ function DocAccessibility({ keyboard, aria }: DocAccessibilityProps) {
 
       {aria && aria.length > 0 && (
         <Box>
-          <Text variant="h6" marginBottom="xsmall">
+          <Text variant="h6" marginBottom="xs">
             ARIA Attributes
           </Text>
-          <HStack gap="xsmall">
+          <HStack gap="xs">
             {aria.map((attr) => (
               <Text key={attr} variant="code">
                 {attr}

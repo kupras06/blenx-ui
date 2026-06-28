@@ -17,7 +17,7 @@ export const groupVertical = style({
 });
 
 export const groupDefault = style({
-  gap: spacing.xxsmall,
+  gap: spacing.xxs,
 });
 
 export const groupOutline = style({
@@ -27,12 +27,12 @@ export const groupOutline = style({
 export const outlineItemHorizontal = style({
   selectors: {
     "&:first-child": {
-      borderStartStartRadius: borderRadius.medium,
-      borderEndStartRadius: borderRadius.medium,
+      borderStartStartRadius: borderRadius.md,
+      borderEndStartRadius: borderRadius.md,
     },
     "&:last-child": {
-      borderStartEndRadius: borderRadius.medium,
-      borderEndEndRadius: borderRadius.medium,
+      borderStartEndRadius: borderRadius.md,
+      borderEndEndRadius: borderRadius.md,
     },
     "&:not(:first-child)": {
       borderInlineStartWidth: 0,
@@ -53,12 +53,12 @@ export const outlineItemHorizontal = style({
 export const outlineItemVertical = style({
   selectors: {
     "&:first-child": {
-      borderStartStartRadius: borderRadius.medium,
-      borderStartEndRadius: borderRadius.medium,
+      borderStartStartRadius: borderRadius.md,
+      borderStartEndRadius: borderRadius.md,
     },
     "&:last-child": {
-      borderEndStartRadius: borderRadius.medium,
-      borderEndEndRadius: borderRadius.medium,
+      borderEndStartRadius: borderRadius.md,
+      borderEndEndRadius: borderRadius.md,
     },
     "&:not(:first-child)": {
       borderBlockStartWidth: 0,

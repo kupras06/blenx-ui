@@ -33,13 +33,13 @@ export function WithGroupsStory() {
       <CommandList>
         <CommandGroup heading="Frameworks">
           <CommandItem value="react">
-            <HStack gap="small" align="center">
+            <HStack gap="sm" align="center">
               <FileCode size={16} />
               <span>React</span>
             </HStack>
           </CommandItem>
           <CommandItem value="vue">
-            <HStack gap="small" align="center">
+            <HStack gap="sm" align="center">
               <FileCode size={16} />
               <span>Vue</span>
             </HStack>
@@ -48,13 +48,13 @@ export function WithGroupsStory() {
         <CommandSeparator />
         <CommandGroup heading="Tools">
           <CommandItem value="vite">
-            <HStack gap="small" align="center">
+            <HStack gap="sm" align="center">
               <Gear size={16} />
               <span>Vite</span>
             </HStack>
           </CommandItem>
           <CommandItem value="webpack">
-            <HStack gap="small" align="center">
+            <HStack gap="sm" align="center">
               <Gear size={16} />
               <span>Webpack</span>
             </HStack>
@@ -63,13 +63,13 @@ export function WithGroupsStory() {
         <CommandSeparator />
         <CommandGroup heading="Themes">
           <CommandItem value="light">
-            <HStack gap="small" align="center">
+            <HStack gap="sm" align="center">
               <Palette size={16} />
               <span>Light</span>
             </HStack>
           </CommandItem>
           <CommandItem value="dark">
-            <HStack gap="small" align="center">
+            <HStack gap="sm" align="center">
               <Palette size={16} />
               <span>Dark</span>
             </HStack>

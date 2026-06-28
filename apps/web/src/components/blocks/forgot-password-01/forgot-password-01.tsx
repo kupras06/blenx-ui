@@ -40,7 +40,7 @@ export function ForgotPassword01({
   };
 
   return (
-    <Container size="md" paddingY="xlarge">
+    <Container size="md" paddingY="xl">
       <Card>
         <CardBody>
           {submitted ? (
@@ -72,7 +72,7 @@ export function ForgotPassword01({
               )}
             </VStack>
           ) : (
-            <VStack gap="medium">
+            <VStack gap="md">
               <Box>
                 <Text variant="h3" align="center">
                   {title}
@@ -84,7 +84,7 @@ export function ForgotPassword01({
               </Box>
               <VStack
                 render={<form onSubmit={handleSubmit} aria-label="Forgot password form" />}
-                marginY="medium"
+                marginY="md"
               >
                 <Field>
                   <FieldLabel>Email</FieldLabel>

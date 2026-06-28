@@ -44,8 +44,8 @@ import {
 import { memo } from "react";
 
 export const ComponentShowcase = memo(() => (
-  <VStack gap="large">
-    <VStack withBorder padding="small">
+  <VStack gap="lg">
+    <VStack withBorder padding="sm">
       <Text variant="h3">Buttons</Text>
       <HStack>
         <Button variant="solid">Primary</Button>
@@ -61,20 +61,20 @@ export const ComponentShowcase = memo(() => (
         <Button variant="outline" disabled>
           Disabled
         </Button>
-        <Button variant="solid" size="small">
+        <Button variant="solid" size="sm">
           Small
         </Button>
-        <Button variant="solid" size="medium">
+        <Button variant="solid" size="md">
           Medium
         </Button>
-        <Button variant="solid" size="large">
+        <Button variant="solid" size="lg">
           Large
         </Button>
       </HStack>
     </VStack>
 
     {/* Forms */}
-    <VStack withBorder padding="small">
+    <VStack withBorder padding="sm">
       <Text variant="h3">Forms</Text>
       <VStack maxWidth="sm">
         <Input placeholder="Enter text..." size="default" />
@@ -123,7 +123,7 @@ export const ComponentShowcase = memo(() => (
     </VStack>
 
     {/* Navigation */}
-    <Box withBorder padding="small">
+    <Box withBorder padding="sm">
       <Text variant="h3">Navigation</Text>
       <Breadcrumb>
         <BreadcrumbList>
@@ -142,7 +142,7 @@ export const ComponentShowcase = memo(() => (
       </Breadcrumb>
     </Box>
 
-    <VStack withBorder padding="small">
+    <VStack withBorder padding="sm">
       <Text variant="h3">Feedback</Text>
       <Alert variant="info">This is an info message.</Alert>
       <Alert variant="success">Operation completed successfully!</Alert>
@@ -170,10 +170,10 @@ export const ComponentShowcase = memo(() => (
           </Text>
         </CardBody>
         <CardFooter>
-          <Button variant="ghost" size="small">
+          <Button variant="ghost" size="sm">
             Action
           </Button>
-          <Button variant="solid" size="small">
+          <Button variant="solid" size="sm">
             Save
           </Button>
         </CardFooter>
@@ -183,7 +183,7 @@ export const ComponentShowcase = memo(() => (
         <Badge variant="primary">Primary</Badge>
         <Badge variant="secondary">Secondary</Badge>
       </HStack>
-      <Avatar size="medium">
+      <Avatar size="md">
         <AvatarFallback>JD</AvatarFallback>
       </Avatar>
     </VStack>

@@ -23,10 +23,10 @@ export function CardDemo() {
         </Text>
       </CardBody>
       <CardFooter>
-        <Button variant="outline" size="small">
+        <Button variant="outline" size="sm">
           Read docs
         </Button>
-        <Button size="small">Install</Button>
+        <Button size="sm">Install</Button>
       </CardFooter>
     </Card>
   );
@@ -36,17 +36,17 @@ export function ProfileCardDemo() {
   return (
     <Card>
       <CardHeader>
-        <HStack gap="medium" align="center">
-          <Avatar size="large">
+        <HStack gap="md" align="center">
+          <Avatar size="lg">
             <AvatarImage src="https://i.pravatar.cc/150?u=alex" alt="Alex Rivera" />
             <AvatarFallback>AR</AvatarFallback>
           </Avatar>
-          <VStack gap="xxsmall">
-            <HStack gap="xsmall" align="center">
+          <VStack gap="xxs">
+            <HStack gap="xs" align="center">
               <CardTitle>Alex Rivera</CardTitle>
               <Badge variant="primary">Pro</Badge>
             </HStack>
-            <HStack gap="xxsmall" align="center">
+            <HStack gap="xxs" align="center">
               <MapPinIcon size={12} />
               <Text variant="caption" color="secondary">
                 San Francisco, CA
@@ -62,11 +62,11 @@ export function ProfileCardDemo() {
         </Text>
       </CardBody>
       <CardFooter>
-        <HStack gap="small" justify="end" wrap>
-          <Button variant="ghost" size="small">
+        <HStack gap="sm" justify="end" wrap>
+          <Button variant="ghost" size="sm">
             Message
           </Button>
-          <Button size="small">Follow</Button>
+          <Button size="sm">Follow</Button>
         </HStack>
       </CardFooter>
     </Card>
@@ -96,12 +96,12 @@ export function ProductCardDemo() {
         <ShoppingCartIcon size={40} />
       </Box>
       <CardHeader>
-        <HStack gap="medium" justify="between" align="center">
-          <VStack gap="xxsmall">
+        <HStack gap="md" justify="between" align="center">
+          <VStack gap="xxs">
             <CardTitle>Pro Subscription</CardTitle>
             <CardDescription>Annual billing - save 20%</CardDescription>
           </VStack>
-          <HStack gap="xsmall" align="center">
+          <HStack gap="xs" align="center">
             <StarIcon size={14} />
             <Text variant="caption" weight="semibold">
               4.9
@@ -114,7 +114,7 @@ export function ProductCardDemo() {
           Unlimited projects, advanced analytics, priority support, and team collaboration features.
           Everything you need to scale your workflow.
         </Text>
-        <HStack gap="xsmall" align="baseline" style={{ marginTop: 8 }}>
+        <HStack gap="xs" align="baseline" style={{ marginTop: 8 }}>
           <Text variant="h3" weight="bold">
             $29
           </Text>
@@ -134,15 +134,15 @@ export function StatCardDemo() {
   return (
     <Card>
       <CardBody>
-        <HStack gap="medium" align="center" justify="between">
-          <VStack gap="xxsmall">
+        <HStack gap="md" align="center" justify="between">
+          <VStack gap="xxs">
             <Text variant="caption" color="secondary">
               Total Revenue
             </Text>
             <Text variant="h3" weight="bold">
               $48,250
             </Text>
-            <HStack gap="xxsmall" align="center">
+            <HStack gap="xxs" align="center">
               <Badge variant="sucess">+12.5%</Badge>
               <Text variant="caption" color="secondary">
                 vs last month

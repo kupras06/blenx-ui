@@ -12,10 +12,10 @@ import { Icon } from "./icon";
 
 export function IconDemo() {
   return (
-    <VStack gap="medium">
-      <VStack gap="small">
+    <VStack gap="md">
+      <VStack gap="sm">
         <Text variant="h6">Sizes</Text>
-        <HStack align="center" gap="small">
+        <HStack align="center" gap="sm">
           <Icon>
             <UserIcon size={24} />
           </Icon>
@@ -34,9 +34,9 @@ export function IconDemo() {
         </HStack>
       </VStack>
 
-      <VStack gap="small">
+      <VStack gap="sm">
         <Text variant="h6">Colors</Text>
-        <HStack align="center" gap="small">
+        <HStack align="center" gap="sm">
           <Icon color="primary">
             <PaperPlaneTiltIcon />
           </Icon>
@@ -61,30 +61,30 @@ export function IconDemo() {
         </HStack>
       </VStack>
 
-      <VStack gap="small">
+      <VStack gap="sm">
         <Text variant="h6">Background Colors</Text>
-        <HStack align="center" gap="small">
-          <Icon backgroundColor="primary" color="primary" radius="small">
+        <HStack align="center" gap="sm">
+          <Icon backgroundColor="primary" color="primary" radius="sm">
             <InfoIcon />
           </Icon>
-          <Icon backgroundColor="error" color="error" radius="small">
+          <Icon backgroundColor="error" color="error" radius="sm">
             <XIcon />
           </Icon>
-          <Icon backgroundColor="success" color="success" radius="small">
+          <Icon backgroundColor="success" color="success" radius="sm">
             <CheckIcon />
           </Icon>
-          <Icon backgroundColor="warning" color="warning" radius="small">
+          <Icon backgroundColor="warning" color="warning" radius="sm">
             <WarningIcon />
           </Icon>
-          <Icon backgroundColor="info" color="info" radius="small">
+          <Icon backgroundColor="info" color="info" radius="sm">
             <InfoIcon />
           </Icon>
         </HStack>
       </VStack>
 
-      <VStack gap="small">
+      <VStack gap="sm">
         <Text variant="h6">Color Inherited from Parent</Text>
-        <HStack align="center" gap="small">
+        <HStack align="center" gap="sm">
           <Icon>
             <UserIcon />
           </Icon>

@@ -47,7 +47,7 @@ function ShowcaseAccordion() {
           <AccordionTrigger>What is Blenx UI?</AccordionTrigger>
         </AccordionHeader>
         <AccordionPanel>
-          <Box padding="small">
+          <Box padding="sm">
             <Text variant="body2" color="secondary">
               A registry-first React component library built with Vanilla Extract and Base UI.
             </Text>
@@ -59,7 +59,7 @@ function ShowcaseAccordion() {
           <AccordionTrigger>How do I install it?</AccordionTrigger>
         </AccordionHeader>
         <AccordionPanel>
-          <Box padding="small">
+          <Box padding="sm">
             <Text variant="body2" color="secondary">
               Use the shadcn CLI to add components directly to your project.
             </Text>
@@ -77,14 +77,14 @@ function ShowcaseTabs() {
         <TabsTab value="preview">Preview</TabsTab>
       </TabsList>
       <TabsPanel value="code">
-        <Box paddingY="small">
+        <Box paddingY="sm">
           <Text variant="body2" color="secondary">
             Install and customize components with zero configuration.
           </Text>
         </Box>
       </TabsPanel>
       <TabsPanel value="preview">
-        <Box paddingY="small">
+        <Box paddingY="sm">
           <Text variant="body2" color="secondary">
             Live preview of your components as you build.
           </Text>
@@ -95,14 +95,14 @@ function ShowcaseTabs() {
 }
 function ShowcaseButtons() {
   return (
-    <HStack gap="small" wrap>
-      <Button size="small" variant="solid">
+    <HStack gap="sm" wrap>
+      <Button size="sm" variant="solid">
         Solid
       </Button>
-      <Button size="small" variant="outline">
+      <Button size="sm" variant="outline">
         Outline
       </Button>
-      <Button size="small" variant="ghost">
+      <Button size="sm" variant="ghost">
         Ghost
       </Button>
     </HStack>
@@ -111,13 +111,13 @@ function ShowcaseButtons() {
 
 function ShowcaseInput() {
   return (
-    <VStack gap="small" fullWidth>
+    <VStack gap="sm" fullWidth>
       <Input placeholder="Type something…" />
-      <HStack gap="small">
-        <Button size="small" variant="solid">
+      <HStack gap="sm">
+        <Button size="sm" variant="solid">
           Submit
         </Button>
-        <Button size="small" variant="ghost">
+        <Button size="sm" variant="ghost">
           Cancel
         </Button>
       </HStack>
@@ -126,7 +126,7 @@ function ShowcaseInput() {
 }
 function ShowcaseAlert() {
   return (
-    <VStack gap="xsmall" fullWidth>
+    <VStack gap="xs" fullWidth>
       <Alert variant="info" icon={<FileCodeIcon size={16} />}>
         <Text variant="body3">Components are copied to your project.</Text>
       </Alert>
@@ -141,12 +141,12 @@ function ShowcaseAlert() {
 }
 function ShowcaseAvatar() {
   return (
-    <HStack gap="small" align="center">
-      <Avatar size="medium" radius="full">
+    <HStack gap="sm" align="center">
+      <Avatar size="md" radius="full">
         <AvatarImage src="https://i.pravatar.cc/80?u=blenx" alt="User" />
         <AvatarFallback>BL</AvatarFallback>
       </Avatar>
-      <VStack gap="xxsmall">
+      <VStack gap="xxs">
         <Text variant="body2" weight="semibold">
           Blenx UI
         </Text>
@@ -169,7 +169,7 @@ function ShowcaseCard() {
         </Text>
       </CardBody>
       <CardFooter>
-        <Button size="small" variant="outline" fullWidth>
+        <Button size="sm" variant="outline" fullWidth>
           Learn more <ArrowRightIcon weight="bold" />
         </Button>
       </CardFooter>
@@ -180,7 +180,7 @@ function ShowcaseCard() {
 function ShowcaseDialog() {
   return (
     <Dialog>
-      <DialogTrigger render={<Button size="small" variant="outline" />}>Open Dialog</DialogTrigger>
+      <DialogTrigger render={<Button size="sm" variant="outline" />}>Open Dialog</DialogTrigger>
       <DialogContent>
         <DialogHeader>
           <DialogTitle>Confirm Action</DialogTitle>
@@ -192,9 +192,9 @@ function ShowcaseDialog() {
           </Text>
         </DialogPanel>
         <DialogFooter>
-          <HStack gap="small" justify="end" wrap>
-            <DialogClose render={<Button size="small" variant="ghost" />}>Cancel</DialogClose>
-            <Button size="small">Confirm</Button>
+          <HStack gap="sm" justify="end" wrap>
+            <DialogClose render={<Button size="sm" variant="ghost" />}>Cancel</DialogClose>
+            <Button size="sm">Confirm</Button>
           </HStack>
         </DialogFooter>
       </DialogContent>
@@ -213,24 +213,24 @@ const showcaseItems = [
 ];
 export function ShowCaseComponents() {
   return (
-    <VStack gap="large">
-      <VStack gap="small" align="center">
-        <Text variant="h2" align="center" size="xlarge">
+    <VStack gap="lg">
+      <VStack gap="sm" align="center">
+        <Text variant="h2" align="center" size="xl">
           Components you'll actually use.
         </Text>
         <Box maxWidth={560}>
-          <Text variant="body2" color="secondary" align="center" size="large">
+          <Text variant="body2" color="secondary" align="center" size="lg">
             Production-ready components built with accessibility and customization in mind. All
             interactive.
           </Text>
         </Box>
       </VStack>
-      <Grid columns={{ base: 1, md: 2, lg: 3 }} gap="large">
+      <Grid columns={{ base: 1, md: 2, lg: 3 }} gap="lg">
         {showcaseItems.map((item) => {
           const DemoComponent = item.component;
           return (
-            <Surface key={item.title} variant="outline" padding="medium">
-              <VStack gap="small">
+            <Surface key={item.title} variant="outline" padding="md">
+              <VStack gap="sm">
                 <Text variant="body2" weight="semibold">
                   {item.title}
                 </Text>

@@ -13,7 +13,7 @@ function DocsRouteOption() {
   const isDocsActive = pathname.startsWith("/docs");
   return (
     <Button
-      size="xsmall"
+      size="xs"
       variant={isDocsActive ? "soft" : "ghost"}
       nativeButton={false}
       render={<Link to="/docs" />}
@@ -27,7 +27,7 @@ function BlocksRouteOption() {
   const isBlocksActive = pathname.startsWith("/blocks");
   return (
     <Button
-      size="xsmall"
+      size="xs"
       variant={isBlocksActive ? "soft" : "ghost"}
       render={
         <Link
@@ -126,14 +126,14 @@ function Header() {
   return (
     <>
       <Container size="2xl" py="xs" px="md">
-        <HStack align="center" justify="between" py="xsmall">
-          <HStack align="center" justify="between" gap="xxsmall" paddingLeft="none">
+        <HStack align="center" justify="between" py="xs">
+          <HStack align="center" justify="between" gap="xxs" paddingLeft="none">
             <ClientOnly>{isDocsActive && <DocsRouteSidebarOption />}</ClientOnly>
             <Link to="/" className={logoStyles}>
               <BrandLogo size={30} />
             </Link>
           </HStack>
-          <HStack align="center" gap="xsmall">
+          <HStack align="center" gap="xs">
             <ClientOnly>
               {!isDocsActive && <DocsRouteOption />}
               {isDocsActive && <BlocksRouteOption />}
@@ -142,7 +142,7 @@ function Header() {
 
             {!isDocsActive && !isBlocksActive && (
               <Button
-                size="xsmall"
+                size="xs"
                 nativeButton={false}
                 variant="link"
                 render={

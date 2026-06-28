@@ -15,7 +15,7 @@ function AllDemos({ demos }: { demos: DemoItem[] }) {
   return (
     <>
       {demos.map((d, i) => (
-        <VStack key={d.name} gap="small">
+        <VStack key={d.name} gap="sm">
           {i > 0 && <Separator tone="subtle" />}
           {i > 0 && (
             <Text variant="body2" weight="semibold" color="secondary">

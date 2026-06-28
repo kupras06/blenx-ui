@@ -12,7 +12,7 @@ import {
 
 export function DefaultStory() {
   return (
-    <Stack gap="small">
+    <Stack gap="sm">
       <Text variant="body2">Navigation path</Text>
       <Breadcrumb>
         <BreadcrumbList>
@@ -35,7 +35,7 @@ export function DefaultStory() {
 
 export function WithEllipsis() {
   return (
-    <Stack gap="small">
+    <Stack gap="sm">
       <Text variant="body2">With collapsed items</Text>
       <Breadcrumb>
         <BreadcrumbList>

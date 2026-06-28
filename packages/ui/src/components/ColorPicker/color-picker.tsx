@@ -88,7 +88,7 @@ export function ColorPicker({ value, onChange, label }: Props) {
           <PopoverPositioner sideOffset={6} side="bottom" align="start">
             <PopoverPopup>
               <PopoverArrow />
-              <VStack gap="xsmall">
+              <VStack gap="xs">
                 <HexAlphaColorPicker
                   color={internalValue}
                   onChange={(color) => {
