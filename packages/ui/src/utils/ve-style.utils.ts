@@ -27,5 +27,6 @@ export function applyBaseSprinkles(
   }
   sprinkleProps.color = sprinkleProps.color || "default";
   sprinkleProps.backgroundColor = sprinkleProps.backgroundColor || "default";
+  sprinkleProps.borderRadius = sprinkleProps.borderRadius || "default";
   return [baseSprinkles(sprinkleProps), htmlProps];
 }

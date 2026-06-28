@@ -9,40 +9,31 @@ import { useEffect } from "react";
 
 function DocsRouteOption() {
   const { pathname } = useLocation();
-  const isDocsActive = pathname.startsWith("/docs");
+  const isBlocksActive = pathname.startsWith("/docs/blocks");
   return (
     <Button
       size="xs"
-      variant={isDocsActive ? "soft" : "ghost"}
+      variant={"ghost"}
       nativeButton={false}
-      render={<Link to="/docs" />}
-    >
-      Docs
-    </Button>
-  );
-}
-function BlocksRouteOption() {
-  const { pathname } = useLocation();
-  const isBlocksActive = pathname.startsWith("/blocks");
-  return (
-    <Button
-      size="xs"
-      variant={isBlocksActive ? "soft" : "ghost"}
       render={
-        <Link
-          to="/docs/blocks/$group/$variant"
-          params={{
-            group: "dashboard",
-            variant: "dashboard-01",
-          }}
-        />
+        isBlocksActive ? (
+          <Link to="/docs" />
+        ) : (
+          <Link
+            to="/docs/blocks/$group/$variant"
+            params={{
+              group: "dashboard",
+              variant: "dashboard-01",
+            }}
+          />
+        )
       }
-      nativeButton={false}
     >
-      Blocks
+      {isBlocksActive ? "Docs" : "Blocs"}
     </Button>
   );
 }
+
 function DocsRouteSidebarOption() {
   const sidebarOpen = useSidebarStore((st) => st.isOpen);
   const setOpen = useSidebarStore((st) => st.setOpen);
@@ -132,8 +123,7 @@ function Header() {
       </HStack>
       <HStack align="center" gap="xs">
         <ClientOnly>
-          {!isDocsActive && <DocsRouteOption />}
-          {isDocsActive && <BlocksRouteOption />}
+          <DocsRouteOption />
           <ThemeToggle />
         </ClientOnly>
 

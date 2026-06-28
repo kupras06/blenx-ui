@@ -1,5 +1,4 @@
 import type { SidebarSection } from "@/views/docs/docs-utils";
-import { sidebarLink } from "@/lib/styles.css";
 import { Box, Surface, Text, VStack } from "@blenx-dev/ui";
 import { Link, useLocation, useMatches } from "@tanstack/react-router";
 
@@ -43,7 +42,7 @@ function DocsSidebar({ onClose }: { onClose?: () => void }) {
                     paddingY="xs"
                     paddingX="sm"
                     key={link.to}
-                    render={<Link className={sidebarLink} to={link.to} onClick={onClose} />}
+                    render={<Link to={link.to} onClick={onClose} />}
                   >
                     <Text variant="body2" color={isActive ? "primary" : "secondary"}>
                       {link.label}

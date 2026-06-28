@@ -21,7 +21,6 @@ import {
   useLocation,
   useMatches,
 } from "@tanstack/react-router";
-import { sidebarLink } from "@/lib/styles.css";
 import { CaretLeftIcon, CaretRightIcon } from "@phosphor-icons/react";
 import type { SidebarSection } from "@/views/docs/docs-utils";
 import { useSidebarStore } from "@/stores/docs-sidebar";
@@ -112,18 +111,14 @@ function DocsPrevNext() {
       <IconButton
         intent="neutral"
         fullWidth
-        {...(prev
-          ? { render: <Link className={sidebarLink} to={prev.to} /> }
-          : { style: { opacity: 0.4 } })}
+        {...(prev ? { render: <Link to={prev.to} /> } : { style: { opacity: 0.4 } })}
       >
         <CaretLeftIcon size={14} />
       </IconButton>
       <IconButton
         fullWidth
         intent="neutral"
-        {...(next
-          ? { render: <Link className={sidebarLink} to={next.to} /> }
-          : { style: { opacity: 0.4 } })}
+        {...(next ? { render: <Link to={next.to} /> } : { style: { opacity: 0.4 } })}
       >
         <CaretRightIcon size={14} />
       </IconButton>

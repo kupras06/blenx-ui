@@ -2,8 +2,7 @@ import { Button } from "@blenx-dev/ui/components/Button/button";
 import { Text } from "@blenx-dev/ui/components/Text/text";
 import { HStack, VStack, Stack } from "@blenx-dev/ui/components/Stack/stack";
 import { ImageIcon } from "@phosphor-icons/react";
-import { Container, Icon } from "@blenx-dev/ui";
-import { heroImage } from "@/lib/styles.css";
+import { Box, Container, Icon } from "@blenx-dev/ui";
 
 type Cta = {
   label: string;
@@ -65,7 +64,7 @@ export function Hero01({
         </VStack>
         <VStack>
           {imageSrc ? (
-            <img src={imageSrc} alt={imageAlt} className={heroImage} />
+            <Box render={<img src={imageSrc} alt={imageAlt} />} />
           ) : (
             <Icon maxWidth="md" paddingY="massive" color="secondary">
               <ImageIcon size={98} />

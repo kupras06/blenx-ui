@@ -24,7 +24,6 @@ import {
   VStack,
 } from "@blenx-dev/ui";
 import {
-  kpiGrid,
   kpiValue,
   trendUp as trendUpClass,
   trendDown as trendDownClass,
@@ -106,7 +105,7 @@ const activities = [
 export const ExampleDashboard = memo(() => (
   <VStack gap="none">
     {/* KPI Cards */}
-    <Grid rowGap={"sm"} columnGap={"md"} className={kpiGrid} columns={{ base: 2, lg: 4 }}>
+    <Grid rowGap={"sm"} columnGap={"md"} columns={{ base: 2, lg: 4 }}>
       {kpis.map((kpi) => (
         <Card key={kpi.label} padding="md">
           <Text variant="caption" color="secondary">

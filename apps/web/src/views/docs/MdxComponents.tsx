@@ -1,5 +1,5 @@
 import type React from "react";
-import type { ComponentProps } from "react";
+import type { ComponentProps, TableHTMLAttributes } from "react";
 import { DocsH1, DocsH2, DocsH3 } from "./mdx-components/DocHeaders";
 import { DocsParagraph } from "./mdx-components/DocsParagraph";
 import { DocsUl, DocsOl, DocsLi } from "./mdx-components/DocsList";
@@ -11,9 +11,8 @@ import { DocAccessibility } from "./mdx-components/doc-accessibility";
 import { DocDemoRenderer } from "./mdx-components/doc-demo-renderer";
 import { DocSourceCode } from "./mdx-components/doc-source-code";
 import { Installation } from "./mdx-components/Installation";
-import { Spinner, Text } from "@blenx-dev/ui";
+import { Box, Spinner, Text } from "@blenx-dev/ui";
 import { type TextProps } from "@blenx-dev/ui";
-import { tableHeaderRow, tableHeaderCell, tableCell } from "@/lib/styles.css";
 
 function InlineCode(props: TextProps) {
   return <Text variant="code" backgroundColor="disabled" px="xs" py="xxs" {...props} />;
@@ -37,24 +36,24 @@ function Pre({ children, ...props }: ComponentProps<"pre">) {
   return <CodeBlock code={code} language={language} />;
 }
 
-function Th(props: ComponentProps<"th">) {
-  return <th className={tableHeaderCell} {...props} />;
+function Th(props: TableHTMLAttributes<HTMLTableCellElement>) {
+  return <Box render={<th {...props} />} />;
 }
 
-function Td(props: ComponentProps<"td">) {
-  return <td className={tableCell} {...props} />;
+function Td(props: TableHTMLAttributes<HTMLTableCellElement>) {
+  return <Box render={<td {...props} />} />;
 }
 
-function Thead(props: ComponentProps<"thead">) {
-  return <thead className={tableHeaderRow} {...props} />;
+function Thead(props: TableHTMLAttributes<HTMLTableSectionElement>) {
+  return <Box render={<thead {...props} />} backgroundColor="secondary" />;
 }
 
-function Tr(props: ComponentProps<"tr">) {
-  return <tr {...props} />;
+function Tr(props: TableHTMLAttributes<HTMLTableRowElement>) {
+  return <Box render={<tr {...props} />} />;
 }
 
 function Tbody(props: ComponentProps<"tbody">) {
-  return <tbody {...props} />;
+  return <Box render={<tbody {...props} />} />;
 }
 
 const mdxComponents = {
