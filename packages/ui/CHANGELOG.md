@@ -1,5 +1,12 @@
 # @blenx-dev/ui
 
+## 0.1.2
+
+### Patch Changes
+
+- Updated dependencies [423768f]
+  - @blenx-dev/theme@0.1.2
+
 ## 0.1.1
 
 ### Patch Changes
