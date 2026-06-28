@@ -12,6 +12,7 @@
     "@base-ui/react": "^1.5.0",
     "@blenx-dev/theme": "workspace:*",
     "@blenx-dev/ui": "workspace:",
+    "@blenx-dev/vite-plugin": "workspace:*",
     "@cloudflare/vite-plugin": "^1.26.0",
     "@content-collections/mdx": "^0.2.2",
     "@phosphor-icons/react": "^2.1.10",

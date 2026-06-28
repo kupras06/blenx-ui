@@ -3,7 +3,7 @@ import viteReact from "@vitejs/plugin-react";
 import { nitro } from "nitro/vite";
 import { defineConfig } from "vite";
 import contentCollections from "@content-collections/vite";
-import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
+import { blenx } from "@blenx-dev/vite-plugin";
 const isVercel = process.env.VERCEL === "1";
 
 const config = defineConfig(() => {
@@ -11,14 +11,11 @@ const config = defineConfig(() => {
     resolve: {
       tsconfigPaths: true,
     },
-    optimizeDeps: {
-      exclude: ["@blenx-dev/ui", "@blenx-dev/theme"],
-    },
     server: {
       port: 3001,
     },
     plugins: [
-      vanillaExtractPlugin(),
+      blenx(),
       contentCollections(),
       tanstackStart(),
       viteReact(),

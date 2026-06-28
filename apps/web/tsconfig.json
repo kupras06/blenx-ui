@@ -24,6 +24,7 @@
       "@blenx-dev/theme/*": ["../../packages/theme/src/*"],
       "@blenx-dev/ui": ["../../packages/ui/src/index.ts"],
       "@blenx-dev/ui/*": ["../../packages/ui/src/*"],
+      "@blenx-dev/vite-plugin": ["../../packages/vite-plugin/src/index.ts"],
       "content-collections": ["./.content-collections/generated"]
     }
   }

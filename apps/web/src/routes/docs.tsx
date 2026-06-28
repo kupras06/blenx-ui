@@ -60,10 +60,12 @@ function RenderSidebarNavs() {
 
 function TocSection() {
   return (
-    <VStack gap="medium">
-      <DocsPrevNext />
-      <DocsTocSection />
-    </VStack>
+    <Container size="xxs" centered render={<aside />} aria-label="On this page">
+      <VStack gap="medium">
+        <DocsPrevNext />
+        <DocsTocSection />
+      </VStack>
+    </Container>
   );
 }
 
@@ -101,75 +103,42 @@ function DocsPrevNext() {
   const next = currentIndex < allLinks.length - 1 ? allLinks[currentIndex + 1] : null;
 
   return (
-    <VStack gap="xxsmall" paddingX="small">
-      {prev ? (
-        <Surface
-          interactive
-          variant="sunken"
-          borderRadius="xs"
-          padding="sm"
-          render={<Link className={sidebarLink} to={prev.to} />}
-        >
-          <HStack gap="xxsmall" align="center">
-            <CaretLeftIcon size={14} />
-            <VStack gap="none">
-              <Text variant="caption" color="secondary">
-                Previous
-              </Text>
-              <Text variant="body2">{prev.label}</Text>
-            </VStack>
-          </HStack>
-        </Surface>
-      ) : (
-        <Surface variant="sunken" borderRadius="xs" padding="sm" style={{ opacity: 0.4 }}>
-          <HStack gap="xxsmall" align="center">
-            <CaretLeftIcon size={14} />
-            <VStack gap="none">
-              <Text variant="caption" color="disabled">
-                Previous
-              </Text>
-              <Text variant="body2" color="disabled">
-                None
-              </Text>
-            </VStack>
-          </HStack>
-        </Surface>
-      )}
-
-      {next ? (
-        <Surface
-          interactive
-          variant="sunken"
-          borderRadius="xs"
-          padding="sm"
-          render={<Link className={sidebarLink} to={next.to} />}
-        >
-          <HStack gap="xxsmall" align="center">
-            <CaretRightIcon size={14} />
-            <VStack gap="none">
-              <Text variant="caption" color="secondary">
-                Next
-              </Text>
-              <Text variant="body2">{next.label}</Text>
-            </VStack>
-          </HStack>
-        </Surface>
-      ) : (
-        <Surface variant="sunken" borderRadius="xs" padding="sm" style={{ opacity: 0.4 }}>
-          <HStack gap="xxsmall" align="center">
-            <CaretRightIcon size={14} />
-            <VStack gap="none">
-              <Text variant="caption" color="disabled">
-                Next
-              </Text>
-              <Text variant="body2" color="disabled">
-                None
-              </Text>
-            </VStack>
-          </HStack>
-        </Surface>
-      )}
-    </VStack>
+    <HStack gap="xxsmall">
+      <Surface
+        interactive
+        variant="sunken"
+        borderRadius="xs"
+        padding="sm"
+        fullWidth
+        {...(prev
+          ? { render: <Link className={sidebarLink} to={prev.to} /> }
+          : { style: { opacity: 0.4 } })}
+      >
+        <HStack gap="xxsmall" align="center">
+          <CaretLeftIcon size={14} />
+          <VStack gap="none">
+            <Text variant="body2">{prev?.label || "None"}</Text>
+          </VStack>
+        </HStack>
+      </Surface>
+      <Surface
+        interactive
+        variant="sunken"
+        borderRadius="xs"
+        padding="sm"
+        fullWidth
+        {...(next
+          ? { render: <Link className={sidebarLink} to={next.to} /> }
+          : { style: { opacity: 0.4 } })}
+      >
+        <HStack gap="xxsmall" align="center">
+          <CaretRightIcon size={14} />
+          <VStack gap="none">
+            <Text variant="body2">{next?.label || "None"}</Text>
+          </VStack>
+        </HStack>
+      </Surface>
+    </HStack>
   );
 }
 
