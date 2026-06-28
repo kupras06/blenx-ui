@@ -15,7 +15,7 @@ export const heroImage = style({
 /* ── Routes/Index ── */
 
 export const sectionTitle = style({
-  fontSize: fontSize.display,
+  fontSize: fontSize.displayLg,
   lineHeight: 1.2,
   fontWeight: 700,
   letterSpacing: "-0.03em",

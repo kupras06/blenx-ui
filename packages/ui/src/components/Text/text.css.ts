@@ -18,7 +18,7 @@ export const textVariants = recipe({
   variants: {
     variant: {
       h1: {
-        fontFamily: fonts.display,
+        fontFamily: fonts.body,
         fontSize: fontSize.displayLg,
         lineHeight: lineHeight.tight,
         fontWeight: fontWeight.bold,
@@ -27,7 +27,7 @@ export const textVariants = recipe({
         scrollMarginTop: "80px",
       },
       h2: {
-        fontFamily: fonts.heading,
+        fontFamily: fonts.body,
         fontSize: fontSize.xxl,
         lineHeight: lineHeight.tight,
         fontWeight: fontWeight.bold,
@@ -36,7 +36,7 @@ export const textVariants = recipe({
         scrollMarginTop: "80px",
       },
       h3: {
-        fontFamily: fonts.heading,
+        fontFamily: fonts.body,
         fontSize: fontSize.xl,
         lineHeight: lineHeight.snug,
         fontWeight: fontWeight.semibold,
@@ -45,7 +45,7 @@ export const textVariants = recipe({
         scrollMarginTop: "80px",
       },
       h4: {
-        fontFamily: fonts.heading,
+        fontFamily: fonts.body,
         fontSize: fontSize.lg,
         lineHeight: lineHeight.tight,
         fontWeight: fontWeight.semibold,
@@ -53,7 +53,7 @@ export const textVariants = recipe({
         scrollMarginTop: "80px",
       },
       h5: {
-        fontFamily: fonts.heading,
+        fontFamily: fonts.body,
         fontSize: fontSize.md,
         lineHeight: lineHeight.normal,
         fontWeight: fontWeight.semibold,
@@ -61,7 +61,7 @@ export const textVariants = recipe({
         scrollMarginTop: "80px",
       },
       h6: {
-        fontFamily: fonts.heading,
+        fontFamily: fonts.body,
         fontSize: fontSize.sm,
         lineHeight: lineHeight.normal,
         fontWeight: fontWeight.semibold,
@@ -69,7 +69,6 @@ export const textVariants = recipe({
         scrollMarginTop: "80px",
       },
       body1: {
-        fontFamily: fonts.body,
         fontSize: fontSize.md,
         lineHeight: lineHeight.normal,
         fontWeight: fontWeight.regular,
@@ -83,14 +82,13 @@ export const textVariants = recipe({
         margin: 0,
       },
       body3: {
-        fontFamily: fonts.body,
         fontSize: fontSize.xs,
         lineHeight: lineHeight.normal,
         fontWeight: fontWeight.regular,
         margin: 0,
       },
       body4: {
-        fontFamily: fonts.label,
+        fontFamily: fonts.body,
         fontSize: fontSize.xxs,
         lineHeight: lineHeight.normal,
         fontWeight: fontWeight.medium,
@@ -98,7 +96,7 @@ export const textVariants = recipe({
         margin: 0,
       },
       caption: {
-        fontFamily: fonts.label,
+        fontFamily: fonts.body,
         fontSize: fontSize.xs,
         lineHeight: lineHeight.normal,
         fontWeight: fontWeight.medium,
@@ -106,7 +104,6 @@ export const textVariants = recipe({
         margin: 0,
       },
       creatorNote: {
-        fontFamily: fonts.body,
         fontSize: fontSize.lg,
         lineHeight: "28px",
         fontWeight: fontWeight.regular,
@@ -114,14 +111,12 @@ export const textVariants = recipe({
         margin: 0,
       },
       p: {
-        fontFamily: fonts.body,
         fontSize: fontSize.md,
         lineHeight: lineHeight.normal,
         fontWeight: fontWeight.regular,
         margin: 0,
       },
       div: {
-        fontFamily: fonts.body,
         fontSize: fontSize.md,
         lineHeight: lineHeight.normal,
         fontWeight: fontWeight.regular,

@@ -169,7 +169,7 @@ export const tab = style({
   whiteSpace: "nowrap",
   userSelect: "none",
   font: "inherit",
-  fontFamily: fonts.display,
+  fontFamily: fonts.body,
   WebkitTapHighlightColor: "transparent",
   transition: `color ${duration.normal} ${easing.standard}, background-color ${duration.normal} ${easing.standard}, box-shadow ${duration.normal} ${easing.standard}`,
 });

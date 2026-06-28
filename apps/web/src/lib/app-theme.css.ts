@@ -1,6 +1,6 @@
 import { createTheme, globalStyle } from "@vanilla-extract/css";
 import { themeContract } from "@blenx-dev/theme/contract";
-import { borderRadius, fontSize } from "@blenx-dev/theme/tokens";
+import { borderRadius, fonts, fontSize } from "@blenx-dev/theme/tokens";
 
 export const lightTheme = createTheme(themeContract, {
   primary: "#1c1917",
@@ -108,8 +108,12 @@ globalStyle("body", {
   backgroundColor: themeContract.background,
   color: themeContract.contentPrimary,
   margin: 0,
-  fontFamily: '"DM Sans", system-ui, -apple-system, sans-serif',
+  fontFamily: fonts.body,
   fontSize: "14px",
   lineHeight: 1.5,
   maxWidth: "100vw",
+});
+
+globalStyle("h1,h2,h3,h4,h5,h6", {
+  fontFamily: fonts.body,
 });

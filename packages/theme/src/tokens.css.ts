@@ -13,10 +13,7 @@ export const borderRadius = {
 
 export const fonts = {
   sans: '"DM Sans", system-ui, -apple-system, sans-serif',
-  display: '"DM Sans", system-ui, sans-serif',
-  heading: '"DM Sans", system-ui, sans-serif',
   body: '"DM Sans", system-ui, sans-serif',
-  label: '"DM Sans", system-ui, sans-serif',
   mono: '"DM Mono", ui-monospace, SFMono-Regular, monospace',
 } as const;
 

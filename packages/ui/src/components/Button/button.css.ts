@@ -29,7 +29,7 @@ export const variant = recipe({
     width: "fit-content",
     height: "fit-content",
     fontSize: themeContract.fontSize,
-    fontFamily: fonts.display,
+    fontFamily: fonts.body,
     textDecoration: "none",
     position: "relative",
     transition: "all 0.2s ease",
