@@ -6,10 +6,10 @@ import {
   Box,
   Container,
   HStack,
+  IconButton,
   ScrollArea,
   Sheet,
   SheetPopup,
-  Surface,
   Text,
   VStack,
 } from "@blenx-dev/ui";
@@ -62,7 +62,12 @@ function TocSection() {
   return (
     <Container size="xxs" centered render={<aside />} aria-label="On this page">
       <VStack gap="medium">
-        <DocsPrevNext />
+        <HStack align="center" justify="between">
+          <Text variant="caption" color="secondary" transform="uppercase">
+            On this page
+          </Text>
+          <DocsPrevNext />
+        </HStack>
         <DocsTocSection />
       </VStack>
     </Container>
@@ -103,41 +108,25 @@ function DocsPrevNext() {
   const next = currentIndex < allLinks.length - 1 ? allLinks[currentIndex + 1] : null;
 
   return (
-    <HStack gap="xxsmall">
-      <Surface
-        interactive
-        variant="sunken"
-        borderRadius="xs"
-        padding="sm"
+    <HStack gap="xxsmall" align="center">
+      <IconButton
+        intent="neutral"
         fullWidth
         {...(prev
           ? { render: <Link className={sidebarLink} to={prev.to} /> }
           : { style: { opacity: 0.4 } })}
       >
-        <HStack gap="xxsmall" align="center">
-          <CaretLeftIcon size={14} />
-          <VStack gap="none">
-            <Text variant="body2">{prev?.label || "None"}</Text>
-          </VStack>
-        </HStack>
-      </Surface>
-      <Surface
-        interactive
-        variant="sunken"
-        borderRadius="xs"
-        padding="sm"
+        <CaretLeftIcon size={14} />
+      </IconButton>
+      <IconButton
         fullWidth
+        intent="neutral"
         {...(next
           ? { render: <Link className={sidebarLink} to={next.to} /> }
           : { style: { opacity: 0.4 } })}
       >
-        <HStack gap="xxsmall" align="center">
-          <CaretRightIcon size={14} />
-          <VStack gap="none">
-            <Text variant="body2">{next?.label || "None"}</Text>
-          </VStack>
-        </HStack>
-      </Surface>
+        <CaretRightIcon size={14} />
+      </IconButton>
     </HStack>
   );
 }

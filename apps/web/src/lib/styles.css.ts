@@ -1,12 +1,6 @@
 import { globalStyle, style } from "@vanilla-extract/css";
 import { themeContract } from "@blenx-dev/theme/contract";
-import {
-  borderRadius,
-  fontSize,
-  fontWeight,
-  letterSpacing,
-  spacing,
-} from "@blenx-dev/theme/tokens";
+import { borderRadius, fontSize, letterSpacing, spacing } from "@blenx-dev/theme/tokens";
 
 /* ── Hero01 ── */
 
@@ -54,15 +48,6 @@ export const tocRoot = style({
       display: "block",
     },
   },
-});
-
-export const tocTitle = style({
-  fontSize: fontSize.xsmall,
-  fontWeight: fontWeight.semibold,
-  letterSpacing: "0.05em",
-  textTransform: "uppercase",
-  color: themeContract.contentSecondary,
-  marginBottom: spacing.medium,
 });
 
 export const tocList = style({
