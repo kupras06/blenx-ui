@@ -1,11 +1,11 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@3/schema.json",
   "changelog": "@changesets/cli/changelog",
-  "commit": false,
+  "commit": true,
   "fixed": [],
-  "linked": [],
+  "linked": [["@blenx-dev/ui", "@blenx-dev/theme"]],
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": []
+  "ignore": ["@blenx-dev/vite-plugin"]
 }
