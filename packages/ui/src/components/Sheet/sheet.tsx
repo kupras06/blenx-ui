@@ -19,7 +19,6 @@ import {
   popupLeft,
   popupRight,
   popupInset,
-  closeButton as closeButtonStyle,
   header,
   footer,
   footerDefault,
@@ -30,6 +29,7 @@ import {
 } from "./sheet.css";
 import { CloseButton } from "../CloseButton";
 import type { _BaseDivProps } from "../../utils/types";
+import { Box } from "../Box";
 
 type Side = "right" | "left" | "top" | "bottom";
 
@@ -121,11 +121,13 @@ export function SheetPopup({
         >
           {children}
           {showCloseButton && (
-            <SheetPrimitive.Close
-              aria-label="Close"
-              render={<CloseButton variant="ghost" className={closeButtonStyle} />}
-              {...closeProps}
-            />
+            <Box position="absolute" top="xs" right="xs">
+              <SheetPrimitive.Close
+                aria-label="Close"
+                render={<CloseButton variant="ghost" />}
+                {...closeProps}
+              />
+            </Box>
           )}
         </SheetPrimitive.Popup>
       </SheetViewport>

@@ -5,24 +5,17 @@ import { useRender } from "@base-ui/react/use-render";
 import clsx from "clsx";
 import type React from "react";
 import { ScrollArea } from "../ScrollArea/scroll-area";
-import {
-  backdrop,
-  viewport,
-  popup,
-  viewportShellBottomStickOnMobile,
-  popupBottomStickOnMobile,
-  closeButton as closeButtonStyle,
-  header,
-  footer,
-  footerDefault,
-  footerBare,
-  title,
-  description,
-  panel,
-} from "./dialog.css";
+import { header, footer, footerDefault, footerBare, title, description, panel } from "./dialog.css";
 import { CloseButton } from "../CloseButton";
 import type { _BaseDivProps } from "../../utils/types";
-
+import {
+  backdrop,
+  popup,
+  viewport,
+  viewportShellBottomStickOnMobile,
+  popupBottomStickOnMobile,
+} from "../../utils/drawer-styles.css";
+import { Box } from "../Box";
 const DialogCreateHandle: typeof DialogPrimitive.createHandle = DialogPrimitive.createHandle;
 
 const Dialog: typeof DialogPrimitive.Root = DialogPrimitive.Root;
@@ -84,11 +77,13 @@ export function DialogPopup({
         >
           {children}
           {showCloseButton && (
-            <DialogPrimitive.Close
-              aria-label="Close"
-              render={<CloseButton variant="ghost" className={closeButtonStyle} />}
-              {...closeProps}
-            />
+            <Box position="absolute" top="xs" right="xs">
+              <DialogPrimitive.Close
+                aria-label="Close"
+                render={<CloseButton variant="ghost" />}
+                {...closeProps}
+              />
+            </Box>
           )}
         </DialogPrimitive.Popup>
       </DialogViewport>

@@ -131,12 +131,6 @@ export const popupInset = style({
   },
 });
 
-export const closeButton = style({
-  position: "absolute",
-  top: spacing.xs,
-  insetInlineEnd: spacing.xs,
-});
-
 export const header = style({
   display: "flex",
   flexDirection: "column",

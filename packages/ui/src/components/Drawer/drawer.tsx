@@ -31,7 +31,6 @@ import {
   popupTop,
   popupLeft,
   popupRight,
-  closeButton as closeButtonStyle,
   header,
   footer,
   footerDefault,
@@ -68,6 +67,7 @@ import {
 } from "./drawer.css";
 import { CloseButton } from "../CloseButton";
 import type { _BaseDivProps } from "../../utils/types";
+import { Box } from "../Box";
 
 type DrawerPosition = "right" | "left" | "top" | "bottom";
 
@@ -218,11 +218,10 @@ export function DrawerPopup({
           {...props}
         >
           {showCloseButton && (
-            <DrawerPrimitive.Close
-              aria-label="Close"
-              render={<CloseButton variant="ghost" className={closeButtonStyle} />}
-            />
-          )}{" "}
+            <Box position="absolute" top="xs" right="xs">
+              <DrawerPrimitive.Close aria-label="Close" render={<CloseButton variant="ghost" />} />
+            </Box>
+          )}
           {children}
           {showBar && <DrawerBar />}
         </DrawerPrimitive.Popup>

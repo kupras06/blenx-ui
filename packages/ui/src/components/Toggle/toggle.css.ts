@@ -33,7 +33,7 @@ export const base = style({
   },
 });
 
-export const size = recipe({
+export const toggleRecipes = recipe({
   variants: {
     size: {
       sm: {
@@ -54,11 +54,17 @@ export const size = recipe({
         paddingRight: spacing.md,
       },
     },
-  },
-});
-
-export const variant = recipe({
-  variants: {
+    radius: {
+      default: { borderRadius: themeContract.borderRadius },
+      none: { borderRadius: 0 },
+      xs: { borderRadius: borderRadius.xs },
+      sm: { borderRadius: borderRadius.sm },
+      md: { borderRadius: borderRadius.md },
+      lg: { borderRadius: borderRadius.lg },
+      xl: { borderRadius: borderRadius.xl },
+      xxl: { borderRadius: borderRadius.xxl },
+      full: { borderRadius: borderRadius.full },
+    },
     variant: {
       default: {
         borderColor: "transparent",
@@ -84,19 +90,3 @@ export const pressed = {
     borderColor: themeContract.borderStrong,
   }),
 };
-
-export const radius = recipe({
-  variants: {
-    radius: {
-      default: { borderRadius: themeContract.borderRadius },
-      none: { borderRadius: 0 },
-      xs: { borderRadius: borderRadius.xs },
-      sm: { borderRadius: borderRadius.sm },
-      md: { borderRadius: borderRadius.md },
-      lg: { borderRadius: borderRadius.lg },
-      xl: { borderRadius: borderRadius.xl },
-      xxl: { borderRadius: borderRadius.xxl },
-      full: { borderRadius: borderRadius.full },
-    },
-  },
-});

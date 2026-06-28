@@ -24,7 +24,7 @@ function buildComponentSections(): SidebarSection[] {
   ];
 }
 
-export const Route = createFileRoute("/docs/components/$component")({
+export const Route = createFileRoute("/docs/components")({
   beforeLoad: () => ({
     sidebarSections: buildComponentSections(),
   }),

@@ -44,7 +44,7 @@ export const fallback = style({
   lineHeight: 1,
 });
 
-export const size = recipe({
+export const avatarRecipes = recipe({
   variants: {
     size: {
       sm: { width: spacing.lg, height: spacing.lg },
@@ -53,11 +53,6 @@ export const size = recipe({
       xl: { width: spacing.xxxl, height: spacing.xxxl },
       hero: { width: spacing.titanic, height: spacing.titanic },
     },
-  },
-});
-
-export const radius = recipe({
-  variants: {
     radius: {
       none: { borderRadius: 0 },
       xs: { borderRadius: borderRadius.xs },

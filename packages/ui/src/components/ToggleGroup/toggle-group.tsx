@@ -8,8 +8,8 @@ import { Separator } from "../Separator/separator";
 import {
   Toggle as ToggleComponent,
   type ToggleProps as ToggleComponentProps,
+  type ToggleProps,
   type ToggleSize,
-  type ToggleVariant,
 } from "../Toggle/toggle";
 import {
   groupBase,
@@ -21,7 +21,7 @@ import {
   outlineItemVertical,
 } from "./toggle-group.css";
 
-type ToggleGroupVariant = ToggleVariant;
+type ToggleGroupVariant = ToggleProps["variant"];
 type ToggleGroupSize = ToggleSize;
 
 type ToggleGroupContextValue = {

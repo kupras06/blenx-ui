@@ -163,12 +163,6 @@ export const popupRight = style({
   borderBottomLeftRadius: borderRadius.xl,
 });
 
-export const closeButton = style({
-  position: "absolute",
-  top: spacing.sm,
-  insetInlineEnd: spacing.sm,
-});
-
 export const header = style({
   display: "flex",
   flexDirection: "column",

@@ -20,7 +20,7 @@ function buildBlockSections(): SidebarSection[] {
     });
 }
 
-export const Route = createFileRoute("/docs/blocks/$group/")({
+export const Route = createFileRoute("/docs/blocks")({
   beforeLoad: () => ({
     sidebarSections: buildBlockSections(),
   }),
