@@ -1,6 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract } from "@blenx-dev/theme/contract";
-import { borderRadius, fontSize, fontWeight, spacing } from "@blenx-dev/theme/tokens";
+import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
 
 export const root = style({
   display: "flex",
@@ -12,7 +11,7 @@ export const root = style({
   borderWidth: 1,
   borderStyle: "solid",
   borderColor: themeContract.border,
-  borderRadius: borderRadius.lg,
+  borderRadius: tokenVars.borderRadius.lg,
   boxShadow: themeContract.shadowLg,
   boxSizing: "border-box",
   outline: "none",
@@ -21,9 +20,9 @@ export const root = style({
 export const inputWrapper = style({
   display: "flex",
   alignItems: "center",
-  gap: spacing.sm,
-  paddingLeft: spacing.sm,
-  paddingRight: spacing.sm,
+  gap: tokenVars.spacing.sm,
+  paddingLeft: tokenVars.spacing.sm,
+  paddingRight: tokenVars.spacing.sm,
   borderBottomWidth: 1,
   borderBottomStyle: "solid",
   borderBottomColor: themeContract.borderSubtle,
@@ -43,7 +42,7 @@ export const input = style({
   border: "none",
   outline: "none",
   backgroundColor: "transparent",
-  fontSize: fontSize.sm,
+  fontSize: tokenVars.fontSize.sm,
   fontFamily: "inherit",
   color: themeContract.contentPrimary,
   selectors: {
@@ -56,7 +55,7 @@ export const input = style({
 export const list = style({
   overflow: "auto",
   maxHeight: 300,
-  padding: spacing.xs,
+  padding: tokenVars.spacing.xs,
 });
 
 export const group = style({
@@ -65,27 +64,27 @@ export const group = style({
 });
 
 export const groupHeading = style({
-  paddingTop: spacing.sm,
-  paddingBottom: spacing.xs,
-  paddingLeft: spacing.sm,
-  paddingRight: spacing.sm,
-  fontSize: fontSize.xs,
-  fontWeight: fontWeight.semibold,
+  paddingTop: tokenVars.spacing.sm,
+  paddingBottom: tokenVars.spacing.xs,
+  paddingLeft: tokenVars.spacing.sm,
+  paddingRight: tokenVars.spacing.sm,
+  fontSize: tokenVars.fontSize.xs,
+  fontWeight: tokenVars.fontWeight.semibold,
   color: themeContract.contentSecondary,
 });
 
 export const item = style({
   display: "flex",
   alignItems: "center",
-  gap: spacing.sm,
+  gap: tokenVars.spacing.sm,
   boxSizing: "border-box",
   minHeight: 32,
-  paddingTop: spacing.xs,
-  paddingBottom: spacing.xs,
-  paddingLeft: spacing.sm,
-  paddingRight: spacing.sm,
-  borderRadius: borderRadius.sm,
-  fontSize: fontSize.sm,
+  paddingTop: tokenVars.spacing.xs,
+  paddingBottom: tokenVars.spacing.xs,
+  paddingLeft: tokenVars.spacing.sm,
+  paddingRight: tokenVars.spacing.sm,
+  borderRadius: tokenVars.borderRadius.sm,
+  fontSize: tokenVars.fontSize.sm,
   lineHeight: "1.4",
   color: themeContract.contentPrimary,
   cursor: "pointer",
@@ -117,15 +116,15 @@ export const itemDisabled = style({
 
 export const separator = style({
   height: 1,
-  marginTop: spacing.xs,
-  marginBottom: spacing.xs,
+  marginTop: tokenVars.spacing.xs,
+  marginBottom: tokenVars.spacing.xs,
   backgroundColor: themeContract.borderSubtle,
 });
 
 export const empty = style({
-  paddingTop: spacing.lg,
-  paddingBottom: spacing.lg,
+  paddingTop: tokenVars.spacing.lg,
+  paddingBottom: tokenVars.spacing.lg,
   textAlign: "center",
-  fontSize: fontSize.sm,
+  fontSize: tokenVars.fontSize.sm,
   color: themeContract.contentSecondary,
 });

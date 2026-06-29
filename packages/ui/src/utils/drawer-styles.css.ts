@@ -1,5 +1,4 @@
-import { themeContract } from "@blenx-dev/theme/contract";
-import { borderWidth, spacing } from "@blenx-dev/theme/tokens";
+import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
 import { style } from "@vanilla-extract/css";
 
 export const backdrop = style({
@@ -17,7 +16,7 @@ export const viewport = style({
   display: "grid",
   gridTemplateRows: "1fr auto 3fr",
   justifyItems: "center",
-  padding: spacing.md,
+  padding: tokenVars.spacing.md,
   boxSizing: "border-box",
 });
 
@@ -31,7 +30,7 @@ export const popup = style({
   minHeight: 0,
   maxHeight: "calc(100svh - 80px)",
   transformOrigin: "center",
-  borderWidth: borderWidth.thin,
+  borderWidth: tokenVars.borderWidth.thin,
   borderStyle: "solid",
   borderColor: themeContract.border,
   borderRadius: themeContract.borderRadius,
@@ -61,7 +60,7 @@ export const viewportShellBottomStickOnMobile = style({
       display: "flex",
       alignItems: "flex-end",
       justifyContent: "center",
-      padding: spacing.sm,
+      padding: tokenVars.spacing.sm,
       paddingBottom: 0,
     },
   },
@@ -69,8 +68,8 @@ export const viewportShellBottomStickOnMobile = style({
 
 export const closeButton = style({
   position: "absolute",
-  top: spacing.xs,
-  insetInlineEnd: spacing.xs,
+  top: tokenVars.spacing.xs,
+  insetInlineEnd: tokenVars.spacing.xs,
 });
 
 export const popupBottomStickOnMobile = style({

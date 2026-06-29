@@ -1,6 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract } from "@blenx-dev/theme/contract";
-import { borderRadius, borderWidth, fontSize, fontWeight, spacing } from "@blenx-dev/theme/tokens";
+import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
 
 export const swipeArea = style({
   position: "fixed",
@@ -83,8 +82,8 @@ export const viewportRight = style({
 });
 
 export const viewportInset = style({
-  paddingLeft: spacing.md,
-  paddingRight: spacing.md,
+  paddingLeft: tokenVars.spacing.md,
+  paddingRight: tokenVars.spacing.md,
 });
 
 export const popup = style({
@@ -128,57 +127,57 @@ export const popupInset = style({
   borderRadius: "none",
   "@media": {
     "(min-width: 640px)": {
-      borderWidth: borderWidth.thin,
-      borderRadius: borderRadius.xl,
+      borderWidth: tokenVars.borderWidth.thin,
+      borderRadius: tokenVars.borderRadius.xl,
     },
   },
 });
 
 export const popupBottom = style({
   gridRowStart: 2,
-  borderTopWidth: borderWidth.thin,
-  borderTopLeftRadius: borderRadius.xl,
-  borderTopRightRadius: borderRadius.xl,
+  borderTopWidth: tokenVars.borderWidth.thin,
+  borderTopLeftRadius: tokenVars.borderRadius.xl,
+  borderTopRightRadius: tokenVars.borderRadius.xl,
 });
 
 export const popupTop = style({
-  borderBottomWidth: borderWidth.thin,
-  borderBottomLeftRadius: borderRadius.xl,
-  borderBottomRightRadius: borderRadius.xl,
+  borderBottomWidth: tokenVars.borderWidth.thin,
+  borderBottomLeftRadius: tokenVars.borderRadius.xl,
+  borderBottomRightRadius: tokenVars.borderRadius.xl,
 });
 
 export const popupLeft = style({
   width: "calc(100% - 48px)",
   maxWidth: "28rem",
-  borderRightWidth: borderWidth.thin,
-  borderTopRightRadius: borderRadius.xl,
-  borderBottomRightRadius: borderRadius.xl,
+  borderRightWidth: tokenVars.borderWidth.thin,
+  borderTopRightRadius: tokenVars.borderRadius.xl,
+  borderBottomRightRadius: tokenVars.borderRadius.xl,
 });
 
 export const popupRight = style({
   width: "calc(100% - 48px)",
   maxWidth: "28rem",
-  borderLeftWidth: borderWidth.thin,
-  borderTopLeftRadius: borderRadius.xl,
-  borderBottomLeftRadius: borderRadius.xl,
+  borderLeftWidth: tokenVars.borderWidth.thin,
+  borderTopLeftRadius: tokenVars.borderRadius.xl,
+  borderBottomLeftRadius: tokenVars.borderRadius.xl,
 });
 
 export const header = style({
   display: "flex",
   flexDirection: "column",
-  gap: spacing.sm,
-  paddingTop: spacing.lg,
-  paddingLeft: spacing.lg,
-  paddingRight: spacing.lg,
+  gap: tokenVars.spacing.sm,
+  paddingTop: tokenVars.spacing.lg,
+  paddingLeft: tokenVars.spacing.lg,
+  paddingRight: tokenVars.spacing.lg,
   boxSizing: "border-box",
 });
 
 export const footer = style({
   display: "flex",
   flexDirection: "column-reverse",
-  gap: spacing.sm,
-  paddingLeft: spacing.lg,
-  paddingRight: spacing.lg,
+  gap: tokenVars.spacing.sm,
+  paddingLeft: tokenVars.spacing.lg,
+  paddingRight: tokenVars.spacing.lg,
   boxSizing: "border-box",
   "@media": {
     "(min-width: 640px)": {
@@ -189,37 +188,37 @@ export const footer = style({
 });
 
 export const footerDefault = style({
-  borderTopWidth: borderWidth.thin,
+  borderTopWidth: tokenVars.borderWidth.thin,
   borderTopStyle: "solid",
   borderTopColor: themeContract.borderSubtle,
   backgroundColor: themeContract.backgroundSubtle,
-  paddingTop: spacing.md,
-  paddingBottom: spacing.md,
+  paddingTop: tokenVars.spacing.md,
+  paddingBottom: tokenVars.spacing.md,
 });
 
 export const footerBare = style({
-  paddingTop: spacing.md,
-  paddingBottom: spacing.lg,
+  paddingTop: tokenVars.spacing.md,
+  paddingBottom: tokenVars.spacing.lg,
 });
 
 export const title = style({
   fontSize: "20px",
   lineHeight: 1,
-  fontWeight: fontWeight.semibold,
+  fontWeight: tokenVars.fontWeight.semibold,
 });
 
 export const description = style({
-  fontSize: fontSize.sm,
+  fontSize: tokenVars.fontSize.sm,
   lineHeight: 1.4,
   color: themeContract.contentSecondary,
 });
 
 export const panel = style({
   boxSizing: "border-box",
-  paddingTop: spacing.lg,
-  paddingLeft: spacing.lg,
-  paddingRight: spacing.lg,
-  paddingBottom: spacing.lg,
+  paddingTop: tokenVars.spacing.lg,
+  paddingLeft: tokenVars.spacing.lg,
+  paddingRight: tokenVars.spacing.lg,
+  paddingBottom: tokenVars.spacing.lg,
 });
 
 export const bar = style({
@@ -227,7 +226,7 @@ export const bar = style({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  padding: spacing.sm,
+  padding: tokenVars.spacing.sm,
   touchAction: "none",
 });
 
@@ -265,17 +264,17 @@ export const menu = style({
 export const menuItem = style({
   display: "flex",
   alignItems: "center",
-  gap: spacing.sm,
+  gap: tokenVars.spacing.sm,
   minHeight: "36px",
-  paddingTop: spacing.xs,
-  paddingBottom: spacing.xs,
-  paddingLeft: spacing.sm,
-  paddingRight: spacing.sm,
-  borderRadius: borderRadius.sm,
+  paddingTop: tokenVars.spacing.xs,
+  paddingBottom: tokenVars.spacing.xs,
+  paddingLeft: tokenVars.spacing.sm,
+  paddingRight: tokenVars.spacing.sm,
+  borderRadius: tokenVars.borderRadius.sm,
   border: "none",
   backgroundColor: "transparent",
   color: themeContract.contentPrimary,
-  fontSize: fontSize.md,
+  fontSize: tokenVars.fontSize.md,
   textAlign: "left",
   cursor: "default",
   outline: "none",
@@ -288,8 +287,8 @@ export const menuItemDestructive = style({
 export const separator = style({
   height: "1px",
   backgroundColor: themeContract.borderSubtle,
-  marginTop: spacing.xs,
-  marginBottom: spacing.xs,
+  marginTop: tokenVars.spacing.xs,
+  marginBottom: tokenVars.spacing.xs,
 });
 
 export const menuGroup = style({
@@ -298,25 +297,25 @@ export const menuGroup = style({
 });
 
 export const menuGroupLabel = style({
-  paddingTop: spacing.xs,
-  paddingBottom: spacing.xs,
-  paddingLeft: spacing.sm,
-  paddingRight: spacing.sm,
-  fontSize: fontSize.xs,
-  fontWeight: fontWeight.medium,
+  paddingTop: tokenVars.spacing.xs,
+  paddingBottom: tokenVars.spacing.xs,
+  paddingLeft: tokenVars.spacing.sm,
+  paddingRight: tokenVars.spacing.sm,
+  fontSize: tokenVars.fontSize.xs,
+  fontWeight: tokenVars.fontWeight.medium,
   color: themeContract.contentSecondary,
 });
 
 export const menuTrigger = style({
   display: "flex",
   alignItems: "center",
-  gap: spacing.sm,
+  gap: tokenVars.spacing.sm,
   minHeight: "36px",
-  paddingTop: spacing.xs,
-  paddingBottom: spacing.xs,
-  paddingLeft: spacing.sm,
-  paddingRight: spacing.sm,
-  borderRadius: borderRadius.sm,
+  paddingTop: tokenVars.spacing.xs,
+  paddingBottom: tokenVars.spacing.xs,
+  paddingLeft: tokenVars.spacing.sm,
+  paddingRight: tokenVars.spacing.sm,
+  borderRadius: tokenVars.borderRadius.sm,
   backgroundColor: "transparent",
   border: "none",
   color: themeContract.contentPrimary,
@@ -331,13 +330,13 @@ export const menuTriggerIcon = style({
 export const menuCheckbox = style({
   display: "grid",
   alignItems: "center",
-  gap: spacing.sm,
+  gap: tokenVars.spacing.sm,
   minHeight: "36px",
-  paddingTop: spacing.xs,
-  paddingBottom: spacing.xs,
-  paddingLeft: spacing.sm,
-  paddingRight: spacing.sm,
-  borderRadius: borderRadius.sm,
+  paddingTop: tokenVars.spacing.xs,
+  paddingBottom: tokenVars.spacing.xs,
+  paddingLeft: tokenVars.spacing.sm,
+  paddingRight: tokenVars.spacing.sm,
+  borderRadius: tokenVars.borderRadius.sm,
   backgroundColor: "transparent",
   border: "none",
   color: themeContract.contentPrimary,
@@ -345,12 +344,12 @@ export const menuCheckbox = style({
 
 export const menuCheckboxDefault = style({
   gridTemplateColumns: "1rem 1fr",
-  paddingRight: spacing.md,
+  paddingRight: tokenVars.spacing.md,
 });
 
 export const menuCheckboxSwitch = style({
   gridTemplateColumns: "1fr auto",
-  paddingRight: spacing.xs,
+  paddingRight: tokenVars.spacing.xs,
 });
 
 export const menuCheckboxSwitchLabel = style({
@@ -362,14 +361,14 @@ export const menuCheckboxSwitchIndicator = style({
   display: "inline-flex",
   alignItems: "center",
   padding: "2px",
-  borderRadius: borderRadius.full,
+  borderRadius: tokenVars.borderRadius.full,
   backgroundColor: themeContract.borderSubtle,
 });
 
 export const menuCheckboxSwitchThumb = style({
   width: "14px",
   height: "14px",
-  borderRadius: borderRadius.full,
+  borderRadius: tokenVars.borderRadius.full,
   backgroundColor: themeContract.background,
 });
 
@@ -384,13 +383,13 @@ export const menuCheckboxLabel = style({
 export const menuRadio = style({
   display: "grid",
   alignItems: "center",
-  gap: spacing.sm,
+  gap: tokenVars.spacing.sm,
   minHeight: "36px",
-  paddingTop: spacing.xs,
-  paddingBottom: spacing.xs,
-  paddingLeft: spacing.sm,
-  paddingRight: spacing.md,
-  borderRadius: borderRadius.sm,
+  paddingTop: tokenVars.spacing.xs,
+  paddingBottom: tokenVars.spacing.xs,
+  paddingLeft: tokenVars.spacing.sm,
+  paddingRight: tokenVars.spacing.md,
+  borderRadius: tokenVars.borderRadius.sm,
   backgroundColor: "transparent",
   border: "none",
   color: themeContract.contentPrimary,

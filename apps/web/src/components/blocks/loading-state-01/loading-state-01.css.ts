@@ -1,7 +1,6 @@
 /* ── Loading Skeleton ── */
 
-import { themeContract } from "@blenx-dev/theme/contract";
-import { borderRadius, spacing } from "@blenx-dev/theme/tokens";
+import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
 import { keyframes, style } from "@vanilla-extract/css";
 
 export const shimmerKeyframes = keyframes({
@@ -25,7 +24,7 @@ export const skeletonShimmer = style({
 
 export const skeletonTextLine = style({
   height: 14,
-  borderRadius: borderRadius.full,
+  borderRadius: tokenVars.borderRadius.full,
   backgroundColor: themeContract.surfaceRaised,
 });
 
@@ -39,7 +38,7 @@ export const skeletonTableHeader = style({
   height: 40,
   borderRadius: themeContract.borderRadius,
   backgroundColor: themeContract.surfaceRaised,
-  marginBottom: spacing.xs,
+  marginBottom: tokenVars.spacing.xs,
 });
 
 export const skeletonTableRow = style({
@@ -59,19 +58,19 @@ export const skeletonAvatar = style({
 export const skeletonAvatarTextGroup = style({
   display: "flex",
   flexDirection: "column",
-  gap: spacing.xs,
+  gap: tokenVars.spacing.xs,
   flex: 1,
 });
 
 export const skeletonContainer = style({
   display: "flex",
   flexDirection: "column",
-  gap: spacing.md,
-  padding: spacing.md,
+  gap: tokenVars.spacing.md,
+  padding: tokenVars.spacing.md,
 });
 
 export const skeletonProgressWrapper = style({
-  marginTop: spacing.sm,
+  marginTop: tokenVars.spacing.sm,
   width: "100%",
   maxWidth: 300,
 });

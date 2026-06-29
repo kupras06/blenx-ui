@@ -1,6 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract } from "@blenx-dev/theme/contract";
-import { borderRadius, borderWidth, fontSize, fontWeight, spacing } from "@blenx-dev/theme/tokens";
+import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
 
 export const backdrop = style({
   position: "fixed",
@@ -19,12 +18,12 @@ export const popup = style({
   minWidth: 160,
   width: "max(var(--anchor-width), 240px)",
   maxWidth: "calc(100vw - 16px)",
-  padding: spacing.sm,
+  padding: tokenVars.spacing.sm,
   backgroundColor: themeContract.surface,
-  borderWidth: borderWidth.thin,
+  borderWidth: tokenVars.borderWidth.thin,
   borderStyle: "solid",
   borderColor: themeContract.border,
-  borderRadius: borderRadius.lg,
+  borderRadius: tokenVars.borderRadius.lg,
   boxShadow: themeContract.shadowLg,
   outline: "none",
   transformOrigin: "var(--transform-origin)",
@@ -59,7 +58,7 @@ export const arrowFill = style({
   width: "100%",
   height: "100%",
   backgroundColor: themeContract.surface,
-  borderWidth: borderWidth.thin,
+  borderWidth: tokenVars.borderWidth.thin,
   borderStyle: "solid",
   borderColor: themeContract.border,
   borderRadius: 2,
@@ -67,16 +66,16 @@ export const arrowFill = style({
 });
 
 export const title = style({
-  fontSize: fontSize.md,
-  fontWeight: fontWeight.semibold,
+  fontSize: tokenVars.fontSize.md,
+  fontWeight: tokenVars.fontWeight.semibold,
   color: themeContract.contentPrimary,
   margin: 0,
-  paddingBottom: spacing.xs,
+  paddingBottom: tokenVars.spacing.xs,
 });
 
 export const description = style({
-  fontSize: fontSize.sm,
+  fontSize: tokenVars.fontSize.sm,
   color: themeContract.contentSecondary,
   margin: 0,
-  paddingBottom: spacing.xs,
+  paddingBottom: tokenVars.spacing.xs,
 });

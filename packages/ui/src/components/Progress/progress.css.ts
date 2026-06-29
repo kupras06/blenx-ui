@@ -1,12 +1,11 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract } from "@blenx-dev/theme/contract";
-import { borderRadius, duration, fontSize, fontWeight, spacing } from "@blenx-dev/theme/tokens";
+import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
 
 export const root = style({
   display: "flex",
   width: "100%",
   flexDirection: "column",
-  gap: spacing["2"],
+  gap: tokenVars.spacing["2"],
 });
 
 export const track = style({
@@ -14,25 +13,25 @@ export const track = style({
   height: 6,
   width: "100%",
   overflow: "hidden",
-  borderRadius: borderRadius.full,
+  borderRadius: tokenVars.borderRadius.full,
   backgroundColor: themeContract.surface,
 });
 
 export const indicator = style({
   height: "100%",
   backgroundColor: themeContract.primary,
-  borderRadius: borderRadius.full,
+  borderRadius: tokenVars.borderRadius.full,
   transitionProperty: "width, background-color",
-  transitionDuration: duration.slow,
+  transitionDuration: tokenVars.duration.slow,
   transitionTimingFunction: "ease",
 });
 
 export const progressLabel = style({
-  fontSize: fontSize.md,
-  fontWeight: fontWeight.medium,
+  fontSize: tokenVars.fontSize.md,
+  fontWeight: tokenVars.fontWeight.medium,
 });
 
 export const value = style({
-  fontSize: fontSize.sm,
+  fontSize: tokenVars.fontSize.sm,
   fontVariantNumeric: "tabular-nums",
 });

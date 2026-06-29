@@ -1,18 +1,10 @@
 import { style } from "@vanilla-extract/css";
 import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
-import {
-  borderRadius,
-  duration,
-  easing,
-  fontSize,
-  fontWeight,
-  spacing,
-} from "@blenx-dev/theme/tokens";
 
 export const root = style({
   display: "flex",
   flexDirection: "column",
-  gap: spacing.md,
+  gap: tokenVars.spacing.md,
   width: "100%",
   border: "none",
   backgroundColor: "transparent",
@@ -24,7 +16,7 @@ export const root = style({
 export const rootVertical = style({
   flexDirection: "row",
   alignItems: "flex-start",
-  gap: spacing.lg,
+  gap: tokenVars.spacing.lg,
 });
 
 export const list = style({
@@ -53,7 +45,7 @@ export const listDefault = style({
 export const listUnderline = style({
   display: "flex",
   alignItems: "stretch",
-  gap: spacing.lg,
+  gap: tokenVars.spacing.lg,
   borderBottomWidth: 1,
   borderBottomStyle: "solid",
   borderBottomColor: themeContract.borderSubtle,
@@ -66,7 +58,7 @@ export const listUnderlineVertical = style({
   alignItems: "stretch",
   gap: 0,
   padding: 0,
-  paddingRight: spacing.sm,
+  paddingRight: tokenVars.spacing.sm,
   backgroundColor: "transparent",
   borderRightWidth: 1,
   borderRightStyle: "solid",
@@ -85,7 +77,7 @@ export const listVertical = style({
 
 export const tabActiveVertical = style({
   color: themeContract.contentPrimary,
-  fontWeight: fontWeight.semibold,
+  fontWeight: tokenVars.fontWeight.semibold,
   backgroundColor: themeContract.backgroundSubtle,
   borderRightWidth: 2,
   borderRightStyle: "solid",
@@ -94,7 +86,7 @@ export const tabActiveVertical = style({
 
 export const tabUnderlineActive = style({
   color: themeContract.contentPrimary,
-  fontWeight: fontWeight.semibold,
+  fontWeight: tokenVars.fontWeight.semibold,
   borderBottomWidth: 2,
   borderBottomStyle: "solid",
   borderBottomColor: themeContract.contentPrimary,
@@ -102,12 +94,12 @@ export const tabUnderlineActive = style({
 
 export const listGhost = style({
   display: "flex",
-  gap: spacing.sm,
+  gap: tokenVars.spacing.sm,
 });
 
 export const tabGhost = style({
-  padding: `${spacing.sm} ${spacing.md}`,
-  borderRadius: borderRadius.md,
+  padding: `${tokenVars.spacing.sm} ${tokenVars.spacing.md}`,
+  borderRadius: tokenVars.borderRadius.md,
   color: themeContract.contentSecondary,
   selectors: {
     "&:hover": {
@@ -119,23 +111,23 @@ export const tabGhost = style({
 export const tabGhostActive = style({
   backgroundColor: themeContract.backgroundSubtle,
   color: themeContract.contentPrimary,
-  fontWeight: fontWeight.semibold,
+  fontWeight: tokenVars.fontWeight.semibold,
 });
 
 export const listSegmented = style({
   display: "flex",
-  gap: spacing.xxs,
-  padding: spacing.xxs,
+  gap: tokenVars.spacing.xxs,
+  padding: tokenVars.spacing.xxs,
   backgroundColor: themeContract.backgroundSubtle,
   borderWidth: 1,
   borderStyle: "solid",
   borderColor: themeContract.borderSubtle,
-  borderRadius: borderRadius.lg,
+  borderRadius: tokenVars.borderRadius.lg,
 });
 
 export const tabSegmented = style({
-  padding: `${spacing.sm} ${spacing.md}`,
-  borderRadius: borderRadius.md,
+  padding: `${tokenVars.spacing.sm} ${tokenVars.spacing.md}`,
+  borderRadius: tokenVars.borderRadius.md,
   color: themeContract.contentSecondary,
   selectors: {
     "&:hover": {
@@ -147,7 +139,7 @@ export const tabSegmented = style({
 export const tabSegmentedActive = style({
   backgroundColor: themeContract.surface,
   color: themeContract.contentOnPrimary,
-  fontWeight: fontWeight.semibold,
+  fontWeight: tokenVars.fontWeight.semibold,
 });
 
 export const tab = style({
@@ -156,7 +148,7 @@ export const tab = style({
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
-  gap: spacing.xs,
+  gap: tokenVars.spacing.xs,
   minHeight: 36,
   backgroundColor: "transparent",
   cursor: "pointer",
@@ -170,16 +162,16 @@ export const tab = style({
   font: "inherit",
   fontFamily: tokenVars.font.body,
   WebkitTapHighlightColor: "transparent",
-  transition: `color ${duration.normal} ${easing.standard}, background-color ${duration.normal} ${easing.standard}, box-shadow ${duration.normal} ${easing.standard}`,
+  transition: `color ${tokenVars.duration.normal} ${tokenVars.easing.standard}, background-color ${tokenVars.duration.normal} ${tokenVars.easing.standard}, box-shadow ${tokenVars.duration.normal} ${tokenVars.easing.standard}`,
 });
 
 export const tabDefault = style({
   position: "relative",
-  padding: `${spacing.sm} ${spacing.md}`,
+  padding: `${tokenVars.spacing.sm} ${tokenVars.spacing.md}`,
   borderRadius: 0,
   color: themeContract.contentSecondary,
-  fontSize: fontSize.sm,
-  fontWeight: fontWeight.medium,
+  fontSize: tokenVars.fontSize.sm,
+  fontWeight: tokenVars.fontWeight.medium,
   lineHeight: 1.2,
   minHeight: 40,
   backgroundColor: "transparent",
@@ -201,7 +193,7 @@ export const tabVertical = style({
 
 export const tabActive = style({
   color: themeContract.contentPrimary,
-  fontWeight: fontWeight.semibold,
+  fontWeight: tokenVars.fontWeight.semibold,
 });
 
 export const tabDisabled = style({
@@ -211,7 +203,7 @@ export const tabDisabled = style({
 
 export const tabActiveDefault = style({
   color: themeContract.contentPrimary,
-  fontWeight: fontWeight.semibold,
+  fontWeight: tokenVars.fontWeight.semibold,
   backgroundColor: "transparent",
   borderBottomWidth: 2,
   borderBottomStyle: "solid",
@@ -219,11 +211,11 @@ export const tabActiveDefault = style({
 });
 
 export const tabUnderline = style({
-  padding: `${spacing.sm} 0`,
+  padding: `${tokenVars.spacing.sm} 0`,
   borderRadius: 0,
   color: themeContract.contentSecondary,
-  fontSize: fontSize.sm,
-  fontWeight: fontWeight.medium,
+  fontSize: tokenVars.fontSize.sm,
+  fontWeight: tokenVars.fontWeight.medium,
   backgroundColor: "transparent",
   selectors: {
     "&:hover": {
@@ -243,13 +235,13 @@ export const indicatorDefault = style({
 
 export const indicatorUnderline = style({
   zIndex: 0,
-  borderRadius: borderRadius.full,
+  borderRadius: tokenVars.borderRadius.full,
   backgroundColor: themeContract.secondary,
 });
 
 export const panel = style({
   minWidth: 0,
-  paddingTop: spacing.lg,
+  paddingTop: tokenVars.spacing.lg,
   outline: "none",
 });
 

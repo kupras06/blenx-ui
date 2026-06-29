@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { fontSize } from "@blenx-dev/theme/tokens";
+import { tokenVars } from "@blenx-dev/theme/contract";
 
 export const field = style({
   display: "flex",
@@ -13,7 +13,7 @@ export const label = style({
   display: "inline-flex",
   alignItems: "center",
   fontWeight: 400,
-  fontSize: fontSize.md,
+  fontSize: tokenVars.fontSize.md,
   color: "inherit",
 });
 

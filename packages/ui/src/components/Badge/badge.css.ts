@@ -1,11 +1,10 @@
 import { recipe } from "@vanilla-extract/recipes";
-import { themeContract } from "@blenx-dev/theme/contract";
-import { spacing } from "@blenx-dev/theme/tokens";
+import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
 
 export const badgeRecipe = recipe({
   base: {
     display: "inline-block",
-    padding: spacing.xs,
+    padding: tokenVars.spacing.xs,
     borderRadius: themeContract.borderRadius,
     fontSize: 12,
     lineHeight: 1.2,

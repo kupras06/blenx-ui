@@ -1,6 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract } from "@blenx-dev/theme/contract";
-import { spacing } from "@blenx-dev/theme/tokens";
+import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
 
 export const root = style({
   height: "100%",
@@ -32,8 +31,8 @@ export const viewportFade = style({
 });
 
 export const viewportGutter = style({
-  paddingRight: spacing.sm,
-  paddingBottom: spacing.sm,
+  paddingRight: tokenVars.spacing.sm,
+  paddingBottom: tokenVars.spacing.sm,
 });
 
 export const contentFill = style({
@@ -42,7 +41,7 @@ export const contentFill = style({
 });
 
 export const scrollbar = style({
-  margin: spacing.xs,
+  margin: tokenVars.spacing.xs,
   display: "flex",
   opacity: 0,
   boxSizing: "border-box",

@@ -1,7 +1,6 @@
 import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
-import { themeContract } from "@blenx-dev/theme/contract";
-import { borderRadius, borderWidth, fontSize, fontWeight, spacing } from "@blenx-dev/theme/tokens";
+import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
 
 export const base = style({
   position: "relative",
@@ -9,13 +8,13 @@ export const base = style({
   flexShrink: 0,
   alignItems: "center",
   justifyContent: "center",
-  gap: spacing.sm,
+  gap: tokenVars.spacing.sm,
   whiteSpace: "nowrap",
   borderStyle: "solid",
   borderWidth: 1,
   borderRadius: themeContract.borderRadius,
-  fontWeight: fontWeight.medium,
-  fontSize: fontSize.sm,
+  fontWeight: tokenVars.fontWeight.medium,
+  fontSize: tokenVars.fontSize.sm,
   lineHeight: 1.4,
   cursor: "pointer",
   userSelect: "none",
@@ -37,33 +36,33 @@ export const toggleRecipes = recipe({
   variants: {
     size: {
       sm: {
-        height: spacing.lg,
-        minWidth: spacing.lg,
-        paddingLeft: spacing.sm,
-        paddingRight: spacing.sm,
+        height: tokenVars.spacing.lg,
+        minWidth: tokenVars.spacing.lg,
+        paddingLeft: tokenVars.spacing.sm,
+        paddingRight: tokenVars.spacing.sm,
       },
       default: {
-        height: spacing.lg,
+        height: tokenVars.spacing.lg,
         minWidth: 36,
-        paddingLeft: spacing.sm,
-        paddingRight: spacing.sm,
+        paddingLeft: tokenVars.spacing.sm,
+        paddingRight: tokenVars.spacing.sm,
       },
       lg: {
-        height: spacing.xl,
-        paddingLeft: spacing.md,
-        paddingRight: spacing.md,
+        height: tokenVars.spacing.xl,
+        paddingLeft: tokenVars.spacing.md,
+        paddingRight: tokenVars.spacing.md,
       },
     },
     radius: {
       default: { borderRadius: themeContract.borderRadius },
       none: { borderRadius: 0 },
-      xs: { borderRadius: borderRadius.xs },
-      sm: { borderRadius: borderRadius.sm },
-      md: { borderRadius: borderRadius.md },
-      lg: { borderRadius: borderRadius.lg },
-      xl: { borderRadius: borderRadius.xl },
-      xxl: { borderRadius: borderRadius.xxl },
-      full: { borderRadius: borderRadius.full },
+      xs: { borderRadius: tokenVars.borderRadius.xs },
+      sm: { borderRadius: tokenVars.borderRadius.sm },
+      md: { borderRadius: tokenVars.borderRadius.md },
+      lg: { borderRadius: tokenVars.borderRadius.lg },
+      xl: { borderRadius: tokenVars.borderRadius.xl },
+      xxl: { borderRadius: tokenVars.borderRadius.xxl },
+      full: { borderRadius: tokenVars.borderRadius.full },
     },
     variant: {
       default: {
@@ -85,7 +84,7 @@ export const pressed = {
     backgroundColor: themeContract.surfaceRaised,
   }),
   outline: style({
-    outlineWidth: borderWidth.thin,
+    outlineWidth: tokenVars.borderWidth.thin,
     backgroundColor: themeContract.surfaceOverlay,
     borderColor: themeContract.borderStrong,
   }),

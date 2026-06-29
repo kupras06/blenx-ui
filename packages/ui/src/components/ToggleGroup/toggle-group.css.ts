@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { borderRadius, spacing } from "@blenx-dev/theme/tokens";
+import { tokenVars } from "@blenx-dev/theme/contract";
 
 export const groupBase = style({
   display: "inline-flex",
@@ -17,7 +17,7 @@ export const groupVertical = style({
 });
 
 export const groupDefault = style({
-  gap: spacing.xxs,
+  gap: tokenVars.spacing.xxs,
 });
 
 export const groupOutline = style({
@@ -27,12 +27,12 @@ export const groupOutline = style({
 export const outlineItemHorizontal = style({
   selectors: {
     "&:first-child": {
-      borderStartStartRadius: borderRadius.md,
-      borderEndStartRadius: borderRadius.md,
+      borderStartStartRadius: tokenVars.borderRadius.md,
+      borderEndStartRadius: tokenVars.borderRadius.md,
     },
     "&:last-child": {
-      borderStartEndRadius: borderRadius.md,
-      borderEndEndRadius: borderRadius.md,
+      borderStartEndRadius: tokenVars.borderRadius.md,
+      borderEndEndRadius: tokenVars.borderRadius.md,
     },
     "&:not(:first-child)": {
       borderInlineStartWidth: 0,
@@ -53,12 +53,12 @@ export const outlineItemHorizontal = style({
 export const outlineItemVertical = style({
   selectors: {
     "&:first-child": {
-      borderStartStartRadius: borderRadius.md,
-      borderStartEndRadius: borderRadius.md,
+      borderStartStartRadius: tokenVars.borderRadius.md,
+      borderStartEndRadius: tokenVars.borderRadius.md,
     },
     "&:last-child": {
-      borderEndStartRadius: borderRadius.md,
-      borderEndEndRadius: borderRadius.md,
+      borderEndStartRadius: tokenVars.borderRadius.md,
+      borderEndEndRadius: tokenVars.borderRadius.md,
     },
     "&:not(:first-child)": {
       borderBlockStartWidth: 0,

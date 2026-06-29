@@ -1,12 +1,11 @@
 import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
-import { themeContract } from "@blenx-dev/theme/contract";
-import { fontSize, spacing } from "@blenx-dev/theme/tokens";
+import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
 
 export const root = style({
   display: "flex",
   alignItems: "center",
-  gap: spacing["1"],
+  gap: tokenVars.spacing["1"],
 });
 
 export const input = recipe({
@@ -30,14 +29,14 @@ export const input = recipe({
   variants: {
     size: {
       default: {
-        width: spacing["9"],
-        height: spacing["9"],
-        fontSize: fontSize.md,
+        width: tokenVars.spacing["9"],
+        height: tokenVars.spacing["9"],
+        fontSize: tokenVars.fontSize.md,
       },
       lg: {
-        width: spacing["10"],
-        height: spacing["10"],
-        fontSize: fontSize.lg,
+        width: tokenVars.spacing["10"],
+        height: tokenVars.spacing["10"],
+        fontSize: tokenVars.fontSize.lg,
       },
     },
   },
@@ -49,7 +48,7 @@ export const input = recipe({
 export const separator = style({
   backgroundColor: themeContract.border,
   borderRadius: "999px",
-  width: spacing["3"],
-  height: spacing["0.5"],
+  width: tokenVars.spacing["3"],
+  height: tokenVars.spacing["0.5"],
   flexShrink: 0,
 });

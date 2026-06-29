@@ -1,6 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract } from "@blenx-dev/theme/contract";
-import { borderRadius, borderWidth, fontSize, fontWeight, spacing } from "@blenx-dev/theme/tokens";
+import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
 
 export const backdrop = style({
   position: "fixed",
@@ -27,13 +26,13 @@ export const viewport = style({
 export const viewportBottom = style({
   display: "grid",
   gridTemplateRows: "1fr auto",
-  paddingTop: spacing.xxl,
+  paddingTop: tokenVars.spacing.xxl,
 });
 
 export const viewportTop = style({
   display: "grid",
   gridTemplateRows: "auto 1fr",
-  paddingBottom: spacing.xxl,
+  paddingBottom: tokenVars.spacing.xxl,
 });
 
 export const viewportLeft = style({
@@ -49,7 +48,7 @@ export const viewportRight = style({
 export const viewportInset = style({
   "@media": {
     "(min-width: 640px)": {
-      padding: spacing.md,
+      padding: tokenVars.spacing.md,
     },
   },
 });
@@ -90,31 +89,31 @@ export const popup = style({
 
 export const popupBottom = style({
   gridRowStart: 2,
-  borderTopWidth: borderWidth.thin,
-  borderTopLeftRadius: borderRadius.xl,
-  borderTopRightRadius: borderRadius.xl,
+  borderTopWidth: tokenVars.borderWidth.thin,
+  borderTopLeftRadius: tokenVars.borderRadius.xl,
+  borderTopRightRadius: tokenVars.borderRadius.xl,
 });
 
 export const popupTop = style({
-  borderBottomWidth: borderWidth.thin,
-  borderBottomLeftRadius: borderRadius.xl,
-  borderBottomRightRadius: borderRadius.xl,
+  borderBottomWidth: tokenVars.borderWidth.thin,
+  borderBottomLeftRadius: tokenVars.borderRadius.xl,
+  borderBottomRightRadius: tokenVars.borderRadius.xl,
 });
 
 export const popupLeft = style({
   width: "calc(100% - 48px)",
   maxWidth: "28rem",
-  borderRightWidth: borderWidth.thin,
-  borderTopRightRadius: borderRadius.xl,
-  borderBottomRightRadius: borderRadius.xl,
+  borderRightWidth: tokenVars.borderWidth.thin,
+  borderTopRightRadius: tokenVars.borderRadius.xl,
+  borderBottomRightRadius: tokenVars.borderRadius.xl,
 });
 
 export const popupRight = style({
   width: "calc(100% - 48px)",
   maxWidth: "28rem",
-  borderLeftWidth: borderWidth.thin,
-  borderTopLeftRadius: borderRadius.xl,
-  borderBottomLeftRadius: borderRadius.xl,
+  borderLeftWidth: tokenVars.borderWidth.thin,
+  borderTopLeftRadius: tokenVars.borderRadius.xl,
+  borderBottomLeftRadius: tokenVars.borderRadius.xl,
 });
 
 export const popupInset = style({
@@ -125,8 +124,8 @@ export const popupInset = style({
   },
   "@media": {
     "(min-width: 640px)": {
-      borderRadius: borderRadius.xl,
-      borderWidth: borderWidth.thin,
+      borderRadius: tokenVars.borderRadius.xl,
+      borderWidth: tokenVars.borderWidth.thin,
     },
   },
 });
@@ -134,17 +133,17 @@ export const popupInset = style({
 export const header = style({
   display: "flex",
   flexDirection: "column",
-  gap: spacing.sm,
-  padding: spacing.lg,
+  gap: tokenVars.spacing.sm,
+  padding: tokenVars.spacing.lg,
   boxSizing: "border-box",
 });
 
 export const footer = style({
   display: "flex",
   flexDirection: "column-reverse",
-  gap: spacing.sm,
-  paddingLeft: spacing.lg,
-  paddingRight: spacing.lg,
+  gap: tokenVars.spacing.sm,
+  paddingLeft: tokenVars.spacing.lg,
+  paddingRight: tokenVars.spacing.lg,
   boxSizing: "border-box",
   "@media": {
     "(min-width: 640px)": {
@@ -155,32 +154,32 @@ export const footer = style({
 });
 
 export const footerDefault = style({
-  borderTopWidth: borderWidth.thin,
+  borderTopWidth: tokenVars.borderWidth.thin,
   borderTopStyle: "solid",
   borderTopColor: themeContract.borderSubtle,
   backgroundColor: themeContract.backgroundSubtle,
-  paddingTop: spacing.md,
-  paddingBottom: spacing.md,
+  paddingTop: tokenVars.spacing.md,
+  paddingBottom: tokenVars.spacing.md,
 });
 
 export const footerBare = style({
-  paddingTop: spacing.md,
-  paddingBottom: spacing.lg,
+  paddingTop: tokenVars.spacing.md,
+  paddingBottom: tokenVars.spacing.lg,
 });
 
 export const title = style({
-  fontSize: fontSize.xl,
+  fontSize: tokenVars.fontSize.xl,
   lineHeight: 1,
-  fontWeight: fontWeight.semibold,
+  fontWeight: tokenVars.fontWeight.semibold,
 });
 
 export const description = style({
-  fontSize: fontSize.sm,
+  fontSize: tokenVars.fontSize.sm,
   lineHeight: 1.4,
   color: themeContract.contentSecondary,
 });
 
 export const panel = style({
   boxSizing: "border-box",
-  padding: spacing.lg,
+  padding: tokenVars.spacing.lg,
 });

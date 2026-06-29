@@ -1,6 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract } from "@blenx-dev/theme/contract";
-import { borderRadius, borderWidth, fontSize, fontWeight, spacing } from "@blenx-dev/theme/tokens";
+import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
 
 export const inputGroup = style({
   position: "relative",
@@ -28,7 +27,7 @@ export const startAddon = style({
   pointerEvents: "none",
   position: "absolute",
   insetBlock: 0,
-  insetInlineStart: borderWidth.thin,
+  insetInlineStart: tokenVars.borderWidth.thin,
   display: "flex",
   alignItems: "center",
   opacity: 0.8,
@@ -50,8 +49,8 @@ export const adornment = style({
   justifyContent: "center",
   flexShrink: 0,
   transform: "translateY(-50%)",
-  borderRadius: borderRadius.md,
-  borderWidth: borderWidth.thin,
+  borderRadius: tokenVars.borderRadius.md,
+  borderWidth: tokenVars.borderWidth.thin,
   borderStyle: "solid",
   borderColor: "transparent",
   opacity: 0.8,
@@ -71,11 +70,11 @@ export const adornmentDefault = style({
 });
 
 export const adornmentEndSm = style({
-  insetInlineEnd: spacing["0"],
+  insetInlineEnd: tokenVars.spacing["0"],
 });
 
 export const adornmentEndDefault = style({
-  insetInlineEnd: spacing["0.5"],
+  insetInlineEnd: tokenVars.spacing["0.5"],
 });
 
 export const positioner = style({
@@ -88,10 +87,10 @@ export const popupShell = style({
   maxHeight: "100%",
   minWidth: "var(--anchor-width)",
   maxWidth: "var(--available-width)",
-  borderWidth: borderWidth.thin,
+  borderWidth: tokenVars.borderWidth.thin,
   borderStyle: "solid",
   borderColor: themeContract.border,
-  borderRadius: borderRadius.lg,
+  borderRadius: tokenVars.borderRadius.lg,
   backgroundColor: themeContract.surface,
   boxShadow: themeContract.shadowLg,
   transformOrigin: "var(--transform-origin)",
@@ -117,8 +116,8 @@ export const popup = style({
 
 export const separator = style({
   height: "1px",
-  marginBlock: spacing.xs,
-  marginInline: spacing.sm,
+  marginBlock: tokenVars.spacing.xs,
+  marginInline: tokenVars.spacing.sm,
   backgroundColor: themeContract.border,
   selectors: {
     "&:last-child": {
@@ -134,16 +133,16 @@ export const group = style({
 
 export const groupLabel = style({
   paddingBlock: "6px",
-  paddingInline: spacing.sm,
-  fontSize: fontSize.xs,
-  fontWeight: fontWeight.medium,
+  paddingInline: tokenVars.spacing.sm,
+  fontSize: tokenVars.fontSize.xs,
+  fontWeight: tokenVars.fontWeight.medium,
   color: themeContract.contentSecondary,
 });
 
 export const empty = style({
-  padding: spacing.sm,
+  padding: tokenVars.spacing.sm,
   textAlign: "center",
-  fontSize: fontSize.md,
+  fontSize: tokenVars.fontSize.md,
   color: themeContract.contentSecondary,
 });
 
@@ -157,22 +156,22 @@ export const value = style({
 });
 
 export const list = style({
-  padding: spacing.xs,
+  padding: tokenVars.spacing.xs,
   selectors: {
     "&:not(:empty)": {
-      scrollPaddingBlock: spacing.xs,
+      scrollPaddingBlock: tokenVars.spacing.xs,
     },
     "&:has([data-slot='combobox-item'])": {
-      paddingInlineEnd: spacing.sm,
+      paddingInlineEnd: tokenVars.spacing.sm,
     },
   },
 });
 
 export const status = style({
-  paddingInline: spacing.md,
-  paddingBlock: spacing.sm,
-  fontSize: fontSize.xs,
-  fontWeight: fontWeight.medium,
+  paddingInline: tokenVars.spacing.md,
+  paddingBlock: tokenVars.spacing.sm,
+  fontSize: tokenVars.fontSize.xs,
+  fontWeight: tokenVars.fontWeight.medium,
   color: themeContract.contentSecondary,
   selectors: {
     "&:empty": {
@@ -186,16 +185,16 @@ export const item = style({
   display: "grid",
   gridTemplateColumns: "1rem 1fr",
   alignItems: "center",
-  columnGap: spacing.sm,
+  columnGap: tokenVars.spacing.sm,
   minHeight: "32px",
-  paddingInlineStart: spacing.sm,
-  paddingInlineEnd: spacing.md,
-  paddingBlock: spacing["1"],
-  borderRadius: borderRadius.sm,
+  paddingInlineStart: tokenVars.spacing.sm,
+  paddingInlineEnd: tokenVars.spacing.md,
+  paddingBlock: tokenVars.spacing["1"],
+  borderRadius: tokenVars.borderRadius.sm,
   cursor: "default",
   userSelect: "none",
   outline: "none",
-  fontSize: fontSize.md,
+  fontSize: tokenVars.fontSize.md,
   selectors: {
     "&:hover": {
       backgroundColor: themeContract.surfaceHover,
@@ -229,13 +228,13 @@ export const chips = style({
   minWidth: 0,
   flexWrap: "wrap",
   alignItems: "center",
-  gap: spacing.xxs,
+  gap: tokenVars.spacing.xxs,
   minHeight: "36px",
   padding: "calc(4px - 1px)",
-  borderWidth: borderWidth.thin,
+  borderWidth: tokenVars.borderWidth.thin,
   borderStyle: "solid",
   borderColor: themeContract.border,
-  borderRadius: borderRadius.lg,
+  borderRadius: tokenVars.borderRadius.lg,
   backgroundColor: themeContract.background,
   color: themeContract.contentPrimary,
   boxShadow: "0 1px 2px rgba(0, 0, 0, 0.04)",
@@ -272,7 +271,7 @@ export const chipsStartAddon = style({
   flexShrink: 0,
   alignItems: "center",
   opacity: 0.8,
-  paddingInlineStart: spacing.sm,
+  paddingInlineStart: tokenVars.spacing.sm,
 });
 
 export const chipsStartAddonSm = style({
@@ -286,9 +285,9 @@ export const chipsInput = style({
   outline: "none",
   backgroundColor: "transparent",
   paddingBlock: "6px",
-  paddingInlineStart: spacing.xs,
-  paddingInlineEnd: spacing.xs,
-  fontSize: fontSize.md,
+  paddingInlineStart: tokenVars.spacing.xs,
+  paddingInlineEnd: tokenVars.spacing.xs,
+  fontSize: tokenVars.fontSize.md,
   lineHeight: 1.5,
   color: themeContract.contentPrimary,
   selectors: {
@@ -300,7 +299,7 @@ export const chipsInput = style({
       cursor: "not-allowed",
     },
     "&:has(+ [data-slot='combobox-chip'])": {
-      paddingInlineStart: spacing.xxs,
+      paddingInlineStart: tokenVars.spacing.xxs,
     },
   },
 });
@@ -308,12 +307,12 @@ export const chipsInput = style({
 export const chip = style({
   display: "inline-flex",
   alignItems: "center",
-  borderRadius: borderRadius.md,
+  borderRadius: tokenVars.borderRadius.md,
   backgroundColor: themeContract.surfaceHover,
   color: themeContract.contentPrimary,
-  paddingInlineStart: spacing.sm,
-  fontSize: fontSize.sm,
-  fontWeight: fontWeight.medium,
+  paddingInlineStart: tokenVars.spacing.sm,
+  fontSize: tokenVars.fontSize.sm,
+  fontWeight: tokenVars.fontWeight.medium,
   lineHeight: 1.2,
   outline: "none",
 });
@@ -324,7 +323,7 @@ export const chipRemove = style({
   alignItems: "center",
   flexShrink: 0,
   cursor: "pointer",
-  paddingInline: spacing.xs,
+  paddingInline: tokenVars.spacing.xs,
   opacity: 0.8,
   selectors: {
     "&:hover": {

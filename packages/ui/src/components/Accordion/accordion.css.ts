@@ -1,14 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract } from "@blenx-dev/theme/contract";
-import {
-  borderWidth,
-  duration,
-  easing,
-  fontSize,
-  fontWeight,
-  lineHeight,
-  spacing,
-} from "@blenx-dev/theme/tokens";
+import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
 
 export const root = style({
   display: "flex",
@@ -22,7 +13,7 @@ export const rootVertical = style({
 });
 
 export const item = style({
-  borderBottomWidth: borderWidth.thin,
+  borderBottomWidth: tokenVars.borderWidth.thin,
   borderBottomStyle: "solid",
   borderBottomColor: themeContract.borderSubtle,
 });
@@ -34,16 +25,16 @@ export const itemDisabled = style({
 export const trigger = style({
   display: "flex",
   alignItems: "center",
-  gap: spacing.xxs,
+  gap: tokenVars.spacing.xxs,
   width: "100%",
-  paddingTop: spacing.xs,
-  paddingBottom: spacing.xs,
-  paddingLeft: spacing.xxs,
-  paddingRight: spacing.xxs,
+  paddingTop: tokenVars.spacing.xs,
+  paddingBottom: tokenVars.spacing.xs,
+  paddingLeft: tokenVars.spacing.xxs,
+  paddingRight: tokenVars.spacing.xxs,
   boxSizing: "border-box",
-  fontSize: fontSize.sm,
-  lineHeight: lineHeight.normal,
-  fontWeight: fontWeight.medium,
+  fontSize: tokenVars.fontSize.sm,
+  lineHeight: tokenVars.lineHeight.normal,
+  fontWeight: tokenVars.fontWeight.medium,
   color: themeContract.contentPrimary,
   backgroundColor: "transparent",
   border: "none",
@@ -57,8 +48,8 @@ export const trigger = style({
   outline: "none",
   outlineOffset: "2px",
   transitionProperty: "background-color",
-  transitionDuration: duration.fast,
-  transitionTimingFunction: easing.standard,
+  transitionDuration: tokenVars.duration.fast,
+  transitionTimingFunction: tokenVars.easing.standard,
   selectors: {
     "&:hover": {
       backgroundColor: themeContract.surfaceHover,
@@ -74,8 +65,8 @@ export const triggerIcon = style({
   color: themeContract.contentSecondary,
   transform: "rotate(0deg)",
   transitionProperty: "transform",
-  transitionDuration: duration.normal,
-  transitionTimingFunction: easing.standard,
+  transitionDuration: tokenVars.duration.normal,
+  transitionTimingFunction: tokenVars.easing.standard,
   selectors: {
     "[data-panel-open] &": {
       transform: "rotate(180deg)",
@@ -87,7 +78,7 @@ export const panel = style({
   overflow: "hidden",
   boxSizing: "border-box",
   transitionProperty: "grid-template-rows, opacity",
-  padding: spacing.xs,
-  transitionDuration: duration.normal,
-  transitionTimingFunction: easing.standard,
+  padding: tokenVars.spacing.xs,
+  transitionDuration: tokenVars.duration.normal,
+  transitionTimingFunction: tokenVars.easing.standard,
 });

@@ -1,6 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract } from "@blenx-dev/theme/contract";
-import { borderRadius, borderWidth, spacing } from "@blenx-dev/theme/tokens";
+import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
 
 export const root = style({
   position: "relative",
@@ -10,8 +9,8 @@ export const root = style({
   flexShrink: 0,
   width: 18,
   height: 18,
-  borderRadius: borderRadius.sm,
-  borderWidth: borderWidth.thin,
+  borderRadius: tokenVars.borderRadius.sm,
+  borderWidth: tokenVars.borderWidth.thin,
   borderStyle: "solid",
   borderColor: themeContract.border,
   backgroundColor: themeContract.background,
@@ -40,7 +39,7 @@ export const group = style({
   display: "flex",
   flexDirection: "column",
   alignItems: "flex-start",
-  gap: spacing.sm,
+  gap: tokenVars.spacing.sm,
 });
 
 export const indicator = style({
@@ -52,7 +51,7 @@ export const indicator = style({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  borderRadius: borderRadius.sm,
+  borderRadius: tokenVars.borderRadius.sm,
   color: themeContract.contentOnPrimary,
 });
 

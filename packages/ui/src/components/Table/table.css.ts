@@ -1,6 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract } from "@blenx-dev/theme/contract";
-import { spacing } from "@blenx-dev/theme/tokens";
+import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
 
 export const root = style({
   width: "100%",
@@ -14,10 +13,10 @@ export const head = style({
 });
 
 export const header = style({
-  paddingTop: spacing.sm,
-  paddingBottom: spacing.sm,
-  paddingLeft: spacing.md,
-  paddingRight: spacing.md,
+  paddingTop: tokenVars.spacing.sm,
+  paddingBottom: tokenVars.spacing.sm,
+  paddingLeft: tokenVars.spacing.md,
+  paddingRight: tokenVars.spacing.md,
   fontSize: themeContract.fontSize,
   fontWeight: 600,
   color: themeContract.contentSecondary,
@@ -41,10 +40,10 @@ export const row = style({
 });
 
 export const cell = style({
-  paddingTop: spacing.sm,
-  paddingBottom: spacing.sm,
-  paddingLeft: spacing.md,
-  paddingRight: spacing.md,
+  paddingTop: tokenVars.spacing.sm,
+  paddingBottom: tokenVars.spacing.sm,
+  paddingLeft: tokenVars.spacing.md,
+  paddingRight: tokenVars.spacing.md,
   fontSize: themeContract.fontSize,
   borderBottomWidth: 1,
   borderBottomStyle: "solid",

@@ -1,7 +1,6 @@
 import { createVar } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
 import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
-import { fontSize, spacing } from "@blenx-dev/theme/tokens";
 
 export const intentVars = {
   solidBg: createVar(),
@@ -20,7 +19,7 @@ export const variant = recipe({
     display: "inline-flex",
     alignItems: "center",
     justifyContent: "center",
-    gap: spacing.sm,
+    gap: tokenVars.spacing.sm,
     borderStyle: "solid",
     borderWidth: 1,
     borderRadius: themeContract.borderRadius,
@@ -136,20 +135,20 @@ export const variant = recipe({
     },
     size: {
       xs: {
-        padding: `${spacing.xxs} ${spacing.xs}`,
-        fontSize: fontSize.sm,
+        padding: `${tokenVars.spacing.xxs} ${tokenVars.spacing.xs}`,
+        fontSize: tokenVars.fontSize.sm,
       },
       sm: {
-        padding: `${spacing.xs} ${spacing.sm}`,
-        fontSize: fontSize.sm,
+        padding: `${tokenVars.spacing.xs} ${tokenVars.spacing.sm}`,
+        fontSize: tokenVars.fontSize.sm,
       },
       icon: {
-        padding: `${spacing.xs} ${spacing.xs}`,
+        padding: `${tokenVars.spacing.xs} ${tokenVars.spacing.xs}`,
       },
-      md: { padding: `${spacing.sm} ${spacing.md}` },
+      md: { padding: `${tokenVars.spacing.sm} ${tokenVars.spacing.md}` },
       lg: {
-        padding: `${spacing.md} ${spacing.lg}`,
-        fontSize: fontSize.lg,
+        padding: `${tokenVars.spacing.md} ${tokenVars.spacing.lg}`,
+        fontSize: tokenVars.fontSize.lg,
       },
     },
     variant: {

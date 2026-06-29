@@ -1,5 +1,5 @@
 import { themeContract } from "@blenx-dev/theme/contract";
-import { fontSize } from "@blenx-dev/theme/tokens";
+import { tokenVarsDefaults } from "@blenx-dev/theme/tokens";
 import { create } from "zustand";
 import { createContext } from "zustand-utils";
 
@@ -34,7 +34,7 @@ export const defaultTokens: ThemeTokens = {
   sentimentInfo: "#2980B9",
   sentimentInfoSubtle: "#EBF5FB",
   focusRing: "#4A90D9",
-  fontSize: fontSize.md,
+  fontSize: tokenVarsDefaults.fontSize.md,
   borderRadius: "medium",
   shadowSm: "0 1px 3px rgba(36,49,66,0.08), 0 1px 2px rgba(36,49,66,0.04)",
   shadowMd: "0 4px 12px rgba(36,49,66,0.10), 0 2px 4px rgba(36,49,66,0.06)",

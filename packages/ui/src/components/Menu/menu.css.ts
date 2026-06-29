@@ -1,12 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract } from "@blenx-dev/theme/contract";
-import {
-  borderRadius,
-  fontSize,
-  fontWeight,
-  letterSpacing,
-  spacing,
-} from "@blenx-dev/theme/tokens";
+import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
 
 export const trigger = style({
   display: "inline-flex",
@@ -22,7 +15,7 @@ export const trigger = style({
   fontFamily: "inherit",
   fontSize: "inherit",
   color: "inherit",
-  borderRadius: borderRadius.md,
+  borderRadius: tokenVars.borderRadius.md,
   transition: "background-color 0.15s ease, box-shadow 0.15s ease",
   selectors: {
     "&:focus-visible": {
@@ -36,12 +29,12 @@ export const popup = style({
   borderWidth: 1,
   borderStyle: "solid",
   borderColor: themeContract.borderSubtle,
-  borderRadius: borderRadius.lg,
+  borderRadius: tokenVars.borderRadius.lg,
   boxShadow: themeContract.shadowXl,
   zIndex: 1000,
-  padding: spacing.xs,
+  padding: tokenVars.spacing.xs,
   display: "flex",
-  gap: spacing["1"],
+  gap: tokenVars.spacing["1"],
   flexDirection: "column",
   minWidth: 224,
   overflow: "hidden",
@@ -51,13 +44,13 @@ export const popup = style({
 export const item = style({
   display: "flex",
   alignItems: "center",
-  gap: spacing.sm,
+  gap: tokenVars.spacing.sm,
   minHeight: 24,
-  padding: `${spacing.xs} ${spacing.sm}`,
+  padding: `${tokenVars.spacing.xs} ${tokenVars.spacing.sm}`,
   borderRadius: themeContract.borderRadius,
   color: themeContract.contentPrimary,
-  fontSize: fontSize.sm,
-  fontWeight: fontWeight.medium,
+  fontSize: tokenVars.fontSize.sm,
+  fontWeight: tokenVars.fontWeight.medium,
   lineHeight: 1.2,
   textDecoration: "none",
   textAlign: "left",
@@ -108,12 +101,12 @@ export const separator = style({
 });
 
 export const groupLabel = style({
-  padding: `${spacing.sm} ${spacing.md} ${spacing.xs}`,
-  fontSize: fontSize.xs,
-  fontWeight: fontWeight.semibold,
+  padding: `${tokenVars.spacing.sm} ${tokenVars.spacing.md} ${tokenVars.spacing.xs}`,
+  fontSize: tokenVars.fontSize.xs,
+  fontWeight: tokenVars.fontWeight.semibold,
   color: themeContract.contentSecondary,
   textTransform: "uppercase",
-  letterSpacing: letterSpacing.wide,
+  letterSpacing: tokenVars.letterSpacing.wide,
 });
 
 export const inset = style({
@@ -123,6 +116,6 @@ export const inset = style({
 export const shortcut = style({
   marginLeft: "auto",
   color: themeContract.contentDisabled,
-  fontSize: fontSize.xs,
-  fontWeight: fontWeight.medium,
+  fontSize: tokenVars.fontSize.xs,
+  fontWeight: tokenVars.fontWeight.medium,
 });

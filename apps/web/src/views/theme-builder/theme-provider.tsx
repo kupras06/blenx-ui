@@ -1,15 +1,15 @@
 import type { ReactNode } from "react";
 import { useMemo } from "react";
 import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
-import { borderRadius as radiusTokens } from "@blenx-dev/theme/tokens";
+import { tokenVarsDefaults } from "@blenx-dev/theme/tokens";
 import { useThemeBuilder } from "./theme-builder-context";
 
 const radiusMap: Record<string, string> = {
   none: "0px",
-  small: radiusTokens.sm,
-  medium: radiusTokens.md,
-  large: radiusTokens.lg,
-  pill: radiusTokens.full,
+  small: tokenVarsDefaults.borderRadius.sm,
+  medium: tokenVarsDefaults.borderRadius.md,
+  large: tokenVarsDefaults.borderRadius.lg,
+  pill: tokenVarsDefaults.borderRadius.full,
 };
 
 const contractKeyToVarName = (contractValue: string): string => {
@@ -59,7 +59,10 @@ export function ThemePreviewProvider({ children }: { children: ReactNode }) {
       [themeContract.shadowLg, tokens.shadowLg],
       [themeContract.shadowXl, tokens.shadowXl],
       [themeContract.fontSize, tokens.fontSize],
-      [themeContract.borderRadius, radiusMap[tokens.borderRadius] ?? radiusTokens.md],
+      [
+        themeContract.borderRadius,
+        radiusMap[tokens.borderRadius] ?? tokenVarsDefaults.borderRadius.md,
+      ],
       [themeContract.hoverOverlay, tokens.hoverOverlay],
       [themeContract.hoverOverlaySoft, tokens.hoverOverlaySoft],
     ];
@@ -67,11 +70,9 @@ export function ThemePreviewProvider({ children }: { children: ReactNode }) {
       vars[contractKeyToVarName(k)] = v;
     }
 
-    vars[contractKeyToVarName(tokenVars.font.sans)] =
-      '"DM Sans", system-ui, -apple-system, sans-serif';
-    vars[contractKeyToVarName(tokenVars.font.body)] = '"DM Sans", system-ui, sans-serif';
-    vars[contractKeyToVarName(tokenVars.font.mono)] =
-      '"DM Mono", ui-monospace, SFMono-Regular, monospace';
+    vars[contractKeyToVarName(tokenVars.font.sans)] = tokenVarsDefaults.font.sans;
+    vars[contractKeyToVarName(tokenVars.font.body)] = tokenVarsDefaults.font.body;
+    vars[contractKeyToVarName(tokenVars.font.mono)] = tokenVarsDefaults.font.mono;
 
     return vars;
   }, [tokens]);

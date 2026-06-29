@@ -3,8 +3,7 @@ import { allBlocks, allBlockGroups } from "content-collections";
 import { MDXContent } from "@content-collections/mdx/react";
 import { Box, Separator, Text, VStack } from "@blenx-dev/ui";
 import { mdxComponents } from "@/views/docs/MdxComponents";
-import { themeContract } from "@blenx-dev/theme/contract";
-import { borderRadius, fontSize, spacing } from "@blenx-dev/theme/tokens";
+import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
 
 export const Route = createFileRoute("/docs/blocks/$group/$variant")({
   beforeLoad: ({ params }) => {
@@ -43,9 +42,9 @@ function BlockVariantPage() {
         <nav
           style={{
             display: "flex",
-            gap: spacing.xs,
+            gap: tokenVars.spacing.xs,
             flexWrap: "wrap",
-            paddingBottom: spacing.md,
+            paddingBottom: tokenVars.spacing.md,
           }}
         >
           {variants.map((v) => {
@@ -59,9 +58,9 @@ function BlockVariantPage() {
                 style={{
                   textDecoration: "none",
                   color: isActive ? themeContract.contentPrimary : themeContract.contentSecondary,
-                  fontSize: fontSize.sm,
+                  fontSize: tokenVars.fontSize.sm,
                   padding: "4px 12px",
-                  borderRadius: borderRadius.sm,
+                  borderRadius: tokenVars.borderRadius.sm,
                   border: `1px solid ${themeContract.border}`,
                   backgroundColor: isActive ? themeContract.surface : undefined,
                 }}

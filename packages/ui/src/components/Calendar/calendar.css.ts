@@ -1,6 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract } from "@blenx-dev/theme/contract";
-import { fontSize, fontWeight, spacing } from "@blenx-dev/theme/tokens";
+import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
 
 export const root = style({
   display: "inline-block",
@@ -17,13 +16,13 @@ export const monthCaption = style({
   alignItems: "center",
   justifyContent: "center",
   position: "relative",
-  paddingBottom: spacing.sm,
+  paddingBottom: tokenVars.spacing.sm,
   minHeight: 40,
 });
 
 export const captionLabel = style({
-  fontSize: fontSize.md,
-  fontWeight: fontWeight.semibold,
+  fontSize: tokenVars.fontSize.md,
+  fontWeight: tokenVars.fontWeight.semibold,
   color: themeContract.contentPrimary,
   margin: 0,
   padding: 0,
@@ -36,7 +35,7 @@ export const nav = style({
   alignItems: "center",
   position: "absolute",
   inset: 0,
-  padding: spacing.xs,
+  padding: tokenVars.spacing.xs,
   pointerEvents: "none",
   zIndex: 10,
 });
@@ -74,12 +73,12 @@ export const monthGrid = style({
 });
 
 export const weekday = style({
-  fontSize: fontSize.xs,
-  fontWeight: fontWeight.medium,
+  fontSize: tokenVars.fontSize.xs,
+  fontWeight: tokenVars.fontWeight.medium,
   color: themeContract.contentSecondary,
   textAlign: "center",
   verticalAlign: "middle",
-  padding: spacing.xxs,
+  padding: tokenVars.spacing.xxs,
   width: 40,
   height: 32,
   boxSizing: "border-box",
@@ -108,7 +107,7 @@ export const dayButton = style({
   border: "none",
   backgroundColor: "transparent",
   cursor: "pointer",
-  fontSize: fontSize.sm,
+  fontSize: tokenVars.fontSize.sm,
   color: themeContract.contentPrimary,
   outline: "none",
   margin: "0 auto",
@@ -131,7 +130,7 @@ export const dayButton = style({
 export const dayButtonSelected = style({
   backgroundColor: themeContract.primary,
   color: themeContract.contentOnPrimary,
-  fontWeight: fontWeight.semibold,
+  fontWeight: tokenVars.fontWeight.semibold,
   selectors: {
     "&:hover": {
       backgroundColor: themeContract.primary,
@@ -140,7 +139,7 @@ export const dayButtonSelected = style({
 });
 
 export const dayButtonToday = style({
-  fontWeight: fontWeight.semibold,
+  fontWeight: tokenVars.fontWeight.semibold,
 });
 
 export const dayButtonDisabled = style({
@@ -160,12 +159,12 @@ export const dayButtonOutside = style({
 });
 
 export const footer = style({
-  paddingTop: spacing.sm,
+  paddingTop: tokenVars.spacing.sm,
 });
 
 export const dropdowns = style({
   display: "flex",
-  gap: spacing.xs,
+  gap: tokenVars.spacing.xs,
   alignItems: "center",
 });
 
@@ -175,8 +174,8 @@ export const dropdown = style({
   border: `1px solid ${themeContract.border}`,
   borderRadius: themeContract.borderRadius,
   color: themeContract.contentPrimary,
-  fontSize: fontSize.sm,
-  padding: `${spacing.xxs} ${spacing.sm}`,
+  fontSize: tokenVars.fontSize.sm,
+  padding: `${tokenVars.spacing.xxs} ${tokenVars.spacing.sm}`,
   cursor: "pointer",
   outline: "none",
   selectors: {

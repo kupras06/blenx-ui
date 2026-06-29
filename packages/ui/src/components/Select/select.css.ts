@@ -1,28 +1,27 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract } from "@blenx-dev/theme/contract";
-import { borderRadius, fontSize, fontWeight, spacing } from "@blenx-dev/theme/tokens";
+import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
 
 export const label = style({
-  fontSize: fontSize.xs,
-  fontWeight: fontWeight.semibold,
+  fontSize: tokenVars.fontSize.xs,
+  fontWeight: tokenVars.fontWeight.semibold,
   color: themeContract.contentSecondary,
-  paddingBottom: spacing.xs,
-  paddingLeft: spacing.xs,
-  paddingRight: spacing.xs,
+  paddingBottom: tokenVars.spacing.xs,
+  paddingLeft: tokenVars.spacing.xs,
+  paddingRight: tokenVars.spacing.xs,
 });
 
 export const trigger = style({
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
-  gap: spacing.sm,
+  gap: tokenVars.spacing.sm,
   boxSizing: "border-box",
   width: "100%",
-  paddingTop: spacing.sm,
-  paddingBottom: spacing.sm,
-  paddingLeft: spacing.md,
-  paddingRight: spacing.sm,
-  fontSize: fontSize.sm,
+  paddingTop: tokenVars.spacing.sm,
+  paddingBottom: tokenVars.spacing.sm,
+  paddingLeft: tokenVars.spacing.md,
+  paddingRight: tokenVars.spacing.sm,
+  fontSize: tokenVars.fontSize.sm,
   lineHeight: "1.5",
   fontFamily: "inherit",
   color: themeContract.contentPrimary,
@@ -30,7 +29,7 @@ export const trigger = style({
   borderWidth: 1,
   borderStyle: "solid",
   borderColor: themeContract.border,
-  borderRadius: borderRadius.md,
+  borderRadius: tokenVars.borderRadius.md,
   outline: "none",
   cursor: "pointer",
   transition: "border-color 0.15s ease, box-shadow 0.15s ease",
@@ -53,18 +52,18 @@ export const trigger = style({
 });
 
 export const triggerSm = style({
-  paddingTop: spacing.xs,
-  paddingBottom: spacing.xs,
-  paddingLeft: spacing.sm,
-  paddingRight: spacing.xs,
+  paddingTop: tokenVars.spacing.xs,
+  paddingBottom: tokenVars.spacing.xs,
+  paddingLeft: tokenVars.spacing.sm,
+  paddingRight: tokenVars.spacing.xs,
   fontSize: 14,
 });
 
 export const triggerLg = style({
-  paddingTop: spacing.md,
-  paddingBottom: spacing.md,
-  paddingLeft: spacing.lg,
-  paddingRight: spacing.md,
+  paddingTop: tokenVars.spacing.md,
+  paddingBottom: tokenVars.spacing.md,
+  paddingLeft: tokenVars.spacing.lg,
+  paddingRight: tokenVars.spacing.md,
   fontSize: 16,
 });
 
@@ -78,13 +77,13 @@ export const icon = style({
 export const popup = style({
   boxSizing: "border-box",
   maxHeight: 300,
-  paddingTop: spacing.xs,
-  paddingBottom: spacing.xs,
+  paddingTop: tokenVars.spacing.xs,
+  paddingBottom: tokenVars.spacing.xs,
   backgroundColor: themeContract.surface,
   borderWidth: 1,
   borderStyle: "solid",
   borderColor: themeContract.border,
-  borderRadius: borderRadius.lg,
+  borderRadius: tokenVars.borderRadius.lg,
   boxShadow: themeContract.shadowLg,
   zIndex: 1400,
   minWidth: "var(--anchor-width)",
@@ -101,17 +100,17 @@ export const popup = style({
 export const item = style({
   display: "flex",
   alignItems: "center",
-  gap: spacing.sm,
+  gap: tokenVars.spacing.sm,
   boxSizing: "border-box",
   minHeight: 32,
-  paddingTop: spacing.xs,
-  paddingBottom: spacing.xs,
-  paddingLeft: spacing.sm,
-  paddingRight: spacing.sm,
-  marginLeft: spacing.xs,
-  marginRight: spacing.xs,
-  borderRadius: borderRadius.sm,
-  fontSize: fontSize.sm,
+  paddingTop: tokenVars.spacing.xs,
+  paddingBottom: tokenVars.spacing.xs,
+  paddingLeft: tokenVars.spacing.sm,
+  paddingRight: tokenVars.spacing.sm,
+  marginLeft: tokenVars.spacing.xs,
+  marginRight: tokenVars.spacing.xs,
+  borderRadius: tokenVars.borderRadius.sm,
+  fontSize: tokenVars.fontSize.sm,
   lineHeight: "1.4",
   color: themeContract.contentPrimary,
   cursor: "pointer",
@@ -152,18 +151,18 @@ export const itemIndicator = style({
 
 export const separator = style({
   height: 1,
-  marginTop: spacing.xs,
-  marginBottom: spacing.xs,
+  marginTop: tokenVars.spacing.xs,
+  marginBottom: tokenVars.spacing.xs,
   backgroundColor: themeContract.borderSubtle,
 });
 
 export const groupLabel = style({
-  paddingTop: spacing.sm,
-  paddingBottom: spacing.xs,
-  paddingLeft: spacing.sm,
-  paddingRight: spacing.sm,
-  fontSize: fontSize.xs,
-  fontWeight: fontWeight.semibold,
+  paddingTop: tokenVars.spacing.sm,
+  paddingBottom: tokenVars.spacing.xs,
+  paddingLeft: tokenVars.spacing.sm,
+  paddingRight: tokenVars.spacing.sm,
+  fontSize: tokenVars.fontSize.xs,
+  fontWeight: tokenVars.fontWeight.semibold,
   color: themeContract.contentSecondary,
 });
 

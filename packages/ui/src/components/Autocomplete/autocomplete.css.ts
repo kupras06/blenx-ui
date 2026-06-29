@@ -1,6 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract } from "@blenx-dev/theme/contract";
-import { borderRadius, borderWidth, fontSize, fontWeight, spacing } from "@blenx-dev/theme/tokens";
+import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
 
 export const inputGroup = style({
   position: "relative",
@@ -35,7 +34,7 @@ export const startAddon = style({
   pointerEvents: "none",
   position: "absolute",
   insetBlock: 0,
-  insetInlineStart: borderWidth.thin,
+  insetInlineStart: tokenVars.borderWidth.thin,
   zIndex: 1,
   display: "flex",
   alignItems: "center",
@@ -58,8 +57,8 @@ export const adornment = style({
   justifyContent: "center",
   flexShrink: 0,
   transform: "translateY(-50%)",
-  borderRadius: borderRadius.md,
-  borderWidth: borderWidth.thin,
+  borderRadius: tokenVars.borderRadius.md,
+  borderWidth: tokenVars.borderWidth.thin,
   borderStyle: "solid",
   borderColor: "transparent",
   opacity: 0.8,
@@ -79,11 +78,11 @@ export const adornmentDefault = style({
 });
 
 export const adornmentEndSmall = style({
-  insetInlineEnd: spacing["0"],
+  insetInlineEnd: tokenVars.spacing["0"],
 });
 
 export const adornmentEndDefault = style({
-  insetInlineEnd: spacing["0.5"],
+  insetInlineEnd: tokenVars.spacing["0.5"],
 });
 
 export const positioner = style({
@@ -96,10 +95,10 @@ export const popupShell = style({
   maxHeight: "100%",
   minWidth: "var(--anchor-width)",
   maxWidth: "var(--available-width)",
-  borderWidth: borderWidth.thin,
+  borderWidth: tokenVars.borderWidth.thin,
   borderStyle: "solid",
   borderColor: themeContract.border,
-  borderRadius: borderRadius.lg,
+  borderRadius: tokenVars.borderRadius.lg,
   backgroundColor: themeContract.surface,
   boxShadow: themeContract.shadowLg,
   transformOrigin: "var(--transform-origin)",
@@ -122,47 +121,47 @@ export const group = style({
 
 export const separator = style({
   height: "1px",
-  marginBlock: spacing.xs,
-  marginInline: spacing.sm,
+  marginBlock: tokenVars.spacing.xs,
+  marginInline: tokenVars.spacing.sm,
   backgroundColor: themeContract.border,
 });
 
 export const groupLabel = style({
-  paddingBlock: spacing["1"],
-  paddingInline: spacing["2"],
-  fontSize: fontSize.xs,
-  fontWeight: fontWeight.medium,
+  paddingBlock: tokenVars.spacing["1"],
+  paddingInline: tokenVars.spacing["2"],
+  fontSize: tokenVars.fontSize.xs,
+  fontWeight: tokenVars.fontWeight.medium,
   color: themeContract.contentSecondary,
 });
 
 export const empty = style({
-  padding: spacing.sm,
+  padding: tokenVars.spacing.sm,
   textAlign: "center",
-  fontSize: fontSize.sm,
+  fontSize: tokenVars.fontSize.sm,
   color: themeContract.contentSecondary,
 });
 
 export const list = style({
-  padding: spacing.xs,
+  padding: tokenVars.spacing.xs,
 });
 
 export const status = style({
-  paddingInline: spacing.md,
-  paddingBlock: spacing.sm,
-  fontSize: fontSize.xs,
-  fontWeight: fontWeight.medium,
+  paddingInline: tokenVars.spacing.md,
+  paddingBlock: tokenVars.spacing.sm,
+  fontSize: tokenVars.fontSize.xs,
+  fontWeight: tokenVars.fontWeight.medium,
   color: themeContract.contentSecondary,
 });
 
 export const item = style({
   display: "flex",
   alignItems: "center",
-  paddingInline: spacing.sm,
-  paddingBlock: spacing["1"],
-  borderRadius: borderRadius.md,
+  paddingInline: tokenVars.spacing.sm,
+  paddingBlock: tokenVars.spacing["1"],
+  borderRadius: tokenVars.borderRadius.md,
   cursor: "default",
   userSelect: "none",
   outline: "none",
   minHeight: "32px",
-  fontSize: fontSize.md,
+  fontSize: tokenVars.fontSize.md,
 });

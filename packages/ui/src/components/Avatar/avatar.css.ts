@@ -1,8 +1,6 @@
 import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
-import { themeContract } from "@blenx-dev/theme/contract";
-import { spacing } from "@blenx-dev/theme/tokens";
-import { borderRadius } from "@blenx-dev/theme/tokens";
+import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
 
 export const root = style({
   display: "inline-flex",
@@ -47,21 +45,21 @@ export const fallback = style({
 export const avatarRecipes = recipe({
   variants: {
     size: {
-      sm: { width: spacing.lg, height: spacing.lg },
-      md: { width: spacing.xl, height: spacing.xl },
-      lg: { width: spacing.xxl, height: spacing.xxl },
-      xl: { width: spacing.xxxl, height: spacing.xxxl },
-      hero: { width: spacing.titanic, height: spacing.titanic },
+      sm: { width: tokenVars.spacing.lg, height: tokenVars.spacing.lg },
+      md: { width: tokenVars.spacing.xl, height: tokenVars.spacing.xl },
+      lg: { width: tokenVars.spacing.xxl, height: tokenVars.spacing.xxl },
+      xl: { width: tokenVars.spacing.xxxl, height: tokenVars.spacing.xxxl },
+      hero: { width: tokenVars.spacing.titanic, height: tokenVars.spacing.titanic },
     },
     radius: {
       none: { borderRadius: 0 },
-      xs: { borderRadius: borderRadius.xs },
-      small: { borderRadius: borderRadius.sm },
-      medium: { borderRadius: borderRadius.md },
-      large: { borderRadius: borderRadius.lg },
-      xlarge: { borderRadius: borderRadius.xl },
-      xxlarge: { borderRadius: borderRadius.xxl },
-      full: { borderRadius: borderRadius.full },
+      xs: { borderRadius: tokenVars.borderRadius.xs },
+      small: { borderRadius: tokenVars.borderRadius.sm },
+      medium: { borderRadius: tokenVars.borderRadius.md },
+      large: { borderRadius: tokenVars.borderRadius.lg },
+      xlarge: { borderRadius: tokenVars.borderRadius.xl },
+      xxlarge: { borderRadius: tokenVars.borderRadius.xxl },
+      full: { borderRadius: tokenVars.borderRadius.full },
     },
   },
 });

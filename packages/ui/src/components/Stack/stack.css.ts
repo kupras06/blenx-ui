@@ -1,20 +1,20 @@
 import { recipe } from "@vanilla-extract/recipes";
-import { spacing } from "@blenx-dev/theme/tokens";
+import { tokenVars } from "@blenx-dev/theme/contract";
 
 export const stackRecipe = recipe({
   variants: {
     gap: {
       none: { gap: 0 },
-      xxs: { gap: spacing.xxs },
-      xs: { gap: spacing.xs },
-      sm: { gap: spacing.sm },
-      md: { gap: spacing.md },
-      lg: { gap: spacing.lg },
-      xl: { gap: spacing.xl },
-      xxl: { gap: spacing.xxl },
-      xxxl: { gap: spacing.xxxl },
-      huge: { gap: spacing.huge },
-      massive: { gap: spacing.massive },
+      xxs: { gap: tokenVars.spacing.xxs },
+      xs: { gap: tokenVars.spacing.xs },
+      sm: { gap: tokenVars.spacing.sm },
+      md: { gap: tokenVars.spacing.md },
+      lg: { gap: tokenVars.spacing.lg },
+      xl: { gap: tokenVars.spacing.xl },
+      xxl: { gap: tokenVars.spacing.xxl },
+      xxxl: { gap: tokenVars.spacing.xxxl },
+      huge: { gap: tokenVars.spacing.huge },
+      massive: { gap: tokenVars.spacing.massive },
     },
     align: {
       start: { alignItems: "flex-start" },

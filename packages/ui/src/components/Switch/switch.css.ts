@@ -1,14 +1,13 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract } from "@blenx-dev/theme/contract";
-import { borderRadius, spacing } from "@blenx-dev/theme/tokens";
+import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
 
 export const root = style({
-  width: spacing.xxl,
-  height: spacing.lg,
+  width: tokenVars.spacing.xxl,
+  height: tokenVars.spacing.lg,
   display: "inline-flex",
   alignItems: "center",
-  padding: spacing.xxs,
-  borderRadius: borderRadius.full,
+  padding: tokenVars.spacing.xxs,
+  borderRadius: tokenVars.borderRadius.full,
   backgroundColor: themeContract.border,
   cursor: "pointer",
   transitionProperty: "background-color",
@@ -32,9 +31,9 @@ export const rootDisabled = style({
 });
 
 export const thumb = style({
-  width: spacing.lg,
-  height: spacing.lg,
-  borderRadius: borderRadius.full,
+  width: tokenVars.spacing.lg,
+  height: tokenVars.spacing.lg,
+  borderRadius: tokenVars.borderRadius.full,
   backgroundColor: themeContract.primary,
   transitionProperty: "transform, background-color",
   transitionDuration: "150ms",
@@ -43,5 +42,5 @@ export const thumb = style({
 
 export const thumbChecked = style({
   backgroundColor: themeContract.surface,
-  transform: `translateX(${spacing.lg})`,
+  transform: `translateX(${tokenVars.spacing.lg})`,
 });

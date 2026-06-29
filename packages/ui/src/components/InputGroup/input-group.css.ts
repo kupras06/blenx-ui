@@ -1,6 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract } from "@blenx-dev/theme/contract";
-import { borderRadius, fontSize, spacing } from "@blenx-dev/theme/tokens";
+import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
 
 export const group = style({
   position: "relative",
@@ -8,12 +7,12 @@ export const group = style({
   width: "100%",
   minWidth: 0,
   alignItems: "center",
-  borderRadius: borderRadius.lg,
+  borderRadius: tokenVars.borderRadius.lg,
   borderWidth: 1,
   borderStyle: "solid",
   borderColor: themeContract.border,
   color: themeContract.contentPrimary,
-  fontSize: fontSize.sm,
+  fontSize: tokenVars.fontSize.sm,
   boxSizing: "border-box",
   minHeight: "40px",
   overflow: "hidden",
@@ -49,7 +48,7 @@ export const addon = style({
   flexShrink: 0,
   color: themeContract.contentSecondary,
   userSelect: "none",
-  fontSize: fontSize.sm,
+  fontSize: tokenVars.fontSize.sm,
   selectors: {
     "&:has(:last-child[data-slot='badge'])": {
       marginInlineStart: 0,
@@ -95,7 +94,7 @@ export const addonBlockEnd = style({
 export const text = style({
   display: "flex",
   alignItems: "center",
-  gap: spacing.sm,
+  gap: tokenVars.spacing.sm,
   whiteSpace: "nowrap",
   lineHeight: 1,
   color: themeContract.contentSecondary,
@@ -119,7 +118,7 @@ export const input = style({
   paddingLeft: "8px",
   paddingRight: "8px",
   borderWidth: 0,
-  fontSize: fontSize.sm,
+  fontSize: tokenVars.fontSize.sm,
   color: themeContract.contentPrimary,
   boxSizing: "border-box",
   lineHeight: 1.5,
@@ -146,7 +145,7 @@ export const textarea = style({
   borderWidth: 0,
   paddingLeft: "10px",
   paddingRight: "10px",
-  fontSize: fontSize.sm,
+  fontSize: tokenVars.fontSize.sm,
   color: themeContract.contentPrimary,
   resize: "none",
   selectors: {

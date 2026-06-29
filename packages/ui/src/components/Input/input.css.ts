@@ -1,6 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract } from "@blenx-dev/theme/contract";
-import { spacing } from "@blenx-dev/theme/tokens";
+import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
 
 export const label = style({
   fontSize: 14,
@@ -14,10 +13,10 @@ export const label = style({
 export const input = style({
   width: "100%",
   boxSizing: "border-box",
-  paddingTop: spacing.sm,
-  paddingBottom: spacing.sm,
-  paddingLeft: spacing.md,
-  paddingRight: spacing.md,
+  paddingTop: tokenVars.spacing.sm,
+  paddingBottom: tokenVars.spacing.sm,
+  paddingLeft: tokenVars.spacing.md,
+  paddingRight: tokenVars.spacing.md,
   fontSize: 16,
   lineHeight: 1.5,
   color: themeContract.contentPrimary,
@@ -47,18 +46,18 @@ export const input = style({
 });
 
 export const inputSm = style({
-  paddingTop: spacing.xs,
-  paddingBottom: spacing.xs,
-  paddingLeft: spacing.sm,
-  paddingRight: spacing.sm,
+  paddingTop: tokenVars.spacing.xs,
+  paddingBottom: tokenVars.spacing.xs,
+  paddingLeft: tokenVars.spacing.sm,
+  paddingRight: tokenVars.spacing.sm,
   fontSize: 16,
 });
 
 export const inputLg = style({
-  paddingTop: spacing.md,
-  paddingBottom: spacing.md,
-  paddingLeft: spacing.lg,
-  paddingRight: spacing.lg,
+  paddingTop: tokenVars.spacing.md,
+  paddingBottom: tokenVars.spacing.md,
+  paddingLeft: tokenVars.spacing.lg,
+  paddingRight: tokenVars.spacing.lg,
   fontSize: 16,
 });
 

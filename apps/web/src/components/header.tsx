@@ -4,7 +4,7 @@ import { useMediaQuery, useLocalStorage } from "@uidotdev/usehooks";
 import { GITHUB_URL } from "@/constants";
 import { useSidebarStore } from "@/stores/docs-sidebar";
 import { Button, HStack, IconButton } from "@blenx-dev/ui";
-import { darkTheme, fontTheme, lightTheme } from "@/lib/app-theme.css";
+import { darkTheme, lightTheme, tokenTheme } from "@/lib/app-theme.css";
 import { useEffect } from "react";
 
 function DocsRouteOption() {
@@ -58,7 +58,7 @@ function ThemeInner() {
     const next = storedTheme === "dark" ? "light" : "dark";
     const nextTheme = next === "light" ? lightTheme : darkTheme;
     document.documentElement.classList.remove(lightTheme, darkTheme);
-    document.documentElement.classList.add(fontTheme, nextTheme);
+    document.documentElement.classList.add(tokenTheme, nextTheme);
     document.documentElement.setAttribute("data-theme", next);
   }, [storedTheme]);
 
@@ -71,7 +71,7 @@ function ThemeToggle() {
     const next = storedTheme === "dark" ? "light" : "dark";
     const nextTheme = next === "light" ? lightTheme : darkTheme;
     document.documentElement.classList.remove(lightTheme, darkTheme);
-    document.documentElement.classList.add(fontTheme, nextTheme);
+    document.documentElement.classList.add(tokenTheme, nextTheme);
     document.documentElement.setAttribute("data-theme", next);
     setStoredTheme(next);
   };

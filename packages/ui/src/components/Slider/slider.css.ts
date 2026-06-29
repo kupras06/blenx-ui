@@ -1,6 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract } from "@blenx-dev/theme/contract";
-import { borderRadius, borderWidth, fontSize } from "@blenx-dev/theme/tokens";
+import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
 
 export const disabled = style({
   pointerEvents: "none",
@@ -29,7 +28,7 @@ export const track = style({
   position: "relative",
   flexGrow: 1,
   userSelect: "none",
-  borderRadius: borderRadius.full,
+  borderRadius: tokenVars.borderRadius.full,
   backgroundColor: themeContract.border,
 });
 
@@ -44,7 +43,7 @@ export const trackVertical = style({
 
 export const indicator = style({
   userSelect: "none",
-  borderRadius: borderRadius.full,
+  borderRadius: tokenVars.borderRadius.full,
   backgroundColor: themeContract.primary,
 });
 
@@ -52,8 +51,8 @@ export const thumb = style({
   display: "block",
   flexShrink: 0,
   userSelect: "none",
-  borderRadius: borderRadius.full,
-  borderWidth: borderWidth.thin,
+  borderRadius: tokenVars.borderRadius.full,
+  borderWidth: tokenVars.borderWidth.thin,
   borderStyle: "solid",
   borderColor: themeContract.border,
   backgroundColor: themeContract.surface,
@@ -78,5 +77,5 @@ export const thumbDragging = style({
 export const value = style({
   display: "flex",
   justifyContent: "flex-end",
-  fontSize: fontSize.sm,
+  fontSize: tokenVars.fontSize.sm,
 });

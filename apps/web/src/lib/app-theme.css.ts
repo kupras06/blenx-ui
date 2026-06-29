@@ -1,6 +1,6 @@
 import { createTheme, globalStyle } from "@vanilla-extract/css";
 import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
-import { borderRadius, fontSize } from "@blenx-dev/theme/tokens";
+import { tokenVarsDefaults } from "@blenx-dev/theme/tokens";
 
 export const lightTheme = createTheme(themeContract, {
   primary: "#1c1917",
@@ -17,8 +17,8 @@ export const lightTheme = createTheme(themeContract, {
   surfaceHover: "#edeae4",
   surfaceOverlay: "rgba(28,25,23,0.35)",
 
-  borderRadius: borderRadius.lg,
-  fontSize: fontSize.md,
+  borderRadius: tokenVarsDefaults.borderRadius.lg,
+  fontSize: tokenVarsDefaults.fontSize.md,
   border: "#e2ddd6",
   borderSubtle: "#edeae4",
   borderStrong: "#c8c1b5",
@@ -53,13 +53,7 @@ export const lightTheme = createTheme(themeContract, {
   hoverOverlaySoft: "rgba(28,25,23,0.10)",
 });
 
-export const fontTheme = createTheme(tokenVars, {
-  font: {
-    sans: '"DM Sans", system-ui, -apple-system, sans-serif',
-    body: '"DM Sans", system-ui, sans-serif',
-    mono: '"DM Mono", ui-monospace, SFMono-Regular, monospace',
-  },
-});
+export const tokenTheme = createTheme(tokenVars, tokenVarsDefaults);
 
 export const darkTheme = createTheme(themeContract, {
   primary: "#f5f3ef",
@@ -86,8 +80,8 @@ export const darkTheme = createTheme(themeContract, {
   contentOnPrimary: "#0f0e0c",
 
   focusRing: "#818cf8",
-  borderRadius: borderRadius.lg,
-  fontSize: fontSize.md,
+  borderRadius: tokenVarsDefaults.borderRadius.lg,
+  fontSize: tokenVarsDefaults.fontSize.md,
   sentimentNegative: "#f87171",
   sentimentNegativeSubtle: "#450a0a",
   sentimentPositive: "#34d399",

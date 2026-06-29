@@ -1,7 +1,6 @@
 import { recipe } from "@vanilla-extract/recipes";
 import { style } from "@vanilla-extract/css";
-import { themeContract } from "@blenx-dev/theme/contract";
-import { fontSize, fontWeight, spacing } from "@blenx-dev/theme/tokens";
+import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
 
 export const separator = recipe({
   base: {
@@ -29,7 +28,7 @@ export const withLabel = style({
   backgroundColor: "transparent",
   display: "flex",
   alignItems: "center",
-  gap: spacing.sm,
+  gap: tokenVars.spacing.sm,
   width: "100%",
   selectors: {
     "&::before": {
@@ -50,11 +49,11 @@ export const withLabel = style({
 });
 
 export const label = style({
-  paddingLeft: spacing.xs,
-  paddingRight: spacing.xs,
+  paddingLeft: tokenVars.spacing.xs,
+  paddingRight: tokenVars.spacing.xs,
   color: themeContract.contentSecondary,
-  fontSize: fontSize.xs,
-  fontWeight: fontWeight.medium,
+  fontSize: tokenVars.fontSize.xs,
+  fontWeight: tokenVars.fontWeight.medium,
   lineHeight: 1.2,
   whiteSpace: "nowrap",
 });

@@ -1,6 +1,5 @@
 import { globalStyle, style } from "@vanilla-extract/css";
-import { themeContract } from "@blenx-dev/theme/contract";
-import { borderRadius, fontSize, spacing } from "@blenx-dev/theme/tokens";
+import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
 
 /* ── DocsLink ── */
 
@@ -28,15 +27,15 @@ export const installList = style({
 export const installItem = style({
   margin: 0,
   fontFamily: "ui-monospace, SFMono-Regular, monospace",
-  fontSize: fontSize.sm,
+  fontSize: tokenVars.fontSize.sm,
 });
 
 export const installCode = style({
   color: themeContract.contentSecondary,
   backgroundColor: themeContract.surfaceSubtle,
   padding: "1px 6px",
-  borderRadius: borderRadius.sm,
-  fontSize: fontSize.sm,
+  borderRadius: tokenVars.borderRadius.sm,
+  fontSize: tokenVars.fontSize.sm,
 });
 
 /* ── CodeBlock ── */
@@ -48,8 +47,8 @@ export const codeHeader = style({
   padding: "8px 16px",
   backgroundColor: themeContract.surface,
   borderBottom: `1px solid ${themeContract.borderSubtle}`,
-  borderRadius: `${borderRadius.md} ${borderRadius.md} 0 0`,
-  fontSize: fontSize.xs,
+  borderRadius: `${tokenVars.borderRadius.md} ${tokenVars.borderRadius.md} 0 0`,
+  fontSize: tokenVars.fontSize.xs,
   color: themeContract.contentSecondary,
 });
 
@@ -144,73 +143,73 @@ export const headingAnchor = style({
 });
 
 export const kpiValue = style({
-  fontSize: fontSize.xl,
+  fontSize: tokenVars.fontSize.xl,
   fontWeight: 700,
   color: themeContract.contentPrimary,
 });
 
 export const kpiLabel = style({
-  fontSize: fontSize.xs,
+  fontSize: tokenVars.fontSize.xs,
   color: themeContract.contentSecondary,
-  marginTop: spacing["1"],
+  marginTop: tokenVars.spacing["1"],
 });
 
 export const trendUp = style({
   color: themeContract.sentimentPositive,
-  fontSize: fontSize.xs,
+  fontSize: tokenVars.fontSize.xs,
   display: "flex",
   alignItems: "center",
-  gap: spacing["1"],
-  marginTop: spacing["1"],
+  gap: tokenVars.spacing["1"],
+  marginTop: tokenVars.spacing["1"],
 });
 
 export const trendDown = style({
   color: themeContract.sentimentNegative,
-  fontSize: fontSize.xs,
+  fontSize: tokenVars.fontSize.xs,
   display: "flex",
   alignItems: "center",
-  gap: spacing["1"],
-  marginTop: spacing["1"],
+  gap: tokenVars.spacing["1"],
+  marginTop: tokenVars.spacing["1"],
 });
 
 export const dashboardGrid = style({
   display: "grid",
   gridTemplateColumns: "1fr 1fr",
-  gap: spacing["3"],
-  marginTop: spacing["6"],
+  gap: tokenVars.spacing["3"],
+  marginTop: tokenVars.spacing["6"],
 });
 
 export const profileSection = style({
-  marginTop: spacing["6"],
+  marginTop: tokenVars.spacing["6"],
 });
 
 export const profileContent = style({
   display: "flex",
   alignItems: "center",
-  gap: spacing["3"],
+  gap: tokenVars.spacing["3"],
 });
 
 export const profileInfo = style({
   display: "flex",
   flexDirection: "column",
-  gap: spacing["1"],
+  gap: tokenVars.spacing["1"],
 });
 
 export const profileName = style({
-  fontSize: fontSize.md,
+  fontSize: tokenVars.fontSize.md,
   fontWeight: 600,
   color: themeContract.contentPrimary,
 });
 
 export const profileEmail = style({
-  fontSize: fontSize.sm,
+  fontSize: tokenVars.fontSize.sm,
   color: themeContract.contentSecondary,
 });
 
 export const profileActions = style({
   display: "flex",
-  gap: spacing["2"],
-  marginTop: spacing["3"],
+  gap: tokenVars.spacing["2"],
+  marginTop: tokenVars.spacing["3"],
 });
 
 export const chartPlaceholder = style({
@@ -219,14 +218,14 @@ export const chartPlaceholder = style({
   justifyContent: "center",
   minHeight: 200,
   color: themeContract.contentDisabled,
-  fontSize: fontSize.sm,
+  fontSize: tokenVars.fontSize.sm,
 });
 
 /* ── Impact Summary ── */
 
 export const impactPanel = style({
-  padding: spacing["2"],
-  borderRadius: borderRadius.md,
+  padding: tokenVars.spacing["2"],
+  borderRadius: tokenVars.borderRadius.md,
   backgroundColor: themeContract.surfaceRaised,
   borderWidth: 1,
   borderStyle: "solid",
@@ -235,24 +234,24 @@ export const impactPanel = style({
 
 export const impactEmpty = style({
   color: themeContract.contentDisabled,
-  fontSize: fontSize.xs,
+  fontSize: tokenVars.fontSize.xs,
   textAlign: "center",
-  paddingBlock: spacing["2"],
+  paddingBlock: tokenVars.spacing["2"],
 });
 
 export const impactList = style({
   display: "flex",
   flexDirection: "column",
-  gap: spacing["1"],
+  gap: tokenVars.spacing["1"],
 });
 
 export const impactChip = style({
   display: "inline-flex",
   alignItems: "center",
   padding: "2px 8px",
-  borderRadius: borderRadius.full,
+  borderRadius: tokenVars.borderRadius.full,
   backgroundColor: `${themeContract.primary}15`,
   color: themeContract.primary,
-  fontSize: fontSize.xs,
+  fontSize: tokenVars.fontSize.xs,
   fontWeight: 500,
 });

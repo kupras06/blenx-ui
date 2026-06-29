@@ -1,6 +1,5 @@
 import { style, keyframes } from "@vanilla-extract/css";
-import { themeContract } from "@blenx-dev/theme/contract";
-import { borderRadius, fontSize, fontWeight, spacing } from "@blenx-dev/theme/tokens";
+import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
 
 const pulse = keyframes({
   "0%, 100%": { opacity: 0.4 },
@@ -20,8 +19,8 @@ export const fetchingBar = style({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  padding: spacing.sm,
-  gap: spacing.sm,
+  padding: tokenVars.spacing.sm,
+  gap: tokenVars.spacing.sm,
 });
 
 export const fetchingText = style({
@@ -32,7 +31,7 @@ export const fetchingText = style({
 export const tableContainer = style({
   overflowX: "auto",
   overflowY: "auto",
-  borderRadius: borderRadius.md,
+  borderRadius: tokenVars.borderRadius.md,
   borderWidth: 1,
   borderStyle: "solid",
   borderColor: themeContract.border,
@@ -70,7 +69,7 @@ export const th = style({
   paddingLeft: 12,
   paddingRight: 12,
   fontSize: "12px",
-  fontWeight: fontWeight.semibold,
+  fontWeight: tokenVars.fontWeight.semibold,
   color: themeContract.contentSecondary,
   textAlign: "left",
   textTransform: "uppercase",
@@ -113,7 +112,7 @@ export const td = style({
   paddingBottom: 10,
   paddingLeft: 12,
   paddingRight: 12,
-  fontSize: fontSize.sm,
+  fontSize: tokenVars.fontSize.sm,
   color: themeContract.contentPrimary,
   borderBottomWidth: 1,
   borderBottomStyle: "solid",
@@ -206,7 +205,7 @@ export const loadingFooter = style({
 
 export const loadingText = style({
   color: themeContract.contentSecondary,
-  fontSize: fontSize.sm,
+  fontSize: tokenVars.fontSize.sm,
 });
 
 // ─── Column toggle ───────────────────────────────────────────────────────────
@@ -262,10 +261,10 @@ export const emptyContainer = style({
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
-  paddingTop: spacing.xxxl,
-  paddingBottom: spacing.xxxl,
-  paddingLeft: spacing.md,
-  paddingRight: spacing.md,
+  paddingTop: tokenVars.spacing.xxxl,
+  paddingBottom: tokenVars.spacing.xxxl,
+  paddingLeft: tokenVars.spacing.md,
+  paddingRight: tokenVars.spacing.md,
   gap: 12,
 });
 
@@ -275,14 +274,14 @@ export const iconWrap = style({
 
 export const message = style({
   color: themeContract.contentSecondary,
-  fontSize: fontSize.sm,
+  fontSize: tokenVars.fontSize.sm,
   lineHeight: 1.5,
   textAlign: "center",
   margin: 0,
 });
 
 export const actionWrap = style({
-  marginTop: spacing.xs,
+  marginTop: tokenVars.spacing.xs,
 });
 
 // ─── Error state ─────────────────────────────────────────────────────────────
@@ -292,16 +291,16 @@ export const errorContainer = style({
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
-  paddingTop: spacing.xxxl,
-  paddingBottom: spacing.xxxl,
-  paddingLeft: spacing.md,
-  paddingRight: spacing.md,
+  paddingTop: tokenVars.spacing.xxxl,
+  paddingBottom: tokenVars.spacing.xxxl,
+  paddingLeft: tokenVars.spacing.md,
+  paddingRight: tokenVars.spacing.md,
   gap: 12,
 });
 
 export const errorMessage = style({
   color: themeContract.sentimentNegative,
-  fontSize: fontSize.sm,
+  fontSize: tokenVars.fontSize.sm,
   lineHeight: 1.5,
   textAlign: "center",
   margin: 0,
@@ -313,31 +312,31 @@ export const sentinel = style({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  padding: spacing.md,
+  padding: tokenVars.spacing.md,
   minHeight: 48,
 });
 
 export const loadingInline = style({
   display: "flex",
   alignItems: "center",
-  gap: spacing.sm,
+  gap: tokenVars.spacing.sm,
 });
 
 export const loaderLoadingText = style({
   color: themeContract.contentSecondary,
-  fontSize: fontSize.sm,
+  fontSize: tokenVars.fontSize.sm,
 });
 
 export const noMore = style({
   color: themeContract.contentDisabled,
-  fontSize: fontSize.sm,
+  fontSize: tokenVars.fontSize.sm,
 });
 
 export const center = style({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  padding: spacing.md,
+  padding: tokenVars.spacing.md,
 });
 
 // ─── Pagination ──────────────────────────────────────────────────────────────
@@ -346,31 +345,31 @@ export const nav = style({
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
-  paddingTop: spacing.sm,
-  paddingBottom: spacing.sm,
+  paddingTop: tokenVars.spacing.sm,
+  paddingBottom: tokenVars.spacing.sm,
 });
 
 export const info = style({
   color: themeContract.contentSecondary,
-  fontSize: fontSize.sm,
+  fontSize: tokenVars.fontSize.sm,
 });
 
 export const controls = style({
   display: "flex",
   alignItems: "center",
-  gap: spacing.sm,
+  gap: tokenVars.spacing.sm,
 });
 
 export const range = style({
   color: themeContract.contentSecondary,
-  fontSize: fontSize.sm,
+  fontSize: tokenVars.fontSize.sm,
   whiteSpace: "nowrap",
 });
 
 export const buttonGroup = style({
   display: "flex",
   alignItems: "center",
-  gap: spacing.xs,
+  gap: tokenVars.spacing.xs,
 });
 
 export const pageWrap = style({
@@ -381,9 +380,9 @@ export const pageWrap = style({
 
 export const ellipsis = style({
   color: themeContract.contentDisabled,
-  fontSize: fontSize.sm,
-  paddingLeft: spacing.xs,
-  paddingRight: spacing.xs,
+  fontSize: tokenVars.fontSize.sm,
+  paddingLeft: tokenVars.spacing.xs,
+  paddingRight: tokenVars.spacing.xs,
 });
 
 export const pageButton = style({
@@ -397,22 +396,22 @@ export const toolbarContainer = style({
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
-  gap: spacing.md,
-  paddingTop: spacing.sm,
-  paddingBottom: spacing.sm,
+  gap: tokenVars.spacing.md,
+  paddingTop: tokenVars.spacing.sm,
+  paddingBottom: tokenVars.spacing.sm,
 });
 
 export const leftGroup = style({
   display: "flex",
   alignItems: "center",
-  gap: spacing.sm,
+  gap: tokenVars.spacing.sm,
   flex: 1,
 });
 
 export const rightGroup = style({
   display: "flex",
   alignItems: "center",
-  gap: spacing.sm,
+  gap: tokenVars.spacing.sm,
 });
 
 export const searchWrap = style({
