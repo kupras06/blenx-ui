@@ -37,6 +37,7 @@
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
+    "@blenx-dev/theme": "workspace:*",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "changeset": "^0.2.6"

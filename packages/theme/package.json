@@ -4,10 +4,22 @@
   "type": "module",
   "sideEffects": false,
   "exports": {
-    "./contract": "./src/contract.css.ts",
-    "./tokens": "./src/tokens.css.ts",
-    "./light-theme": "./src/light-theme.css.ts",
-    "./reset": "./src/reset.css.ts"
+    "./contract": {
+      "types": "./src/contract.css.ts",
+      "default": "./src/contract.css.ts"
+    },
+    "./tokens": {
+      "types": "./src/tokens.css.ts",
+      "default": "./src/tokens.css.ts"
+    },
+    "./light-theme": {
+      "types": "./src/light-theme.css.ts",
+      "default": "./src/light-theme.css.ts"
+    },
+    "./reset": {
+      "types": "./src/reset.css.ts",
+      "default": "./src/reset.css.ts"
+    }
   },
   "publishConfig": {
     "access": "public"
