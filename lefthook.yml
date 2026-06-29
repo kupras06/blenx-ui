@@ -9,5 +9,6 @@ pre-commit:
       run: pnpm oxlint --fix {staged_files}
       stage_fixed: true
     - name: oxfmt
+      glob: "*.{js,ts,tsx,md,html}"
       run: pnpm oxfmt --write {staged_files}
       stage_fixed: true
