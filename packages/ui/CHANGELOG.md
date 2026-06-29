@@ -1,5 +1,13 @@
 # @blenx-dev/ui
 
+## 0.2.1
+
+### Patch Changes
+
+- 4994172: update peer dependencies
+- Updated dependencies [4994172]
+  - @blenx-dev/theme@0.2.1
+
 ## 0.2.0
 
 ### Minor Changes

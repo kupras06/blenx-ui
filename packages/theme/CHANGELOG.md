@@ -1,5 +1,11 @@
 # @blenx-dev/theme
 
+## 0.2.1
+
+### Patch Changes
+
+- 4994172: update peer dependencies
+
 ## 0.2.0
 
 ### Minor Changes
