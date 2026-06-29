@@ -29,8 +29,8 @@
     "generate:registry": "tsx scripts/generate-docs-manifest.ts",
     "generate:api": "tsx scripts/generate-api-meta.ts",
     "changeset": "changeset",
-    "version-packages": "changeset version",
-    "release": "changeset publish"
+    "ci:version": "changeset version",
+    "ci:publish": "changeset publish"
   },
   "dependencies": {
     "@blenx-dev/env": "workspace:*",
