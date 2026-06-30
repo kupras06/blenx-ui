@@ -42,11 +42,11 @@ export function LandingPageDocumentation() {
   return (
     <VStack gap="lg">
       <VStack gap="sm" align="center">
-        <Text variant="h2" align="center">
+        <Text variant="h1" align="center">
           Documentation
         </Text>
         <Box maxWidth={480}>
-          <Text variant="body2" color="secondary" align="center" size="lg">
+          <Text variant="body2" color="secondary" align="center">
             Everything you need to get started with Blenx UI.
           </Text>
         </Box>

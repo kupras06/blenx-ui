@@ -1,8 +1,8 @@
 import { createTheme } from "@vanilla-extract/css";
 import type { PaletteRoles, PaletteScale } from "../palettes/types";
-import type { RadixThemeConfig } from "./types";
 import { semanticVars } from "../contract.css";
 import { resolveToSemanticTokens } from "../semantic/resolve";
+import type { ThemeConfig } from "./types";
 type PaletteKind = "colorful" | "neutral";
 function blendScale(
   base: PaletteScale,
@@ -41,7 +41,7 @@ function blendScale(
   };
 }
 
-export function definePalette<T extends string>(
+export function genPalleteFromRadix<T extends string>(
   prefix: T,
   colors: Record<`${T}${1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12}`, string>,
 ): PaletteScale {
@@ -60,7 +60,7 @@ export function definePalette<T extends string>(
     12: colors[`${prefix}12`],
   };
 }
-export function createBlenxThemeFromRadix(config: RadixThemeConfig) {
+export function createBlenxTheme(config: ThemeConfig) {
   const resolvedTheme = resolveToSemanticTokens({
     primary: blendScale(config.colors.primary.base, config.colors.primary.accent),
     secondary: blendScale(config.colors.secondary.base, config.colors.secondary.accent),

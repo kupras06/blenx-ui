@@ -64,6 +64,17 @@ const BlockMetaSchema = z.object({
   content: z.string(),
 });
 
+const BlogSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+  date: z.string(),
+  author: z.string().default("Blenx Team"),
+  tags: z.array(z.string()).default([]),
+  published: z.boolean().default(true),
+  image: z.string().optional(),
+  content: z.string(),
+});
+
 const BlockGroupSchema = z.object({
   slug: z.string(),
   title: z.string(),
@@ -126,6 +137,18 @@ const guides = defineCollection({
   }),
 });
 
+const blogs = defineCollection({
+  name: "blogs",
+  directory: "content/blog",
+  include: "**/*.{md,mdx}",
+  schema: BlogSchema,
+  transform: async (document, context) => ({
+    ...document,
+    mdx: await compileMDX(context, document),
+    toc: TocItems.parse(extractHeadings(document.content)),
+  }),
+});
+
 export default defineConfig({
-  content: [components, blockGroups, blocks, guides],
+  content: [components, blockGroups, blocks, guides, blogs],
 });

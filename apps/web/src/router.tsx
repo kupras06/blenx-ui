@@ -2,6 +2,7 @@ import { createRouter as createTanStackRouter } from "@tanstack/react-router";
 import { queryClient } from "@/lib/query-client";
 import { routeTree } from "./routeTree.gen";
 import { Spinner } from "@blenx-dev/ui";
+import { DefaultNotFound } from "./components/DefaultNotFound";
 
 export const getRouter = () => {
   const router = createTanStackRouter({
@@ -10,7 +11,7 @@ export const getRouter = () => {
     defaultPreloadStaleTime: 0,
     context: { queryClient },
     defaultPendingComponent: () => <Spinner />,
-    defaultNotFoundComponent: () => <div>Not Found</div>,
+    defaultNotFoundComponent: () => <DefaultNotFound />,
   });
 
   return router;

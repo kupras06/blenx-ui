@@ -19,7 +19,7 @@ export const textVariants = recipe({
       },
       h2: {
         fontFamily: tokenVars.font.body,
-        fontSize: tokenVars.fontSize.xxl,
+        fontSize: tokenVars.fontSize.xxxl,
         lineHeight: tokenVars.lineHeight.tight,
         fontWeight: tokenVars.fontWeight.bold,
         letterSpacing: tokenVars.letterSpacing.tight,

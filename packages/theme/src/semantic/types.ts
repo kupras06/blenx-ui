@@ -1,5 +1,3 @@
-import type { PaletteScale } from "../palettes/types";
-
 export interface SemanticTokens {
   background: {
     default: string;
@@ -84,19 +82,3 @@ export interface SemanticTokens {
 }
 
 export type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T;
-
-export interface ThemeColors {
-  primary: PaletteScale;
-  secondary: PaletteScale;
-  neutral: PaletteScale;
-  success: PaletteScale;
-  warning: PaletteScale;
-  danger: PaletteScale;
-  info: PaletteScale;
-}
-
-export interface ThemeConfig {
-  colors?: Partial<ThemeColors>;
-  semantic?: DeepPartial<SemanticTokens>;
-  darkSemantic?: DeepPartial<SemanticTokens>;
-}

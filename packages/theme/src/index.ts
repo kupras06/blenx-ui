@@ -1,7 +1,7 @@
 export { semanticVars, tokenVars } from "./contract.css";
 export { tokenVarsDefaults } from "./tokens-defaults";
-export { createBlenxThemeFromRadix } from "./radix";
+export { createBlenxTheme, genPalleteFromRadix } from "./config/theme";
 
-export type { SemanticTokens, ThemeConfig, ThemeColors, DeepPartial } from "./semantic/types";
+export type { SemanticTokens, DeepPartial } from "./semantic/types";
 export type { PaletteScale } from "./palettes/types";
-export type { RadixColorPair, RadixThemeColors, RadixThemeConfig } from "./radix";
+export type { ThemeConfig } from "./config/types";

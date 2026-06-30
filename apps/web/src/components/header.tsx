@@ -125,6 +125,9 @@ function Header() {
       <HStack align="center" gap="xs">
         <ClientOnly>
           <DocsRouteOption />
+          <Button size="xs" variant="ghost" nativeButton={false} render={<Link to="/blog" />}>
+            Blog
+          </Button>
           <ThemeToggle />
         </ClientOnly>
 

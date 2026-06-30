@@ -1,5 +1,5 @@
 import { useMemo, useRef, useState } from "react";
-import { Separator, Text } from "@blenx-dev/ui";
+import { Box, Separator, Text } from "@blenx-dev/ui";
 import { slugify, extractTextFromChildren } from "@/lib/slug";
 import type React from "react";
 import { headingAnchor } from "@/lib/styles.css";
@@ -37,7 +37,7 @@ function DocsHeading({
   };
 
   return (
-    <div style={{ position: "relative" }} id={headingId}>
+    <Box position="relative" my={"md"} id={headingId}>
       <Text variant={as}>
         {children}
         {headingId && as !== "h1" && (
@@ -53,7 +53,7 @@ function DocsHeading({
         )}
       </Text>
       {as === "h2" && <Separator tone="subtle" />}
-    </div>
+    </Box>
   );
 }
 
