@@ -1,5 +1,5 @@
 import type React from "react";
-import { Text } from "@blenx-dev/ui";
+import { Text } from "@blenx-dev/core";
 
 interface DocsParagraphProps {
   children: React.ReactNode;

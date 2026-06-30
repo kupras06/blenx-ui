@@ -1,5 +1,5 @@
-import type { Column } from "@blenx-dev/ui";
-import { Accordion, Table, Text } from "@blenx-dev/ui";
+import type { Column } from "@blenx-dev/core";
+import { Accordion, Table, Text } from "@blenx-dev/core";
 import { semanticVars } from "@blenx-dev/theme/contract";
 import { useThemeBuilder } from "../theme-builder-context";
 

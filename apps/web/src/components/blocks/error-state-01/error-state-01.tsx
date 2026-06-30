@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@blenx-dev/ui/components/Button/button";
-import { Text } from "@blenx-dev/ui/components/Text/text";
-import { VStack, HStack } from "@blenx-dev/ui/components/Stack/stack";
-import { Surface } from "@blenx-dev/ui/components/Surface/surface";
+import { Button } from "@blenx-dev/core/Button";
+import { Text } from "@blenx-dev/core/Text";
+import { VStack, HStack } from "@blenx-dev/core/Stack";
+import { Surface } from "@blenx-dev/core/Surface";
 import type { CSSProperties } from "react";
-import { Icon } from "@blenx-dev/ui";
+import { Icon } from "@blenx-dev/core";
 
 type Action = {
   label: string;

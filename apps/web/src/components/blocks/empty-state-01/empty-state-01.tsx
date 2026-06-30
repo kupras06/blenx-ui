@@ -1,9 +1,9 @@
-import { Button } from "@blenx-dev/ui/components/Button/button";
-import { Text } from "@blenx-dev/ui/components/Text/text";
-import { VStack, HStack } from "@blenx-dev/ui/components/Stack/stack";
-import { Card, CardBody } from "@blenx-dev/ui/components/Card/card";
+import { Button } from "@blenx-dev/core/Button";
+import { Text } from "@blenx-dev/core/Text";
+import { VStack, HStack } from "@blenx-dev/core/Stack";
+import { Card, CardBody } from "@blenx-dev/core/Card";
 import type { CSSProperties } from "react";
-import { Box, Container } from "@blenx-dev/ui";
+import { Box, Container } from "@blenx-dev/core";
 
 type Action = {
   label: string;

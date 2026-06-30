@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { Box, Text, VStack } from "@blenx-dev/ui";
+import { Box, Text, VStack } from "@blenx-dev/core";
 import { Login01, Login02, Signup01, ForgotPassword01, VerifyEmail01 } from "@/components/blocks";
 
 export const AuthPreview = memo(() => (

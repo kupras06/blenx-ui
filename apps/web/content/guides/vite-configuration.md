@@ -20,12 +20,12 @@ Because of this, Vite must process Blenx UI as application source rather than as
 ## Install
 
 ```bash
-pnpm add @blenx-dev/ui @blenx-dev/theme
+pnpm add @blenx-dev/core @blenx-dev/theme
 ```
 
 ## Configure Vite
 
-Add the Vanilla Extract plugin and exclude `@blenx-dev/ui` from dependency optimization.
+Add the Vanilla Extract plugin and exclude `@blenx-dev/core` from dependency optimization.
 
 ```ts
 import { defineConfig } from "vite";
@@ -35,7 +35,7 @@ export default defineConfig({
   plugins: [vanillaExtractPlugin()],
 
   optimizeDeps: {
-    exclude: ["@blenx-dev/ui"],
+    exclude: ["@blenx-dev/core"],
   },
 });
 ```
@@ -50,7 +50,7 @@ This results in runtime errors similar to:
 Styles were unable to be assigned to a file.
 ```
 
-Excluding `@blenx-dev/ui` from `optimizeDeps` allows the Vanilla Extract plugin to transform Blenx UI's `.css.ts` files correctly during both development and production builds.
+Excluding `@blenx-dev/core` from `optimizeDeps` allows the Vanilla Extract plugin to transform Blenx UI's `.css.ts` files correctly during both development and production builds.
 
 ## When do I need this?
 
@@ -65,7 +65,7 @@ If you're working in a monorepo where the Blenx UI source is already part of the
 Ensure that:
 
 - `vanillaExtractPlugin()` is registered in your Vite configuration.
-- `@blenx-dev/ui` is listed in `optimizeDeps.exclude`.
-- Your application imports components from `@blenx-dev/ui` rather than individual compiled artifacts.
+- `@blenx-dev/core` is listed in `optimizeDeps.exclude`.
+- Your application imports components from `@blenx-dev/core` rather than individual compiled artifacts.
 
 Once configured, Vite will treat Blenx UI as source code, allowing Vanilla Extract to generate the required CSS automatically.

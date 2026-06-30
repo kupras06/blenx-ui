@@ -11,7 +11,7 @@ import {
   Sheet,
   SheetPopup,
   HStack,
-} from "@blenx-dev/ui";
+} from "@blenx-dev/core";
 import { ColorControls, NonColorControls, PresetControls, TypographyControls } from "./controls";
 import { PreviewErrorBoundary } from "./error-boundary";
 import { ExportPanel } from "./export";

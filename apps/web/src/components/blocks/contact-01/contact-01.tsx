@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { Input } from "@blenx-dev/ui/Input";
-import { Button } from "@blenx-dev/ui/Button";
-import { Textarea } from "@blenx-dev/ui/Textarea";
-import { Text } from "@blenx-dev/ui/Text";
-import { Card, CardBody } from "@blenx-dev/ui/Card";
+import { Input } from "@blenx-dev/core/Input";
+import { Button } from "@blenx-dev/core/Button";
+import { Textarea } from "@blenx-dev/core/Textarea";
+import { Text } from "@blenx-dev/core/Text";
+import { Card, CardBody } from "@blenx-dev/core/Card";
 import type { CSSProperties } from "react";
-import { Box, Container, Field, FieldLabel, HStack, Icon, Select, VStack } from "@blenx-dev/ui";
+import { Box, Container, Field, FieldLabel, HStack, Icon, Select, VStack } from "@blenx-dev/core";
 import { PaperPlaneTiltIcon } from "@phosphor-icons/react";
 
 type ContactInfo = {

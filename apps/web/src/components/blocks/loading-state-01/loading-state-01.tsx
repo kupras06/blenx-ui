@@ -1,5 +1,5 @@
-import { VStack, HStack } from "@blenx-dev/ui/components/Stack/stack";
-import { Progress } from "@blenx-dev/ui/components/Progress/progress";
+import { VStack, HStack } from "@blenx-dev/core/Stack";
+import { Progress } from "@blenx-dev/core/Progress";
 import {
   skeletonShimmer,
   skeletonTextLine,

@@ -2,7 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { allBlogs } from "content-collections";
 import { MDXContent } from "@content-collections/mdx/react";
 import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
-import { Box, Container, HStack, Text } from "@blenx-dev/ui";
+import { Box, Container, HStack, Text } from "@blenx-dev/core";
 import { mdxComponents } from "@/views/docs/MdxComponents";
 
 export const Route = createFileRoute("/blog/$slug")({

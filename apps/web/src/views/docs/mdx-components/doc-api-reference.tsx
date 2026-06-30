@@ -1,4 +1,4 @@
-import { Surface, Text, VStack } from "@blenx-dev/ui";
+import { Surface, Text, VStack } from "@blenx-dev/core";
 
 function DocApiReference() {
   return (

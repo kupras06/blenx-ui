@@ -1,5 +1,5 @@
 import { CodeBlock } from "@/views/docs/mdx-components/CodeBlock";
-import { Accordion, Box, Text } from "@blenx-dev/ui";
+import { Accordion, Box, Text } from "@blenx-dev/core";
 
 const semanticCode = `// Semantic tokens (what you edit)
 export const theme = createThemeContract({

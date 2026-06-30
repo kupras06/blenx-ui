@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@blenx-dev/ui/components/Button/button";
-import { Text } from "@blenx-dev/ui/components/Text/text";
-import { Card, CardBody, CardHeader } from "@blenx-dev/ui/components/Card/card";
-import { Badge } from "@blenx-dev/ui/components/Badge/badge";
-import { Switch } from "@blenx-dev/ui/components/Switch/switch";
+import { Button } from "@blenx-dev/core/Button";
+import { Text } from "@blenx-dev/core/Text";
+import { Card, CardBody, CardHeader } from "@blenx-dev/core/Card";
+import { Badge } from "@blenx-dev/core/Badge";
+import { Switch } from "@blenx-dev/core/Switch";
 import { CheckIcon } from "@phosphor-icons/react";
-import { Container, HStack, Icon, VStack } from "@blenx-dev/ui";
+import { Container, HStack, Icon, VStack } from "@blenx-dev/core";
 import type { CSSProperties } from "react";
 
 type Plan = {

@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { allBlocks, allBlockGroups } from "content-collections";
 import { MDXContent } from "@content-collections/mdx/react";
-import { Box, Separator, Text, VStack } from "@blenx-dev/ui";
+import { Box, Separator, Text, VStack } from "@blenx-dev/core";
 import { mdxComponents } from "@/views/docs/MdxComponents";
 import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 

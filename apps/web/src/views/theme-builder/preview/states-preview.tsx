@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { Box, Text, VStack } from "@blenx-dev/ui";
+import { Box, Text, VStack } from "@blenx-dev/core";
 import { EmptyState01, LoadingState01, ErrorState01 } from "@/components/blocks";
 
 export const StatesPreview = memo(() => (

@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@blenx-dev/ui/components/Button/button";
-import { Input, Label } from "@blenx-dev/ui/components/Input/input";
-import { Text } from "@blenx-dev/ui/components/Text/text";
-import { Checkbox } from "@blenx-dev/ui/components/Checkbox/checkbox";
-import { Card, CardBody } from "@blenx-dev/ui/components/Card/card";
+import { Button } from "@blenx-dev/core/Button";
+import { Input, Label } from "@blenx-dev/core/Input";
+import { Text } from "@blenx-dev/core/Text";
+import { Checkbox } from "@blenx-dev/core/Checkbox";
+import { Card, CardBody } from "@blenx-dev/core/Card";
 import type { CSSProperties } from "react";
-import { Box, Container, Field, FieldLabel, HStack, Separator, VStack } from "@blenx-dev/ui";
+import { Box, Container, Field, FieldLabel, HStack, Separator, VStack } from "@blenx-dev/core";
 
 type SocialProvider = {
   provider: string;

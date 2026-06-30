@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@blenx-dev/ui/components/Button/button";
-import { Input } from "@blenx-dev/ui/components/Input/input";
-import { Text } from "@blenx-dev/ui/components/Text/text";
-import { Card, CardBody } from "@blenx-dev/ui/components/Card/card";
+import { Button } from "@blenx-dev/core/Button";
+import { Input } from "@blenx-dev/core/Input";
+import { Text } from "@blenx-dev/core/Text";
+import { Card, CardBody } from "@blenx-dev/core/Card";
 import type { CSSProperties } from "react";
-import { Box, Container, Field, FieldLabel, Progress, VStack } from "@blenx-dev/ui";
+import { Box, Container, Field, FieldLabel, Progress, VStack } from "@blenx-dev/core";
 import { ArrowLeftIcon } from "@phosphor-icons/react";
 
 type Props = {

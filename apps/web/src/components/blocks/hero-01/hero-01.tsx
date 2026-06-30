@@ -1,8 +1,8 @@
-import { Button } from "@blenx-dev/ui/components/Button/button";
-import { Text } from "@blenx-dev/ui/components/Text/text";
-import { HStack, VStack, Stack } from "@blenx-dev/ui/components/Stack/stack";
+import { Button } from "@blenx-dev/core/Button";
+import { Text } from "@blenx-dev/core/Text";
+import { HStack, VStack, Stack } from "@blenx-dev/core/Stack";
 import { ImageIcon } from "@phosphor-icons/react";
-import { Box, Container, Icon } from "@blenx-dev/ui";
+import { Box, Container, Icon } from "@blenx-dev/core";
 
 type Cta = {
   label: string;

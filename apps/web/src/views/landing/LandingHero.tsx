@@ -1,5 +1,5 @@
 import { GITHUB_URL } from "@/constants";
-import { Badge, Box, Button, Container, HStack, Text, VStack } from "@blenx-dev/ui";
+import { Badge, Box, Button, Container, HStack, Text, VStack } from "@blenx-dev/core";
 import { ArrowRightIcon } from "@phosphor-icons/react";
 import { Link } from "@tanstack/react-router";
 

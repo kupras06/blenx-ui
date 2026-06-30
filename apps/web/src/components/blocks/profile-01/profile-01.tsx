@@ -1,14 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@blenx-dev/ui/components/Button/button";
-import { Input } from "@blenx-dev/ui/components/Input/input";
-import { Text } from "@blenx-dev/ui/components/Text/text";
-import { Card, CardBody, CardHeader, CardTitle } from "@blenx-dev/ui/components/Card/card";
-import { Switch } from "@blenx-dev/ui/components/Switch/switch";
-import { HStack, VStack } from "@blenx-dev/ui/components/Stack/stack";
+import { Button } from "@blenx-dev/core/Button";
+import { Input } from "@blenx-dev/core/Input";
+import { Text } from "@blenx-dev/core/Text";
+import { Card, CardBody, CardHeader, CardTitle } from "@blenx-dev/core/Card";
+import { Switch } from "@blenx-dev/core/Switch";
+import { HStack, VStack } from "@blenx-dev/core/Stack";
 import type { CSSProperties } from "react";
-import { Box, Container, Field, FieldLabel } from "@blenx-dev/ui";
+import { Box, Container, Field, FieldLabel } from "@blenx-dev/core";
 
 type NotificationSetting = {
   key: string;

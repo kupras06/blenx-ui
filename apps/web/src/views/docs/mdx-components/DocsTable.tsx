@@ -1,5 +1,5 @@
 import type React from "react";
-import { Box } from "@blenx-dev/ui";
+import { Box } from "@blenx-dev/core";
 
 interface DocsTableProps {
   children: React.ReactNode;

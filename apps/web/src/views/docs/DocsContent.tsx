@@ -1,5 +1,5 @@
 import type React from "react";
-import { Box, VStack } from "@blenx-dev/ui";
+import { Box, VStack } from "@blenx-dev/core";
 
 interface DocsContentProps {
   children: React.ReactNode;

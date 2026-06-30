@@ -1,11 +1,11 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { Button } from "@blenx-dev/ui/components/Button/button";
-import { Text } from "@blenx-dev/ui/components/Text/text";
-import { Card, CardBody } from "@blenx-dev/ui/components/Card/card";
+import { Button } from "@blenx-dev/core/Button";
+import { Text } from "@blenx-dev/core/Text";
+import { Card, CardBody } from "@blenx-dev/core/Card";
 import type { CSSProperties } from "react";
-import { Alert, Box, Container, HStack, OTPField, OTPFieldInput, VStack } from "@blenx-dev/ui";
+import { Alert, Box, Container, HStack, OTPField, OTPFieldInput, VStack } from "@blenx-dev/core";
 
 const DIGIT_COUNT = 6;
 

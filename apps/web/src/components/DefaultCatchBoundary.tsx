@@ -1,4 +1,4 @@
-import { Button, Container, Text, VStack } from "@blenx-dev/ui";
+import { Button, Container, Text, VStack } from "@blenx-dev/core";
 import { Link } from "@tanstack/react-router";
 
 export function DefaultCatchBoundary({ error }: { error: Error }) {

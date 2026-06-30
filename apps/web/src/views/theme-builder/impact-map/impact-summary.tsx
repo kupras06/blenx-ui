@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { Badge, Box, Text, VStack } from "@blenx-dev/ui";
+import { Badge, Box, Text, VStack } from "@blenx-dev/core";
 import { semanticVars } from "@blenx-dev/theme/contract";
 import { getComponentsForToken } from "../preview/component-token-map";
 import { useThemeBuilder } from "../theme-builder-context";

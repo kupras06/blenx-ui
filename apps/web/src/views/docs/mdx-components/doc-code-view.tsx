@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { highlightCode } from "@/lib/syntax-highlight";
-import { ScrollArea } from "@blenx-dev/ui";
+import { ScrollArea } from "@blenx-dev/core";
 import { CodeFrame } from "./CodeFrame";
 import { codeBlockContent } from "@/lib/styles.css";
 

@@ -1,4 +1,4 @@
-import { Accordion, Button, ColorSwatch, HStack, Text, VStack } from "@blenx-dev/ui";
+import { Accordion, Button, ColorSwatch, HStack, Text, VStack } from "@blenx-dev/core";
 import { useThemeBuilder } from "../theme-builder-context";
 import type { ThemeTokenGroup } from "../theme-builder-context";
 import { presets } from "./presets-data";

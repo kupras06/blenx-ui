@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Box, CopyButton, HStack, SegmentedControl, Surface, Text } from "@blenx-dev/ui";
+import { Box, CopyButton, HStack, SegmentedControl, Surface, Text } from "@blenx-dev/core";
 import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 interface CodeFrameFile {

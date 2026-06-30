@@ -1,5 +1,5 @@
 import type React from "react";
-import { HStack } from "@blenx-dev/ui";
+import { HStack } from "@blenx-dev/core";
 
 interface DocsUlProps {
   children: React.ReactNode;

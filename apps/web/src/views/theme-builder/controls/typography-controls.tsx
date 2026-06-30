@@ -1,4 +1,4 @@
-import { Accordion, Box, Text, VStack } from "@blenx-dev/ui";
+import { Accordion, Box, Text, VStack } from "@blenx-dev/core";
 
 export function TypographyControls() {
   return (

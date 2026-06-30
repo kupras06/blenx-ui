@@ -3,9 +3,8 @@
   "changelog": "@changesets/cli/changelog",
   "commit": true,
   "fixed": [],
-  "linked": [["@blenx-dev/ui", "@blenx-dev/theme"]],
+  "linked": [["@blenx-dev/core", "@blenx-dev/theme"]],
   "access": "public",
   "baseBranch": "main",
-  "updateInternalDependencies": "patch",
-  "ignore": ["@blenx-dev/vite-plugin"]
+  "updateInternalDependencies": "patch"
 }

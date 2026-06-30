@@ -37,7 +37,7 @@ Create a `*.css.ts` file next to your component. Define styles statically at the
 ```tsx
 // button.css.ts
 import { style } from "@vanilla-extract/css";
-import { themeContract } from "@blenx-dev/ui/theme/contract.css";
+import { themeContract } from "@blenx-dev/core/theme/contract.css";
 
 export const root = style({
   display: "flex",
@@ -172,8 +172,8 @@ These primitives exist because layout CSS is repetitive and error-prone. A `Stac
 Always reference theme tokens through the contract:
 
 ```tsx
-import { themeContract } from "@blenx-dev/ui/theme/contract.css";
-import { fontSize, spacing, borderRadius } from "@blenx-dev/ui/theme/tokens.css";
+import { themeContract } from "@blenx-dev/core/theme/contract.css";
+import { fontSize, spacing, borderRadius } from "@blenx-dev/core/theme/tokens.css";
 
 export const root = style({
   color: themeContract.contentPrimary,

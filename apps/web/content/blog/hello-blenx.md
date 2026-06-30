@@ -42,7 +42,7 @@ Vanilla Extract gives us:
 Ready to try Blenx UI? Head over to the [docs](/docs) to get started with installation, theming, and components.
 
 ```bash
-npm install @blenx-dev/ui @blenx-dev/theme
+npm install @blenx-dev/core @blenx-dev/theme
 ```
 
 ## What's Next?

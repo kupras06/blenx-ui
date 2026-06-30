@@ -8,7 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { Header, ThemeEffect } from "@/components/header";
-import { Container, Separator } from "@blenx-dev/ui";
+import { Container, Separator } from "@blenx-dev/core";
 import appCss from "@/app.css?url";
 import "@blenx-dev/theme/reset";
 import { Analytics } from "@vercel/analytics/react";

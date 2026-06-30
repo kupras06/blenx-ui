@@ -1,4 +1,4 @@
-import { Box, HStack, Text, VStack } from "@blenx-dev/ui";
+import { Box, HStack, Text, VStack } from "@blenx-dev/core";
 
 interface DocAccessibilityProps {
   keyboard?: string[];

@@ -12,7 +12,7 @@ import {
   SheetPopup,
   Text,
   VStack,
-} from "@blenx-dev/ui";
+} from "@blenx-dev/core";
 import {
   ClientOnly,
   createFileRoute,

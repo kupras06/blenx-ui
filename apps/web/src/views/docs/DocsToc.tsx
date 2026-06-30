@@ -1,9 +1,9 @@
 "use client";
 
 import { useCallback } from "react";
-import { Box, Container, CopyButton, Text, VStack } from "@blenx-dev/ui";
+import { Box, Container, CopyButton, Text, VStack } from "@blenx-dev/core";
 import type { TocItem } from "@/utils/extractHeadings";
-import { HStack } from "@blenx-dev/ui";
+import { HStack } from "@blenx-dev/core";
 import { useRouterState } from "@tanstack/react-router";
 
 interface DocsTocProps {

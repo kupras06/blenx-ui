@@ -1,16 +1,16 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { Text } from "@blenx-dev/ui/components/Text/text";
+import { Text } from "@blenx-dev/core/Text";
 import {
   AccordionRoot,
   AccordionItem,
   AccordionHeader,
   AccordionTrigger,
   AccordionPanel,
-} from "@blenx-dev/ui/components/Accordion/accordion";
+} from "@blenx-dev/core/Accordion";
 import type { CSSProperties } from "react";
-import { Box, Container, Input, VStack } from "@blenx-dev/ui";
+import { Box, Container, Input, VStack } from "@blenx-dev/core";
 
 type FaqItem = {
   question: string;

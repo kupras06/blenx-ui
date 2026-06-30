@@ -1,4 +1,4 @@
-# @blenx-dev/ui
+# @blenx-dev/core
 
 ## 1.0.0
 

@@ -11,8 +11,8 @@ import { DocAccessibility } from "./mdx-components/doc-accessibility";
 import { DocDemoRenderer } from "./mdx-components/doc-demo-renderer";
 import { DocSourceCode } from "./mdx-components/doc-source-code";
 import { Installation } from "./mdx-components/Installation";
-import { Box, Spinner, Text } from "@blenx-dev/ui";
-import { type TextProps } from "@blenx-dev/ui";
+import { Box, Spinner, Text } from "@blenx-dev/core";
+import { type TextProps } from "@blenx-dev/core";
 
 function InlineCode(props: TextProps) {
   return <Text variant="code" backgroundColor="info" px="xs" py="xxs" {...props} />;

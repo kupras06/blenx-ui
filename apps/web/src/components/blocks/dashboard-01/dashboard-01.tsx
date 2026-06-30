@@ -1,12 +1,12 @@
-import { Button } from "@blenx-dev/ui/components/Button";
-import { Text } from "@blenx-dev/ui/components/Text";
-import { Card, CardBody, CardTitle } from "@blenx-dev/ui/components/Card";
-import { Table } from "@blenx-dev/ui/components/Table";
-import { Badge } from "@blenx-dev/ui/components/Badge";
-import { Surface } from "@blenx-dev/ui/components/Surface";
-import type { Column } from "@blenx-dev/ui/components/Table";
+import { Button } from "@blenx-dev/core/Button";
+import { Text } from "@blenx-dev/core/Text";
+import { Card, CardBody, CardTitle } from "@blenx-dev/core/Card";
+import { Table } from "@blenx-dev/core/Table";
+import { Badge } from "@blenx-dev/core/Badge";
+import { Surface } from "@blenx-dev/core/Surface";
+import type { Column } from "@blenx-dev/core/Table";
 import type { CSSProperties } from "react";
-import { Container, Grid, HStack, VStack } from "@blenx-dev/ui";
+import { Container, Grid, HStack, VStack } from "@blenx-dev/core";
 
 type Kpi = {
   label: string;

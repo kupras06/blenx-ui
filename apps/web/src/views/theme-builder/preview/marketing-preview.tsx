@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { Box, Text, VStack } from "@blenx-dev/ui";
+import { Box, Text, VStack } from "@blenx-dev/core";
 import { Hero01, Faq01, Pricing01, Contact01 } from "@/components/blocks";
 
 const faqItems = [

@@ -177,7 +177,7 @@ Components reference the contract inside `style()` calls:
 
 ```tsx
 import { style } from "@vanilla-extract/css";
-import { themeContract } from "@blenx-dev/ui/theme/contract.css";
+import { themeContract } from "@blenx-dev/theme/contract.css";
 
 export const root = style({
   backgroundColor: themeContract.surface,
@@ -203,7 +203,7 @@ To add a brand theme:
 ```tsx
 // my-brand-theme.css.ts
 import { createTheme } from "@vanilla-extract/css";
-import { themeContract } from "@blenx-dev/ui/theme/contract.css";
+import { themeContract } from "@blenx-dev/theme/contract.css";
 
 export const brandTheme = createTheme(themeContract, {
   primary: "#ff6b35",

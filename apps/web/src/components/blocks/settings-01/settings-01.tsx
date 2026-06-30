@@ -1,14 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@blenx-dev/ui/components/Button/button";
-import { Input } from "@blenx-dev/ui/components/Input/input";
-import { Text } from "@blenx-dev/ui/components/Text/text";
-import { Card, CardBody, CardHeader, CardTitle } from "@blenx-dev/ui/components/Card/card";
-import { Switch } from "@blenx-dev/ui/components/Switch/switch";
-import { Separator } from "@blenx-dev/ui/components/Separator/separator";
-import { Tabs, TabsList, TabsTab, TabsPanel } from "@blenx-dev/ui/components/Tabs/tabs";
-import { Box, Container, Field, FieldLabel, HStack, VStack } from "@blenx-dev/ui";
+import { Button } from "@blenx-dev/core/Button";
+import { Input } from "@blenx-dev/core/Input";
+import { Text } from "@blenx-dev/core/Text";
+import { Card, CardBody, CardHeader, CardTitle } from "@blenx-dev/core/Card";
+import { Switch } from "@blenx-dev/core/Switch";
+import { Separator } from "@blenx-dev/core/Separator";
+import { Tabs, TabsList, TabsTab, TabsPanel } from "@blenx-dev/core/Tabs";
+import { Box, Container, Field, FieldLabel, HStack, VStack } from "@blenx-dev/core";
 
 export function Settings01() {
   const [language, setLanguage] = useState("en");
