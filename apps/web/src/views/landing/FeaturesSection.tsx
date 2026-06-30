@@ -56,7 +56,7 @@ export function BlenxFeatures() {
           </Text>
         </Box>
       </VStack>
-      <Grid columns={3} gap="md">
+      <Grid columns={{ base: 1, md: 3 }} gap="md">
         {features.map((feature) => (
           <Card key={feature.title}>
             <CardHeader padding="md">

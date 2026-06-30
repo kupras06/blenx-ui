@@ -51,7 +51,7 @@ export function LandingPageDocumentation() {
           </Text>
         </Box>
       </VStack>
-      <Grid columns={3} gap="md">
+      <Grid columns={{ base: 2, md: 4 }} gap="md">
         {docLinks.map((link) => (
           <Surface
             key={link.to + link.title}
