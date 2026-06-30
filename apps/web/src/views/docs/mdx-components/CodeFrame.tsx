@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
-import { codeHeader } from "@/lib/styles.css";
 import { Box, CopyButton, HStack, SegmentedControl, Surface, Text } from "@blenx-dev/ui";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 interface CodeFrameFile {
   title?: string;
@@ -38,7 +38,19 @@ function CodeFrame({
       style={{ minHeight: 40 }}
     >
       {hasFiles || title ? (
-        <HStack className={codeHeader} align="center" justify="between">
+        <HStack
+          align="center"
+          justify="between"
+          style={{
+            padding: "8px 16px",
+            backgroundColor: semanticVars.surface.default,
+            borderBottom: `1px solid ${semanticVars.border.subtle}`,
+            borderTopLeftRadius: tokenVars.borderRadius.md,
+            borderTopRightRadius: tokenVars.borderRadius.md,
+            fontSize: tokenVars.fontSize.xs,
+            color: semanticVars.text.secondary,
+          }}
+        >
           <Box display="flex" alignItems="center">
             {hasFiles ? (
               <SegmentedControl

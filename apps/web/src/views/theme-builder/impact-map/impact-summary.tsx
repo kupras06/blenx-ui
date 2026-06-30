@@ -1,22 +1,27 @@
 import { memo } from "react";
-import { Text, VStack } from "@blenx-dev/ui";
+import { Badge, Box, Text, VStack } from "@blenx-dev/ui";
+import { semanticVars } from "@blenx-dev/theme/contract";
 import { getComponentsForToken } from "../preview/component-token-map";
 import { useThemeBuilder } from "../theme-builder-context";
-import { impactPanel, impactEmpty, impactChip } from "@/lib/styles.css";
+
+const panelStyle = {
+  backgroundColor: semanticVars.surface.raised,
+  border: `1px solid ${semanticVars.border.subtle}`,
+} as React.CSSProperties;
 
 export const ImpactSummary = memo(() => {
   const selectedToken = useThemeBuilder((s) => s.selectedToken);
 
   if (!selectedToken) {
     return (
-      <div className={impactPanel}>
+      <Box padding="sm" borderRadius="md" style={panelStyle}>
         <Text variant="body2" weight="semibold">
           Impact Map
         </Text>
-        <div className={impactEmpty}>
+        <Text variant="caption" color="disabled" textAlign="center" paddingY="sm">
           Hover a token in the Theme Variables table to see its impact
-        </div>
-      </div>
+        </Text>
+      </Box>
     );
   }
 
@@ -25,23 +30,23 @@ export const ImpactSummary = memo(() => {
   const label = parts.length > 1 ? `${parts[0]} › ${parts[1]}` : selectedToken;
 
   return (
-    <div className={impactPanel}>
+    <Box padding="sm" borderRadius="md" style={panelStyle}>
       <Text variant="body2" weight="semibold">
         Impact: {label}
       </Text>
-      <div style={{ marginTop: 8 }}>
+      <Box marginTop="sm">
         <Text variant="caption" color="secondary">
           Affects {components.length} component
           {components.length !== 1 ? "s" : ""}
         </Text>
-      </div>
-      <VStack marginTop={"4"}>
+      </Box>
+      <VStack marginTop="md" gap="xxs">
         {components.map((name) => (
-          <div key={name} className={impactChip}>
+          <Badge key={name} variant="primary" appearance="soft" radius="full">
             {name}
-          </div>
+          </Badge>
         ))}
       </VStack>
-    </div>
+    </Box>
   );
 });

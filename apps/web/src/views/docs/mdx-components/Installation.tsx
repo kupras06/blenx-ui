@@ -3,7 +3,7 @@ import { Badge, HStack, Separator, Text, VStack } from "@blenx-dev/ui";
 import { DocsH3 } from "./DocHeaders";
 import { docsQueries } from "@/lib/docs-api";
 import { CodeSnippet } from "./CodeBlock";
-import { installList, installItem, installCode } from "@/lib/styles.css";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 interface InstallationProps {
   registryName: string;
@@ -40,13 +40,22 @@ function Installation({ registryName }: InstallationProps) {
             <Text variant="body2" color="secondary">
               Copy the following files into your project:
             </Text>
-            <ul className={installList}>
+            <VStack gap="xs">
               {files.map((f) => (
-                <li key={f.target} className={installItem}>
-                  <code className={installCode}>{cleanTarget(f.target)}</code>
-                </li>
+                <Text
+                  key={f.target}
+                  variant="code"
+                  color="secondary"
+                  style={{
+                    backgroundColor: semanticVars.background.subtle,
+                    padding: "1px 6px",
+                    borderRadius: tokenVars.borderRadius.sm,
+                  }}
+                >
+                  {cleanTarget(f.target)}
+                </Text>
               ))}
-            </ul>
+            </VStack>
           </VStack>
         </>
       )}

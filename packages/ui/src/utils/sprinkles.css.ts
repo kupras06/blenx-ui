@@ -144,13 +144,10 @@ const flexProperties = defineProperties({
     flexShrink: { 0: 0, 1: 1 },
     display: ["block", "flex", "grid", "inline-flex", "none"],
     flexDirection: ["row", "row-reverse", "column", "column-reverse"],
-    justifyContent: ["center", "start", "end", "stretch", "between", "around", "evenly"],
-    alignItems: ["center", "start", "end", "stretch", "baseline"],
+    gap: spacing,
   },
   shorthands: {
     direction: ["flexDirection"],
-    justify: ["justifyContent"],
-    align: ["alignItems"],
     grow: ["flexGrow"],
     shrink: ["flexShrink"],
   },
@@ -193,7 +190,6 @@ const responsiveSpacingProperties = defineProperties({
     marginBottom: spacing,
     marginLeft: spacing,
     marginRight: spacing,
-    gap: spacing,
   },
   shorthands: {
     padding: ["paddingTop", "paddingBottom", "paddingLeft", "paddingRight"],
@@ -232,27 +228,36 @@ const gridProperties = defineProperties({
     },
     rowGap: spacing,
     columnGap: spacing,
-    alignItems: ["start", "center", "end", "stretch", "baseline"],
-    justifyItems: ["start", "center", "end", "stretch"],
   },
   shorthands: {
     columns: ["gridTemplateColumns"],
     flow: ["gridAutoFlow"],
-    align: ["alignItems"],
-    justify: ["justifyItems"],
     gap: ["rowGap", "columnGap"],
   },
 });
-
+const alignmentProperties = defineProperties({
+  conditions: responsiveConditions,
+  defaultCondition: "base",
+  properties: {
+    alignItems: ["start", "center", "end", "stretch", "baseline"],
+    justifyItems: ["start", "center", "end", "stretch"],
+    justifyContent: ["center", "start", "end", "stretch", "between", "around", "evenly"],
+  },
+  shorthands: {
+    align: ["alignItems"],
+    justify: ["justifyItems", "justifyContent"],
+  },
+});
 export const baseSprinkles = createSprinkles(
   layoutProperties,
   responsiveSpacingProperties,
   colorProperties,
   flexProperties,
   positionProperties,
+  alignmentProperties,
 );
 
-export const gridSprinkles = createSprinkles(gridProperties);
+export const gridSprinkles = createSprinkles(gridProperties, alignmentProperties);
 
 export type GridSprinkles = Parameters<typeof gridSprinkles>[0];
 

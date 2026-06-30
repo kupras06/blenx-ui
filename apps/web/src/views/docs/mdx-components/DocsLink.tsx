@@ -1,5 +1,5 @@
 import type React from "react";
-import { docsLink } from "@/lib/styles.css";
+import { semanticVars } from "@blenx-dev/theme/contract";
 
 interface DocsLinkProps {
   href?: string;
@@ -11,10 +11,16 @@ function DocsLink({ href, children, ...props }: DocsLinkProps) {
 
   return (
     <a
-      className={docsLink}
       href={href}
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noopener noreferrer" : undefined}
+      style={{
+        color: semanticVars.interactive.primary.default,
+        textDecoration: "underline",
+        textUnderlineOffset: 2,
+        cursor: "pointer",
+        transition: "color 200ms ease",
+      }}
       {...props}
     >
       {children}

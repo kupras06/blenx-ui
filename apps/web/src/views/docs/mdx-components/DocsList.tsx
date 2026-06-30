@@ -1,13 +1,22 @@
 import type React from "react";
-import { Text } from "@blenx-dev/ui";
-import { docsUl, docsOl, docsLi } from "@/lib/styles.css";
+import { HStack } from "@blenx-dev/ui";
 
 interface DocsUlProps {
   children: React.ReactNode;
 }
 
 function DocsUl({ children }: DocsUlProps) {
-  return <ul className={docsUl}>{children}</ul>;
+  return (
+    <ul
+      style={{
+        paddingLeft: 24,
+        margin: 0,
+        listStyle: "disc",
+      }}
+    >
+      {children}
+    </ul>
+  );
 }
 
 interface DocsOlProps {
@@ -15,7 +24,17 @@ interface DocsOlProps {
 }
 
 function DocsOl({ children }: DocsOlProps) {
-  return <ol className={docsOl}>{children}</ol>;
+  return (
+    <ol
+      style={{
+        paddingLeft: 24,
+        margin: 0,
+        listStyle: "decimal",
+      }}
+    >
+      {children}
+    </ol>
+  );
 }
 
 interface DocsLiProps {
@@ -24,10 +43,8 @@ interface DocsLiProps {
 
 function DocsLi({ children }: DocsLiProps) {
   return (
-    <li className={docsLi}>
-      <Text variant="body1" span>
-        {children}
-      </Text>
+    <li style={{ marginBottom: 4 }}>
+      <HStack>{children}</HStack>
     </li>
   );
 }
