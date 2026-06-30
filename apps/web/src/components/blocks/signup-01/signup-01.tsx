@@ -60,7 +60,7 @@ export function Signup01({
 
   return (
     <Container size="sm">
-      <Card fullWidth>
+      <Card fullWidth px={"xl"}>
         <CardBody>
           <Box paddingY="md">
             {logo && <Box>{logo}</Box>}
@@ -170,8 +170,8 @@ export function Signup01({
           </VStack>
 
           {socialProviders && socialProviders.length > 0 && (
-            <VStack gap="sm">
-              <Separator label="Or sign up with" tone="subtle" />
+            <VStack gap="sm" py={"2"}>
+              <Separator label="Or sign up with" />
               <HStack gap="sm" justify="between" fullWidth>
                 {socialProviders.map((provider) => (
                   <Button

@@ -1,22 +1,12 @@
-import clsx from "clsx";
 import type { BoxProps } from "../Box/box";
 import { Box } from "../Box/box";
-import { stackRecipe } from "./stack.css";
-import type { RecipeVariants } from "@vanilla-extract/recipes";
 
-type StackVariants = RecipeVariants<typeof stackRecipe>;
+export type StackProps = Omit<BoxProps, "display"> & {
+  wrap?: boolean;
+};
 
-export type StackProps = Omit<BoxProps, "display"> & StackVariants;
-
-export function Stack({ gap, align, justify, wrap, className, style, ...props }: StackProps) {
-  return (
-    <Box
-      display="flex"
-      className={clsx(stackRecipe({ gap, align, justify, wrap }), className)}
-      style={style}
-      {...props}
-    />
-  );
+export function Stack({ wrap, ...props }: StackProps) {
+  return <Box display="flex" {...(wrap ? { flexWrap: "wrap" } : {})} gap="md" {...props} />;
 }
 
 type VStackProps = Omit<StackProps, "direction">;

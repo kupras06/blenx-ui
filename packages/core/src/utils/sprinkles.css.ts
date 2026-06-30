@@ -72,6 +72,7 @@ const flexProperties = defineProperties({
     flexGrow: { 0: 0, 1: 1 },
     flexShrink: { 0: 0, 1: 1 },
     display: ["block", "flex", "grid", "inline-flex", "none"],
+    flexWrap: ["wrap", "nowrap", "wrap-reverse"],
     flexDirection: ["row", "row-reverse", "column", "column-reverse"],
     gap: spacing,
   },
@@ -169,12 +170,19 @@ const alignmentProperties = defineProperties({
   defaultCondition: "base",
   properties: {
     alignItems: ["start", "center", "end", "stretch", "baseline"],
-    justifyItems: ["start", "center", "end", "stretch"],
-    justifyContent: ["center", "start", "end", "stretch", "between", "around", "evenly"],
+    justifyContent: {
+      start: "flex-start",
+      center: "center",
+      end: "flex-end",
+      stretch: "stretch",
+      between: "space-between",
+      around: "space-around",
+      evenly: "space-evenly",
+    },
   },
   shorthands: {
     align: ["alignItems"],
-    justify: ["justifyItems", "justifyContent"],
+    justify: ["justifyContent"],
   },
 });
 export const baseSprinkles = createSprinkles(
