@@ -70,7 +70,7 @@ export const variant = recipe({
       success: {
         vars: {
           [intentVars.solidBg]: semanticVars.status.success,
-          [intentVars.solidFg]: semanticVars.interactive.primaryFg,
+          [intentVars.solidFg]: semanticVars.text.inverse,
           [intentVars.solidHoverBg]: semanticVars.status.success,
           [intentVars.softBg]: semanticVars.status.successBg,
           [intentVars.softFg]: semanticVars.status.success,
@@ -83,7 +83,7 @@ export const variant = recipe({
       warning: {
         vars: {
           [intentVars.solidBg]: semanticVars.status.warning,
-          [intentVars.solidFg]: semanticVars.interactive.primaryFg,
+          [intentVars.solidFg]: semanticVars.text.inverse,
           [intentVars.solidHoverBg]: semanticVars.status.warning,
           [intentVars.softBg]: semanticVars.status.warningBg,
           [intentVars.softFg]: semanticVars.status.warning,
@@ -96,7 +96,7 @@ export const variant = recipe({
       danger: {
         vars: {
           [intentVars.solidBg]: semanticVars.status.danger,
-          [intentVars.solidFg]: semanticVars.interactive.primaryFg,
+          [intentVars.solidFg]: semanticVars.text.inverse,
           [intentVars.solidHoverBg]: semanticVars.status.danger,
           [intentVars.softBg]: semanticVars.status.dangerBg,
           [intentVars.softFg]: semanticVars.status.danger,
@@ -109,7 +109,7 @@ export const variant = recipe({
       info: {
         vars: {
           [intentVars.solidBg]: semanticVars.status.info,
-          [intentVars.solidFg]: semanticVars.interactive.primaryFg,
+          [intentVars.solidFg]: semanticVars.text.inverse,
           [intentVars.solidHoverBg]: semanticVars.status.info,
           [intentVars.softBg]: semanticVars.status.infoBg,
           [intentVars.softFg]: semanticVars.status.info,

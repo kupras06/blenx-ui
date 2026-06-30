@@ -228,14 +228,6 @@ const gridProperties = defineProperties({
   },
 });
 
-export const gridSprinkles = createSprinkles(
-  colorProperties,
-  positionProperties,
-  layoutProperties,
-  responsiveSpacingProperties,
-  gridProperties,
-);
-
 export const baseSprinkles = createSprinkles(
   layoutProperties,
   responsiveSpacingProperties,
@@ -243,6 +235,8 @@ export const baseSprinkles = createSprinkles(
   flexProperties,
   positionProperties,
 );
+
+export const gridSprinkles = createSprinkles(gridProperties);
 
 export type BaseSprinkles = Parameters<typeof baseSprinkles>[0] & {
   fullWidth?: boolean;

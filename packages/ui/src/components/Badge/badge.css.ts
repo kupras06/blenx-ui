@@ -21,15 +21,15 @@ export const badgeRecipe = recipe({
       },
       secondary: {
         backgroundColor: semanticVars.interactive.secondary,
-        color: semanticVars.text.primary,
+        color: semanticVars.interactive.secondaryFg,
       },
       danger: {
         backgroundColor: semanticVars.status.danger,
-        color: semanticVars.interactive.primaryFg,
+        color: semanticVars.text.inverse,
       },
       sucess: {
         backgroundColor: semanticVars.status.success,
-        color: semanticVars.interactive.primaryFg,
+        color: semanticVars.text.inverse,
       },
     },
   },

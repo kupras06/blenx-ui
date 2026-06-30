@@ -13,7 +13,7 @@ function normalizeColorful(scale: PaletteScale) {
     border: scaleStep(scale, 7),
     solid: scaleStep(scale, 9),
     solidHover: scaleStep(scale, 10),
-    solidFg: scaleStep(scale, 12),
+    solidFg: scaleStep(scale, 1),
     text: scaleStep(scale, 11),
     focus: scaleStep(scale, 8),
   };
@@ -114,7 +114,7 @@ export function resolveSemanticTokens(
       secondaryHover: secondary.solidHover,
       secondaryBg: secondary.bg,
       neutral: neutral.step9,
-      neutralFg: neutral.step12,
+      neutralFg: neutral.step1,
     },
     status: {
       success: success.solid,
