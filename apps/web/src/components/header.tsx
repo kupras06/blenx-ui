@@ -11,7 +11,7 @@ function DocsRouteOption() {
   const { pathname } = useLocation();
   const isDocsActive = pathname.startsWith("/docs");
   const isBlocksActive = pathname.startsWith("/docs/blocks");
-  const showBlocks = isDocsActive ? !isBlocksActive : true;
+  const showBlocks = isDocsActive ? !isBlocksActive : false;
   return (
     <Button
       size="xs"

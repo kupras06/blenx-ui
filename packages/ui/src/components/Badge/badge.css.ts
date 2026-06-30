@@ -24,7 +24,7 @@ export const badgeSolid = style({
 
 export const badgeOutline = style({
   backgroundColor: "transparent",
-  color: badgeVars.fg,
+  color: badgeVars.borderColor,
   borderColor: badgeVars.borderColor,
 });
 
@@ -74,23 +74,99 @@ export const badgeDanger = style({
   },
 });
 
-const variantStyles: Record<string, string> = {
-  default: badgeDefault,
-  primary: badgePrimary,
-  secondary: badgeSecondary,
-  success: badgeSuccess,
-  danger: badgeDanger,
-};
+import { recipe } from "@vanilla-extract/recipes";
+export const badgeRecipe = recipe({
+  base: {
+    display: "inline-block",
+    padding: tokenVars.spacing.xs,
+    borderRadius: tokenVars.borderRadius.default,
+    fontSize: 12,
+    lineHeight: 1.2,
+    border: "1px solid transparent",
+  },
 
-const appearanceStyles: Record<string, string> = {
-  solid: badgeSolid,
-  outline: badgeOutline,
-  soft: badgeSoft,
-};
+  variants: {
+    appearance: {
+      solid: {},
+      soft: {
+        backgroundColor: "color-mix(in srgb, var(--badge-bg) 25%, transparent)",
+      },
+      outline: {
+        backgroundColor: "transparent",
+      },
+    },
 
-export function getBadgeStyles(variant: string, appearance: string): string {
-  const base = badgeBase;
-  const v = variantStyles[variant] ?? badgeDefault;
-  const a = appearanceStyles[appearance] ?? badgeSolid;
-  return `${base} ${v} ${a}`;
-}
+    variant: {
+      default: {
+        vars: {
+          [badgeVars.bg]: semanticVars.surface.raised,
+          [badgeVars.fg]: semanticVars.text.primary,
+          [badgeVars.borderColor]: semanticVars.border.default,
+        },
+      },
+
+      primary: {
+        vars: {
+          [badgeVars.bg]: semanticVars.interactive.primary,
+          [badgeVars.fg]: semanticVars.interactive.primaryFg,
+          [badgeVars.borderColor]: semanticVars.interactive.primary,
+        },
+      },
+
+      success: {
+        vars: {
+          [badgeVars.bg]: semanticVars.status.success,
+          [badgeVars.fg]: semanticVars.text.inverse,
+          [badgeVars.borderColor]: semanticVars.status.success,
+        },
+      },
+
+      danger: {
+        vars: {
+          [badgeVars.bg]: semanticVars.status.danger,
+          [badgeVars.fg]: semanticVars.text.inverse,
+          [badgeVars.borderColor]: semanticVars.status.danger,
+        },
+      },
+    },
+  },
+
+  compoundVariants: [
+    {
+      variants: {
+        appearance: "solid",
+      },
+      style: {
+        backgroundColor: badgeVars.bg,
+        color: badgeVars.fg,
+        borderColor: badgeVars.borderColor,
+      },
+    },
+
+    {
+      variants: {
+        appearance: "outline",
+      },
+      style: {
+        backgroundColor: "transparent",
+        color: badgeVars.borderColor,
+        borderColor: badgeVars.borderColor,
+      },
+    },
+
+    {
+      variants: {
+        appearance: "soft",
+      },
+      style: {
+        backgroundColor: `color-mix(in srgb, ${badgeVars.borderColor} 25%, transparent)`,
+        color: badgeVars.fg,
+      },
+    },
+  ],
+
+  defaultVariants: {
+    appearance: "solid",
+    variant: "default",
+  },
+});
