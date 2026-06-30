@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 export const root = style({
   display: "flex",
@@ -7,12 +7,12 @@ export const root = style({
   width: "100%",
   maxHeight: "100%",
   overflow: "hidden",
-  backgroundColor: themeContract.surface,
+  backgroundColor: semanticVars.surface.default,
   borderWidth: 1,
   borderStyle: "solid",
-  borderColor: themeContract.border,
+  borderColor: semanticVars.border.default,
   borderRadius: tokenVars.borderRadius.lg,
-  boxShadow: themeContract.shadowLg,
+  boxShadow: semanticVars.shadow.lg,
   boxSizing: "border-box",
   outline: "none",
 });
@@ -25,7 +25,7 @@ export const inputWrapper = style({
   paddingRight: tokenVars.spacing.sm,
   borderBottomWidth: 1,
   borderBottomStyle: "solid",
-  borderBottomColor: themeContract.borderSubtle,
+  borderBottomColor: semanticVars.border.subtle,
   boxSizing: "border-box",
 });
 
@@ -33,7 +33,7 @@ export const inputIcon = style({
   display: "flex",
   alignItems: "center",
   flexShrink: 0,
-  color: themeContract.contentDisabled,
+  color: semanticVars.text.disabled,
 });
 
 export const input = style({
@@ -44,10 +44,10 @@ export const input = style({
   backgroundColor: "transparent",
   fontSize: tokenVars.fontSize.sm,
   fontFamily: "inherit",
-  color: themeContract.contentPrimary,
+  color: semanticVars.text.primary,
   selectors: {
     "&::placeholder": {
-      color: themeContract.contentDisabled,
+      color: semanticVars.text.disabled,
     },
   },
 });
@@ -70,7 +70,7 @@ export const groupHeading = style({
   paddingRight: tokenVars.spacing.sm,
   fontSize: tokenVars.fontSize.xs,
   fontWeight: tokenVars.fontWeight.semibold,
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
 });
 
 export const item = style({
@@ -86,26 +86,26 @@ export const item = style({
   borderRadius: tokenVars.borderRadius.sm,
   fontSize: tokenVars.fontSize.sm,
   lineHeight: "1.4",
-  color: themeContract.contentPrimary,
+  color: semanticVars.text.primary,
   cursor: "pointer",
   userSelect: "none",
   outline: "none",
   selectors: {
     "&:hover": {
-      backgroundColor: themeContract.backgroundSubtle,
+      backgroundColor: semanticVars.background.subtle,
     },
     "&:focus-visible": {
-      boxShadow: `0 0 0 2px ${themeContract.focusRing}`,
+      boxShadow: `0 0 0 2px ${semanticVars.focus.ring}`,
     },
   },
 });
 
 export const itemActive = style({
-  backgroundColor: themeContract.backgroundSubtle,
+  backgroundColor: semanticVars.background.subtle,
 });
 
 export const itemDisabled = style({
-  color: themeContract.contentDisabled,
+  color: semanticVars.text.disabled,
   cursor: "default",
   selectors: {
     "&:hover": {
@@ -118,7 +118,7 @@ export const separator = style({
   height: 1,
   marginTop: tokenVars.spacing.xs,
   marginBottom: tokenVars.spacing.xs,
-  backgroundColor: themeContract.borderSubtle,
+  backgroundColor: semanticVars.border.subtle,
 });
 
 export const empty = style({
@@ -126,5 +126,5 @@ export const empty = style({
   paddingBottom: tokenVars.spacing.lg,
   textAlign: "center",
   fontSize: tokenVars.fontSize.sm,
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
 });

@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 export const root = style({
   display: "flex",
@@ -15,7 +15,7 @@ export const rootVertical = style({
 export const item = style({
   borderBottomWidth: tokenVars.borderWidth.thin,
   borderBottomStyle: "solid",
-  borderBottomColor: themeContract.borderSubtle,
+  borderBottomColor: semanticVars.border.subtle,
 });
 
 export const itemDisabled = style({
@@ -35,10 +35,10 @@ export const trigger = style({
   fontSize: tokenVars.fontSize.sm,
   lineHeight: tokenVars.lineHeight.normal,
   fontWeight: tokenVars.fontWeight.medium,
-  color: themeContract.contentPrimary,
+  color: semanticVars.text.primary,
   backgroundColor: "transparent",
   border: "none",
-  borderRadius: themeContract.borderRadius,
+  borderRadius: tokenVars.borderRadius.default,
   appearance: "none",
   fontFamily: "inherit",
   textAlign: "left",
@@ -52,17 +52,17 @@ export const trigger = style({
   transitionTimingFunction: tokenVars.easing.standard,
   selectors: {
     "&:hover": {
-      backgroundColor: themeContract.surfaceHover,
+      backgroundColor: semanticVars.background.subtle,
     },
     "&:focus-visible": {
-      outline: `2px solid ${themeContract.focusRing}`,
+      outline: `2px solid ${semanticVars.focus.ring}`,
     },
   },
 });
 
 export const triggerIcon = style({
   flexShrink: 0,
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
   transform: "rotate(0deg)",
   transitionProperty: "transform",
   transitionDuration: tokenVars.duration.normal,

@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 export const header = style({
   display: "flex",
@@ -30,8 +30,8 @@ export const footer = style({
 export const footerDefault = style({
   borderTopWidth: tokenVars.borderWidth.thin,
   borderTopStyle: "solid",
-  borderTopColor: themeContract.borderSubtle,
-  backgroundColor: themeContract.backgroundSubtle,
+  borderTopColor: semanticVars.border.subtle,
+  backgroundColor: semanticVars.background.subtle,
   paddingTop: tokenVars.spacing.md,
   paddingBottom: tokenVars.spacing.md,
 });
@@ -45,13 +45,13 @@ export const title = style({
   fontSize: tokenVars.fontSize.lg,
   lineHeight: tokenVars.lineHeight.tight,
   fontWeight: tokenVars.fontWeight.semibold,
-  color: themeContract.contentPrimary,
+  color: semanticVars.text.primary,
 });
 
 export const description = style({
   fontSize: tokenVars.fontSize.sm,
   lineHeight: tokenVars.lineHeight.normal,
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
 });
 
 export const panel = style({

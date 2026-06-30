@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 export const HANDLE_SIZE = 8;
 
@@ -35,22 +35,22 @@ export const handle = style({
   alignItems: "center",
   justifyContent: "center",
   flexShrink: 0,
-  backgroundColor: themeContract.borderSubtle,
+  backgroundColor: semanticVars.border.subtle,
   transitionProperty: "background-color",
   transitionDuration: tokenVars.duration.fast,
   outline: "none",
   selectors: {
     "&:hover": {
-      backgroundColor: themeContract.border,
+      backgroundColor: semanticVars.border.default,
     },
     "&:focus-visible": {
-      backgroundColor: themeContract.primary,
+      backgroundColor: semanticVars.interactive.primary,
     },
   },
 });
 
 export const handleActive = style({
-  backgroundColor: themeContract.primary,
+  backgroundColor: semanticVars.interactive.primary,
 });
 
 export const handleDisabled = style({

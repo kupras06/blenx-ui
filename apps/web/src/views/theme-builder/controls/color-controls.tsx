@@ -1,49 +1,86 @@
-import { Accordion, ColorPicker, Grid } from "@blenx-dev/ui";
+import { Accordion, ColorPicker, Grid, VStack } from "@blenx-dev/ui";
 import { useThemeBuilder } from "../theme-builder-context";
 import type { ThemeTokens } from "../theme-builder-context";
 
-const colorTokens = [
-  { key: "primary", label: "Primary" },
-  { key: "secondary", label: "Secondary" },
-  { key: "contentAccent", label: "Accent" },
-  { key: "sentimentPositive", label: "Success" },
-  { key: "sentimentWarning", label: "Warning" },
-  { key: "sentimentNegative", label: "Danger" },
-  { key: "background", label: "Background" },
-  { key: "surface", label: "Surface" },
-  { key: "border", label: "Border" },
-  { key: "contentPrimary", label: "Text Primary" },
-  { key: "contentSecondary", label: "Text Secondary" },
-] as const;
+const tokenGroups: { key: keyof ThemeTokens; label: string; subtokens: string[] }[] = [
+  { key: "background", label: "Background", subtokens: ["default", "subtle"] },
+  { key: "surface", label: "Surface", subtokens: ["default", "raised", "overlay", "floating"] },
+  { key: "text", label: "Text", subtokens: ["primary", "secondary", "disabled", "inverse"] },
+  { key: "border", label: "Border", subtokens: ["default", "subtle", "strong"] },
+  {
+    key: "interactive",
+    label: "Interactive",
+    subtokens: [
+      "primary",
+      "primaryFg",
+      "primaryHover",
+      "primaryBg",
+      "secondary",
+      "secondaryFg",
+      "secondaryHover",
+      "secondaryBg",
+      "neutral",
+      "neutralFg",
+    ],
+  },
+  {
+    key: "status",
+    label: "Status",
+    subtokens: [
+      "success",
+      "successBg",
+      "warning",
+      "warningBg",
+      "danger",
+      "dangerBg",
+      "info",
+      "infoBg",
+    ],
+  },
+  { key: "focus", label: "Focus", subtokens: ["ring"] },
+  { key: "shadow", label: "Shadow", subtokens: ["sm", "md", "lg", "xl"] },
+];
 
-function ColorControlItem({ tokenKey, label }: { tokenKey: keyof ThemeTokens; label: string }) {
-  const value = useThemeBuilder((s) => s.tokens[tokenKey as keyof typeof s.tokens] as string);
-  const updateTokenDebounced = useThemeBuilder((s) => s.updateTokenDebounced);
+function ColorGroupControl({
+  groupKey,
+  subtokens,
+}: {
+  groupKey: keyof ThemeTokens;
+  subtokens: string[];
+}) {
+  const tokens = useThemeBuilder((s) => s.tokens);
+  const updateToken = useThemeBuilder((s) => s.updateToken);
+  const group = tokens[groupKey] as Record<string, string>;
 
   return (
-    <ColorPicker
-      label={label}
-      value={value}
-      onChange={(color) => {
-        updateTokenDebounced(tokenKey, color);
-      }}
-    />
+    <Accordion.Item value={groupKey}>
+      <Accordion.Header>
+        <Accordion.Trigger>{groupKey}</Accordion.Trigger>
+      </Accordion.Header>
+      <Accordion.Panel>
+        <Grid columns={2}>
+          {subtokens.map((sub) => (
+            <ColorPicker
+              key={sub}
+              label={sub}
+              value={group[sub]}
+              onChange={(color) => updateToken(groupKey, sub, color)}
+            />
+          ))}
+        </Grid>
+      </Accordion.Panel>
+    </Accordion.Item>
   );
 }
 
 export function ColorControls() {
   return (
-    <Accordion.Item value="colors">
-      <Accordion.Header>
-        <Accordion.Trigger>Colors</Accordion.Trigger>
-      </Accordion.Header>
-      <Accordion.Panel>
-        <Grid columns={2}>
-          {colorTokens.map(({ key, label }) => (
-            <ColorControlItem key={key} tokenKey={key} label={label} />
-          ))}
-        </Grid>
-      </Accordion.Panel>
-    </Accordion.Item>
+    <Accordion.Root defaultValue={["background", "text", "interactive"]}>
+      <VStack gap="xs">
+        {tokenGroups.map((group) => (
+          <ColorGroupControl key={group.key} groupKey={group.key} subtokens={group.subtokens} />
+        ))}
+      </VStack>
+    </Accordion.Root>
   );
 }

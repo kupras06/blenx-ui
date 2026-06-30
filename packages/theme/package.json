@@ -1,9 +1,13 @@
 {
   "name": "@blenx-dev/theme",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "type": "module",
   "sideEffects": false,
   "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
     "./contract": {
       "types": "./src/contract.css.ts",
       "default": "./src/contract.css.ts"
@@ -11,10 +15,6 @@
     "./tokens": {
       "types": "./src/tokens.css.ts",
       "default": "./src/tokens.css.ts"
-    },
-    "./light-theme": {
-      "types": "./src/light-theme.css.ts",
-      "default": "./src/light-theme.css.ts"
     },
     "./reset": {
       "types": "./src/reset.css.ts",

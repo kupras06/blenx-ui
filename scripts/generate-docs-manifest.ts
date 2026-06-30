@@ -239,11 +239,6 @@ function generateSharedRegistry(): void {
       type: "registry:lib",
     },
     {
-      source: "packages/theme/src/light-theme.css.ts",
-      target: "@lib/theme/light-theme.css.ts",
-      type: "registry:lib",
-    },
-    {
       source: "packages/ui/src/utils/sprinkles.css.ts",
       target: "@utils/sprinkles.css.ts",
       type: "registry:lib",

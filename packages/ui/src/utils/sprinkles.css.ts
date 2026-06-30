@@ -1,4 +1,4 @@
-import { themeContract } from "@blenx-dev/theme/contract";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 import { defineProperties, createSprinkles } from "@vanilla-extract/sprinkles";
 
 export const spacing = {
@@ -44,14 +44,14 @@ const containerWidths = {
 };
 
 const colors = {
-  primary: themeContract.contentPrimary,
+  primary: semanticVars.text.primary,
   default: "currentColor",
-  secondary: themeContract.contentSecondary,
-  disabled: themeContract.contentDisabled,
-  error: themeContract.sentimentNegative,
-  success: themeContract.sentimentPositive,
-  warning: themeContract.sentimentWarning,
-  info: themeContract.sentimentInfo,
+  secondary: semanticVars.text.secondary,
+  disabled: semanticVars.text.disabled,
+  error: semanticVars.status.danger,
+  success: semanticVars.status.success,
+  warning: semanticVars.status.warning,
+  info: semanticVars.status.info,
 } as const;
 
 const responsiveConditions = {
@@ -81,7 +81,7 @@ const layoutProperties = defineProperties({
       none: "none",
     },
     borderRadius: {
-      default: themeContract.borderRadius,
+      default: tokenVars.borderRadius.default,
       none: "0",
       sm: "8px",
       medium: "12px",
@@ -106,14 +106,14 @@ const colorProperties = defineProperties({
   properties: {
     color: colors,
     backgroundColor: {
-      primary: themeContract.primary,
+      primary: semanticVars.interactive.primary,
       default: "inherit",
-      secondary: themeContract.secondary,
-      disabled: themeContract.contentDisabled,
-      error: themeContract.sentimentNegativeSubtle,
-      success: themeContract.sentimentPositiveSubtle,
-      warning: themeContract.sentimentWarningSubtle,
-      info: themeContract.sentimentInfoSubtle,
+      secondary: semanticVars.interactive.secondary,
+      disabled: semanticVars.text.disabled,
+      error: semanticVars.status.dangerBg,
+      success: semanticVars.status.successBg,
+      warning: semanticVars.status.warningBg,
+      info: semanticVars.status.infoBg,
     },
     borderColor: colors,
   },

@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 export const trigger = style({
   display: "inline-flex",
@@ -19,18 +19,18 @@ export const trigger = style({
   transition: "background-color 0.15s ease, box-shadow 0.15s ease",
   selectors: {
     "&:focus-visible": {
-      boxShadow: `0 0 0 2px ${themeContract.borderStrong}`,
+      boxShadow: `0 0 0 2px ${semanticVars.border.strong}`,
     },
   },
 });
 
 export const popup = style({
-  backgroundColor: themeContract.surface,
+  backgroundColor: semanticVars.surface.default,
   borderWidth: 1,
   borderStyle: "solid",
-  borderColor: themeContract.borderSubtle,
+  borderColor: semanticVars.border.subtle,
   borderRadius: tokenVars.borderRadius.lg,
-  boxShadow: themeContract.shadowXl,
+  boxShadow: semanticVars.shadow.xl,
   zIndex: 1000,
   padding: tokenVars.spacing.xs,
   display: "flex",
@@ -47,8 +47,8 @@ export const item = style({
   gap: tokenVars.spacing.sm,
   minHeight: 24,
   padding: `${tokenVars.spacing.xs} ${tokenVars.spacing.sm}`,
-  borderRadius: themeContract.borderRadius,
-  color: themeContract.contentPrimary,
+  borderRadius: tokenVars.borderRadius.default,
+  color: semanticVars.text.primary,
   fontSize: tokenVars.fontSize.sm,
   fontWeight: tokenVars.fontWeight.medium,
   lineHeight: 1.2,
@@ -62,41 +62,41 @@ export const item = style({
   transition: "background-color 0.15s ease, color 0.15s ease",
   selectors: {
     "&:hover": {
-      backgroundColor: themeContract.backgroundSubtle,
-      color: themeContract.contentPrimary,
+      backgroundColor: semanticVars.background.subtle,
+      color: semanticVars.text.primary,
     },
     "&:focus-visible": {
-      backgroundColor: themeContract.backgroundSubtle,
-      color: themeContract.contentPrimary,
-      boxShadow: `0 0 0 2px ${themeContract.borderStrong} inset`,
+      backgroundColor: semanticVars.background.subtle,
+      color: semanticVars.text.primary,
+      boxShadow: `0 0 0 2px ${semanticVars.border.strong} inset`,
     },
     "&:active": {
-      backgroundColor: themeContract.borderSubtle,
+      backgroundColor: semanticVars.border.subtle,
     },
   },
 });
 
 export const itemDestructive = style({
-  color: themeContract.sentimentNegative,
+  color: semanticVars.status.danger,
   selectors: {
     "&:hover": {
-      backgroundColor: themeContract.sentimentNegativeSubtle,
-      color: themeContract.sentimentNegative,
+      backgroundColor: semanticVars.status.dangerBg,
+      color: semanticVars.status.danger,
     },
     "&:focus-visible": {
-      backgroundColor: themeContract.sentimentNegativeSubtle,
-      color: themeContract.sentimentNegative,
-      boxShadow: `0 0 0 2px ${themeContract.sentimentNegative} inset`,
+      backgroundColor: semanticVars.status.dangerBg,
+      color: semanticVars.status.danger,
+      boxShadow: `0 0 0 2px ${semanticVars.status.danger} inset`,
     },
     "&:active": {
-      backgroundColor: themeContract.sentimentNegativeSubtle,
+      backgroundColor: semanticVars.status.dangerBg,
     },
   },
 });
 
 export const separator = style({
   height: 1,
-  backgroundColor: themeContract.borderSubtle,
+  backgroundColor: semanticVars.border.subtle,
   border: "none",
 });
 
@@ -104,7 +104,7 @@ export const groupLabel = style({
   padding: `${tokenVars.spacing.sm} ${tokenVars.spacing.md} ${tokenVars.spacing.xs}`,
   fontSize: tokenVars.fontSize.xs,
   fontWeight: tokenVars.fontWeight.semibold,
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
   textTransform: "uppercase",
   letterSpacing: tokenVars.letterSpacing.wide,
 });
@@ -115,7 +115,7 @@ export const inset = style({
 
 export const shortcut = style({
   marginLeft: "auto",
-  color: themeContract.contentDisabled,
+  color: semanticVars.text.disabled,
   fontSize: tokenVars.fontSize.xs,
   fontWeight: tokenVars.fontWeight.medium,
 });

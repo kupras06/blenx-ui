@@ -1,4 +1,4 @@
-import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 import { style } from "@vanilla-extract/css";
 
 export const backdrop = style({
@@ -32,14 +32,14 @@ export const popup = style({
   transformOrigin: "center",
   borderWidth: tokenVars.borderWidth.thin,
   borderStyle: "solid",
-  borderColor: themeContract.border,
-  borderRadius: themeContract.borderRadius,
-  backgroundColor: themeContract.surface,
-  color: themeContract.contentPrimary,
+  borderColor: semanticVars.border.default,
+  borderRadius: tokenVars.borderRadius.default,
+  backgroundColor: semanticVars.surface.default,
+  color: semanticVars.text.primary,
   boxSizing: "border-box",
   opacity: "calc(1 - var(--nested-dialogs))",
   outline: "none",
-  boxShadow: themeContract.shadowLg,
+  boxShadow: semanticVars.shadow.lg,
   transitionProperty: "opacity, translate",
   transitionDuration: "200ms",
   transitionTimingFunction: "ease-in-out",

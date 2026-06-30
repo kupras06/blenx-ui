@@ -1,6 +1,6 @@
 import { recipe } from "@vanilla-extract/recipes";
 import { style } from "@vanilla-extract/css";
-import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 export const separator = recipe({
   base: {
@@ -14,8 +14,8 @@ export const separator = recipe({
       vertical: { width: 1, height: "100%" },
     },
     tone: {
-      subtle: { color: themeContract.borderSubtle },
-      strong: { color: themeContract.borderStrong },
+      subtle: { color: semanticVars.border.subtle },
+      strong: { color: semanticVars.border.strong },
     },
   },
   defaultVariants: {
@@ -51,7 +51,7 @@ export const withLabel = style({
 export const label = style({
   paddingLeft: tokenVars.spacing.xs,
   paddingRight: tokenVars.spacing.xs,
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
   fontSize: tokenVars.fontSize.xs,
   fontWeight: tokenVars.fontWeight.medium,
   lineHeight: 1.2,

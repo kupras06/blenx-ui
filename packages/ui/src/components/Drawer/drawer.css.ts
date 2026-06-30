@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 export const swipeArea = style({
   position: "fixed",
@@ -95,10 +95,10 @@ export const popup = style({
   minWidth: 0,
   width: "100%",
   boxSizing: "border-box",
-  backgroundColor: themeContract.surface,
-  color: themeContract.contentPrimary,
+  backgroundColor: semanticVars.surface.default,
+  color: semanticVars.text.primary,
   borderStyle: "solid",
-  borderColor: themeContract.border,
+  borderColor: semanticVars.border.default,
   outline: "none",
   willChange: "transform",
   transitionProperty: "transform, box-shadow, height, background-color, margin, padding",
@@ -113,7 +113,7 @@ export const popup = style({
 });
 
 export const popupDefault = style({
-  boxShadow: themeContract.shadowLg,
+  boxShadow: semanticVars.shadow.lg,
 });
 
 export const popupStraight = style({
@@ -190,8 +190,8 @@ export const footer = style({
 export const footerDefault = style({
   borderTopWidth: tokenVars.borderWidth.thin,
   borderTopStyle: "solid",
-  borderTopColor: themeContract.borderSubtle,
-  backgroundColor: themeContract.backgroundSubtle,
+  borderTopColor: semanticVars.border.subtle,
+  backgroundColor: semanticVars.background.subtle,
   paddingTop: tokenVars.spacing.md,
   paddingBottom: tokenVars.spacing.md,
 });
@@ -210,7 +210,7 @@ export const title = style({
 export const description = style({
   fontSize: tokenVars.fontSize.sm,
   lineHeight: 1.4,
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
 });
 
 export const panel = style({
@@ -273,7 +273,7 @@ export const menuItem = style({
   borderRadius: tokenVars.borderRadius.sm,
   border: "none",
   backgroundColor: "transparent",
-  color: themeContract.contentPrimary,
+  color: semanticVars.text.primary,
   fontSize: tokenVars.fontSize.md,
   textAlign: "left",
   cursor: "default",
@@ -281,12 +281,12 @@ export const menuItem = style({
 });
 
 export const menuItemDestructive = style({
-  color: themeContract.sentimentNegative,
+  color: semanticVars.status.danger,
 });
 
 export const separator = style({
   height: "1px",
-  backgroundColor: themeContract.borderSubtle,
+  backgroundColor: semanticVars.border.subtle,
   marginTop: tokenVars.spacing.xs,
   marginBottom: tokenVars.spacing.xs,
 });
@@ -303,7 +303,7 @@ export const menuGroupLabel = style({
   paddingRight: tokenVars.spacing.sm,
   fontSize: tokenVars.fontSize.xs,
   fontWeight: tokenVars.fontWeight.medium,
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
 });
 
 export const menuTrigger = style({
@@ -318,7 +318,7 @@ export const menuTrigger = style({
   borderRadius: tokenVars.borderRadius.sm,
   backgroundColor: "transparent",
   border: "none",
-  color: themeContract.contentPrimary,
+  color: semanticVars.text.primary,
 });
 
 export const menuTriggerIcon = style({
@@ -339,7 +339,7 @@ export const menuCheckbox = style({
   borderRadius: tokenVars.borderRadius.sm,
   backgroundColor: "transparent",
   border: "none",
-  color: themeContract.contentPrimary,
+  color: semanticVars.text.primary,
 });
 
 export const menuCheckboxDefault = style({
@@ -362,14 +362,14 @@ export const menuCheckboxSwitchIndicator = style({
   alignItems: "center",
   padding: "2px",
   borderRadius: tokenVars.borderRadius.full,
-  backgroundColor: themeContract.borderSubtle,
+  backgroundColor: semanticVars.border.subtle,
 });
 
 export const menuCheckboxSwitchThumb = style({
   width: "14px",
   height: "14px",
   borderRadius: tokenVars.borderRadius.full,
-  backgroundColor: themeContract.background,
+  backgroundColor: semanticVars.background.default,
 });
 
 export const menuCheckboxIndicator = style({
@@ -392,7 +392,7 @@ export const menuRadio = style({
   borderRadius: tokenVars.borderRadius.sm,
   backgroundColor: "transparent",
   border: "none",
-  color: themeContract.contentPrimary,
+  color: semanticVars.text.primary,
   gridTemplateColumns: "1rem 1fr",
 });
 

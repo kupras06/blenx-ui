@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 export const root = style({
   height: "100%",
@@ -11,14 +11,14 @@ export const root = style({
 export const viewport = style({
   height: "100%",
   minWidth: 0,
-  borderRadius: themeContract.borderRadius,
+  borderRadius: tokenVars.borderRadius.default,
   outline: "none",
   boxSizing: "border-box",
   overscrollBehaviorY: "contain",
   overscrollBehaviorX: "contain",
   selectors: {
     "&:focus-visible": {
-      boxShadow: `0 0 0 2px ${themeContract.borderStrong}`,
+      boxShadow: `0 0 0 2px ${semanticVars.border.strong}`,
     },
   },
 });
@@ -74,6 +74,6 @@ export const scrollbarVertical = style({
 export const thumb = style({
   position: "relative",
   flexGrow: 1,
-  borderRadius: themeContract.borderRadius,
-  backgroundColor: themeContract.borderStrong,
+  borderRadius: tokenVars.borderRadius.default,
+  backgroundColor: semanticVars.border.strong,
 });

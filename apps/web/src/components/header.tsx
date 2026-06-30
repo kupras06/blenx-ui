@@ -4,7 +4,7 @@ import { useMediaQuery, useLocalStorage } from "@uidotdev/usehooks";
 import { GITHUB_URL } from "@/constants";
 import { useSidebarStore } from "@/stores/docs-sidebar";
 import { Button, HStack, IconButton } from "@blenx-dev/ui";
-import { darkTheme, lightTheme, tokenTheme } from "@/lib/app-theme.css";
+import { darkClass, lightClass, tokenThemeClass } from "@/lib/app-theme.css";
 import { useEffect } from "react";
 
 function DocsRouteOption() {
@@ -55,11 +55,10 @@ export function ThemeEffect() {
 function ThemeInner() {
   const [storedTheme] = useLocalStorage<"light" | "dark">("blenx-theme", "light");
   useEffect(() => {
-    const next = storedTheme === "dark" ? "light" : "dark";
-    const nextTheme = next === "light" ? lightTheme : darkTheme;
-    document.documentElement.classList.remove(lightTheme, darkTheme);
-    document.documentElement.classList.add(tokenTheme, nextTheme);
-    document.documentElement.setAttribute("data-theme", next);
+    const themeClass = storedTheme === "light" ? lightClass : darkClass;
+    document.documentElement.classList.remove(lightClass, darkClass);
+    document.documentElement.classList.add(tokenThemeClass, themeClass);
+    document.documentElement.setAttribute("data-theme", storedTheme);
   }, [storedTheme]);
 
   return null;
@@ -69,9 +68,9 @@ function ThemeToggle() {
 
   const handleToggle = () => {
     const next = storedTheme === "dark" ? "light" : "dark";
-    const nextTheme = next === "light" ? lightTheme : darkTheme;
-    document.documentElement.classList.remove(lightTheme, darkTheme);
-    document.documentElement.classList.add(tokenTheme, nextTheme);
+    const nextTheme = next === "light" ? lightClass : darkClass;
+    document.documentElement.classList.remove(lightClass, darkClass);
+    document.documentElement.classList.add(tokenThemeClass, nextTheme);
     document.documentElement.setAttribute("data-theme", next);
     setStoredTheme(next);
   };

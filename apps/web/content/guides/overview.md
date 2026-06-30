@@ -13,8 +13,6 @@ navigation:
   link: "/docs"
 ---
 
-# Blenx UI
-
 Blenx UI is a modern React component library built on top of Vanilla Extract and Base UI primitives. It combines the ownership model popularized by shadcn/ui with a registry-first architecture, allowing teams to install components as source code instead of consuming them through a runtime package.
 
 The goal is simple: provide production-ready components without taking control away from developers.

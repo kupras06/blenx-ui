@@ -110,7 +110,7 @@ function HomeComponent() {
             </Text>
           </Container>
         </VStack>
-        <Container content="center" maxWidth="lg" overflow="auto">
+        <Container content="center" maxWidth="2xl" overflow="auto">
           <Table columnData={comparisonColumns} rowData={comparisonRows} rowKey="feature" />
         </Container>
       </VStack>

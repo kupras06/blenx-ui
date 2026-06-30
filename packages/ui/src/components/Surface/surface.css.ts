@@ -1,25 +1,25 @@
 import { recipe } from "@vanilla-extract/recipes";
-import { themeContract } from "@blenx-dev/theme/contract";
+import { semanticVars } from "@blenx-dev/theme/contract";
 
 export const variantRecipe = recipe({
   base: { textDecoration: "none" },
   variants: {
     variant: {
       default: {
-        backgroundColor: themeContract.surface,
+        backgroundColor: semanticVars.surface.default,
       },
       outline: {
-        backgroundColor: themeContract.surface,
+        backgroundColor: semanticVars.surface.default,
         borderWidth: 1,
         borderStyle: "solid",
-        borderColor: themeContract.border,
+        borderColor: semanticVars.border.default,
       },
       raised: {
-        backgroundColor: themeContract.surfaceRaised,
-        boxShadow: themeContract.shadowMd,
+        backgroundColor: semanticVars.surface.raised,
+        boxShadow: semanticVars.shadow.md,
       },
       sunken: {
-        backgroundColor: themeContract.surfaceSubtle,
+        backgroundColor: semanticVars.background.subtle,
       },
     },
     interactive: {
@@ -27,10 +27,10 @@ export const variantRecipe = recipe({
         cursor: "pointer",
         selectors: {
           "&:hover": {
-            backgroundColor: themeContract.surfaceHover,
+            backgroundColor: semanticVars.background.subtle,
           },
           "&:focus-visible": {
-            outline: `2px solid ${themeContract.focusRing}`,
+            outline: `2px solid ${semanticVars.focus.ring}`,
             outlineOffset: "2px",
           },
         },

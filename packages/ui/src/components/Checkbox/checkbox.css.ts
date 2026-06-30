@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 export const root = style({
   position: "relative",
@@ -12,14 +12,14 @@ export const root = style({
   borderRadius: tokenVars.borderRadius.sm,
   borderWidth: tokenVars.borderWidth.thin,
   borderStyle: "solid",
-  borderColor: themeContract.border,
-  backgroundColor: themeContract.background,
+  borderColor: semanticVars.border.default,
+  backgroundColor: semanticVars.background.default,
   outline: "none",
   transitionProperty: "box-shadow",
   transitionDuration: "150ms",
   selectors: {
     "&:focus-visible": {
-      boxShadow: `0 0 0 2px ${themeContract.focusRing}`,
+      boxShadow: `0 0 0 2px ${semanticVars.focus.ring}`,
     },
   },
   "@media": {
@@ -52,16 +52,16 @@ export const indicator = style({
   alignItems: "center",
   justifyContent: "center",
   borderRadius: tokenVars.borderRadius.sm,
-  color: themeContract.contentOnPrimary,
+  color: semanticVars.interactive.primaryFg,
 });
 
 export const indicatorChecked = style({
-  backgroundColor: themeContract.primary,
-  color: themeContract.contentOnPrimary,
+  backgroundColor: semanticVars.interactive.primary,
+  color: semanticVars.interactive.primaryFg,
 });
 
 export const indicatorIndeterminate = style({
-  color: themeContract.contentPrimary,
+  color: semanticVars.text.primary,
 });
 
 export const icon = style({

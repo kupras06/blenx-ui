@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 export const root = style({
   display: "flex",
@@ -38,7 +38,7 @@ export const listDefault = style({
   backgroundColor: "transparent",
   borderBottomWidth: 1,
   borderBottomStyle: "solid",
-  borderBottomColor: themeContract.borderSubtle,
+  borderBottomColor: semanticVars.border.subtle,
   borderRadius: 0,
 });
 
@@ -48,7 +48,7 @@ export const listUnderline = style({
   gap: tokenVars.spacing.lg,
   borderBottomWidth: 1,
   borderBottomStyle: "solid",
-  borderBottomColor: themeContract.borderSubtle,
+  borderBottomColor: semanticVars.border.subtle,
   padding: 0,
 });
 
@@ -62,7 +62,7 @@ export const listUnderlineVertical = style({
   backgroundColor: "transparent",
   borderRightWidth: 1,
   borderRightStyle: "solid",
-  borderRightColor: themeContract.borderSubtle,
+  borderRightColor: semanticVars.border.subtle,
   borderRadius: 0,
 });
 
@@ -72,24 +72,24 @@ export const listVertical = style({
   minWidth: 220,
   borderRightWidth: 1,
   borderRightStyle: "solid",
-  borderRightColor: themeContract.borderSubtle,
+  borderRightColor: semanticVars.border.subtle,
 });
 
 export const tabActiveVertical = style({
-  color: themeContract.contentPrimary,
+  color: semanticVars.text.primary,
   fontWeight: tokenVars.fontWeight.semibold,
-  backgroundColor: themeContract.backgroundSubtle,
+  backgroundColor: semanticVars.background.subtle,
   borderRightWidth: 2,
   borderRightStyle: "solid",
-  borderRightColor: themeContract.secondary,
+  borderRightColor: semanticVars.interactive.secondary,
 });
 
 export const tabUnderlineActive = style({
-  color: themeContract.contentPrimary,
+  color: semanticVars.text.primary,
   fontWeight: tokenVars.fontWeight.semibold,
   borderBottomWidth: 2,
   borderBottomStyle: "solid",
-  borderBottomColor: themeContract.contentPrimary,
+  borderBottomColor: semanticVars.text.primary,
 });
 
 export const listGhost = style({
@@ -100,17 +100,17 @@ export const listGhost = style({
 export const tabGhost = style({
   padding: `${tokenVars.spacing.sm} ${tokenVars.spacing.md}`,
   borderRadius: tokenVars.borderRadius.md,
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
   selectors: {
     "&:hover": {
-      backgroundColor: themeContract.backgroundSubtle,
+      backgroundColor: semanticVars.background.subtle,
     },
   },
 });
 
 export const tabGhostActive = style({
-  backgroundColor: themeContract.backgroundSubtle,
-  color: themeContract.contentPrimary,
+  backgroundColor: semanticVars.background.subtle,
+  color: semanticVars.text.primary,
   fontWeight: tokenVars.fontWeight.semibold,
 });
 
@@ -118,27 +118,27 @@ export const listSegmented = style({
   display: "flex",
   gap: tokenVars.spacing.xxs,
   padding: tokenVars.spacing.xxs,
-  backgroundColor: themeContract.backgroundSubtle,
+  backgroundColor: semanticVars.background.subtle,
   borderWidth: 1,
   borderStyle: "solid",
-  borderColor: themeContract.borderSubtle,
+  borderColor: semanticVars.border.subtle,
   borderRadius: tokenVars.borderRadius.lg,
 });
 
 export const tabSegmented = style({
   padding: `${tokenVars.spacing.sm} ${tokenVars.spacing.md}`,
   borderRadius: tokenVars.borderRadius.md,
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
   selectors: {
     "&:hover": {
-      backgroundColor: themeContract.surface,
+      backgroundColor: semanticVars.surface.default,
     },
   },
 });
 
 export const tabSegmentedActive = style({
-  backgroundColor: themeContract.surface,
-  color: themeContract.contentOnPrimary,
+  backgroundColor: semanticVars.surface.default,
+  color: semanticVars.interactive.primaryFg,
   fontWeight: tokenVars.fontWeight.semibold,
 });
 
@@ -169,7 +169,7 @@ export const tabDefault = style({
   position: "relative",
   padding: `${tokenVars.spacing.sm} ${tokenVars.spacing.md}`,
   borderRadius: 0,
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
   fontSize: tokenVars.fontSize.sm,
   fontWeight: tokenVars.fontWeight.medium,
   lineHeight: 1.2,
@@ -177,11 +177,11 @@ export const tabDefault = style({
   backgroundColor: "transparent",
   selectors: {
     "&:hover": {
-      color: themeContract.contentPrimary,
-      backgroundColor: themeContract.backgroundSubtle,
+      color: semanticVars.text.primary,
+      backgroundColor: semanticVars.background.subtle,
     },
     "&:focus-visible": {
-      boxShadow: `inset 0 -2px 0 ${themeContract.secondary}`,
+      boxShadow: `inset 0 -2px 0 ${semanticVars.interactive.secondary}`,
     },
   },
 });
@@ -192,7 +192,7 @@ export const tabVertical = style({
 });
 
 export const tabActive = style({
-  color: themeContract.contentPrimary,
+  color: semanticVars.text.primary,
   fontWeight: tokenVars.fontWeight.semibold,
 });
 
@@ -202,24 +202,24 @@ export const tabDisabled = style({
 });
 
 export const tabActiveDefault = style({
-  color: themeContract.contentPrimary,
+  color: semanticVars.text.primary,
   fontWeight: tokenVars.fontWeight.semibold,
   backgroundColor: "transparent",
   borderBottomWidth: 2,
   borderBottomStyle: "solid",
-  borderBottomColor: themeContract.secondary,
+  borderBottomColor: semanticVars.interactive.secondary,
 });
 
 export const tabUnderline = style({
   padding: `${tokenVars.spacing.sm} 0`,
   borderRadius: 0,
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
   fontSize: tokenVars.fontSize.sm,
   fontWeight: tokenVars.fontWeight.medium,
   backgroundColor: "transparent",
   selectors: {
     "&:hover": {
-      color: themeContract.contentPrimary,
+      color: semanticVars.text.primary,
     },
   },
 });
@@ -236,7 +236,7 @@ export const indicatorDefault = style({
 export const indicatorUnderline = style({
   zIndex: 0,
   borderRadius: tokenVars.borderRadius.full,
-  backgroundColor: themeContract.secondary,
+  backgroundColor: semanticVars.interactive.secondary,
 });
 
 export const panel = style({

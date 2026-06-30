@@ -1,10 +1,6 @@
-import { Accordion, HStack, Slider, Text, VStack } from "@blenx-dev/ui";
-import { useThemeBuilder } from "../theme-builder-context";
+import { Accordion, Box, Text, VStack } from "@blenx-dev/ui";
 
 export function TypographyControls() {
-  const tokens = useThemeBuilder((s) => s.tokens);
-  const updateToken = useThemeBuilder((s) => s.updateToken);
-
   return (
     <Accordion.Item value="typography">
       <Accordion.Header>
@@ -12,19 +8,11 @@ export function TypographyControls() {
       </Accordion.Header>
       <Accordion.Panel>
         <VStack gap="md">
-          <HStack justify="between">
-            <Text variant="body2">Base Font Size</Text>
-            <Text variant="body2" color="secondary">
-              {tokens.fontSize}
+          <Box>
+            <Text variant="caption" color="secondary">
+              Font sizes and typography tokens are configured via tokenVars in app-theme.css.ts.
             </Text>
-          </HStack>
-          <Slider
-            min={12}
-            max={20}
-            step={1}
-            value={parseInt(tokens.fontSize, 10)}
-            onValueChange={(value) => updateToken("fontSize", `${value}px`)}
-          />
+          </Box>
         </VStack>
       </Accordion.Panel>
     </Accordion.Item>

@@ -1,28 +1,28 @@
-import { themeContract } from "@blenx-dev/theme/contract";
+import { semanticVars } from "@blenx-dev/theme/contract";
 import { recipe } from "@vanilla-extract/recipes";
 
 export const alertVariants = recipe({
   variants: {
     variant: {
       info: {
-        backgroundColor: themeContract.sentimentInfoSubtle,
-        color: themeContract.sentimentInfo,
-        borderColor: themeContract.sentimentInfo,
+        backgroundColor: semanticVars.status.infoBg,
+        color: semanticVars.status.info,
+        borderColor: semanticVars.status.info,
       },
       success: {
-        backgroundColor: themeContract.sentimentPositiveSubtle,
-        color: themeContract.sentimentPositive,
-        borderColor: themeContract.sentimentPositive,
+        backgroundColor: semanticVars.status.successBg,
+        color: semanticVars.status.success,
+        borderColor: semanticVars.status.success,
       },
       warning: {
-        backgroundColor: themeContract.sentimentWarningSubtle,
-        color: themeContract.sentimentWarning,
-        borderColor: themeContract.sentimentWarning,
+        backgroundColor: semanticVars.status.warningBg,
+        color: semanticVars.status.warning,
+        borderColor: semanticVars.status.warning,
       },
       error: {
-        backgroundColor: themeContract.sentimentNegativeSubtle,
-        color: themeContract.sentimentNegative,
-        borderColor: themeContract.sentimentNegative,
+        backgroundColor: semanticVars.status.dangerBg,
+        color: semanticVars.status.danger,
+        borderColor: semanticVars.status.danger,
       },
     },
   },

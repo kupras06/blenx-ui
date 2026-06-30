@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 export const disabled = style({
   pointerEvents: "none",
@@ -29,7 +29,7 @@ export const track = style({
   flexGrow: 1,
   userSelect: "none",
   borderRadius: tokenVars.borderRadius.full,
-  backgroundColor: themeContract.border,
+  backgroundColor: semanticVars.border.default,
 });
 
 export const trackHorizontal = style({
@@ -44,7 +44,7 @@ export const trackVertical = style({
 export const indicator = style({
   userSelect: "none",
   borderRadius: tokenVars.borderRadius.full,
-  backgroundColor: themeContract.primary,
+  backgroundColor: semanticVars.interactive.primary,
 });
 
 export const thumb = style({
@@ -54,17 +54,17 @@ export const thumb = style({
   borderRadius: tokenVars.borderRadius.full,
   borderWidth: tokenVars.borderWidth.thin,
   borderStyle: "solid",
-  borderColor: themeContract.border,
-  backgroundColor: themeContract.surface,
+  borderColor: semanticVars.border.default,
+  backgroundColor: semanticVars.surface.default,
   outline: "none",
   transitionProperty: "box-shadow, transform",
   transitionDuration: "150ms",
   width: 16,
   height: 16,
-  boxShadow: themeContract.shadowSm,
+  boxShadow: semanticVars.shadow.sm,
   selectors: {
     "&:has(:focus-visible)": {
-      boxShadow: `0 0 0 3px ${themeContract.focusRing}`,
+      boxShadow: `0 0 0 3px ${semanticVars.focus.ring}`,
     },
   },
 });

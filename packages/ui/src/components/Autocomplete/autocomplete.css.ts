@@ -1,11 +1,11 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 export const inputGroup = style({
   position: "relative",
   width: "100%",
   minWidth: 0,
-  color: themeContract.contentPrimary,
+  color: semanticVars.text.primary,
 });
 
 export const inputSize = style({
@@ -97,10 +97,10 @@ export const popupShell = style({
   maxWidth: "var(--available-width)",
   borderWidth: tokenVars.borderWidth.thin,
   borderStyle: "solid",
-  borderColor: themeContract.border,
+  borderColor: semanticVars.border.default,
   borderRadius: tokenVars.borderRadius.lg,
-  backgroundColor: themeContract.surface,
-  boxShadow: themeContract.shadowLg,
+  backgroundColor: semanticVars.surface.default,
+  boxShadow: semanticVars.shadow.lg,
   transformOrigin: "var(--transform-origin)",
   transitionProperty: "transform, opacity",
   transitionDuration: "150ms",
@@ -111,7 +111,7 @@ export const popup = style({
   flex: 1,
   flexDirection: "column",
   maxHeight: "min(var(--available-height), 23rem)",
-  color: themeContract.contentPrimary,
+  color: semanticVars.text.primary,
 });
 
 export const group = style({
@@ -123,7 +123,7 @@ export const separator = style({
   height: "1px",
   marginBlock: tokenVars.spacing.xs,
   marginInline: tokenVars.spacing.sm,
-  backgroundColor: themeContract.border,
+  backgroundColor: semanticVars.border.default,
 });
 
 export const groupLabel = style({
@@ -131,14 +131,14 @@ export const groupLabel = style({
   paddingInline: tokenVars.spacing["2"],
   fontSize: tokenVars.fontSize.xs,
   fontWeight: tokenVars.fontWeight.medium,
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
 });
 
 export const empty = style({
   padding: tokenVars.spacing.sm,
   textAlign: "center",
   fontSize: tokenVars.fontSize.sm,
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
 });
 
 export const list = style({
@@ -150,7 +150,7 @@ export const status = style({
   paddingBlock: tokenVars.spacing.sm,
   fontSize: tokenVars.fontSize.xs,
   fontWeight: tokenVars.fontWeight.medium,
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
 });
 
 export const item = style({

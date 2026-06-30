@@ -12,6 +12,7 @@ import {
   colorSecondary,
 } from "./table.css";
 import * as tableCss from "./table.css";
+import { Box } from "../Box";
 
 export interface Column<TData> {
   key: keyof TData;
@@ -63,7 +64,7 @@ export function Table<TData>({
   color,
 }: TableProps<TData>) {
   return (
-    <div className={clsx(wrapper, color && colorSecondary, className)} style={style}>
+    <Box className={clsx(wrapper, color && colorSecondary, className)} style={style}>
       <table className={clsx(root, color && colorSecondary)}>
         <thead className={head}>
           <tr>
@@ -111,6 +112,6 @@ export function Table<TData>({
           })}
         </tbody>
       </table>
-    </div>
+    </Box>
   );
 }

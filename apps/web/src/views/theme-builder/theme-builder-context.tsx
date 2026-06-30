@@ -1,104 +1,129 @@
-import { themeContract } from "@blenx-dev/theme/contract";
-import { tokenVarsDefaults } from "@blenx-dev/theme/tokens";
+import type { SemanticTokens } from "@blenx-dev/theme";
 import { create } from "zustand";
 import { createContext } from "zustand-utils";
 
-type ThemeKeys = keyof typeof themeContract;
-export type ThemeTokens = Record<ThemeKeys, string>;
+export type ThemeTokenGroup = keyof SemanticTokens;
+export type ThemeTokenValue = string;
+export type ThemeTokens = SemanticTokens;
 
-export const defaultTokens: ThemeTokens = {
-  primary: "#243142",
-  primarySubtle: "#3A4A5D",
-  secondary: "#C9822A",
-  background: "#F7F4EE",
-  backgroundSubtle: "#ECE8E0",
-  surface: "#FFFFFF",
-  surfaceSubtle: "#ECE8E0",
-  surfaceRaised: "#FEFCFA",
-  surfaceHover: "#E8E6DE",
-  surfaceOverlay: "rgba(0,0,0,0.4)",
-  border: "#D6DDE5",
-  borderSubtle: "#E7EBF0",
-  borderStrong: "#B8C2CF",
-  contentPrimary: "#223042",
-  contentSecondary: "#5A6878",
-  contentDisabled: "#A9B2BD",
-  contentAccent: "#243142",
-  contentOnPrimary: "#FFFFFF",
-  sentimentNegative: "#D63031",
-  sentimentNegativeSubtle: "#FFEAEA",
-  sentimentPositive: "#27AE60",
-  sentimentPositiveSubtle: "#EAFAF1",
-  sentimentWarning: "#F39C12",
-  sentimentWarningSubtle: "#FEF9E7",
-  sentimentInfo: "#2980B9",
-  sentimentInfoSubtle: "#EBF5FB",
-  focusRing: "#4A90D9",
-  fontSize: tokenVarsDefaults.fontSize.md,
-  borderRadius: "medium",
-  shadowSm: "0 1px 3px rgba(36,49,66,0.08), 0 1px 2px rgba(36,49,66,0.04)",
-  shadowMd: "0 4px 12px rgba(36,49,66,0.10), 0 2px 4px rgba(36,49,66,0.06)",
-  shadowLg: "0 8px 24px rgba(36,49,66,0.12), 0 4px 8px rgba(36,49,66,0.06)",
-  shadowXl: "0 20px 48px rgba(36,49,66,0.15), 0 8px 16px rgba(36,49,66,0.08)",
-  primaryHover: "#1B2533",
-  sentimentPositiveHover: "#219150",
-  sentimentWarningHover: "#D68910",
-  sentimentNegativeHover: "#B9292A",
-  sentimentInfoHover: "#206694",
-  hoverOverlay: "rgba(0,0,0,0.05)",
-  hoverOverlaySoft: "rgba(0,0,0,0.02)",
+export const defaultTokens: SemanticTokens = {
+  background: {
+    default: "#F7F4EE",
+    subtle: "#ECE8E0",
+  },
+  surface: {
+    default: "#FFFFFF",
+    raised: "#FEFCFA",
+    overlay: "rgba(0,0,0,0.4)",
+    floating: "#FFFFFF",
+  },
+  text: {
+    primary: "#223042",
+    secondary: "#5A6878",
+    disabled: "#A9B2BD",
+    inverse: "#FFFFFF",
+  },
+  border: {
+    default: "#D6DDE5",
+    subtle: "#E7EBF0",
+    strong: "#B8C2CF",
+  },
+  interactive: {
+    primary: "#243142",
+    primaryFg: "#FFFFFF",
+    primaryHover: "#1B2533",
+    primaryBg: "#E8EDF3",
+    secondary: "#C9822A",
+    secondaryFg: "#FFFFFF",
+    secondaryHover: "#B07020",
+    secondaryBg: "#FDF3E8",
+    neutral: "#6B7280",
+    neutralFg: "#FFFFFF",
+  },
+  status: {
+    success: "#27AE60",
+    successBg: "#EAFAF1",
+    warning: "#F39C12",
+    warningBg: "#FEF9E7",
+    danger: "#D63031",
+    dangerBg: "#FFEAEA",
+    info: "#2980B9",
+    infoBg: "#EBF5FB",
+  },
+  focus: {
+    ring: "#4A90D9",
+  },
+  shadow: {
+    sm: "0 1px 2px rgba(0,0,0,0.05)",
+    md: "0 4px 6px rgba(0,0,0,0.07)",
+    lg: "0 10px 15px rgba(0,0,0,0.1)",
+    xl: "0 20px 25px rgba(0,0,0,0.15)",
+  },
 };
 
 interface ThemeBuilderStore {
   tokens: ThemeTokens;
-  selectedToken: keyof ThemeTokens | null;
   sidebarOpen: boolean;
-  setSelectedToken: (key: keyof ThemeTokens | null) => void;
   toggleSidebar: () => void;
-  updateToken: (key: keyof ThemeTokens, value: string | number) => void;
-  updateTokenDebounced: (key: keyof ThemeTokens, value: string | number) => void;
+  updateToken: (group: ThemeTokenGroup, key: string, value: ThemeTokenValue) => void;
+  updateTokenDebounced: (group: ThemeTokenGroup, key: string, value: ThemeTokenValue) => void;
   resetTokens: () => void;
+  selectedToken: string | null;
+  setSelectedToken: (token: string | null) => void;
 }
 
 const debounceTimers = new Map<string, ReturnType<typeof setTimeout>>();
 
 function createThemeBuilderStore() {
   return create<ThemeBuilderStore>((set) => ({
-    tokens: { ...defaultTokens },
-    selectedToken: null,
+    tokens: structuredClone(defaultTokens),
     sidebarOpen: true,
-
-    setSelectedToken: (key) => set({ selectedToken: key }),
+    selectedToken: null,
 
     toggleSidebar: () => set((state) => ({ sidebarOpen: !state.sidebarOpen })),
 
-    updateToken: (key, value) => {
-      const timer = debounceTimers.get(key);
+    setSelectedToken: (token) => set({ selectedToken: token }),
+
+    updateToken: (group, key, value) => {
+      const timer = debounceTimers.get(`${group}.${key}`);
       if (timer) {
         clearTimeout(timer);
-        debounceTimers.delete(key);
+        debounceTimers.delete(`${group}.${key}`);
       }
       set((state) => ({
-        tokens: { ...state.tokens, [key]: value },
+        tokens: {
+          ...state.tokens,
+          [group]: {
+            ...(state.tokens[group] as Record<string, string>),
+            [key]: value,
+          },
+        },
       }));
     },
 
-    updateTokenDebounced: (key, value) => {
-      const timer = debounceTimers.get(key);
+    updateTokenDebounced: (group, key, value) => {
+      const timerKey = `${group}.${key}`;
+      const timer = debounceTimers.get(timerKey);
       if (timer) clearTimeout(timer);
       debounceTimers.set(
-        key,
+        timerKey,
         setTimeout(() => {
-          debounceTimers.delete(key);
+          debounceTimers.delete(timerKey);
           set((state) => ({
-            tokens: { ...state.tokens, [key]: value },
+            tokens: {
+              ...state.tokens,
+              [group]: {
+                ...(state.tokens[group] as Record<string, string>),
+                [key]: value,
+              },
+            },
           }));
         }, 16),
       );
     },
 
     resetTokens: () => {
-      set({ tokens: { ...defaultTokens } });
+      set({ tokens: structuredClone(defaultTokens) });
     },
   }));
 }

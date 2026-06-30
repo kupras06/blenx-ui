@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 export const group = style({
   position: "relative",
@@ -10,8 +10,8 @@ export const group = style({
   borderRadius: tokenVars.borderRadius.lg,
   borderWidth: 1,
   borderStyle: "solid",
-  borderColor: themeContract.border,
-  color: themeContract.contentPrimary,
+  borderColor: semanticVars.border.default,
+  color: semanticVars.text.primary,
   fontSize: tokenVars.fontSize.sm,
   boxSizing: "border-box",
   minHeight: "40px",
@@ -20,15 +20,15 @@ export const group = style({
   transitionDuration: "150ms",
   selectors: {
     "&:focus-within": {
-      borderColor: themeContract.borderStrong,
-      boxShadow: `0 0 0 2px ${themeContract.borderStrong}`,
+      borderColor: semanticVars.border.strong,
+      boxShadow: `0 0 0 2px ${semanticVars.border.strong}`,
     },
     "&:has([aria-invalid='true'])": {
-      borderColor: themeContract.sentimentNegative,
+      borderColor: semanticVars.status.danger,
     },
     "&:has([aria-invalid='true']:focus-visible)": {
-      borderColor: themeContract.sentimentNegative,
-      boxShadow: `0 0 0 2px ${themeContract.sentimentNegative}`,
+      borderColor: semanticVars.status.danger,
+      boxShadow: `0 0 0 2px ${semanticVars.status.danger}`,
     },
     "&:has(:disabled)": {
       opacity: 0.64,
@@ -46,7 +46,7 @@ export const addon = style({
   justifyContent: "center",
   cursor: "text",
   flexShrink: 0,
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
   userSelect: "none",
   fontSize: tokenVars.fontSize.sm,
   selectors: {
@@ -97,7 +97,7 @@ export const text = style({
   gap: tokenVars.spacing.sm,
   whiteSpace: "nowrap",
   lineHeight: 1,
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
 });
 
 export const menu = style({
@@ -119,12 +119,12 @@ export const input = style({
   paddingRight: "8px",
   borderWidth: 0,
   fontSize: tokenVars.fontSize.sm,
-  color: themeContract.contentPrimary,
+  color: semanticVars.text.primary,
   boxSizing: "border-box",
   lineHeight: 1.5,
   selectors: {
     "&::placeholder": {
-      color: themeContract.contentDisabled,
+      color: semanticVars.text.disabled,
     },
     "&:disabled": {
       opacity: 0.5,
@@ -146,11 +146,11 @@ export const textarea = style({
   paddingLeft: "10px",
   paddingRight: "10px",
   fontSize: tokenVars.fontSize.sm,
-  color: themeContract.contentPrimary,
+  color: semanticVars.text.primary,
   resize: "none",
   selectors: {
     "&::placeholder": {
-      color: themeContract.contentDisabled,
+      color: semanticVars.text.disabled,
     },
   },
 });

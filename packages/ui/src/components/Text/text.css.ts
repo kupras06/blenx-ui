@@ -1,5 +1,5 @@
 import { recipe } from "@vanilla-extract/recipes";
-import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 export const textVariants = recipe({
   base: {
@@ -115,7 +115,7 @@ export const textVariants = recipe({
       },
       code: {
         margin: 0,
-        backgroundColor: themeContract.backgroundSubtle,
+        backgroundColor: semanticVars.background.subtle,
         borderRadius: tokenVars.borderRadius.sm,
       },
     },

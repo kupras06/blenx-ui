@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
-import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 export const root = style({
   display: "flex",
@@ -14,14 +14,14 @@ export const input = recipe({
     alignItems: "center",
     justifyContent: "center",
     textAlign: "center",
-    borderRadius: themeContract.borderRadius,
+    borderRadius: tokenVars.borderRadius.default,
     borderWidth: 1,
     borderStyle: "solid",
-    borderColor: themeContract.border,
-    backgroundColor: themeContract.background,
-    color: themeContract.contentPrimary,
+    borderColor: semanticVars.border.default,
+    backgroundColor: semanticVars.background.default,
+    color: semanticVars.text.primary,
     outline: "none",
-    caretColor: themeContract.primary,
+    caretColor: semanticVars.interactive.primary,
     transition: "box-shadow 0.15s ease, border-color 0.15s ease",
     padding: 0,
     margin: 0,
@@ -46,7 +46,7 @@ export const input = recipe({
 });
 
 export const separator = style({
-  backgroundColor: themeContract.border,
+  backgroundColor: semanticVars.border.default,
   borderRadius: "999px",
   width: tokenVars.spacing["3"],
   height: tokenVars.spacing["0.5"],

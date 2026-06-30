@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 export const root = style({
   width: tokenVars.spacing.xxl,
@@ -8,7 +8,7 @@ export const root = style({
   alignItems: "center",
   padding: tokenVars.spacing.xxs,
   borderRadius: tokenVars.borderRadius.full,
-  backgroundColor: themeContract.border,
+  backgroundColor: semanticVars.border.default,
   cursor: "pointer",
   transitionProperty: "background-color",
   transitionDuration: "150ms",
@@ -16,13 +16,13 @@ export const root = style({
     "&:focus-visible": {
       outlineWidth: 2,
       outlineStyle: "solid",
-      outlineColor: themeContract.borderStrong,
+      outlineColor: semanticVars.border.strong,
     },
   },
 });
 
 export const rootChecked = style({
-  backgroundColor: themeContract.primary,
+  backgroundColor: semanticVars.interactive.primary,
 });
 
 export const rootDisabled = style({
@@ -34,13 +34,13 @@ export const thumb = style({
   width: tokenVars.spacing.lg,
   height: tokenVars.spacing.lg,
   borderRadius: tokenVars.borderRadius.full,
-  backgroundColor: themeContract.primary,
+  backgroundColor: semanticVars.interactive.primary,
   transitionProperty: "transform, background-color",
   transitionDuration: "150ms",
   transform: "translateX(0)",
 });
 
 export const thumbChecked = style({
-  backgroundColor: themeContract.surface,
+  backgroundColor: semanticVars.surface.default,
   transform: `translateX(${tokenVars.spacing.lg})`,
 });

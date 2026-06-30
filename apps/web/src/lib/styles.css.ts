@@ -1,16 +1,16 @@
 import { globalStyle, style } from "@vanilla-extract/css";
-import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 /* ── DocsLink ── */
 
 export const docsLink = style({
-  color: themeContract.primary,
+  color: semanticVars.interactive.primary,
   textDecoration: "underline",
   textUnderlineOffset: 2,
   cursor: "pointer",
   transition: "text-decoration-color 200ms ease",
   ":hover": {
-    color: themeContract.primary,
+    color: semanticVars.interactive.primary,
   },
 });
 
@@ -31,8 +31,8 @@ export const installItem = style({
 });
 
 export const installCode = style({
-  color: themeContract.contentSecondary,
-  backgroundColor: themeContract.surfaceSubtle,
+  color: semanticVars.text.secondary,
+  backgroundColor: semanticVars.background.subtle,
   padding: "1px 6px",
   borderRadius: tokenVars.borderRadius.sm,
   fontSize: tokenVars.fontSize.sm,
@@ -45,11 +45,11 @@ export const codeHeader = style({
   alignItems: "center",
   justifyContent: "space-between",
   padding: "8px 16px",
-  backgroundColor: themeContract.surface,
-  borderBottom: `1px solid ${themeContract.borderSubtle}`,
+  backgroundColor: semanticVars.surface.default,
+  borderBottom: `1px solid ${semanticVars.border.subtle}`,
   borderRadius: `${tokenVars.borderRadius.md} ${tokenVars.borderRadius.md} 0 0`,
   fontSize: tokenVars.fontSize.xs,
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
 });
 
 export const codeBlockContent = style({
@@ -145,17 +145,17 @@ export const headingAnchor = style({
 export const kpiValue = style({
   fontSize: tokenVars.fontSize.xl,
   fontWeight: 700,
-  color: themeContract.contentPrimary,
+  color: semanticVars.text.primary,
 });
 
 export const kpiLabel = style({
   fontSize: tokenVars.fontSize.xs,
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
   marginTop: tokenVars.spacing["1"],
 });
 
 export const trendUp = style({
-  color: themeContract.sentimentPositive,
+  color: semanticVars.status.success,
   fontSize: tokenVars.fontSize.xs,
   display: "flex",
   alignItems: "center",
@@ -164,7 +164,7 @@ export const trendUp = style({
 });
 
 export const trendDown = style({
-  color: themeContract.sentimentNegative,
+  color: semanticVars.status.danger,
   fontSize: tokenVars.fontSize.xs,
   display: "flex",
   alignItems: "center",
@@ -198,12 +198,12 @@ export const profileInfo = style({
 export const profileName = style({
   fontSize: tokenVars.fontSize.md,
   fontWeight: 600,
-  color: themeContract.contentPrimary,
+  color: semanticVars.text.primary,
 });
 
 export const profileEmail = style({
   fontSize: tokenVars.fontSize.sm,
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
 });
 
 export const profileActions = style({
@@ -217,7 +217,7 @@ export const chartPlaceholder = style({
   alignItems: "center",
   justifyContent: "center",
   minHeight: 200,
-  color: themeContract.contentDisabled,
+  color: semanticVars.text.disabled,
   fontSize: tokenVars.fontSize.sm,
 });
 
@@ -226,14 +226,14 @@ export const chartPlaceholder = style({
 export const impactPanel = style({
   padding: tokenVars.spacing["2"],
   borderRadius: tokenVars.borderRadius.md,
-  backgroundColor: themeContract.surfaceRaised,
+  backgroundColor: semanticVars.surface.raised,
   borderWidth: 1,
   borderStyle: "solid",
-  borderColor: themeContract.borderSubtle,
+  borderColor: semanticVars.border.subtle,
 });
 
 export const impactEmpty = style({
-  color: themeContract.contentDisabled,
+  color: semanticVars.text.disabled,
   fontSize: tokenVars.fontSize.xs,
   textAlign: "center",
   paddingBlock: tokenVars.spacing["2"],
@@ -250,8 +250,8 @@ export const impactChip = style({
   alignItems: "center",
   padding: "2px 8px",
   borderRadius: tokenVars.borderRadius.full,
-  backgroundColor: `${themeContract.primary}15`,
-  color: themeContract.primary,
+  backgroundColor: `color-mix(in srgb, ${semanticVars.interactive.primary} 15%, transparent)`,
+  color: semanticVars.interactive.primary,
   fontSize: tokenVars.fontSize.xs,
   fontWeight: 500,
 });

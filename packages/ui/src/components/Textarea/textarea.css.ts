@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract } from "@blenx-dev/theme/contract";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 export const shell = style({
   display: "inline-flex",
@@ -7,10 +7,10 @@ export const shell = style({
   position: "relative",
   borderStyle: "solid",
   borderWidth: 1,
-  borderColor: themeContract.border,
-  borderRadius: themeContract.borderRadius,
-  backgroundColor: themeContract.surface,
-  color: themeContract.contentPrimary,
+  borderColor: semanticVars.border.default,
+  borderRadius: tokenVars.borderRadius.default,
+  backgroundColor: semanticVars.surface.default,
+  color: semanticVars.text.primary,
   boxShadow: "0 1px 2px rgba(0,0,0,0.04)",
   boxSizing: "border-box",
   outline: "none",
@@ -18,14 +18,14 @@ export const shell = style({
   transitionDuration: "150ms",
   selectors: {
     "&:has(:focus-visible)": {
-      borderColor: themeContract.borderStrong,
-      boxShadow: `0 0 0 3px ${themeContract.borderStrong}`,
+      borderColor: semanticVars.border.strong,
+      boxShadow: `0 0 0 3px ${semanticVars.border.strong}`,
     },
     "&:has([aria-invalid])": {
-      borderColor: themeContract.sentimentNegative,
+      borderColor: semanticVars.status.danger,
     },
     "&:has([aria-invalid]:focus-visible)": {
-      boxShadow: `0 0 0 3px ${themeContract.sentimentNegative}`,
+      boxShadow: `0 0 0 3px ${semanticVars.status.danger}`,
     },
     "&:has(:disabled)": {
       opacity: 0.64,
@@ -47,7 +47,7 @@ export const textarea = style({
   lineHeight: 1.5,
   outline: "none",
   resize: "none",
-  color: themeContract.contentPrimary,
+  color: semanticVars.text.primary,
   backgroundColor: "transparent",
 });
 

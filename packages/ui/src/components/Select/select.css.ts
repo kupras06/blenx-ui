@@ -1,10 +1,10 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 export const label = style({
   fontSize: tokenVars.fontSize.xs,
   fontWeight: tokenVars.fontWeight.semibold,
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
   paddingBottom: tokenVars.spacing.xs,
   paddingLeft: tokenVars.spacing.xs,
   paddingRight: tokenVars.spacing.xs,
@@ -24,29 +24,29 @@ export const trigger = style({
   fontSize: tokenVars.fontSize.sm,
   lineHeight: "1.5",
   fontFamily: "inherit",
-  color: themeContract.contentPrimary,
-  backgroundColor: themeContract.surface,
+  color: semanticVars.text.primary,
+  backgroundColor: semanticVars.surface.default,
   borderWidth: 1,
   borderStyle: "solid",
-  borderColor: themeContract.border,
+  borderColor: semanticVars.border.default,
   borderRadius: tokenVars.borderRadius.md,
   outline: "none",
   cursor: "pointer",
   transition: "border-color 0.15s ease, box-shadow 0.15s ease",
   selectors: {
     "&:hover": {
-      borderColor: themeContract.borderStrong,
+      borderColor: semanticVars.border.strong,
     },
     "&:focus-visible": {
-      borderColor: themeContract.primary,
-      boxShadow: `0 0 0 2px ${themeContract.focusRing}`,
+      borderColor: semanticVars.interactive.primary,
+      boxShadow: `0 0 0 2px ${semanticVars.focus.ring}`,
     },
     "&:disabled": {
       opacity: 0.5,
       cursor: "not-allowed",
     },
     "&[data-placeholder]": {
-      color: themeContract.contentDisabled,
+      color: semanticVars.text.disabled,
     },
   },
 });
@@ -70,7 +70,7 @@ export const triggerLg = style({
 export const icon = style({
   display: "flex",
   alignItems: "center",
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
   flexShrink: 0,
 });
 
@@ -79,12 +79,12 @@ export const popup = style({
   maxHeight: 300,
   paddingTop: tokenVars.spacing.xs,
   paddingBottom: tokenVars.spacing.xs,
-  backgroundColor: themeContract.surface,
+  backgroundColor: semanticVars.surface.default,
   borderWidth: 1,
   borderStyle: "solid",
-  borderColor: themeContract.border,
+  borderColor: semanticVars.border.default,
   borderRadius: tokenVars.borderRadius.lg,
-  boxShadow: themeContract.shadowLg,
+  boxShadow: semanticVars.shadow.lg,
   zIndex: 1400,
   minWidth: "var(--anchor-width)",
   maxWidth: "var(--available-width)",
@@ -112,28 +112,28 @@ export const item = style({
   borderRadius: tokenVars.borderRadius.sm,
   fontSize: tokenVars.fontSize.sm,
   lineHeight: "1.4",
-  color: themeContract.contentPrimary,
+  color: semanticVars.text.primary,
   cursor: "pointer",
   userSelect: "none",
   selectors: {
     "&:hover": {
-      backgroundColor: themeContract.backgroundSubtle,
+      backgroundColor: semanticVars.background.subtle,
     },
     "&[data-highlighted]": {
-      backgroundColor: themeContract.backgroundSubtle,
+      backgroundColor: semanticVars.background.subtle,
     },
     "&[data-selected]": {
-      backgroundColor: themeContract.primary,
-      color: themeContract.contentOnPrimary,
+      backgroundColor: semanticVars.interactive.primary,
+      color: semanticVars.interactive.primaryFg,
     },
     "&[data-selected]:hover": {
-      backgroundColor: themeContract.primary,
+      backgroundColor: semanticVars.interactive.primary,
     },
     "&[data-selected][data-highlighted]": {
-      backgroundColor: themeContract.primary,
+      backgroundColor: semanticVars.interactive.primary,
     },
     "&[data-disabled]": {
-      color: themeContract.contentDisabled,
+      color: semanticVars.text.disabled,
       cursor: "default",
     },
     "&[data-disabled]:hover": {
@@ -153,7 +153,7 @@ export const separator = style({
   height: 1,
   marginTop: tokenVars.spacing.xs,
   marginBottom: tokenVars.spacing.xs,
-  backgroundColor: themeContract.borderSubtle,
+  backgroundColor: semanticVars.border.subtle,
 });
 
 export const groupLabel = style({
@@ -163,7 +163,7 @@ export const groupLabel = style({
   paddingRight: tokenVars.spacing.sm,
   fontSize: tokenVars.fontSize.xs,
   fontWeight: tokenVars.fontWeight.semibold,
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
 });
 
 export const scrollArrow = style({
@@ -172,11 +172,11 @@ export const scrollArrow = style({
   justifyContent: "center",
   width: "100%",
   height: 24,
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
   cursor: "pointer",
   selectors: {
     "&:hover": {
-      backgroundColor: themeContract.backgroundSubtle,
+      backgroundColor: semanticVars.background.subtle,
     },
   },
 });

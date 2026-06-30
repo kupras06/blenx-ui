@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 export const backdrop = style({
   position: "fixed",
@@ -19,12 +19,12 @@ export const popup = style({
   width: "max(var(--anchor-width), 240px)",
   maxWidth: "calc(100vw - 16px)",
   padding: tokenVars.spacing.sm,
-  backgroundColor: themeContract.surface,
+  backgroundColor: semanticVars.surface.default,
   borderWidth: tokenVars.borderWidth.thin,
   borderStyle: "solid",
-  borderColor: themeContract.border,
+  borderColor: semanticVars.border.default,
   borderRadius: tokenVars.borderRadius.lg,
-  boxShadow: themeContract.shadowLg,
+  boxShadow: semanticVars.shadow.lg,
   outline: "none",
   transformOrigin: "var(--transform-origin)",
   transitionProperty: "opacity, scale",
@@ -57,10 +57,10 @@ export const arrow = style({
 export const arrowFill = style({
   width: "100%",
   height: "100%",
-  backgroundColor: themeContract.surface,
+  backgroundColor: semanticVars.surface.default,
   borderWidth: tokenVars.borderWidth.thin,
   borderStyle: "solid",
-  borderColor: themeContract.border,
+  borderColor: semanticVars.border.default,
   borderRadius: 2,
   transform: "rotate(45deg)",
 });
@@ -68,14 +68,14 @@ export const arrowFill = style({
 export const title = style({
   fontSize: tokenVars.fontSize.md,
   fontWeight: tokenVars.fontWeight.semibold,
-  color: themeContract.contentPrimary,
+  color: semanticVars.text.primary,
   margin: 0,
   paddingBottom: tokenVars.spacing.xs,
 });
 
 export const description = style({
   fontSize: tokenVars.fontSize.sm,
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
   margin: 0,
   paddingBottom: tokenVars.spacing.xs,
 });

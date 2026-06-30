@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 export const label = style({
   fontSize: 14,
@@ -7,7 +7,7 @@ export const label = style({
   gap: 4,
   lineHeight: 1.4,
   fontWeight: 400,
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
 });
 
 export const input = style({
@@ -19,28 +19,28 @@ export const input = style({
   paddingRight: tokenVars.spacing.md,
   fontSize: 16,
   lineHeight: 1.5,
-  color: themeContract.contentPrimary,
-  backgroundColor: themeContract.surface,
+  color: semanticVars.text.primary,
+  backgroundColor: semanticVars.surface.default,
   borderWidth: 1,
   borderStyle: "solid",
-  borderColor: themeContract.border,
-  borderRadius: themeContract.borderRadius,
+  borderColor: semanticVars.border.default,
+  borderRadius: tokenVars.borderRadius.default,
   outline: "none",
   selectors: {
     "&::placeholder": {
-      color: themeContract.contentDisabled,
+      color: semanticVars.text.disabled,
     },
     "&:disabled": {
       opacity: 0.5,
       cursor: "not-allowed",
     },
     "&:focus-visible": {
-      borderColor: themeContract.borderStrong,
-      boxShadow: `0 0 0 2px ${themeContract.borderStrong}`,
+      borderColor: semanticVars.border.strong,
+      boxShadow: `0 0 0 2px ${semanticVars.border.strong}`,
     },
     "&:focus-visible[aria-invalid='true']": {
-      borderColor: themeContract.sentimentNegative,
-      boxShadow: `0 0 0 3px ${themeContract.sentimentNegative}`,
+      borderColor: semanticVars.status.danger,
+      boxShadow: `0 0 0 3px ${semanticVars.status.danger}`,
     },
   },
 });
@@ -62,11 +62,11 @@ export const inputLg = style({
 });
 
 export const inputError = style({
-  borderColor: themeContract.sentimentNegative,
+  borderColor: semanticVars.status.danger,
 });
 
 export const error = style({
   fontSize: 12,
   lineHeight: 1.4,
-  color: themeContract.sentimentNegative,
+  color: semanticVars.status.danger,
 });

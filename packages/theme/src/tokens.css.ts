@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract } from "./contract.css";
+import { semanticVars } from "./contract.css";
 
 export { tokenVarsDefaults } from "./tokens-defaults";
 
@@ -27,7 +27,7 @@ export const primitives = {
     outline: "none",
     selectors: {
       "&:focus-visible": {
-        outline: `2px solid ${themeContract.focusRing}`,
+        outline: `2px solid ${semanticVars.focus.ring}`,
       },
     },
   }),

@@ -4,22 +4,6 @@ import { getComponentsForToken } from "../preview/component-token-map";
 import { useThemeBuilder } from "../theme-builder-context";
 import { impactPanel, impactEmpty, impactList, impactChip } from "@/lib/styles.css";
 
-const tokenLabels: Record<string, string> = {
-  primary: "Primary",
-  primarySubtle: "Primary Subtle",
-  secondary: "Secondary",
-  background: "Background",
-  surface: "Surface",
-  border: "Border",
-  contentPrimary: "Text Primary",
-  contentSecondary: "Text Secondary",
-  sentimentNegative: "Danger",
-  sentimentPositive: "Success",
-  borderRadius: "Border Radius",
-  fontSize: "Font Size",
-  focusRing: "Focus Ring",
-};
-
 export const ImpactSummary = memo(() => {
   const selectedToken = useThemeBuilder((s) => s.selectedToken);
 
@@ -37,7 +21,8 @@ export const ImpactSummary = memo(() => {
   }
 
   const components = getComponentsForToken(selectedToken);
-  const label = tokenLabels[selectedToken] ?? selectedToken;
+  const parts = selectedToken.split(".");
+  const label = parts.length > 1 ? `${parts[0]} › ${parts[1]}` : selectedToken;
 
   return (
     <div className={impactPanel}>

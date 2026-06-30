@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
-import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 export const base = style({
   position: "relative",
@@ -12,7 +12,7 @@ export const base = style({
   whiteSpace: "nowrap",
   borderStyle: "solid",
   borderWidth: 1,
-  borderRadius: themeContract.borderRadius,
+  borderRadius: tokenVars.borderRadius.default,
   fontWeight: tokenVars.fontWeight.medium,
   fontSize: tokenVars.fontSize.sm,
   lineHeight: 1.4,
@@ -23,7 +23,7 @@ export const base = style({
   transition: "box-shadow 0.15s ease",
   selectors: {
     "&:focus-visible": {
-      boxShadow: `0 0 0 2px ${themeContract.focusRing}`,
+      boxShadow: `0 0 0 2px ${semanticVars.focus.ring}`,
     },
     "&:disabled": {
       pointerEvents: "none",
@@ -54,7 +54,7 @@ export const toggleRecipes = recipe({
       },
     },
     radius: {
-      default: { borderRadius: themeContract.borderRadius },
+      default: { borderRadius: tokenVars.borderRadius.default },
       none: { borderRadius: 0 },
       xs: { borderRadius: tokenVars.borderRadius.xs },
       sm: { borderRadius: tokenVars.borderRadius.sm },
@@ -67,13 +67,13 @@ export const toggleRecipes = recipe({
     variant: {
       default: {
         borderColor: "transparent",
-        color: themeContract.contentPrimary,
-        backgroundColor: themeContract.surface,
+        color: semanticVars.text.primary,
+        backgroundColor: semanticVars.surface.default,
       },
       outline: {
-        borderColor: themeContract.border,
-        color: themeContract.contentPrimary,
-        backgroundColor: themeContract.backgroundSubtle,
+        borderColor: semanticVars.border.default,
+        color: semanticVars.text.primary,
+        backgroundColor: semanticVars.background.subtle,
       },
     },
   },
@@ -81,11 +81,11 @@ export const toggleRecipes = recipe({
 
 export const pressed = {
   default: style({
-    backgroundColor: themeContract.surfaceRaised,
+    backgroundColor: semanticVars.surface.raised,
   }),
   outline: style({
     outlineWidth: tokenVars.borderWidth.thin,
-    backgroundColor: themeContract.surfaceOverlay,
-    borderColor: themeContract.borderStrong,
+    backgroundColor: semanticVars.surface.overlay,
+    borderColor: semanticVars.border.strong,
   }),
 };

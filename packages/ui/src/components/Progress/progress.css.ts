@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 export const root = style({
   display: "flex",
@@ -14,12 +14,12 @@ export const track = style({
   width: "100%",
   overflow: "hidden",
   borderRadius: tokenVars.borderRadius.full,
-  backgroundColor: themeContract.surface,
+  backgroundColor: semanticVars.surface.default,
 });
 
 export const indicator = style({
   height: "100%",
-  backgroundColor: themeContract.primary,
+  backgroundColor: semanticVars.interactive.primary,
   borderRadius: tokenVars.borderRadius.full,
   transitionProperty: "width, background-color",
   transitionDuration: tokenVars.duration.slow,

@@ -1,18 +1,6 @@
-import { Accordion, Box, SegmentedControl, Text, VStack } from "@blenx-dev/ui";
-import { useThemeBuilder } from "../theme-builder-context";
-
-const radiusOptions = [
-  { value: "none", label: "None" },
-  { value: "small", label: "Small" },
-  { value: "medium", label: "Medium" },
-  { value: "large", label: "Large" },
-  { value: "pill", label: "Pill" },
-];
+import { Accordion, Box, Text, VStack } from "@blenx-dev/ui";
 
 export function NonColorControls() {
-  const tokens = useThemeBuilder((s) => s.tokens);
-  const updateToken = useThemeBuilder((s) => s.updateToken);
-
   return (
     <Accordion.Item value="noncolor">
       <Accordion.Header>
@@ -21,12 +9,10 @@ export function NonColorControls() {
       <Accordion.Panel>
         <VStack>
           <Box>
-            <Text variant="h5">Border Radius</Text>
-            <SegmentedControl
-              value={tokens.borderRadius}
-              onValueChange={(value) => updateToken("borderRadius", value)}
-              options={radiusOptions}
-            />
+            <Text variant="caption" color="secondary">
+              Border radius and other design tokens are configured via tokenVars in
+              app-theme.css.ts.
+            </Text>
           </Box>
         </VStack>
       </Accordion.Panel>

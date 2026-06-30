@@ -1,5 +1,5 @@
 import { style, keyframes } from "@vanilla-extract/css";
-import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 const pulse = keyframes({
   "0%, 100%": { opacity: 0.4 },
@@ -24,7 +24,7 @@ export const fetchingBar = style({
 });
 
 export const fetchingText = style({
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
   fontSize: "13px",
 });
 
@@ -34,7 +34,7 @@ export const tableContainer = style({
   borderRadius: tokenVars.borderRadius.md,
   borderWidth: 1,
   borderStyle: "solid",
-  borderColor: themeContract.border,
+  borderColor: semanticVars.border.default,
   position: "relative",
 });
 
@@ -56,11 +56,11 @@ export const theadStickyScrolled = style({
   position: "sticky",
   top: 0,
   zIndex: 1,
-  boxShadow: themeContract.shadowSm,
+  boxShadow: semanticVars.shadow.sm,
 });
 
 export const headRow = style({
-  backgroundColor: themeContract.backgroundSubtle,
+  backgroundColor: semanticVars.background.subtle,
 });
 
 export const th = style({
@@ -70,13 +70,13 @@ export const th = style({
   paddingRight: 12,
   fontSize: "12px",
   fontWeight: tokenVars.fontWeight.semibold,
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
   textAlign: "left",
   textTransform: "uppercase",
   letterSpacing: "0.05em",
   borderBottomWidth: 1,
   borderBottomStyle: "solid",
-  borderBottomColor: themeContract.border,
+  borderBottomColor: semanticVars.border.default,
   whiteSpace: "nowrap",
   userSelect: "none",
 });
@@ -113,10 +113,10 @@ export const td = style({
   paddingLeft: 12,
   paddingRight: 12,
   fontSize: tokenVars.fontSize.sm,
-  color: themeContract.contentPrimary,
+  color: semanticVars.text.primary,
   borderBottomWidth: 1,
   borderBottomStyle: "solid",
-  borderBottomColor: themeContract.borderSubtle,
+  borderBottomColor: semanticVars.border.subtle,
   whiteSpace: "nowrap",
   overflow: "hidden",
   textOverflow: "ellipsis",
@@ -145,14 +145,14 @@ export const trSm = style({ height: 36 });
 export const trLg = style({ height: 60 });
 
 export const trSelected = style({
-  backgroundColor: themeContract.backgroundSubtle,
+  backgroundColor: semanticVars.background.subtle,
 });
 
 export const emptyTd = style({
   padding: 0,
   borderBottomWidth: 1,
   borderBottomStyle: "solid",
-  borderBottomColor: themeContract.border,
+  borderBottomColor: semanticVars.border.default,
 });
 
 // ─── Loading skeleton ────────────────────────────────────────────────────────
@@ -171,14 +171,14 @@ export const headerCell = style({
   paddingBottom: 12,
   paddingLeft: 16,
   paddingRight: 16,
-  borderBottomColor: themeContract.border,
+  borderBottomColor: semanticVars.border.default,
   borderBottomStyle: "solid",
   borderBottomWidth: 1,
 });
 
 export const skeletonBar = style({
   borderRadius: 4,
-  backgroundColor: themeContract.surfaceRaised,
+  backgroundColor: semanticVars.surface.raised,
   animationName: pulse,
   animationDuration: "1.5s",
   animationTimingFunction: "ease-in-out",
@@ -190,7 +190,7 @@ export const cell = style({
   paddingBottom: 12,
   paddingLeft: 16,
   paddingRight: 16,
-  borderBottomColor: themeContract.borderSubtle,
+  borderBottomColor: semanticVars.border.subtle,
   borderBottomStyle: "solid",
   borderBottomWidth: 1,
 });
@@ -204,7 +204,7 @@ export const loadingFooter = style({
 });
 
 export const loadingText = style({
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
   fontSize: tokenVars.fontSize.sm,
 });
 
@@ -215,7 +215,7 @@ export const itemLabel = style({
 });
 
 export const deselectLabel = style({
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
   fontSize: 13,
 });
 
@@ -226,11 +226,11 @@ export const checkboxChecked = style({
   borderRadius: 3,
   borderWidth: 1.5,
   borderStyle: "solid",
-  borderColor: themeContract.primary,
+  borderColor: semanticVars.interactive.primary,
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
-  backgroundColor: themeContract.primary,
+  backgroundColor: semanticVars.interactive.primary,
 });
 
 export const checkboxUnchecked = style({
@@ -240,7 +240,7 @@ export const checkboxUnchecked = style({
   borderRadius: 3,
   borderWidth: 1.5,
   borderStyle: "solid",
-  borderColor: themeContract.border,
+  borderColor: semanticVars.border.default,
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
@@ -251,7 +251,7 @@ export const partial = style({
   width: 8,
   height: 2,
   borderRadius: 1,
-  backgroundColor: themeContract.contentSecondary,
+  backgroundColor: semanticVars.text.secondary,
 });
 
 // ─── Empty state ─────────────────────────────────────────────────────────────
@@ -273,7 +273,7 @@ export const iconWrap = style({
 });
 
 export const message = style({
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
   fontSize: tokenVars.fontSize.sm,
   lineHeight: 1.5,
   textAlign: "center",
@@ -299,7 +299,7 @@ export const errorContainer = style({
 });
 
 export const errorMessage = style({
-  color: themeContract.sentimentNegative,
+  color: semanticVars.status.danger,
   fontSize: tokenVars.fontSize.sm,
   lineHeight: 1.5,
   textAlign: "center",
@@ -323,12 +323,12 @@ export const loadingInline = style({
 });
 
 export const loaderLoadingText = style({
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
   fontSize: tokenVars.fontSize.sm,
 });
 
 export const noMore = style({
-  color: themeContract.contentDisabled,
+  color: semanticVars.text.disabled,
   fontSize: tokenVars.fontSize.sm,
 });
 
@@ -350,7 +350,7 @@ export const nav = style({
 });
 
 export const info = style({
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
   fontSize: tokenVars.fontSize.sm,
 });
 
@@ -361,7 +361,7 @@ export const controls = style({
 });
 
 export const range = style({
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
   fontSize: tokenVars.fontSize.sm,
   whiteSpace: "nowrap",
 });
@@ -379,7 +379,7 @@ export const pageWrap = style({
 });
 
 export const ellipsis = style({
-  color: themeContract.contentDisabled,
+  color: semanticVars.text.disabled,
   fontSize: tokenVars.fontSize.sm,
   paddingLeft: tokenVars.spacing.xs,
   paddingRight: tokenVars.spacing.xs,

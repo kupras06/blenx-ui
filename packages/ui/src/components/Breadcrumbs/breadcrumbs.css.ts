@@ -1,11 +1,11 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract } from "@blenx-dev/theme/contract";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 export const root = style({
   display: "flex",
   alignItems: "center",
   gap: "4px",
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
   fontSize: 14,
 });
 
@@ -14,8 +14,8 @@ export const list = style({
   flexWrap: "wrap",
   alignItems: "center",
   gap: 6,
-  fontSize: themeContract.fontSize,
-  color: themeContract.contentSecondary,
+  fontSize: tokenVars.fontSize.md,
+  color: semanticVars.text.secondary,
   "@media": {
     "screen and (min-width: 768px)": {
       gap: 10,
@@ -38,14 +38,14 @@ export const link = style({
   transitionTimingFunction: "ease",
   selectors: {
     "&:hover": {
-      color: themeContract.contentPrimary,
+      color: semanticVars.text.primary,
     },
   },
 });
 
 export const page = style({
   fontWeight: 400,
-  color: themeContract.contentPrimary,
+  color: semanticVars.text.primary,
 });
 
 export const separator = style({

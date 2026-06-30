@@ -3,7 +3,7 @@ import { allBlocks, allBlockGroups } from "content-collections";
 import { MDXContent } from "@content-collections/mdx/react";
 import { Box, Separator, Text, VStack } from "@blenx-dev/ui";
 import { mdxComponents } from "@/views/docs/MdxComponents";
-import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 export const Route = createFileRoute("/docs/blocks/$group/$variant")({
   beforeLoad: ({ params }) => {
@@ -57,12 +57,12 @@ function BlockVariantPage() {
                 params={{ group, variant: vSlug }}
                 style={{
                   textDecoration: "none",
-                  color: isActive ? themeContract.contentPrimary : themeContract.contentSecondary,
+                  color: isActive ? semanticVars.text.primary : semanticVars.text.secondary,
                   fontSize: tokenVars.fontSize.sm,
                   padding: "4px 12px",
                   borderRadius: tokenVars.borderRadius.sm,
-                  border: `1px solid ${themeContract.border}`,
-                  backgroundColor: isActive ? themeContract.surface : undefined,
+                  border: `1px solid ${semanticVars.border.default}`,
+                  backgroundColor: isActive ? semanticVars.surface.default : undefined,
                 }}
               >
                 {v.title}

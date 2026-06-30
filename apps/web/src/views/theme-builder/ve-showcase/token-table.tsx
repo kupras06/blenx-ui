@@ -1,72 +1,33 @@
 import type { Column } from "@blenx-dev/ui";
 import { Accordion, Table, Text } from "@blenx-dev/ui";
-import { themeContract } from "@blenx-dev/theme/contract";
-import { componentTokenMap } from "../preview/component-token-map";
+import { semanticVars } from "@blenx-dev/theme/contract";
 import { useThemeBuilder } from "../theme-builder-context";
 
 interface TokenRow {
-  key: string;
+  id: string;
   label: string;
   value: string;
-  components: string;
 }
 
-const displayTokens: Array<{ key: string; label: string }> = [
-  { key: "primary", label: "primary" },
-  { key: "primarySubtle", label: "primarySubtle" },
-  { key: "secondary", label: "secondary" },
-  { key: "background", label: "background" },
-  { key: "backgroundSubtle", label: "backgroundSubtle" },
-  { key: "surface", label: "surface" },
-  { key: "surfaceSubtle", label: "surfaceSubtle" },
-  { key: "surfaceRaised", label: "surfaceRaised" },
-  { key: "surfaceHover", label: "surfaceHover" },
-  { key: "surfaceOverlay", label: "surfaceOverlay" },
-  { key: "border", label: "border" },
-  { key: "borderSubtle", label: "borderSubtle" },
-  { key: "borderStrong", label: "borderStrong" },
-  { key: "contentPrimary", label: "contentPrimary" },
-  { key: "contentSecondary", label: "contentSecondary" },
-  { key: "contentDisabled", label: "contentDisabled" },
-  { key: "contentAccent", label: "contentAccent" },
-  { key: "contentOnPrimary", label: "contentOnPrimary" },
-  { key: "sentimentNegative", label: "sentimentNegative" },
-  { key: "sentimentNegativeSubtle", label: "sentimentNegativeSubtle" },
-  { key: "sentimentPositive", label: "sentimentPositive" },
-  { key: "sentimentPositiveSubtle", label: "sentimentPositiveSubtle" },
-  { key: "sentimentWarning", label: "sentimentWarning" },
-  { key: "sentimentWarningSubtle", label: "sentimentWarningSubtle" },
-  { key: "sentimentInfo", label: "sentimentInfo" },
-  { key: "sentimentInfoSubtle", label: "sentimentInfoSubtle" },
-  { key: "focusRing", label: "focusRing" },
-  { key: "shadowSm", label: "shadowSm" },
-  { key: "shadowMd", label: "shadowMd" },
-  { key: "shadowLg", label: "shadowLg" },
-  { key: "shadowXl", label: "shadowXl" },
-  { key: "fontSize", label: "fontSize" },
-  { key: "borderRadius", label: "borderRadius" },
-];
+function flattenTokens(tokens: Record<string, any>, prefix = ""): TokenRow[] {
+  const rows: TokenRow[] = [];
+  for (const [key, value] of Object.entries(tokens)) {
+    const label = prefix ? `${prefix}.${key}` : key;
+    if (value !== null && typeof value === "object") {
+      rows.push(...flattenTokens(value, label));
+    } else {
+      rows.push({ id: label, label, value: String(value) });
+    }
+  }
+  return rows;
+}
 
 export function TokenTable() {
   const tokens = useThemeBuilder((s) => s.tokens);
   const setSelectedToken = useThemeBuilder((s) => s.setSelectedToken);
   const selectedToken = useThemeBuilder((s) => s.selectedToken);
 
-  const rowData: TokenRow[] = displayTokens.map(({ key, label }) => {
-    const value =
-      key === "fontSize"
-        ? tokens.fontSize
-        : key === "borderRadius"
-          ? tokens.borderRadius
-          : (tokens[key as keyof typeof tokens]?.toString() ?? "-");
-
-    const components = Object.entries(componentTokenMap)
-      .filter(([, tokenList]) => tokenList.some((t) => t.token === key))
-      .map(([name]) => name)
-      .join(", ");
-
-    return { key, label, value, components: components || "-" };
-  });
+  const rowData = flattenTokens(tokens);
 
   const columns: Column<TokenRow>[] = [
     {
@@ -92,10 +53,6 @@ export function TokenTable() {
         </Text>
       ),
     },
-    {
-      key: "components",
-      header: "Components",
-    },
   ];
 
   return (
@@ -107,16 +64,16 @@ export function TokenTable() {
         <Table
           columnData={columns}
           rowData={rowData}
-          rowKey="key"
+          rowKey="id"
           getRowProps={(row) => {
-            const isSelected = selectedToken === row.key;
+            const isSelected = selectedToken === row.id;
             return {
-              onMouseEnter: () => setSelectedToken(row.key as keyof typeof tokens),
+              onMouseEnter: () => setSelectedToken(row.id),
               onMouseLeave: () => setSelectedToken(null),
               style: {
                 cursor: "pointer",
                 ...(isSelected && {
-                  backgroundColor: `${themeContract.focusRing}15`,
+                  backgroundColor: `${semanticVars.focus.ring}15`,
                 }),
               },
             };

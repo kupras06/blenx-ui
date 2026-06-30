@@ -14,14 +14,6 @@ import {
 } from "@blenx-dev/ui";
 import { useThemeBuilder } from "../theme-builder-context";
 
-const borderRadiusValues: Record<string, string> = {
-  none: "0px",
-  small: "4px",
-  medium: "8px",
-  large: "12px",
-  pill: "999px",
-};
-
 export function ExportPanel() {
   const tokens = useThemeBuilder((s) => s.tokens);
   const resetTokens = useThemeBuilder((s) => s.resetTokens);
@@ -40,22 +32,24 @@ export function ExportPanel() {
   }, [tokens]);
 
   const generateThemeCode = useCallback(() => {
-    const themeEntries = Object.entries(tokens)
-      .map(([key, value]) => {
-        if (!value) return null;
-        if (key === "borderRadius") {
-          const resolved = borderRadiusValues[value] ?? value;
-          return `  ${key}: "${resolved}",`;
-        }
-        return `  ${key}: "${value}",`;
-      })
-      .filter(Boolean) as string[];
+    const lines: string[] = [];
+    for (const [group, values] of Object.entries(tokens) as [string, Record<string, string>][]) {
+      const groupLines = Object.entries(values)
+        .filter(([, v]) => v)
+        .map(([key, value]) => `      ${key}: "${value}",`);
+      if (groupLines.length > 0) {
+        lines.push(`    ${group}: {`);
+        lines.push(...groupLines);
+        lines.push(`    },`);
+      }
+    }
 
-    return `import { createTheme } from "@vanilla-extract/css";
-import { themeContract } from "@blenx-dev/theme/contract";
+    return `import { createBlenxTheme } from "@blenx-dev/theme";
 
-export const customTheme = createTheme(themeContract, {
-${themeEntries.join("\n")}
+export const { lightClass, darkClass } = createBlenxTheme({
+  semantic: {
+${lines.join("\n")}
+  },
 });`;
   }, [tokens]);
 

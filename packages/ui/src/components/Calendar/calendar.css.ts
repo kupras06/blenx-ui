@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 export const root = style({
   display: "inline-block",
@@ -23,7 +23,7 @@ export const monthCaption = style({
 export const captionLabel = style({
   fontSize: tokenVars.fontSize.md,
   fontWeight: tokenVars.fontWeight.semibold,
-  color: themeContract.contentPrimary,
+  color: semanticVars.text.primary,
   margin: 0,
   padding: 0,
 });
@@ -50,19 +50,19 @@ export const buttonNav = style({
   WebkitTapHighlightColor: "transparent",
   width: 28,
   height: 28,
-  borderRadius: themeContract.borderRadius,
+  borderRadius: tokenVars.borderRadius.default,
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
   cursor: "pointer",
   flexShrink: 0,
   selectors: {
     "&:hover": {
-      backgroundColor: themeContract.backgroundSubtle,
+      backgroundColor: semanticVars.background.subtle,
     },
     "&:focus-visible": {
-      boxShadow: `0 0 0 2px ${themeContract.focusRing}`,
+      boxShadow: `0 0 0 2px ${semanticVars.focus.ring}`,
     },
   },
 });
@@ -75,7 +75,7 @@ export const monthGrid = style({
 export const weekday = style({
   fontSize: tokenVars.fontSize.xs,
   fontWeight: tokenVars.fontWeight.medium,
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
   textAlign: "center",
   verticalAlign: "middle",
   padding: tokenVars.spacing.xxs,
@@ -103,12 +103,12 @@ export const dayButton = style({
   minHeight: 32,
   maxWidth: 36,
   maxHeight: 36,
-  borderRadius: themeContract.borderRadius,
+  borderRadius: tokenVars.borderRadius.default,
   border: "none",
   backgroundColor: "transparent",
   cursor: "pointer",
   fontSize: tokenVars.fontSize.sm,
-  color: themeContract.contentPrimary,
+  color: semanticVars.text.primary,
   outline: "none",
   margin: "0 auto",
   padding: 0,
@@ -119,21 +119,21 @@ export const dayButton = style({
   transitionTimingFunction: "ease",
   selectors: {
     "&:hover": {
-      backgroundColor: themeContract.backgroundSubtle,
+      backgroundColor: semanticVars.background.subtle,
     },
     "&:focus-visible": {
-      boxShadow: `0 0 0 2px ${themeContract.focusRing}`,
+      boxShadow: `0 0 0 2px ${semanticVars.focus.ring}`,
     },
   },
 });
 
 export const dayButtonSelected = style({
-  backgroundColor: themeContract.primary,
-  color: themeContract.contentOnPrimary,
+  backgroundColor: semanticVars.interactive.primary,
+  color: semanticVars.interactive.primaryFg,
   fontWeight: tokenVars.fontWeight.semibold,
   selectors: {
     "&:hover": {
-      backgroundColor: themeContract.primary,
+      backgroundColor: semanticVars.interactive.primary,
     },
   },
 });
@@ -143,7 +143,7 @@ export const dayButtonToday = style({
 });
 
 export const dayButtonDisabled = style({
-  color: themeContract.contentDisabled,
+  color: semanticVars.text.disabled,
   cursor: "not-allowed",
   opacity: 0.5,
   selectors: {
@@ -154,7 +154,7 @@ export const dayButtonDisabled = style({
 });
 
 export const dayButtonOutside = style({
-  color: themeContract.contentDisabled,
+  color: semanticVars.text.disabled,
   opacity: 0.5,
 });
 
@@ -170,18 +170,18 @@ export const dropdowns = style({
 
 export const dropdown = style({
   appearance: "none",
-  backgroundColor: themeContract.backgroundSubtle,
-  border: `1px solid ${themeContract.border}`,
-  borderRadius: themeContract.borderRadius,
-  color: themeContract.contentPrimary,
+  backgroundColor: semanticVars.background.subtle,
+  border: `1px solid ${semanticVars.border.default}`,
+  borderRadius: tokenVars.borderRadius.default,
+  color: semanticVars.text.primary,
   fontSize: tokenVars.fontSize.sm,
   padding: `${tokenVars.spacing.xxs} ${tokenVars.spacing.sm}`,
   cursor: "pointer",
   outline: "none",
   selectors: {
     "&:focus-visible": {
-      borderColor: themeContract.borderStrong,
-      boxShadow: `0 0 0 2px ${themeContract.borderStrong}`,
+      borderColor: semanticVars.border.strong,
+      boxShadow: `0 0 0 2px ${semanticVars.border.strong}`,
     },
   },
 });

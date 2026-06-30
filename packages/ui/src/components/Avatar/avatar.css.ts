@@ -1,14 +1,14 @@
 import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
-import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 export const root = style({
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
-  borderRadius: themeContract.borderRadius,
-  backgroundColor: themeContract.backgroundSubtle,
-  color: themeContract.contentSecondary,
+  borderRadius: tokenVars.borderRadius.default,
+  backgroundColor: semanticVars.background.subtle,
+  color: semanticVars.text.secondary,
   overflow: "hidden",
   flexShrink: 0,
   outline: "none",
@@ -32,8 +32,8 @@ export const fallback = style({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  backgroundColor: themeContract.backgroundSubtle,
-  color: themeContract.contentSecondary,
+  backgroundColor: semanticVars.background.subtle,
+  color: semanticVars.text.secondary,
   fontSize: 12,
   outline: "none",
   border: "none",

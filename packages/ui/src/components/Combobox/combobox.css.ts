@@ -1,11 +1,11 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 export const inputGroup = style({
   position: "relative",
   width: "100%",
   minWidth: 0,
-  color: themeContract.contentPrimary,
+  color: semanticVars.text.primary,
 });
 
 export const inputSm = style({
@@ -89,10 +89,10 @@ export const popupShell = style({
   maxWidth: "var(--available-width)",
   borderWidth: tokenVars.borderWidth.thin,
   borderStyle: "solid",
-  borderColor: themeContract.border,
+  borderColor: semanticVars.border.default,
   borderRadius: tokenVars.borderRadius.lg,
-  backgroundColor: themeContract.surface,
-  boxShadow: themeContract.shadowLg,
+  backgroundColor: semanticVars.surface.default,
+  boxShadow: semanticVars.shadow.lg,
   transformOrigin: "var(--transform-origin)",
   transitionProperty: "transform, opacity",
   transitionDuration: "150ms",
@@ -111,14 +111,14 @@ export const popup = style({
   flex: 1,
   flexDirection: "column",
   maxHeight: "min(var(--available-height), 23rem)",
-  color: themeContract.contentPrimary,
+  color: semanticVars.text.primary,
 });
 
 export const separator = style({
   height: "1px",
   marginBlock: tokenVars.spacing.xs,
   marginInline: tokenVars.spacing.sm,
-  backgroundColor: themeContract.border,
+  backgroundColor: semanticVars.border.default,
   selectors: {
     "&:last-child": {
       display: "none",
@@ -136,14 +136,14 @@ export const groupLabel = style({
   paddingInline: tokenVars.spacing.sm,
   fontSize: tokenVars.fontSize.xs,
   fontWeight: tokenVars.fontWeight.medium,
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
 });
 
 export const empty = style({
   padding: tokenVars.spacing.sm,
   textAlign: "center",
   fontSize: tokenVars.fontSize.md,
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
 });
 
 export const row = style({
@@ -172,7 +172,7 @@ export const status = style({
   paddingBlock: tokenVars.spacing.sm,
   fontSize: tokenVars.fontSize.xs,
   fontWeight: tokenVars.fontWeight.medium,
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
   selectors: {
     "&:empty": {
       margin: 0,
@@ -197,15 +197,15 @@ export const item = style({
   fontSize: tokenVars.fontSize.md,
   selectors: {
     "&:hover": {
-      backgroundColor: themeContract.surfaceHover,
+      backgroundColor: semanticVars.background.subtle,
     },
     "&[data-disabled]": {
       pointerEvents: "none",
       opacity: 0.64,
     },
     "&[data-highlighted]": {
-      backgroundColor: themeContract.surfaceHover,
-      color: themeContract.contentPrimary,
+      backgroundColor: semanticVars.background.subtle,
+      color: semanticVars.text.primary,
     },
   },
 });
@@ -233,25 +233,25 @@ export const chips = style({
   padding: "calc(4px - 1px)",
   borderWidth: tokenVars.borderWidth.thin,
   borderStyle: "solid",
-  borderColor: themeContract.border,
+  borderColor: semanticVars.border.default,
   borderRadius: tokenVars.borderRadius.lg,
-  backgroundColor: themeContract.background,
-  color: themeContract.contentPrimary,
+  backgroundColor: semanticVars.background.default,
+  color: semanticVars.text.primary,
   boxShadow: "0 1px 2px rgba(0, 0, 0, 0.04)",
   outline: "none",
   transitionProperty: "border-color, box-shadow",
   transitionDuration: "150ms",
   selectors: {
     "&:focus-within": {
-      borderColor: themeContract.borderStrong,
-      boxShadow: `0 0 0 2px ${themeContract.borderStrong}`,
+      borderColor: semanticVars.border.strong,
+      boxShadow: `0 0 0 2px ${semanticVars.border.strong}`,
     },
     "&:has([aria-invalid='true'])": {
-      borderColor: themeContract.sentimentNegative,
+      borderColor: semanticVars.status.danger,
     },
     "&:has([aria-invalid='true']:focus-visible)": {
-      borderColor: themeContract.sentimentNegative,
-      boxShadow: `0 0 0 2px ${themeContract.sentimentNegative}`,
+      borderColor: semanticVars.status.danger,
+      boxShadow: `0 0 0 2px ${semanticVars.status.danger}`,
     },
     "&:has(:disabled)": {
       opacity: 0.64,
@@ -289,10 +289,10 @@ export const chipsInput = style({
   paddingInlineEnd: tokenVars.spacing.xs,
   fontSize: tokenVars.fontSize.md,
   lineHeight: 1.5,
-  color: themeContract.contentPrimary,
+  color: semanticVars.text.primary,
   selectors: {
     "&::placeholder": {
-      color: themeContract.contentDisabled,
+      color: semanticVars.text.disabled,
     },
     "&:disabled": {
       opacity: 0.5,
@@ -308,8 +308,8 @@ export const chip = style({
   display: "inline-flex",
   alignItems: "center",
   borderRadius: tokenVars.borderRadius.md,
-  backgroundColor: themeContract.surfaceHover,
-  color: themeContract.contentPrimary,
+  backgroundColor: semanticVars.background.subtle,
+  color: semanticVars.text.primary,
   paddingInlineStart: tokenVars.spacing.sm,
   fontSize: tokenVars.fontSize.sm,
   fontWeight: tokenVars.fontWeight.medium,

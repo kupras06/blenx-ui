@@ -1,4 +1,4 @@
-import { themeContract } from "@blenx-dev/theme/contract";
+import { semanticVars } from "@blenx-dev/theme/contract";
 import { ListIcon } from "@phosphor-icons/react";
 import type { Table } from "@tanstack/react-table";
 import * as styles from "./data-table.css";
@@ -61,7 +61,7 @@ function CheckMark() {
       height="12"
       viewBox="0 0 24 24"
       fill="none"
-      stroke={themeContract.contentOnPrimary}
+      stroke={semanticVars.interactive.primaryFg}
       strokeWidth="3"
       strokeLinecap="round"
       strokeLinejoin="round"

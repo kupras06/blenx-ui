@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeContract, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 export const backdrop = style({
   position: "fixed",
@@ -62,12 +62,12 @@ export const popup = style({
   minWidth: 0,
   width: "100%",
   boxSizing: "border-box",
-  backgroundColor: themeContract.surface,
-  color: themeContract.contentPrimary,
+  backgroundColor: semanticVars.surface.default,
+  color: semanticVars.text.primary,
   borderStyle: "solid",
-  borderColor: themeContract.border,
+  borderColor: semanticVars.border.default,
   outline: "none",
-  boxShadow: themeContract.shadowLg,
+  boxShadow: semanticVars.shadow.lg,
   willChange: "translate",
   transitionProperty: "opacity, translate",
   transitionDuration: "200ms",
@@ -156,8 +156,8 @@ export const footer = style({
 export const footerDefault = style({
   borderTopWidth: tokenVars.borderWidth.thin,
   borderTopStyle: "solid",
-  borderTopColor: themeContract.borderSubtle,
-  backgroundColor: themeContract.backgroundSubtle,
+  borderTopColor: semanticVars.border.subtle,
+  backgroundColor: semanticVars.background.subtle,
   paddingTop: tokenVars.spacing.md,
   paddingBottom: tokenVars.spacing.md,
 });
@@ -176,7 +176,7 @@ export const title = style({
 export const description = style({
   fontSize: tokenVars.fontSize.sm,
   lineHeight: 1.4,
-  color: themeContract.contentSecondary,
+  color: semanticVars.text.secondary,
 });
 
 export const panel = style({
