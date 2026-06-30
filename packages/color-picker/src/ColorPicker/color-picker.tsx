@@ -1,20 +1,21 @@
 import { CaretDownIcon } from "@phosphor-icons/react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { HexAlphaColorPicker, HexColorInput } from "react-colorful";
-import { Button } from "../Button/button";
-import { ColorSwatch } from "../ColorSwatch/color-swatch";
-import { Field, FieldLabel } from "../Field/field";
-import { Input } from "../Input/input";
 import {
+  Input,
+  Button,
+  ColorSwatch,
+  Field,
+  FieldLabel,
   Popover,
   PopoverArrow,
   PopoverCompound,
   PopoverPopup,
   PopoverPositioner,
   PopoverTrigger,
-} from "../Popover/popover";
-import { VStack } from "../Stack/stack";
-import { Text } from "../Text/text";
+  VStack,
+  Text,
+} from "@blenx-dev/core";
 
 const HEX_REGEX = /^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$/;
 

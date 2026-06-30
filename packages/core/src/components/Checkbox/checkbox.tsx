@@ -12,6 +12,7 @@ import {
   indicatorIndeterminate,
   icon,
 } from "./checkbox.css";
+import { SquareCheckIcon } from "../../icons";
 
 type CheckboxGroupProps = CheckboxGroupPrimitive.Props & {
   className?: string;
@@ -66,21 +67,7 @@ function Checkbox({ className, style, ...props }: CheckboxProps) {
                     <path d="M5.252 12h13.496" />
                   </svg>
                 ) : (
-                  <svg
-                    aria-hidden="true"
-                    className={icon}
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="3"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M5.252 12.7 10.2 18.63 18.748 5.37" />
-                  </svg>
+                  <SquareCheckIcon />
                 )}
               </span>
             )}

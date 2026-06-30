@@ -14,6 +14,7 @@ import {
 } from "@blenx-dev/core";
 import { useState, useRef, type ReactNode } from "react";
 import { Calendar } from "../Calendar";
+import { CalendarIcon } from "@blenx-dev/core/icons";
 type Props = {
   value: Date | undefined;
   triggerIcon?: ReactNode;
@@ -61,7 +62,7 @@ export function DatePicker({
           disabled={disabled}
           render={<Button type="button" variant="outline" fullWidth />}
         >
-          {triggerIcon ? <Icon size="md">{triggerIcon}</Icon> : null}
+          <Icon size="md">{triggerIcon ? triggerIcon : <CalendarIcon />}</Icon>
           {value ? (format?.(value) ?? value.toString()) : placeholder}
         </PopoverTrigger>
         <PopoverPortal>

@@ -1,4 +1,5 @@
-import { Accordion, ColorPicker, Grid, VStack } from "@blenx-dev/core";
+import { Accordion, Grid, VStack } from "@blenx-dev/core";
+import { ColorPicker } from "@blenx-dev/color-picker";
 import { useThemeBuilder } from "../theme-builder-context";
 import type { ThemeTokens } from "../theme-builder-context";
 
@@ -92,7 +93,7 @@ function ColorGroupControl({
               key={sub}
               label={sub}
               value={getTokenValue(sub)}
-              onChange={(color) => updateToken(groupKey, sub, color)}
+              onChange={(color: string) => updateToken(groupKey, sub, color)}
             />
           ))}
         </Grid>

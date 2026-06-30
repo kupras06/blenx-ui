@@ -1,8 +1,7 @@
-import { semanticVars } from "@blenx-dev/theme/contract";
-import { ListIcon } from "@phosphor-icons/react";
 import type { Table } from "@tanstack/react-table";
 import * as styles from "./data-table.css";
 import { Button, Menu, MenuItem, MenuPopup, MenuSeparator, MenuTrigger } from "@blenx-dev/core";
+import { SquareCheckIcon, ListIcon } from "@blenx-dev/core/icons";
 
 interface DataTableColumnToggleProps<TData> {
   table: Table<TData>;
@@ -19,7 +18,7 @@ export function DataTableColumnToggle<TData>({ table }: DataTableColumnTogglePro
   return (
     <Menu>
       <MenuTrigger render={<Button variant="outline" size="sm" />}>
-        <ListIcon size={16} />
+        <ListIcon />
         <span>Columns</span>
       </MenuTrigger>
       <MenuPopup align="end">
@@ -55,19 +54,5 @@ export function DataTableColumnToggle<TData>({ table }: DataTableColumnTogglePro
 }
 
 function CheckMark() {
-  return (
-    <svg
-      width="12"
-      height="12"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke={semanticVars.interactive.primaryFg}
-      strokeWidth="3"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <title>Visible</title>
-      <polyline points="20 6 9 17 4 12" />
-    </svg>
-  );
+  return <SquareCheckIcon />;
 }

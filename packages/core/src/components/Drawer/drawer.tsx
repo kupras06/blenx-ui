@@ -68,6 +68,7 @@ import {
 import { CloseButton } from "../CloseButton";
 import type { _BaseDivProps } from "../../utils/types";
 import { Box } from "../Box";
+import { SquareCheckIcon } from "../../icons";
 
 type DrawerPosition = "right" | "left" | "top" | "bottom";
 
@@ -494,20 +495,7 @@ export function DrawerMenuCheckboxItem({
       ) : (
         <>
           <CheckboxPrimitive.Indicator className={menuCheckboxIndicator}>
-            <svg
-              fill="none"
-              height="24"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              width="24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title>fd</title>
-              <path d="M5.252 12.7 10.2 18.63 18.748 5.37" />
-            </svg>
+            <SquareCheckIcon />
           </CheckboxPrimitive.Indicator>
           <span className={menuCheckboxLabel}>{children}</span>
         </>
@@ -550,20 +538,7 @@ function DrawerMenuRadioItem({
       {...props}
     >
       <RadioPrimitive.Indicator className={menuRadioIndicator}>
-        <svg
-          fill="none"
-          height="24"
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-          width="24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <title>fd</title>
-          <path d="M5.252 12.7 10.2 18.63 18.748 5.37" />
-        </svg>
+        <SquareCheckIcon />
       </RadioPrimitive.Indicator>
       <span className={menuRadioLabel}>{children}</span>
     </RadioPrimitive.Root>

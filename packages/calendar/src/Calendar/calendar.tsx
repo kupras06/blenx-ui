@@ -23,6 +23,7 @@ import {
   dropdown,
 } from "./calendar.css";
 import { IconButton } from "@blenx-dev/core";
+import { ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon } from "@blenx-dev/core/icons";
 
 function StyledDayButton({
   day: _day,
@@ -109,12 +110,24 @@ function Calendar({ className, components: userComponents, ...props }: DayPicker
       orientation?: "left" | "right" | "up" | "down";
     }): React.ReactElement => {
       if (orientation === "left") {
-        return <IconButton variant="ghost">&lt;</IconButton>;
+        return (
+          <IconButton variant="ghost">
+            <ChevronLeftIcon />
+          </IconButton>
+        );
       }
       if (orientation === "right") {
-        return <IconButton variant="ghost">&gt;</IconButton>;
+        return (
+          <IconButton variant="ghost">
+            <ChevronRightIcon />
+          </IconButton>
+        );
       }
-      return <IconButton variant="ghost">&gt;</IconButton>;
+      return (
+        <IconButton variant="ghost">
+          <ChevronDownIcon />
+        </IconButton>
+      );
     },
   };
   const mergedComponents = {

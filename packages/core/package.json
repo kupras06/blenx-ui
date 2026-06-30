@@ -5,6 +5,10 @@
   "sideEffects": false,
   "exports": {
     ".": "./src/index.ts",
+    "./icons": {
+      "types": "./src/icons/index.ts",
+      "default": "./src/icons/index.ts"
+    },
     "./*": "./src/components/*/index.ts",
     "./components": {
       "types": "./src/components/index.ts",
@@ -22,6 +26,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "scripts": {
+    "gen:icons": "tsx scripts/generate-icons.ts"
+  },
   "dependencies": {
     "@base-ui/react": "^1.0.0",
     "@blenx-dev/theme": "workspace:*",
@@ -34,9 +41,15 @@
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
+    "@iconify/json": "^2.2.493",
+    "@iconify/tools": "^5.0.12",
+    "@iconify/types": "^2.0.0",
+    "@iconify/utils": "^3.1.3",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
-    "changeset": "^0.2.6"
+    "changeset": "^0.2.6",
+    "prettier": "^3.9.3",
+    "tsx": "^4.22.4"
   },
   "peerDependencies": {
     "@blenx-dev/theme": "workspace:*",
