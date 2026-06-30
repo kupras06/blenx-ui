@@ -40,4 +40,5 @@ export const demoImports: Record<string, () => Promise<Record<string, unknown>>>
   switch: () => import("@blenx-dev/ui/components/Switch/switch.demo"),
   table: () => import("@blenx-dev/ui/components/Table/table.demo"),
   tabs: () => import("@blenx-dev/ui/components/Tabs/tabs.demo"),
+  toggle: () => import("@blenx-dev/ui/components/Toggle/toggle.demo"),
 };

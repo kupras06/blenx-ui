@@ -1,8 +1,8 @@
 import { memo } from "react";
-import { Text } from "@blenx-dev/ui";
+import { Text, VStack } from "@blenx-dev/ui";
 import { getComponentsForToken } from "../preview/component-token-map";
 import { useThemeBuilder } from "../theme-builder-context";
-import { impactPanel, impactEmpty, impactList, impactChip } from "@/lib/styles.css";
+import { impactPanel, impactEmpty, impactChip } from "@/lib/styles.css";
 
 export const ImpactSummary = memo(() => {
   const selectedToken = useThemeBuilder((s) => s.selectedToken);
@@ -35,13 +35,13 @@ export const ImpactSummary = memo(() => {
           {components.length !== 1 ? "s" : ""}
         </Text>
       </div>
-      <div className={impactList} style={{ marginTop: 16 }}>
+      <VStack marginTop={"4"}>
         {components.map((name) => (
-          <span key={name} className={impactChip}>
+          <div key={name} className={impactChip}>
             {name}
-          </span>
+          </div>
         ))}
-      </div>
+      </VStack>
     </div>
   );
 });

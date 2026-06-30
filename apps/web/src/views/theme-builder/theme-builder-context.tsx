@@ -55,9 +55,6 @@ export const defaultTokens: SemanticTokens = {
 
 interface ThemeBuilderStore {
   tokens: ThemeTokens;
-  sidebarOpen: boolean;
-  toggleSidebar: () => void;
-  setSidebarOpen: (open: boolean) => void;
   updateToken: (group: ThemeTokenGroup, key: string, value: ThemeTokenValue) => void;
   updateTokenDebounced: (group: ThemeTokenGroup, key: string, value: ThemeTokenValue) => void;
   resetTokens: () => void;
@@ -70,11 +67,7 @@ const debounceTimers = new Map<string, ReturnType<typeof setTimeout>>();
 function createThemeBuilderStore() {
   return create<ThemeBuilderStore>((set) => ({
     tokens: structuredClone(defaultTokens),
-    sidebarOpen: true,
     selectedToken: null,
-
-    toggleSidebar: () => set((state) => ({ sidebarOpen: !state.sidebarOpen })),
-    setSidebarOpen: (open) => set({ sidebarOpen: open }),
 
     setSelectedToken: (token) => set({ selectedToken: token }),
 

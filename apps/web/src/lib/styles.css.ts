@@ -15,7 +15,6 @@ export const docsLink = style({
 });
 
 /* ── Installation ── */
-
 export const installList = style({
   margin: 0,
   paddingLeft: "1.25rem",
@@ -142,83 +141,20 @@ export const headingAnchor = style({
   },
 });
 
-export const kpiValue = style({
-  fontSize: tokenVars.fontSize.xl,
-  fontWeight: 700,
-  color: semanticVars.text.primary,
-});
-
 export const kpiLabel = style({
   fontSize: tokenVars.fontSize.xs,
   color: semanticVars.text.secondary,
   marginTop: tokenVars.spacing["1"],
 });
 
-export const trendUp = style({
-  color: semanticVars.status.success.default,
-  fontSize: tokenVars.fontSize.xs,
-  display: "flex",
-  alignItems: "center",
-  gap: tokenVars.spacing["1"],
-  marginTop: tokenVars.spacing["1"],
-});
-
-export const trendDown = style({
-  color: semanticVars.status.danger.default,
-  fontSize: tokenVars.fontSize.xs,
-  display: "flex",
-  alignItems: "center",
-  gap: tokenVars.spacing["1"],
-  marginTop: tokenVars.spacing["1"],
-});
-
-export const dashboardGrid = style({
-  display: "grid",
-  gridTemplateColumns: "1fr 1fr",
-  gap: tokenVars.spacing["3"],
-  marginTop: tokenVars.spacing["6"],
-});
-
 export const profileSection = style({
   marginTop: tokenVars.spacing["6"],
-});
-
-export const profileContent = style({
-  display: "flex",
-  alignItems: "center",
-  gap: tokenVars.spacing["3"],
-});
-
-export const profileInfo = style({
-  display: "flex",
-  flexDirection: "column",
-  gap: tokenVars.spacing["1"],
-});
-
-export const profileName = style({
-  fontSize: tokenVars.fontSize.md,
-  fontWeight: 600,
-  color: semanticVars.text.primary,
-});
-
-export const profileEmail = style({
-  fontSize: tokenVars.fontSize.sm,
-  color: semanticVars.text.secondary,
 });
 
 export const profileActions = style({
   display: "flex",
   gap: tokenVars.spacing["2"],
   marginTop: tokenVars.spacing["3"],
-});
-
-export const chartPlaceholder = style({
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  minHeight: 200,
-  color: semanticVars.text.disabled,
-  fontSize: tokenVars.fontSize.sm,
 });
 
 /* ── Impact Summary ── */
@@ -237,12 +173,6 @@ export const impactEmpty = style({
   fontSize: tokenVars.fontSize.xs,
   textAlign: "center",
   paddingBlock: tokenVars.spacing["2"],
-});
-
-export const impactList = style({
-  display: "flex",
-  flexDirection: "column",
-  gap: tokenVars.spacing["1"],
 });
 
 export const impactChip = style({

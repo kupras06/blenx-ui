@@ -8,7 +8,38 @@ const ThemeBuilderPage = lazy(() =>
   })),
 );
 
+export type ThemeBuilderTab =
+  | "showcase"
+  | "dashboard"
+  | "auth"
+  | "settings"
+  | "marketing"
+  | "states"
+  | "inspector";
+
+export interface ThemeBuilderSearch {
+  tab: ThemeBuilderTab;
+  sidebar: "true" | "false";
+}
+
 export const Route = createFileRoute("/theme-builder")({
+  validateSearch: (search: Record<string, unknown>): ThemeBuilderSearch => {
+    const validTabs: ThemeBuilderTab[] = [
+      "showcase",
+      "dashboard",
+      "auth",
+      "settings",
+      "marketing",
+      "states",
+      "inspector",
+    ];
+    return {
+      tab: validTabs.includes(search.tab as ThemeBuilderTab)
+        ? (search.tab as ThemeBuilderTab)
+        : "showcase",
+      sidebar: search.sidebar as "true" | "false",
+    };
+  },
   component: ThemeBuilderRoute,
 });
 
