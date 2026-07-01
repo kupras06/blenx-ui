@@ -14,10 +14,6 @@ Grid is a CSS Grid layout primitive that enables complex two-dimensional layouts
 
 <Installation registryName="grid" />
 
-## Source Code
-
-<SourceCode registryName="grid" />
-
 ## Usage
 
 Define the grid structure with `columns` and `rows` props, accepting CSS grid template values or theme-based span tokens. The `gap` prop sets row and column gaps using theme spacing tokens. Items are placed automatically in source order or explicitly using `column` and `row` props on child elements. Use `alignItems`, `justifyContent`, and `placeItems` for alignment control. Responsive grids are achieved by passing object values keyed by breakpoint — for example, `columns={{ sm: 1, md: 2, lg: 3 }}`. The component renders as a `div` with `display: grid` and passes all specified CSS grid properties through vanilla-extract.

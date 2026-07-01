@@ -18,10 +18,6 @@ Select presents a list of options from which the user chooses one value. It supp
 
 <Installation registryName="select" />
 
-## Source Code
-
-<SourceCode registryName="select" />
-
 ## Usage
 
 The native variant renders a stylized `<select>` element with custom chevron icon, preferred for form compatibility and mobile experience where the OS provides a native picker. The custom variant renders a trigger button with a dropdown menu built on the Popover component, offering richer styling control. Both variants support `<optgroup>` for categorizing options with group labels. The placeholder prop displays instructional text when no option is selected, though it is not a substitute for a visible label. Validation styling mirrors the Input component's error state treatment.

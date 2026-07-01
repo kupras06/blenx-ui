@@ -18,7 +18,7 @@ type Props = RecipeVariants<typeof alertVariants> & {
 function Alert({ variant = "info", icon, title, description, children, className }: Props) {
   return (
     <HStack
-      align={icon ? "start" : "center"}
+      align={description ? "start" : "center"}
       gap="xs"
       p="sm"
       className={clsx(alertVariants({ variant }), className)}

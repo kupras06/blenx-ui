@@ -14,10 +14,6 @@ Surface provides a themed container with configurable elevation, padding, and ba
 
 <Installation registryName="surface" />
 
-## Source Code
-
-<SourceCode registryName="surface" />
-
 ## Usage
 
 The component renders a container with background color, border radius, and optional border and shadow determined by the variant and elevation props. The `variant` prop selects the background treatment: `sunken` for backgrounds that recede below the page surface, `raised` for the default surface level matching the page background, and `elevated` for surfaces that appear to float above the page. The `padding` prop applies consistent internal spacing from the spacing scale. The `elevation` prop adds shadow depth for visual separation, with higher values producing larger shadows.

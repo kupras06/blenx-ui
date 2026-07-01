@@ -18,10 +18,6 @@ The Alert component delivers contextual feedback messages to users in response t
 
 <Installation registryName="alert" />
 
-## Source Code
-
-<SourceCode registryName="alert" />
-
 ## Usage
 
 Render an Alert with the `intent` prop to select the visual variant. Each intent automatically applies the corresponding icon (checkmark for success, exclamation for warning, etc.), but you can override it with the `icon` slot if your messaging requires a custom graphic. Alerts can optionally render a title via the `title` prop to summarize the message, followed by children for the detailed body. The component accepts an `onClose` callback and a dismiss button when closable behavior is needed. Alerts participate in the document flow and will push sibling content, so place them near the surface they relate to — typically at the top of a form, card, or page section.

@@ -14,10 +14,6 @@ Checkbox presents a binary choice with an associated label, supporting checked, 
 
 <Installation registryName="checkbox" />
 
-## Source Code
-
-<SourceCode registryName="checkbox" />
-
 ## Usage
 
 Control the checked state with `checked` and `onChange` props. Pass `indeterminate` to render the minus icon for partial selection in tree hierarchies — this is a visual-only state and does not affect the boolean value. Use `invalid` and `required` props for validation feedback. The label is passed as `children` or via the `label` prop, and clicking the label toggles the checkbox. For checkbox groups, wrap multiple checkboxes in a `Field` with a group label and use `FieldError` for validation messages. The `size` prop adjusts the checkbox box dimensions and label font size proportionally.

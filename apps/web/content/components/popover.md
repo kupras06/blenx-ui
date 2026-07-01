@@ -18,10 +18,6 @@ Popover displays floating content in relation to a trigger element, with automat
 
 <Installation registryName="popover" />
 
-## Source Code
-
-<SourceCode registryName="popover" />
-
 ## Usage
 
 The Popover consists of a trigger component and a content panel. The trigger is any interactive element; clicking it toggles the popover visibility. The content panel positions itself relative to the trigger using the configured placement, which accepts `top`, `bottom`, `left`, `right`, and their `-start`/`-end` variants. The popover automatically flips to the opposite side when the preferred placement would overflow the viewport. A backdrop overlay or close button can be added for dismissible popovers.

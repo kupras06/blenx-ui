@@ -14,9 +14,9 @@ DataTable is a feature-rich table component built on @tanstack/react-table for s
 
 Define columns using the `columns` prop with accessor functions, header labels, and optional cell renderers. Pass data via the `data` prop. Sorting is enabled per-column by setting `enableSorting: true` in the column definition. Filtering works through column-level filter inputs or a global search control via `globalFilter`. For pagination, use the `pagination` prop with page size and page index state, or enable `infiniteScroll` for a load-more pattern. Row selection is exposed through `onRowSelectionChange` and the `rowSelection` prop. The table manages its internal state via @tanstack/react-table's state management, but you can control it externally through the `state` prop. Server-side mode passes sorting, filtering, and pagination state to your data fetching function via callbacks.
 
-## Source Code
+## Installation
 
-<SourceCode registryName="data-table" />
+<Installation registryName="data-table" />
 
 ## API Reference
 

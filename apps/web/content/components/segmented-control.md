@@ -14,10 +14,6 @@ Segmented Control presents mutually exclusive options in a compact, horizontal r
 
 <Installation registryName="segmented-control" />
 
-## Source Code
-
-<SourceCode registryName="segmented-control" />
-
 ## Usage
 
 The component renders a row of segments where exactly one segment is selected at any time. Each segment behaves as a button with persistent active styling for the selected state. The container applies connected border-radius treatment where corners are rounded on the outermost segments and squared between adjacent segments. The `value` and `onChange` props manage selection in controlled mode. Segments can be disabled individually or as a group, and disabled segments are skipped during keyboard navigation.

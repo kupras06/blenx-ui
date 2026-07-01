@@ -13,26 +13,22 @@ globalStyle(`${codeBlockContent} .shiki`, {
   maxWidth: "100%",
   boxSizing: "border-box",
   margin: 0,
-  whiteSpace: "pre-wrap",
-  wordBreak: "break-word",
 });
 
 globalStyle(`${codeBlockContent} .shiki code`, {
   display: "block",
   width: "100%",
   maxWidth: "100%",
-  whiteSpace: "inherit",
   overflowWrap: "inherit",
   wordBreak: "inherit",
 });
 
 globalStyle(`${codeBlockContent} .shiki .line`, {
-  display: "block",
   width: "100%",
   maxWidth: "100%",
-  whiteSpace: "inherit",
   overflowWrap: "inherit",
   wordBreak: "inherit",
+  lineHeight: 1.35,
 });
 
 globalStyle(`${codeBlockContent} .shiki span`, {

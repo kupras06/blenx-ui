@@ -18,10 +18,6 @@ Tabs organizes content into separate panels where only one panel is visible at a
 
 <Installation registryName="tabs" />
 
-## Source Code
-
-<SourceCode registryName="tabs" />
-
 ## Usage
 
 Tabs is built on Base UI Tabs primitives, implementing the WAI-ARIA tabs pattern with `tablist`, `tab`, and `tabpanel` roles. The component consists of a Tab List containing Tab triggers and a set of Tab Panels that correspond by index or value. The `value` and `onValueChange` props manage the selected tab in controlled mode. Keyboard navigation follows the roving tabindex pattern: arrow keys switch between tabs, and Tab moves focus into the active panel. The `orientation` prop toggles between horizontal and vertical tab layouts.

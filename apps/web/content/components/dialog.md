@@ -18,10 +18,6 @@ Dialog is a modal overlay that presents content requiring user attention or inpu
 
 <Installation registryName="dialog" />
 
-## Source Code
-
-<SourceCode registryName="dialog" />
-
 ## Usage
 
 Dialog consists of `DialogTrigger`, `DialogContent`, `DialogHeader`, `DialogBody`, `DialogFooter`, `DialogTitle`, and `DialogDescription` sub-components. Trigger the dialog via `DialogTrigger`, which can be any interactive element. `DialogContent` renders the modal surface with the backdrop. `DialogTitle` provides the accessible name for the dialog, and `DialogDescription` provides additional context. The dialog traps focus within its content when open, returns focus to the trigger on close, and dismisses on Escape or backdrop click. Control open state with `open` and `onOpenChange` for controlled usage, or use `defaultOpen` for uncontrolled. The `size` prop adjusts the dialog width — `sm`, `md`, `lg`, `xl`, and `fullscreen`.

@@ -14,10 +14,6 @@ Slider allows users to select a value or range of values from a continuous or di
 
 <Installation registryName="slider" />
 
-## Source Code
-
-<SourceCode registryName="slider" />
-
 ## Usage
 
 The slider renders a horizontal track by default, with vertical orientation available through the `orientation` prop. The `value` and `onChange` props manage the controlled value, which can be a single number or a two-element array for range mode. The `step` prop defines the increment granularity, with `min` and `max` bounding the range. Ticks are rendered at interval positions when the `marks` prop is provided. The track is divided visually into the filled portion (before the thumb) and the unfilled portion (after the thumb), with color indicating the active range.

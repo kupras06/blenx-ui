@@ -18,10 +18,6 @@ The Accordion component organizes content into collapsible sections, letting use
 
 <Installation registryName="accordion" />
 
-## Source Code
-
-<SourceCode registryName="accordion" />
-
 ## Usage
 
 Accordion exposes a controlled and uncontrolled API via `defaultValue` for the expanded item keys. Each child section uses `AccordionItem` wrapping `AccordionTrigger` and `AccordionPanel`. The trigger is the clickable header that controls visibility of its corresponding panel. You can allow multiple panels to be open simultaneously by configuring the component to support multi-open behavior, but single-open (default) is the more common pattern. Changing the expanded item programmatically is straightforward via the `value` prop in controlled mode. The component handles collapse animations internally, so you can rely on smooth transitions without additional wiring.

@@ -18,10 +18,6 @@ Table renders structured data in a grid of rows and columns using styled native 
 
 <Installation registryName="table" />
 
-## Source Code
-
-<SourceCode registryName="table" />
-
 ## Usage
 
 Table provides `<thead>`, `<tbody>`, `<tr>`, `<th>`, and `<td>` components that mirror the native HTML table structure with consistent styling. The `sortable` prop on header cells adds click-to-sort behavior with ascending and descending indicators. The `striped` variant alternates row background colors for improved scanability in dense datasets. The `stickyHeader` prop pins the header row to the top of the scrollable container when the table body overflows. The table is wrapped in a horizontal overflow container by default to prevent layout breakage on narrow viewports.

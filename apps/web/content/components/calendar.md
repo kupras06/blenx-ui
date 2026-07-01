@@ -14,10 +14,6 @@ Calendar renders a date grid with month navigation, supporting single date, date
 
 <Installation registryName="calendar" />
 
-## Source Code
-
-<SourceCode registryName="calendar" />
-
 ## Usage
 
 Configure `selectionMode` as `"single"`, `"range"`, or `"multiple"`. In single mode, clicking a date selects it and calls `onDateChange`. In range mode, clicking a start date then an end date selects the range, with visual highlighting between them. The `minDate` and `maxDate` props constrain the selectable range, graying out disabled dates. Month navigation occurs via previous and next arrow buttons, with optional month and year dropdowns for rapid navigation when `showMonthYearPicker` is enabled. The component accepts a `defaultMonth` to set the initially visible month without setting a selected date. Use `isDateUnavailable` for custom date disabling logic beyond simple range constraints.

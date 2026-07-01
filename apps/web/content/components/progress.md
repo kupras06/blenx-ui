@@ -14,10 +14,6 @@ Progress visualizes the completion status of an ongoing operation. It supports d
 
 <Installation registryName="progress" />
 
-## Source Code
-
-<SourceCode registryName="progress" />
-
 ## Usage
 
 In determinate mode, the `value` prop accepts a number between 0 and `max` (default 100), and the bar fills proportionally. The component renders a native `<progress>` element for semantic HTML and accessibility. Indeterminate mode is activated by omitting the `value` prop or setting it to `null`, rendering an animated stripe pattern that loops continuously. The `size` prop controls thickness, with options matching the system's spacing scale.

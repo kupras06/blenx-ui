@@ -14,10 +14,6 @@ DatePicker combines the Calendar component with a Popover and a text input trigg
 
 <Installation registryName="datepicker" />
 
-## Source Code
-
-<SourceCode registryName="datepicker" />
-
 ## Usage
 
 Control the selected date with `value` (a Date object) and `onChange`. The `format` prop defines the display format in the input field. The popover opens when the user clicks the input or the calendar icon. Use `minDate` and `maxDate` to constrain the selectable range, disabling invalid dates in the calendar. The `selectionMode` prop supports single, range, and multiple modes, mirroring Calendar's capabilities. In range mode, the input shows the start and end dates separated by a dash. The component handles date parsing from text input — invalid text entries trigger validation errors without closing the popover. The `defaultMonth` prop sets the initially visible month in the calendar, independent of the selected date.

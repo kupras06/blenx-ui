@@ -18,10 +18,6 @@ Spinner communicates ongoing loading activity through a rotating indicator anima
 
 <Installation registryName="spinner" />
 
-## Source Code
-
-<SourceCode registryName="spinner" />
-
 ## Usage
 
 The component renders an animated SVG circle that rotates continuously. The `size` prop maps to the system's spacing scale, providing consistent dimensions across the application. The optional `label` prop renders a text node that is visually hidden but available to screen readers via `aria-label` on the svg element. When no label is provided, the spinner is marked as `aria-hidden` to avoid announcing meaningless rotation to assistive technology. The animation speed is calibrated to feel calm but purposeful — approximately one rotation per second.

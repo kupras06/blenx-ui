@@ -18,10 +18,6 @@ Command implements a command palette — a search-driven interface for triggerin
 
 <Installation registryName="command" />
 
-## Source Code
-
-<SourceCode registryName="command" />
-
 ## Usage
 
 Define command items as an array of objects with `id`, `label`, optional `shortcut`, optional `group`, and `onSelect` callback. Groups are defined separately and items reference them by key. The search input filters items across all groups using case-insensitive matching against the label. Selected items call the `onSelect` callback and close the palette. Use `pages` for nested command flows — a "Create" command could open a sub-page with specific creation options. The palette opens and closes via the exposed `open` and `onOpenChange` props, typically bound to a keyboard shortcut listener. Command handles focus trapping and Escape dismissal within the dialog overlay.

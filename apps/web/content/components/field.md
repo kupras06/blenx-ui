@@ -14,10 +14,6 @@ Field wraps form controls with label, help text, and error message layout, provi
 
 <Installation registryName="field" />
 
-## Source Code
-
-<SourceCode registryName="field" />
-
 ## Usage
 
 Pass the `label` prop for the visible label text and `name` for the form control's identifier. Use `helpText` for descriptive guidance that appears below the control, and `errorMessage` for validation errors. The `required` prop adds a visual indicator (typically an asterisk) to the label and sets `aria-required` on the control. Field uses `FieldLabel`, `FieldHelpText`, and `FieldError` sub-components internally but renders them automatically based on the props. The `layout` prop switches between vertical (label above control) and horizontal (label beside control) orientations. For horizontal layouts, `labelWidth` controls the label column width. Field wraps its children in a structure that maintains consistent spacing and alignment regardless of the child component.

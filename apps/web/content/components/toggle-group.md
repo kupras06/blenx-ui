@@ -14,10 +14,6 @@ Toggle Group manages a collection of toggle buttons where users can select multi
 
 <Installation registryName="togglegroup" />
 
-## Source Code
-
-<SourceCode registryName="togglegroup" />
-
 ## Usage
 
 Toggle Group wraps individual Toggle components and manages the array of selected values. The `value` and `onValueChange` props work with an array of selected item values. The `selection` prop controls the behavior: `multiple` allows any number of selected items, and `single` enforces exactly one selected item. The `orientation` prop arranges toggles horizontally or vertically. The `loop` prop controls whether keyboard focus wraps from the last toggle to the first. Child toggles inherit size and variant from the group for consistency.

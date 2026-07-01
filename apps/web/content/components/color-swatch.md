@@ -14,10 +14,6 @@ Color Swatch is a presentational element that displays a color value as a small 
 
 <Installation registryName="color-swatch" />
 
-## Source Code
-
-<SourceCode registryName="color-swatch" />
-
 ## Usage
 
 Pass a `color` prop as a CSS color string — HEX, RGB, HSL, or named colors. The `size` prop controls the diameter of the circle. An optional `border` prop adds a subtle ring around the swatch, useful when the color is white or very light. Swatches can be grouped as children of a `Box` with flex layout for swatch lists. The component does not handle click events directly; wrap it in a `Button` or clickable container if interactivity is needed. Color Swatch accepts an optional `aria-label` for accessible naming when used without accompanying text.

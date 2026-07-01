@@ -14,10 +14,6 @@ Radio renders a group of radio buttons where exactly one option can be selected 
 
 <Installation registryName="radio" />
 
-## Source Code
-
-<SourceCode registryName="radio" />
-
 ## Usage
 
 A Radio Group wraps individual Radio items and manages the selected value. The group accepts a `value` and `onChange` prop, behaving as a controlled component. Each radio renders a native `<input type="radio">` underneath, ensuring form submission compatibility and accessibility. Keyboard navigation follows the roving tabindex pattern: Tab enters and exits the group, arrow keys move between options within the group, and Space selects the focused option.

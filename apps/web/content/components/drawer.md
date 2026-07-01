@@ -18,10 +18,6 @@ Drawer is a slide-in panel that emerges from any edge of the viewport — left, 
 
 <Installation registryName="drawer" />
 
-## Source Code
-
-<SourceCode registryName="drawer" />
-
 ## Usage
 
 Set the `placement` prop to `"left"`, `"right"`, `"top"`, or `"bottom"` to control the entry direction. The `size` prop controls the drawer width for left/right placements and height for top/bottom placements. Control open state with `open` and `onOpenChange`. Drawer accepts the same sub-component structure as Dialog: `DrawerTrigger`, `DrawerContent`, `DrawerHeader`, `DrawerBody`, `DrawerFooter`, `DrawerTitle`, and `DrawerDescription`. The content area scrolls independently when overflow occurs. Drawer traps focus and dismisses on Escape or backdrop click. The `closeOnOutsideClick` prop can be disabled for workflows that require persistent attention.

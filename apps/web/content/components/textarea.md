@@ -14,10 +14,6 @@ Textarea provides a multi-line text input for longer-form content entry. It supp
 
 <Installation registryName="textarea" />
 
-## Source Code
-
-<SourceCode registryName="textarea" />
-
 ## Usage
 
 Textarea renders a native `<textarea>` element with consistent styling applied through the theme system. The `rows` prop controls the initial visible height, with `minRows` and `maxRows` boundaries when auto-resize is enabled. The `resize` prop accepts `none`, `vertical`, `horizontal`, or `both` to control the user's ability to resize the element. Validation state is communicated through border color and an optional supporting message, matching the Input component's pattern. Auto-resize grows the textarea as the user types, up to the `maxRows` limit, at which point scrolling begins.

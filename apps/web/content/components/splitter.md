@@ -14,10 +14,6 @@ Splitter creates resizable panel layouts where users can adjust the relative siz
 
 <Installation registryName="splitter" />
 
-## Source Code
-
-<SourceCode registryName="splitter" />
-
 ## Usage
 
 The component renders two panels separated by a draggable handle. The `defaultSize` prop controls the initial split ratio, accepting a percentage or pixel value for the primary panel. The `minSize` and `maxSize` props constrain panel dimensions to prevent unusably small or impractically large panels. Dragging the handle updates the panel sizes in real time, with optional snap behavior at defined breakpoints. The handle includes visual affordance through a narrow grip indicator and cursor change on hover. Double-clicking the handle resets the split to the default size.

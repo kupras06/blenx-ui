@@ -14,10 +14,6 @@ Breadcrumbs displays the page hierarchy as a navigational trail with separators 
 
 <Installation registryName="breadcrumbs" />
 
-## Source Code
-
-<SourceCode registryName="breadcrumbs" />
-
 ## Usage
 
 Provide an array of `items` where each item contains a `label` and an `href`. The last item is rendered as plain text representing the current page — it is not a link — while all preceding items render as anchors. The `separator` prop customizes the divider between items, defaulting to a forward slash with appropriate spacing. Breadcrumbs are rendered as a `<nav>` element with `aria-label="Breadcrumbs"` for accessibility. The component truncates items that exceed the container width, showing as many ancestor links as space allows with a collapsed indicator for overflow.

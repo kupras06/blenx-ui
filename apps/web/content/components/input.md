@@ -18,10 +18,6 @@ The Input component captures single-line text from users. It serves as the found
 
 <Installation registryName="input" />
 
-## Source Code
-
-<SourceCode registryName="input" />
-
 ## Usage
 
 Input renders a native `<input>` element underneath with consistent styling applied through the theme system. The variant prop controls the visual treatment: outlined is the default for most forms, underlined suits inline editing contexts, and filled works well in toolbars or dense layouts. Validation state is communicated through color (red for error, green for success) and an optional supporting message rendered below the input. The disabled state reduces contrast and removes interactive feedback.

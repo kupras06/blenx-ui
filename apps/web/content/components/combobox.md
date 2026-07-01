@@ -14,10 +14,6 @@ Combobox merges a text input with a selectable options list, combining the flexi
 
 <Installation registryName="combobox" />
 
-## Source Code
-
-<SourceCode registryName="combobox" />
-
 ## Usage
 
 Pass `options` as an array of objects with `label` and `value` properties. The input filters options as the user types, and the filtered list is displayed in a popover. Use `allowCustomValue` to permit values not in the options array — when enabled, the current input value is treated as a valid selection. In multi-select mode (`multiple`), selected items render as removable chips inside the input. The popover opens on input focus or click, and closes on selection, blur, or Escape. Control the selected value with `value` and `onChange`, or use `defaultValue` for uncontrolled usage.

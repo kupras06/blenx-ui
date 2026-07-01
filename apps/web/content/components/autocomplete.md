@@ -14,10 +14,6 @@ Autocomplete provides an input field augmented with a popover suggestion list th
 
 <Installation registryName="autocomplete" />
 
-## Source Code
-
-<SourceCode registryName="autocomplete" />
-
 ## Usage
 
 The component accepts an `options` array for client-side filtering or an `onQueryChange` callback for async search. In client-side mode, pass the full dataset and Autocomplete filters internally using the input value. In async mode, debounce the query handler on your side and update the `options` prop with the results. The popover opens when the input receives focus or the user starts typing, and closes on selection or blur. Use `multiple` mode for tag-like selection, where each selected item renders as a removable chip inside the input. The input value can be controlled or uncontrolled via `value` and `defaultValue` respectively.

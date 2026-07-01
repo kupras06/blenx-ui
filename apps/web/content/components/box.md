@@ -14,10 +14,6 @@ Box is the lowest-level layout primitive in Blenx. It renders a single DOM eleme
 
 <Installation registryName="box" />
 
-## Source Code
-
-<SourceCode registryName="box" />
-
 ## Usage
 
 Box renders a `div` by default but accepts an `as` prop to change the underlying element to any valid HTML tag. Style props are passed directly as props on the component — `padding="md"`, `marginBlockStart="lg"`, `display="flex"`, etc. The style prop system maps design tokens to CSS values, ensuring consistency with the theme. Box does not apply any default styles other than `box-sizing: border-box`. Use it for element-level adjustments like spacing a button group, centering content with `marginInline="auto"`, or applying a background color to a section. For responsive values, pass an object keyed by breakpoint.

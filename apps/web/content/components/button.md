@@ -18,10 +18,6 @@ Button triggers actions and is the most frequently used interactive element in a
 
 <Installation registryName="button" />
 
-## Source Code
-
-<SourceCode registryName="button" />
-
 ## Usage
 
 Set `variant` and `intent` to select the visual combination. The `size` prop (sm, md, lg) scales padding, font size, and icon spacing proportionally. For actions that trigger asynchronous operations, use the `loading` prop to disable interaction and show a spinner in place of the start icon. The `startIcon` and `endIcon` slots accept Icon components that inherit the button's size and color. A button with an icon only (no visible children) renders as a square icon button with equal width and height, suitable for toolbars and action bars. The `disabled` prop prevents interaction and applies reduced opacity.

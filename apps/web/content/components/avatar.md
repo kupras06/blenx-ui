@@ -14,10 +14,6 @@ Avatar displays user profile images with automatic fallback to initials when the
 
 <Installation registryName="avatar" />
 
-## Source Code
-
-<SourceCode registryName="avatar" />
-
 ## Usage
 
 Provide an `src` prop with the image URL and an `alt` prop for accessible naming. The initials fallback is computed from the `name` prop, extracting the first character of the first and last name segments. If both `src` and `name` are absent, Avatar renders a generic user icon. The `size` prop maps to pre-defined dimensions (sm, md, lg, xl) with corresponding font sizes for initials. Add a `status` prop to render the presence indicator at the bottom-right corner of the avatar boundary. The component handles the image loading lifecycle internally — it shows initials while the image loads, transitions to the image on success, and reverts to initials on error.

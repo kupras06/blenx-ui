@@ -14,10 +14,6 @@ Color Picker provides a popover-based color selection interface with a swatch pr
 
 <Installation registryName="colorpicker" />
 
-## Source Code
-
-<SourceCode registryName="colorpicker" />
-
 ## Usage
 
 Control the selected color with `value` (a string in HEX, RGB, HSL, or named color format) and `onChange`. The popover opens on click of the trigger button, which displays the current color as a swatch. Within the popover, users can click a preset color, drag in the saturation-brightness panel, adjust the hue slider, or type values into HEX/RGB input fields. Changes in any input method update all other representations in real time. The `presetColors` prop accepts an array of color strings to display as quick-select swatches at the top of the popover. The component returns color values in the format specified by the `format` prop, defaulting to HEX.

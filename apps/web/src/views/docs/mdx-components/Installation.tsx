@@ -3,7 +3,7 @@ import { Badge, HStack, Separator, Text, VStack } from "@blenx-dev/core";
 import { DocsH3 } from "./DocHeaders";
 import { docsQueries } from "@/lib/docs-api";
 import { CodeSnippet } from "./CodeBlock";
-import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
+import { DocCodeView } from "./doc-code-view";
 
 interface InstallationProps {
   registryName: string;
@@ -20,7 +20,11 @@ function Installation({ registryName }: InstallationProps) {
   const cliCode = `npx shadcn@latest add "${cliUrl}"`;
   const registry = registryQuery.data ?? null;
   const dependencies = registry?.registryDependencies ?? [];
-  const files = registry?.files ?? [];
+
+  const files = (registry?.files ?? []).map((f) => ({
+    code: f.content ?? "",
+    title: cleanTarget(f.target),
+  }));
 
   return (
     <VStack gap="md">
@@ -32,30 +36,15 @@ function Installation({ registryName }: InstallationProps) {
         <CodeSnippet language="bash" code={cliCode} />
       </VStack>
 
-      {registry && files.length > 0 && (
+      {files.length > 0 && (
         <>
           <Separator />
           <VStack gap="xs">
             <DocsH3>Manual Installation</DocsH3>
             <Text variant="body2" color="secondary">
-              Copy the following files into your project:
+              Copy the source files into your project:
             </Text>
-            <VStack gap="xs">
-              {files.map((f) => (
-                <Text
-                  key={f.target}
-                  variant="code"
-                  color="secondary"
-                  style={{
-                    backgroundColor: semanticVars.background.subtle,
-                    padding: "1px 6px",
-                    borderRadius: tokenVars.borderRadius.sm,
-                  }}
-                >
-                  {cleanTarget(f.target)}
-                </Text>
-              ))}
-            </VStack>
+            <DocCodeView files={files} />
           </VStack>
         </>
       )}

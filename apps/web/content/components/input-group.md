@@ -17,10 +17,6 @@ Input Group extends a standard Input with prefix or suffix adornments — icons,
 
 <Installation registryName="inputgroup" />
 
-## Source Code
-
-<SourceCode registryName="inputgroup" />
-
 ## Usage
 
 The component wraps an Input and positions adornment elements in the leading or trailing slots. Adornments are rendered inline within the input's visual container, using the same border, background, and height to create a seamless appearance. The Input Group manages focus states so that clicking an adornment does not remove focus from the input itself. When an adornment is interactive, such as a button, the interactive element must handle its own focus and click events.

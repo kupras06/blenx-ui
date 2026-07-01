@@ -1,9 +1,20 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { allComponents } from "content-collections";
 import { MDXContent } from "@content-collections/mdx/react";
-import { Box, Text } from "@blenx-dev/core";
+import { Badge, Box, HStack, Text } from "@blenx-dev/core";
 import { DocsContent } from "@/views/docs/DocsContent";
 import { mdxComponents } from "@/views/docs/MdxComponents";
+
+const PACKAGE_LABELS: Record<string, string> = {
+  "data-table": "@blenx-dev/datatable",
+  calendar: "@blenx-dev/calendar",
+  "date-picker": "@blenx-dev/calendar",
+  "color-picker": "@blenx-dev/color-picker",
+};
+
+function getPackageLabel(path: string): string | null {
+  return PACKAGE_LABELS[path] ?? null;
+}
 
 export const Route = createFileRoute("/docs/components/$component")({
   beforeLoad: ({ params }) => {
@@ -28,10 +39,19 @@ function ComponentDoc() {
 
   if (!doc) throw notFound();
 
+  const pkgLabel = getPackageLabel(component);
+
   return (
     <DocsContent>
       <Box>
-        <Text variant="h1">{doc.title}</Text>
+        <HStack gap="sm" align="center">
+          <Text variant="h1">{doc.title}</Text>
+          {pkgLabel && (
+            <Badge variant="default" appearance="soft" radius="default">
+              {pkgLabel}
+            </Badge>
+          )}
+        </HStack>
         <Text variant="body2" color="secondary">
           {doc.description}
         </Text>

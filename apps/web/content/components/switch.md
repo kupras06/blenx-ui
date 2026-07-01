@@ -18,10 +18,6 @@ Switch provides a binary toggle control for turning a setting on or off. It rend
 
 <Installation registryName="switch" />
 
-## Source Code
-
-<SourceCode registryName="switch" />
-
 ## Usage
 
 Switch is built on Base UI Switch primitives, inheriting full WAI-ARIA switch pattern compliance. The component renders a native `<button>` element with `role="switch"` and `aria-checked` attributes managed automatically. The `checked` and `onCheckedChange` props control the toggle state. The disabled state reduces opacity and removes interaction. The `size` prop offers standard and compact variants to match the application's density requirements. The label is provided externally and associated with the switch via `htmlFor` and `id`.

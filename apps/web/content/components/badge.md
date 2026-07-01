@@ -18,10 +18,6 @@ Badge is a small visual indicator that communicates counts, status, or labels ad
 
 <Installation registryName="badge" />
 
-## Source Code
-
-<SourceCode registryName="badge" />
-
 ## Usage
 
 Render a Badge with the `count` prop for numeric indicators or `children` for text labels. The `intent` prop controls color, and the `size` prop adjusts padding and font size. When used as an overlay on another element — like a bell icon for notifications — wrap both elements in a relative container and position the badge absolutely. For standalone badges, the component renders as an inline element that flows with surrounding content. The badge automatically truncates counts exceeding `maxCount` (default 99) to "99+" to prevent visual overflow. Use the `dot` variant to render a small presence indicator without a count value.

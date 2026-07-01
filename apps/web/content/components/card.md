@@ -18,10 +18,6 @@ Card is a surface-level container that groups related content and actions into a
 
 <Installation registryName="card" />
 
-## Source Code
-
-<SourceCode registryName="card" />
-
 ## Usage
 
 Wrap content in `Card`, then compose with `CardHeader`, `CardBody`, and `CardFooter` as needed. `CardTitle` and `CardDescription` go inside `CardHeader` to establish the card's heading hierarchy and supplementary text. The header typically contains the title and any primary actions, the body holds the main content, and the footer houses secondary actions or metadata.

@@ -14,10 +14,6 @@ Menu provides a dropdown list of actions or options triggered by a button, link,
 
 <Installation registryName="menu" />
 
-## Source Code
-
-<SourceCode registryName="menu" />
-
 ## Usage
 
 Menu is built on Base UI Menu primitives, inheriting WAI-ARIA menu pattern compliance. The trigger element receives the appropriate `aria-expanded`, `aria-haspopup`, and `aria-controls` attributes automatically. Items can be plain actions, links, or trigger nested submenus. Separators divide related groups of actions. Disabled items are rendered but excluded from keyboard navigation and receive reduced opacity. The menu positions itself relative to the trigger and flips when viewport space is insufficient.

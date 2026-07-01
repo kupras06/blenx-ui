@@ -18,10 +18,6 @@ OTP Field provides a dedicated input experience for one-time passwords, verifica
 
 <Installation registryName="otpfield" />
 
-## Source Code
-
-<SourceCode registryName="otpfield" />
-
 ## Usage
 
 The component renders a row of individual input slots, each accepting a single character. As the user types, focus automatically advances to the next slot. Pasting a full code fills all slots simultaneously, triggering the onChange callback with the complete value. Backspace in an empty slot returns focus to the previous slot for correction. The `length` prop controls the number of slots, and the `type` prop defaults to `number` for numeric codes but can be set to `text` for alphanumeric tokens.

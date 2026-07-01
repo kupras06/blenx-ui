@@ -14,10 +14,6 @@ Separator renders a visual dividing line that distinguishes content sections, gr
 
 <Installation registryName="separator" />
 
-## Source Code
-
-<SourceCode registryName="separator" />
-
 ## Usage
 
 The component renders a native `<hr>` element in horizontal mode and a styled `<div>` with a vertical border in vertical mode. It is accessible by default, communicating a thematic break to screen readers. The `orientation` prop toggles between `horizontal` and `vertical`. The `tone` prop controls the color strength: `subtle` for low-emphasis dividers in dense layouts, `default` for standard dividers, and `strong` for high-contrast divisions in critical layout sections. The decorative variant sets `aria-hidden="true"` for purely visual separators.

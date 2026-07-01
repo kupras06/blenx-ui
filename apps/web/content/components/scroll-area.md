@@ -14,10 +14,6 @@ Scroll Area provides a custom scrollbar wrapper that delivers consistent scrolli
 
 <Installation registryName="scroll-area" />
 
-## Source Code
-
-<SourceCode registryName="scroll-area" />
-
 ## Usage
 
 The component wraps content inside a container that hides the native scrollbar and renders a custom scrollbar track and thumb overlay. The thumb size is proportional to the visible content ratio. The scrollbar track appears on hover over the scroll area or when the user is actively scrolling, and fades out after a configurable delay when idle. The `orientation` prop supports both vertical and horizontal scrolling independently. The scrollbar visibility is controlled through CSS custom properties for the thumb opacity and track display.

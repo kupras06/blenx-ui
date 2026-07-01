@@ -18,10 +18,6 @@ Alert Dialog is a modal dialog variant designed for urgent confirmations and cri
 
 <Installation registryName="alert-dialog" />
 
-## Source Code
-
-<SourceCode registryName="alert-dialog" />
-
 ## Usage
 
 Alert Dialog renders with a title describing the consequence, a body providing context, and two action buttons — typically a cancel and a confirm. The confirm action uses the `actionIntent` prop to define its visual weight, defaulting to danger for destructive operations. The dialog traps focus and blocks interaction with the rest of the page until dismissed. Pressing Escape or clicking the backdrop dismisses the dialog without committing the action. The component accepts `onConfirm` and `onCancel` callbacks. For destructive actions, include the resource name in the title (e.g., "Delete invoice INV-042") so users know exactly what they are confirming.

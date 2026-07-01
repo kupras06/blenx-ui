@@ -14,10 +14,6 @@ Stack is a flexbox layout primitive that arranges children in a single direction
 
 <Installation registryName="stack" />
 
-## Source Code
-
-<SourceCode registryName="stack" />
-
 ## Usage
 
 HStack and VStack render as flex containers with `flex-direction: row` and `flex-direction: column` respectively. The `gap` prop accepts values from the spacing scale, ensuring consistent whitespace throughout the application. The `align` prop maps to `align-items` for cross-axis alignment, and `justify` maps to `justify-content` for main-axis distribution. The `wrap` prop enables flex-wrap for responsive horizontal layouts that flow to multiple rows. The `inline` prop switches from block-level flex to inline-flex for compact layouts.

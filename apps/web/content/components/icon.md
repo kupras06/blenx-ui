@@ -18,10 +18,6 @@ Icon is a wrapper component for Phosphor icons that provides consistent sizing, 
 
 <Installation registryName="icon" />
 
-## Source Code
-
-<SourceCode registryName="icon" />
-
 ## Usage
 
 Pass the Phosphor icon component as a child to Icon, or use the `name` prop with the icon's string identifier. Set `size` to one of the theme size tokens to match the surrounding text scale. The `color` prop accepts theme color tokens or raw CSS color values. By default, Icon inherits the current text color via `currentColor`, ensuring it matches adjacent text without explicit color configuration. The `weight` prop maps to Phosphor's built-in weight variants (regular, bold, fill, duotone, thin) for visual emphasis. Use `aria-hidden="true"` when the icon is decorative and `aria-label` when it serves as the sole identifier of an action.
