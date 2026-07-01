@@ -9,7 +9,7 @@ import {
 } from "./command";
 import { HStack, VStack } from "../Stack/stack";
 import { Text } from "../Text/text";
-import { Gear, Palette, FileCode } from "@phosphor-icons/react";
+import { FileCodeIcon, PaletteIcon, SettingsIcon } from "../../icons";
 
 export function CommandBasic() {
   return (
@@ -45,19 +45,19 @@ export function CommandWithGroups() {
           <CommandGroup heading="Frameworks">
             <CommandItem value="react">
               <HStack gap="sm" align="center">
-                <FileCode size={16} />
+                <FileCodeIcon width={16} height={16} />
                 <span>React</span>
               </HStack>
             </CommandItem>
             <CommandItem value="vue">
               <HStack gap="sm" align="center">
-                <FileCode size={16} />
+                <FileCodeIcon width={16} height={16} />
                 <span>Vue</span>
               </HStack>
             </CommandItem>
             <CommandItem value="svelte">
               <HStack gap="sm" align="center">
-                <FileCode size={16} />
+                <FileCodeIcon width={16} height={16} />
                 <span>Svelte</span>
               </HStack>
             </CommandItem>
@@ -66,19 +66,19 @@ export function CommandWithGroups() {
           <CommandGroup heading="Tools">
             <CommandItem value="vite">
               <HStack gap="sm" align="center">
-                <Gear size={16} />
+                <SettingsIcon width={16} height={16} />
                 <span>Vite</span>
               </HStack>
             </CommandItem>
             <CommandItem value="webpack">
               <HStack gap="sm" align="center">
-                <Gear size={16} />
+                <SettingsIcon width={16} height={16} />
                 <span>Webpack</span>
               </HStack>
             </CommandItem>
             <CommandItem value="turbopack">
               <HStack gap="sm" align="center">
-                <Gear size={16} />
+                <SettingsIcon width={16} height={16} />
                 <span>Turbopack</span>
               </HStack>
             </CommandItem>
@@ -87,13 +87,13 @@ export function CommandWithGroups() {
           <CommandGroup heading="Themes">
             <CommandItem value="light">
               <HStack gap="sm" align="center">
-                <Palette size={16} />
+                <PaletteIcon width={16} height={16} />
                 <span>Light</span>
               </HStack>
             </CommandItem>
             <CommandItem value="dark">
               <HStack gap="sm" align="center">
-                <Palette size={16} />
+                <PaletteIcon width={16} height={16} />
                 <span>Dark</span>
               </HStack>
             </CommandItem>

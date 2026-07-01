@@ -7,12 +7,16 @@ import {
   Container,
   HStack,
   IconButton,
+  Popover,
+  PopoverPopup,
+  PopoverTrigger,
   ScrollArea,
   Sheet,
   SheetPopup,
   Text,
   VStack,
 } from "@blenx-dev/core";
+import { ListIcon } from "@blenx-dev/core/icons";
 import {
   ClientOnly,
   createFileRoute,
@@ -58,6 +62,33 @@ function RenderSidebarNavs() {
 }
 
 function TocSection() {
+  const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
+  const matches = useMatches({
+    select: (r) => r.reverse().find((m) => (m.context as any).toc),
+  });
+  const items = (matches?.context as any)?.toc ?? [];
+
+  if (!items || items.length === 0) return null;
+
+  if (isSmallDevice) {
+    return (
+      <Popover>
+        <Box position="absolute" right="sm" top="sm" backgroundColor="canvas">
+          <PopoverTrigger
+            render={
+              <IconButton aria-label="On this page" intent="neutral" variant="outline">
+                <ListIcon width={18} />
+              </IconButton>
+            }
+          />
+        </Box>
+        <PopoverPopup>
+          <DocsToc items={items} />
+        </PopoverPopup>
+      </Popover>
+    );
+  }
+
   return (
     <Container size="xxs" centered render={<aside />} aria-label="On this page">
       <VStack gap="md">
@@ -67,17 +98,10 @@ function TocSection() {
           </Text>
           <DocsPrevNext />
         </HStack>
-        <DocsTocSection />
+        <DocsToc items={items} />
       </VStack>
     </Container>
   );
-}
-
-function DocsTocSection() {
-  const matches = useMatches({
-    select: (r) => r.reverse().find((m) => (m.context as any).toc),
-  });
-  return <DocsToc items={(matches?.context as any)?.toc} />;
 }
 
 function getSidebarSections(
@@ -128,15 +152,15 @@ function DocsPrevNext() {
 
 function DocsLayout() {
   return (
-    <HStack py="md">
+    <HStack py="md" position="relative">
       <ClientOnly>
         <RenderSidebarNavs />
       </ClientOnly>
-      <Box grow={1}>
-        <ScrollArea height="90svh">
+      <ScrollArea height="90svh">
+        <Box grow={1} px={"md"}>
           <Outlet />
-        </ScrollArea>
-      </Box>
+        </Box>
+      </ScrollArea>
       <ClientOnly>
         <TocSection />
       </ClientOnly>

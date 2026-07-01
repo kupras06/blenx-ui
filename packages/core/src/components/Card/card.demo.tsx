@@ -1,4 +1,4 @@
-import { MapPinIcon, ShoppingCartIcon, StarIcon, ChartBarIcon } from "@phosphor-icons/react";
+import { ChartBarIcon, MapPinIcon, ShoppingCartIcon, StarIcon } from "../../icons";
 import { Button } from "../Button/button";
 import { Text } from "../Text/text";
 import { Badge } from "../Badge/badge";
@@ -47,7 +47,7 @@ export function ProfileCardDemo() {
               <Badge variant="primary">Pro</Badge>
             </HStack>
             <HStack gap="xxs" align="center">
-              <MapPinIcon size={12} />
+              <MapPinIcon width={12} height={12} />
               <Text variant="caption" color="secondary">
                 San Francisco, CA
               </Text>
@@ -93,7 +93,7 @@ export function ProductCardDemo() {
         <Badge variant="danger" style={{ position: "absolute", top: 8, left: 8 }}>
           20% OFF
         </Badge>
-        <ShoppingCartIcon size={40} />
+        <ShoppingCartIcon width={40} height={40} />
       </Box>
       <CardHeader>
         <HStack gap="md" justify="between" align="center">
@@ -102,7 +102,7 @@ export function ProductCardDemo() {
             <CardDescription>Annual billing - save 20%</CardDescription>
           </VStack>
           <HStack gap="xs" align="center">
-            <StarIcon size={14} />
+            <StarIcon width={14} height={14} />
             <Text variant="caption" weight="semibold">
               4.9
             </Text>
@@ -161,7 +161,7 @@ export function StatCardDemo() {
               flexShrink: 0,
             }}
           >
-            <ChartBarIcon size={24} />
+            <ChartBarIcon width={24} height={24} />
           </Box>
         </HStack>
       </CardBody>

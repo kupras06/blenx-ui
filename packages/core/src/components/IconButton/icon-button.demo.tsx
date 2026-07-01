@@ -1,4 +1,4 @@
-import { PaperPlaneTiltIcon, TrashIcon, ArrowClockwiseIcon, BellIcon } from "@phosphor-icons/react";
+import { BellIcon, RefreshCcwIcon, SendIcon, Trash2Icon } from "../../icons";
 import { HStack, VStack } from "../Stack/stack";
 import { Text } from "../Text/text";
 import { IconButton } from "./icon-button";
@@ -10,22 +10,22 @@ export function IconButtonDemo() {
         <Text variant="h6">Variants</Text>
         <HStack wrap>
           <IconButton aria-label="Send" variant="solid">
-            <PaperPlaneTiltIcon />
+            <SendIcon />
           </IconButton>
           <IconButton aria-label="Send" variant="soft">
-            <PaperPlaneTiltIcon />
+            <SendIcon />
           </IconButton>
           <IconButton aria-label="Send" variant="outline">
-            <PaperPlaneTiltIcon />
+            <SendIcon />
           </IconButton>
           <IconButton aria-label="Send" variant="ghost">
-            <PaperPlaneTiltIcon />
+            <SendIcon />
           </IconButton>
           <IconButton aria-label="Send" variant="soft">
-            <PaperPlaneTiltIcon />
+            <SendIcon />
           </IconButton>
           <IconButton aria-label="Send" variant="link">
-            <PaperPlaneTiltIcon />
+            <SendIcon />
           </IconButton>
         </HStack>
       </VStack>
@@ -34,10 +34,10 @@ export function IconButtonDemo() {
         <Text variant="h6">Intents</Text>
         <HStack wrap>
           <IconButton aria-label="Send" intent="primary">
-            <PaperPlaneTiltIcon />
+            <SendIcon />
           </IconButton>
           <IconButton aria-label="Delete" intent="danger">
-            <TrashIcon />
+            <Trash2Icon />
           </IconButton>
           <IconButton aria-label="Success" intent="success">
             <BellIcon />
@@ -55,13 +55,13 @@ export function IconButtonDemo() {
         <Text variant="h6">Variant + Intent</Text>
         <HStack wrap>
           <IconButton aria-label="Delete" variant="ghost" intent="danger">
-            <TrashIcon />
+            <Trash2Icon />
           </IconButton>
           <IconButton aria-label="Delete" variant="outline" intent="danger">
-            <TrashIcon />
+            <Trash2Icon />
           </IconButton>
           <IconButton aria-label="Delete" variant="soft" intent="danger">
-            <TrashIcon />
+            <Trash2Icon />
           </IconButton>
         </HStack>
       </VStack>
@@ -70,16 +70,16 @@ export function IconButtonDemo() {
         <Text variant="h6">Sizes</Text>
         <HStack wrap align="center">
           <IconButton aria-label="Send" variant="outline">
-            <PaperPlaneTiltIcon />
+            <SendIcon />
           </IconButton>
           <IconButton aria-label="Send" variant="outline">
-            <PaperPlaneTiltIcon />
+            <SendIcon />
           </IconButton>
           <IconButton aria-label="Send" variant="outline">
-            <PaperPlaneTiltIcon />
+            <SendIcon />
           </IconButton>
           <IconButton aria-label="Send" variant="outline">
-            <PaperPlaneTiltIcon />
+            <SendIcon />
           </IconButton>
         </HStack>
       </VStack>
@@ -88,10 +88,10 @@ export function IconButtonDemo() {
         <Text variant="h6">States</Text>
         <HStack wrap>
           <IconButton aria-label="Refresh" loading>
-            <ArrowClockwiseIcon />
+            <RefreshCcwIcon />
           </IconButton>
           <IconButton aria-label="Send" disabled>
-            <PaperPlaneTiltIcon />
+            <SendIcon />
           </IconButton>
         </HStack>
       </VStack>

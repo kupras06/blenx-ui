@@ -1,4 +1,4 @@
-import { CheckIcon, InfoIcon, SkullIcon, WarningIcon } from "@phosphor-icons/react";
+import { CheckIcon, CircleAlertIcon, InfoIcon, SkullIcon } from "../../icons";
 import { Alert } from "./alert";
 import { VStack } from "../Stack/stack";
 
@@ -14,7 +14,7 @@ function AlertDemo() {
       />
       <Alert
         variant="warning"
-        icon={<WarningIcon />}
+        icon={<CircleAlertIcon />}
         title="Warning"
         description="This is a warning alert"
       />

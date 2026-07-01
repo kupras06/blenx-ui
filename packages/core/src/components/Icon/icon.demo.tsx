@@ -1,11 +1,4 @@
-import {
-  CheckIcon,
-  InfoIcon,
-  WarningIcon,
-  XIcon,
-  UserIcon,
-  PaperPlaneTiltIcon,
-} from "@phosphor-icons/react";
+import { CheckIcon, CircleAlertIcon, InfoIcon, SendIcon, UserIcon, XIcon } from "../../icons";
 import { HStack, VStack } from "../Stack/stack";
 import { Text } from "../Text/text";
 import { Icon } from "./icon";
@@ -17,19 +10,19 @@ export function IconDemo() {
         <Text variant="h6">Sizes</Text>
         <HStack align="center" gap="sm">
           <Icon>
-            <UserIcon size={24} />
+            <UserIcon width={24} height={24} />
           </Icon>
           <Icon>
-            <UserIcon size={24} />
+            <UserIcon width={24} height={24} />
           </Icon>
           <Icon>
             <UserIcon />
           </Icon>
           <Icon>
-            <UserIcon size={44} />
+            <UserIcon width={44} height={44} />
           </Icon>
           <Icon>
-            <UserIcon size={64} />
+            <UserIcon width={64} height={64} />
           </Icon>
         </HStack>
       </VStack>
@@ -38,13 +31,13 @@ export function IconDemo() {
         <Text variant="h6">Colors</Text>
         <HStack align="center" gap="sm">
           <Icon color="primary">
-            <PaperPlaneTiltIcon />
+            <SendIcon />
           </Icon>
           <Icon color="secondary">
-            <PaperPlaneTiltIcon />
+            <SendIcon />
           </Icon>
           <Icon>
-            <PaperPlaneTiltIcon />
+            <SendIcon />
           </Icon>
           <Icon color="error">
             <XIcon />
@@ -53,7 +46,7 @@ export function IconDemo() {
             <CheckIcon />
           </Icon>
           <Icon color="warning">
-            <WarningIcon />
+            <CircleAlertIcon />
           </Icon>
           <Icon color="info">
             <InfoIcon />
@@ -74,7 +67,7 @@ export function IconDemo() {
             <CheckIcon />
           </Icon>
           <Icon backgroundColor="warning" color="warning" radius="sm">
-            <WarningIcon />
+            <CircleAlertIcon />
           </Icon>
           <Icon backgroundColor="info" color="info" radius="sm">
             <InfoIcon />

@@ -148,7 +148,7 @@ function RootDocument() {
           <ThemeEffect />
         </ClientOnly>
         <QueryClientProvider client={queryClient}>
-          <Container size="xxxxl" py="xs" px="md">
+          <Container size="xxxxl">
             <Header />
           </Container>
           <Separator />

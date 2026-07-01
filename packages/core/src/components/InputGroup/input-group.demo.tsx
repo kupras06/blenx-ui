@@ -1,4 +1,4 @@
-import { MagnifyingGlassIcon, UserIcon } from "@phosphor-icons/react";
+import { SearchIcon, UserIcon } from "../../icons";
 import { Button } from "../Button/button";
 import { Stack } from "../Stack/stack";
 import { Text } from "../Text/text";
@@ -16,7 +16,7 @@ export function DefaultStory() {
       <Text variant="h4">With icon and button</Text>
       <InputGroup>
         <InputGroupAddon align="inline-start">
-          <MagnifyingGlassIcon size={16} />
+          <SearchIcon width={16} height={16} />
         </InputGroupAddon>
         <InputGroupInput placeholder="Search..." />
         <InputGroupAddon align="inline-end">
@@ -27,7 +27,7 @@ export function DefaultStory() {
       </InputGroup>
       <InputGroup>
         <InputGroupAddon align="block-start">
-          <MagnifyingGlassIcon size={16} />
+          <SearchIcon width={16} height={16} />
         </InputGroupAddon>
         <InputGroupTextarea placeholder="Search..." />
         <InputGroupAddon align="block-end">
@@ -39,7 +39,7 @@ export function DefaultStory() {
       <Text variant="h4">With text addon</Text>
       <InputGroup>
         <InputGroupAddon align="inline-start">
-          <UserIcon size={16} />
+          <UserIcon width={16} height={16} />
         </InputGroupAddon>
         <InputGroupInput placeholder="Username" aria-invalid />
         <InputGroupAddon align="inline-end">

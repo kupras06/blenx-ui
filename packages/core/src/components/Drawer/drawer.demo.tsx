@@ -1,4 +1,4 @@
-import { GearIcon } from "@phosphor-icons/react";
+import { SettingsIcon } from "../../icons";
 import { Button } from "../Button/button";
 import { HStack, VStack } from "../Stack/stack";
 import { Text } from "../Text/text";
@@ -22,7 +22,7 @@ export function DrawerDemo() {
         <DrawerTrigger
           render={
             <Button variant="outline">
-              <GearIcon /> Settings
+              <SettingsIcon /> Settings
             </Button>
           }
         />

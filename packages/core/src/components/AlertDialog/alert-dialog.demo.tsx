@@ -1,4 +1,4 @@
-import { TrashIcon } from "@phosphor-icons/react";
+import { Trash2Icon } from "../../icons";
 import { Button } from "../Button/button";
 import { HStack, VStack } from "../Stack/stack";
 import { Text } from "../Text/text";
@@ -24,7 +24,7 @@ export function AlertDialogDemo() {
           <AlertDialogTrigger
             render={
               <Button variant="outline" intent="danger">
-                <TrashIcon /> Delete Project
+                <Trash2Icon /> Delete Project
               </Button>
             }
           >

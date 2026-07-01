@@ -1,4 +1,4 @@
-import { CaretRightIcon, PlayIcon } from "@phosphor-icons/react";
+import { ChevronRightIcon, PlayIcon } from "../../icons";
 import { HStack, Stack, VStack } from "../Stack/stack";
 import { Text } from "../Text/text";
 import { Button } from "./button";
@@ -108,7 +108,7 @@ export function ButtonDemo() {
           </Button>
           <Button variant="outline" intent="neutral">
             Next
-            <CaretRightIcon />
+            <ChevronRightIcon />
           </Button>
         </HStack>
       </Stack>
