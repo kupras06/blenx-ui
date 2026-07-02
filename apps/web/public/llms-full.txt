@@ -16,7 +16,10 @@ Accordion component organizes content into collapsible sections, letting users d
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/accordion
+pnpm dlx shadcn@latest add @blenx/accordion
+yarn dlx shadcn@latest add @blenx/accordion
+bunx shadcn@latest add @blenx/accordion
 ```
 
 ## Imports
@@ -117,7 +120,10 @@ Alert Dialog is a modal dialog variant designed for urgent confirmations and cri
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/alert-dialog
+pnpm dlx shadcn@latest add @blenx/alert-dialog
+yarn dlx shadcn@latest add @blenx/alert-dialog
+bunx shadcn@latest add @blenx/alert-dialog
 ```
 
 ## Imports
@@ -227,7 +233,10 @@ Alert component delivers contextual feedback messages to users in response to an
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/alert
+pnpm dlx shadcn@latest add @blenx/alert
+yarn dlx shadcn@latest add @blenx/alert
+bunx shadcn@latest add @blenx/alert
 ```
 
 ## Imports
@@ -323,7 +332,10 @@ Autocomplete provides an input field augmented with a popover suggestion list th
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/autocomplete
+pnpm dlx shadcn@latest add @blenx/autocomplete
+yarn dlx shadcn@latest add @blenx/autocomplete
+bunx shadcn@latest add @blenx/autocomplete
 ```
 
 ## Imports
@@ -376,7 +388,10 @@ Avatar displays user profile images with automatic fallback to initials when the
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/avatar
+pnpm dlx shadcn@latest add @blenx/avatar
+yarn dlx shadcn@latest add @blenx/avatar
+bunx shadcn@latest add @blenx/avatar
 ```
 
 ## Imports
@@ -421,7 +436,10 @@ Badge is a small visual indicator that communicates counts, status, or labels ad
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/badge
+pnpm dlx shadcn@latest add @blenx/badge
+yarn dlx shadcn@latest add @blenx/badge
+bunx shadcn@latest add @blenx/badge
 ```
 
 ## Imports
@@ -520,7 +538,10 @@ Box is the lowest-level layout primitive in Blenx.
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/box
+pnpm dlx shadcn@latest add @blenx/box
+yarn dlx shadcn@latest add @blenx/box
+bunx shadcn@latest add @blenx/box
 ```
 
 ## Imports
@@ -567,7 +588,10 @@ Breadcrumbs displays the page hierarchy as a navigational trail with separators 
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/breadcrumbs
+pnpm dlx shadcn@latest add @blenx/breadcrumbs
+yarn dlx shadcn@latest add @blenx/breadcrumbs
+bunx shadcn@latest add @blenx/breadcrumbs
 ```
 
 ## Imports
@@ -615,7 +639,10 @@ Button triggers actions and is the most frequently used interactive element in a
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/button
+pnpm dlx shadcn@latest add @blenx/button
+yarn dlx shadcn@latest add @blenx/button
+bunx shadcn@latest add @blenx/button
 ```
 
 ## Imports
@@ -796,7 +823,10 @@ Calendar renders a date grid with month navigation, supporting single date, date
 ## Installation
 
 ```bash
-npm install @blenx-dev/calendar
+npx shadcn@latest add @blenx/calendar
+pnpm dlx shadcn@latest add @blenx/calendar
+yarn dlx shadcn@latest add @blenx/calendar
+bunx shadcn@latest add @blenx/calendar
 ```
 
 ## Imports
@@ -846,7 +876,10 @@ Card is a surface-level container that groups related content and actions into a
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/card
+pnpm dlx shadcn@latest add @blenx/card
+yarn dlx shadcn@latest add @blenx/card
+bunx shadcn@latest add @blenx/card
 ```
 
 ## Imports
@@ -1077,7 +1110,10 @@ Checkbox presents a binary choice with an associated label, supporting checked, 
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/checkbox
+pnpm dlx shadcn@latest add @blenx/checkbox
+yarn dlx shadcn@latest add @blenx/checkbox
+bunx shadcn@latest add @blenx/checkbox
 ```
 
 ## Imports
@@ -1134,7 +1170,10 @@ Color Picker provides a popover-based color selection interface with a swatch pr
 ## Installation
 
 ```bash
-npm install @blenx-dev/color-picker
+npx shadcn@latest add @blenx/color-picker
+pnpm dlx shadcn@latest add @blenx/color-picker
+yarn dlx shadcn@latest add @blenx/color-picker
+bunx shadcn@latest add @blenx/color-picker
 ```
 
 ## Imports
@@ -1189,7 +1228,10 @@ Color Swatch is a presentational element that displays a color value as a small 
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/color-swatch
+pnpm dlx shadcn@latest add @blenx/color-swatch
+yarn dlx shadcn@latest add @blenx/color-swatch
+bunx shadcn@latest add @blenx/color-swatch
 ```
 
 ## Imports
@@ -1238,7 +1280,10 @@ Combobox merges a text input with a selectable options list, combining the flexi
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/combobox
+pnpm dlx shadcn@latest add @blenx/combobox
+yarn dlx shadcn@latest add @blenx/combobox
+bunx shadcn@latest add @blenx/combobox
 ```
 
 ## Imports
@@ -1291,7 +1336,10 @@ Command implements a command palette — a search-driven interface for triggerin
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/command
+pnpm dlx shadcn@latest add @blenx/command
+yarn dlx shadcn@latest add @blenx/command
+bunx shadcn@latest add @blenx/command
 ```
 
 ## Imports
@@ -1476,7 +1524,10 @@ Container provides a responsive content width constraint and horizontal centerin
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/container
+pnpm dlx shadcn@latest add @blenx/container
+yarn dlx shadcn@latest add @blenx/container
+bunx shadcn@latest add @blenx/container
 ```
 
 ## Imports
@@ -1525,7 +1576,10 @@ DataTable is a feature-rich table component built on @tanstack/react-table for s
 ## Installation
 
 ```bash
-npm install @blenx-dev/datatable
+npx shadcn@latest add @blenx/data-table
+pnpm dlx shadcn@latest add @blenx/data-table
+yarn dlx shadcn@latest add @blenx/data-table
+bunx shadcn@latest add @blenx/data-table
 ```
 
 ## Imports
@@ -1584,7 +1638,10 @@ DatePicker combines the Calendar component with a Popover and a text input trigg
 ## Installation
 
 ```bash
-npm install @blenx-dev/calendar
+npx shadcn@latest add @blenx/date-picker
+pnpm dlx shadcn@latest add @blenx/date-picker
+yarn dlx shadcn@latest add @blenx/date-picker
+bunx shadcn@latest add @blenx/date-picker
 ```
 
 ## Imports
@@ -1638,7 +1695,10 @@ Dialog is a modal overlay that presents content requiring user attention or inpu
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/dialog
+pnpm dlx shadcn@latest add @blenx/dialog
+yarn dlx shadcn@latest add @blenx/dialog
+bunx shadcn@latest add @blenx/dialog
 ```
 
 ## Imports
@@ -1731,7 +1791,10 @@ Drawer is a slide-in panel that emerges from any edge of the viewport — left, 
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/drawer
+pnpm dlx shadcn@latest add @blenx/drawer
+yarn dlx shadcn@latest add @blenx/drawer
+bunx shadcn@latest add @blenx/drawer
 ```
 
 ## Imports
@@ -1828,7 +1891,10 @@ Field wraps form controls with label, help text, and error message layout, provi
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/field
+pnpm dlx shadcn@latest add @blenx/field
+yarn dlx shadcn@latest add @blenx/field
+bunx shadcn@latest add @blenx/field
 ```
 
 ## Imports
@@ -1882,7 +1948,10 @@ Grid is a CSS Grid layout primitive that enables complex two-dimensional layouts
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/grid
+pnpm dlx shadcn@latest add @blenx/grid
+yarn dlx shadcn@latest add @blenx/grid
+bunx shadcn@latest add @blenx/grid
 ```
 
 ## Imports
@@ -1932,7 +2001,10 @@ Icon buttons provide a compact trigger for actions where visual real estate is l
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/icon-button
+pnpm dlx shadcn@latest add @blenx/icon-button
+yarn dlx shadcn@latest add @blenx/icon-button
+bunx shadcn@latest add @blenx/icon-button
 ```
 
 ## Imports
@@ -2094,7 +2166,10 @@ Icon is a wrapper component for Phosphor icons that provides consistent sizing, 
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/icon
+pnpm dlx shadcn@latest add @blenx/icon
+yarn dlx shadcn@latest add @blenx/icon
+bunx shadcn@latest add @blenx/icon
 ```
 
 ## Imports
@@ -2235,7 +2310,10 @@ Input Group extends a standard Input with prefix or suffix adornments — icons,
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/input-group
+pnpm dlx shadcn@latest add @blenx/input-group
+yarn dlx shadcn@latest add @blenx/input-group
+bunx shadcn@latest add @blenx/input-group
 ```
 
 ## Imports
@@ -2341,7 +2419,10 @@ Input component captures single-line text from users.
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/input
+pnpm dlx shadcn@latest add @blenx/input
+yarn dlx shadcn@latest add @blenx/input
+bunx shadcn@latest add @blenx/input
 ```
 
 ## Imports
@@ -2412,7 +2493,10 @@ Menu provides a dropdown list of actions or options triggered by a button, link,
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/menu
+pnpm dlx shadcn@latest add @blenx/menu
+yarn dlx shadcn@latest add @blenx/menu
+bunx shadcn@latest add @blenx/menu
 ```
 
 ## Imports
@@ -2516,7 +2600,10 @@ OTP Field provides a dedicated input experience for one-time passwords, verifica
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/otp-field
+pnpm dlx shadcn@latest add @blenx/otp-field
+yarn dlx shadcn@latest add @blenx/otp-field
+bunx shadcn@latest add @blenx/otp-field
 ```
 
 ## Imports
@@ -2610,7 +2697,10 @@ Popover displays floating content in relation to a trigger element, with automat
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/popover
+pnpm dlx shadcn@latest add @blenx/popover
+yarn dlx shadcn@latest add @blenx/popover
+bunx shadcn@latest add @blenx/popover
 ```
 
 ## Imports
@@ -2708,7 +2798,10 @@ Progress visualizes the completion status of an ongoing operation.
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/progress
+pnpm dlx shadcn@latest add @blenx/progress
+yarn dlx shadcn@latest add @blenx/progress
+bunx shadcn@latest add @blenx/progress
 ```
 
 ## Imports
@@ -2762,7 +2855,10 @@ Radio renders a group of radio buttons where exactly one option can be selected 
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/radio
+pnpm dlx shadcn@latest add @blenx/radio
+yarn dlx shadcn@latest add @blenx/radio
+bunx shadcn@latest add @blenx/radio
 ```
 
 ## Imports
@@ -2820,7 +2916,10 @@ Scroll Area provides a custom scrollbar wrapper that delivers consistent scrolli
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/scroll-area
+pnpm dlx shadcn@latest add @blenx/scroll-area
+yarn dlx shadcn@latest add @blenx/scroll-area
+bunx shadcn@latest add @blenx/scroll-area
 ```
 
 ## Imports
@@ -2869,7 +2968,10 @@ Segmented Control presents mutually exclusive options in a compact, horizontal r
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/segmented-control
+pnpm dlx shadcn@latest add @blenx/segmented-control
+yarn dlx shadcn@latest add @blenx/segmented-control
+bunx shadcn@latest add @blenx/segmented-control
 ```
 
 ## Imports
@@ -2918,7 +3020,10 @@ Select presents a list of options from which the user chooses one value.
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/select
+pnpm dlx shadcn@latest add @blenx/select
+yarn dlx shadcn@latest add @blenx/select
+bunx shadcn@latest add @blenx/select
 ```
 
 ## Imports
@@ -3009,7 +3114,10 @@ Separator renders a visual dividing line that distinguishes content sections, gr
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/separator
+pnpm dlx shadcn@latest add @blenx/separator
+yarn dlx shadcn@latest add @blenx/separator
+bunx shadcn@latest add @blenx/separator
 ```
 
 ## Imports
@@ -3066,7 +3174,10 @@ Sheet provides a lightweight slide-in panel for secondary content that does not 
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/sheet
+pnpm dlx shadcn@latest add @blenx/sheet
+yarn dlx shadcn@latest add @blenx/sheet
+bunx shadcn@latest add @blenx/sheet
 ```
 
 ## Imports
@@ -3173,7 +3284,10 @@ Slider allows users to select a value or range of values from a continuous or di
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/slider
+pnpm dlx shadcn@latest add @blenx/slider
+yarn dlx shadcn@latest add @blenx/slider
+bunx shadcn@latest add @blenx/slider
 ```
 
 ## Imports
@@ -3234,7 +3348,10 @@ Spinner communicates ongoing loading activity through a rotating indicator anima
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/spinner
+pnpm dlx shadcn@latest add @blenx/spinner
+yarn dlx shadcn@latest add @blenx/spinner
+bunx shadcn@latest add @blenx/spinner
 ```
 
 ## Imports
@@ -3305,7 +3422,10 @@ Splitter creates resizable panel layouts where users can adjust the relative siz
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/splitter
+pnpm dlx shadcn@latest add @blenx/splitter
+yarn dlx shadcn@latest add @blenx/splitter
+bunx shadcn@latest add @blenx/splitter
 ```
 
 ## Imports
@@ -3350,7 +3470,10 @@ Stack is a flexbox layout primitive that arranges children in a single direction
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/stack
+pnpm dlx shadcn@latest add @blenx/stack
+yarn dlx shadcn@latest add @blenx/stack
+bunx shadcn@latest add @blenx/stack
 ```
 
 ## Imports
@@ -3400,7 +3523,10 @@ Surface provides a themed container with configurable elevation, padding, and ba
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/surface
+pnpm dlx shadcn@latest add @blenx/surface
+yarn dlx shadcn@latest add @blenx/surface
+bunx shadcn@latest add @blenx/surface
 ```
 
 ## Imports
@@ -3450,7 +3576,10 @@ Switch provides a binary toggle control for turning a setting on or off.
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/switch
+pnpm dlx shadcn@latest add @blenx/switch
+yarn dlx shadcn@latest add @blenx/switch
+bunx shadcn@latest add @blenx/switch
 ```
 
 ## Imports
@@ -3536,7 +3665,10 @@ Table renders structured data in a grid of rows and columns using styled native 
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/table
+pnpm dlx shadcn@latest add @blenx/table
+yarn dlx shadcn@latest add @blenx/table
+bunx shadcn@latest add @blenx/table
 ```
 
 ## Imports
@@ -3609,7 +3741,10 @@ Tabs organizes content into separate panels where only one panel is visible at a
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/tabs
+pnpm dlx shadcn@latest add @blenx/tabs
+yarn dlx shadcn@latest add @blenx/tabs
+bunx shadcn@latest add @blenx/tabs
 ```
 
 ## Imports
@@ -3704,7 +3839,10 @@ Text provides the typography primitive for rendering all textual content in the 
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/text
+pnpm dlx shadcn@latest add @blenx/text
+yarn dlx shadcn@latest add @blenx/text
+bunx shadcn@latest add @blenx/text
 ```
 
 ## Imports
@@ -3749,7 +3887,10 @@ Textarea provides a multi-line text input for longer-form content entry.
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/textarea
+pnpm dlx shadcn@latest add @blenx/textarea
+yarn dlx shadcn@latest add @blenx/textarea
+bunx shadcn@latest add @blenx/textarea
 ```
 
 ## Imports
@@ -3795,7 +3936,10 @@ Toggle Group manages a collection of toggle buttons where users can select multi
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/toggle-group
+pnpm dlx shadcn@latest add @blenx/toggle-group
+yarn dlx shadcn@latest add @blenx/toggle-group
+bunx shadcn@latest add @blenx/toggle-group
 ```
 
 ## Imports
@@ -3846,7 +3990,10 @@ Toggle provides a two-state button that switches between active and inactive vis
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/toggle
+pnpm dlx shadcn@latest add @blenx/toggle
+yarn dlx shadcn@latest add @blenx/toggle
+bunx shadcn@latest add @blenx/toggle
 ```
 
 ## Imports
@@ -3926,7 +4073,10 @@ Close button component using IconButton from Blenx UI.
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/close-button
+pnpm dlx shadcn@latest add @blenx/close-button
+yarn dlx shadcn@latest add @blenx/close-button
+bunx shadcn@latest add @blenx/close-button
 ```
 
 ## Imports
@@ -3957,7 +4107,10 @@ Copy button component using IconButton from Blenx UI.
 ## Installation
 
 ```bash
-npm install @blenx-dev/core
+npx shadcn@latest add @blenx/copy-button
+pnpm dlx shadcn@latest add @blenx/copy-button
+yarn dlx shadcn@latest add @blenx/copy-button
+bunx shadcn@latest add @blenx/copy-button
 ```
 
 ## Imports

@@ -17,9 +17,10 @@ import {
   tabGhostActive,
   tabSegmentedActive,
   tabDisabled,
-  panel,
   panelVertical,
 } from "./tabs.css";
+import type { BaseSprinkles } from "../../utils/sprinkles.css";
+import { applyBaseSprinkles } from "../../utils/ve-style.utils";
 
 type TabsVariant = "underline" | "ghost" | "segmented";
 
@@ -31,7 +32,7 @@ type TabsListProps = TabsPrimitive.List.Props;
 
 type TabsTabProps = TabsPrimitive.Tab.Props;
 
-type TabsPanelProps = TabsPrimitive.Panel.Props;
+type TabsPanelProps = TabsPrimitive.Panel.Props & BaseSprinkles;
 
 type TabsContextValue = {
   variant: TabsVariant;
@@ -106,12 +107,13 @@ export function TabsIndicator() {
 }
 
 function TabsPanel({ className, ...props }: TabsPanelProps) {
+  const [sprinkles, rest] = applyBaseSprinkles<TabsPrimitive.Panel.Props>(props);
   return (
     <TabsPrimitive.Panel
       className={(state) =>
-        clsx(panel, state.orientation === "vertical" && panelVertical, className)
+        clsx(sprinkles, state.orientation === "vertical" && panelVertical, className)
       }
-      {...props}
+      {...rest}
     />
   );
 }

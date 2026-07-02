@@ -28,15 +28,7 @@ function CodeFrame({
   const hasFiles = (files?.length ?? 0) > 1;
 
   return (
-    <Surface
-      variant="sunken"
-      borderRadius="md"
-      overflow="hidden"
-      position="relative"
-      width="full"
-      maxWidth="full"
-      style={{ minHeight: 40 }}
-    >
+    <Surface variant="sunken" borderRadius="md" overflow="hidden" position="relative">
       {hasFiles || title ? (
         <HStack
           align="center"

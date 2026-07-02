@@ -1,5 +1,6 @@
 import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from "fs";
 import { basename, join } from "path";
+import { expandRunnerCommands } from "../apps/web/src/lib/expand-commands";
 
 // =====================
 // Paths
@@ -275,10 +276,6 @@ function resolveExportPackage(slug: string): string {
   return "@blenx-dev/core";
 }
 
-function buildInstallCommand(pkg: string): string {
-  return `npm install ${pkg}`;
-}
-
 function buildImportStatements(title: string, pkg: string): string[] {
   const exportName = titleToExportName(title);
   return [`import { ${exportName} } from "${pkg}"`];
@@ -541,11 +538,10 @@ function generateComponentMarkdown(data: ComponentData): string {
   lines.push("");
 
   // Installation
-  const installCmd = buildInstallCommand(data.package);
   lines.push("## Installation");
   lines.push("");
   lines.push("```bash");
-  lines.push(installCmd);
+  lines.push(expandRunnerCommands(`npx shadcn@latest add @blenx/${data.registryName}`));
   lines.push("```");
   lines.push("");
 

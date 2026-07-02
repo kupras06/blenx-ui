@@ -4,7 +4,6 @@ import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 export const root = style({
   display: "flex",
   flexDirection: "column",
-  gap: tokenVars.spacing.md,
   width: "100%",
   border: "none",
   backgroundColor: "transparent",
@@ -237,12 +236,6 @@ export const indicatorUnderline = style({
   zIndex: 0,
   borderRadius: tokenVars.borderRadius.full,
   backgroundColor: semanticVars.interactive.secondary.default,
-});
-
-export const panel = style({
-  minWidth: 0,
-  paddingTop: tokenVars.spacing.lg,
-  outline: "none",
 });
 
 export const panelVertical = style({

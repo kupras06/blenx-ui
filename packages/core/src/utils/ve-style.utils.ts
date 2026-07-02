@@ -9,9 +9,9 @@ const BASE_SPRINKLE_PROPERTIES = baseSprinkles.properties;
 type BasePropKeys = keyof BaseSprinkles;
 type GridPropKeys = keyof GridSprinkles;
 const GRID_SPRINKLE_PROPERTIES = gridSprinkles.properties;
-export function applyBaseSprinkles(
+export function applyBaseSprinkles<T = Record<string, unknown>>(
   props: Record<string, unknown>,
-): [string, Record<string, unknown>] {
+): [string, T] {
   const sprinkleProps: BaseSprinkles = {};
   const htmlProps: Record<string, unknown> = {};
   for (const [key, value] of Object.entries(props) as [BasePropKeys, any][]) {
@@ -33,7 +33,7 @@ export function applyBaseSprinkles(
     }
   }
   sprinkleProps.borderRadius = sprinkleProps.borderRadius || "default";
-  return [baseSprinkles(sprinkleProps), htmlProps];
+  return [baseSprinkles(sprinkleProps), htmlProps as T];
 }
 export function applyGridSprinkles(
   props: Record<string, unknown>,

@@ -6,6 +6,7 @@ export const codeBlockContent = style({
   minWidth: 0,
   maxWidth: "100%",
   marginTop: "10px",
+  marginBottom: "10px",
 });
 
 globalStyle(`${codeBlockContent} .shiki`, {

@@ -37,7 +37,7 @@ function DocsHeading({
   };
 
   return (
-    <Box position="relative" my={"md"} id={headingId}>
+    <Box position="relative" marginBottom={"sm"} id={headingId}>
       <Text variant={as}>
         {children}
         {headingId && as !== "h1" && (
