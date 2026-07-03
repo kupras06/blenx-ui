@@ -6,7 +6,50 @@ export interface ColorStateVars {
   hover: string | null;
   active: string | null;
 }
+// ---------------------------------------------------------------
+// 1. One shape, reused for every color role (brand + status + neutral)
+// ---------------------------------------------------------------
+const colorRole = () => ({
+  default: null, // solid bg (or text-only accent color)
+  hover: null,
+  active: null,
+  bg: null, // soft/tinted background (e.g. "soft" button, badges)
+  bgHover: null,
+  bgActive: null,
+  fg: null, // foreground/text/icon ON the solid `default` bg
+  text: null, // this color used AS text/link (e.g. links, accents)
+  textActive: null, // pressed/active state of `text` (e.g. visited/active link)
+  border: null, // this color used as a border (inputs, focus outlines etc.)
+});
 
+export type ColorRole = ReturnType<typeof colorRole>;
+
+// ---------------------------------------------------------------
+// 2. Roles are just an array — add a color, nothing else changes
+// ---------------------------------------------------------------
+const colorRoleNames = [
+  "primary",
+  "secondary",
+  "neutral", // yes — neutral gets the same shape too, no special-casing
+  "success",
+  "warning",
+  "danger",
+  "info",
+] as const;
+
+export type ColorRoleName = (typeof colorRoleNames)[number];
+
+const color = colorRoleNames.reduce(
+  (acc, name) => {
+    acc[name] = colorRole();
+    return acc;
+  },
+  {} as Record<ColorRoleName, ColorRole>,
+);
+
+// ---------------------------------------------------------------
+// 3. Full contract
+// ---------------------------------------------------------------
 export const semanticVars = createThemeContract({
   background: {
     default: null,
@@ -21,7 +64,6 @@ export const semanticVars = createThemeContract({
   text: {
     primary: null,
     secondary: null,
-    accent: null,
     disabled: null,
     inverse: null,
   },
@@ -30,66 +72,10 @@ export const semanticVars = createThemeContract({
     subtle: null,
     strong: null,
   },
-  interactive: {
-    primary: {
-      default: null,
-      hover: null,
-      active: null,
-    },
-    primaryFg: null, // foreground rarely needs state variants
-    primaryBg: {
-      // soft/tinted variant background (e.g. soft button)
-      default: null,
-      hover: null,
-      active: null,
-    },
-    secondary: {
-      default: null,
-      hover: null,
-      active: null,
-    },
-    secondaryFg: null,
-    secondaryBg: {
-      default: null,
-      hover: null,
-      active: null,
-    },
-    neutral: {
-      default: null,
-      hover: null,
-      active: null,
-    },
-    neutralFg: null,
-  },
-  status: {
-    success: {
-      default: null,
-      hover: null,
-      active: null,
-    },
-    successBg: null,
-    warning: {
-      default: null,
-      hover: null,
-      active: null,
-    },
-    warningBg: null,
-    danger: {
-      default: null,
-      hover: null,
-      active: null,
-    },
-    dangerBg: null,
-    info: {
-      default: null,
-      hover: null,
-      active: null,
-    },
-    infoBg: null,
-  },
   focus: {
     ring: null,
   },
+  color, // primary, secondary, neutral, success, warning, danger, info — identical shape
 });
 
 export const tokenVars = createThemeContract({
