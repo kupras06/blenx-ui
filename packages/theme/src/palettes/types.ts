@@ -20,10 +20,15 @@ export interface ColorState {
 }
 
 export interface PaletteRoles {
-  bg: ColorState;
-  border: ColorState;
-  text: ColorState;
-  solid: ColorState;
-  solidFg: string; // foreground rarely needs its own state machine
+  default: string;
+  hover: string;
+  active: string;
+  bg: string;
+  bgHover: string;
+  bgActive: string;
+  fg: string;
+  text: string;
+  textActive: string;
+  border: string;
   focus: string;
 }

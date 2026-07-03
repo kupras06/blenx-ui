@@ -11,19 +11,8 @@ type BlenxThemeColors = {
   neutral: PaletteRoles;
 };
 
-function buildColorRole(role: PaletteRoles) {
-  return {
-    default: role.solid.default,
-    hover: role.solid.hover,
-    active: role.solid.active,
-    bg: role.bg.default,
-    bgHover: role.bg.hover,
-    bgActive: role.bg.active,
-    fg: role.solidFg,
-    text: role.text.default,
-    textActive: role.text.hover,
-    border: role.border.default,
-  };
+function toColorRole({ focus: _focus, ...role }: PaletteRoles) {
+  return role;
 }
 
 export function resolveToSemanticTokens({
@@ -37,34 +26,34 @@ export function resolveToSemanticTokens({
 }: BlenxThemeColors): SemanticTokens {
   return {
     background: {
-      default: neutral.bg.default,
-      subtle: neutral.bg.hover, // one step up from default, reusing the bg state ramp
+      default: neutral.bg,
+      subtle: neutral.bgHover,
     },
     surface: {
-      default: neutral.bg.default,
-      raised: neutral.bg.active, // next step up in the bg ramp
+      default: neutral.bg,
+      raised: neutral.bgActive,
       overlay: "rgba(0, 0, 0, 0.5)",
-      floating: neutral.border.default, // distinct from raised; adjust if a dedicated step is added later
+      floating: neutral.border,
     },
     text: {
-      primary: neutral.text.hover,
-      secondary: neutral.text.default, // one step lighter than primary text
-      disabled: neutral.border.default,
-      inverse: neutral.solidFg,
+      primary: neutral.textActive,
+      secondary: neutral.text,
+      disabled: neutral.border,
+      inverse: neutral.fg,
     },
     border: {
-      default: neutral.border.default,
-      subtle: neutral.bg.active,
-      strong: neutral.border.hover,
+      default: neutral.border,
+      subtle: neutral.bgActive,
+      strong: neutral.textActive,
     },
     color: {
-      primary: buildColorRole(primary),
-      secondary: buildColorRole(secondary),
-      neutral: buildColorRole(neutral),
-      success: buildColorRole(success),
-      warning: buildColorRole(warning),
-      danger: buildColorRole(danger),
-      info: buildColorRole(info),
+      primary: toColorRole(primary),
+      secondary: toColorRole(secondary),
+      neutral: toColorRole(neutral),
+      success: toColorRole(success),
+      warning: toColorRole(warning),
+      danger: toColorRole(danger),
+      info: toColorRole(info),
     },
     focus: {
       ring: primary.focus,

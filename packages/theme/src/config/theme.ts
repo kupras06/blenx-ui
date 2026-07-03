@@ -4,39 +4,28 @@ import { semanticVars } from "../contract.css";
 import { resolveToSemanticTokens } from "../semantic/resolve";
 import type { ThemeConfig } from "./types";
 type PaletteKind = "colorful" | "neutral";
+
 function blendScale(
   base: PaletteScale,
   alpha: PaletteScale,
   kind: PaletteKind = "colorful",
 ): PaletteRoles {
   const borderStep = kind === "neutral" ? 6 : 7;
-  const borderHoverStep = kind === "neutral" ? 7 : 8;
   return {
-    // bg/border/text states intentionally pull from the alpha scale where possible —
-    // alpha steps composite correctly over arbitrary underlying surfaces
-    // (nested cards, dark mode auto-adapt). solid/solidFg use the opaque base
-    // scale since filled elements don't need to blend with what's beneath them.
-    bg: {
-      default: alpha[3],
-      hover: alpha[4],
-      active: alpha[5],
-    },
-    border: {
-      default: base[borderStep],
-      hover: base[borderHoverStep],
-      active: base[borderHoverStep], // no distinct active step in Radix scales; reuse hover
-    },
-    text: {
-      default: base[11],
-      hover: base[12], // slight contrast bump on hover (e.g. links)
-      active: base[12],
-    },
-    solid: {
-      default: base[9],
-      hover: base[10],
-      active: base[10], // Radix has no step 10.5; active reuses hover step
-    },
-    solidFg: base[12],
+    // bg states pull from the alpha scale — alpha steps composite correctly
+    // over arbitrary underlying surfaces (nested cards, dark mode auto-adapt).
+    // The solid/default states use the opaque base scale since filled elements
+    // don't need to blend with what's beneath them.
+    default: base[9],
+    hover: base[10],
+    active: base[10],
+    bg: alpha[3],
+    bgHover: alpha[4],
+    bgActive: alpha[5],
+    fg: base[12],
+    text: base[11],
+    textActive: base[12],
+    border: base[borderStep],
     focus: base[8],
   };
 }
@@ -67,7 +56,7 @@ export function createBlenxTheme(config: ThemeConfig) {
     info: blendScale(config.colors.info.base, config.colors.info.accent),
     success: blendScale(config.colors.success.base, config.colors.success.accent),
     danger: blendScale(config.colors.danger.base, config.colors.danger.accent),
-    neutral: blendScale(config.colors.neutral.base, config.colors.neutral.accent),
+    neutral: blendScale(config.colors.neutral.base, config.colors.neutral.accent, "neutral"),
     warning: blendScale(config.colors.warning.base, config.colors.warning.accent),
   });
 
