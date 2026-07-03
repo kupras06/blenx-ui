@@ -82,27 +82,36 @@ export const root = style([
 
 Replace in these `style()` exports:
 
-| Export       | Replace with sprinkles                                                                                                                                                              |
-| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `inputGroup` | `position: "relative"`, `width: "full"`, `color: "primary"`                                                                                                                         |
-| `startAddon` | `position: "absolute"`, `display: "flex"`, `align: "center"`                                                                                                                        |
-| `adornment`  | `position: "absolute"`, `display: "inline-flex"`, `align: "center"`, `justify: "center"`, `radius: "md"`                                                                            |
-| `popupShell` | `position: "relative"`, `display: "flex"`, `radius: "lg"`, `backgroundColor: "surface"`                                                                                             |
-| `popup`      | `display: "flex"`, `flex: 1`, `direction: "column"`, `color: "primary"`                                                                                                             |
-| `group`      | `display: "flex"`, `direction: "column"`                                                                                                                                            |
-| `empty`      | `padding: "sm"`, `fontSize: "md"`, `color: "secondary"`                                                                                                                             |
-| `list`       | `padding: "xs"`                                                                                                                                                                     |
-| `item`       | `align: "center"`, `gap: "sm"`, `px: "md"`, `paddingInlineStart: "sm"`, `py: "1"`, `radius: "sm"`, `fontSize: "md"` (keep `paddingInlineStart` and non-sprinkle props in `style()`) |
-| `chips`      | `display: "inline-flex"`, `width: "full"`, `flexWrap: "wrap"`, `align: "center"`, `gap: "xxs"`, `radius: "lg"`, `backgroundColor: "canvas"`, `color: "primary"`                     |
-| `chipsInput` | `fontSize: "md"`, `color: "primary"`                                                                                                                                                |
-| `chip`       | `display: "inline-flex"`, `align: "center"`, `radius: "md"`, `backgroundColor: "subtle"`, `color: "primary"`, `px: "sm"`, `fontSize: "sm"`                                          |
-| `chipRemove` | `display: "inline-flex"`, `align: "center"`, `shrink: "0"`, `px: "xs"`                                                                                                              |
-| `separator`  | `marginY: "xs"`, `mx: "sm"`                                                                                                                                                         |
-| `groupLabel` | `px: "sm"`, `fontSize: "xs"`, `color: "secondary"`                                                                                                                                  |
+| Export          | Replace with sprinkles                                                                                                                                                              |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `row`           | `display: "flex"`, `align: "center"`, `gap: "sm"`                                                                                                                                   |
+| `value`         | `flex: 1`, `color: "primary"`                                                                                                                                                       |
+| `status`        | `color: "secondary"`, `display: "flex"`, `align: "center"`, `justify: "center"`, `shrink: "0"`                                                                                      |
+| `inputGroup`    | `position: "relative"`, `width: "full"`, `color: "primary"`                                                                                                                         |
+| `startAddon`    | `position: "absolute"`, `display: "flex"`, `align: "center"`                                                                                                                        |
+| `adornment`     | `position: "absolute"`, `display: "inline-flex"`, `align: "center"`, `justify: "center"`, `radius: "md"`                                                                            |
+| `popupShell`    | `position: "relative"`, `display: "flex"`, `radius: "lg"`, `backgroundColor: "surface"`                                                                                             |
+| `popup`         | `display: "flex"`, `flex: 1`, `direction: "column"`, `color: "primary"`                                                                                                             |
+| `group`         | `display: "flex"`, `direction: "column"`                                                                                                                                            |
+| `empty`         | `padding: "sm"`, `fontSize: "md"`, `color: "secondary"`                                                                                                                             |
+| `list`          | `padding: "xs"`                                                                                                                                                                     |
+| `item`          | `align: "center"`, `gap: "sm"`, `px: "md"`, `paddingInlineStart: "sm"`, `py: "1"`, `radius: "sm"`, `fontSize: "md"` (keep `paddingInlineStart` and non-sprinkle props in `style()`) |
+| `itemIndicator` | `display: "inline-flex"`, `align: "center"`, `shrink: "0"`                                                                                                                          |
+| `chips`         | `display: "inline-flex"`, `width: "full"`, `flexWrap: "wrap"`, `align: "center"`, `gap: "xxs"`, `radius: "lg"`, `backgroundColor: "canvas"`, `color: "primary"`                     |
+| `chipsInput`    | `fontSize: "md"`, `color: "primary"`                                                                                                                                                |
+| `chip`          | `display: "inline-flex"`, `align: "center"`, `radius: "md"`, `backgroundColor: "subtle"`, `color: "primary"`, `px: "sm"`, `fontSize: "sm"`                                          |
+| `chipRemove`    | `display: "inline-flex"`, `align: "center"`, `shrink: "0"`, `px: "xs"`                                                                                                              |
+| `separator`     | `marginY: "xs"`, `mx: "sm"`                                                                                                                                                         |
+| `groupLabel`    | `px: "sm"`, `fontSize: "xs"`, `color: "secondary"`                                                                                                                                  |
 
 #### 2. `src/components/Autocomplete/autocomplete.css.ts`
 
-Same patterns as Combobox (visually identical files). Apply the same sprinkles replacements listed above for corresponding exports.
+Apply the same sprinkles replacements as Combobox for corresponding exports, plus:
+
+| Export   | Replace with sprinkles                             |
+| -------- | -------------------------------------------------- |
+| `status` | `color: "secondary"`                               |
+| `item`   | `align: "center"`, `gap: "sm"`, `color: "primary"` |
 
 ---
 
@@ -110,20 +119,20 @@ Same patterns as Combobox (visually identical files). Apply the same sprinkles r
 
 #### 3. `src/components/Command/command.css.ts`
 
-| Export         | Replace with sprinkles                                                                                                          |
-| -------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| `root`         | `display: "flex"`, `direction: "column"`, `width: "full"`, `overflow: "hidden"`, `radius: "lg"`, `backgroundColor: "surface"`   |
-| `inputWrapper` | `display: "flex"`, `align: "center"`, `gap: "sm"`, `px: "sm"`                                                                   |
-| `inputIcon`    | `display: "flex"`, `align: "center"`, `shrink: "0"`, `color: "disabled"`                                                        |
-| `input`        | `width: "full"`, `fontSize: "sm"`, `color: "primary"`                                                                           |
-| `list`         | `overflow: "auto"`, `padding: "xs"`                                                                                             |
-| `group`        | `display: "flex"`, `direction: "column"`                                                                                        |
-| `groupHeading` | `px: "sm"`, `fontSize: "xs"`, `color: "secondary"` (keep `py` partial in `style()`)                                             |
-| `item`         | `display: "flex"`, `align: "center"`, `gap: "sm"`, `py: "xs"`, `px: "sm"`, `radius: "sm"`, `fontSize: "sm"`, `color: "primary"` |
-| `itemActive`   | `backgroundColor: "subtle"`                                                                                                     |
-| `itemDisabled` | `color: "disabled"`                                                                                                             |
-| `separator`    | `marginY: "xs"`                                                                                                                 |
-| `empty`        | `py: "lg"`, `fontSize: "sm"`, `color: "secondary"`                                                                              |
+| Export         | Replace with sprinkles                                                                                                                             |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `root`         | `display: "flex"`, `direction: "column"`, `width: "full"`, `overflow: "hidden"`, `radius: "lg"`, `backgroundColor: "surface"`, `maxHeight: "full"` |
+| `inputWrapper` | `display: "flex"`, `align: "center"`, `gap: "sm"`, `px: "sm"`                                                                                      |
+| `inputIcon`    | `display: "flex"`, `align: "center"`, `shrink: "0"`, `color: "disabled"`                                                                           |
+| `input`        | `width: "full"`, `fontSize: "sm"`, `color: "primary"`                                                                                              |
+| `list`         | `overflow: "auto"`, `padding: "xs"`                                                                                                                |
+| `group`        | `display: "flex"`, `direction: "column"`                                                                                                           |
+| `groupHeading` | `px: "sm"`, `fontSize: "xs"`, `color: "secondary"` (keep `py` partial in `style()`)                                                                |
+| `item`         | `display: "flex"`, `align: "center"`, `gap: "sm"`, `py: "xs"`, `px: "sm"`, `radius: "sm"`, `fontSize: "sm"`, `color: "primary"`                    |
+| `itemActive`   | `backgroundColor: "subtle"`                                                                                                                        |
+| `itemDisabled` | `color: "disabled"`                                                                                                                                |
+| `separator`    | `marginY: "xs"`                                                                                                                                    |
+| `empty`        | `py: "lg"`, `fontSize: "sm"`, `color: "secondary"`                                                                                                 |
 
 #### 4. `src/components/Menu/menu.css.ts`
 
@@ -154,6 +163,8 @@ Same patterns as Combobox (visually identical files). Apply the same sprinkles r
 
 #### 6. `src/components/Tabs/tabs.css.ts`
 
+Export-specific mappings (not pattern-based):
+
 | Export                  | Replace with sprinkles                                                                         |
 | ----------------------- | ---------------------------------------------------------------------------------------------- |
 | `listUnderline`         | `display: "flex"`, `align: "stretch"`, `gap: "lg"`                                             |
@@ -178,22 +189,22 @@ Same patterns as Combobox (visually identical files). Apply the same sprinkles r
 
 #### 7. `src/components/Drawer/drawer.css.ts`
 
-| Pattern                                       | Replace with sprinkles                                  |
-| --------------------------------------------- | ------------------------------------------------------- |
-| All `display: flex` + `direction: column`     | `display: "flex"`, `direction: "column"`                |
-| All `gap`                                     | `gap: "sm"/"md"/"lg"` (use matching token)              |
-| All `padding`                                 | `padding: "md"/"lg"` etc.                               |
-| All `paddingTop/Bottom/Left/Right`            | `py: "..."`, `px: "..."` etc.                           |
-| All `color: primary/secondary`                | `color: "primary"/"secondary"`                          |
-| All `backgroundColor: subtle/default/surface` | `backgroundColor: "subtle"/"default"/"surface"`         |
-| All `justifyContent: flex-start/flex-end`     | `justify: "start"/"end"`                                |
-| All `overflow: hidden`                        | `overflow: "hidden"`                                    |
-| All `position: absolute/fixed`                | `position: "absolute"/"fixed"`                          |
-| `zIndex: 50`                                  | `zIndex: "popover"` (adjust named level as appropriate) |
+Export-specific mappings for each menu item export:
+
+| Export            | Replace with sprinkles                                                                                                                                                     |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `trigger`         | `display: "inline-flex"`, `align: "center"`, `justify: "center"`, `radius: "md"`                                                                                           |
+| `item`            | `display: "flex"`, `align: "center"`, `gap: "sm"`, `color: "primary"`, `fontSize: "sm"`                                                                                    |
+| `itemDestructive` | `color: "error"`                                                                                                                                                           |
+| `separator`       | `my: "xs"`                                                                                                                                                                 |
+| `label`           | `fontSize: "xs"`, `color: "secondary"`                                                                                                                                     |
+| `shortcut`        | `color: "disabled"`, `fontSize: "xs"`                                                                                                                                      |
+| `backdrop`        | `position: "fixed"`, `inset: 0`                                                                                                                                            |
+| `content`         | `position: "relative"`, `display: "flex"`, `direction: "column"`, `width: "full"`, `height: "full"`, `radius: "default"`, `backgroundColor: "surface"`, `color: "primary"` |
 
 #### 8. `src/components/Sheet/sheet.css.ts`
 
-Same patterns as Drawer/Dialog — apply identical sprinkles refactoring.
+Apply identical sprinkles replacements as Drawer for corresponding exports.
 
 ---
 
@@ -201,12 +212,14 @@ Same patterns as Drawer/Dialog — apply identical sprinkles refactoring.
 
 #### 9. `src/components/Accordion/accordion.css.ts`
 
+**Note: Initial mapping was incorrect — see corrections below.**
+
 | Export         | Replace with sprinkles                                                                                                                                                             |
 | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `root`         | `display: "flex"`, `direction: "column"`, `width: "full"`                                                                                                                          |
 | `rootVertical` | `direction: "column"`                                                                                                                                                              |
 | `trigger`      | `display: "flex"`, `align: "center"`, `gap: "xxs"`, `width: "full"`, `padding: "xs"` (keep padding inline-end in style), `fontSize: "sm"`, `color: "primary"`, `radius: "default"` |
-| `triggerIcon`  | `color: "secondary"` (keep `shrink: "0"` if it works, 0 is a valid value)                                                                                                          |
+| `triggerIcon`  | `color: "secondary"` (keep `shrink: "0"` in `style()`)                                                                                                                             |
 | `panel`        | `overflow: "hidden"`, `padding: "xs"`                                                                                                                                              |
 
 #### 10. `src/components/AlertDialog/alert-dialog.css.ts`
@@ -350,12 +363,14 @@ Same patterns as Drawer/Dialog — apply identical sprinkles refactoring.
 
 #### 23. `src/components/Avatar/avatar.css.ts`
 
-| Export                               | Replace with sprinkles                                                                                                                                                        |
-| ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `root`                               | `display: "inline-flex"`, `align: "center"`, `justify: "center"`, `radius: "default"`, `backgroundColor: "subtle"`, `color: "secondary"`, `overflow: "hidden"`, `shrink: "0"` |
-| `image`                              | `width: "full"`, `height: "full"`, `display: "block"`                                                                                                                         |
-| `fallback`                           | `width: "full"`, `height: "full"`, `display: "flex"`, `align: "center"`, `justify: "center"`, `backgroundColor: "subtle"`, `color: "secondary"`                               |
-| `avatarRecipes` size/radius variants | All map to sprinkles — replace entirely                                                                                                                                       |
+Use sprinkles radius shorthand for all radius variants:
+
+| Export                          | Replace with sprinkles                                                                                                                                                        |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `root`                          | `display: "inline-flex"`, `align: "center"`, `justify: "center"`, `radius: "default"`, `backgroundColor: "subtle"`, `color: "secondary"`, `overflow: "hidden"`, `shrink: "0"` |
+| `image`                         | `width: "full"`, `height: "full"`, `display: "block"`                                                                                                                         |
+| `fallback`                      | `width: "full"`, `height: "full"`, `display: "flex"`, `align: "center"`, `justify: "center"`, `backgroundColor: "subtle"`, `color: "secondary"`                               |
+| `avatarRecipes` radius variants | `radius: "default"` / `radius: "full"` etc. using sprinkles shorthand                                                                                                         |
 
 #### 24. `src/components/AspectRatio/aspect-ratio.css.ts`
 
@@ -367,11 +382,12 @@ Same patterns as Drawer/Dialog — apply identical sprinkles refactoring.
 
 | Export        | Replace with sprinkles                                        |
 | ------------- | ------------------------------------------------------------- |
-| `backdrop`    | `position: "fixed"` (use named zIndex if available)           |
-| `positioner`  | (zIndex partial — can use `zIndex: "popover"`)                |
+| `backdrop`    | `position: "fixed"`, `inset: 0`, `zIndex: "modal"`            |
+| `positioner`  | `zIndex: "popover"`                                           |
 | `popup`       | `padding: "sm"`, `backgroundColor: "surface"`, `radius: "lg"` |
 | `title`       | `fontSize: "md"`, `color: "primary"`                          |
 | `description` | `fontSize: "sm"`, `color: "secondary"`                        |
+| `arrowFill`   | `backgroundColor: "surface"`                                  |
 
 #### 26. `src/components/Textarea/textarea.css.ts`
 
@@ -393,21 +409,27 @@ Same patterns as Drawer/Dialog — apply identical sprinkles refactoring.
 
 #### 28. `src/components/ScrollArea/scroll-area.css.ts`
 
-| Export           | Replace with sprinkles                      |
-| ---------------- | ------------------------------------------- |
-| `root`           | `height: "full"`, `width: "full"`           |
-| `viewport`       | `height: "full"`, `radius: "default"`       |
-| `viewportGutter` | `paddingRight: "sm"`, `paddingBottom: "sm"` |
-| `contentFill`    | `height: "full"`, `width: "full"`           |
-| `scrollbar`      | `display: "flex"`                           |
+Export-specific mappings:
+
+| Export                | Replace with sprinkles                                            |
+| --------------------- | ----------------------------------------------------------------- |
+| `root`                | `height: "full"`, `width: "full"`                                 |
+| `viewport`            | `height: "full"`, `radius: "default"`                             |
+| `viewportGutter`      | `paddingRight: "sm"`, `paddingBottom: "sm"`                       |
+| `contentFill`         | `height: "full"`, `width: "full"`                                 |
+| `scrollbar`           | `display: "flex"`                                                 |
+| `scrollbarHorizontal` | `direction: "row"`, `height: "md"`                                |
+| `thumb`               | `display: "block"`, `radius: "full"`, `backgroundColor: "subtle"` |
 
 #### 29. `src/components/Toggle/toggle.css.ts`
 
-| Export                               | Replace with sprinkles                                                                                                                                      |
-| ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `base`                               | `position: "relative"`, `display: "inline-flex"`, `shrink: "0"`, `align: "center"`, `justify: "center"`, `gap: "sm"`, `radius: "default"`, `fontSize: "sm"` |
-| `toggleRecipes` size/radius variants | Use sprinkles where values map                                                                                                                              |
-| `pressed.default`                    | `backgroundColor: "primary"` (adjust if "raised" doesn't match)                                                                                             |
+Use sprinkles radius shorthand for radius variants:
+
+| Export                          | Replace with sprinkles                                                                                                                                      |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `base`                          | `position: "relative"`, `display: "inline-flex"`, `shrink: "0"`, `align: "center"`, `justify: "center"`, `gap: "sm"`, `radius: "default"`, `fontSize: "sm"` |
+| `toggleRecipes` radius variants | `radius: "default"` / `radius: "full"` etc. using sprinkles shorthand                                                                                       |
+| `pressed.default`               | `backgroundColor: "primary"`                                                                                                                                |
 
 #### 30. `src/components/ToggleGroup/toggle-group.css.ts`
 
@@ -421,19 +443,21 @@ Same patterns as Drawer/Dialog — apply identical sprinkles refactoring.
 
 #### 31. `src/components/OTPField/otp-field.css.ts`
 
-| Export              | Replace with sprinkles                                                                                                          |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| `root`              | `display: "flex"`, `align: "center"`, `gap: "1"`                                                                                |
-| `input` recipe base | `display: "flex"`, `align: "center"`, `justify: "center"`, `radius: "default"`, `backgroundColor: "canvas"`, `color: "primary"` |
-| `separator`         | `width: "3"`, `shrink: "0"`                                                                                                     |
+| Export      | Replace with sprinkles                                                                                                          |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `root`      | `display: "flex"`, `align: "center"`, `gap: "1"`                                                                                |
+| `input`     | `display: "flex"`, `align: "center"`, `justify: "center"`, `radius: "default"`, `backgroundColor: "canvas"`, `color: "primary"` |
+| `separator` | `width: "3"`, `shrink: "0"`                                                                                                     |
 
 #### 32. `src/components/Separator/separator.css.ts`
 
-| Export             | Replace with sprinkles                                             |
-| ------------------ | ------------------------------------------------------------------ |
-| `separator` recipe | `shrink: "0"`                                                      |
-| `withLabel`        | `display: "flex"`, `align: "center"`, `gap: "sm"`, `width: "full"` |
-| `label`            | `px: "xs"`, `color: "secondary"`, `fontSize: "xs"`                 |
+Recipe opportunities — use `grow: "1"` for orientation variants:
+
+| Export             | Replace with sprinkles                                              |
+| ------------------ | ------------------------------------------------------------------- |
+| `separator` recipe | Add `grow: "1"` to horizontal variant, `height: "full"` to vertical |
+| `withLabel`        | `display: "flex"`, `align: "center"`, `gap: "sm"`, `width: "full"`  |
+| `label`            | `px: "xs"`, `color: "secondary"`, `fontSize: "xs"`                  |
 
 #### 33. `src/components/Spinner/spinner.css.ts`
 
@@ -450,6 +474,7 @@ Same patterns as Drawer/Dialog — apply identical sprinkles refactoring.
 | `viewportShellBottomStickOnMobile` | `display: "flex"`, `align: "end"`, `justify: "center"`, `padding: "sm"`                                                                                  |
 | `closeButton`                      | `position: "absolute"`, `top: "xs"`                                                                                                                      |
 | `popupBottomStickOnMobile`         | `width: "full"`                                                                                                                                          |
+| `backdrop`                         | `position: "fixed"`, `inset: 0`, `zIndex: "modal"`                                                                                                       |
 
 #### 35. `src/components/IconButton/icon-button.css.ts`
 
@@ -476,6 +501,10 @@ Same patterns as Drawer/Dialog — apply identical sprinkles refactoring.
 - `src/components/Grid/grid.css.ts`
 - `src/components/Surface/surface.css.ts`
 - `src/components/Text/text.css.ts`
+
+All 46 CSS files accounted for.
+
+---
 
 ## Verification
 
