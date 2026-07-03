@@ -2,8 +2,6 @@ import { Tabs as TabsPrimitive } from "@base-ui/react/tabs";
 import clsx from "clsx";
 import * as React from "react";
 import {
-  root,
-  list,
   listUnderline,
   listGhost,
   listSegmented,
@@ -12,7 +10,6 @@ import {
   tabGhost,
   tabSegmented,
   tabVertical,
-  tabUnderlineActive,
   tabGhostActive,
   tabSegmentedActive,
   tabDisabled,
@@ -63,7 +60,6 @@ export function Tabs({ children, className, variant = DEFAULT_VARIANT, ...props 
         className={(state) =>
           clsx(
             sprinkles,
-            root,
             state.orientation === "vertical" &&
               baseSprinkles({ flexDirection: "row", alignItems: "start", gap: "lg" }),
             className,
@@ -83,6 +79,11 @@ export function TabsList({ className, ...props }: TabsListProps) {
     display: "flex",
     padding: "none",
     borderRadius: "none",
+    position: "relative",
+    overflow: "hidden",
+    border: "none",
+    outline: "none",
+    backgroundColor: "transparent",
     ...props,
   });
 
@@ -90,7 +91,6 @@ export function TabsList({ className, ...props }: TabsListProps) {
     <TabsPrimitive.List
       className={clsx(
         sprinkles,
-        list,
         variant === "underline" && listUnderline,
         variant === "ghost" && listGhost,
         variant === "segmented" && listSegmented,
@@ -109,6 +109,10 @@ export function TabsTab({ className, ...props }: TabsTabProps) {
     justifyContent: "center",
     gap: "xs",
     zIndex: "1",
+    position: "relative",
+    backgroundColor: "transparent",
+    px: "sm",
+    borderRadius: "default",
     ...props,
   });
 
@@ -122,7 +126,6 @@ export function TabsTab({ className, ...props }: TabsTabProps) {
           variant === "ghost" && tabGhost,
           variant === "segmented" && tabSegmented,
           state.orientation === "vertical" && tabVertical,
-          state.active && variant === "underline" && tabUnderlineActive,
           state.active && variant === "ghost" && tabGhostActive,
           state.active && variant === "segmented" && tabSegmentedActive,
           state.disabled && tabDisabled,
@@ -139,7 +142,10 @@ export function TabsIndicator() {
 }
 
 function TabsPanel({ className, ...props }: TabsPanelProps) {
-  const [sprinkles, rest] = applyBaseSprinkles<TabsPrimitive.Panel.Props>(props);
+  const [sprinkles, rest] = applyBaseSprinkles<TabsPrimitive.Panel.Props>({
+    borderRadius: "none",
+    ...props,
+  });
   return (
     <TabsPrimitive.Panel
       className={(state) =>

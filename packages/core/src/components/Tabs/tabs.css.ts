@@ -2,59 +2,13 @@ import { style } from "@vanilla-extract/css";
 import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 import { baseSprinkles } from "../../utils/sprinkles";
 
-export const root = style({
-  border: "none",
-  backgroundColor: "transparent",
-  outline: "none",
-});
-
 export const rootVertical = style({});
 
-export const list = style({
-  position: "relative",
-  overflow: "hidden",
-  border: "none",
-  outline: "none",
-  backgroundColor: "transparent",
+export const listUnderline = baseSprinkles({
+  display: "flex",
+  align: "stretch",
+  padding: "0",
 });
-
-export const listDefault = style({
-  borderBottomWidth: 1,
-  borderBottomStyle: "solid",
-  borderBottomColor: semanticVars.border.subtle,
-});
-
-export const listUnderline = style([
-  baseSprinkles({
-    display: "flex",
-    align: "stretch",
-    gap: "lg",
-    padding: "0",
-  }),
-  style({
-    borderBottomWidth: 1,
-    borderBottomStyle: "solid",
-    borderBottomColor: semanticVars.border.subtle,
-  }),
-]);
-
-export const listUnderlineVertical = style([
-  baseSprinkles({
-    direction: "column",
-    align: "stretch",
-    gap: "0",
-    px: "sm",
-    padding: "0",
-    borderRadius: "none",
-    backgroundColor: "transparent",
-  }),
-  style({
-    alignSelf: "auto",
-    borderRightWidth: 1,
-    borderRightStyle: "solid",
-    borderRightColor: semanticVars.border.subtle,
-  }),
-]);
 
 export const listVertical = style([
   baseSprinkles({
@@ -79,18 +33,6 @@ export const tabActiveVertical = style([
     borderRightWidth: 2,
     borderRightStyle: "solid",
     borderRightColor: semanticVars.interactive.secondary.default,
-  }),
-]);
-
-export const tabUnderlineActive = style([
-  baseSprinkles({
-    color: "primary",
-  }),
-  style({
-    fontWeight: tokenVars.fontWeight.semibold,
-    borderBottomWidth: 2,
-    borderBottomStyle: "solid",
-    borderBottomColor: semanticVars.text.primary,
   }),
 ]);
 
@@ -166,23 +108,34 @@ export const tabSegmentedActive = style([
   }),
 ]);
 
-export const tab = style({
-  position: "relative",
-  minHeight: 36,
-  backgroundColor: "transparent",
-  cursor: "pointer",
-  appearance: "none",
-  outline: "none",
-  borderWidth: 0,
-  border: "none",
-  textDecoration: "none",
-  whiteSpace: "nowrap",
-  userSelect: "none",
-  font: "inherit",
-  fontFamily: tokenVars.font.body,
-  WebkitTapHighlightColor: "transparent",
-  transition: `color ${tokenVars.duration.normal} ${tokenVars.easing.standard}, background-color ${tokenVars.duration.normal} ${tokenVars.easing.standard}, box-shadow ${tokenVars.duration.normal} ${tokenVars.easing.standard}`,
-});
+export const tab = style([
+  {
+    minHeight: 36,
+    cursor: "pointer",
+    appearance: "none",
+    outline: "none",
+    border: "none",
+    borderBottomStyle: "solid",
+    borderBottomColor: semanticVars.border.default,
+    textDecoration: "none",
+    whiteSpace: "nowrap",
+    userSelect: "none",
+    font: "inherit",
+    selectors: {
+      "&:hover": {
+        backgroundColor: semanticVars.background.subtle,
+        color: semanticVars.text.accent,
+      },
+      "&:active": {
+        backgroundColor: semanticVars.surface.overlay,
+        color: semanticVars.text.accent,
+      },
+    },
+    fontFamily: tokenVars.font.body,
+    WebkitTapHighlightColor: "transparent",
+    transition: `color ${tokenVars.duration.normal} ${tokenVars.easing.standard}, background-color ${tokenVars.duration.normal} ${tokenVars.easing.standard}, box-shadow ${tokenVars.duration.normal} ${tokenVars.easing.standard}`,
+  },
+]);
 
 export const tabDefault = style([
   baseSprinkles({
@@ -192,7 +145,6 @@ export const tabDefault = style([
     py: "sm",
     backgroundColor: "transparent",
     px: "md",
-    borderRadius: "none",
   }),
   style({
     fontWeight: tokenVars.fontWeight.medium,
@@ -229,33 +181,29 @@ export const tabDisabled = style({
   cursor: "not-allowed",
 });
 
-export const tabActiveDefault = style([
-  baseSprinkles({
-    color: "primary",
-  }),
-  style({
-    fontWeight: tokenVars.fontWeight.semibold,
-    backgroundColor: "transparent",
-    borderBottomWidth: 2,
-    borderBottomStyle: "solid",
-    borderBottomColor: semanticVars.interactive.secondary.default,
-  }),
-]);
-
 export const tabUnderline = style([
   baseSprinkles({
-    color: "secondary",
     fontSize: "sm",
     backgroundColor: "transparent",
     py: "sm",
     px: "0",
-    borderRadius: "none",
   }),
   style({
+    borderBottomWidth: 1,
+    borderBottomRightRadius: "0",
+    borderBottomLeftRadius: "0",
     fontWeight: tokenVars.fontWeight.medium,
     selectors: {
       "&:hover": {
         color: semanticVars.text.primary,
+      },
+      "&[data-active]": {
+        fontWeight: tokenVars.fontWeight.semibold,
+        borderBottomStyle: "solid",
+
+        borderBottomColor: semanticVars.text.primary,
+        backgroundColor: semanticVars.background.subtle,
+        color: semanticVars.text.accent,
       },
     },
   }),

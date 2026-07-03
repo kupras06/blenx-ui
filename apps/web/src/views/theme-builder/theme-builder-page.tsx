@@ -71,6 +71,7 @@ function ThemeBuilderInner() {
           <ScrollArea height="calc(90svh - 52px)">
             <HStack paddingX="xl" align={"start"}>
               <Tabs
+                py="md"
                 value={tab}
                 onValueChange={(value) => {
                   navigate({
@@ -81,7 +82,7 @@ function ThemeBuilderInner() {
                   });
                 }}
               >
-                <HStack paddingX="xl" align={"center"}>
+                <HStack align={"center"}>
                   <IconButton variant="ghost" onClick={toggleSidebar} aria-label="Open sidebar">
                     <SidebarIcon size={16} />
                   </IconButton>{" "}
@@ -100,7 +101,7 @@ function ThemeBuilderInner() {
                     <ComponentShowcase />
                   </PreviewErrorBoundary>
                 </TabsPanel>
-                <TabsPanel value="dashboard">
+                <TabsPanel value="dashboard" py={"md"}>
                   <PreviewErrorBoundary>
                     <ExampleDashboard />
                   </PreviewErrorBoundary>

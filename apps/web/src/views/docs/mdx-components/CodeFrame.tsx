@@ -1,6 +1,4 @@
-import type { ReactNode } from "react";
 import { Box, CopyButton, HStack, SegmentedControl, Surface, Text } from "@blenx-dev/core";
-import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 
 interface CodeFrameFile {
   title?: string;
@@ -8,7 +6,6 @@ interface CodeFrameFile {
 
 interface CodeFrameProps {
   copyValue: string;
-  children: ReactNode;
   title?: string;
   language?: string;
   files?: CodeFrameFile[];
@@ -18,7 +15,6 @@ interface CodeFrameProps {
 
 function CodeFrame({
   copyValue,
-  children,
   title,
   language,
   files,
@@ -28,27 +24,21 @@ function CodeFrame({
   const hasFiles = (files?.length ?? 0) > 1;
 
   return (
-    <Surface variant="sunken" borderRadius="md" overflow="hidden" position="relative">
+    <Surface variant="default" position="relative">
       {hasFiles || title ? (
         <HStack
           align="center"
           justify="between"
-          style={{
-            padding: "8px 16px",
-            backgroundColor: semanticVars.surface.default,
-            borderBottom: `1px solid ${semanticVars.border.subtle}`,
-            borderTopLeftRadius: tokenVars.borderRadius.md,
-            borderTopRightRadius: tokenVars.borderRadius.md,
-            fontSize: tokenVars.fontSize.xs,
-            color: semanticVars.text.secondary,
-          }}
+          p={"xs"}
+          borderRadiusBottom="none"
+          backgroundColor="surface"
         >
-          <Box display="flex" alignItems="center">
+          <Box display="flex" alignItems="center" borderRadiusTop="none">
             {hasFiles ? (
               <SegmentedControl
                 variant="default"
                 value={String(activeIndex ?? 0)}
-                radius="xs"
+                radius="none"
                 onValueChange={(value) => {
                   onActiveIndexChange?.(Number(value));
                 }}
@@ -80,7 +70,6 @@ function CodeFrame({
           <CopyButton p="none" copyValue={copyValue} />
         </Box>
       )}
-      {children}
     </Surface>
   );
 }

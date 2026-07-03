@@ -28,7 +28,7 @@ export function Settings01() {
         </TabsList>
 
         <TabsPanel value="general">
-          <Card>
+          <Card borderRadius="none">
             <CardHeader>
               <CardTitle>General</CardTitle>
             </CardHeader>

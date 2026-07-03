@@ -17,7 +17,7 @@ function CardBody(props: BoxProps) {
 }
 
 function CardFooter(props: HStackProps) {
-  return <HStack justify="end" gap="sm" {...props} />;
+  return <HStack justify="end" gap="sm" marginTop={"sm"} {...props} />;
 }
 
 function CardTitle(props: TextProps) {

@@ -18,17 +18,13 @@ export const header = style([
   }),
 ]);
 
-export const footer = style([
-  baseSprinkles({
-    display: "flex",
-    direction: "column-reverse",
-    gap: "sm",
-    px: "lg",
-  }),
-  style({
-    paddingBottom: "env(safe-area-inset-bottom)",
-  }),
-]);
+export const footer = baseSprinkles({
+  display: "flex",
+  justify: "end",
+  gap: "sm",
+  px: "lg",
+  borderRadius: "default",
+});
 
 export const footerDefault = style([
   baseSprinkles({

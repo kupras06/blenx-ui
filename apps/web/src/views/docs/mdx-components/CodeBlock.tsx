@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { highlightCode } from "@/lib/syntax-highlight";
 import { codeBlockContent } from "@/lib/styles.css";
 import { CodeFrame } from "./CodeFrame";
+import { Surface } from "@blenx-dev/core";
 interface CodeBlockProps {
   code: string;
   language?: string;
@@ -32,14 +33,18 @@ function CodeBlock({ code, language = "typescript", title }: CodeBlockProps) {
   }, [code, language]);
 
   return (
-    <CodeFrame copyValue={code} title={title} language={language}>
-      <div
-        className={codeBlockContent}
-        dangerouslySetInnerHTML={{
-          __html: highlighted ?? escapeHtml(code),
-        }}
-      />
-    </CodeFrame>
+    <>
+      <CodeFrame copyValue={code} title={title} language={language} />
+      <Surface variant="sunken" overflow="hidden" position="relative" paddingY={"xs"}>
+        asasa
+        <div
+          className={codeBlockContent}
+          dangerouslySetInnerHTML={{
+            __html: highlighted ?? escapeHtml(code),
+          }}
+        />
+      </Surface>
+    </>
   );
 }
 function CodeSnippet({ code, language = "typescript" }: CodeBlockProps) {
@@ -58,14 +63,24 @@ function CodeSnippet({ code, language = "typescript" }: CodeBlockProps) {
   }, [code, language]);
 
   return (
-    <CodeFrame copyValue={code} language={language}>
-      <div
-        className={codeBlockContent}
-        dangerouslySetInnerHTML={{
-          __html: highlighted ?? escapeHtml(code),
-        }}
-      />
-    </CodeFrame>
+    <>
+      <CodeFrame copyValue={code} language={language} />
+      <Surface
+        variant="sunken"
+        borderRadiusTop="none"
+        overflow="hidden"
+        position="relative"
+        paddingY={"xs"}
+      >
+        asasa{" "}
+        <div
+          className={codeBlockContent}
+          dangerouslySetInnerHTML={{
+            __html: highlighted ?? escapeHtml(code),
+          }}
+        />
+      </Surface>
+    </>
   );
 }
 export { CodeBlock, CodeSnippet };

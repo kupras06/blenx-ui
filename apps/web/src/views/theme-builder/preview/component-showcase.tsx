@@ -18,13 +18,6 @@ import {
   CardHeader,
   CardTitle,
   Checkbox,
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
   HStack,
   Input,
   Label,
@@ -40,6 +33,7 @@ import {
   Textarea,
   VStack,
 } from "@blenx-dev/core";
+import { DialogDemo } from "@blenx-dev/core/components/Dialog/dialog.demo";
 
 import { memo } from "react";
 
@@ -191,23 +185,7 @@ export const ComponentShowcase = memo(() => (
     {/* Overlays */}
     <Box>
       <Text variant="h3">Overlays</Text>
-      <Dialog>
-        <DialogTrigger render={<Button variant="outline" />}>Open Dialog</DialogTrigger>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Confirm Action</DialogTitle>
-            <DialogDescription>
-              Are you sure you want to proceed with this action?
-            </DialogDescription>
-          </DialogHeader>
-          <DialogFooter variant="default">
-            <DialogTrigger>
-              <Button variant="ghost">Cancel</Button>
-            </DialogTrigger>
-            <Button slot="primary">Confirm</Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
+      <DialogDemo />
     </Box>
   </VStack>
 ));

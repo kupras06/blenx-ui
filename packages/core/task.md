@@ -225,27 +225,25 @@ Apply the same sprinkles replacements as Combobox for corresponding exports, plu
 
 Export-specific mappings (not pattern-based):
 
-| Export                  | Replace with sprinkles                                                                                                        |
-| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| `listUnderline`         | `display: "flex"`, `align: "stretch"`, `gap: "lg"`                                                                            |
-| `listUnderlineVertical` | `direction: "column"`, `align: "stretch"`, `gap: 0`, `px: "sm"`                                                               |
-| `listVertical`          | `direction: "column"`, `align: "stretch"`                                                                                     |
-| `tabActiveVertical`     | `color: "primary"`, `backgroundColor: "subtle"`                                                                               |
-| `tabUnderlineActive`    | `color: "primary"`                                                                                                            |
-| `listGhost`             | `display: "flex"`, `gap: "sm"`                                                                                                |
-| `tabGhost`              | `radius: "md"`, `color: "secondary"`                                                                                          |
-| `tabGhostActive`        | `backgroundColor: "subtle"`, `color: "primary"`                                                                               |
-| `listSegmented`         | `display: "flex"`, `gap: "xxs"`, `padding: "xxs"`, `radius: "lg"`, `backgroundColor: "subtle"`                                |
-| `tabSegmented`          | `radius: "md"`, `color: "secondary"`                                                                                          |
-| `tabSegmentedActive`    | `backgroundColor: "surface"` (keep `color` in `style()` — file uses `semanticVars.interactive.primaryFg`, not `text.primary`) |
-| `tabDefault`            | `color: "secondary"`, `fontSize: "sm"`                                                                                        |
-| `tabVertical`           | `width: "full"`, `justify: "start"`                                                                                           |
-| `tabActive`             | `color: "primary"`                                                                                                            |
-| `tabActiveDefault`      | `color: "primary"`                                                                                                            |
-| `tabUnderline`          | `color: "secondary"`, `fontSize: "sm"`                                                                                        |
-| `indicator`             | `position: "absolute"`, `zIndex: "base"`                                                                                      |
-| `indicatorUnderline`    | `zIndex: "base"`, `radius: "full"`                                                                                            |
-| `panelVertical`         | `flex: 1`                                                                                                                     |
+| Export               | Replace with sprinkles                                                                                                        |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `listUnderline`      | `display: "flex"`, `align: "stretch"`, `gap: "lg"`                                                                            |
+| `listVertical`       | `direction: "column"`, `align: "stretch"`                                                                                     |
+| `tabActiveVertical`  | `color: "primary"`, `backgroundColor: "subtle"`                                                                               |
+| `listGhost`          | `display: "flex"`, `gap: "sm"`                                                                                                |
+| `tabGhost`           | `radius: "md"`, `color: "secondary"`                                                                                          |
+| `tabGhostActive`     | `backgroundColor: "subtle"`, `color: "primary"`                                                                               |
+| `listSegmented`      | `display: "flex"`, `gap: "xxs"`, `padding: "xxs"`, `radius: "lg"`, `backgroundColor: "subtle"`                                |
+| `tabSegmented`       | `radius: "md"`, `color: "secondary"`                                                                                          |
+| `tabSegmentedActive` | `backgroundColor: "surface"` (keep `color` in `style()` — file uses `semanticVars.interactive.primaryFg`, not `text.primary`) |
+| `tabDefault`         | `color: "secondary"`, `fontSize: "sm"`                                                                                        |
+| `tabVertical`        | `width: "full"`, `justify: "start"`                                                                                           |
+| `tabActive`          | `color: "primary"`                                                                                                            |
+| `tabActiveDefault`   | `color: "primary"`                                                                                                            |
+| `tabUnderline`       | `color: "secondary"`, `fontSize: "sm"`                                                                                        |
+| `indicator`          | `position: "absolute"`, `zIndex: "base"`                                                                                      |
+| `indicatorUnderline` | `zIndex: "base"`, `radius: "full"`                                                                                            |
+| `panelVertical`      | `flex: 1`                                                                                                                     |
 
 #### 7. `src/components/Drawer/drawer.css.ts`
 

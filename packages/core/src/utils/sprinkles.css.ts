@@ -2,6 +2,20 @@ import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 import { defineProperties, createSprinkles } from "@vanilla-extract/sprinkles";
 import { colors, containerWidths, responsiveConditions, spacing } from "./sprinkles.tokens";
 
+const borderRadiusVals = {
+  default: tokenVars.borderRadius.default,
+  none: "0",
+  inherit: "inherit",
+  full: "9999px",
+  xxs: tokenVars.borderRadius.xxs,
+  xs: tokenVars.borderRadius.xs,
+  sm: tokenVars.borderRadius.sm,
+  md: tokenVars.borderRadius.md,
+  lg: tokenVars.borderRadius.lg,
+  xl: tokenVars.borderRadius.xl,
+  xxl: tokenVars.borderRadius.xxl,
+  xxxl: tokenVars.borderRadius.xxxl,
+};
 const layoutProperties = defineProperties({
   properties: {
     width: { auto: "auto", full: "100%", fit: "fit-content" },
@@ -20,20 +34,10 @@ const layoutProperties = defineProperties({
       screen: "100svh",
       none: "none",
     },
-    borderRadius: {
-      default: tokenVars.borderRadius.default,
-      none: "0",
-      inherit: "inherit",
-      full: "9999px",
-      xxs: tokenVars.borderRadius.xxs,
-      xs: tokenVars.borderRadius.xs,
-      sm: tokenVars.borderRadius.sm,
-      md: tokenVars.borderRadius.md,
-      lg: tokenVars.borderRadius.lg,
-      xl: tokenVars.borderRadius.xl,
-      xxl: tokenVars.borderRadius.xxl,
-      xxxl: tokenVars.borderRadius.xxxl,
-    },
+    borderTopRightRadius: borderRadiusVals,
+    borderTopLeftRadius: borderRadiusVals,
+    borderBottomRightRadius: borderRadiusVals,
+    borderBottomLeftRadius: borderRadiusVals,
     borderWidth: {
       none: "0",
       hairline: tokenVars.borderWidth.hairline,
@@ -44,7 +48,22 @@ const layoutProperties = defineProperties({
     },
   },
   shorthands: {
-    radius: ["borderRadius"],
+    radius: [
+      "borderTopRightRadius",
+      "borderTopLeftRadius",
+      "borderBottomRightRadius",
+      "borderBottomLeftRadius",
+    ],
+    borderRadius: [
+      "borderTopRightRadius",
+      "borderTopLeftRadius",
+      "borderBottomRightRadius",
+      "borderBottomLeftRadius",
+    ],
+    borderRadiusTop: ["borderTopLeftRadius", "borderTopRightRadius"],
+    borderRadiusBottom: ["borderBottomLeftRadius", "borderBottomRightRadius"],
+    borderRadiusLeft: ["borderTopLeftRadius", "borderBottomLeftRadius"],
+    borderRadiusRight: ["borderTopRightRadius", "borderBottomRightRadius"],
   },
 });
 

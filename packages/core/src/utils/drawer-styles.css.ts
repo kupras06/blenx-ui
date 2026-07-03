@@ -5,7 +5,7 @@ import { baseSprinkles } from "../utils/sprinkles";
 export const backdrop = style([
   baseSprinkles({
     position: "fixed",
-    zIndex: "modal",
+    zIndex: "overlay",
   }),
   style({
     inset: 0,
@@ -20,6 +20,7 @@ export const viewport = style([
   baseSprinkles({
     position: "fixed",
     padding: "md",
+    zIndex: "modal",
   }),
   style({
     inset: 0,

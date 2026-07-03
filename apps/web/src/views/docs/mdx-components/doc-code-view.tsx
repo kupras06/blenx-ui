@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { highlightCode } from "@/lib/syntax-highlight";
-import { ScrollArea } from "@blenx-dev/core";
+import { Box, ScrollArea, Surface } from "@blenx-dev/core";
 import { CodeFrame } from "./CodeFrame";
 import { codeBlockContent } from "@/lib/styles.css";
 
@@ -51,26 +51,35 @@ function DocCodeView({ code, title, language, files }: DocCodeViewProps) {
 
   const lang = activeFile.language ?? "typescript";
   return (
-    <CodeFrame
-      copyValue={activeFile.code}
-      title={activeFile.title}
-      language={lang}
-      files={activeFiles}
-      activeIndex={activeIndex}
-      onActiveIndexChange={(index) => {
-        setActiveIndex(index);
-        setHighlighted(null);
-      }}
-    >
-      <ScrollArea height="60svh" render={<pre />}>
-        <div
-          className={codeBlockContent}
-          dangerouslySetInnerHTML={{
-            __html: highlighted ?? escapeHtml(activeFile.code),
-          }}
-        />
-      </ScrollArea>
-    </CodeFrame>
+    <Box>
+      <CodeFrame
+        copyValue={activeFile.code}
+        title={activeFile.title}
+        language={lang}
+        files={activeFiles}
+        activeIndex={activeIndex}
+        onActiveIndexChange={(index) => {
+          setActiveIndex(index);
+          setHighlighted(null);
+        }}
+      />
+      <Surface
+        variant="sunken"
+        borderRadiusTop="none"
+        overflow="hidden"
+        position="relative"
+        paddingY={"xs"}
+      >
+        <ScrollArea height="60svh" render={<pre />}>
+          <div
+            className={codeBlockContent}
+            dangerouslySetInnerHTML={{
+              __html: highlighted ?? escapeHtml(activeFile.code),
+            }}
+          />
+        </ScrollArea>
+      </Surface>
+    </Box>
   );
 }
 
