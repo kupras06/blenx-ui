@@ -1,36 +1,41 @@
 import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
 import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
+import { baseSprinkles } from "../../utils/sprinkles";
 
-export const base = style({
-  position: "relative",
-  display: "inline-flex",
-  flexShrink: 0,
-  alignItems: "center",
-  justifyContent: "center",
-  gap: tokenVars.spacing.sm,
-  whiteSpace: "nowrap",
-  borderStyle: "solid",
-  borderWidth: 1,
-  borderRadius: tokenVars.borderRadius.default,
-  fontWeight: tokenVars.fontWeight.medium,
-  fontSize: tokenVars.fontSize.sm,
-  lineHeight: 1.4,
-  cursor: "pointer",
-  userSelect: "none",
-  outline: "none",
-  backgroundColor: "transparent",
-  transition: "box-shadow 0.15s ease",
-  selectors: {
-    "&:focus-visible": {
-      boxShadow: `0 0 0 2px ${semanticVars.focus.ring}`,
+export const base = style([
+  baseSprinkles({
+    position: "relative",
+    display: "inline-flex",
+    shrink: 0,
+    align: "center",
+    justify: "center",
+    gap: "sm",
+    radius: "default",
+    backgroundColor: "transparent",
+    fontSize: "sm",
+    borderWidth: "thin",
+  }),
+  style({
+    whiteSpace: "nowrap",
+    borderStyle: "solid",
+    fontWeight: tokenVars.fontWeight.medium,
+    lineHeight: 1.4,
+    cursor: "pointer",
+    userSelect: "none",
+    outline: "none",
+    transition: "box-shadow 0.15s ease",
+    selectors: {
+      "&:focus-visible": {
+        boxShadow: `0 0 0 2px ${semanticVars.focus.ring}`,
+      },
+      "&:disabled": {
+        pointerEvents: "none",
+        opacity: 0.64,
+      },
     },
-    "&:disabled": {
-      pointerEvents: "none",
-      opacity: 0.64,
-    },
-  },
-});
+  }),
+]);
 
 export const toggleRecipes = recipe({
   variants: {

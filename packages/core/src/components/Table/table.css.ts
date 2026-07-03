@@ -1,34 +1,42 @@
 import { style } from "@vanilla-extract/css";
-import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars } from "@blenx-dev/theme/contract";
+import { baseSprinkles } from "../../utils/sprinkles";
 
-export const root = style({
-  width: "100%",
-  borderCollapse: "collapse",
-  color: semanticVars.text.secondary,
-  boxSizing: "border-box",
-});
+export const root = style([
+  baseSprinkles({
+    width: "full",
+    color: "secondary",
+  }),
+  style({
+    borderCollapse: "collapse",
+  }),
+]);
 
-export const head = style({
-  backgroundColor: semanticVars.background.subtle,
-});
+export const head = style([
+  baseSprinkles({
+    backgroundColor: "subtle",
+  }),
+]);
 
-export const header = style({
-  paddingTop: tokenVars.spacing.sm,
-  paddingBottom: tokenVars.spacing.sm,
-  paddingLeft: tokenVars.spacing.md,
-  paddingRight: tokenVars.spacing.md,
-  fontSize: tokenVars.fontSize.md,
-  fontWeight: 600,
-  color: semanticVars.text.secondary,
-  textAlign: "left",
-  textTransform: "uppercase",
-  letterSpacing: "0.05em",
-  borderBottomWidth: 1,
-  borderBottomStyle: "solid",
-  borderBottomColor: semanticVars.border.default,
-  whiteSpace: "nowrap",
-  userSelect: "none",
-});
+export const header = style([
+  baseSprinkles({
+    py: "sm",
+    px: "md",
+    fontSize: "md",
+    color: "secondary",
+  }),
+  style({
+    fontWeight: 600,
+    textAlign: "left",
+    textTransform: "uppercase",
+    letterSpacing: "0.05em",
+    borderBottomWidth: 1,
+    borderBottomStyle: "solid",
+    borderBottomColor: semanticVars.border.default,
+    whiteSpace: "nowrap",
+    userSelect: "none",
+  }),
+]);
 
 export const row = style({
   transition: "background-color 0.15s ease",
@@ -39,33 +47,41 @@ export const row = style({
   },
 });
 
-export const cell = style({
-  paddingTop: tokenVars.spacing.sm,
-  paddingBottom: tokenVars.spacing.sm,
-  paddingLeft: tokenVars.spacing.md,
-  paddingRight: tokenVars.spacing.md,
-  fontSize: tokenVars.fontSize.md,
-  borderBottomWidth: 1,
-  borderBottomStyle: "solid",
-  borderBottomColor: semanticVars.border.subtle,
-  whiteSpace: "nowrap",
-  overflow: "hidden",
-  textOverflow: "ellipsis",
-});
+export const cell = style([
+  baseSprinkles({
+    py: "sm",
+    px: "md",
+    fontSize: "md",
+  }),
+  style({
+    borderBottomWidth: 1,
+    borderBottomStyle: "solid",
+    borderBottomColor: semanticVars.border.subtle,
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+  }),
+]);
 
-export const wrapper = style({
-  borderWidth: 1,
-  borderStyle: "solid",
-  borderColor: semanticVars.border.default,
-  borderRadius: tokenVars.borderRadius.default,
-  maxWidth: "100%",
-  overflowX: "auto",
-});
+export const wrapper = style([
+  baseSprinkles({
+    radius: "default",
+    maxWidth: "full",
+  }),
+  style({
+    borderWidth: 1,
+    borderStyle: "solid",
+    borderColor: semanticVars.border.default,
+    overflowX: "auto",
+  }),
+]);
 
 export const alignLeft = style({ textAlign: "left" });
 export const alignCenter = style({ textAlign: "center" });
 export const alignRight = style({ textAlign: "right" });
 
-export const colorSecondary = style({
-  color: semanticVars.text.secondary,
-});
+export const colorSecondary = style([
+  baseSprinkles({
+    color: "secondary",
+  }),
+]);

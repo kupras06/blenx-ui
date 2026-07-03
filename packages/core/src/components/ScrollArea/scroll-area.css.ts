@@ -1,27 +1,34 @@
 import { style } from "@vanilla-extract/css";
 import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
+import { baseSprinkles } from "../../utils/sprinkles";
 
-export const root = style({
-  height: "100%",
-  minHeight: 0,
-  width: "100%",
-  boxSizing: "border-box",
-});
+export const root = style([
+  baseSprinkles({
+    height: "full",
+    width: "full",
+  }),
+  style({
+    minHeight: 0,
+  }),
+]);
 
-export const viewport = style({
-  height: "100%",
-  minWidth: 0,
-  borderRadius: tokenVars.borderRadius.default,
-  outline: "none",
-  boxSizing: "border-box",
-  overscrollBehaviorY: "contain",
-  overscrollBehaviorX: "contain",
-  selectors: {
-    "&:focus-visible": {
-      boxShadow: `0 0 0 2px ${semanticVars.border.strong}`,
+export const viewport = style([
+  baseSprinkles({
+    height: "full",
+    radius: "default",
+  }),
+  style({
+    minWidth: 0,
+    outline: "none",
+    overscrollBehaviorY: "contain",
+    overscrollBehaviorX: "contain",
+    selectors: {
+      "&:focus-visible": {
+        boxShadow: `0 0 0 2px ${semanticVars.border.strong}`,
+      },
     },
-  },
-});
+  }),
+]);
 
 export const viewportFade = style({
   WebkitMaskImage:
@@ -30,50 +37,63 @@ export const viewportFade = style({
     "linear-gradient(to bottom, transparent, black 1.5rem, black calc(100% - 1.5rem), transparent)",
 });
 
-export const viewportGutter = style({
-  paddingRight: tokenVars.spacing.sm,
-  paddingBottom: tokenVars.spacing.sm,
-});
+export const viewportGutter = style([
+  baseSprinkles({
+    paddingRight: "sm",
+    paddingBottom: "sm",
+  }),
+]);
 
-export const contentFill = style({
-  height: "100%",
-  width: "100%",
-});
+export const contentFill = style([
+  baseSprinkles({
+    height: "full",
+    width: "full",
+  }),
+]);
 
-export const scrollbar = style({
-  margin: tokenVars.spacing.xs,
-  display: "flex",
-  opacity: 0,
-  boxSizing: "border-box",
-  transitionProperty: "opacity",
-  transitionDuration: "300ms",
-  transitionTimingFunction: "ease",
-  selectors: {
-    "&[data-hovering]": {
-      opacity: 1,
-      transitionDelay: "0ms",
-      transitionDuration: "100ms",
+export const scrollbar = style([
+  baseSprinkles({
+    display: "flex",
+  }),
+  style({
+    margin: tokenVars.spacing.xs,
+    opacity: 0,
+    transitionProperty: "opacity",
+    transitionDuration: "300ms",
+    transitionTimingFunction: "ease",
+    selectors: {
+      "&[data-hovering]": {
+        opacity: 1,
+        transitionDelay: "0ms",
+        transitionDuration: "100ms",
+      },
+      "&[data-scrolling]": {
+        opacity: 1,
+        transitionDelay: "0ms",
+        transitionDuration: "100ms",
+      },
     },
-    "&[data-scrolling]": {
-      opacity: 1,
-      transitionDelay: "0ms",
-      transitionDuration: "100ms",
-    },
-  },
-});
+  }),
+]);
 
-export const scrollbarHorizontal = style({
-  height: "6px",
-  flexDirection: "column",
-});
+export const scrollbarHorizontal = style([
+  baseSprinkles({
+    direction: "row",
+  }),
+  style({
+    height: "6px",
+  }),
+]);
 
 export const scrollbarVertical = style({
   width: "6px",
 });
 
-export const thumb = style({
-  position: "relative",
-  flexGrow: 1,
-  borderRadius: tokenVars.borderRadius.default,
-  backgroundColor: semanticVars.border.strong,
-});
+export const thumb = style([
+  baseSprinkles({
+    position: "relative",
+    grow: 1,
+    radius: "default",
+    backgroundColor: "subtle",
+  }),
+]);

@@ -23,6 +23,7 @@ const layoutProperties = defineProperties({
     borderRadius: {
       default: tokenVars.borderRadius.default,
       none: "0",
+      inherit: "inherit",
       full: "9999px",
       xxs: tokenVars.borderRadius.xxs,
       xs: tokenVars.borderRadius.xs,
@@ -32,6 +33,14 @@ const layoutProperties = defineProperties({
       xl: tokenVars.borderRadius.xl,
       xxl: tokenVars.borderRadius.xxl,
       xxxl: tokenVars.borderRadius.xxxl,
+    },
+    borderWidth: {
+      none: "0",
+      hairline: tokenVars.borderWidth.hairline,
+      thin: tokenVars.borderWidth.thin,
+      medium: tokenVars.borderWidth.medium,
+      thick: tokenVars.borderWidth.thick,
+      heavy: tokenVars.borderWidth.heavy,
     },
     fontSize: spacing,
   },
@@ -54,6 +63,7 @@ const colorProperties = defineProperties({
       canvas: semanticVars.background.default,
       subtle: semanticVars.background.subtle,
       default: "inherit",
+      transparent: "transparent",
       disabled: semanticVars.background.subtle,
       error: semanticVars.status.dangerBg,
       success: semanticVars.status.successBg,
@@ -61,6 +71,12 @@ const colorProperties = defineProperties({
       info: semanticVars.status.infoBg,
     },
     borderColor: colors,
+    boxShadow: {
+      sm: tokenVars.shadow.sm,
+      md: tokenVars.shadow.md,
+      lg: tokenVars.shadow.lg,
+      xl: tokenVars.shadow.xl,
+    },
   },
 });
 

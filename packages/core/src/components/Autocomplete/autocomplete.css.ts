@@ -1,12 +1,17 @@
 import { style } from "@vanilla-extract/css";
 import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
+import { baseSprinkles } from "../../utils/sprinkles.css";
 
-export const inputGroup = style({
-  position: "relative",
-  width: "100%",
-  minWidth: 0,
-  color: semanticVars.text.primary,
-});
+export const inputGroup = style([
+  baseSprinkles({
+    position: "relative",
+    width: "full",
+    color: "primary",
+  }),
+  style({
+    minWidth: 0,
+  }),
+]);
 
 export const inputSize = style({
   vars: {
@@ -30,16 +35,20 @@ export const inputSizeLg = style({
   paddingInlineEnd: "30px",
 });
 
-export const startAddon = style({
-  pointerEvents: "none",
-  position: "absolute",
-  insetBlock: 0,
-  insetInlineStart: tokenVars.borderWidth.thin,
-  zIndex: 1,
-  display: "flex",
-  alignItems: "center",
-  opacity: 0.8,
-});
+export const startAddon = style([
+  baseSprinkles({
+    position: "absolute",
+    display: "flex",
+    align: "center",
+  }),
+  style({
+    pointerEvents: "none",
+    insetBlock: 0,
+    insetInlineStart: tokenVars.borderWidth.thin,
+    zIndex: 1,
+    opacity: 0.8,
+  }),
+]);
 
 export const startAddonDefault = style({
   paddingInlineStart: "11px",
@@ -49,23 +58,27 @@ export const startAddonSmall = style({
   paddingInlineStart: "9px",
 });
 
-export const adornment = style({
-  position: "absolute",
-  top: "50%",
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "center",
-  flexShrink: 0,
-  transform: "translateY(-50%)",
-  borderRadius: tokenVars.borderRadius.md,
-  borderWidth: tokenVars.borderWidth.thin,
-  borderStyle: "solid",
-  borderColor: "transparent",
-  opacity: 0.8,
-  outline: "none",
-  transitionProperty: "color, background-color, box-shadow, opacity",
-  transitionDuration: "150ms",
-});
+export const adornment = style([
+  baseSprinkles({
+    position: "absolute",
+    display: "inline-flex",
+    align: "center",
+    justify: "center",
+    radius: "md",
+  }),
+  style({
+    top: "50%",
+    flexShrink: 0,
+    transform: "translateY(-50%)",
+    borderWidth: tokenVars.borderWidth.thin,
+    borderStyle: "solid",
+    borderColor: "transparent",
+    opacity: 0.8,
+    outline: "none",
+    transitionProperty: "color, background-color, box-shadow, opacity",
+    transitionDuration: "150ms",
+  }),
+]);
 
 export const adornmentSmall = style({
   width: "28px",
@@ -89,42 +102,56 @@ export const positioner = style({
   outline: "none",
 });
 
-export const popupShell = style({
-  position: "relative",
-  display: "flex",
-  maxHeight: "100%",
-  minWidth: "var(--anchor-width)",
-  maxWidth: "var(--available-width)",
-  borderWidth: tokenVars.borderWidth.thin,
-  borderStyle: "solid",
-  borderColor: semanticVars.border.default,
-  borderRadius: tokenVars.borderRadius.lg,
-  backgroundColor: semanticVars.surface.default,
-  boxShadow: tokenVars.shadow.lg,
-  transformOrigin: "var(--transform-origin)",
-  transitionProperty: "transform, opacity",
-  transitionDuration: "150ms",
-});
+export const popupShell = style([
+  baseSprinkles({
+    position: "relative",
+    display: "flex",
+    radius: "lg",
+    backgroundColor: "surface",
+  }),
+  style({
+    maxHeight: "100%",
+    minWidth: "var(--anchor-width)",
+    maxWidth: "var(--available-width)",
+    borderWidth: tokenVars.borderWidth.thin,
+    borderStyle: "solid",
+    borderColor: semanticVars.border.default,
+    boxShadow: tokenVars.shadow.lg,
+    transformOrigin: "var(--transform-origin)",
+    transitionProperty: "transform, opacity",
+    transitionDuration: "150ms",
+  }),
+]);
 
-export const popup = style({
-  display: "flex",
-  flex: 1,
-  flexDirection: "column",
-  maxHeight: "min(var(--available-height), 23rem)",
-  color: semanticVars.text.primary,
-});
+export const popup = style([
+  baseSprinkles({
+    display: "flex",
+    grow: 1,
+    direction: "column",
+    color: "primary",
+  }),
+  style({
+    maxHeight: "min(var(--available-height), 23rem)",
+  }),
+]);
 
-export const group = style({
-  display: "flex",
-  flexDirection: "column",
-});
+export const group = style([
+  baseSprinkles({
+    display: "flex",
+    direction: "column",
+  }),
+]);
 
-export const separator = style({
-  height: "1px",
-  marginBlock: tokenVars.spacing.xs,
-  marginInline: tokenVars.spacing.sm,
-  backgroundColor: semanticVars.border.default,
-});
+export const separator = style([
+  baseSprinkles({
+    marginY: "xs",
+    mx: "sm",
+  }),
+  style({
+    height: "1px",
+    backgroundColor: semanticVars.border.default,
+  }),
+]);
 
 export const groupLabel = style({
   paddingBlock: tokenVars.spacing["1"],
@@ -134,34 +161,48 @@ export const groupLabel = style({
   color: semanticVars.text.secondary,
 });
 
-export const empty = style({
-  padding: tokenVars.spacing.sm,
-  textAlign: "center",
-  fontSize: tokenVars.fontSize.sm,
-  color: semanticVars.text.secondary,
-});
+export const empty = style([
+  baseSprinkles({
+    padding: "sm",
+    fontSize: "sm",
+    color: "secondary",
+  }),
+  style({
+    textAlign: "center",
+  }),
+]);
 
 export const list = style({
   padding: tokenVars.spacing.xs,
 });
 
-export const status = style({
-  paddingInline: tokenVars.spacing.md,
-  paddingBlock: tokenVars.spacing.sm,
-  fontSize: tokenVars.fontSize.xs,
-  fontWeight: tokenVars.fontWeight.medium,
-  color: semanticVars.text.secondary,
-});
+export const status = style([
+  baseSprinkles({
+    color: "secondary",
+  }),
+  style({
+    paddingInline: tokenVars.spacing.md,
+    paddingBlock: tokenVars.spacing.sm,
+    fontSize: tokenVars.fontSize.xs,
+    fontWeight: tokenVars.fontWeight.medium,
+  }),
+]);
 
-export const item = style({
-  display: "flex",
-  alignItems: "center",
-  paddingInline: tokenVars.spacing.sm,
-  paddingBlock: tokenVars.spacing["1"],
-  borderRadius: tokenVars.borderRadius.md,
-  cursor: "default",
-  userSelect: "none",
-  outline: "none",
-  minHeight: "32px",
-  fontSize: tokenVars.fontSize.md,
-});
+export const item = style([
+  baseSprinkles({
+    display: "flex",
+    align: "center",
+    gap: "sm",
+    color: "primary",
+  }),
+  style({
+    paddingInline: tokenVars.spacing.sm,
+    paddingBlock: tokenVars.spacing["1"],
+    borderRadius: tokenVars.borderRadius.md,
+    cursor: "default",
+    userSelect: "none",
+    outline: "none",
+    minHeight: "32px",
+    fontSize: tokenVars.fontSize.md,
+  }),
+]);

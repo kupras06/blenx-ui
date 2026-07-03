@@ -1,33 +1,46 @@
 import { style } from "@vanilla-extract/css";
-import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars } from "@blenx-dev/theme/contract";
+import { baseSprinkles } from "../../utils/sprinkles";
 
-export const root = style({
-  display: "flex",
-  alignItems: "center",
-  gap: "4px",
-  color: semanticVars.text.secondary,
-  fontSize: 14,
-});
+export const root = style([
+  baseSprinkles({
+    display: "flex",
+    align: "center",
+    color: "secondary",
+  }),
+  style({
+    gap: "4px",
+    fontSize: 14,
+  }),
+]);
 
-export const list = style({
-  display: "flex",
-  flexWrap: "wrap",
-  alignItems: "center",
-  gap: 6,
-  fontSize: tokenVars.fontSize.md,
-  color: semanticVars.text.secondary,
-  "@media": {
-    "screen and (min-width: 768px)": {
-      gap: 10,
+export const list = style([
+  baseSprinkles({
+    display: "flex",
+    flexWrap: "wrap",
+    align: "center",
+    gap: "6",
+    fontSize: "md",
+    color: "secondary",
+  }),
+  style({
+    "@media": {
+      "screen and (min-width: 768px)": {
+        gap: 10,
+      },
     },
-  },
-});
+  }),
+]);
 
-export const item = style({
-  display: "inline-flex",
-  alignItems: "center",
-  gap: 6,
-});
+export const item = style([
+  baseSprinkles({
+    display: "inline-flex",
+    align: "center",
+  }),
+  style({
+    gap: 6,
+  }),
+]);
 
 export const link = style({
   color: "inherit",
@@ -43,21 +56,28 @@ export const link = style({
   },
 });
 
-export const page = style({
-  fontWeight: 400,
-  color: semanticVars.text.primary,
-});
+export const page = style([
+  baseSprinkles({
+    color: "primary",
+  }),
+  style({
+    fontWeight: 400,
+  }),
+]);
 
-export const separator = style({
-  display: "inline-flex",
-  alignItems: "center",
-  opacity: 0.8,
-});
+export const separator = style([
+  baseSprinkles({
+    display: "inline-flex",
+    align: "center",
+  }),
+]);
 
-export const ellipsis = style({
-  display: "inline-flex",
-  alignItems: "center",
-});
+export const ellipsis = style([
+  baseSprinkles({
+    display: "inline-flex",
+    align: "center",
+  }),
+]);
 
 export const srOnly = style({
   position: "absolute",

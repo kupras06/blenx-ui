@@ -7,6 +7,5 @@ for (let i = 1; i <= 12; i++) {
 export const gridSpanVariants = spanEntries;
 
 export const gridItem = style({
-  boxSizing: "border-box",
   minWidth: 0,
 });

@@ -1,5 +1,6 @@
 import { createVar, style } from "@vanilla-extract/css";
 import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
+import { baseSprinkles } from "../../utils/sprinkles";
 
 export const badgeVars = {
   bg: createVar(),
@@ -7,14 +8,18 @@ export const badgeVars = {
   borderColor: createVar(),
 };
 
-export const badgeBase = style({
-  display: "inline-block",
-  padding: tokenVars.spacing.xs,
-  borderRadius: tokenVars.borderRadius.default,
-  fontSize: 12,
-  lineHeight: 1.2,
-  border: "1px solid transparent",
-});
+export const badgeBase = style([
+  baseSprinkles({
+    display: "block",
+    padding: "xs",
+    radius: "default",
+  }),
+  style({
+    fontSize: 12,
+    lineHeight: 1.2,
+    border: "1px solid transparent",
+  }),
+]);
 
 export const badgeSolid = style({
   backgroundColor: badgeVars.bg,

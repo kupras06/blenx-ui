@@ -6,7 +6,7 @@ Replace CSS properties that **sprinkles already covers** inside `style({...})` c
 `sprinkles(...)` from `./utils/sprinkles.css.ts`. This generates reusable atomic classes
 instead of unique per-file classes, reducing the total CSS bundle size.
 
-**Do NOT** refactor properties that sprinkles doesn't cover (`boxSizing`, `transition`,
+**Do NOT** refactor properties that sprinkles doesn't cover (`transition`,
 `border*` side-specific, `outline`, `boxShadow`, `lineHeight`, `fontWeight`, `transform`,
 `opacity`, `cursor`, `userSelect`, `textAlign`, `textDecoration`, `whiteSpace`,
 `fontFamily`, `minHeight`, `maxHeight` pixel values, etc.) — those should stay in `style()`.
@@ -35,7 +35,6 @@ export const root = style([
   // Keep non-sprinkle props in a separate style() call:
   style({
     transition: "color 0.2s",
-    boxSizing: "border-box",
   }),
 ]);
 ```

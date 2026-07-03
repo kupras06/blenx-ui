@@ -81,7 +81,6 @@ export const weekday = style({
   padding: tokenVars.spacing.xxs,
   width: 40,
   height: 32,
-  boxSizing: "border-box",
 });
 
 export const day = style({
@@ -90,7 +89,6 @@ export const day = style({
   padding: 1,
   width: 40,
   height: 40,
-  boxSizing: "border-box",
 });
 
 export const dayButton = style({

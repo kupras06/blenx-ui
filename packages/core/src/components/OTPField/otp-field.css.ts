@@ -1,12 +1,15 @@
 import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
 import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
+import { baseSprinkles } from "../../utils/sprinkles";
 
-export const root = style({
-  display: "flex",
-  alignItems: "center",
-  gap: tokenVars.spacing["1"],
-});
+export const root = style([
+  baseSprinkles({
+    display: "flex",
+    align: "center",
+    gap: "1",
+  }),
+]);
 
 export const input = recipe({
   base: {
@@ -45,10 +48,14 @@ export const input = recipe({
   },
 });
 
-export const separator = style({
-  backgroundColor: semanticVars.border.default,
-  borderRadius: "999px",
-  width: tokenVars.spacing["3"],
-  height: tokenVars.spacing["0.5"],
-  flexShrink: 0,
-});
+export const separator = style([
+  baseSprinkles({
+    shrink: 0,
+  }),
+  style({
+    backgroundColor: semanticVars.border.default,
+    borderRadius: "999px",
+    width: tokenVars.spacing["3"],
+    height: tokenVars.spacing["0.5"],
+  }),
+]);

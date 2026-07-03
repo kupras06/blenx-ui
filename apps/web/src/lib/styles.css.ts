@@ -12,7 +12,6 @@ export const codeBlockContent = style({
 globalStyle(`${codeBlockContent} .shiki`, {
   width: "100%",
   maxWidth: "100%",
-  boxSizing: "border-box",
   margin: 0,
 });
 

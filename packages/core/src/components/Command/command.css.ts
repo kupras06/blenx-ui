@@ -1,130 +1,164 @@
 import { style } from "@vanilla-extract/css";
 import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
+import { baseSprinkles } from "../../utils/sprinkles";
 
-export const root = style({
-  display: "flex",
-  flexDirection: "column",
-  width: "100%",
-  maxHeight: "100%",
-  overflow: "hidden",
-  backgroundColor: semanticVars.surface.default,
-  borderWidth: 1,
-  borderStyle: "solid",
-  borderColor: semanticVars.border.default,
-  borderRadius: tokenVars.borderRadius.lg,
-  boxShadow: tokenVars.shadow.lg,
-  boxSizing: "border-box",
-  outline: "none",
-});
+export const root = style([
+  baseSprinkles({
+    display: "flex",
+    direction: "column",
+    width: "full",
+    overflow: "hidden",
+    radius: "lg",
+    backgroundColor: "surface",
+    maxHeight: "full",
+  }),
+  style({
+    borderWidth: 1,
+    borderStyle: "solid",
+    borderColor: semanticVars.border.default,
+    boxShadow: tokenVars.shadow.lg,
+    outline: "none",
+  }),
+]);
 
-export const inputWrapper = style({
-  display: "flex",
-  alignItems: "center",
-  gap: tokenVars.spacing.sm,
-  paddingLeft: tokenVars.spacing.sm,
-  paddingRight: tokenVars.spacing.sm,
-  borderBottomWidth: 1,
-  borderBottomStyle: "solid",
-  borderBottomColor: semanticVars.border.subtle,
-  boxSizing: "border-box",
-});
+export const inputWrapper = style([
+  baseSprinkles({
+    display: "flex",
+    align: "center",
+    gap: "sm",
+    px: "sm",
+  }),
+  style({
+    borderBottomWidth: 1,
+    borderBottomStyle: "solid",
+    borderBottomColor: semanticVars.border.subtle,
+  }),
+]);
 
-export const inputIcon = style({
-  display: "flex",
-  alignItems: "center",
-  flexShrink: 0,
-  color: semanticVars.text.disabled,
-});
+export const inputIcon = style([
+  baseSprinkles({
+    display: "flex",
+    align: "center",
+    shrink: 0,
+    color: "disabled",
+  }),
+]);
 
-export const input = style({
-  width: "100%",
-  height: 44,
-  border: "none",
-  outline: "none",
-  backgroundColor: "transparent",
-  fontSize: tokenVars.fontSize.sm,
-  fontFamily: "inherit",
-  color: semanticVars.text.primary,
-  selectors: {
-    "&::placeholder": {
-      color: semanticVars.text.disabled,
+export const input = style([
+  baseSprinkles({
+    width: "full",
+    fontSize: "sm",
+    color: "primary",
+  }),
+  style({
+    height: 44,
+    border: "none",
+    outline: "none",
+    backgroundColor: "transparent",
+    fontFamily: "inherit",
+    selectors: {
+      "&::placeholder": {
+        color: semanticVars.text.disabled,
+      },
     },
-  },
-});
+  }),
+]);
 
-export const list = style({
-  overflow: "auto",
-  maxHeight: 300,
-  padding: tokenVars.spacing.xs,
-});
+export const list = style([
+  baseSprinkles({
+    overflow: "auto",
+    padding: "xs",
+  }),
+  style({
+    maxHeight: 300,
+  }),
+]);
 
-export const group = style({
-  display: "flex",
-  flexDirection: "column",
-});
+export const group = style([
+  baseSprinkles({
+    display: "flex",
+    direction: "column",
+  }),
+]);
 
-export const groupHeading = style({
-  paddingTop: tokenVars.spacing.sm,
-  paddingBottom: tokenVars.spacing.xs,
-  paddingLeft: tokenVars.spacing.sm,
-  paddingRight: tokenVars.spacing.sm,
-  fontSize: tokenVars.fontSize.xs,
-  fontWeight: tokenVars.fontWeight.semibold,
-  color: semanticVars.text.secondary,
-});
+export const groupHeading = style([
+  baseSprinkles({
+    px: "sm",
+    fontSize: "xs",
+    color: "secondary",
+  }),
+  style({
+    paddingTop: tokenVars.spacing.sm,
+    paddingBottom: tokenVars.spacing.xs,
+    fontWeight: tokenVars.fontWeight.semibold,
+  }),
+]);
 
-export const item = style({
-  display: "flex",
-  alignItems: "center",
-  gap: tokenVars.spacing.sm,
-  boxSizing: "border-box",
-  minHeight: 32,
-  paddingTop: tokenVars.spacing.xs,
-  paddingBottom: tokenVars.spacing.xs,
-  paddingLeft: tokenVars.spacing.sm,
-  paddingRight: tokenVars.spacing.sm,
-  borderRadius: tokenVars.borderRadius.sm,
-  fontSize: tokenVars.fontSize.sm,
-  lineHeight: "1.4",
-  color: semanticVars.text.primary,
-  cursor: "pointer",
-  userSelect: "none",
-  outline: "none",
-  selectors: {
-    "&:hover": {
-      backgroundColor: semanticVars.background.subtle,
+export const item = style([
+  baseSprinkles({
+    display: "flex",
+    align: "center",
+    gap: "sm",
+    py: "xs",
+    px: "sm",
+    radius: "sm",
+    fontSize: "sm",
+    color: "primary",
+  }),
+  style({
+    minHeight: 32,
+    lineHeight: "1.4",
+    cursor: "pointer",
+    userSelect: "none",
+    outline: "none",
+    selectors: {
+      "&:hover": {
+        backgroundColor: semanticVars.background.subtle,
+      },
+      "&:focus-visible": {
+        boxShadow: `0 0 0 2px ${semanticVars.focus.ring}`,
+      },
     },
-    "&:focus-visible": {
-      boxShadow: `0 0 0 2px ${semanticVars.focus.ring}`,
+  }),
+]);
+
+export const itemActive = style([
+  baseSprinkles({
+    backgroundColor: "subtle",
+  }),
+]);
+
+export const itemDisabled = style([
+  baseSprinkles({
+    color: "disabled",
+  }),
+  style({
+    cursor: "default",
+    selectors: {
+      "&:hover": {
+        backgroundColor: "transparent",
+      },
     },
-  },
-});
+  }),
+]);
 
-export const itemActive = style({
-  backgroundColor: semanticVars.background.subtle,
-});
+export const separator = style([
+  baseSprinkles({
+    marginY: "xs",
+  }),
+  style({
+    height: 1,
+    backgroundColor: semanticVars.border.subtle,
+  }),
+]);
 
-export const itemDisabled = style({
-  color: semanticVars.text.disabled,
-  cursor: "default",
-  selectors: {
-    "&:hover": {
-      backgroundColor: "transparent",
-    },
-  },
-});
-
-export const separator = style({
-  height: 1,
-  marginTop: tokenVars.spacing.xs,
-  marginBottom: tokenVars.spacing.xs,
-  backgroundColor: semanticVars.border.subtle,
-});
-
-export const empty = style({
-  paddingTop: tokenVars.spacing.lg,
-  paddingBottom: tokenVars.spacing.lg,
-  textAlign: "center",
-  fontSize: tokenVars.fontSize.sm,
-  color: semanticVars.text.secondary,
-});
+export const empty = style([
+  baseSprinkles({
+    py: "lg",
+    fontSize: "sm",
+    color: "secondary",
+  }),
+  style({
+    textAlign: "center",
+  }),
+]);

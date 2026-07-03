@@ -1,5 +1,6 @@
 import { style } from "@vanilla-extract/css";
 import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
+import { baseSprinkles } from "../../utils/sprinkles";
 
 export const swipeArea = style({
   position: "fixed",
@@ -35,27 +36,32 @@ export const swipeAreaRight = style({
   width: "32px",
 });
 
-export const backdrop = style({
-  position: "fixed",
-  inset: 0,
-  backgroundColor: "rgba(0, 0, 0, 0.32)",
-  backdropFilter: "blur(4px)",
-  transitionProperty: "opacity",
-  transitionDuration: "450ms",
-  transitionTimingFunction: "cubic-bezier(0.32, 0.72, 0, 1)",
-  "@media": {
-    "(prefers-reduced-motion: reduce)": {
-      transitionProperty: "none",
-      transitionDuration: "0ms",
+export const backdrop = style([
+  baseSprinkles({
+    position: "fixed",
+  }),
+  style({
+    inset: 0,
+  }),
+  style({
+    backgroundColor: "rgba(0, 0, 0, 0.32)",
+    backdropFilter: "blur(4px)",
+    transitionProperty: "opacity",
+    transitionDuration: "450ms",
+    transitionTimingFunction: "cubic-bezier(0.32, 0.72, 0, 1)",
+    "@media": {
+      "(prefers-reduced-motion: reduce)": {
+        transitionProperty: "none",
+        transitionDuration: "0ms",
+      },
     },
-  },
-});
+  }),
+]);
 
 export const viewport = style({
   position: "fixed",
   inset: 0,
   touchAction: "none",
-  boxSizing: "border-box",
 });
 
 export const viewportBottom = style({
@@ -85,31 +91,34 @@ export const viewportInset = style({
   paddingRight: tokenVars.spacing.md,
 });
 
-export const popup = style({
-  position: "relative",
-  display: "flex",
-  flexDirection: "column",
-  maxHeight: "100%",
-  minHeight: 0,
-  minWidth: 0,
-  width: "100%",
-  boxSizing: "border-box",
-  backgroundColor: semanticVars.surface.default,
-  color: semanticVars.text.primary,
-  borderStyle: "solid",
-  borderColor: semanticVars.border.default,
-  outline: "none",
-  willChange: "transform",
-  transitionProperty: "transform, box-shadow, height, background-color, margin, padding",
-  transitionDuration: "450ms",
-  transitionTimingFunction: "cubic-bezier(0.32, 0.72, 0, 1)",
-  "@media": {
-    "(prefers-reduced-motion: reduce)": {
-      transitionProperty: "none",
-      transitionDuration: "0ms",
+export const popup = style([
+  baseSprinkles({
+    position: "relative",
+    display: "flex",
+    direction: "column",
+    width: "full",
+    backgroundColor: "surface",
+    color: "primary",
+  }),
+  style({
+    maxHeight: "100%",
+    minHeight: 0,
+    minWidth: 0,
+    borderStyle: "solid",
+    borderColor: semanticVars.border.default,
+    outline: "none",
+    willChange: "transform",
+    transitionProperty: "transform, box-shadow, height, background-color, margin, padding",
+    transitionDuration: "450ms",
+    transitionTimingFunction: "cubic-bezier(0.32, 0.72, 0, 1)",
+    "@media": {
+      "(prefers-reduced-motion: reduce)": {
+        transitionProperty: "none",
+        transitionDuration: "0ms",
+      },
     },
-  },
-});
+  }),
+]);
 
 export const popupDefault = style({
   boxShadow: tokenVars.shadow.lg,
@@ -161,64 +170,77 @@ export const popupRight = style({
   borderBottomLeftRadius: tokenVars.borderRadius.xl,
 });
 
-export const header = style({
-  display: "flex",
-  flexDirection: "column",
-  gap: tokenVars.spacing.sm,
-  paddingTop: tokenVars.spacing.lg,
-  paddingLeft: tokenVars.spacing.lg,
-  paddingRight: tokenVars.spacing.lg,
-  boxSizing: "border-box",
-});
+export const header = style([
+  baseSprinkles({
+    display: "flex",
+    direction: "column",
+    gap: "sm",
+  }),
+  style({
+    paddingTop: tokenVars.spacing.lg,
+    paddingLeft: tokenVars.spacing.lg,
+    paddingRight: tokenVars.spacing.lg,
+  }),
+]);
 
-export const footer = style({
-  display: "flex",
-  flexDirection: "column-reverse",
-  gap: tokenVars.spacing.sm,
-  paddingLeft: tokenVars.spacing.lg,
-  paddingRight: tokenVars.spacing.lg,
-  boxSizing: "border-box",
-  "@media": {
-    "(min-width: 640px)": {
-      flexDirection: "row",
-      justifyContent: "flex-end",
+export const footer = style([
+  baseSprinkles({
+    display: "flex",
+    direction: "column-reverse",
+    gap: "sm",
+  }),
+  style({
+    paddingLeft: tokenVars.spacing.lg,
+    paddingRight: tokenVars.spacing.lg,
+    "@media": {
+      "(min-width: 640px)": {
+        flexDirection: "row",
+        justifyContent: "flex-end",
+      },
     },
-  },
-});
+  }),
+]);
 
-export const footerDefault = style({
-  borderTopWidth: tokenVars.borderWidth.thin,
-  borderTopStyle: "solid",
-  borderTopColor: semanticVars.border.subtle,
-  backgroundColor: semanticVars.background.subtle,
-  paddingTop: tokenVars.spacing.md,
-  paddingBottom: tokenVars.spacing.md,
-});
+export const footerDefault = style([
+  baseSprinkles({
+    backgroundColor: "subtle",
+    py: "md",
+  }),
+  style({
+    borderTopWidth: tokenVars.borderWidth.thin,
+    borderTopStyle: "solid",
+    borderTopColor: semanticVars.border.subtle,
+  }),
+]);
 
 export const footerBare = style({
   paddingTop: tokenVars.spacing.md,
   paddingBottom: tokenVars.spacing.lg,
 });
 
-export const title = style({
-  fontSize: "20px",
-  lineHeight: 1,
-  fontWeight: tokenVars.fontWeight.semibold,
-});
+export const title = style([
+  style({
+    fontSize: "20px",
+    lineHeight: 1,
+    fontWeight: tokenVars.fontWeight.semibold,
+  }),
+]);
 
-export const description = style({
-  fontSize: tokenVars.fontSize.sm,
-  lineHeight: 1.4,
-  color: semanticVars.text.secondary,
-});
+export const description = style([
+  baseSprinkles({
+    color: "secondary",
+  }),
+  style({
+    fontSize: tokenVars.fontSize.sm,
+    lineHeight: 1.4,
+  }),
+]);
 
-export const panel = style({
-  boxSizing: "border-box",
-  paddingTop: tokenVars.spacing.lg,
-  paddingLeft: tokenVars.spacing.lg,
-  paddingRight: tokenVars.spacing.lg,
-  paddingBottom: tokenVars.spacing.lg,
-});
+export const panel = style([
+  baseSprinkles({
+    padding: "lg",
+  }),
+]);
 
 export const bar = style({
   position: "absolute",
@@ -255,33 +277,41 @@ export const barRight = style({
   left: 0,
 });
 
-export const menu = style({
-  display: "flex",
-  flexDirection: "column",
-});
+export const menu = style([
+  baseSprinkles({
+    display: "flex",
+    direction: "column",
+  }),
+]);
 
-export const menuItem = style({
-  display: "flex",
-  alignItems: "center",
-  gap: tokenVars.spacing.sm,
-  minHeight: "36px",
-  paddingTop: tokenVars.spacing.xs,
-  paddingBottom: tokenVars.spacing.xs,
-  paddingLeft: tokenVars.spacing.sm,
-  paddingRight: tokenVars.spacing.sm,
-  borderRadius: tokenVars.borderRadius.sm,
-  border: "none",
-  backgroundColor: "transparent",
-  color: semanticVars.text.primary,
-  fontSize: tokenVars.fontSize.md,
-  textAlign: "left",
-  cursor: "default",
-  outline: "none",
-});
+export const menuItem = style([
+  baseSprinkles({
+    display: "flex",
+    align: "center",
+    gap: "sm",
+    radius: "sm",
+    color: "primary",
+    fontSize: "md",
+  }),
+  style({
+    minHeight: "36px",
+    paddingTop: tokenVars.spacing.xs,
+    paddingBottom: tokenVars.spacing.xs,
+    paddingLeft: tokenVars.spacing.sm,
+    paddingRight: tokenVars.spacing.sm,
+    border: "none",
+    backgroundColor: "transparent",
+    textAlign: "left",
+    cursor: "default",
+    outline: "none",
+  }),
+]);
 
-export const menuItemDestructive = style({
-  color: semanticVars.status.danger.default,
-});
+export const menuItemDestructive = style([
+  baseSprinkles({
+    color: "error",
+  }),
+]);
 
 export const separator = style({
   height: "1px",
@@ -290,35 +320,45 @@ export const separator = style({
   marginBottom: tokenVars.spacing.xs,
 });
 
-export const menuGroup = style({
-  display: "flex",
-  flexDirection: "column",
-});
+export const menuGroup = style([
+  baseSprinkles({
+    display: "flex",
+    direction: "column",
+  }),
+]);
 
-export const menuGroupLabel = style({
-  paddingTop: tokenVars.spacing.xs,
-  paddingBottom: tokenVars.spacing.xs,
-  paddingLeft: tokenVars.spacing.sm,
-  paddingRight: tokenVars.spacing.sm,
-  fontSize: tokenVars.fontSize.xs,
-  fontWeight: tokenVars.fontWeight.medium,
-  color: semanticVars.text.secondary,
-});
+export const menuGroupLabel = style([
+  baseSprinkles({
+    fontSize: "xs",
+    color: "secondary",
+  }),
+  style({
+    paddingTop: tokenVars.spacing.xs,
+    paddingBottom: tokenVars.spacing.xs,
+    paddingLeft: tokenVars.spacing.sm,
+    paddingRight: tokenVars.spacing.sm,
+    fontWeight: tokenVars.fontWeight.medium,
+  }),
+]);
 
-export const menuTrigger = style({
-  display: "flex",
-  alignItems: "center",
-  gap: tokenVars.spacing.sm,
-  minHeight: "36px",
-  paddingTop: tokenVars.spacing.xs,
-  paddingBottom: tokenVars.spacing.xs,
-  paddingLeft: tokenVars.spacing.sm,
-  paddingRight: tokenVars.spacing.sm,
-  borderRadius: tokenVars.borderRadius.sm,
-  backgroundColor: "transparent",
-  border: "none",
-  color: semanticVars.text.primary,
-});
+export const menuTrigger = style([
+  baseSprinkles({
+    display: "flex",
+    align: "center",
+    gap: "sm",
+    radius: "sm",
+    color: "primary",
+  }),
+  style({
+    minHeight: "36px",
+    paddingTop: tokenVars.spacing.xs,
+    paddingBottom: tokenVars.spacing.xs,
+    paddingLeft: tokenVars.spacing.sm,
+    paddingRight: tokenVars.spacing.sm,
+    backgroundColor: "transparent",
+    border: "none",
+  }),
+]);
 
 export const menuTriggerIcon = style({
   marginLeft: "auto",
@@ -326,20 +366,24 @@ export const menuTriggerIcon = style({
   opacity: 0.8,
 });
 
-export const menuCheckbox = style({
-  display: "grid",
-  alignItems: "center",
-  gap: tokenVars.spacing.sm,
-  minHeight: "36px",
-  paddingTop: tokenVars.spacing.xs,
-  paddingBottom: tokenVars.spacing.xs,
-  paddingLeft: tokenVars.spacing.sm,
-  paddingRight: tokenVars.spacing.sm,
-  borderRadius: tokenVars.borderRadius.sm,
-  backgroundColor: "transparent",
-  border: "none",
-  color: semanticVars.text.primary,
-});
+export const menuCheckbox = style([
+  baseSprinkles({
+    display: "grid",
+    align: "center",
+    gap: "sm",
+    radius: "sm",
+    color: "primary",
+  }),
+  style({
+    minHeight: "36px",
+    paddingTop: tokenVars.spacing.xs,
+    paddingBottom: tokenVars.spacing.xs,
+    paddingLeft: tokenVars.spacing.sm,
+    paddingRight: tokenVars.spacing.sm,
+    backgroundColor: "transparent",
+    border: "none",
+  }),
+]);
 
 export const menuCheckboxDefault = style({
   gridTemplateColumns: "1rem 1fr",
@@ -379,21 +423,25 @@ export const menuCheckboxLabel = style({
   gridColumnStart: 2,
 });
 
-export const menuRadio = style({
-  display: "grid",
-  alignItems: "center",
-  gap: tokenVars.spacing.sm,
-  minHeight: "36px",
-  paddingTop: tokenVars.spacing.xs,
-  paddingBottom: tokenVars.spacing.xs,
-  paddingLeft: tokenVars.spacing.sm,
-  paddingRight: tokenVars.spacing.md,
-  borderRadius: tokenVars.borderRadius.sm,
-  backgroundColor: "transparent",
-  border: "none",
-  color: semanticVars.text.primary,
-  gridTemplateColumns: "1rem 1fr",
-});
+export const menuRadio = style([
+  baseSprinkles({
+    display: "grid",
+    align: "center",
+    gap: "sm",
+    radius: "sm",
+    color: "primary",
+  }),
+  style({
+    minHeight: "36px",
+    paddingTop: tokenVars.spacing.xs,
+    paddingBottom: tokenVars.spacing.xs,
+    paddingLeft: tokenVars.spacing.sm,
+    paddingRight: tokenVars.spacing.md,
+    backgroundColor: "transparent",
+    border: "none",
+    gridTemplateColumns: "1rem 1fr",
+  }),
+]);
 
 export const menuRadioIndicator = style({
   gridColumnStart: 1,

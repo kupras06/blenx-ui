@@ -1,46 +1,59 @@
 import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
-import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
+import { tokenVars } from "@blenx-dev/theme/contract";
+import { baseSprinkles } from "../../utils/sprinkles";
 
-export const root = style({
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "center",
-  borderRadius: tokenVars.borderRadius.default,
-  backgroundColor: semanticVars.background.subtle,
-  color: semanticVars.text.secondary,
-  overflow: "hidden",
-  flexShrink: 0,
-  outline: "none",
-  border: "none",
-  borderWidth: 0,
-});
+export const root = style([
+  baseSprinkles({
+    display: "inline-flex",
+    align: "center",
+    justify: "center",
+    radius: "default",
+    backgroundColor: "subtle",
+    color: "secondary",
+    overflow: "hidden",
+    shrink: 0,
+  }),
+  style({
+    outline: "none",
+    border: "none",
+    borderWidth: 0,
+  }),
+]);
 
-export const image = style({
-  width: "100%",
-  height: "100%",
-  objectFit: "cover",
-  display: "block",
-  outline: "none",
-  border: "none",
-  borderWidth: 0,
-});
+export const image = style([
+  baseSprinkles({
+    width: "full",
+    height: "full",
+    display: "block",
+  }),
+  style({
+    objectFit: "cover",
+    outline: "none",
+    border: "none",
+    borderWidth: 0,
+  }),
+]);
 
-export const fallback = style({
-  width: "100%",
-  height: "100%",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  backgroundColor: semanticVars.background.subtle,
-  color: semanticVars.text.secondary,
-  fontSize: 12,
-  outline: "none",
-  border: "none",
-  borderWidth: 0,
-  fontWeight: 600,
-  lineHeight: 1,
-});
+export const fallback = style([
+  baseSprinkles({
+    width: "full",
+    height: "full",
+    display: "flex",
+    align: "center",
+    justify: "center",
+    backgroundColor: "subtle",
+    color: "secondary",
+  }),
+  style({
+    fontSize: 12,
+    outline: "none",
+    border: "none",
+    borderWidth: 0,
+    fontWeight: 600,
+    lineHeight: 1,
+  }),
+]);
 
 export const avatarRecipes = recipe({
   variants: {

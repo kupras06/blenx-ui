@@ -1,25 +1,29 @@
 import { style } from "@vanilla-extract/css";
 import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
+import { baseSprinkles } from "../../utils/sprinkles";
 
-export const backdrop = style({
-  position: "fixed",
-  inset: 0,
-  backgroundColor: "rgba(0, 0, 0, 0.32)",
-  backdropFilter: "blur(4px)",
-  transitionProperty: "opacity",
-  transitionDuration: "200ms",
-  "@media": {
-    "(prefers-reduced-motion: reduce)": {
-      transitionProperty: "none",
-      transitionDuration: "0ms",
+export const backdrop = style([
+  baseSprinkles({
+    position: "fixed",
+  }),
+  style({
+    inset: 0,
+    backgroundColor: "rgba(0, 0, 0, 0.32)",
+    backdropFilter: "blur(4px)",
+    transitionProperty: "opacity",
+    transitionDuration: "200ms",
+    "@media": {
+      "(prefers-reduced-motion: reduce)": {
+        transitionProperty: "none",
+        transitionDuration: "0ms",
+      },
     },
-  },
-});
+  }),
+]);
 
 export const viewport = style({
   position: "fixed",
   inset: 0,
-  boxSizing: "border-box",
 });
 
 export const viewportBottom = style({
@@ -52,39 +56,42 @@ export const viewportInset = style({
   },
 });
 
-export const popup = style({
-  position: "relative",
-  display: "flex",
-  flexDirection: "column",
-  maxHeight: "100%",
-  minHeight: 0,
-  minWidth: 0,
-  width: "100%",
-  boxSizing: "border-box",
-  backgroundColor: semanticVars.surface.default,
-  color: semanticVars.text.primary,
-  borderStyle: "solid",
-  borderColor: semanticVars.border.default,
-  outline: "none",
-  boxShadow: tokenVars.shadow.lg,
-  willChange: "translate",
-  transitionProperty: "opacity, translate",
-  transitionDuration: "200ms",
-  transitionTimingFunction: "ease-in-out",
-  "::before": {
-    content: '""',
-    pointerEvents: "none",
-    position: "absolute",
-    inset: 0,
-    boxShadow: "0 1px 0 rgba(0, 0, 0, 0.04), inset 0 0 0 1px rgba(255, 255, 255, 0.02)",
-  },
-  "@media": {
-    "(prefers-reduced-motion: reduce)": {
-      transitionProperty: "none",
-      transitionDuration: "0ms",
+export const popup = style([
+  baseSprinkles({
+    position: "relative",
+    display: "flex",
+    direction: "column",
+    width: "full",
+    backgroundColor: "surface",
+    color: "primary",
+  }),
+  style({
+    maxHeight: "100%",
+    minHeight: 0,
+    minWidth: 0,
+    borderStyle: "solid",
+    borderColor: semanticVars.border.default,
+    outline: "none",
+    boxShadow: tokenVars.shadow.lg,
+    willChange: "translate",
+    transitionProperty: "opacity, translate",
+    transitionDuration: "200ms",
+    transitionTimingFunction: "ease-in-out",
+    "::before": {
+      content: '""',
+      pointerEvents: "none",
+      position: "absolute",
+      inset: 0,
+      boxShadow: "0 1px 0 rgba(0, 0, 0, 0.04), inset 0 0 0 1px rgba(255, 255, 255, 0.02)",
     },
-  },
-});
+    "@media": {
+      "(prefers-reduced-motion: reduce)": {
+        transitionProperty: "none",
+        transitionDuration: "0ms",
+      },
+    },
+  }),
+]);
 
 export const popupBottom = style({
   gridRowStart: 2,
@@ -129,37 +136,46 @@ export const popupInset = style({
   },
 });
 
-export const header = style({
-  display: "flex",
-  flexDirection: "column",
-  gap: tokenVars.spacing.sm,
-  padding: tokenVars.spacing.lg,
-  boxSizing: "border-box",
-});
+export const header = style([
+  baseSprinkles({
+    display: "flex",
+    direction: "column",
+    gap: "sm",
+  }),
+  style({
+    padding: tokenVars.spacing.lg,
+  }),
+]);
 
-export const footer = style({
-  display: "flex",
-  flexDirection: "column-reverse",
-  gap: tokenVars.spacing.sm,
-  paddingLeft: tokenVars.spacing.lg,
-  paddingRight: tokenVars.spacing.lg,
-  boxSizing: "border-box",
-  "@media": {
-    "(min-width: 640px)": {
-      flexDirection: "row",
-      justifyContent: "flex-end",
+export const footer = style([
+  baseSprinkles({
+    display: "flex",
+    direction: "column-reverse",
+    gap: "sm",
+  }),
+  style({
+    paddingLeft: tokenVars.spacing.lg,
+    paddingRight: tokenVars.spacing.lg,
+    "@media": {
+      "(min-width: 640px)": {
+        flexDirection: "row",
+        justifyContent: "flex-end",
+      },
     },
-  },
-});
+  }),
+]);
 
-export const footerDefault = style({
-  borderTopWidth: tokenVars.borderWidth.thin,
-  borderTopStyle: "solid",
-  borderTopColor: semanticVars.border.subtle,
-  backgroundColor: semanticVars.background.subtle,
-  paddingTop: tokenVars.spacing.md,
-  paddingBottom: tokenVars.spacing.md,
-});
+export const footerDefault = style([
+  baseSprinkles({
+    backgroundColor: "subtle",
+    py: "md",
+  }),
+  style({
+    borderTopWidth: tokenVars.borderWidth.thin,
+    borderTopStyle: "solid",
+    borderTopColor: semanticVars.border.subtle,
+  }),
+]);
 
 export const footerBare = style({
   paddingTop: tokenVars.spacing.md,
@@ -172,13 +188,18 @@ export const title = style({
   fontWeight: tokenVars.fontWeight.semibold,
 });
 
-export const description = style({
-  fontSize: tokenVars.fontSize.sm,
-  lineHeight: 1.4,
-  color: semanticVars.text.secondary,
-});
+export const description = style([
+  baseSprinkles({
+    color: "secondary",
+  }),
+  style({
+    fontSize: tokenVars.fontSize.sm,
+    lineHeight: 1.4,
+  }),
+]);
 
-export const panel = style({
-  boxSizing: "border-box",
-  padding: tokenVars.spacing.lg,
-});
+export const panel = style([
+  baseSprinkles({
+    padding: "lg",
+  }),
+]);

@@ -1,37 +1,56 @@
 import { style } from "@vanilla-extract/css";
-import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
+import { tokenVars } from "@blenx-dev/theme/contract";
+import { baseSprinkles } from "../../utils/sprinkles";
 
-export const root = style({
-  display: "flex",
-  width: "100%",
-  flexDirection: "column",
-  gap: tokenVars.spacing["2"],
-});
+export const root = style([
+  baseSprinkles({
+    display: "flex",
+    direction: "column",
+    width: "full",
+    gap: "2",
+  }),
+]);
 
-export const track = style({
-  display: "block",
-  height: 6,
-  width: "100%",
-  overflow: "hidden",
-  borderRadius: tokenVars.borderRadius.full,
-  backgroundColor: semanticVars.surface.default,
-});
+export const track = style([
+  baseSprinkles({
+    display: "block",
+    width: "full",
+    overflow: "hidden",
+    radius: "full",
+    backgroundColor: "surface",
+  }),
+  style({
+    height: 6,
+  }),
+]);
 
-export const indicator = style({
-  height: "100%",
-  backgroundColor: semanticVars.interactive.primary.default,
-  borderRadius: tokenVars.borderRadius.full,
-  transitionProperty: "width, background-color",
-  transitionDuration: tokenVars.duration.slow,
-  transitionTimingFunction: "ease",
-});
+export const indicator = style([
+  baseSprinkles({
+    height: "full",
+    backgroundColor: "primary",
+    radius: "full",
+  }),
+  style({
+    transitionProperty: "width, background-color",
+    transitionDuration: tokenVars.duration.slow,
+    transitionTimingFunction: "ease",
+  }),
+]);
 
-export const progressLabel = style({
-  fontSize: tokenVars.fontSize.md,
-  fontWeight: tokenVars.fontWeight.medium,
-});
+export const progressLabel = style([
+  baseSprinkles({
+    fontSize: "md",
+  }),
+  style({
+    fontWeight: tokenVars.fontWeight.medium,
+  }),
+]);
 
-export const value = style({
-  fontSize: tokenVars.fontSize.sm,
-  fontVariantNumeric: "tabular-nums",
-});
+export const value = style([
+  baseSprinkles({
+    fontSize: "sm",
+  }),
+  style({
+    fontVariantNumeric: "tabular-nums",
+  }),
+]);
