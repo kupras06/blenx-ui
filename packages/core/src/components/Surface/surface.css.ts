@@ -1,26 +1,36 @@
+import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
-import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars } from "@blenx-dev/theme/contract";
+import { baseSprinkles } from "../../utils/sprinkles";
 
 export const variantRecipe = recipe({
   base: { textDecoration: "none" },
   variants: {
     variant: {
-      default: {
-        backgroundColor: semanticVars.surface.default,
-      },
-      outline: {
-        backgroundColor: semanticVars.surface.default,
-        borderWidth: 1,
-        borderStyle: "solid",
-        borderColor: semanticVars.border.default,
-      },
-      raised: {
-        backgroundColor: semanticVars.surface.raised,
-        boxShadow: tokenVars.shadow.md,
-      },
-      sunken: {
-        backgroundColor: semanticVars.background.subtle,
-      },
+      default: baseSprinkles({
+        backgroundColor: "surface",
+      }),
+      outline: [
+        baseSprinkles({
+          backgroundColor: "surface",
+          borderColor: "default",
+        }),
+        style({
+          borderWidth: 1,
+          borderStyle: "solid",
+        }),
+      ],
+      raised: [
+        baseSprinkles({
+          boxShadow: "md",
+        }),
+        style({
+          backgroundColor: semanticVars.surface.raised,
+        }),
+      ],
+      sunken: baseSprinkles({
+        backgroundColor: "subtle",
+      }),
     },
     interactive: {
       true: {

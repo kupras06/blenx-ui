@@ -1,4 +1,5 @@
 import { recipe } from "@vanilla-extract/recipes";
+import { baseSprinkles } from "../../utils/sprinkles";
 
 export const containerRecipe = recipe({
   base: {
@@ -25,12 +26,12 @@ export const containerRecipe = recipe({
     },
 
     contentCentered: {
-      true: {
+      true: baseSprinkles({
         display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-      },
+        direction: "column",
+        justify: "center",
+        align: "center",
+      }),
     },
   },
   defaultVariants: {

@@ -1,6 +1,7 @@
-import { createVar } from "@vanilla-extract/css";
+import { createVar, style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
-import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars } from "@blenx-dev/theme/contract";
+import { baseSprinkles } from "../../utils/sprinkles";
 
 export const intentVars = {
   solidBg: createVar(),
@@ -14,30 +15,33 @@ export const intentVars = {
 };
 
 export const variant = recipe({
-  base: {
-    display: "inline-flex",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: tokenVars.spacing.sm,
-    borderStyle: "solid",
-    borderWidth: 1,
-    borderRadius: tokenVars.borderRadius.default,
-    cursor: "pointer",
-    fontWeight: 500,
-    width: "fit-content",
-    height: "fit-content",
-    fontSize: tokenVars.fontSize.md,
-    fontFamily: tokenVars.font.body,
-    textDecoration: "none",
-    position: "relative",
-    transition: "all 0.2s ease",
-    selectors: {
-      "&:disabled": {
-        opacity: 0.4,
-        cursor: "not-allowed",
+  base: [
+    baseSprinkles({
+      display: "inline-flex",
+      align: "center",
+      justify: "center",
+      gap: "sm",
+      radius: "default",
+      width: "fit",
+      height: "fit",
+      position: "relative",
+      fontSize: "md",
+      fontWeight: "medium",
+    }),
+    style({
+      borderStyle: "solid",
+      borderWidth: 1,
+      cursor: "pointer",
+      textDecoration: "none",
+      transition: "all 0.2s ease",
+      selectors: {
+        "&:disabled": {
+          opacity: 0.4,
+          cursor: "not-allowed",
+        },
       },
-    },
-  },
+    }),
+  ],
   variants: {
     intent: {
       primary: {
@@ -126,22 +130,11 @@ export const variant = recipe({
       },
     },
     size: {
-      xs: {
-        padding: `${tokenVars.spacing.xxs} ${tokenVars.spacing.xs}`,
-        fontSize: tokenVars.fontSize.sm,
-      },
-      sm: {
-        padding: `${tokenVars.spacing.xs} ${tokenVars.spacing.sm}`,
-        fontSize: tokenVars.fontSize.sm,
-      },
-      icon: {
-        padding: `${tokenVars.spacing.xs} ${tokenVars.spacing.xs}`,
-      },
-      md: { padding: `${tokenVars.spacing.sm} ${tokenVars.spacing.md}` },
-      lg: {
-        padding: `${tokenVars.spacing.md} ${tokenVars.spacing.lg}`,
-        fontSize: tokenVars.fontSize.lg,
-      },
+      xs: baseSprinkles({ fontSize: "sm", py: "xxs", px: "xs" }),
+      sm: baseSprinkles({ fontSize: "sm", py: "xs", px: "sm" }),
+      icon: baseSprinkles({ py: "xs", px: "xs" }),
+      md: baseSprinkles({ fontSize: "md", py: "xs", px: "sm" }),
+      lg: baseSprinkles({ fontSize: "lg", py: "sm", px: "md" }),
     },
     variant: {
       solid: {

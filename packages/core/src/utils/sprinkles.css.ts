@@ -42,7 +42,6 @@ const layoutProperties = defineProperties({
       thick: tokenVars.borderWidth.thick,
       heavy: tokenVars.borderWidth.heavy,
     },
-    fontSize: spacing,
   },
   shorthands: {
     radius: ["borderRadius"],
@@ -207,6 +206,47 @@ const alignmentProperties = defineProperties({
     justify: ["justifyContent"],
   },
 });
+
+const fontProperties = defineProperties({
+  properties: {
+    fontSize: {
+      xxs: tokenVars.fontSize.xxs,
+      xs: tokenVars.fontSize.xs,
+      sm: tokenVars.fontSize.sm,
+      md: tokenVars.fontSize.md,
+      lg: tokenVars.fontSize.lg,
+      xl: tokenVars.fontSize.xl,
+      xxl: tokenVars.fontSize.xxl,
+      xxxl: tokenVars.fontSize.xxxl,
+      display: tokenVars.fontSize.display,
+      displayLg: tokenVars.fontSize.displayLg,
+      hero: tokenVars.fontSize.hero,
+    },
+    fontWeight: {
+      regular: tokenVars.fontWeight.regular,
+      medium: tokenVars.fontWeight.medium,
+      semibold: tokenVars.fontWeight.semibold,
+      bold: tokenVars.fontWeight.bold,
+      extrabold: tokenVars.fontWeight.extrabold,
+    },
+    letterSpacing: {
+      tight: tokenVars.letterSpacing.tight,
+      snug: tokenVars.letterSpacing.snug,
+      normal: tokenVars.letterSpacing.normal,
+      wide: tokenVars.letterSpacing.wide,
+      wider: tokenVars.letterSpacing.wider,
+      widest: tokenVars.letterSpacing.widest,
+    },
+    lineHeight: {
+      tight: tokenVars.lineHeight.tight,
+      snug: tokenVars.lineHeight.snug,
+      normal: tokenVars.lineHeight.normal,
+      relaxed: tokenVars.lineHeight.relaxed,
+      loose: tokenVars.lineHeight.loose,
+    },
+  },
+});
+
 export const baseSprinkles = createSprinkles(
   layoutProperties,
   responsiveSpacingProperties,
@@ -214,6 +254,7 @@ export const baseSprinkles = createSprinkles(
   flexProperties,
   positionProperties,
   alignmentProperties,
+  fontProperties,
 );
 
 export const gridSprinkles = createSprinkles(gridProperties, alignmentProperties);
