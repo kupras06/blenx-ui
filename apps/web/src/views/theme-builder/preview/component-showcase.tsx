@@ -1,56 +1,28 @@
+import { Box, HStack, Input, Text, Textarea, VStack } from "@blenx-dev/core";
 import {
-  Alert,
-  Box,
-  Button,
-  Checkbox,
-  HStack,
-  Input,
-  Label,
-  RadioGroup,
-  RadioGroupItem,
-  Switch,
-  Text,
-  Textarea,
-  VStack,
-} from "@blenx-dev/core";
-import { BadgeDemoSolid } from "@blenx-dev/core/components/Badge/badge.demo";
-import { ProfileCardDemo } from "@blenx-dev/core/components/Card/card.demo";
-import { DialogDemo } from "@blenx-dev/core/components/Dialog/dialog.demo";
-import { AvatarDemo } from "@blenx-dev/core/components/Avatar/avatar.demo";
-import { BreadcrumbDemo } from "@blenx-dev/core/components/Breadcrumbs/breadcrumbs.demo";
-import { ProgressDemo } from "@blenx-dev/core/components/Progress/progress.demo";
+  BadgeDemoSolid,
+  ProfileCardDemo,
+  DialogDemo,
+  AvatarDemo,
+  BreadcrumbDemo,
+  ProgressDemo,
+  RadioDemo,
+  SelectDemo,
+  ButtonDemoSolids,
+  ButtonDemoStates,
+  CheckboxDemo,
+  SwitchDemo,
+  AlertDemo,
+} from "@blenx-dev/core/demos";
 
 import { memo } from "react";
-import { SelectDemo } from "@blenx-dev/core/components/Select/select.demo";
 
 export const ComponentShowcase = memo(() => (
   <VStack gap="lg">
     <VStack withBorder padding="sm">
       <Text variant="h3">Buttons</Text>
-      <HStack>
-        <Button variant="solid">Primary</Button>
-        <Button variant="soft">Secondary</Button>
-        <Button variant="ghost">Ghost</Button>
-        <Button variant="outline">Outline</Button>
-        <Button intent="danger">Destructive</Button>
-      </HStack>
-      <HStack>
-        <Button variant="solid" loading>
-          Loading
-        </Button>
-        <Button variant="outline" disabled>
-          Disabled
-        </Button>
-        <Button variant="solid" size="sm">
-          Small
-        </Button>
-        <Button variant="solid" size="md">
-          Medium
-        </Button>
-        <Button variant="solid" size="lg">
-          Large
-        </Button>
-      </HStack>
+      <ButtonDemoSolids />
+      <ButtonDemoStates />
     </VStack>
 
     {/* Forms */}
@@ -62,28 +34,10 @@ export const ComponentShowcase = memo(() => (
         <SelectDemo />
       </VStack>
       <HStack align="center">
-        <Switch defaultChecked />
-        <Text variant="body2">Toggle me</Text>
+        <SwitchDemo />
       </HStack>
-      <HStack>
-        <RadioGroup defaultValue="option1">
-          <Label>
-            <RadioGroupItem value="option1" /> Option A
-          </Label>
-          <Label>
-            <RadioGroupItem value="option2" /> Option B
-          </Label>
-          <Label>
-            <RadioGroupItem value="option3" /> Option C
-          </Label>
-        </RadioGroup>
-      </HStack>
-      <HStack>
-        <Label>
-          <Checkbox />
-          Check me
-        </Label>
-      </HStack>
+      <RadioDemo />
+      <CheckboxDemo />
     </VStack>
 
     {/* Navigation */}
@@ -96,10 +50,7 @@ export const ComponentShowcase = memo(() => (
 
     <VStack withBorder padding="sm">
       <Text variant="h3">Feedback</Text>
-      <Alert variant="info">This is an info message.</Alert>
-      <Alert variant="success">Operation completed successfully!</Alert>
-      <Alert variant="warning">Please review your settings.</Alert>
-      <Alert variant="error">Something went wrong.</Alert>
+      <AlertDemo />
       <ProgressDemo />
     </VStack>
 

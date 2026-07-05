@@ -1,0 +1,13 @@
+{
+  "$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
+  "title": "AspectRatio",
+  "description": "A container that maintains a specific aspect ratio for its child content. Useful for embeds, images, and responsive media.",
+  "category": "Layout",
+  "status": "stable",
+  "keywords": ["aspect ratio", "ratio", "responsive", "embed", "image"],
+  "related": ["Box", "Container"],
+  "accessibility": {
+    "keyboard": [],
+    "aria": []
+  }
+}

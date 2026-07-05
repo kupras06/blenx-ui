@@ -1,10 +1,10 @@
-import { HStack, VStack } from "../Stack/stack";
+import { HStack } from "../Stack/stack";
 import { Text } from "../Text/text";
 import { Switch } from "./switch";
 
 export function SwitchDemo() {
   return (
-    <VStack gap="md">
+    <HStack gap="md">
       <HStack gap="md" align="center">
         <Switch defaultChecked />
         <Text variant="body2">Airplane Mode</Text>
@@ -19,7 +19,7 @@ export function SwitchDemo() {
           Bluetooth (disabled)
         </Text>
       </HStack>
-    </VStack>
+    </HStack>
   );
 }
 

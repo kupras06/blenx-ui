@@ -32,12 +32,14 @@ export function Radio({ className, style, ...props }: RadioProps) {
       {...props}
       render={(rootProps, { checked, disabled }) => (
         <span
-          {...rootProps}
           className={clsx(root, disabled && rootDisabled, className)}
           style={style}
           data-slot="radio"
         >
-          <RadioPrimitive.Indicator className={clsx(indicator, checked && indicatorChecked)}>
+          <RadioPrimitive.Indicator
+            {...rootProps}
+            className={clsx(indicator, checked && indicatorChecked)}
+          >
             {checked && <span className={dot} />}
           </RadioPrimitive.Indicator>
         </span>

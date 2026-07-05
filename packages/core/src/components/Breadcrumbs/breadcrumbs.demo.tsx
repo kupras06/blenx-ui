@@ -30,7 +30,7 @@ export function BreadcrumbDemo() {
   );
 }
 
-export function WithEllipsis() {
+export function BreadcrumbDemoWithEllipsis() {
   return (
     <Stack gap="sm">
       <Text variant="body2">With collapsed items</Text>
@@ -56,3 +56,8 @@ export function WithEllipsis() {
     </Stack>
   );
 }
+
+export const demos = [
+  { name: "Default", component: BreadcrumbDemo },
+  { name: "With Ellipsis", component: BreadcrumbDemoWithEllipsis },
+];

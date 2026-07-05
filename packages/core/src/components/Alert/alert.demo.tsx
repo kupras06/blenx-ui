@@ -2,7 +2,7 @@ import { CheckIcon, CircleAlertIcon, InfoIcon, SkullIcon } from "../../icons";
 import { Alert } from "./alert";
 import { VStack } from "../Stack/stack";
 
-function AlertDemo() {
+export function AlertDemo() {
   return (
     <VStack withBorder padding="md">
       <Alert

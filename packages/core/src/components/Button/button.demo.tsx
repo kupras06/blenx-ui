@@ -2,7 +2,51 @@ import { ChevronRightIcon, PlayIcon } from "../../icons";
 import { HStack, Stack, VStack } from "../Stack/stack";
 import { Text } from "../Text/text";
 import { Button } from "./button";
-
+export function ButtonDemoSolids() {
+  return (
+    <HStack wrap>
+      <Button variant="solid" intent="primary">
+        Solid Primary
+      </Button>
+      <Button variant="solid" intent="neutral">
+        Solid Neutral
+      </Button>
+      <Button variant="solid" intent="success">
+        Solid Success
+      </Button>
+      <Button variant="solid" intent="warning">
+        Solid Warning
+      </Button>
+      <Button variant="solid" intent="danger">
+        Solid Danger
+      </Button>
+      <Button variant="solid" intent="info">
+        Solid Info
+      </Button>
+    </HStack>
+  );
+}
+export function ButtonDemoStates() {
+  return (
+    <HStack>
+      <Button variant="solid" loading>
+        Loading
+      </Button>
+      <Button variant="outline" disabled>
+        Disabled
+      </Button>
+      <Button variant="solid" size="sm">
+        Small
+      </Button>
+      <Button variant="solid" size="md">
+        Medium
+      </Button>
+      <Button variant="solid" size="lg">
+        Large
+      </Button>
+    </HStack>
+  );
+}
 export function ButtonDemo() {
   return (
     <VStack gap="md">

@@ -6,15 +6,12 @@ export const root = style([
   baseSprinkles({
     display: "inline-flex",
     align: "center",
-    padding: "xxs",
     radius: "full",
+    backgroundColor: "secondary",
   }),
   style({
     width: tokenVars.spacing.xxl,
     height: tokenVars.spacing.lg,
-  }),
-  style({
-    backgroundColor: semanticVars.border.default,
     cursor: "pointer",
     transitionProperty: "background-color",
     transitionDuration: "150ms",
@@ -40,7 +37,7 @@ export const rootDisabled = style({
 export const thumb = style([
   baseSprinkles({
     radius: "full",
-    backgroundColor: "primary",
+    backgroundColor: "disabled",
   }),
   style({
     width: tokenVars.spacing.lg,
@@ -55,9 +52,10 @@ export const thumb = style([
 
 export const thumbChecked = style([
   baseSprinkles({
-    backgroundColor: "surface",
+    backgroundColor: "primaryActive",
   }),
   style({
-    transform: `translateX(${tokenVars.spacing.lg})`,
+    backgroundColor: semanticVars.color.primary.active,
+    transform: `translateX(${tokenVars.spacing["lg"]})`,
   }),
 ]);

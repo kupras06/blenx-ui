@@ -7,7 +7,7 @@ import { Box } from "../Box/box";
  * Demonstrates a 16:9 video placeholder and a 1:1 square image.
  * Shows how to combine with other @blenx-dev/core components.
  */
-function AspectRatioDemo() {
+export function AspectRatioDemo() {
   return (
     <Box className="flex flex-col gap-md">
       {/* 16:9 video placeholder */}

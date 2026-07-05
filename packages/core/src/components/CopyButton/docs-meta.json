@@ -1,0 +1,13 @@
+{
+  "$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
+  "title": "CopyButton",
+  "description": "A button that copies a value to the clipboard and temporarily shows a check icon as feedback.",
+  "category": "Actions",
+  "status": "stable",
+  "keywords": ["copy", "clipboard", "copy to clipboard", "icon button"],
+  "related": ["Button", "IconButton", "CloseButton"],
+  "accessibility": {
+    "keyboard": ["Enter", "Space"],
+    "aria": ["aria-label", "title"]
+  }
+}

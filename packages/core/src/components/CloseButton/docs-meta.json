@@ -1,0 +1,13 @@
+{
+  "$schema": "https://blenx-ui.vercel.app/docs/docs-meta.schema.json",
+  "title": "CloseButton",
+  "description": "An icon button with an X icon, used for dismissing dialogs, drawers, notifications, and other overlays.",
+  "category": "Actions",
+  "status": "stable",
+  "keywords": ["close", "dismiss", "x", "icon button", "modal close"],
+  "related": ["Button", "IconButton", "Dialog", "Drawer"],
+  "accessibility": {
+    "keyboard": ["Enter", "Space"],
+    "aria": ["aria-label"]
+  }
+}

@@ -58,7 +58,7 @@ export const variant = recipe({
       },
       neutral: {
         vars: {
-          [intentVars.solidBg]: semanticVars.surface.raised,
+          [intentVars.solidBg]: semanticVars.surface.default,
           [intentVars.solidFg]: semanticVars.text.primary,
           [intentVars.solidHoverBg]: semanticVars.background.subtle,
           [intentVars.softBg]: semanticVars.background.subtle,
@@ -106,7 +106,7 @@ export const variant = recipe({
       },
       info: {
         vars: {
-          [intentVars.solidBg]: semanticVars.color.info.default,
+          [intentVars.solidBg]: semanticVars.color.info.active,
           [intentVars.solidFg]: semanticVars.text.inverse,
           [intentVars.solidHoverBg]: semanticVars.color.info.hover,
           [intentVars.softBg]: semanticVars.color.info.bg,
@@ -133,8 +133,8 @@ export const variant = recipe({
       xs: baseSprinkles({ fontSize: "sm", py: "xxs", px: "xs" }),
       sm: baseSprinkles({ fontSize: "sm", py: "xs", px: "sm" }),
       icon: baseSprinkles({ py: "xs", px: "xs" }),
-      md: baseSprinkles({ fontSize: "md", py: "xs", px: "sm" }),
-      lg: baseSprinkles({ fontSize: "lg", py: "sm", px: "md" }),
+      md: baseSprinkles({ fontSize: "md", py: "sm", px: "md" }),
+      lg: baseSprinkles({ fontSize: "lg", py: "md", px: "lg" }),
     },
     variant: {
       solid: {

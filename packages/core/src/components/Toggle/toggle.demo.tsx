@@ -1,7 +1,7 @@
 import { Stack } from "../Stack/stack";
 import { Toggle } from "./toggle";
 
-export function VariantsStory() {
+export function ToggleDemo() {
   return (
     <Stack gap="md">
       <Stack gap="sm" direction="row" align="center">
@@ -22,3 +22,5 @@ export function VariantsStory() {
     </Stack>
   );
 }
+
+export const demos = [{ name: "Variants", component: ToggleDemo }];

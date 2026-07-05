@@ -12,7 +12,7 @@ type Props = Omit<
   size?: number;
 };
 
-export function Spinner({ className, style, size, ...props }: Props): React.ReactElement {
+export function Spinner({ className, style, size = 20, ...props }: Props): React.ReactElement {
   return (
     <LoaderCircleIcon
       className={clsx(spinner, className)}

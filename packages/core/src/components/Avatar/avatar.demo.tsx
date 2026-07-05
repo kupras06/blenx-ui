@@ -30,3 +30,8 @@ export function WithImageStory() {
     </Stack>
   );
 }
+
+export const demos = [
+  { name: "Default", component: AvatarDemo },
+  { name: "With Image", component: WithImageStory },
+];
