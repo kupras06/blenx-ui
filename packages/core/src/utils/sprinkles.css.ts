@@ -116,7 +116,7 @@ const flexProperties = defineProperties({
     flex: ["none", 1],
     flexGrow: { 0: 0, 1: 1 },
     flexShrink: { 0: 0, 1: 1 },
-    display: ["block", "flex", "grid", "inline-flex", "none"],
+    display: ["block", "flex", "grid", "inline-flex", "none", "inline-block"],
     flexWrap: ["wrap", "nowrap", "wrap-reverse"],
     flexDirection: ["row", "row-reverse", "column", "column-reverse"],
     gap: spacing,

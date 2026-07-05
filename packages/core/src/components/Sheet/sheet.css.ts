@@ -147,24 +147,6 @@ export const header = style([
   }),
 ]);
 
-export const footer = style([
-  baseSprinkles({
-    display: "flex",
-    direction: "column-reverse",
-    gap: "sm",
-  }),
-  style({
-    paddingLeft: tokenVars.spacing.lg,
-    paddingRight: tokenVars.spacing.lg,
-    "@media": {
-      "(min-width: 640px)": {
-        flexDirection: "row",
-        justifyContent: "flex-end",
-      },
-    },
-  }),
-]);
-
 export const footerDefault = style([
   baseSprinkles({
     backgroundColor: "subtle",

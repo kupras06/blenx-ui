@@ -183,39 +183,21 @@ export const header = style([
   }),
 ]);
 
-export const footer = style([
-  baseSprinkles({
-    display: "flex",
-    direction: "column-reverse",
-    gap: "sm",
-  }),
-  style({
-    paddingLeft: tokenVars.spacing.lg,
-    paddingRight: tokenVars.spacing.lg,
-    "@media": {
-      "(min-width: 640px)": {
-        flexDirection: "row",
-        justifyContent: "flex-end",
-      },
-    },
-  }),
-]);
-
 export const footerDefault = style([
   baseSprinkles({
     backgroundColor: "subtle",
     py: "md",
+    borderTopWidth: "thin",
   }),
   style({
-    borderTopWidth: tokenVars.borderWidth.thin,
     borderTopStyle: "solid",
     borderTopColor: semanticVars.border.subtle,
   }),
 ]);
 
-export const footerBare = style({
-  paddingTop: tokenVars.spacing.md,
-  paddingBottom: tokenVars.spacing.lg,
+export const footerBare = baseSprinkles({
+  paddingRight: "md",
+  paddingBottom: "lg",
 });
 
 export const title = style([

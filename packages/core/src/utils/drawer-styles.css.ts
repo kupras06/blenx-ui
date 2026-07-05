@@ -89,3 +89,21 @@ export const popupBottomStickOnMobile = style({
     },
   },
 });
+export const footer = style([
+  baseSprinkles({
+    display: "flex",
+    justify: "end",
+    gap: "sm",
+    px: "lg",
+    borderRadiusTop: "none",
+    borderRadius: "default",
+  }),
+  style({
+    "@media": {
+      "(min-width: 640px)": {
+        flexDirection: "row",
+        justifyContent: "flex-end",
+      },
+    },
+  }),
+]);

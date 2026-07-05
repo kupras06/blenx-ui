@@ -2,7 +2,7 @@ import * as React from "react";
 
 interface IconProps extends React.SVGProps<SVGSVGElement> {}
 
-export const XIcon = React.forwardRef<SVGSVGElement, IconProps>((props, ref) => (
+export const XIcon = React.forwardRef<SVGSVGElement, IconProps>(({ width = 16, ...props }, ref) => (
   <svg
     ref={ref}
     xmlns="http://www.w3.org/2000/svg"
@@ -13,6 +13,7 @@ export const XIcon = React.forwardRef<SVGSVGElement, IconProps>((props, ref) => 
       __html:
         '<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6l12 12"/>',
     }}
+    width={width}
     {...props}
   />
 ));

@@ -2,19 +2,22 @@ import * as React from "react";
 
 interface IconProps extends React.SVGProps<SVGSVGElement> {}
 
-export const SkullIcon = React.forwardRef<SVGSVGElement, IconProps>((props, ref) => (
-  <svg
-    ref={ref}
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    dangerouslySetInnerHTML={{
-      __html:
-        '<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m12.5 17l-.5-1l-.5 1z"/><path d="M15 22a1 1 0 0 0 1-1v-1a2 2 0 0 0 1.56-3.25a8 8 0 1 0-11.12 0A2 2 0 0 0 8 20v1a1 1 0 0 0 1 1z"/><circle cx="15" cy="12" r="1"/><circle cx="9" cy="12" r="1"/></g>',
-    }}
-    {...props}
-  />
-));
+export const SkullIcon = React.forwardRef<SVGSVGElement, IconProps>(
+  ({ width = 16, ...props }, ref) => (
+    <svg
+      ref={ref}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      dangerouslySetInnerHTML={{
+        __html:
+          '<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m12.5 17l-.5-1l-.5 1z"/><path d="M15 22a1 1 0 0 0 1-1v-1a2 2 0 0 0 1.56-3.25a8 8 0 1 0-11.12 0A2 2 0 0 0 8 20v1a1 1 0 0 0 1 1z"/><circle cx="15" cy="12" r="1"/><circle cx="9" cy="12" r="1"/></g>',
+      }}
+      width={width}
+      {...props}
+    />
+  ),
+);
 
 SkullIcon.displayName = "SkullIcon";

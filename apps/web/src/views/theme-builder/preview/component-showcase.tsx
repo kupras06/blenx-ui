@@ -13,6 +13,7 @@ import {
   CheckboxDemo,
   SwitchDemo,
   AlertDemo,
+  DrawerDemo,
 } from "@blenx-dev/core/demos";
 
 import { memo } from "react";
@@ -63,9 +64,10 @@ export const ComponentShowcase = memo(() => (
     </VStack>
 
     {/* Overlays */}
-    <Box>
+    <VStack>
       <Text variant="h3">Overlays</Text>
       <DialogDemo />
-    </Box>
+      <DrawerDemo />
+    </VStack>
   </VStack>
 ));

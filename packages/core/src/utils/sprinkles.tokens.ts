@@ -55,6 +55,7 @@ export const containerWidths = {
 export const colors = {
   primary: semanticVars.text.primary,
   default: "currentColor",
+  transparent: "transparent",
   secondary: semanticVars.text.secondary,
   disabled: semanticVars.text.disabled,
   inverse: semanticVars.text.inverse,

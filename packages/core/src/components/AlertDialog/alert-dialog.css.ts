@@ -10,25 +10,6 @@ export const header = baseSprinkles({
   py: "xs",
 });
 
-export const footer = style([
-  baseSprinkles({
-    display: "flex",
-    direction: "column-reverse",
-    gap: "sm",
-    px: "md",
-  }),
-  style({
-    "@media": {
-      "(min-width: 640px)": {
-        flexDirection: "row",
-        justifyContent: "flex-end",
-        borderBottomLeftRadius: "calc(16px - 1px)",
-        borderBottomRightRadius: "calc(16px - 1px)",
-      },
-    },
-  }),
-]);
-
 export const footerDefault = style([
   baseSprinkles({
     backgroundColor: "subtle",

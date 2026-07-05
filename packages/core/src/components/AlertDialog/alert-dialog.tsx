@@ -6,15 +6,7 @@ import clsx from "clsx";
 import type React from "react";
 import type { _BaseDivProps } from "../../utils/types";
 import { ScrollArea } from "../ScrollArea/scroll-area";
-import {
-  header,
-  footer,
-  footerDefault,
-  footerBare,
-  title,
-  description,
-  panel,
-} from "./alert-dialog.css";
+import { header, footerDefault, footerBare, title, description, panel } from "./alert-dialog.css";
 import { CloseButton } from "../CloseButton";
 import { Box } from "../Box/box";
 import {
@@ -23,6 +15,7 @@ import {
   viewport,
   viewportShellBottomStickOnMobile,
   popupBottomStickOnMobile,
+  footer,
 } from "../../utils/drawer-styles.css";
 
 function AlertDialog(props: AlertDialogPrimitive.Root.Props): React.ReactElement {

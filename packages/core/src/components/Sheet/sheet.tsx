@@ -20,7 +20,6 @@ import {
   popupRight,
   popupInset,
   header,
-  footer,
   footerDefault,
   footerBare,
   title,
@@ -30,6 +29,7 @@ import {
 import { CloseButton } from "../CloseButton";
 import type { _BaseDivProps } from "../../utils/types";
 import { Box } from "../Box";
+import { footer } from "../../utils/drawer-styles.css";
 
 type Side = "right" | "left" | "top" | "bottom";
 

@@ -2,19 +2,22 @@ import * as React from "react";
 
 interface IconProps extends React.SVGProps<SVGSVGElement> {}
 
-export const SearchIcon = React.forwardRef<SVGSVGElement, IconProps>((props, ref) => (
-  <svg
-    ref={ref}
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    dangerouslySetInnerHTML={{
-      __html:
-        '<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m21 21l-4.34-4.34"/><circle cx="11" cy="11" r="8"/></g>',
-    }}
-    {...props}
-  />
-));
+export const SearchIcon = React.forwardRef<SVGSVGElement, IconProps>(
+  ({ width = 16, ...props }, ref) => (
+    <svg
+      ref={ref}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      dangerouslySetInnerHTML={{
+        __html:
+          '<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m21 21l-4.34-4.34"/><circle cx="11" cy="11" r="8"/></g>',
+      }}
+      width={width}
+      {...props}
+    />
+  ),
+);
 
 SearchIcon.displayName = "SearchIcon";

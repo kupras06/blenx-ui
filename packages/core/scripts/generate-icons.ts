@@ -54,7 +54,7 @@ async function main() {
 interface IconProps extends React.SVGProps<SVGSVGElement> {}
 
 export const ${component} = React.forwardRef<SVGSVGElement, IconProps>(
-  (props, ref) => (
+  ({width = 16,...props}, ref) => (
     <svg
       ref={ref}
       xmlns="http://www.w3.org/2000/svg"
@@ -62,6 +62,7 @@ export const ${component} = React.forwardRef<SVGSVGElement, IconProps>(
       fill="none"
       stroke="currentColor"
       dangerouslySetInnerHTML={{ __html: ${JSON.stringify(icon.body)} }}
+      width={width}
       {...props}
     />
   )

@@ -31,7 +31,6 @@ import {
   popupLeft,
   popupRight,
   header,
-  footer,
   footerDefault,
   footerBare,
   title,
@@ -68,6 +67,7 @@ import { CloseButton } from "../CloseButton";
 import type { _BaseDivProps } from "../../utils/types";
 import { Box } from "../Box";
 import { ArrowRightIcon, SquareCheckIcon } from "../../icons";
+import { footer } from "../../utils/drawer-styles.css";
 
 type DrawerPosition = "right" | "left" | "top" | "bottom";
 
@@ -312,7 +312,11 @@ export function DrawerPanel({
   });
 
   if (scrollable) {
-    return <ScrollArea scrollFade={scrollFade}>{content}</ScrollArea>;
+    return (
+      <ScrollArea scrollFade={scrollFade} height={"fit"}>
+        {content}
+      </ScrollArea>
+    );
   }
 
   return content;
