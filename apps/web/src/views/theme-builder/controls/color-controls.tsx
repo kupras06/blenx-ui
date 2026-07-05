@@ -86,7 +86,7 @@ function ColorGroupControl({
 export function ColorControls() {
   return (
     <Accordion.Root defaultValue={["background", "text", "color"]}>
-      <VStack gap="xs">
+      <VStack gap="none">
         {tokenGroups.map((group) => (
           <ColorGroupControl key={group.key} groupKey={group.key} subtokens={group.subtokens} />
         ))}

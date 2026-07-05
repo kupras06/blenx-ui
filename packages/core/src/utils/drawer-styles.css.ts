@@ -46,7 +46,6 @@ export const popup = style([
     gridRowStart: 2,
     maxWidth: "28rem",
     minHeight: 0,
-    maxHeight: "calc(100svh - 80px)",
     transformOrigin: "center",
     borderStyle: "solid",
     opacity: "calc(1 - var(--nested-dialogs))",

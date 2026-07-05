@@ -66,7 +66,7 @@ export const popup = style([
     color: "primary",
   }),
   style({
-    maxHeight: "100%",
+    maxHeight: "100svh%",
     minHeight: 0,
     minWidth: 0,
     borderStyle: "solid",

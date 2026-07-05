@@ -13,7 +13,6 @@ import {
   viewportLeft,
   viewportRight,
   viewportInset,
-  popup,
   popupBottom,
   popupTop,
   popupLeft,
@@ -29,7 +28,7 @@ import {
 import { CloseButton } from "../CloseButton";
 import type { _BaseDivProps } from "../../utils/types";
 import { Box } from "../Box";
-import { footer } from "../../utils/drawer-styles.css";
+import { footer, popup } from "../../utils/drawer-styles.css";
 
 type Side = "right" | "left" | "top" | "bottom";
 
@@ -196,7 +195,7 @@ export function SheetPanel({
   ...props
 }: PanelProps): React.ReactElement {
   return (
-    <ScrollArea scrollFade={scrollFade}>
+    <ScrollArea height={"full"} scrollFade={scrollFade}>
       {useRender({
         defaultTagName: "div",
         props: {

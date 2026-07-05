@@ -12,6 +12,9 @@ import {
   SheetPopup,
   HStack,
   Container,
+  SheetPanel,
+  SheetHeader,
+  SheetTitle,
 } from "@blenx-dev/core";
 import { ColorControls, NonColorControls, PresetControls, TypographyControls } from "./controls";
 import { PreviewErrorBoundary } from "./error-boundary";
@@ -62,9 +65,12 @@ function ThemeBuilderInner() {
       <Box position="relative" height="full" maxHeight="screen">
         <Sheet open={sidebarOpen === "true"} onOpenChange={setSidebarOpen}>
           <SheetPopup>
-            <ScrollArea style={{ flex: 1 }}>
+            <SheetHeader>
+              <SheetTitle>Theme Congiuration</SheetTitle>
+            </SheetHeader>
+            <SheetPanel>
               <SidebarContent />
-            </ScrollArea>
+            </SheetPanel>
           </SheetPopup>
         </Sheet>
 
