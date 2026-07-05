@@ -12,7 +12,7 @@ import {
   Text,
   VStack,
 } from "@blenx-dev/core";
-import { CardDemo, ProfileCardDemo, ProductCardDemo } from "@blenx-dev/core/demos";
+import { CardDemo, ProfileCardDemo, ProductCardDemo } from "@/views/demos/card/card.demo";
 
 const kpis = [
   {

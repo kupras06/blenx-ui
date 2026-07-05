@@ -28,7 +28,7 @@ import {
   Text,
   VStack,
 } from "@blenx-dev/core";
-import { DialogDemo } from "@blenx-dev/core/components/Dialog/dialog.demo";
+import { DialogDemo } from "@/views/demos/dialog/dialog.demo";
 import { ArrowRightIcon, CheckIcon, FileCodeIcon, GearIcon } from "@phosphor-icons/react";
 
 function ShowcaseAccordion() {
