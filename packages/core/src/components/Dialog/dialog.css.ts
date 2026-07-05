@@ -23,6 +23,7 @@ export const footer = baseSprinkles({
   justify: "end",
   gap: "sm",
   px: "lg",
+  borderRadiusTop: "none",
   borderRadius: "default",
 });
 
@@ -30,17 +31,17 @@ export const footerDefault = style([
   baseSprinkles({
     backgroundColor: "subtle",
     py: "md",
+    borderTopWidth: "thin",
   }),
   style({
-    borderTopWidth: tokenVars.borderWidth.thin,
     borderTopStyle: "solid",
     borderTopColor: semanticVars.border.subtle,
   }),
 ]);
 
-export const footerBare = style({
-  paddingTop: tokenVars.spacing.md,
-  paddingBottom: tokenVars.spacing.lg,
+export const footerBare = baseSprinkles({
+  paddingTop: "lg",
+  paddingBottom: "lg",
 });
 
 export const title = style([

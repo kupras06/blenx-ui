@@ -544,7 +544,6 @@ Recipe opportunities — use `grow: "1"` for orientation variants:
 | `viewport`                         | `position: "fixed"`, `padding: "md"`                                                                                                                     |
 | `popup`                            | `position: "relative"`, `display: "flex"`, `direction: "column"`, `width: "full"`, `radius: "default"`, `backgroundColor: "surface"`, `color: "primary"` |
 | `viewportShellBottomStickOnMobile` | `display: "flex"`, `align: "end"`, `justify: "center"`, `padding: "sm"`                                                                                  |
-| `closeButton`                      | `position: "absolute"`, `top: "xs"`                                                                                                                      |
 | `popupBottomStickOnMobile`         | `width: "full"`                                                                                                                                          |
 | `backdrop`                         | `position: "fixed"`, `inset: 0`, `zIndex: "modal"`                                                                                                       |
 

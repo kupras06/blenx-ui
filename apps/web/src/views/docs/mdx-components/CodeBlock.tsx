@@ -36,7 +36,6 @@ function CodeBlock({ code, language = "typescript", title }: CodeBlockProps) {
     <>
       <CodeFrame copyValue={code} title={title} language={language} />
       <Surface variant="sunken" overflow="hidden" position="relative" paddingY={"xs"}>
-        asasa
         <div
           className={codeBlockContent}
           dangerouslySetInnerHTML={{
@@ -72,7 +71,6 @@ function CodeSnippet({ code, language = "typescript" }: CodeBlockProps) {
         position="relative"
         paddingY={"xs"}
       >
-        asasa{" "}
         <div
           className={codeBlockContent}
           dangerouslySetInnerHTML={{

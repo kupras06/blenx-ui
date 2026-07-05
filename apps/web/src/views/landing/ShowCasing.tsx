@@ -17,15 +17,6 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogPanel,
-  DialogTitle,
-  DialogTrigger,
   Grid,
   HStack,
   Input,
@@ -37,6 +28,7 @@ import {
   Text,
   VStack,
 } from "@blenx-dev/core";
+import { DialogDemo } from "@blenx-dev/core/components/Dialog/dialog.demo";
 import { ArrowRightIcon, CheckIcon, FileCodeIcon, GearIcon } from "@phosphor-icons/react";
 
 function ShowcaseAccordion() {
@@ -177,33 +169,9 @@ function ShowcaseCard() {
   );
 }
 
-function ShowcaseDialog() {
-  return (
-    <Dialog>
-      <DialogTrigger render={<Button size="sm" variant="outline" />}>Open Dialog</DialogTrigger>
-      <DialogContent>
-        <DialogHeader>
-          <DialogTitle>Confirm Action</DialogTitle>
-          <DialogDescription>Are you sure you want to proceed?</DialogDescription>
-        </DialogHeader>
-        <DialogPanel>
-          <Text variant="body2">
-            This demonstrates a working dialog component using Base UI and Vanilla Extract.
-          </Text>
-        </DialogPanel>
-        <DialogFooter>
-          <HStack gap="sm" justify="end" wrap>
-            <DialogClose render={<Button size="sm" variant="ghost" />}>Cancel</DialogClose>
-            <Button size="sm">Confirm</Button>
-          </HStack>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
-  );
-}
 const showcaseItems = [
   { title: "Buttons", component: ShowcaseButtons },
-  { title: "Dialog", component: ShowcaseDialog },
+  { title: "Dialog", component: DialogDemo },
   { title: "Tabs", component: ShowcaseTabs },
   { title: "Accordion", component: ShowcaseAccordion },
   { title: "Card", component: ShowcaseCard },

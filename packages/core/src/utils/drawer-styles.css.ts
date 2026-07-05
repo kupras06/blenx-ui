@@ -21,10 +21,10 @@ export const viewport = style([
     position: "fixed",
     padding: "md",
     zIndex: "modal",
+    display: "grid",
   }),
   style({
     inset: 0,
-    display: "grid",
     gridTemplateRows: "1fr auto 3fr",
     justifyItems: "center",
   }),
@@ -39,8 +39,7 @@ export const popup = style([
     radius: "default",
     backgroundColor: "surface",
     color: "primary",
-    borderWidth: "thin",
-    borderColor: "default",
+    borderWidth: "none",
     boxShadow: "lg",
   }),
   style({
@@ -78,16 +77,6 @@ export const viewportShellBottomStickOnMobile = style({
     },
   },
 });
-
-export const closeButton = style([
-  baseSprinkles({
-    position: "absolute",
-    top: "xs",
-  }),
-  style({
-    insetInlineEnd: tokenVars.spacing.xs,
-  }),
-]);
 
 export const popupBottomStickOnMobile = style({
   "@media": {

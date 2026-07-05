@@ -154,7 +154,7 @@ function DialogPanel({
   scrollFade?: boolean;
 }): React.ReactElement {
   return (
-    <ScrollArea scrollFade={scrollFade}>
+    <ScrollArea scrollFade={scrollFade} height="auto">
       {useRender({
         defaultTagName: "div",
         props: {
