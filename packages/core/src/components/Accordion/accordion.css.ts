@@ -8,15 +8,30 @@ export const root = baseSprinkles({
   width: "full",
 });
 
-export const rootVertical = baseSprinkles({
-  direction: "column",
-});
+export const rootVertical = style([
+  baseSprinkles({
+    direction: "column",
+  }),
+  {
+    selectors: {
+      "&:first-child": {
+        borderTopWidth: "thin",
+        borderTopStyle: "solid",
+        borderTopColor: semanticVars.border.default,
+      },
+    },
+  },
+]);
 
-export const item = style({
-  borderBottomWidth: tokenVars.borderWidth.thin,
-  borderBottomStyle: "solid",
-  borderBottomColor: semanticVars.border.subtle,
-});
+export const item = style([
+  baseSprinkles({
+    borderBottomWidth: "thin",
+  }),
+  {
+    borderBottomStyle: "solid",
+    borderBottomColor: semanticVars.border.default,
+  },
+]);
 
 export const itemDisabled = style({
   opacity: 0.5,
@@ -31,7 +46,7 @@ export const trigger = style([
     padding: "xs",
     fontSize: "sm",
     color: "primary",
-    borderRadius: "default",
+    borderRadius: "none",
     lineHeight: "normal",
     fontWeight: "medium",
     backgroundColor: "transparent",
@@ -56,6 +71,17 @@ export const trigger = style([
       },
       "&:focus-visible": {
         outline: `2px solid ${semanticVars.focus.ring}`,
+      },
+      // First accordion item
+      [`${item}:first-child &`]: {
+        borderTopLeftRadius: tokenVars.borderRadius.md,
+        borderTopRightRadius: tokenVars.borderRadius.md,
+      },
+
+      // Last accordion item
+      [`${item}:last-child &`]: {
+        borderBottomLeftRadius: tokenVars.borderRadius.md,
+        borderBottomRightRadius: tokenVars.borderRadius.md,
       },
     },
   }),

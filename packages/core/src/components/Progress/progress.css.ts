@@ -15,7 +15,7 @@ export const track = style([
     width: "full",
     overflow: "hidden",
     radius: "full",
-    backgroundColor: "surface",
+    backgroundColor: "secondary",
   }),
   style({
     height: 6,

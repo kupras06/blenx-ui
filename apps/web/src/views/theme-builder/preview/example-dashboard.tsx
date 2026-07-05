@@ -1,19 +1,10 @@
 import { memo } from "react";
+import { ArrowDownRightIcon, ArrowUpRightIcon } from "@phosphor-icons/react";
 import {
-  ArrowDownRightIcon,
-  ArrowUpRightIcon,
-  PencilSimpleLineIcon,
-  TrashSimpleIcon,
-} from "@phosphor-icons/react";
-import {
-  Avatar,
-  AvatarFallback,
   Badge,
-  Button,
   Card,
   CardBody,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
   Grid,
@@ -21,6 +12,7 @@ import {
   Text,
   VStack,
 } from "@blenx-dev/core";
+import { CardDemo, ProfileCardDemo, ProductCardDemo } from "@blenx-dev/core/demos";
 
 const kpis = [
   {
@@ -154,70 +146,9 @@ export const ExampleDashboard = memo(() => (
 
     {/* User Profile Card + Charts */}
     <Grid columns={{ base: 1, md: 2 }} gap="3" marginTop={"6"}>
-      {/* Profile */}
-      <Card padding="md">
-        <CardHeader>
-          <CardTitle>User Profile</CardTitle>
-        </CardHeader>
-        <CardBody>
-          <CardHeader>
-            <Avatar size="lg">
-              <AvatarFallback>AK</AvatarFallback>
-            </Avatar>
-            <VStack gap={"sm"}>
-              <Text size="md" weight="semibold">
-                Alex Kumar
-              </Text>
-              <Text size="sm">alex@example.com</Text>
-              <Badge variant="primary" radius="full">
-                Admin
-              </Badge>
-            </VStack>
-          </CardHeader>
-          <CardFooter>
-            <Button variant="outline" size="sm">
-              <PencilSimpleLineIcon size={14} />
-              Edit
-            </Button>
-            <Button intent="danger" size="sm">
-              <TrashSimpleIcon size={14} />
-              Delete
-            </Button>
-          </CardFooter>
-        </CardBody>
-      </Card>
-
-      <Card padding="md">
-        <CardHeader>
-          <CardTitle>User Profile</CardTitle>
-        </CardHeader>
-        <CardBody>
-          <CardHeader>
-            <Avatar size="lg">
-              <AvatarFallback>AK</AvatarFallback>
-            </Avatar>
-            <VStack gap={"sm"}>
-              <Text size="md" weight="semibold">
-                Alex Kumar
-              </Text>
-              <Text size="sm">alex@example.com</Text>
-              <Badge variant="primary" radius="full">
-                Admin
-              </Badge>
-            </VStack>
-          </CardHeader>
-          <CardFooter>
-            <Button variant="outline" size="sm">
-              <PencilSimpleLineIcon size={14} />
-              Edit
-            </Button>
-            <Button intent="danger" size="sm">
-              <TrashSimpleIcon size={14} />
-              Delete
-            </Button>
-          </CardFooter>
-        </CardBody>
-      </Card>
+      <CardDemo />
+      <ProfileCardDemo />
+      <ProductCardDemo />
     </Grid>
   </VStack>
 ));

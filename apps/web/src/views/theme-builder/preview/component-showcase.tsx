@@ -14,6 +14,7 @@ import {
   SwitchDemo,
   AlertDemo,
   DrawerDemo,
+  AccordionDemo,
 } from "@blenx-dev/core/demos";
 
 import { memo } from "react";
@@ -69,5 +70,6 @@ export const ComponentShowcase = memo(() => (
       <DialogDemo />
       <DrawerDemo />
     </VStack>
+    <AccordionDemo />
   </VStack>
 ));

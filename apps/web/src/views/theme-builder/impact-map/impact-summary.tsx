@@ -1,20 +1,14 @@
 import { memo } from "react";
 import { Badge, Box, Text, VStack } from "@blenx-dev/core";
-import { semanticVars } from "@blenx-dev/theme/contract";
 import { getComponentsForToken } from "../preview/component-token-map";
 import { useThemeBuilder } from "../theme-builder-context";
-
-const panelStyle = {
-  backgroundColor: semanticVars.surface.raised,
-  border: `1px solid ${semanticVars.border.subtle}`,
-} as React.CSSProperties;
 
 export const ImpactSummary = memo(() => {
   const selectedToken = useThemeBuilder((s) => s.selectedToken);
 
   if (!selectedToken) {
     return (
-      <Box padding="sm" borderRadius="md" style={panelStyle}>
+      <Box padding="sm" borderRadius="md">
         <Text variant="body2" weight="semibold">
           Impact Map
         </Text>
@@ -30,7 +24,7 @@ export const ImpactSummary = memo(() => {
   const label = parts.length > 1 ? `${parts[0]} › ${parts[1]}` : selectedToken;
 
   return (
-    <Box padding="sm" borderRadius="md" style={panelStyle}>
+    <Box padding="sm" borderRadius="md">
       <Text variant="body2" weight="semibold">
         Impact: {label}
       </Text>

@@ -11,6 +11,7 @@ import {
   Sheet,
   SheetPopup,
   HStack,
+  Container,
 } from "@blenx-dev/core";
 import { ColorControls, NonColorControls, PresetControls, TypographyControls } from "./controls";
 import { PreviewErrorBoundary } from "./error-boundary";
@@ -58,7 +59,7 @@ function ThemeBuilderInner() {
 
   return (
     <ThemePreviewProvider>
-      <Box position="relative" style={{ height: "90svh", overflow: "hidden" }}>
+      <Box position="relative" height="full" maxHeight="screen">
         <Sheet open={sidebarOpen === "true"} onOpenChange={setSidebarOpen}>
           <SheetPopup>
             <ScrollArea style={{ flex: 1 }}>
@@ -68,71 +69,77 @@ function ThemeBuilderInner() {
         </Sheet>
 
         <Box>
-          <ScrollArea height="99svh">
-            <HStack paddingX="xl" align={"start"}>
-              <Tabs
-                py="md"
-                value={tab}
-                onValueChange={(value) => {
-                  navigate({
-                    search: (prev: ThemeBuilderSearch) => ({
-                      ...prev,
-                      tab: value as ThemeBuilderSearch["tab"],
-                    }),
-                  });
-                }}
-              >
-                <HStack align={"center"}>
-                  <IconButton variant="ghost" onClick={toggleSidebar} aria-label="Open sidebar">
-                    <SidebarIcon size={16} />
-                  </IconButton>{" "}
-                  <TabsList>
-                    <TabsTab value="showcase">Components</TabsTab>
-                    <TabsTab value="dashboard">Dashboard</TabsTab>
-                    <TabsTab value="auth">Auth</TabsTab>
-                    <TabsTab value="settings">Settings</TabsTab>
-                    <TabsTab value="marketing">Marketing</TabsTab>
-                    <TabsTab value="states">States</TabsTab>
-                    <TabsTab value="inspector">Variables</TabsTab>
-                  </TabsList>
-                </HStack>
-                <TabsPanel value="showcase">
-                  <PreviewErrorBoundary>
-                    <ComponentShowcase />
-                  </PreviewErrorBoundary>
-                </TabsPanel>
-                <TabsPanel value="dashboard" py={"md"}>
-                  <PreviewErrorBoundary>
-                    <ExampleDashboard />
-                  </PreviewErrorBoundary>
-                </TabsPanel>
-                <TabsPanel value="auth">
-                  <PreviewErrorBoundary>
-                    <AuthPreview />
-                  </PreviewErrorBoundary>
-                </TabsPanel>
-                <TabsPanel value="settings">
-                  <PreviewErrorBoundary>
-                    <SettingsPreview />
-                  </PreviewErrorBoundary>
-                </TabsPanel>
-                <TabsPanel value="marketing">
-                  <PreviewErrorBoundary>
-                    <MarketingPreview />
-                  </PreviewErrorBoundary>
-                </TabsPanel>
-                <TabsPanel value="states">
-                  <PreviewErrorBoundary>
-                    <StatesPreview />
-                  </PreviewErrorBoundary>
-                </TabsPanel>
-                <TabsPanel value="inspector">
+          <ScrollArea height="92svh">
+            <Tabs
+              py="md"
+              value={tab}
+              onValueChange={(value) => {
+                navigate({
+                  search: (prev: ThemeBuilderSearch) => ({
+                    ...prev,
+                    tab: value as ThemeBuilderSearch["tab"],
+                  }),
+                });
+              }}
+            >
+              <HStack align={"center"}>
+                <IconButton variant="ghost" onClick={toggleSidebar} aria-label="Open sidebar">
+                  <SidebarIcon size={16} />
+                </IconButton>{" "}
+                <TabsList>
+                  <TabsTab value="showcase">Components</TabsTab>
+                  <TabsTab value="dashboard">Dashboard</TabsTab>
+                  <TabsTab value="auth">Auth</TabsTab>
+                  <TabsTab value="settings">Settings</TabsTab>
+                  <TabsTab value="marketing">Marketing</TabsTab>
+                  <TabsTab value="states">States</TabsTab>
+                  <TabsTab value="inspector">Variables</TabsTab>
+                </TabsList>
+              </HStack>
+              <TabsPanel value="showcase">
+                <PreviewErrorBoundary>
+                  <ComponentShowcase />
+                </PreviewErrorBoundary>
+              </TabsPanel>
+              <TabsPanel value="dashboard" py={"md"}>
+                <PreviewErrorBoundary>
+                  <ExampleDashboard />
+                </PreviewErrorBoundary>
+              </TabsPanel>
+              <TabsPanel value="auth">
+                <PreviewErrorBoundary>
+                  <AuthPreview />
+                </PreviewErrorBoundary>
+              </TabsPanel>
+              <TabsPanel value="settings">
+                <PreviewErrorBoundary>
+                  <SettingsPreview />
+                </PreviewErrorBoundary>
+              </TabsPanel>
+              <TabsPanel value="marketing">
+                <PreviewErrorBoundary>
+                  <MarketingPreview />
+                </PreviewErrorBoundary>
+              </TabsPanel>
+              <TabsPanel value="states">
+                <PreviewErrorBoundary>
+                  <StatesPreview />
+                </PreviewErrorBoundary>
+              </TabsPanel>
+              <TabsPanel value="inspector">
+                <HStack justify={"between"}>
                   <ImpactSummary />
-                  <TokenTable />
-                  <HowItWorks />
-                </TabsPanel>
-              </Tabs>
-            </HStack>
+                  <Container size="xl">
+                    <ScrollArea height={"80svh"}>
+                      <Accordion.Root>
+                        <TokenTable />
+                        <HowItWorks />
+                      </Accordion.Root>
+                    </ScrollArea>
+                  </Container>
+                </HStack>
+              </TabsPanel>
+            </Tabs>
           </ScrollArea>
         </Box>
       </Box>

@@ -1,4 +1,4 @@
-import { ChartBarIcon, MapPinIcon, ShoppingCartIcon, StarIcon } from "../../icons";
+import { ChartBarIcon, MapPinIcon, StarIcon } from "../../icons";
 import { Button } from "../Button/button";
 import { Text } from "../Text/text";
 import { Badge } from "../Badge/badge";
@@ -76,30 +76,14 @@ export function ProfileCardDemo() {
 export function ProductCardDemo() {
   return (
     <Card>
-      <Box
-        height="auto"
-        width="full"
-        backgroundColor="info"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          position: "relative",
-          borderTopLeftRadius: "inherit",
-          borderTopRightRadius: "inherit",
-          overflow: "hidden",
-        }}
-      >
-        <Badge variant="danger" style={{ position: "absolute", top: 8, left: 8 }}>
-          20% OFF
-        </Badge>
-        <ShoppingCartIcon width={40} height={40} />
-      </Box>
       <CardHeader>
         <HStack gap="md" justify="between" align="center">
           <VStack gap="xxs">
-            <CardTitle>Pro Subscription</CardTitle>
-            <CardDescription>Annual billing - save 20%</CardDescription>
+            <HStack align={"center"}>
+              <CardTitle>Pro Subscription</CardTitle>
+              <Badge variant="danger">20% OFF</Badge>
+            </HStack>
+            <CardDescription>Annual billing </CardDescription>
           </VStack>
           <HStack gap="xs" align="center">
             <StarIcon width={14} height={14} />
