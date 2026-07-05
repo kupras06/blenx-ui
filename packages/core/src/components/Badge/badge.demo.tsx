@@ -50,5 +50,15 @@ export function BadgeDemo() {
     </VStack>
   );
 }
-
+export function BadgeDemoSolid() {
+  return (
+    <HStack wrap>
+      <Badge variant="default">Default</Badge>
+      <Badge variant="primary">Primary</Badge>
+      <Badge>Secondary</Badge>
+      <Badge variant="danger">Danger</Badge>
+      <Badge variant="success">Success</Badge>
+    </HStack>
+  );
+}
 export const demos = [{ name: "Default", component: BadgeDemo }];

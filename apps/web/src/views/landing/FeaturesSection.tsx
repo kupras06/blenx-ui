@@ -59,10 +59,10 @@ export function BlenxFeatures() {
       <Grid columns={{ base: 1, md: 3 }} gap="md">
         {features.map((feature) => (
           <Card key={feature.title}>
-            <CardHeader padding="md">
+            <CardHeader>
               <CardTitle>{feature.title}</CardTitle>
             </CardHeader>
-            <CardBody padding="md">
+            <CardBody>
               <Text variant="body2" color="secondary">
                 {feature.desc}
               </Text>

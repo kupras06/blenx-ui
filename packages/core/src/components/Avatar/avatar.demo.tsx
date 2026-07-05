@@ -1,7 +1,7 @@
 import { Stack } from "../Stack/stack";
 import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
 
-export function SizesStory() {
+export function AvatarDemo() {
   return (
     <Stack gap="md" direction="row" align="center">
       <Avatar size="sm">

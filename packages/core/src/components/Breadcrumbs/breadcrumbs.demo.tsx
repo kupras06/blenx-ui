@@ -10,26 +10,23 @@ import {
   BreadcrumbSeparator,
 } from "./breadcrumbs";
 
-export function DefaultStory() {
+export function BreadcrumbDemo() {
   return (
-    <Stack gap="sm">
-      <Text variant="body2">Navigation path</Text>
-      <Breadcrumb>
-        <BreadcrumbList>
-          <BreadcrumbItem>
-            <BreadcrumbLink href="/">Home</BreadcrumbLink>
-            <BreadcrumbSeparator />
-          </BreadcrumbItem>
-          <BreadcrumbItem>
-            <BreadcrumbLink href="/category">Category</BreadcrumbLink>
-            <BreadcrumbSeparator />
-          </BreadcrumbItem>
-          <BreadcrumbItem>
-            <BreadcrumbPage>Current page</BreadcrumbPage>
-          </BreadcrumbItem>
-        </BreadcrumbList>
-      </Breadcrumb>
-    </Stack>
+    <Breadcrumb>
+      <BreadcrumbList>
+        <BreadcrumbItem>
+          <BreadcrumbLink href="/">Home</BreadcrumbLink>
+          <BreadcrumbSeparator />
+        </BreadcrumbItem>
+        <BreadcrumbItem>
+          <BreadcrumbLink href="/category">Category</BreadcrumbLink>
+          <BreadcrumbSeparator />
+        </BreadcrumbItem>
+        <BreadcrumbItem>
+          <BreadcrumbPage>Current page</BreadcrumbPage>
+        </BreadcrumbItem>
+      </BreadcrumbList>
+    </Breadcrumb>
   );
 }
 
