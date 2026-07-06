@@ -68,8 +68,8 @@ export function DialogPopup({
 }): React.ReactElement {
   return (
     <DialogPortal {...portalProps}>
-      <DialogBackdrop />
       <DialogViewport bottomStickOnMobile={bottomStickOnMobile}>
+        <DialogBackdrop />
         <DialogPrimitive.Popup
           className={clsx(popup, bottomStickOnMobile && popupBottomStickOnMobile, className)}
           data-slot="dialog-popup"

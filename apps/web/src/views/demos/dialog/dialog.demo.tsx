@@ -14,6 +14,7 @@ import {
   DialogTrigger,
   Input,
 } from "@blenx-dev/core";
+import { useState } from "react";
 
 export function NoCloseStory() {
   return (
@@ -129,7 +130,8 @@ export function DialogDemo() {
   );
 }
 function NestedDialogContent({ depth = 0 }: { depth?: number }) {
-  console.log("Nested. Content");
+  const [open, setOpen] = useState(false);
+
   return (
     <DialogContent>
       <DialogHeader>
@@ -140,13 +142,13 @@ function NestedDialogContent({ depth = 0 }: { depth?: number }) {
         <VStack gap="sm">
           <HStack gap="md" justify="between" align="center">
             <VStack gap="0">
-              <Text variant="body2">Design System for Project {depth}</Text>
+              <Text variant="body2">This is dialog no. {depth}</Text>
               <Text variant="body2" color="secondary">
-                Updated {depth + 1} days ago
+                Identified limit is 50
               </Text>
             </VStack>
 
-            <Dialog>
+            <Dialog open={open} onOpenChange={setOpen}>
               <DialogTrigger render={<Button size="sm" />}>
                 Open Nested Dialog {depth + 1}
               </DialogTrigger>

@@ -48,11 +48,13 @@ export const popup = style([
     minHeight: 0,
     transformOrigin: "center",
     borderStyle: "solid",
-    opacity: "calc(1 - var(--nested-dialogs))",
-    outline: "none",
-    transitionProperty: "opacity, translate",
+    opacity: "calc(1 - var(--nested-dialogs) * 0.15)",
+    translate: "-33.3333% calc(33.3333% + 1.25rem * var(--nested-dialogs))",
+    scale: "calc(1 - 0.05 * var(--nested-dialogs))",
+    transitionProperty: "opacity, translate, scale",
     transitionDuration: "200ms",
     transitionTimingFunction: "ease-in-out",
+    outline: "none",
     willChange: "transform",
     "::before": {
       content: '""',
@@ -61,6 +63,16 @@ export const popup = style([
       inset: 0,
       borderRadius: "calc(16px - 1px)",
       boxShadow: "0 1px 0 rgba(0, 0, 0, 0.04), inset 0 0 0 1px rgba(255, 255, 255, 0.02)",
+    },
+    selectors: {
+      "&[data-nested-dialog-open]::after": {
+        opacity: 1,
+      },
+      "&[data-starting-style], &[data-ending-style]": {
+        opacity: 0,
+        translate: "-50% calc(-50% + 0.25rem + 1.25rem * var(--nested-dialogs))",
+        scale: 0.96,
+      },
     },
   }),
 ]);

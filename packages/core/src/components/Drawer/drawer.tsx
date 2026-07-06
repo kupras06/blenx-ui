@@ -15,14 +15,12 @@ import {
   swipeAreaTop,
   swipeAreaLeft,
   swipeAreaRight,
-  backdrop,
   viewport,
   viewportBottom,
   viewportTop,
   viewportLeft,
   viewportRight,
   viewportInset,
-  popup,
   popupDefault,
   popupStraight,
   popupInset,
@@ -67,7 +65,7 @@ import { CloseButton } from "../CloseButton";
 import type { _BaseDivProps } from "../../utils/types";
 import { Box } from "../Box";
 import { ArrowRightIcon, SquareCheckIcon } from "../../icons";
-import { footer } from "../../utils/drawer-styles.css";
+import { footer, backdrop, popup } from "../../utils/drawer-styles.css";
 
 type DrawerPosition = "right" | "left" | "top" | "bottom";
 
