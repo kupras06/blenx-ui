@@ -1,5 +1,18 @@
 # @blenx-dev/core
 
+## 1.0.0
+
+### Minor Changes
+
+- 2fa8a57: New Theme Architecture
+- 9bb2dc6: theme structure updates
+
+### Patch Changes
+
+- Updated dependencies [2fa8a57]
+- Updated dependencies [9bb2dc6]
+  - @blenx-dev/theme@1.0.0
+
 ## 0.2.3
 
 ### Patch Changes
