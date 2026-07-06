@@ -1,22 +1,6 @@
 import { style } from "@vanilla-extract/css";
-import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars } from "@blenx-dev/theme/contract";
 import { baseSprinkles } from "../../utils/sprinkles";
-
-export const header = style([
-  baseSprinkles({
-    display: "flex",
-    direction: "column",
-    gap: "sm",
-    padding: "lg",
-  }),
-  style({
-    selectors: {
-      "[data-has-panel] &": {
-        paddingBottom: tokenVars.spacing.sm,
-      },
-    },
-  }),
-]);
 
 export const footer = baseSprinkles({
   display: "flex",

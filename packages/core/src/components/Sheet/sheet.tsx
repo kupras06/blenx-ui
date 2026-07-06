@@ -18,7 +18,6 @@ import {
   popupLeft,
   popupRight,
   popupInset,
-  header,
   footerDefault,
   footerBare,
   title,
@@ -28,7 +27,7 @@ import {
 import { CloseButton } from "../CloseButton";
 import type { _BaseDivProps } from "../../utils/types";
 import { Box } from "../Box";
-import { footer, popup } from "../../utils/drawer-styles.css";
+import { drawerHeader, footer, drawerPopup } from "../../utils/drawer-styles.css";
 
 type Side = "right" | "left" | "top" | "bottom";
 
@@ -107,7 +106,7 @@ export function SheetPopup({
       <SheetViewport side={side} variant={variant}>
         <SheetPrimitive.Popup
           className={clsx(
-            popup,
+            drawerPopup,
             side === "bottom" && popupBottom,
             side === "top" && popupTop,
             side === "left" && popupLeft,
@@ -140,7 +139,7 @@ export function SheetHeader({ className, render, ...props }: HeaderProps): React
   return useRender({
     defaultTagName: "div",
     props: {
-      className: clsx(header, className),
+      className: clsx(drawerHeader, className),
       "data-slot": "sheet-header",
       ...props,
     } as never,

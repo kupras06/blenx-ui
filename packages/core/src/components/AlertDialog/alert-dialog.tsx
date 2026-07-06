@@ -6,16 +6,17 @@ import clsx from "clsx";
 import type React from "react";
 import type { _BaseDivProps } from "../../utils/types";
 import { ScrollArea } from "../ScrollArea/scroll-area";
-import { header, footerDefault, footerBare, title, description, panel } from "./alert-dialog.css";
+import { footerDefault, footerBare, title, description, panel } from "./alert-dialog.css";
 import { CloseButton } from "../CloseButton";
 import { Box } from "../Box/box";
 import {
   backdrop,
-  popup,
+  drawerPopup,
   viewport,
   viewportShellBottomStickOnMobile,
   popupBottomStickOnMobile,
   footer,
+  drawerHeader,
 } from "../../utils/drawer-styles.css";
 
 function AlertDialog(props: AlertDialogPrimitive.Root.Props): React.ReactElement {
@@ -78,7 +79,7 @@ function AlertDialogPopup({
       <AlertDialogBackdrop />
       <AlertDialogViewport bottomStickOnMobile={bottomStickOnMobile}>
         <AlertDialogPrimitive.Popup
-          className={clsx(popup, bottomStickOnMobile && popupBottomStickOnMobile, className)}
+          className={clsx(drawerPopup, bottomStickOnMobile && popupBottomStickOnMobile, className)}
           data-slot="alert-dialog-popup"
           {...props}
         >
@@ -104,7 +105,7 @@ function AlertDialogHeader({ className, render, ...props }: HeaderProps): React.
   return useRender({
     defaultTagName: "div",
     props: {
-      className: clsx(header, className),
+      className: clsx(drawerHeader, className),
       "data-slot": "alert-dialog-header",
       ...props,
     } as never,

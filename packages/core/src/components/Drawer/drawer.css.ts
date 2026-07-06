@@ -170,19 +170,6 @@ export const popupRight = style({
   borderBottomLeftRadius: tokenVars.borderRadius.xl,
 });
 
-export const header = style([
-  baseSprinkles({
-    display: "flex",
-    direction: "column",
-    gap: "sm",
-  }),
-  style({
-    paddingTop: tokenVars.spacing.lg,
-    paddingLeft: tokenVars.spacing.lg,
-    paddingRight: tokenVars.spacing.lg,
-  }),
-]);
-
 export const footerDefault = style([
   baseSprinkles({
     backgroundColor: "subtle",

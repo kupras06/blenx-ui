@@ -36,7 +36,7 @@ function buildComponentSections(): SidebarSection[] {
 
   const sections: SidebarSection[] = [
     { title: "Guides", links: guideLinks },
-    { title: "Core", links: coreLinks },
+    { title: "Components", links: coreLinks },
   ];
 
   for (const [title, links] of Object.entries(grouped)) {

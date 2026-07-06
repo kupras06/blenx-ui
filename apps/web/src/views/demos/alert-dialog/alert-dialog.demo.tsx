@@ -24,7 +24,7 @@ export function AlertDialogDemo() {
         <AlertDialog>
           <AlertDialogTrigger
             render={
-              <Button variant="outline" intent="danger">
+              <Button variant="outline" intent="danger" size="sm">
                 <Trash2Icon /> Delete Project
               </Button>
             }

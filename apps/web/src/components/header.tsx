@@ -3,7 +3,7 @@ import { ClientOnly, Link, useLocation } from "@tanstack/react-router";
 import { useMediaQuery, useLocalStorage } from "@uidotdev/usehooks";
 import { GITHUB_URL } from "@/constants";
 import { useSidebarStore } from "@/stores/docs-sidebar";
-import { Button, HStack, IconButton } from "@blenx-dev/core";
+import { Box, Button, HStack, IconButton } from "@blenx-dev/core";
 import { darkClass, lightClass, tokenThemeClass } from "@/lib/app-theme.css";
 import { useEffect } from "react";
 
@@ -72,7 +72,7 @@ function ThemeToggle() {
     const next = storedTheme === "dark" ? "light" : "dark";
     const nextTheme = next === "light" ? lightClass : darkClass;
     document.documentElement.classList.remove(lightClass, darkClass);
-    document.documentElement.classList.add(tokenThemeClass, nextTheme);
+    document.documentElement.classList.add(nextTheme);
     document.documentElement.setAttribute("data-theme", next);
     setStoredTheme(next);
   };
@@ -119,7 +119,9 @@ function Header() {
       <HStack align="center" justify="between" gap="xxs" paddingLeft="none">
         <ClientOnly>{isDocsActive && <DocsRouteSidebarOption />}</ClientOnly>
         <Link to="/">
-          <BrandLogo size={30} />
+          <Box color="inverse">
+            <BrandLogo size={30} />
+          </Box>
         </Link>
       </HStack>
       <HStack align="center" gap="xs">

@@ -28,7 +28,6 @@ import {
   popupTop,
   popupLeft,
   popupRight,
-  header,
   footerDefault,
   footerBare,
   title,
@@ -65,7 +64,7 @@ import { CloseButton } from "../CloseButton";
 import type { _BaseDivProps } from "../../utils/types";
 import { Box } from "../Box";
 import { ArrowRightIcon, SquareCheckIcon } from "../../icons";
-import { footer, backdrop, popup } from "../../utils/drawer-styles.css";
+import { footer, backdrop, drawerPopup, drawerHeader } from "../../utils/drawer-styles.css";
 
 type DrawerPosition = "right" | "left" | "top" | "bottom";
 
@@ -202,7 +201,7 @@ export function DrawerPopup({
       <DrawerViewport position={resolvedPosition} variant={variant}>
         <DrawerPrimitive.Popup
           className={clsx(
-            popup,
+            drawerPopup,
             resolvedPosition === "bottom" && popupBottom,
             resolvedPosition === "top" && popupTop,
             resolvedPosition === "left" && popupLeft,
@@ -239,7 +238,7 @@ export function DrawerHeader({
   return useRender({
     defaultTagName: "div",
     props: {
-      className: clsx(header, className),
+      className: clsx(drawerHeader, className),
       "data-slot": "drawer-header",
       ...props,
     } as never,

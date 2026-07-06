@@ -136,17 +136,6 @@ export const popupInset = style({
   },
 });
 
-export const header = style([
-  baseSprinkles({
-    display: "flex",
-    direction: "column",
-    gap: "sm",
-  }),
-  style({
-    padding: tokenVars.spacing.lg,
-  }),
-]);
-
 export const footerDefault = style([
   baseSprinkles({
     backgroundColor: "subtle",

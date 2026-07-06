@@ -5,15 +5,16 @@ import { useRender } from "@base-ui/react/use-render";
 import clsx from "clsx";
 import type React from "react";
 import { ScrollArea } from "../ScrollArea/scroll-area";
-import { header, footer, footerDefault, footerBare, title, description, panel } from "./dialog.css";
+import { footer, footerDefault, footerBare, title, description, panel } from "./dialog.css";
 import { CloseButton } from "../CloseButton";
 import type { _BaseDivProps } from "../../utils/types";
 import {
   backdrop,
-  popup,
+  drawerPopup,
   viewport,
   viewportShellBottomStickOnMobile,
   popupBottomStickOnMobile,
+  drawerHeader,
 } from "../../utils/drawer-styles.css";
 import { Box } from "../Box";
 const DialogCreateHandle: typeof DialogPrimitive.createHandle = DialogPrimitive.createHandle;
@@ -71,7 +72,7 @@ export function DialogPopup({
       <DialogViewport bottomStickOnMobile={bottomStickOnMobile}>
         <DialogBackdrop />
         <DialogPrimitive.Popup
-          className={clsx(popup, bottomStickOnMobile && popupBottomStickOnMobile, className)}
+          className={clsx(drawerPopup, bottomStickOnMobile && popupBottomStickOnMobile, className)}
           data-slot="dialog-popup"
           {...props}
         >
@@ -97,7 +98,7 @@ export function DialogHeader({ className, render, ...props }: HeaderProps): Reac
   return useRender({
     defaultTagName: "div",
     props: {
-      className: clsx(header, className),
+      className: clsx(drawerHeader, className),
       "data-slot": "dialog-header",
       ...props,
     } as never,

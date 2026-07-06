@@ -38,8 +38,8 @@ function DocsSidebar({ onClose }: { onClose?: () => void }) {
                 return (
                   <Surface
                     variant={isActive ? "default" : "sunken"}
-                    borderRadius="xs"
-                    paddingY="xs"
+                    borderRadius="sm"
+                    paddingY="xxs"
                     paddingX="sm"
                     key={link.to}
                     render={<Link to={link.to} onClick={onClose} />}

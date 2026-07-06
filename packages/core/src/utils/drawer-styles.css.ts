@@ -30,7 +30,7 @@ export const viewport = style([
   }),
 ]);
 
-export const popup = style([
+export const drawerPopup = style([
   baseSprinkles({
     position: "relative",
     display: "flex",
@@ -114,6 +114,22 @@ export const footer = style([
       "(min-width: 640px)": {
         flexDirection: "row",
         justifyContent: "flex-end",
+      },
+    },
+  }),
+]);
+
+export const drawerHeader = style([
+  baseSprinkles({
+    display: "flex",
+    direction: "column",
+    gap: "sm",
+    padding: "lg",
+  }),
+  style({
+    selectors: {
+      "[data-has-panel] &": {
+        paddingBottom: tokenVars.spacing.sm,
       },
     },
   }),
