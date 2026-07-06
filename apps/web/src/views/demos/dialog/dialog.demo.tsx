@@ -1,4 +1,3 @@
-import { Trash2Icon } from "@blenx-dev/core/icons";
 import {
   Button,
   HStack,
@@ -15,31 +14,6 @@ import {
   DialogTrigger,
   Input,
 } from "@blenx-dev/core";
-
-export function DialogDemo() {
-  return (
-    <Dialog>
-      <DialogTrigger render={<Button variant="outline" />}>Open Dialog</DialogTrigger>
-      <DialogContent>
-        <DialogHeader>
-          <DialogTitle>Confirm Action</DialogTitle>
-          <DialogDescription>Are you sure you want to proceed with this action?</DialogDescription>
-        </DialogHeader>
-        <DialogPanel>
-          <Text variant="body2">
-            This demonstrates a working dialog component using Base UI and Vanilla Extract.
-          </Text>
-        </DialogPanel>
-        <DialogFooter>
-          <HStack gap="sm" justify="end" wrap>
-            <DialogClose render={<Button variant="ghost" />}>Cancel</DialogClose>
-            <Button>Confirm</Button>
-          </HStack>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
-  );
-}
 
 export function NoCloseStory() {
   return (
@@ -62,34 +36,6 @@ export function NoCloseStory() {
           <HStack gap="sm" justify="end" wrap>
             <DialogClose render={<Button variant="ghost" />}>Dismiss</DialogClose>
             <Button>Continue</Button>
-          </HStack>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
-  );
-}
-
-export function BareFooterStory() {
-  return (
-    <Dialog>
-      <DialogTrigger render={<Button variant="outline" />}>Bare Footer</DialogTrigger>
-      <DialogContent>
-        <DialogHeader>
-          <DialogTitle>Delete item</DialogTitle>
-          <DialogDescription>
-            <Trash2Icon width={16} /> This action cannot be undone.
-          </DialogDescription>
-        </DialogHeader>
-        <DialogPanel>
-          <Text variant="body2">
-            The item will be permanently removed from your workspace. All associated data will be
-            lost.
-          </Text>
-        </DialogPanel>
-        <DialogFooter variant="bare">
-          <HStack gap="sm" justify="end" wrap>
-            <DialogClose render={<Button variant="ghost" />}>Cancel</DialogClose>
-            <Button intent="danger">Delete</Button>
           </HStack>
         </DialogFooter>
       </DialogContent>
@@ -151,7 +97,7 @@ export function LongContentStory() {
   );
 }
 
-export function FormStory() {
+export function DialogDemo() {
   return (
     <Dialog>
       <DialogTrigger render={<Button variant="outline" />}>Form Dialog</DialogTrigger>
@@ -182,11 +128,120 @@ export function FormStory() {
     </Dialog>
   );
 }
+function NestedDialogContent({ depth = 0 }: { depth?: number }) {
+  console.log("Nested. Content");
+  return (
+    <DialogContent>
+      <DialogHeader>
+        <DialogTitle>Projects {depth}</DialogTitle>
+        <DialogDescription>Manage your workspace projects.</DialogDescription>
+      </DialogHeader>
+      <DialogPanel>
+        <VStack gap="sm">
+          <HStack gap="md" justify="between" align="center">
+            <VStack gap="0">
+              <Text variant="body2">Design System for Project {depth}</Text>
+              <Text variant="body2" color="secondary">
+                Updated {depth + 1} days ago
+              </Text>
+            </VStack>
+
+            <Dialog>
+              <DialogTrigger render={<Button size="sm" />}>
+                Open Nested Dialog {depth + 1}
+              </DialogTrigger>
+              <NestedDialogContent depth={depth + 1} />
+            </Dialog>
+          </HStack>
+        </VStack>
+      </DialogPanel>
+      <DialogFooter>
+        <DialogClose render={<Button size="sm" />}>Close Current Dialog</DialogClose>
+      </DialogFooter>
+    </DialogContent>
+  );
+}
+
+function NestedDialogsStory() {
+  return (
+    <Dialog>
+      <DialogTrigger render={<Button variant="outline" />}>Manage Projects</DialogTrigger>
+      <DialogContent>
+        <NestedDialogContent />
+      </DialogContent>
+    </Dialog>
+  );
+}
+
+function MultipleDialogsStory() {
+  return (
+    <HStack gap="md" wrap>
+      <Dialog>
+        <DialogTrigger render={<Button variant="outline" />}>Settings</DialogTrigger>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Settings</DialogTitle>
+            <DialogDescription>Configure your workspace preferences.</DialogDescription>
+          </DialogHeader>
+          <DialogPanel>
+            <VStack gap="sm">
+              <label htmlFor="notifications">
+                <Text variant="body2">Notifications</Text>
+              </label>
+              <Input id="notifications" placeholder="email@example.com" />
+            </VStack>
+          </DialogPanel>
+          <DialogFooter>
+            <HStack gap="sm" justify="end" wrap>
+              <DialogClose render={<Button variant="ghost" />}>Cancel</DialogClose>
+              <Button>Save</Button>
+            </HStack>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      <Dialog>
+        <DialogTrigger render={<Button variant="outline" />}>Help</DialogTrigger>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Keyboard Shortcuts</DialogTitle>
+            <DialogDescription>Quick reference for common actions.</DialogDescription>
+          </DialogHeader>
+          <DialogPanel>
+            <VStack gap="sm">
+              <HStack gap="md" justify="between">
+                <Text variant="body2">Search</Text>
+                <Text variant="body2" color="secondary">
+                  <kbd>⌘K</kbd>
+                </Text>
+              </HStack>
+              <HStack gap="md" justify="between">
+                <Text variant="body2">Save</Text>
+                <Text variant="body2" color="secondary">
+                  <kbd>⌘S</kbd>
+                </Text>
+              </HStack>
+              <HStack gap="md" justify="between">
+                <Text variant="body2">New Project</Text>
+                <Text variant="body2" color="secondary">
+                  <kbd>⌘N</kbd>
+                </Text>
+              </HStack>
+            </VStack>
+          </DialogPanel>
+          <DialogFooter>
+            <DialogClose render={<Button variant="ghost" />}>Close</DialogClose>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+    </HStack>
+  );
+}
 
 export const demos = [
   { name: "Default", component: DialogDemo },
   { name: "No Close Button", component: NoCloseStory },
-  { name: "Bare Footer", component: BareFooterStory },
   { name: "Long Content", component: LongContentStory },
-  { name: "Form", component: FormStory },
+  { name: "Nested Dialogs", component: NestedDialogsStory },
+  { name: "Multiple Dialogs", component: MultipleDialogsStory },
 ];

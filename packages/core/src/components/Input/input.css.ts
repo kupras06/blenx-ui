@@ -1,21 +1,15 @@
 import { style } from "@vanilla-extract/css";
-import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars } from "@blenx-dev/theme/contract";
 import { baseSprinkles } from "../../utils/sprinkles";
 
-export const label = style([
-  baseSprinkles({
-    display: "inline-flex",
-    color: "secondary",
-  }),
-  style({
-    gap: 4,
-  }),
-  style({
-    fontSize: 14,
-    lineHeight: 1.4,
-    fontWeight: 400,
-  }),
-]);
+export const label = baseSprinkles({
+  display: "inline-flex",
+  color: "secondary",
+  gap: "md",
+  lineHeight: "tight",
+  fontSize: "md",
+  fontWeight: "medium",
+});
 
 export const input = style([
   baseSprinkles({
@@ -24,13 +18,12 @@ export const input = style([
     color: "primary",
     backgroundColor: "surface",
     radius: "default",
+    py: "sm",
+    fontSize: "md",
+    lineHeight: "normal",
+    borderWidth: "thin",
   }),
   style({
-    paddingTop: tokenVars.spacing.sm,
-    paddingBottom: tokenVars.spacing.sm,
-    fontSize: 16,
-    lineHeight: 1.5,
-    borderWidth: 1,
     borderStyle: "solid",
     borderColor: semanticVars.border.default,
     outline: "none",
@@ -43,8 +36,8 @@ export const input = style([
         cursor: "not-allowed",
       },
       "&:focus-visible": {
-        borderColor: semanticVars.border.strong,
-        boxShadow: `0 0 0 2px ${semanticVars.border.strong}`,
+        borderColor: semanticVars.border.default,
+        boxShadow: `0 0 0 2px ${semanticVars.border.default}`,
       },
       "&:focus-visible[aria-invalid='true']": {
         borderColor: semanticVars.color.danger.default,
@@ -54,36 +47,23 @@ export const input = style([
   }),
 ]);
 
-export const inputSm = style([
-  baseSprinkles({
-    py: "xs",
-    px: "sm",
-  }),
-  style({
-    fontSize: 16,
-  }),
-]);
+export const inputSm = baseSprinkles({
+  py: "xs",
+  px: "sm",
+  fontSize: "sm",
+});
 
-export const inputLg = style([
-  baseSprinkles({
-    py: "md",
-    px: "lg",
-  }),
-  style({
-    fontSize: 16,
-  }),
-]);
-
+export const inputLg = baseSprinkles({
+  py: "md",
+  px: "lg",
+  fontSize: "xl",
+});
 export const inputError = baseSprinkles({
   borderColor: "error",
 });
 
-export const error = style([
-  baseSprinkles({
-    color: "error",
-  }),
-  style({
-    fontSize: 12,
-    lineHeight: 1.4,
-  }),
-]);
+export const error = baseSprinkles({
+  color: "error",
+  fontSize: "sm",
+  lineHeight: "normal",
+});

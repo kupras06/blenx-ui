@@ -5,7 +5,6 @@ import { baseSprinkles } from "../utils/sprinkles";
 export const backdrop = style([
   baseSprinkles({
     position: "fixed",
-    zIndex: "overlay",
   }),
   style({
     inset: 0,
@@ -13,6 +12,7 @@ export const backdrop = style([
     backdropFilter: "blur(4px)",
     transitionProperty: "transform, opacity",
     transitionDuration: "200ms",
+    opacity: "calc(.32 + var(--nested-dialogs) * .18)",
   }),
 ]);
 
