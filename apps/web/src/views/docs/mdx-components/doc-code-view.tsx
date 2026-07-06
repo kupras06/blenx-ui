@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { highlightCode } from "@/lib/syntax-highlight";
-import { Box, ScrollArea, Surface } from "@blenx-dev/core";
+import { Box, CopyButton, ScrollArea, Surface } from "@blenx-dev/core";
 import { CodeFrame } from "./CodeFrame";
 import { codeBlockContent } from "@/lib/styles.css";
 
@@ -53,7 +53,6 @@ function DocCodeView({ code, title, language, files }: DocCodeViewProps) {
   return (
     <Box>
       <CodeFrame
-        copyValue={activeFile.code}
         title={activeFile.title}
         language={lang}
         files={activeFiles}
@@ -78,6 +77,9 @@ function DocCodeView({ code, title, language, files }: DocCodeViewProps) {
             }}
           />
         </ScrollArea>
+        <Box position="absolute" top="xs" right="xs">
+          <CopyButton p="none" copyValue={activeFile.code} />
+        </Box>
       </Surface>
     </Box>
   );

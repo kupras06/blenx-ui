@@ -1,11 +1,10 @@
-import { Box, CopyButton, HStack, SegmentedControl, Surface, Text } from "@blenx-dev/core";
+import { Box, HStack, SegmentedControl, Surface, Text } from "@blenx-dev/core";
 
 interface CodeFrameFile {
   title?: string;
 }
 
 interface CodeFrameProps {
-  copyValue: string;
   title?: string;
   language?: string;
   files?: CodeFrameFile[];
@@ -13,26 +12,13 @@ interface CodeFrameProps {
   onActiveIndexChange?: (index: number) => void;
 }
 
-function CodeFrame({
-  copyValue,
-  title,
-  language,
-  files,
-  activeIndex,
-  onActiveIndexChange,
-}: CodeFrameProps) {
+function CodeFrame({ title, language, files, activeIndex, onActiveIndexChange }: CodeFrameProps) {
   const hasFiles = (files?.length ?? 0) > 1;
 
   return (
-    <Surface variant="default" position="relative">
+    <Surface variant="default" position="relative" borderTopWidth="thin">
       {hasFiles || title ? (
-        <HStack
-          align="center"
-          justify="between"
-          px={"xs"}
-          borderRadiusBottom="none"
-          backgroundColor="error"
-        >
+        <HStack align="center" justify="between" px={"xs"} borderRadiusBottom="none">
           <Box display="flex" alignItems="center" borderRadiusTop="none">
             {hasFiles ? (
               <SegmentedControl
@@ -58,17 +44,14 @@ function CodeFrame({
 
                     {language ? <Text variant="caption">{language}</Text> : null}
                   </HStack>
-                ) : null}
+                ) : (
+                  <Box style={{ height: 50 }} />
+                )}
               </>
             )}
           </Box>
-          <CopyButton p="none" copyValue={copyValue} />
         </HStack>
-      ) : (
-        <Box position="absolute" top="xs" right="xs">
-          <CopyButton p="none" copyValue={copyValue} />
-        </Box>
-      )}
+      ) : null}
     </Surface>
   );
 }

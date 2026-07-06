@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { highlightCode } from "@/lib/syntax-highlight";
 import { codeBlockContent } from "@/lib/styles.css";
 import { CodeFrame } from "./CodeFrame";
-import { Surface } from "@blenx-dev/core";
+import { Box, CopyButton, Surface } from "@blenx-dev/core";
 interface CodeBlockProps {
   code: string;
   language?: string;
@@ -34,7 +34,7 @@ function CodeBlock({ code, language = "typescript", title }: CodeBlockProps) {
 
   return (
     <>
-      <CodeFrame copyValue={code} title={title} language={language} />
+      <CodeFrame title={title} language={language} />
       <Surface variant="sunken" overflow="hidden" position="relative" paddingY={"xs"}>
         <div
           className={codeBlockContent}
@@ -42,6 +42,9 @@ function CodeBlock({ code, language = "typescript", title }: CodeBlockProps) {
             __html: highlighted ?? escapeHtml(code),
           }}
         />
+        <Box position="absolute" top="xs" right="xs">
+          <CopyButton p="none" copyValue={code} />
+        </Box>
       </Surface>
     </>
   );
@@ -63,7 +66,7 @@ function CodeSnippet({ code, language = "typescript" }: CodeBlockProps) {
 
   return (
     <>
-      <CodeFrame copyValue={code} language={language} />
+      <CodeFrame language={language} />
       <Surface
         variant="sunken"
         borderRadiusTop="none"
@@ -71,6 +74,9 @@ function CodeSnippet({ code, language = "typescript" }: CodeBlockProps) {
         position="relative"
         paddingY={"xs"}
       >
+        <Box position="absolute" top="xs" right="xs">
+          <CopyButton p="none" copyValue={code} />
+        </Box>
         <div
           className={codeBlockContent}
           dangerouslySetInnerHTML={{
