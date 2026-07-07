@@ -26,9 +26,9 @@ export const rootVertical = style([
 export const item = style([
   baseSprinkles({
     borderBottomWidth: "thin",
+    borderBottomStyle: "solid",
   }),
   {
-    borderBottomStyle: "solid",
     borderBottomColor: semanticVars.border.default,
   },
 ]);
@@ -49,7 +49,9 @@ export const trigger = style([
     borderRadius: "none",
     lineHeight: "normal",
     fontWeight: "medium",
+    borderWidth: "thin",
     backgroundColor: "transparent",
+    cursor: "pointer",
   }),
   style({
     paddingInlineEnd: tokenVars.spacing.xxs,
@@ -57,8 +59,6 @@ export const trigger = style([
     appearance: "none",
     fontFamily: "inherit",
     textAlign: "left",
-    borderWidth: 0,
-    cursor: "pointer",
     WebkitTapHighlightColor: "transparent",
     outline: "none",
     outlineOffset: "2px",
@@ -90,9 +90,9 @@ export const trigger = style([
 export const triggerIcon = style([
   baseSprinkles({
     color: "secondary",
+    shrink: 0,
   }),
   style({
-    flexShrink: 0,
     transform: "rotate(0deg)",
     transitionProperty: "transform",
     transitionDuration: tokenVars.duration.normal,

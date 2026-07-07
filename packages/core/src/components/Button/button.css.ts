@@ -24,12 +24,12 @@ export const variant = recipe({
       height: "fit",
       position: "relative",
       fontSize: "md",
+      borderStyle: "solid",
       fontWeight: "medium",
+      borderWidth: "thin",
+      cursor: "pointer",
     }),
     style({
-      borderStyle: "solid",
-      borderWidth: 1,
-      cursor: "pointer",
       textDecoration: "none",
       transition: "all 0.2s ease",
       selectors: {

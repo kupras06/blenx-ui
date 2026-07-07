@@ -33,6 +33,7 @@ export const startAddon = style([
     position: "absolute",
     display: "flex",
     align: "center",
+    zIndex: "1",
   }),
   style({
     pointerEvents: "none",
@@ -57,14 +58,14 @@ export const adornment = style([
     align: "center",
     justify: "center",
     radius: "md",
+    borderWidth: "thin",
+    borderStyle: "solid",
+    borderColor: "transparent",
+    flexShrink: 0,
   }),
   style({
     top: "50%",
-    flexShrink: 0,
     transform: "translateY(-50%)",
-    borderWidth: tokenVars.borderWidth.thin,
-    borderStyle: "solid",
-    borderColor: "transparent",
     opacity: 0.8,
     outline: "none",
     transitionProperty: "color, background-color, box-shadow, opacity",
@@ -101,15 +102,15 @@ export const popupShell = style([
     radius: "lg",
     backgroundColor: "surface",
     overflow: "hidden",
+    borderWidth: "thin",
+    borderColor: "default",
+    borderStyle: "solid",
+    boxShadow: "lg",
   }),
   style({
     maxHeight: "100%",
     minWidth: "var(--anchor-width)",
     maxWidth: "var(--available-width)",
-    borderWidth: tokenVars.borderWidth.thin,
-    borderStyle: "solid",
-    borderColor: semanticVars.border.default,
-    boxShadow: tokenVars.shadow.lg,
     transformOrigin: "var(--transform-origin)",
     transitionProperty: "transform, opacity",
     transitionDuration: "150ms",
@@ -157,17 +158,13 @@ export const group = baseSprinkles({
   direction: "column",
 });
 
-export const groupLabel = style([
-  baseSprinkles({
-    px: "sm",
-    fontSize: "xs",
-    color: "secondary",
-  }),
-  style({
-    paddingBlock: "6px",
-    fontWeight: tokenVars.fontWeight.medium,
-  }),
-]);
+export const groupLabel = baseSprinkles({
+  px: "sm",
+  fontSize: "xs",
+  color: "secondary",
+  py: "6",
+  fontWeight: "medium",
+});
 
 export const empty = style([
   baseSprinkles({
@@ -184,15 +181,11 @@ export const row = baseSprinkles({
   direction: "column",
 });
 
-export const value = style([
-  baseSprinkles({
-    grow: 1,
-    color: "primary",
-  }),
-  style({
-    display: "block",
-  }),
-]);
+export const value = baseSprinkles({
+  grow: 1,
+  color: "primary",
+  display: "block",
+});
 
 export const list = style([
   baseSprinkles({
@@ -217,12 +210,12 @@ export const status = style([
     align: "center",
     justify: "center",
     shrink: 0,
+    px: "md",
+    py: "sm",
+    fontSize: "xs",
+    fontWeight: "medium",
   }),
   style({
-    paddingInline: tokenVars.spacing.md,
-    paddingBlock: tokenVars.spacing.sm,
-    fontSize: tokenVars.fontSize.xs,
-    fontWeight: tokenVars.fontWeight.medium,
     selectors: {
       "&:empty": {
         margin: 0,
@@ -232,34 +225,38 @@ export const status = style([
   }),
 ]);
 
-export const item = style({
-  display: "grid",
-  gridTemplateColumns: "1rem 1fr",
-  alignItems: "center",
-  columnGap: tokenVars.spacing.sm,
-  minHeight: "32px",
-  paddingInlineStart: tokenVars.spacing.sm,
-  paddingInlineEnd: tokenVars.spacing.md,
-  paddingBlock: tokenVars.spacing["1"],
-  borderRadius: tokenVars.borderRadius.sm,
-  cursor: "default",
-  userSelect: "none",
-  outline: "none",
-  fontSize: tokenVars.fontSize.md,
-  selectors: {
-    "&:hover": {
-      backgroundColor: semanticVars.background.subtle,
+export const item = style([
+  baseSprinkles({
+    display: "grid",
+    align: "center",
+    paddingLeft: "sm",
+    paddingRight: "md",
+    py: "1",
+    radius: "sm",
+    fontSize: "md",
+    cursor: "default",
+  }),
+  style({
+    gridTemplateColumns: "1rem 1fr",
+    columnGap: tokenVars.spacing.sm,
+    minHeight: "32px",
+    userSelect: "none",
+    outline: "none",
+    selectors: {
+      "&:hover": {
+        backgroundColor: semanticVars.background.subtle,
+      },
+      "&[data-disabled]": {
+        pointerEvents: "none",
+        opacity: 0.64,
+      },
+      "&[data-highlighted]": {
+        backgroundColor: semanticVars.background.subtle,
+        color: semanticVars.text.primary,
+      },
     },
-    "&[data-disabled]": {
-      pointerEvents: "none",
-      opacity: 0.64,
-    },
-    "&[data-highlighted]": {
-      backgroundColor: semanticVars.background.subtle,
-      color: semanticVars.text.primary,
-    },
-  },
-});
+  }),
+]);
 
 export const itemIndicator = style([
   baseSprinkles({
@@ -288,14 +285,14 @@ export const chips = style([
     radius: "lg",
     backgroundColor: "canvas",
     color: "primary",
+    borderWidth: "thin",
+    borderStyle: "solid",
+    borderColor: "default",
   }),
   style({
     minWidth: 0,
     minHeight: "36px",
     padding: "calc(4px - 1px)",
-    borderWidth: tokenVars.borderWidth.thin,
-    borderStyle: "solid",
-    borderColor: semanticVars.border.default,
     boxShadow: "0 1px 2px rgba(0, 0, 0, 0.04)",
     outline: "none",
     transitionProperty: "border-color, box-shadow",
@@ -326,13 +323,17 @@ export const chips = style([
   }),
 ]);
 
-export const chipsStartAddon = style({
-  display: "flex",
-  flexShrink: 0,
-  alignItems: "center",
-  opacity: 0.8,
-  paddingInlineStart: tokenVars.spacing.sm,
-});
+export const chipsStartAddon = style([
+  baseSprinkles({
+    display: "flex",
+    shrink: 0,
+    align: "center",
+    paddingLeft: "sm",
+  }),
+  style({
+    opacity: 0.8,
+  }),
+]);
 
 export const chipsStartAddonSm = style({
   paddingInlineStart: "6px",
@@ -342,13 +343,13 @@ export const chipsInput = style([
   baseSprinkles({
     fontSize: "md",
     color: "primary",
+    backgroundColor: "transparent",
+    borderWidth: "none",
   }),
   style({
     flex: "1 1 0%",
     minWidth: "3rem",
-    borderWidth: 0,
     outline: "none",
-    backgroundColor: "transparent",
     paddingBlock: "6px",
     paddingInlineStart: tokenVars.spacing.xs,
     paddingInlineEnd: tokenVars.spacing.xs,
@@ -377,9 +378,9 @@ export const chip = style([
     color: "primary",
     px: "sm",
     fontSize: "sm",
+    fontWeight: "medium",
   }),
   style({
-    fontWeight: tokenVars.fontWeight.medium,
     lineHeight: 1.2,
     outline: "none",
   }),
@@ -391,10 +392,10 @@ export const chipRemove = style([
     align: "center",
     shrink: 0,
     px: "xs",
+    cursor: "pointer",
   }),
   style({
     height: "100%",
-    cursor: "pointer",
     opacity: 0.8,
     selectors: {
       "&:hover": {

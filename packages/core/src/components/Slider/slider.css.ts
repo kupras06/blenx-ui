@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars } from "@blenx-dev/theme/contract";
 import { baseSprinkles } from "../../utils/sprinkles";
 
 export const disabled = style({
@@ -78,18 +78,18 @@ export const thumb = style([
     shrink: 0,
     radius: "full",
     backgroundColor: "surface",
+    borderWidth: "thin",
+    borderStyle: "solid",
+    boxShadow: "sm",
   }),
   style({
     userSelect: "none",
-    borderWidth: tokenVars.borderWidth.thin,
-    borderStyle: "solid",
     borderColor: semanticVars.border.default,
     outline: "none",
     transitionProperty: "box-shadow, transform",
     transitionDuration: "150ms",
     width: 16,
     height: 16,
-    boxShadow: tokenVars.shadow.sm,
     selectors: {
       "&:has(:focus-visible)": {
         boxShadow: `0 0 0 3px ${semanticVars.focus.ring}`,

@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars } from "@blenx-dev/theme/contract";
 import { baseSprinkles } from "../../utils/sprinkles";
 
 export const backdrop = style([
@@ -29,15 +29,15 @@ export const popup = style([
     padding: "sm",
     backgroundColor: "surface",
     radius: "lg",
+    borderWidth: "thin",
+    borderStyle: "solid",
+    boxShadow: "lg",
   }),
   style({
     minWidth: 160,
     width: "max(var(--anchor-width), 240px)",
     maxWidth: "calc(100vw - 16px)",
-    borderWidth: tokenVars.borderWidth.thin,
-    borderStyle: "solid",
     borderColor: semanticVars.border.default,
-    boxShadow: tokenVars.shadow.lg,
     outline: "none",
     transformOrigin: "var(--transform-origin)",
     transitionProperty: "opacity, scale",
@@ -62,21 +62,20 @@ export const popup = style([
   }),
 ]);
 
-export const arrow = style({
-  position: "absolute",
-  width: 10,
-  height: 10,
-});
+export const arrow = style([
+  baseSprinkles({ position: "absolute" }),
+  style({ width: 10, height: 10 }),
+]);
 
 export const arrowFill = style([
   baseSprinkles({
     backgroundColor: "surface",
+    width: "full",
+    height: "full",
+    borderWidth: "thin",
+    borderStyle: "solid",
   }),
   style({
-    width: "100%",
-    height: "100%",
-    borderWidth: tokenVars.borderWidth.thin,
-    borderStyle: "solid",
     borderColor: semanticVars.border.default,
     borderRadius: 2,
     transform: "rotate(45deg)",
@@ -87,11 +86,11 @@ export const title = style([
   baseSprinkles({
     fontSize: "md",
     color: "primary",
+    fontWeight: "semibold",
+    paddingBottom: "xs",
   }),
   style({
-    fontWeight: tokenVars.fontWeight.semibold,
     margin: 0,
-    paddingBottom: tokenVars.spacing.xs,
   }),
 ]);
 
@@ -99,9 +98,9 @@ export const description = style([
   baseSprinkles({
     fontSize: "sm",
     color: "secondary",
+    paddingBottom: "xs",
   }),
   style({
     margin: 0,
-    paddingBottom: tokenVars.spacing.xs,
   }),
 ]);

@@ -12,10 +12,10 @@ export const group = style([
     color: "primary",
     fontSize: "sm",
     overflow: "hidden",
+    borderWidth: "thin",
+    borderStyle: "solid",
   }),
   style({
-    borderWidth: 1,
-    borderStyle: "solid",
     borderColor: semanticVars.border.default,
     minHeight: "40px",
     transitionProperty: "border-color, box-shadow",
@@ -51,9 +51,9 @@ export const addon = style([
     shrink: 0,
     color: "secondary",
     fontSize: "sm",
+    cursor: "text",
   }),
   style({
-    cursor: "text",
     userSelect: "none",
     selectors: {
       "&:has(:last-child[data-slot='badge'])": {
@@ -63,23 +63,25 @@ export const addon = style([
   }),
 ]);
 
-export const addonInlineStart = style({
-  paddingTop: 0,
-  paddingBottom: 0,
-  paddingLeft: "8px",
-  paddingRight: "4px",
-  alignSelf: "center",
-});
+export const addonInlineStart = style([
+  baseSprinkles({
+    paddingTop: "0",
+    paddingBottom: "0",
+    paddingLeft: "8",
+    paddingRight: "4",
+  }),
+  style({ alignSelf: "center" }),
+]);
 
 export const addonInlineEnd = style([
   baseSprinkles({
     display: "flex",
     align: "center",
+    paddingLeft: "4",
+    paddingRight: "4",
   }),
   style({
     order: 1,
-    paddingLeft: "4px",
-    paddingRight: "4px",
     alignSelf: "stretch",
   }),
 ]);
@@ -88,26 +90,22 @@ export const addonBlockStart = style([
   baseSprinkles({
     width: "full",
     justify: "start",
+    paddingTop: "4",
+    paddingLeft: "4",
+    paddingRight: "4",
   }),
-  style({
-    order: -1,
-    paddingTop: "4px",
-    paddingLeft: "4px",
-    paddingRight: "4px",
-  }),
+  style({ order: -1 }),
 ]);
 
 export const addonBlockEnd = style([
   baseSprinkles({
     width: "full",
     justify: "start",
+    paddingBottom: "4",
+    paddingLeft: "4",
+    paddingRight: "4",
   }),
-  style({
-    order: 1,
-    paddingBottom: "4px",
-    paddingLeft: "4px",
-    paddingRight: "4px",
-  }),
+  style({ order: 1 }),
 ]);
 
 export const text = style([
@@ -133,19 +131,19 @@ export const input = style([
     flex: 1,
     color: "primary",
     fontSize: "sm",
+    width: "full",
+    height: "full",
+    paddingTop: "8",
+    paddingBottom: "6",
+    paddingLeft: "8",
+    paddingRight: "8",
+    borderWidth: "none",
   }),
   style({
     minWidth: 0,
-    width: "100%",
-    height: "100%",
     border: "none",
     outline: "none",
     backgroundColor: "inherit",
-    paddingTop: "8px",
-    paddingBottom: "6px",
-    paddingLeft: "8px",
-    paddingRight: "8px",
-    borderWidth: 0,
     lineHeight: 1.5,
     selectors: {
       "&::placeholder": {
@@ -164,18 +162,18 @@ export const textarea = style([
     flex: 1,
     color: "primary",
     fontSize: "sm",
+    width: "full",
+    paddingTop: "8",
+    paddingBottom: "8",
+    paddingLeft: "10",
+    paddingRight: "10",
+    borderWidth: "none",
   }),
   style({
     minWidth: 0,
-    width: "100%",
     border: "none",
     outline: "none",
     backgroundColor: "transparent",
-    paddingTop: "8px",
-    paddingBottom: "8px",
-    borderWidth: 0,
-    paddingLeft: "10px",
-    paddingRight: "10px",
     resize: "none",
     selectors: {
       "&::placeholder": {

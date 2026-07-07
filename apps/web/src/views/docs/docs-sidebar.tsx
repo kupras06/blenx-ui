@@ -1,5 +1,5 @@
 import type { SidebarSection } from "@/views/docs/docs-utils";
-import { Box, Surface, Text, VStack } from "@blenx-dev/core";
+import { Box, ScrollArea, Surface, Text, VStack } from "@blenx-dev/core";
 import { Link, useLocation, useMatches } from "@tanstack/react-router";
 
 const isLinkActive = (link: string, pathname: string) =>
@@ -27,34 +27,36 @@ function DocsSidebar({ onClose }: { onClose?: () => void }) {
   const sidebarSections = getSidebarSections(matches);
 
   return (
-    <Surface variant="sunken" fullWidth>
-      <VStack gap="md" padding="md">
-        {sidebarSections.map((section) => (
-          <Box key={section.title}>
-            <Text variant="h3">{section.title}</Text>
-            <VStack gap="xxs">
-              {section.links.map((link) => {
-                const isActive = isLinkActive(link.to, pathname);
-                return (
-                  <Surface
-                    variant={isActive ? "default" : "sunken"}
-                    borderRadius="sm"
-                    paddingY="xxs"
-                    paddingX="sm"
-                    key={link.to}
-                    render={<Link to={link.to} onClick={onClose} />}
-                  >
-                    <Text variant="body2" color={isActive ? "primary" : "secondary"}>
-                      {link.label}
-                    </Text>
-                  </Surface>
-                );
-              })}
-            </VStack>
-          </Box>
-        ))}
-      </VStack>
-    </Surface>
+    <ScrollArea height={"100%"}>
+      <Surface variant="sunken" fullWidth>
+        <VStack gap="md" padding="md">
+          {sidebarSections.map((section) => (
+            <Box key={section.title}>
+              <Text variant="h3">{section.title}</Text>
+              <VStack gap="xxs">
+                {section.links.map((link) => {
+                  const isActive = isLinkActive(link.to, pathname);
+                  return (
+                    <Surface
+                      variant={isActive ? "default" : "sunken"}
+                      borderRadius="sm"
+                      paddingY="xxs"
+                      paddingX="sm"
+                      key={link.to}
+                      render={<Link to={link.to} onClick={onClose} />}
+                    >
+                      <Text variant="body2" color={isActive ? "primary" : "secondary"}>
+                        {link.label}
+                      </Text>
+                    </Surface>
+                  );
+                })}
+              </VStack>
+            </Box>
+          ))}
+        </VStack>
+      </Surface>
+    </ScrollArea>
   );
 }
 

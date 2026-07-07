@@ -8,15 +8,15 @@ export const trigger = style([
     align: "center",
     justify: "center",
     radius: "md",
+    padding: "0",
+    borderWidth: "none",
+    backgroundColor: "transparent",
+    cursor: "pointer",
   }),
   style({
-    cursor: "pointer",
-    backgroundColor: "transparent",
     appearance: "none",
     border: "none",
-    padding: 0,
     outline: "none",
-    borderWidth: 0,
     fontFamily: "inherit",
     fontSize: "inherit",
     color: "inherit",
@@ -39,12 +39,12 @@ export const popup = style([
     gap: "1",
     direction: "column",
     overflow: "hidden",
+    borderWidth: "thin",
+    borderStyle: "solid",
+    boxShadow: "xl",
   }),
   style({
-    borderWidth: 1,
-    borderStyle: "solid",
     borderColor: semanticVars.border.subtle,
-    boxShadow: tokenVars.shadow.xl,
     zIndex: 1000,
     minWidth: 224,
     outline: "none",
@@ -59,17 +59,17 @@ export const item = style([
     radius: "default",
     color: "primary",
     fontSize: "sm",
+    fontWeight: "medium",
+    backgroundColor: "transparent",
+    cursor: "pointer",
   }),
   style({
     minHeight: 24,
     padding: `${tokenVars.spacing.xs} ${tokenVars.spacing.sm}`,
-    fontWeight: tokenVars.fontWeight.medium,
     lineHeight: 1.2,
     textDecoration: "none",
     textAlign: "left",
     border: "none",
-    backgroundColor: "transparent",
-    cursor: "pointer",
     appearance: "none",
     outline: "none",
     transition: "background-color 0.15s ease, color 0.15s ease",
@@ -122,26 +122,26 @@ export const groupLabel = style([
   baseSprinkles({
     fontSize: "xs",
     color: "secondary",
+    fontWeight: "semibold",
+    letterSpacing: "wide",
   }),
   style({
     padding: `${tokenVars.spacing.sm} ${tokenVars.spacing.md} ${tokenVars.spacing.xs}`,
-    fontWeight: tokenVars.fontWeight.semibold,
     textTransform: "uppercase",
-    letterSpacing: tokenVars.letterSpacing.wide,
   }),
 ]);
 
-export const inset = style({
-  paddingLeft: 40,
+export const inset = baseSprinkles({
+  paddingLeft: "40",
 });
 
 export const shortcut = style([
   baseSprinkles({
     color: "disabled",
     fontSize: "xs",
+    fontWeight: "medium",
   }),
   style({
     marginLeft: "auto",
-    fontWeight: tokenVars.fontWeight.medium,
   }),
 ]);

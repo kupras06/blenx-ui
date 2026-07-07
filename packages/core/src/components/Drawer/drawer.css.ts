@@ -2,39 +2,33 @@ import { style } from "@vanilla-extract/css";
 import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 import { baseSprinkles } from "../../utils/sprinkles";
 
-export const swipeArea = style({
-  position: "fixed",
-  zIndex: 50,
-  touchAction: "none",
-});
+export const swipeArea = style([
+  baseSprinkles({ position: "fixed" }),
+  style({
+    zIndex: 50,
+    touchAction: "none",
+  }),
+]);
 
-export const swipeAreaBottom = style({
-  left: 0,
-  right: 0,
-  bottom: 0,
-  height: "32px",
-});
+export const swipeAreaBottom = style([
+  baseSprinkles({ left: "0", right: "0", bottom: "0" }),
+  style({ height: "32px" }),
+]);
 
-export const swipeAreaTop = style({
-  left: 0,
-  right: 0,
-  top: 0,
-  height: "32px",
-});
+export const swipeAreaTop = style([
+  baseSprinkles({ left: "0", right: "0", top: "0" }),
+  style({ height: "32px" }),
+]);
 
-export const swipeAreaLeft = style({
-  top: 0,
-  bottom: 0,
-  left: 0,
-  width: "32px",
-});
+export const swipeAreaLeft = style([
+  baseSprinkles({ top: "0", bottom: "0", left: "0" }),
+  style({ width: "32px" }),
+]);
 
-export const swipeAreaRight = style({
-  top: 0,
-  bottom: 0,
-  right: 0,
-  width: "32px",
-});
+export const swipeAreaRight = style([
+  baseSprinkles({ top: "0", bottom: "0", right: "0" }),
+  style({ width: "32px" }),
+]);
 
 export const backdrop = style([
   baseSprinkles({
@@ -58,41 +52,40 @@ export const backdrop = style([
   }),
 ]);
 
-export const viewport = style({
-  position: "fixed",
-  inset: 0,
-  touchAction: "none",
-});
+export const viewport = style([
+  baseSprinkles({ position: "fixed" }),
+  style({
+    inset: 0,
+    touchAction: "none",
+  }),
+]);
 
-export const viewportBottom = style({
-  display: "grid",
-  gridTemplateRows: "1fr auto",
-  paddingTop: "48px",
-});
+export const viewportBottom = style([
+  baseSprinkles({ display: "grid", paddingTop: "48" }),
+  style({ gridTemplateRows: "1fr auto" }),
+]);
 
-export const viewportTop = style({
-  display: "grid",
-  gridTemplateRows: "auto 1fr",
-  paddingBottom: "48px",
-});
+export const viewportTop = style([
+  baseSprinkles({ display: "grid", paddingBottom: "48" }),
+  style({ gridTemplateRows: "auto 1fr" }),
+]);
 
-export const viewportLeft = style({
+export const viewportLeft = baseSprinkles({
   display: "flex",
-  justifyContent: "flex-start",
+  justify: "start",
 });
 
-export const viewportRight = style({
+export const viewportRight = baseSprinkles({
   display: "flex",
-  justifyContent: "flex-end",
+  justify: "end",
 });
 
-export const viewportInset = style({
-  paddingLeft: tokenVars.spacing.md,
-  paddingRight: tokenVars.spacing.md,
+export const viewportInset = baseSprinkles({
+  px: "md",
 });
 
-export const popupDefault = style({
-  boxShadow: tokenVars.shadow.lg,
+export const popupDefault = baseSprinkles({
+  boxShadow: "lg",
 });
 
 export const popupStraight = style({
@@ -101,49 +94,50 @@ export const popupStraight = style({
   },
 });
 
-export const popupInset = style({
-  borderWidth: "none",
-  borderRadius: "none",
-  "@media": {
-    "(min-width: 640px)": {
-      borderRadius: tokenVars.borderRadius.xl,
+export const popupInset = style([
+  baseSprinkles({ borderWidth: "none", radius: "none" }),
+  style({
+    "@media": {
+      "(min-width: 640px)": {
+        borderRadius: tokenVars.borderRadius.xl,
+      },
     },
-  },
+  }),
+]);
+
+export const popupBottom = style([
+  baseSprinkles({ borderRadiusTop: "xl" }),
+  style({ gridRowStart: 2 }),
+]);
+
+export const popupTop = baseSprinkles({
+  borderRadiusBottom: "xl",
 });
 
-export const popupBottom = style({
-  gridRowStart: 2,
-  borderTopLeftRadius: tokenVars.borderRadius.xl,
-  borderTopRightRadius: tokenVars.borderRadius.xl,
-});
+export const popupLeft = style([
+  baseSprinkles({ borderRadiusRight: "xl" }),
+  style({
+    width: "calc(100% - 48px)",
+    maxWidth: "28rem",
+  }),
+]);
 
-export const popupTop = style({
-  borderBottomLeftRadius: tokenVars.borderRadius.xl,
-  borderBottomRightRadius: tokenVars.borderRadius.xl,
-});
-
-export const popupLeft = style({
-  width: "calc(100% - 48px)",
-  maxWidth: "28rem",
-  borderTopRightRadius: tokenVars.borderRadius.xl,
-  borderBottomRightRadius: tokenVars.borderRadius.xl,
-});
-
-export const popupRight = style({
-  width: "calc(100% - 48px)",
-  maxWidth: "28rem",
-  borderTopLeftRadius: tokenVars.borderRadius.xl,
-  borderBottomLeftRadius: tokenVars.borderRadius.xl,
-});
+export const popupRight = style([
+  baseSprinkles({ borderRadiusLeft: "xl" }),
+  style({
+    width: "calc(100% - 48px)",
+    maxWidth: "28rem",
+  }),
+]);
 
 export const footerDefault = style([
   baseSprinkles({
     backgroundColor: "subtle",
     py: "md",
     borderTopWidth: "thin",
+    borderTopStyle: "solid",
   }),
   style({
-    borderTopStyle: "solid",
     borderTopColor: semanticVars.border.subtle,
   }),
 ]);
@@ -154,19 +148,19 @@ export const footerBare = baseSprinkles({
 });
 
 export const title = style([
+  baseSprinkles({ fontWeight: "semibold" }),
   style({
     fontSize: "20px",
     lineHeight: 1,
-    fontWeight: tokenVars.fontWeight.semibold,
   }),
 ]);
 
 export const description = style([
   baseSprinkles({
     color: "secondary",
+    fontSize: "sm",
   }),
   style({
-    fontSize: tokenVars.fontSize.sm,
     lineHeight: 1.4,
   }),
 ]);
@@ -176,14 +170,16 @@ export const panel = baseSprinkles({
   borderWidth: "none",
 });
 
-export const bar = style({
-  position: "absolute",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  padding: tokenVars.spacing.sm,
-  touchAction: "none",
-});
+export const bar = style([
+  baseSprinkles({
+    position: "absolute",
+    display: "flex",
+    align: "center",
+    justify: "center",
+    padding: "sm",
+  }),
+  style({ touchAction: "none" }),
+]);
 
 export const barHorizontal = style({
   insetInline: 0,
@@ -195,20 +191,20 @@ export const barVertical = style({
   width: "48px",
 });
 
-export const barTop = style({
-  bottom: 0,
+export const barTop = baseSprinkles({
+  bottom: "0",
 });
 
-export const barBottom = style({
-  top: 0,
+export const barBottom = baseSprinkles({
+  top: "0",
 });
 
-export const barLeft = style({
-  right: 0,
+export const barLeft = baseSprinkles({
+  right: "0",
 });
 
-export const barRight = style({
-  left: 0,
+export const barRight = baseSprinkles({
+  left: "0",
 });
 
 export const menu = baseSprinkles({
@@ -224,17 +220,15 @@ export const menuItem = style([
     radius: "sm",
     color: "primary",
     fontSize: "md",
+    py: "xs",
+    px: "sm",
+    backgroundColor: "transparent",
+    cursor: "default",
   }),
   style({
     minHeight: "36px",
-    paddingTop: tokenVars.spacing.xs,
-    paddingBottom: tokenVars.spacing.xs,
-    paddingLeft: tokenVars.spacing.sm,
-    paddingRight: tokenVars.spacing.sm,
     border: "none",
-    backgroundColor: "transparent",
     textAlign: "left",
-    cursor: "default",
     outline: "none",
   }),
 ]);
@@ -243,31 +237,29 @@ export const menuItemDestructive = baseSprinkles({
   color: "error",
 });
 
-export const separator = style({
-  height: "1px",
-  backgroundColor: semanticVars.border.subtle,
-  marginTop: tokenVars.spacing.xs,
-  marginBottom: tokenVars.spacing.xs,
-});
+export const separator = style([
+  baseSprinkles({
+    marginTop: "xs",
+    marginBottom: "xs",
+  }),
+  style({
+    height: "1px",
+    backgroundColor: semanticVars.border.subtle,
+  }),
+]);
 
 export const menuGroup = baseSprinkles({
   display: "flex",
   direction: "column",
 });
 
-export const menuGroupLabel = style([
-  baseSprinkles({
-    fontSize: "xs",
-    color: "secondary",
-  }),
-  style({
-    paddingTop: tokenVars.spacing.xs,
-    paddingBottom: tokenVars.spacing.xs,
-    paddingLeft: tokenVars.spacing.sm,
-    paddingRight: tokenVars.spacing.sm,
-    fontWeight: tokenVars.fontWeight.medium,
-  }),
-]);
+export const menuGroupLabel = baseSprinkles({
+  fontSize: "xs",
+  color: "secondary",
+  py: "xs",
+  px: "sm",
+  fontWeight: "medium",
+});
 
 export const menuTrigger = style([
   baseSprinkles({
@@ -276,14 +268,12 @@ export const menuTrigger = style([
     gap: "sm",
     radius: "sm",
     color: "primary",
+    py: "xs",
+    px: "sm",
+    backgroundColor: "transparent",
   }),
   style({
     minHeight: "36px",
-    paddingTop: tokenVars.spacing.xs,
-    paddingBottom: tokenVars.spacing.xs,
-    paddingLeft: tokenVars.spacing.sm,
-    paddingRight: tokenVars.spacing.sm,
-    backgroundColor: "transparent",
     border: "none",
   }),
 ]);
@@ -301,47 +291,53 @@ export const menuCheckbox = style([
     gap: "sm",
     radius: "sm",
     color: "primary",
+    py: "xs",
+    px: "sm",
+    backgroundColor: "transparent",
   }),
   style({
     minHeight: "36px",
-    paddingTop: tokenVars.spacing.xs,
-    paddingBottom: tokenVars.spacing.xs,
-    paddingLeft: tokenVars.spacing.sm,
-    paddingRight: tokenVars.spacing.sm,
-    backgroundColor: "transparent",
     border: "none",
   }),
 ]);
 
-export const menuCheckboxDefault = style({
-  gridTemplateColumns: "1rem 1fr",
-  paddingRight: tokenVars.spacing.md,
-});
+export const menuCheckboxDefault = style([
+  baseSprinkles({ paddingRight: "md" }),
+  style({ gridTemplateColumns: "1rem 1fr" }),
+]);
 
-export const menuCheckboxSwitch = style({
-  gridTemplateColumns: "1fr auto",
-  paddingRight: tokenVars.spacing.xs,
-});
+export const menuCheckboxSwitch = style([
+  baseSprinkles({ paddingRight: "xs" }),
+  style({ gridTemplateColumns: "1fr auto" }),
+]);
 
 export const menuCheckboxSwitchLabel = style({
   gridColumnStart: 1,
 });
 
-export const menuCheckboxSwitchIndicator = style({
-  gridColumnStart: 2,
-  display: "inline-flex",
-  alignItems: "center",
-  padding: "2px",
-  borderRadius: tokenVars.borderRadius.full,
-  backgroundColor: semanticVars.border.subtle,
-});
+export const menuCheckboxSwitchIndicator = style([
+  baseSprinkles({
+    display: "inline-flex",
+    align: "center",
+    padding: "2",
+    radius: "full",
+  }),
+  style({
+    gridColumnStart: 2,
+    backgroundColor: semanticVars.border.subtle,
+  }),
+]);
 
-export const menuCheckboxSwitchThumb = style({
-  width: "14px",
-  height: "14px",
-  borderRadius: tokenVars.borderRadius.full,
-  backgroundColor: semanticVars.background.default,
-});
+export const menuCheckboxSwitchThumb = style([
+  baseSprinkles({
+    radius: "full",
+    backgroundColor: "canvas",
+  }),
+  style({
+    width: "14px",
+    height: "14px",
+  }),
+]);
 
 export const menuCheckboxIndicator = style({
   gridColumnStart: 1,
@@ -358,14 +354,13 @@ export const menuRadio = style([
     gap: "sm",
     radius: "sm",
     color: "primary",
+    py: "xs",
+    paddingLeft: "sm",
+    paddingRight: "md",
+    backgroundColor: "transparent",
   }),
   style({
     minHeight: "36px",
-    paddingTop: tokenVars.spacing.xs,
-    paddingBottom: tokenVars.spacing.xs,
-    paddingLeft: tokenVars.spacing.sm,
-    paddingRight: tokenVars.spacing.md,
-    backgroundColor: "transparent",
     border: "none",
     gridTemplateColumns: "1rem 1fr",
   }),

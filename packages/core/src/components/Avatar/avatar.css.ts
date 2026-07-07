@@ -13,11 +13,11 @@ export const root = style([
     color: "secondary",
     overflow: "hidden",
     shrink: 0,
+    borderWidth: "thin",
   }),
   style({
     outline: "none",
     border: "none",
-    borderWidth: 0,
   }),
 ]);
 
@@ -26,12 +26,12 @@ export const image = style([
     width: "full",
     height: "full",
     display: "block",
+    borderWidth: "thin",
   }),
   style({
     objectFit: "cover",
     outline: "none",
     border: "none",
-    borderWidth: 0,
   }),
 ]);
 
@@ -44,13 +44,13 @@ export const fallback = style([
     justify: "center",
     backgroundColor: "subtle",
     color: "secondary",
+    borderWidth: "none",
+    fontWeight: "semibold",
   }),
   style({
     fontSize: 12,
     outline: "none",
     border: "none",
-    borderWidth: 0,
-    fontWeight: 600,
     lineHeight: 1,
   }),
 ]);

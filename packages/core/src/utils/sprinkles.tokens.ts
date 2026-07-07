@@ -65,7 +65,24 @@ export const colors = {
   warning: semanticVars.color.warning.default,
   info: semanticVars.color.info.default,
 } as const;
-
+export const backgroundColors = {
+  primary: semanticVars.color.primary.default,
+  primaryHover: semanticVars.color.primary.hover,
+  primaryActive: semanticVars.color.primary.active,
+  secondary: semanticVars.color.secondary.default,
+  secondaryHover: semanticVars.color.secondary.hover,
+  secondaryActive: semanticVars.color.secondary.active,
+  surface: semanticVars.surface.default,
+  canvas: semanticVars.background.default,
+  subtle: semanticVars.background.subtle,
+  default: "inherit",
+  transparent: "transparent",
+  disabled: semanticVars.background.subtle,
+  error: semanticVars.color.danger.bg,
+  success: semanticVars.color.success.bg,
+  warning: semanticVars.color.warning.bg,
+  info: semanticVars.color.info.bg,
+};
 export const responsiveConditions = {
   base: {},
   sm: { "@media": "screen and (min-width: 640px)" },

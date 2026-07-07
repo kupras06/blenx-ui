@@ -62,17 +62,17 @@ export const handleActive = baseSprinkles({
   backgroundColor: "primary",
 });
 
-export const handleDisabled = style({
-  cursor: "not-allowed",
-  opacity: 0.4,
-});
+export const handleDisabled = style([
+  baseSprinkles({ cursor: "not-allowed" }),
+  style({ opacity: 0.4 }),
+]);
 
-export const handleHorizontal = style({
-  width: HANDLE_SIZE,
-  cursor: "col-resize",
-});
+export const handleHorizontal = style([
+  baseSprinkles({ cursor: "col-resize" }),
+  style({ width: HANDLE_SIZE }),
+]);
 
-export const handleVertical = style({
-  height: HANDLE_SIZE,
-  cursor: "row-resize",
-});
+export const handleVertical = style([
+  baseSprinkles({ cursor: "row-resize" }),
+  style({ height: HANDLE_SIZE }),
+]);

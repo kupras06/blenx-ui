@@ -40,12 +40,12 @@ export const startAddon = style([
     position: "absolute",
     display: "flex",
     align: "center",
+    zIndex: "1",
   }),
   style({
     pointerEvents: "none",
     insetBlock: 0,
     insetInlineStart: tokenVars.borderWidth.thin,
-    zIndex: 1,
     opacity: 0.8,
   }),
 ]);
@@ -64,15 +64,15 @@ export const adornment = style([
     display: "inline-flex",
     align: "center",
     justify: "center",
+    borderStyle: "solid",
+    borderWidth: "thin",
     radius: "md",
+    borderColor: "transparent",
+    flexShrink: 0,
   }),
   style({
     top: "50%",
-    flexShrink: 0,
     transform: "translateY(-50%)",
-    borderWidth: tokenVars.borderWidth.thin,
-    borderStyle: "solid",
-    borderColor: "transparent",
     opacity: 0.8,
     outline: "none",
     transitionProperty: "color, background-color, box-shadow, opacity",
@@ -108,15 +108,15 @@ export const popupShell = style([
     display: "flex",
     radius: "lg",
     backgroundColor: "surface",
+    borderStyle: "solid",
+    borderWidth: "thin",
+    borderColor: "default",
+    boxShadow: "lg",
   }),
   style({
     maxHeight: "100%",
     minWidth: "var(--anchor-width)",
     maxWidth: "var(--available-width)",
-    borderWidth: tokenVars.borderWidth.thin,
-    borderStyle: "solid",
-    borderColor: semanticVars.border.default,
-    boxShadow: tokenVars.shadow.lg,
     transformOrigin: "var(--transform-origin)",
     transitionProperty: "transform, opacity",
     transitionDuration: "150ms",
@@ -151,12 +151,12 @@ export const separator = style([
   }),
 ]);
 
-export const groupLabel = style({
-  paddingBlock: tokenVars.spacing["1"],
-  paddingInline: tokenVars.spacing["2"],
-  fontSize: tokenVars.fontSize.xs,
-  fontWeight: tokenVars.fontWeight.medium,
-  color: semanticVars.text.secondary,
+export const groupLabel = baseSprinkles({
+  py: "1",
+  px: "2",
+  fontSize: "xs",
+  fontWeight: "medium",
+  color: "secondary",
 });
 
 export const empty = style([
@@ -170,21 +170,17 @@ export const empty = style([
   }),
 ]);
 
-export const list = style({
-  padding: tokenVars.spacing.xs,
+export const list = baseSprinkles({
+  padding: "xs",
 });
 
-export const status = style([
-  baseSprinkles({
-    color: "secondary",
-  }),
-  style({
-    paddingInline: tokenVars.spacing.md,
-    paddingBlock: tokenVars.spacing.sm,
-    fontSize: tokenVars.fontSize.xs,
-    fontWeight: tokenVars.fontWeight.medium,
-  }),
-]);
+export const status = baseSprinkles({
+  color: "secondary",
+  px: "md",
+  py: "sm",
+  fontSize: "xs",
+  fontWeight: "medium",
+});
 
 export const item = style([
   baseSprinkles({
@@ -192,15 +188,15 @@ export const item = style([
     align: "center",
     gap: "sm",
     color: "primary",
+    px: "sm",
+    py: "1",
+    radius: "md",
+    fontSize: "md",
+    cursor: "default",
   }),
   style({
-    paddingInline: tokenVars.spacing.sm,
-    paddingBlock: tokenVars.spacing["1"],
-    borderRadius: tokenVars.borderRadius.md,
-    cursor: "default",
     userSelect: "none",
     outline: "none",
     minHeight: "32px",
-    fontSize: tokenVars.fontSize.md,
   }),
 ]);

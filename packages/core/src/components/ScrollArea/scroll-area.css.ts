@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars } from "@blenx-dev/theme/contract";
 import { baseSprinkles } from "../../utils/sprinkles";
 
 export const root = style([
@@ -50,20 +50,15 @@ export const contentFill = baseSprinkles({
 export const scrollbar = style([
   baseSprinkles({
     display: "flex",
+    margin: "xs",
   }),
   style({
-    margin: tokenVars.spacing.xs,
     opacity: 0,
     transitionProperty: "opacity",
     transitionDuration: "300ms",
     transitionTimingFunction: "ease",
     selectors: {
-      "&[data-hovering]": {
-        opacity: 1,
-        transitionDelay: "0ms",
-        transitionDuration: "100ms",
-      },
-      "&[data-scrolling]": {
+      "&[data-hovering] &[data-scrolling]": {
         opacity: 1,
         transitionDelay: "0ms",
         transitionDuration: "100ms",

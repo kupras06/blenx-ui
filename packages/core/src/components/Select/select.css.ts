@@ -2,17 +2,13 @@ import { style } from "@vanilla-extract/css";
 import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 import { baseSprinkles } from "../../utils/sprinkles";
 
-export const label = style([
-  baseSprinkles({
-    fontSize: "xs",
-    color: "secondary",
-    px: "xs",
-  }),
-  style({
-    paddingBottom: tokenVars.spacing.xs,
-    fontWeight: tokenVars.fontWeight.semibold,
-  }),
-]);
+export const label = baseSprinkles({
+  fontSize: "xs",
+  color: "secondary",
+  px: "xs",
+  paddingBottom: "xs",
+  fontWeight: "semibold",
+});
 
 export const trigger = style([
   baseSprinkles({
@@ -25,19 +21,18 @@ export const trigger = style([
     color: "primary",
     backgroundColor: "surface",
     radius: "md",
+    py: "sm",
+    borderWidth: "thin",
+    borderStyle: "solid",
+    cursor: "pointer",
   }),
   style({
-    paddingTop: tokenVars.spacing.sm,
-    paddingBottom: tokenVars.spacing.sm,
     paddingLeft: tokenVars.spacing.md,
     paddingRight: tokenVars.spacing.sm,
     lineHeight: "1.5",
     fontFamily: "inherit",
-    borderWidth: 1,
-    borderStyle: "solid",
     borderColor: semanticVars.border.default,
     outline: "none",
-    cursor: "pointer",
     transition: "border-color 0.15s ease, box-shadow 0.15s ease",
     selectors: {
       "&:hover": {
@@ -94,14 +89,13 @@ export const popup = style([
     radius: "lg",
     zIndex: "modal",
     overflow: "auto",
+    borderWidth: "thin",
+    borderStyle: "solid",
+    boxShadow: "lg",
   }),
   style({
     maxHeight: 300,
-    borderWidth: 1,
-    borderStyle: "solid",
     borderColor: semanticVars.border.default,
-    boxShadow: tokenVars.shadow.lg,
-    zIndex: 1400,
     minWidth: "var(--anchor-width)",
     maxWidth: "var(--available-width)",
     outline: "none",
@@ -124,11 +118,11 @@ export const item = style([
     radius: "sm",
     fontSize: "sm",
     color: "primary",
+    cursor: "pointer",
   }),
   style({
     minHeight: 32,
     lineHeight: "1.4",
-    cursor: "pointer",
     userSelect: "none",
     selectors: {
       "&:hover": {
@@ -179,18 +173,14 @@ export const separator = style([
   }),
 ]);
 
-export const groupLabel = style([
-  baseSprinkles({
-    px: "sm",
-    fontSize: "xs",
-    color: "secondary",
-  }),
-  style({
-    paddingTop: tokenVars.spacing.sm,
-    paddingBottom: tokenVars.spacing.xs,
-    fontWeight: tokenVars.fontWeight.semibold,
-  }),
-]);
+export const groupLabel = baseSprinkles({
+  px: "sm",
+  fontSize: "xs",
+  color: "secondary",
+  paddingTop: "sm",
+  paddingBottom: "xs",
+  fontWeight: "semibold",
+});
 
 export const scrollArrow = style([
   baseSprinkles({
@@ -199,10 +189,10 @@ export const scrollArrow = style([
     justify: "center",
     width: "full",
     color: "secondary",
+    cursor: "pointer",
   }),
   style({
     height: 24,
-    cursor: "pointer",
     selectors: {
       "&:hover": {
         backgroundColor: semanticVars.background.subtle,

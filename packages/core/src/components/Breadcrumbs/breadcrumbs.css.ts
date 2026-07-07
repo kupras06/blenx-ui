@@ -32,36 +32,32 @@ export const list = style([
   }),
 ]);
 
-export const item = style([
-  baseSprinkles({
-    display: "inline-flex",
-    align: "center",
-  }),
+export const item = baseSprinkles({
+  display: "inline-flex",
+  align: "center",
+  gap: "6",
+});
+
+export const link = style([
+  baseSprinkles({ cursor: "pointer" }),
   style({
-    gap: 6,
+    color: "inherit",
+    textDecoration: "none",
+    transitionProperty: "color",
+    transitionDuration: "150ms",
+    transitionTimingFunction: "ease",
+    selectors: {
+      "&:hover": {
+        color: semanticVars.text.primary,
+      },
+    },
   }),
 ]);
-
-export const link = style({
-  color: "inherit",
-  textDecoration: "none",
-  cursor: "pointer",
-  transitionProperty: "color",
-  transitionDuration: "150ms",
-  transitionTimingFunction: "ease",
-  selectors: {
-    "&:hover": {
-      color: semanticVars.text.primary,
-    },
-  },
-});
 
 export const page = style([
   baseSprinkles({
     color: "primary",
-  }),
-  style({
-    fontWeight: 400,
+    fontWeight: "regular",
   }),
 ]);
 
@@ -75,14 +71,16 @@ export const ellipsis = baseSprinkles({
   align: "center",
 });
 
-export const srOnly = style({
-  position: "absolute",
-  width: 1,
-  height: 1,
-  padding: 0,
-  margin: -1,
-  overflow: "hidden",
-  clip: "rect(0, 0, 0, 0)",
-  whiteSpace: "nowrap",
-  borderWidth: 0,
-});
+export const srOnly = style([
+  baseSprinkles({ borderWidth: "none" }),
+  style({
+    position: "absolute",
+    width: 1,
+    height: 1,
+    padding: 0,
+    margin: -1,
+    overflow: "hidden",
+    clip: "rect(0, 0, 0, 0)",
+    whiteSpace: "nowrap",
+  }),
+]);

@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars } from "@blenx-dev/theme/contract";
 import { baseSprinkles } from "../../utils/sprinkles";
 
 export const root = style([
@@ -11,13 +11,13 @@ export const root = style([
     shrink: 0,
     radius: "sm",
     backgroundColor: "canvas",
+    borderStyle: "solid",
+    borderWidth: "thin",
+    borderColor: "default",
   }),
   style({
     width: 18,
     height: 18,
-    borderWidth: tokenVars.borderWidth.thin,
-    borderStyle: "solid",
-    borderColor: semanticVars.border.default,
     outline: "none",
     transitionProperty: "box-shadow",
     transitionDuration: "150ms",
@@ -35,10 +35,10 @@ export const root = style([
   }),
 ]);
 
-export const rootDisabled = style({
-  cursor: "not-allowed",
-  opacity: 0.64,
-});
+export const rootDisabled = style([
+  baseSprinkles({ cursor: "not-allowed" }),
+  style({ opacity: 0.64 }),
+]);
 
 export const group = baseSprinkles({
   display: "flex",

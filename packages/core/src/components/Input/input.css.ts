@@ -22,9 +22,9 @@ export const inputStyle = style([
     fontSize: "md",
     lineHeight: "normal",
     borderWidth: "thin",
+    borderStyle: "solid",
   }),
   style({
-    borderStyle: "solid",
     borderColor: semanticVars.border.default,
     outline: "none",
     selectors: {

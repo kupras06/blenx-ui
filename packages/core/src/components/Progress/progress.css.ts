@@ -35,14 +35,10 @@ export const indicator = style([
   }),
 ]);
 
-export const progressLabel = style([
-  baseSprinkles({
-    fontSize: "md",
-  }),
-  style({
-    fontWeight: tokenVars.fontWeight.medium,
-  }),
-]);
+export const progressLabel = baseSprinkles({
+  fontSize: "md",
+  fontWeight: "medium",
+});
 
 export const value = style([
   baseSprinkles({

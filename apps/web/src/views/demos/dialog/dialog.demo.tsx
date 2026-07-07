@@ -47,7 +47,7 @@ export function NoCloseStory() {
 export function LongContentStory() {
   return (
     <Dialog>
-      <DialogTrigger render={<Button variant="outline" />}>Long Content</DialogTrigger>
+      <DialogTrigger render={<Button variant="ghost" />}>Long Content</DialogTrigger>
       <DialogContent>
         <DialogHeader>
           <DialogTitle>Terms of Service</DialogTitle>
@@ -89,7 +89,7 @@ export function LongContentStory() {
         </DialogPanel>
         <DialogFooter>
           <HStack gap="sm" justify="end" wrap>
-            <DialogClose render={<Button variant="ghost" />}>Decline</DialogClose>
+            <DialogClose render={<Button variant="ghost" intent="danger" />}>Decline</DialogClose>
             <Button>Accept</Button>
           </HStack>
         </DialogFooter>
@@ -101,7 +101,7 @@ export function LongContentStory() {
 export function DialogDemo() {
   return (
     <Dialog>
-      <DialogTrigger render={<Button variant="outline" />}>Form Dialog</DialogTrigger>
+      <DialogTrigger render={<Button variant="soft" />}>Form Dialog</DialogTrigger>
       <DialogContent>
         <DialogHeader>
           <DialogTitle>Create Project</DialogTitle>

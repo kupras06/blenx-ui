@@ -1,6 +1,12 @@
-import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
+import { tokenVars } from "@blenx-dev/theme/contract";
 import { defineProperties, createSprinkles } from "@vanilla-extract/sprinkles";
-import { colors, containerWidths, responsiveConditions, spacing } from "./sprinkles.tokens";
+import {
+  backgroundColors,
+  colors,
+  containerWidths,
+  responsiveConditions,
+  spacing,
+} from "./sprinkles.tokens";
 
 const borderRadiusVals = {
   default: tokenVars.borderRadius.default,
@@ -36,6 +42,16 @@ const borderProperties = defineProperties({
     borderBottomWidth: borderWidthVals,
     borderLeftWidth: borderWidthVals,
     borderRightWidth: borderWidthVals,
+    borderStyle: ["solid"],
+    borderTopStyle: ["solid"],
+    borderBottomStyle: ["solid"],
+    borderLeftStyle: ["solid"],
+    borderRightStyle: ["solid"],
+    borderColor: backgroundColors,
+    borderTopColor: {
+      subtle: backgroundColors.subtle,
+    },
+    cursor: ["pointer", "not-allowed", "text", "default", "col-resize", "row-resize"],
   },
   shorthands: {
     radius: [
@@ -81,25 +97,7 @@ const layoutProperties = defineProperties({
 const colorProperties = defineProperties({
   properties: {
     color: colors,
-    backgroundColor: {
-      primary: semanticVars.color.primary.default,
-      primaryHover: semanticVars.color.primary.hover,
-      primaryActive: semanticVars.color.primary.active,
-      secondary: semanticVars.color.secondary.default,
-      secondaryHover: semanticVars.color.secondary.hover,
-      secondaryActive: semanticVars.color.secondary.active,
-      surface: semanticVars.surface.default,
-      canvas: semanticVars.background.default,
-      subtle: semanticVars.background.subtle,
-      default: "inherit",
-      transparent: "transparent",
-      disabled: semanticVars.background.subtle,
-      error: semanticVars.color.danger.bg,
-      success: semanticVars.color.success.bg,
-      warning: semanticVars.color.warning.bg,
-      info: semanticVars.color.info.bg,
-    },
-    borderColor: colors,
+    backgroundColor: backgroundColors,
     boxShadow: {
       sm: tokenVars.shadow.sm,
       md: tokenVars.shadow.md,

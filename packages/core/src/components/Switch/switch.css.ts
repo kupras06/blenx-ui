@@ -8,11 +8,11 @@ export const root = style([
     align: "center",
     radius: "full",
     backgroundColor: "secondary",
+    cursor: "pointer",
   }),
   style({
     width: tokenVars.spacing.xxl,
     height: tokenVars.spacing.lg,
-    cursor: "pointer",
     transitionProperty: "background-color",
     transitionDuration: "150ms",
     selectors: {
@@ -29,10 +29,10 @@ export const rootChecked = baseSprinkles({
   backgroundColor: "primary",
 });
 
-export const rootDisabled = style({
-  cursor: "not-allowed",
-  opacity: 0.35,
-});
+export const rootDisabled = style([
+  baseSprinkles({ cursor: "not-allowed" }),
+  style({ opacity: 0.35 }),
+]);
 
 export const thumb = style([
   baseSprinkles({

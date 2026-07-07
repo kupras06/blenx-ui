@@ -26,26 +26,34 @@ export const viewport = style({
   inset: 0,
 });
 
-export const viewportBottom = style({
-  display: "grid",
-  gridTemplateRows: "1fr auto",
-  paddingTop: tokenVars.spacing.xxl,
-});
+export const viewportBottom = style([
+  baseSprinkles({
+    display: "grid",
+    paddingTop: "xxl",
+  }),
+  style({
+    gridTemplateRows: "1fr auto",
+  }),
+]);
 
-export const viewportTop = style({
-  display: "grid",
-  gridTemplateRows: "auto 1fr",
-  paddingBottom: tokenVars.spacing.xxl,
-});
+export const viewportTop = style([
+  baseSprinkles({
+    display: "grid",
+    paddingBottom: "xxl",
+  }),
+  style({
+    gridTemplateRows: "auto 1fr",
+  }),
+]);
 
-export const viewportLeft = style({
+export const viewportLeft = baseSprinkles({
   display: "flex",
-  justifyContent: "flex-start",
+  justify: "start",
 });
 
-export const viewportRight = style({
+export const viewportRight = baseSprinkles({
   display: "flex",
-  justifyContent: "flex-end",
+  justify: "end",
 });
 
 export const viewportInset = style({
@@ -64,15 +72,15 @@ export const popup = style([
     width: "full",
     backgroundColor: "surface",
     color: "primary",
+    boxShadow: "lg",
+    borderStyle: "solid",
   }),
   style({
     maxHeight: "100svh%",
     minHeight: 0,
     minWidth: 0,
-    borderStyle: "solid",
     borderColor: semanticVars.border.default,
     outline: "none",
-    boxShadow: tokenVars.shadow.lg,
     willChange: "translate",
     transitionProperty: "opacity, translate",
     transitionDuration: "200ms",
@@ -93,78 +101,98 @@ export const popup = style([
   }),
 ]);
 
-export const popupBottom = style({
-  gridRowStart: 2,
-  borderTopWidth: tokenVars.borderWidth.thin,
-  borderTopLeftRadius: tokenVars.borderRadius.xl,
-  borderTopRightRadius: tokenVars.borderRadius.xl,
+export const popupBottom = style([
+  baseSprinkles({
+    borderTopWidth: "thin",
+    borderTopLeftRadius: "xl",
+    borderTopRightRadius: "xl",
+  }),
+  style({
+    gridRowStart: 2,
+  }),
+]);
+
+export const popupTop = baseSprinkles({
+  borderBottomWidth: "thin",
+  borderBottomLeftRadius: "xl",
+  borderBottomRightRadius: "xl",
 });
 
-export const popupTop = style({
-  borderBottomWidth: tokenVars.borderWidth.thin,
-  borderBottomLeftRadius: tokenVars.borderRadius.xl,
-  borderBottomRightRadius: tokenVars.borderRadius.xl,
-});
+export const popupLeft = style([
+  baseSprinkles({
+    borderRightWidth: "thin",
+    borderTopRightRadius: "xl",
+    borderBottomRightRadius: "xl",
+  }),
+  style({
+    width: "calc(100% - 48px)",
+    maxWidth: "28rem",
+  }),
+]);
 
-export const popupLeft = style({
-  width: "calc(100% - 48px)",
-  maxWidth: "28rem",
-  borderRightWidth: tokenVars.borderWidth.thin,
-  borderTopRightRadius: tokenVars.borderRadius.xl,
-  borderBottomRightRadius: tokenVars.borderRadius.xl,
-});
+export const popupRight = style([
+  baseSprinkles({
+    borderLeftWidth: "thin",
+    borderTopLeftRadius: "xl",
+    borderBottomLeftRadius: "xl",
+  }),
+  style({
+    width: "calc(100% - 48px)",
+    maxWidth: "28rem",
+  }),
+]);
 
-export const popupRight = style({
-  width: "calc(100% - 48px)",
-  maxWidth: "28rem",
-  borderLeftWidth: tokenVars.borderWidth.thin,
-  borderTopLeftRadius: tokenVars.borderRadius.xl,
-  borderBottomLeftRadius: tokenVars.borderRadius.xl,
-});
-
-export const popupInset = style({
-  borderRadius: 0,
-  borderWidth: 0,
-  "::before": {
-    content: "none",
-  },
-  "@media": {
-    "(min-width: 640px)": {
-      borderRadius: tokenVars.borderRadius.xl,
-      borderWidth: tokenVars.borderWidth.thin,
+export const popupInset = style([
+  baseSprinkles({
+    radius: "none",
+    borderWidth: "none",
+  }),
+  style({
+    "::before": {
+      content: "none",
     },
-  },
-});
+    "@media": {
+      "(min-width: 640px)": {
+        borderRadius: tokenVars.borderRadius.xl,
+        borderWidth: tokenVars.borderWidth.thin,
+      },
+    },
+  }),
+]);
 
 export const footerDefault = style([
   baseSprinkles({
     backgroundColor: "subtle",
     py: "md",
+    borderTopWidth: "thin",
+    borderTopStyle: "solid",
   }),
   style({
-    borderTopWidth: tokenVars.borderWidth.thin,
-    borderTopStyle: "solid",
     borderTopColor: semanticVars.border.subtle,
   }),
 ]);
 
-export const footerBare = style({
-  paddingTop: tokenVars.spacing.md,
-  paddingBottom: tokenVars.spacing.lg,
+export const footerBare = baseSprinkles({
+  paddingTop: "md",
+  paddingBottom: "lg",
 });
 
-export const title = style({
-  fontSize: tokenVars.fontSize.xl,
-  lineHeight: 1,
-  fontWeight: tokenVars.fontWeight.semibold,
-});
+export const title = style([
+  baseSprinkles({
+    fontSize: "xl",
+    fontWeight: "semibold",
+  }),
+  style({
+    lineHeight: 1,
+  }),
+]);
 
 export const description = style([
   baseSprinkles({
     color: "secondary",
+    fontSize: "sm",
   }),
   style({
-    fontSize: tokenVars.fontSize.sm,
     lineHeight: 1.4,
   }),
 ]);

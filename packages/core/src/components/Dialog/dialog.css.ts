@@ -16,9 +16,9 @@ export const footerDefault = style([
     backgroundColor: "subtle",
     py: "md",
     borderTopWidth: "thin",
+    borderTopStyle: "solid",
   }),
   style({
-    borderTopStyle: "solid",
     borderTopColor: semanticVars.border.subtle,
   }),
 ]);
@@ -31,11 +31,11 @@ export const footerBare = baseSprinkles({
 export const title = style([
   baseSprinkles({
     color: "primary",
+    fontWeight: "semibold",
   }),
   style({
     fontSize: "20px",
     lineHeight: 1,
-    fontWeight: 600,
   }),
 ]);
 

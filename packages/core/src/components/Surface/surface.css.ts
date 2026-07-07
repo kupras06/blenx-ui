@@ -10,16 +10,12 @@ export const variantRecipe = recipe({
       default: baseSprinkles({
         backgroundColor: "surface",
       }),
-      outline: [
-        baseSprinkles({
-          backgroundColor: "surface",
-          borderColor: "default",
-        }),
-        style({
-          borderWidth: 1,
-          borderStyle: "solid",
-        }),
-      ],
+      outline: baseSprinkles({
+        backgroundColor: "surface",
+        borderColor: "default",
+        borderWidth: "thin",
+        borderStyle: "solid",
+      }),
       raised: [
         baseSprinkles({
           boxShadow: "md",
@@ -33,18 +29,20 @@ export const variantRecipe = recipe({
       }),
     },
     interactive: {
-      true: {
-        cursor: "pointer",
-        selectors: {
-          "&:hover": {
-            backgroundColor: semanticVars.background.subtle,
+      true: [
+        baseSprinkles({ cursor: "pointer" }),
+        style({
+          selectors: {
+            "&:hover": {
+              backgroundColor: semanticVars.background.subtle,
+            },
+            "&:focus-visible": {
+              outline: `2px solid ${semanticVars.focus.ring}`,
+              outlineOffset: "2px",
+            },
           },
-          "&:focus-visible": {
-            outline: `2px solid ${semanticVars.focus.ring}`,
-            outlineOffset: "2px",
-          },
-        },
-      },
+        }),
+      ],
     },
   },
 });

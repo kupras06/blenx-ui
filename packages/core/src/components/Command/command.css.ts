@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars } from "@blenx-dev/theme/contract";
 import { baseSprinkles } from "../../utils/sprinkles";
 
 export const root = style([
@@ -11,12 +11,12 @@ export const root = style([
     radius: "lg",
     backgroundColor: "surface",
     maxHeight: "full",
+    borderWidth: "thin",
+    borderStyle: "solid",
+    borderColor: "default",
+    boxShadow: "lg",
   }),
   style({
-    borderWidth: 1,
-    borderStyle: "solid",
-    borderColor: semanticVars.border.default,
-    boxShadow: tokenVars.shadow.lg,
     outline: "none",
   }),
 ]);
@@ -47,12 +47,12 @@ export const input = style([
     width: "full",
     fontSize: "sm",
     color: "primary",
+    backgroundColor: "transparent",
   }),
   style({
     height: 44,
     border: "none",
     outline: "none",
-    backgroundColor: "transparent",
     fontFamily: "inherit",
     selectors: {
       "&::placeholder": {
@@ -77,18 +77,14 @@ export const group = baseSprinkles({
   direction: "column",
 });
 
-export const groupHeading = style([
-  baseSprinkles({
-    px: "sm",
-    fontSize: "xs",
-    color: "secondary",
-  }),
-  style({
-    paddingTop: tokenVars.spacing.sm,
-    paddingBottom: tokenVars.spacing.xs,
-    fontWeight: tokenVars.fontWeight.semibold,
-  }),
-]);
+export const groupHeading = baseSprinkles({
+  px: "sm",
+  fontSize: "xs",
+  color: "secondary",
+  paddingTop: "sm",
+  paddingBottom: "xs",
+  fontWeight: "semibold",
+});
 
 export const item = style([
   baseSprinkles({
@@ -100,11 +96,11 @@ export const item = style([
     radius: "sm",
     fontSize: "sm",
     color: "primary",
+    cursor: "pointer",
   }),
   style({
     minHeight: 32,
     lineHeight: "1.4",
-    cursor: "pointer",
     userSelect: "none",
     outline: "none",
     selectors: {
@@ -125,9 +121,9 @@ export const itemActive = baseSprinkles({
 export const itemDisabled = style([
   baseSprinkles({
     color: "disabled",
+    cursor: "default",
   }),
   style({
-    cursor: "default",
     selectors: {
       "&:hover": {
         backgroundColor: "transparent",

@@ -1,5 +1,5 @@
 import { style, keyframes } from "@vanilla-extract/css";
-import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars } from "@blenx-dev/theme/contract";
 import { baseSprinkles } from "@blenx-dev/core";
 
 const pulse = keyframes({
@@ -12,7 +12,7 @@ export const actionsCell = baseSprinkles({
   gap: "4",
 });
 
-export const checkbox = style({
+export const checkbox = baseSprinkles({
   cursor: "pointer",
 });
 
@@ -24,21 +24,19 @@ export const fetchingBar = baseSprinkles({
   gap: "sm",
 });
 
-export const fetchingText = style({
-  color: semanticVars.text.secondary,
-  fontSize: "13px",
+export const fetchingText = baseSprinkles({
+  color: "secondary",
+  fontSize: "sm",
 });
 
 export const tableContainer = style([
   baseSprinkles({
     overflow: "auto",
     position: "relative",
-  }),
-  style({
-    borderRadius: tokenVars.borderRadius.md,
-    borderWidth: 1,
+    borderRadius: "md",
+    borderColor: "default",
+    borderWidth: "thin",
     borderStyle: "solid",
-    borderColor: semanticVars.border.default,
   }),
 ]);
 
@@ -109,7 +107,7 @@ export const thLg = style([
   }),
 ]);
 
-export const thSortable = style({
+export const thSortable = baseSprinkles({
   cursor: "pointer",
 });
 

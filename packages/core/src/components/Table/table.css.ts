@@ -22,14 +22,14 @@ export const header = style([
     px: "md",
     fontSize: "md",
     color: "secondary",
+    borderBottomWidth: "thin",
+    fontWeight: "semibold",
+    borderBottomStyle: "solid",
   }),
   style({
-    fontWeight: 600,
     textAlign: "left",
     textTransform: "uppercase",
     letterSpacing: "0.05em",
-    borderBottomWidth: 1,
-    borderBottomStyle: "solid",
     borderBottomColor: semanticVars.border.default,
     whiteSpace: "nowrap",
     userSelect: "none",
@@ -50,10 +50,10 @@ export const cell = style([
     py: "sm",
     px: "md",
     fontSize: "md",
+    borderBottomWidth: "thin",
+    borderBottomStyle: "solid",
   }),
   style({
-    borderBottomWidth: 1,
-    borderBottomStyle: "solid",
     borderBottomColor: semanticVars.border.subtle,
     whiteSpace: "nowrap",
     overflow: "hidden",
@@ -65,12 +65,12 @@ export const wrapper = style([
   baseSprinkles({
     radius: "default",
     maxWidth: "full",
+    borderWidth: "thin",
+    borderStyle: "solid",
+    overflow: "auto",
   }),
   style({
-    borderWidth: 1,
-    borderStyle: "solid",
     borderColor: semanticVars.border.default,
-    overflowX: "auto",
   }),
 ]);
 

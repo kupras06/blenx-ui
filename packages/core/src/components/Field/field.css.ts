@@ -14,14 +14,14 @@ export const label = style([
     display: "inline-flex",
     align: "center",
     fontSize: "md",
+    fontWeight: "regular",
   }),
   style({
-    fontWeight: 400,
     color: "inherit",
   }),
 ]);
 
-export const item = style({
+export const item = baseSprinkles({
   display: "flex",
   flex: 1,
 });

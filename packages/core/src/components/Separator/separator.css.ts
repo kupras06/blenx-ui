@@ -1,17 +1,14 @@
 import { recipe } from "@vanilla-extract/recipes";
 import { style } from "@vanilla-extract/css";
-import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars } from "@blenx-dev/theme/contract";
 import { baseSprinkles } from "../../utils/sprinkles";
 
 export const separator = recipe({
-  base: {
-    flexShrink: 0,
-    backgroundColor: "currentColor",
-  },
+  base: [baseSprinkles({ shrink: 0 }), style({ backgroundColor: "currentColor" })],
   variants: {
     orientation: {
-      horizontal: { flexGrow: 1, height: 1 },
-      vertical: { width: 1, height: "full" },
+      horizontal: [baseSprinkles({ grow: 1 }), style({ height: 1 })],
+      vertical: [baseSprinkles({ height: "full" }), style({ width: 1 })],
     },
     tone: {
       subtle: { color: semanticVars.border.subtle },
@@ -30,9 +27,9 @@ export const withLabel = style([
     align: "center",
     gap: "sm",
     width: "full",
+    backgroundColor: "transparent",
   }),
   style({
-    backgroundColor: "transparent",
     selectors: {
       "&::before": {
         content: '""',
@@ -57,9 +54,9 @@ export const label = style([
     px: "xs",
     color: "secondary",
     fontSize: "xs",
+    fontWeight: "medium",
   }),
   style({
-    fontWeight: tokenVars.fontWeight.medium,
     lineHeight: 1.2,
     whiteSpace: "nowrap",
   }),
