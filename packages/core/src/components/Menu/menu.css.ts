@@ -36,7 +36,7 @@ export const popup = style([
     zIndex: "floating",
     padding: "xs",
     display: "flex",
-    gap: "1",
+    gap: "xs",
     direction: "column",
     overflow: "hidden",
     borderWidth: "thin",

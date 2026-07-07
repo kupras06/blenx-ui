@@ -16,7 +16,7 @@ export function Field({
     display: "flex",
     direction: "column",
     align: "start",
-    gap: "2",
+    gap: "sm",
     flex: 1,
     ...props,
   });

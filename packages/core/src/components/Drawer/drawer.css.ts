@@ -323,7 +323,7 @@ export const menuCheckboxSwitchIndicator = style([
   baseSprinkles({
     display: "inline-flex",
     align: "center",
-    padding: "2",
+    padding: "sm",
     radius: "full",
   }),
   style({

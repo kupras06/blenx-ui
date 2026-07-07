@@ -29,15 +29,12 @@ export const rootChecked = baseSprinkles({
   backgroundColor: "primary",
 });
 
-export const rootDisabled = style([
-  baseSprinkles({ cursor: "not-allowed" }),
-  style({ opacity: 0.35 }),
-]);
+export const rootDisabled = style([baseSprinkles({ cursor: "not-allowed", opacity: "0.5" })]);
 
 export const thumb = style([
   baseSprinkles({
     radius: "full",
-    backgroundColor: "disabled",
+    backgroundColor: "subtle",
   }),
   style({
     width: tokenVars.spacing.lg,
@@ -52,7 +49,7 @@ export const thumb = style([
 
 export const thumbChecked = style([
   baseSprinkles({
-    backgroundColor: "primaryActive",
+    backgroundColor: "primary",
   }),
   style({
     transform: `translateX(${tokenVars.spacing["lg"]})`,

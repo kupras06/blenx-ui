@@ -6,7 +6,7 @@ import { baseSprinkles } from "../../utils/sprinkles";
 export const root = baseSprinkles({
   display: "flex",
   align: "center",
-  gap: "1",
+  gap: "xs",
 });
 
 export const input = recipe({

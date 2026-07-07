@@ -10,6 +10,8 @@ import {
   inset,
   shortcut,
 } from "./menu.css";
+import { applyBaseSprinkles } from "../../utils/ve-style.utils";
+import type { BaseSprinkles } from "../../utils/sprinkles.css";
 
 interface MenuProps extends MenuPrimitive.Root.Props {
   variant?: "default" | "destructive";
@@ -20,16 +22,25 @@ function MenuTrigger({
   className,
   style,
   ...props
-}: MenuPrimitive.Trigger.Props & { className?: string; style?: React.CSSProperties }) {
-  return <MenuPrimitive.Trigger className={clsx(trigger, className)} style={style} {...props} />;
+}: MenuPrimitive.Trigger.Props &
+  BaseSprinkles & { className?: string; style?: React.CSSProperties }) {
+  const [boxProps, restProps] = applyBaseSprinkles(props);
+  return (
+    <MenuPrimitive.Trigger
+      className={clsx(trigger, boxProps, className)}
+      style={style}
+      {...restProps}
+    />
+  );
 }
 
-type MenuPopupProps = MenuPrimitive.Popup.Props & {
-  align?: "start" | "center" | "end";
-  sideOffset?: number;
-  className?: string;
-  style?: React.CSSProperties;
-};
+type MenuPopupProps = MenuPrimitive.Popup.Props &
+  BaseSprinkles & {
+    align?: "start" | "center" | "end";
+    sideOffset?: number;
+    className?: string;
+    style?: React.CSSProperties;
+  };
 
 function MenuPopup({
   align = "start",
@@ -38,67 +49,83 @@ function MenuPopup({
   style,
   ...props
 }: MenuPopupProps) {
+  const [boxProps, restProps] = applyBaseSprinkles(props);
   return (
     <MenuPrimitive.Portal>
       <MenuPrimitive.Positioner align={align} sideOffset={sideOffset}>
-        <MenuPrimitive.Popup className={clsx(popup, className)} style={style} {...props} />
+        <MenuPrimitive.Popup
+          className={clsx(popup, boxProps, className)}
+          style={style}
+          {...restProps}
+        />
       </MenuPrimitive.Positioner>
     </MenuPrimitive.Portal>
   );
 }
 
-type MenuItemProps = MenuPrimitive.Item.Props & {
-  variant?: "default" | "destructive";
-  className?: string;
-  style?: React.CSSProperties;
-};
+type MenuItemProps = MenuPrimitive.Item.Props &
+  BaseSprinkles & {
+    variant?: "default" | "destructive";
+    className?: string;
+    style?: React.CSSProperties;
+  };
 
 function MenuItem({ variant = "default", className, style, ...props }: MenuItemProps) {
+  const [boxProps, restProps] = applyBaseSprinkles(props);
   return (
     <MenuPrimitive.Item
-      className={clsx(item, variant === "destructive" && itemDestructive, className)}
+      className={clsx(item, variant === "destructive" && itemDestructive, boxProps, className)}
       style={style}
-      {...props}
+      {...restProps}
     />
   );
 }
 
-type MenuSeparatorProps = MenuPrimitive.Separator.Props & {
-  className?: string;
-  style?: React.CSSProperties;
-};
+type MenuSeparatorProps = MenuPrimitive.Separator.Props &
+  BaseSprinkles & {
+    className?: string;
+    style?: React.CSSProperties;
+  };
 
 function MenuSeparator({ className, style, ...props }: MenuSeparatorProps) {
+  const [boxProps, restProps] = applyBaseSprinkles(props);
   return (
-    <MenuPrimitive.Separator className={clsx(separator, className)} style={style} {...props} />
-  );
-}
-
-type MenuGroupLabelProps = MenuPrimitive.GroupLabel.Props & {
-  inset?: boolean;
-  className?: string;
-  style?: React.CSSProperties;
-};
-
-function MenuGroupLabel({ inset: hasInset, className, style, ...props }: MenuGroupLabelProps) {
-  return (
-    <MenuPrimitive.GroupLabel
-      className={clsx(groupLabel, hasInset && inset, className)}
+    <MenuPrimitive.Separator
+      className={clsx(separator, boxProps, className)}
       style={style}
-      {...props}
+      {...restProps}
     />
   );
 }
 
-type MenuShortcutProps = {
+type MenuGroupLabelProps = MenuPrimitive.GroupLabel.Props &
+  BaseSprinkles & {
+    inset?: boolean;
+    className?: string;
+    style?: React.CSSProperties;
+  };
+
+function MenuGroupLabel({ inset: hasInset, className, style, ...props }: MenuGroupLabelProps) {
+  const [boxProps, restProps] = applyBaseSprinkles(props);
+  return (
+    <MenuPrimitive.GroupLabel
+      className={clsx(groupLabel, hasInset && inset, boxProps, className)}
+      style={style}
+      {...restProps}
+    />
+  );
+}
+
+type MenuShortcutProps = BaseSprinkles & {
   children?: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
 };
 
-function MenuShortcut({ children, className, style }: MenuShortcutProps) {
+function MenuShortcut({ children, className, style, ...props }: MenuShortcutProps) {
+  const [boxProps, restProps] = applyBaseSprinkles(props);
   return (
-    <span className={clsx(shortcut, className)} style={style}>
+    <span className={clsx(shortcut, boxProps, className)} style={style} {...restProps}>
       {children}
     </span>
   );

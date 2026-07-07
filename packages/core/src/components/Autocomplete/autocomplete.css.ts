@@ -149,8 +149,8 @@ export const separator = style([
 ]);
 
 export const groupLabel = baseSprinkles({
-  py: "1",
-  px: "2",
+  py: "xs",
+  px: "sm",
   fontSize: "xs",
   fontWeight: "medium",
   color: "secondary",
@@ -185,7 +185,7 @@ export const item = style([
     gap: "sm",
     color: "primary",
     px: "sm",
-    py: "1",
+    py: "xs",
     radius: "md",
     fontSize: "md",
     cursor: "default",

@@ -6,7 +6,7 @@ export const root = baseSprinkles({
   display: "flex",
   direction: "column",
   width: "full",
-  gap: "2",
+  gap: "sm",
 });
 
 export const track = style([

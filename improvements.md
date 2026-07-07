@@ -14,6 +14,7 @@ Currently, `responsiveConditions` defines **5 breakpoints** (`base`, `sm`, `md`,
 
 - **Impact**: For every responsive property (padding, margin, flex, grid, etc.), it generates 5 media query selectors.
 - **Suggestion**: Consolidate to **3 breakpoints** (e.g., `base`, `md`, `lg` / Mobile, Tablet, Desktop) which is sufficient for most application layouts. This reduces generated responsive CSS size by ~40%.
+- **Status**: ✅ Removed `sm` (640px) and `xl` (1536px) — unused in component code. Kept `base`, `md` (768px), `lg` (1280px).
 
 ### 1.2. Consolidate Dual Spacing Scales
 
@@ -23,6 +24,7 @@ Currently, `sprinkles.tokens.ts` contains a dual scale:
 - Tailwind-like numeric tokens: `0`, `0.5`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `12`, `16`, `20`, `24`, `32`, `40`, `48`.
 - **Impact**: Having two overlapping scales doubles the classes generated for properties like `padding`, `margin`, `gap`, `top`, `bottom`, `left`, and `right`.
 - **Suggestion**: Unify on a single standard spacing scale (either named or numeric), or significantly prune unused numeric keys in the utility stylesheet.
+- **Status**: ✅ Pruned unused numeric keys: removed `0.5`, `1`, `2`, `5`, `7`, `9`, `12`, `16`, `20`, `24`, `32`. Kept only the ones with actual usage: `0`, `3`, `4`, `6`, `8`, `10`, `40`, `48`. Updated all component CSS files to use named tokens (`sm`, `xs`) where `"1"` or `"2"` were previously used via `baseSprinkles()`.
 
 ### 1.3. Move Hover/Active States out of Sprinkles
 
@@ -30,6 +32,7 @@ Currently, `backgroundColors` in `sprinkles.tokens.ts` includes color tokens for
 
 - **Impact**: Generates utility classes like `bg="primaryHover"` that are rarely needed as static utility class names.
 - **Suggestion**: Interactive hover, active, and focus states are much better handled at the component recipe level (e.g., using `selectors: { '&:hover': ... }` in CSS-in-JS). Removing interactive states from sprinkles will prune many classes.
+- **Status**: ✅ Removed `primaryHover`, `primaryActive`, `secondaryHover`, `secondaryActive`, and `disabled` from `backgroundColors`. The only consumer was `Switch` (thumb `disabled`/`primaryActive`), updated to use `subtle`/`primary` respectively. The palette system now handles all interactive states at the component level.
 
 ---
 
@@ -52,6 +55,12 @@ Across components, styling (solid/outline/soft) and color (primary/danger/etc.) 
 - **Current State**: Components like `Button`, `Field`, `Text`, and `Box` use `applyBaseSprinkles` to expose layout, alignment, and spacing props to the consumer. However, input and interactive components like `Switch`, `Checkbox`, `Input`, `Dialog`, and `Menu` do not accept sprinkles on their roots.
 - **Impact**: Consumers are forced to wrap elements in `<Box>` or write custom CSS overrides just to apply a basic margin (`mt`, `mb`), align items, or set width/height.
 - **Suggestion**: Standardize all component props to extend `BaseSprinkles` and apply them to the root wrapper element, providing a consistent API for layout customizations.
+- **Status**: ✅ All five component families now accept `BaseSprinkles` props on their roots:
+  - `Input` — accepts layout/spacing/color sprinkles on the `<InputPrimitive>` root
+  - `Switch` — accepts sprinkles on the `<span>` root
+  - `Checkbox` — accepts sprinkles on the `<span>` root
+  - `Menu` — `MenuTrigger`, `MenuPopup`, `MenuItem`, `MenuSeparator`, `MenuGroupLabel`, `MenuShortcut` all accept sprinkles
+  - `Dialog` — `DialogTrigger`, `DialogClose`, `DialogBackdrop`, `DialogViewport`, `DialogPopup`, `DialogHeader`, `DialogFooter`, `DialogTitle`, `DialogDescription`, `DialogPanel` all accept sprinkles
 
 ### 2.3. Fix the Default `borderRadius` Leak in `applyBaseSprinkles`
 

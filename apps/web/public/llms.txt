@@ -53,5 +53,6 @@ Design system built for React with Vanilla Extract. Accessible, themeable, and c
 - [Textarea](/ai/textarea.md): Textarea provides a multi-line text input for longer-form content entry.
 - [Toggle Group](/ai/toggle-group.md): Toggle Group manages a collection of toggle buttons where users can select multiple options within a category.
 - [Toggle](/ai/toggle.md): Toggle provides a two-state button that switches between active and inactive visual states.
+- [AspectRatio](/ai/aspect-ratio.md): A container that maintains a specific aspect ratio for its child content. Useful for embeds, images, and responsive media.
 - [CloseButton](/ai/close-button.md): Close button component using IconButton from Blenx UI.
 - [CopyButton](/ai/copy-button.md): Copy button component using IconButton from Blenx UI.

@@ -13,7 +13,7 @@
       "keyboard": ["Enter", "Space"],
       "aria": ["aria-expanded", "aria-controls", "aria-labelledby"]
     },
-    "hasExamples": true,
+    "hasExamples": false,
     "hasSections": true,
     "aiUrl": "/ai/accordion.md"
   },
@@ -31,7 +31,7 @@
       "keyboard": ["Escape"],
       "aria": ["role", "aria-modal", "aria-labelledby", "aria-describedby"]
     },
-    "hasExamples": true,
+    "hasExamples": false,
     "hasSections": true,
     "aiUrl": "/ai/alert-dialog.md"
   },
@@ -49,7 +49,7 @@
       "keyboard": [],
       "aria": ["role", "aria-live"]
     },
-    "hasExamples": true,
+    "hasExamples": false,
     "hasSections": true,
     "aiUrl": "/ai/alert.md"
   },
@@ -157,7 +157,7 @@
       "keyboard": ["Enter", "Space"],
       "aria": ["aria-disabled", "aria-label", "aria-describedby"]
     },
-    "hasExamples": true,
+    "hasExamples": false,
     "hasSections": true,
     "aiUrl": "/ai/button.md"
   },
@@ -193,7 +193,7 @@
       "keyboard": [],
       "aria": []
     },
-    "hasExamples": true,
+    "hasExamples": false,
     "hasSections": true,
     "aiUrl": "/ai/card.md"
   },
@@ -291,7 +291,7 @@
         "aria-haspopup"
       ]
     },
-    "hasExamples": true,
+    "hasExamples": false,
     "hasSections": true,
     "aiUrl": "/ai/command.md"
   },
@@ -370,7 +370,7 @@
       "keyboard": ["Escape"],
       "aria": ["role", "aria-modal", "aria-labelledby", "aria-describedby"]
     },
-    "hasExamples": true,
+    "hasExamples": false,
     "hasSections": true,
     "aiUrl": "/ai/dialog.md"
   },
@@ -388,7 +388,7 @@
       "keyboard": [],
       "aria": []
     },
-    "hasExamples": true,
+    "hasExamples": false,
     "hasSections": true,
     "aiUrl": "/ai/drawer.md"
   },
@@ -442,7 +442,7 @@
       "keyboard": ["Enter", "Space"],
       "aria": ["aria-label", "aria-disabled"]
     },
-    "hasExamples": true,
+    "hasExamples": false,
     "hasSections": true,
     "aiUrl": "/ai/icon-button.md"
   },
@@ -460,7 +460,7 @@
       "keyboard": [],
       "aria": ["aria-hidden"]
     },
-    "hasExamples": true,
+    "hasExamples": false,
     "hasSections": true,
     "aiUrl": "/ai/icon.md"
   },
@@ -478,7 +478,7 @@
       "keyboard": [],
       "aria": []
     },
-    "hasExamples": true,
+    "hasExamples": false,
     "hasSections": true,
     "aiUrl": "/ai/input-group.md"
   },
@@ -496,7 +496,7 @@
       "keyboard": [],
       "aria": []
     },
-    "hasExamples": true,
+    "hasExamples": false,
     "hasSections": true,
     "aiUrl": "/ai/input.md"
   },
@@ -514,7 +514,7 @@
       "keyboard": ["ArrowUp", "ArrowDown", "Enter", "Escape"],
       "aria": ["role", "aria-orientation"]
     },
-    "hasExamples": true,
+    "hasExamples": false,
     "hasSections": true,
     "aiUrl": "/ai/menu.md"
   },
@@ -532,7 +532,7 @@
       "keyboard": [],
       "aria": []
     },
-    "hasExamples": true,
+    "hasExamples": false,
     "hasSections": true,
     "aiUrl": "/ai/otp-field.md"
   },
@@ -550,7 +550,7 @@
       "keyboard": ["Escape"],
       "aria": ["role", "aria-labelledby", "aria-describedby"]
     },
-    "hasExamples": true,
+    "hasExamples": false,
     "hasSections": true,
     "aiUrl": "/ai/popover.md"
   },
@@ -640,7 +640,7 @@
       "keyboard": ["ArrowUp", "ArrowDown", "Enter", "Escape"],
       "aria": ["role", "aria-expanded", "aria-labelledby"]
     },
-    "hasExamples": true,
+    "hasExamples": false,
     "hasSections": true,
     "aiUrl": "/ai/select.md"
   },
@@ -676,7 +676,7 @@
       "keyboard": ["Escape"],
       "aria": ["role", "aria-modal", "aria-labelledby", "aria-describedby"]
     },
-    "hasExamples": true,
+    "hasExamples": false,
     "hasSections": true,
     "aiUrl": "/ai/sheet.md"
   },
@@ -712,7 +712,7 @@
       "keyboard": [],
       "aria": ["role", "aria-label"]
     },
-    "hasExamples": true,
+    "hasExamples": false,
     "hasSections": true,
     "aiUrl": "/ai/spinner.md"
   },
@@ -784,7 +784,7 @@
       "keyboard": ["Enter", "Space"],
       "aria": ["aria-checked", "aria-labelledby"]
     },
-    "hasExamples": true,
+    "hasExamples": false,
     "hasSections": true,
     "aiUrl": "/ai/switch.md"
   },
@@ -802,7 +802,7 @@
       "keyboard": [],
       "aria": ["role", "aria-colcount"]
     },
-    "hasExamples": true,
+    "hasExamples": false,
     "hasSections": true,
     "aiUrl": "/ai/table.md"
   },
@@ -820,7 +820,7 @@
       "keyboard": ["ArrowLeft", "ArrowRight", "Home", "End"],
       "aria": ["role", "aria-orientation", "aria-selected", "aria-labelledby", "role"]
     },
-    "hasExamples": true,
+    "hasExamples": false,
     "hasSections": true,
     "aiUrl": "/ai/tabs.md"
   },
@@ -892,23 +892,41 @@
       "keyboard": [],
       "aria": ["aria-pressed"]
     },
-    "hasExamples": true,
+    "hasExamples": false,
     "hasSections": true,
     "aiUrl": "/ai/toggle.md"
+  },
+  {
+    "name": "aspect-ratio",
+    "title": "AspectRatio",
+    "description": "A container that maintains a specific aspect ratio for its child content. Useful for embeds, images, and responsive media.",
+    "package": "@blenx-dev/core",
+    "category": "layout",
+    "status": "stable",
+    "keywords": ["aspect ratio", "ratio", "responsive", "embed", "image"],
+    "related": ["Box", "Container"],
+    "dependencies": [],
+    "accessibility": {
+      "keyboard": [],
+      "aria": []
+    },
+    "hasExamples": false,
+    "hasSections": false,
+    "aiUrl": "/ai/aspect-ratio.md"
   },
   {
     "name": "close-button",
     "title": "CloseButton",
     "description": "Close button component using IconButton from Blenx UI.",
     "package": "@blenx-dev/core",
-    "category": "primitives",
+    "category": "actions",
     "status": "stable",
-    "keywords": [],
-    "related": [],
+    "keywords": ["close", "dismiss", "x", "icon button", "modal close"],
+    "related": ["Button", "IconButton", "Dialog", "Drawer"],
     "dependencies": ["icon-button"],
     "accessibility": {
-      "keyboard": [],
-      "aria": []
+      "keyboard": ["Enter", "Space"],
+      "aria": ["aria-label"]
     },
     "hasExamples": false,
     "hasSections": false,
@@ -919,14 +937,14 @@
     "title": "CopyButton",
     "description": "Copy button component using IconButton from Blenx UI.",
     "package": "@blenx-dev/core",
-    "category": "primitives",
+    "category": "actions",
     "status": "stable",
-    "keywords": [],
-    "related": [],
+    "keywords": ["copy", "clipboard", "copy to clipboard", "icon button"],
+    "related": ["Button", "IconButton", "CloseButton"],
     "dependencies": ["icon-button"],
     "accessibility": {
-      "keyboard": [],
-      "aria": []
+      "keyboard": ["Enter", "Space"],
+      "aria": ["aria-label", "title"]
     },
     "hasExamples": false,
     "hasSections": false,

@@ -13,29 +13,33 @@ import {
   icon,
 } from "./checkbox.css";
 import { SquareCheckIcon } from "../../icons";
+import { applyBaseSprinkles } from "../../utils/ve-style.utils";
+import type { BaseSprinkles } from "../../utils/sprinkles.css";
 
 type CheckboxGroupProps = CheckboxGroupPrimitive.Props & {
   className?: string;
   style?: React.CSSProperties;
 };
 
-type CheckboxProps = Omit<CheckboxPrimitive.Root.Props, "style" | "className"> & {
-  className?: string;
-  style?: React.CSSProperties;
-};
+type CheckboxProps = Omit<CheckboxPrimitive.Root.Props, "style" | "className"> &
+  BaseSprinkles & {
+    className?: string;
+    style?: React.CSSProperties;
+  };
 
 export function CheckboxGroup({ className, style, ...props }: CheckboxGroupProps) {
   return <CheckboxGroupPrimitive className={clsx(group, className)} style={style} {...props} />;
 }
 
 function Checkbox({ className, style, ...props }: CheckboxProps) {
+  const [boxProps, restProps] = applyBaseSprinkles(props);
   return (
     <CheckboxPrimitive.Root
-      {...props}
+      {...restProps}
       render={(rootProps, { disabled }) => (
         <span
           {...rootProps}
-          className={clsx(root, disabled && rootDisabled, className)}
+          className={clsx(root, disabled && rootDisabled, boxProps, className)}
           style={style}
           data-slot="checkbox"
         >

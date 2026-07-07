@@ -17,38 +17,60 @@ import {
   drawerHeader,
 } from "../../utils/drawer-styles.css";
 import { Box } from "../Box";
+import { applyBaseSprinkles } from "../../utils/ve-style.utils";
+import type { BaseSprinkles } from "../../utils/sprinkles.css";
 const DialogCreateHandle: typeof DialogPrimitive.createHandle = DialogPrimitive.createHandle;
 
 const Dialog: typeof DialogPrimitive.Root = DialogPrimitive.Root;
 
 const DialogPortal: typeof DialogPrimitive.Portal = DialogPrimitive.Portal;
 
-function DialogTrigger(props: DialogPrimitive.Trigger.Props): React.ReactElement {
-  return <DialogPrimitive.Trigger data-slot="dialog-trigger" {...props} />;
+function DialogTrigger(props: DialogPrimitive.Trigger.Props & BaseSprinkles): React.ReactElement {
+  const [boxProps, restProps] = applyBaseSprinkles(props);
+  return <DialogPrimitive.Trigger className={boxProps} data-slot="dialog-trigger" {...restProps} />;
 }
 
-export function DialogClose(props: DialogPrimitive.Close.Props): React.ReactElement {
-  return <DialogPrimitive.Close data-slot="dialog-close" {...props} />;
+export function DialogClose(
+  props: DialogPrimitive.Close.Props & BaseSprinkles,
+): React.ReactElement {
+  const [boxProps, restProps] = applyBaseSprinkles(props);
+  return <DialogPrimitive.Close className={boxProps} data-slot="dialog-close" {...restProps} />;
 }
 
-export function DialogBackdrop(props: DialogPrimitive.Backdrop.Props): React.ReactElement {
-  return <DialogPrimitive.Backdrop className={backdrop} data-slot="dialog-backdrop" {...props} />;
+export function DialogBackdrop(
+  props: DialogPrimitive.Backdrop.Props & BaseSprinkles,
+): React.ReactElement {
+  const [boxProps, restProps] = applyBaseSprinkles(props);
+  return (
+    <DialogPrimitive.Backdrop
+      className={clsx(backdrop, boxProps)}
+      data-slot="dialog-backdrop"
+      {...restProps}
+    />
+  );
 }
 
-type DialogViewportProps = DialogPrimitive.Viewport.Props & {
-  bottomStickOnMobile?: boolean;
-};
+type DialogViewportProps = DialogPrimitive.Viewport.Props &
+  BaseSprinkles & {
+    bottomStickOnMobile?: boolean;
+  };
 
 export function DialogViewport({
   bottomStickOnMobile,
   className,
   ...props
 }: DialogViewportProps): React.ReactElement {
+  const [boxProps, restProps] = applyBaseSprinkles(props);
   return (
     <DialogPrimitive.Viewport
-      className={clsx(viewport, bottomStickOnMobile && viewportShellBottomStickOnMobile, className)}
+      className={clsx(
+        viewport,
+        bottomStickOnMobile && viewportShellBottomStickOnMobile,
+        boxProps,
+        className,
+      )}
       data-slot="dialog-viewport"
-      {...props}
+      {...restProps}
     />
   );
 }
@@ -61,20 +83,27 @@ export function DialogPopup({
   portalProps,
   className,
   ...props
-}: DialogPrimitive.Popup.Props & {
-  showCloseButton?: boolean;
-  bottomStickOnMobile?: boolean;
-  closeProps?: DialogPrimitive.Close.Props;
-  portalProps?: DialogPrimitive.Portal.Props;
-}): React.ReactElement {
+}: DialogPrimitive.Popup.Props &
+  BaseSprinkles & {
+    showCloseButton?: boolean;
+    bottomStickOnMobile?: boolean;
+    closeProps?: DialogPrimitive.Close.Props;
+    portalProps?: DialogPrimitive.Portal.Props;
+  }): React.ReactElement {
+  const [boxProps, restProps] = applyBaseSprinkles(props);
   return (
     <DialogPortal {...portalProps}>
       <DialogViewport bottomStickOnMobile={bottomStickOnMobile}>
         <DialogBackdrop />
         <DialogPrimitive.Popup
-          className={clsx(dialogPopup, bottomStickOnMobile && popupBottomStickOnMobile, className)}
+          className={clsx(
+            dialogPopup,
+            bottomStickOnMobile && popupBottomStickOnMobile,
+            boxProps,
+            className,
+          )}
           data-slot="dialog-popup"
-          {...props}
+          {...restProps}
         >
           {children}
           {showCloseButton && (
@@ -92,23 +121,25 @@ export function DialogPopup({
   );
 }
 
-type HeaderProps = _BaseDivProps;
+type HeaderProps = _BaseDivProps & BaseSprinkles;
 
 export function DialogHeader({ className, render, ...props }: HeaderProps): React.ReactElement {
+  const [boxProps, restProps] = applyBaseSprinkles(props);
   return useRender({
     defaultTagName: "div",
     props: {
-      className: clsx(drawerHeader, className),
+      className: clsx(drawerHeader, boxProps, className),
       "data-slot": "dialog-header",
-      ...props,
+      ...restProps,
     } as never,
     render,
   });
 }
 
-type FooterProps = _BaseDivProps & {
-  variant?: "default" | "bare";
-};
+type FooterProps = _BaseDivProps &
+  BaseSprinkles & {
+    variant?: "default" | "bare";
+  };
 
 export function DialogFooter({
   className,
@@ -116,6 +147,7 @@ export function DialogFooter({
   render,
   ...props
 }: FooterProps): React.ReactElement {
+  const [boxProps, restProps] = applyBaseSprinkles(props);
   return useRender({
     defaultTagName: "div",
     props: {
@@ -123,25 +155,38 @@ export function DialogFooter({
         footer,
         variant === "default" && footerDefault,
         variant === "bare" && footerBare,
+        boxProps,
         className,
       ),
       "data-slot": "dialog-footer",
-      ...props,
+      ...restProps,
     } as never,
     render,
   });
 }
 
-export function DialogTitle(props: DialogPrimitive.Title.Props): React.ReactElement {
-  return <DialogPrimitive.Title className={title} data-slot="dialog-title" {...props} />;
+export function DialogTitle(
+  props: DialogPrimitive.Title.Props & BaseSprinkles,
+): React.ReactElement {
+  const [boxProps, restProps] = applyBaseSprinkles(props);
+  return (
+    <DialogPrimitive.Title
+      className={clsx(title, boxProps)}
+      data-slot="dialog-title"
+      {...restProps}
+    />
+  );
 }
 
-export function DialogDescription(props: DialogPrimitive.Description.Props): React.ReactElement {
+export function DialogDescription(
+  props: DialogPrimitive.Description.Props & BaseSprinkles,
+): React.ReactElement {
+  const [boxProps, restProps] = applyBaseSprinkles(props);
   return (
     <DialogPrimitive.Description
-      className={description}
+      className={clsx(description, boxProps)}
       data-slot="dialog-description"
-      {...props}
+      {...restProps}
     />
   );
 }
@@ -151,17 +196,19 @@ function DialogPanel({
   render,
   className,
   ...props
-}: _BaseDivProps & {
-  scrollFade?: boolean;
-}): React.ReactElement {
+}: _BaseDivProps &
+  BaseSprinkles & {
+    scrollFade?: boolean;
+  }): React.ReactElement {
+  const [boxProps, restProps] = applyBaseSprinkles(props);
   return (
     <ScrollArea scrollFade={scrollFade} height="auto">
       {useRender({
         defaultTagName: "div",
         props: {
-          className: clsx(panel, className),
+          className: clsx(panel, boxProps, className),
           "data-slot": "dialog-panel",
-          ...props,
+          ...restProps,
         } as never,
         render,
       })}

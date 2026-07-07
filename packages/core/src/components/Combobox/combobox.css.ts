@@ -227,7 +227,7 @@ export const item = style([
     align: "center",
     paddingLeft: "sm",
     paddingRight: "md",
-    py: "1",
+    py: "xs",
     radius: "sm",
     fontSize: "md",
     cursor: "default",

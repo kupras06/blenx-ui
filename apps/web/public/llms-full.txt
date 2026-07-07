@@ -36,48 +36,6 @@ The Accordion component organizes content into collapsible sections, letting use
 
 Accordion exposes a controlled and uncontrolled API via `defaultValue` for the expanded item keys. Each child section uses `AccordionItem` wrapping `AccordionTrigger` and `AccordionPanel`. The trigger is the clickable header that controls visibility of its corresponding panel. You can allow multiple panels to be open simultaneously by configuring the component to support multi-open behavior, but single-open (default) is the more common pattern. Changing the expanded item programmatically is straightforward via the `value` prop in controlled mode. The component handles collapse animations internally, so you can rely on smooth transitions without additional wiring.
 
-## Examples
-
-```tsx
-function AccordionDemo() {
-  return (
-    <Accordion.Root>
-      <Accordion.Item value="item-1">
-        <Accordion.Header>
-          <Accordion.Trigger>What is Blenx UI?</Accordion.Trigger>
-        </Accordion.Header>
-        <Accordion.Panel>
-          <Text variant="body2">
-            Blenx UI is a modern React component library built with StyleX and Base UI.
-          </Text>
-        </Accordion.Panel>
-      </Accordion.Item>
-      <Accordion.Item value="item-2">
-        <Accordion.Header>
-          <Accordion.Trigger>How do I install it?</Accordion.Trigger>
-        </Accordion.Header>
-        <Accordion.Panel>
-          <Text variant="body2">
-            Install via the shadcn CLI with:{" "}
-            <Text variant="code">npx shadcn@latest add button</Text>
-          </Text>
-        </Accordion.Panel>
-      </Accordion.Item>
-      <Accordion.Item value="item-3">
-        <Accordion.Header>
-          <Accordion.Trigger>Is it accessible?</Accordion.Trigger>
-        </Accordion.Header>
-        <Accordion.Panel>
-          <Text variant="body2">
-            Yes, all components are built on Base UI primitives with full ARIA support.
-          </Text>
-        </Accordion.Panel>
-      </Accordion.Item>
-    </Accordion.Root>
-  );
-}
-```
-
 ## Files
 
 - `@ui/Accordion/accordion.tsx`
@@ -139,51 +97,6 @@ Alert Dialog is a modal dialog variant designed for urgent confirmations and cri
 ## Variants
 
 Alert Dialog renders with a title describing the consequence, a body providing context, and two action buttons — typically a cancel and a confirm. The confirm action uses the `actionIntent` prop to define its visual weight, defaulting to danger for destructive operations. The dialog traps focus and blocks interaction with the rest of the page until dismissed. Pressing Escape or clicking the backdrop dismisses the dialog without committing the action. The component accepts `onConfirm` and `onCancel` callbacks. For destructive actions, include the resource name in the title (e.g., "Delete invoice INV-042") so users know exactly what they are confirming.
-
-## Examples
-
-```tsx
-function AlertDialogDemo() {
-  return (
-    <VStack gap="md">
-      <Text variant="h6">Alert Dialog</Text>
-      <Box>
-        <AlertDialog>
-          <AlertDialogTrigger
-            render={
-              <Button variant="outline" intent="danger">
-                <Trash2Icon /> Delete Project
-              </Button>
-            }
-          >
-            Delete
-          </AlertDialogTrigger>
-          <AlertDialogPopup>
-            <AlertDialogHeader>
-              <AlertDialogTitle>Delete project</AlertDialogTitle>
-              <AlertDialogDescription>
-                This will permanently delete the project and all of its data.
-              </AlertDialogDescription>
-            </AlertDialogHeader>
-            <AlertDialogPanel>
-              <Text variant="body2">
-                This action cannot be undone. All files, settings, and member permissions will be
-                removed.
-              </Text>
-            </AlertDialogPanel>
-            <AlertDialogFooter>
-              <HStack gap="sm" justify="end" wrap>
-                <AlertDialogClose render={<Button variant="ghost" />}>Cancel</AlertDialogClose>
-                <Button intent="danger">Delete</Button>
-              </HStack>
-            </AlertDialogFooter>
-          </AlertDialogPopup>
-        </AlertDialog>
-      </Box>
-    </VStack>
-  );
-}
-```
 
 ## Dependencies
 
@@ -252,50 +165,6 @@ The Alert component delivers contextual feedback messages to users in response t
 ## Variants
 
 Render an Alert with the `intent` prop to select the visual variant. Each intent automatically applies the corresponding icon (checkmark for success, exclamation for warning, etc.), but you can override it with the `icon` slot if your messaging requires a custom graphic. Alerts can optionally render a title via the `title` prop to summarize the message, followed by children for the detailed body. The component accepts an `onClose` callback and a dismiss button when closable behavior is needed. Alerts participate in the document flow and will push sibling content, so place them near the surface they relate to — typically at the top of a form, card, or page section.
-
-## Examples
-
-```tsx
-import { CheckIcon, CircleAlertIcon, InfoIcon, SkullIcon } from "../../icons";
-import { Alert } from "./alert";
-import { VStack } from "../Stack/stack";
-
-function AlertDemo() {
-  return (
-    <VStack withBorder padding="md">
-      <Alert
-        variant="info"
-        icon={<InfoIcon width={20} />}
-        title="Info"
-        description="This is an info alert"
-      />
-      <Alert
-        variant="success"
-        icon={<CheckIcon width={20} />}
-        title="Success"
-        description="This is a success alert"
-      />
-      <Alert
-        variant="warning"
-        icon={<CircleAlertIcon width={20} />}
-        title="Warning"
-        description="This is a warning alert"
-      />
-      <Alert
-        variant="error"
-        icon={<SkullIcon width={20} />}
-        title="Error"
-        description="This is an error alert"
-      />
-      <Alert variant="error" icon={<SkullIcon width={20} />}>
-        GOne
-      </Alert>
-    </VStack>
-  );
-}
-
-export const demos = [{ name: "Default", component: AlertDemo }];
-```
 
 ## Files
 
@@ -406,7 +275,7 @@ Avatar displays user profile images with automatic fallback to initials when the
 
 ## Variants
 
-Provide an `src` prop with the image URL and an `alt` prop for accessible naming. The initials fallback is computed from the `name` prop, extracting the first character of the first and last name segments. If both `src` and `name` are absent, Avatar renders a generic user icon. The `size` prop maps to pre-defined dimensions (sm, md, lg, xl) with corresponding font sizes for initials. Add a `status` prop to render the presence indicator at the bottom-right corner of the avatar boundary. The component handles the image loading lifecycle internally — it shows initials while the image loads, transitions to the image on success, and reverts to initials on error.
+Avatar is a composite of `Avatar`, `AvatarImage`, and `AvatarFallback` sub-components. Wrap `AvatarImage` with a `src` and `alt` prop inside the root `Avatar`, and provide `AvatarFallback` as a child to display initials or an icon when the image is loading or fails. The `size` prop on `Avatar` maps to pre-defined dimensions (`sm`, `md`, `lg`, `xl`) with corresponding font sizes. The `radius` prop controls border radius rounding. The component handles the image loading lifecycle internally — it shows the fallback while the image loads, transitions to the image on success, and reverts to the fallback on error.
 
 ## Files
 
@@ -415,7 +284,7 @@ Provide an `src` prop with the image URL and an `alt` prop for accessible naming
 
 ## Common Mistakes
 
-Avatar does not support image cropping or editing workflows. It accepts pre-processed images only. The status indicator is purely visual and does not emit events or manage real-time presence data — integrate with your presence system separately. AvatarGroup has a maximum display count; exceeding this threshold shows a "+N" overflow indicator but does not provide interaction for viewing the full list.
+Avatar does not support image cropping or editing workflows. It accepts pre-processed images only. The component does not include a status indicator or presence dot — integrate with your presence system separately.
 
 ## Related Components
 
@@ -459,52 +328,16 @@ Render a Badge with the `count` prop for numeric indicators or `children` for te
 ## Examples
 
 ```tsx
-function BadgeDemo() {
+import { HStack } from "../Stack/stack";
+import { Badge } from "./badge";
+
+export function VariantsStory() {
   return (
-    <VStack gap="xs">
-      <Text variant="h6">Solid</Text>
-      <HStack wrap>
-        <Badge variant="default">Default</Badge>
-        <Badge variant="primary">Primary</Badge>
-        <Badge>Secondary</Badge>
-        <Badge variant="danger">Danger</Badge>
-        <Badge variant="success">Success</Badge>
-      </HStack>
-
-      <Text variant="h6">Outline</Text>
-      <HStack wrap>
-        <Badge variant="default" appearance="outline">
-          Default
-        </Badge>
-        <Badge variant="primary" appearance="outline">
-          Primary
-        </Badge>
-        <Badge appearance="outline">Secondary</Badge>
-        <Badge variant="danger" appearance="outline">
-          Danger
-        </Badge>
-        <Badge variant="success" appearance="outline">
-          Success
-        </Badge>
-      </HStack>
-
-      <Text variant="h6">Soft</Text>
-      <HStack wrap>
-        <Badge variant="default" appearance="soft">
-          Default
-        </Badge>
-        <Badge variant="primary" appearance="soft">
-          Primary
-        </Badge>
-        <Badge appearance="soft">Secondary</Badge>
-        <Badge variant="danger" appearance="soft">
-          Danger
-        </Badge>
-        <Badge variant="success" appearance="soft">
-          Success
-        </Badge>
-      </HStack>
-    </VStack>
+    <HStack gap="md" align="center">
+      <Badge>Default</Badge>
+      <Badge variant="primary">Primary</Badge>
+      <Badge variant="secondary">Secondary</Badge>
+    </HStack>
   );
 }
 ```
@@ -659,123 +492,6 @@ Button triggers actions and is the most frequently used interactive element in a
 
 Set `variant` and `intent` to select the visual combination. The `size` prop (sm, md, lg) scales padding, font size, and icon spacing proportionally. For actions that trigger asynchronous operations, use the `loading` prop to disable interaction and show a spinner in place of the start icon. The `startIcon` and `endIcon` slots accept Icon components that inherit the button's size and color. A button with an icon only (no visible children) renders as a square icon button with equal width and height, suitable for toolbars and action bars. The `disabled` prop prevents interaction and applies reduced opacity.
 
-## Examples
-
-```tsx
-function ButtonDemo() {
-  return (
-    <VStack gap="md">
-      <Stack gap="sm">
-        <Text variant="h6">Variant + Intent</Text>
-        <HStack wrap>
-          <Button variant="solid" intent="primary">
-            Solid Primary
-          </Button>
-          <Button variant="solid" intent="neutral">
-            Solid Neutral
-          </Button>
-          <Button variant="solid" intent="success">
-            Solid Success
-          </Button>
-          <Button variant="solid" intent="warning">
-            Solid Warning
-          </Button>
-          <Button variant="solid" intent="danger">
-            Solid Danger
-          </Button>
-          <Button variant="solid" intent="info">
-            Solid Info
-          </Button>
-        </HStack>
-      </Stack>
-
-      <Stack gap="sm">
-        <Text variant="h6">Outline + Intents</Text>
-        <HStack wrap>
-          <Button variant="outline" intent="primary">
-            Outline
-          </Button>
-          <Button variant="outline" intent="danger">
-            Outline Danger
-          </Button>
-          <Button variant="outline" intent="success">
-            Outline Success
-          </Button>
-        </HStack>
-      </Stack>
-
-      <Stack gap="sm">
-        <Text variant="h6">Ghost + Intents</Text>
-        <HStack wrap>
-          <Button variant="ghost" intent="primary">
-            Ghost
-          </Button>
-          <Button variant="ghost" intent="danger">
-            Ghost Danger
-          </Button>
-          <Button variant="ghost" intent="neutral">
-            Ghost Neutral
-          </Button>
-        </HStack>
-      </Stack>
-
-      <Stack gap="sm">
-        <Text variant="h6">Soft + Intents</Text>
-        <HStack wrap>
-          <Button variant="soft" intent="warning">
-            Soft Warning
-          </Button>
-          <Button variant="soft" intent="success">
-            Soft Success
-          </Button>
-          <Button variant="soft" intent="danger">
-            Soft Danger
-          </Button>
-        </HStack>
-      </Stack>
-
-      <Stack gap="sm">
-        <Text variant="h6">Link + Intents</Text>
-        <HStack wrap>
-          <Button variant="link" intent="primary">
-            Link
-          </Button>
-          <Button variant="link" intent="neutral">
-            Link Neutral
-          </Button>
-          <Button variant="link" intent="danger">
-            Link Danger
-          </Button>
-        </HStack>
-      </Stack>
-
-      <Stack gap="sm">
-        <Text variant="h6">Sizes</Text>
-        <HStack wrap>
-          <Button size="sm">Small</Button>
-          <Button size="md">Medium</Button>
-          <Button size="lg">Large</Button>
-        </HStack>
-      </Stack>
-
-      <Stack gap="sm">
-        <Text variant="h6">With Icons</Text>
-        <HStack wrap>
-          <Button>
-            <PlayIcon />
-            Play
-          </Button>
-          <Button variant="outline" intent="neutral">
-            Next
-            <ChevronRightIcon />
-          </Button>
-        </HStack>
-      </Stack>
-    </VStack>
-  );
-}
-```
-
 ## Dependencies
 
 - spinner
@@ -897,186 +613,6 @@ Card is a surface-level container that groups related content and actions into a
 Wrap content in `Card`, then compose with `CardHeader`, `CardBody`, and `CardFooter` as needed. `CardTitle` and `CardDescription` go inside `CardHeader` to establish the card's heading hierarchy and supplementary text. The header typically contains the title and any primary actions, the body holds the main content, and the footer houses secondary actions or metadata.
 
 `Card` renders a `Surface` with `variant="sunken"`, a border, and `p="md"` padding by default. `CardHeader`, `CardBody`, and `CardFooter` also apply `p="md"` padding automatically. Pass the `variant` prop to switch between surface styles — `"default"`, `"outline"`, `"raised"`, or `"sunken"`. Set `interactive` to add hover and focus-visible styles for clickable cards. All sub-components forward their underlying element props (`BoxProps` for header/body, `HStackProps` for footer, `TextProps` for title/description), giving you access to spacing, layout, and color sprinkles.
-
-## Examples
-
-### Card
-
-```tsx
-function CardDemo() {
-  return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Getting Started</CardTitle>
-        <CardDescription>
-          Learn how to install and use Blenx UI components in your project.
-        </CardDescription>
-      </CardHeader>
-      <CardBody>
-        <Text variant="body2">
-          Blenx UI provides a set of accessible, styleable React components built on Base UI
-          primitives and styled with StyleX.
-        </Text>
-      </CardBody>
-      <CardFooter>
-        <Button variant="outline" size="sm">
-          Read docs
-        </Button>
-        <Button size="sm">Install</Button>
-      </CardFooter>
-    </Card>
-  );
-}
-```
-
-### ProfileCard
-
-```tsx
-function ProfileCardDemo() {
-  return (
-    <Card>
-      <CardHeader>
-        <HStack gap="md" align="center">
-          <Avatar size="lg">
-            <AvatarImage src="https://i.pravatar.cc/150?u=alex" alt="Alex Rivera" />
-            <AvatarFallback>AR</AvatarFallback>
-          </Avatar>
-          <VStack gap="xxs">
-            <HStack gap="xs" align="center">
-              <CardTitle>Alex Rivera</CardTitle>
-              <Badge variant="primary">Pro</Badge>
-            </HStack>
-            <HStack gap="xxs" align="center">
-              <MapPinIcon width={12} height={12} />
-              <Text variant="caption" color="secondary">
-                San Francisco, CA
-              </Text>
-            </HStack>
-          </VStack>
-        </HStack>
-      </CardHeader>
-      <CardBody>
-        <Text variant="body2">
-          Full-stack developer with 8+ years of experience building accessible, performant web
-          applications. Passionate about design systems and open source.
-        </Text>
-      </CardBody>
-      <CardFooter>
-        <HStack gap="sm" justify="end" wrap>
-          <Button variant="ghost" size="sm">
-            Message
-          </Button>
-          <Button size="sm">Follow</Button>
-        </HStack>
-      </CardFooter>
-    </Card>
-  );
-}
-```
-
-### ProductCard
-
-```tsx
-function ProductCardDemo() {
-  return (
-    <Card>
-      <Box
-        height="auto"
-        width="full"
-        backgroundColor="info"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          position: "relative",
-          borderTopLeftRadius: "inherit",
-          borderTopRightRadius: "inherit",
-          overflow: "hidden",
-        }}
-      >
-        <Badge variant="danger" style={{ position: "absolute", top: 8, left: 8 }}>
-          20% OFF
-        </Badge>
-        <ShoppingCartIcon width={40} height={40} />
-      </Box>
-      <CardHeader>
-        <HStack gap="md" justify="between" align="center">
-          <VStack gap="xxs">
-            <CardTitle>Pro Subscription</CardTitle>
-            <CardDescription>Annual billing - save 20%</CardDescription>
-          </VStack>
-          <HStack gap="xs" align="center">
-            <StarIcon width={14} height={14} />
-            <Text variant="caption" weight="semibold">
-              4.9
-            </Text>
-          </HStack>
-        </HStack>
-      </CardHeader>
-      <CardBody>
-        <Text variant="body2">
-          Unlimited projects, advanced analytics, priority support, and team collaboration features.
-          Everything you need to scale your workflow.
-        </Text>
-        <HStack gap="xs" align="baseline" style={{ marginTop: 8 }}>
-          <Text variant="h3" weight="bold">
-            $29
-          </Text>
-          <Text variant="body3" color="secondary">
-            /month
-          </Text>
-        </HStack>
-      </CardBody>
-      <CardFooter>
-        <Button fullWidth>Subscribe Now</Button>
-      </CardFooter>
-    </Card>
-  );
-}
-```
-
-### StatCard
-
-```tsx
-function StatCardDemo() {
-  return (
-    <Card>
-      <CardBody>
-        <HStack gap="md" align="center" justify="between">
-          <VStack gap="xxs">
-            <Text variant="caption" color="secondary">
-              Total Revenue
-            </Text>
-            <Text variant="h3" weight="bold">
-              $48,250
-            </Text>
-            <HStack gap="xxs" align="center">
-              <Badge variant="success">+12.5%</Badge>
-              <Text variant="caption" color="secondary">
-                vs last month
-              </Text>
-            </HStack>
-          </VStack>
-          <Box
-            style={{
-              width: 48,
-              height: 48,
-              borderRadius: 12,
-              backgroundColor: "var(--color-primary-subtle)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              flexShrink: 0,
-            }}
-          >
-            <ChartBarIcon width={24} height={24} />
-          </Box>
-        </HStack>
-      </CardBody>
-    </Card>
-  );
-}
-```
 
 ## Dependencies
 
@@ -1356,121 +892,6 @@ Command implements a command palette — a search-driven interface for triggerin
 
 Define command items as an array of objects with `id`, `label`, optional `shortcut`, optional `group`, and `onSelect` callback. Groups are defined separately and items reference them by key. The search input filters items across all groups using case-insensitive matching against the label. Selected items call the `onSelect` callback and close the palette. Use `pages` for nested command flows — a "Create" command could open a sub-page with specific creation options. The palette opens and closes via the exposed `open` and `onOpenChange` props, typically bound to a keyboard shortcut listener. Command handles focus trapping and Escape dismissal within the dialog overlay.
 
-## Examples
-
-```tsx
-import {
-  Command,
-  CommandInput,
-  CommandList,
-  CommandEmpty,
-  CommandGroup,
-  CommandItem,
-  CommandSeparator,
-} from "./command";
-import { HStack, VStack } from "../Stack/stack";
-import { Text } from "../Text/text";
-import { FileCodeIcon, PaletteIcon, SettingsIcon } from "../../icons";
-
-export function CommandBasic() {
-  return (
-    <VStack gap="sm">
-      <Text variant="body2" color="secondary">
-        A basic command palette with search filtering.
-      </Text>
-      <Command>
-        <CommandInput placeholder="Search frameworks…" />
-        <CommandList>
-          <CommandEmpty>No frameworks found.</CommandEmpty>
-          <CommandItem value="react">React</CommandItem>
-          <CommandItem value="vue">Vue</CommandItem>
-          <CommandItem value="svelte">Svelte</CommandItem>
-          <CommandItem value="solid">Solid</CommandItem>
-          <CommandItem value="angular">Angular</CommandItem>
-        </CommandList>
-      </Command>
-    </VStack>
-  );
-}
-
-export function CommandWithGroups() {
-  return (
-    <VStack gap="sm">
-      <Text variant="body2" color="secondary">
-        Command palette with grouped items and custom icons.
-      </Text>
-      <Command>
-        <CommandInput placeholder="Search commands…" />
-        <CommandList>
-          <CommandEmpty>No results.</CommandEmpty>
-          <CommandGroup heading="Frameworks">
-            <CommandItem value="react">
-              <HStack gap="sm" align="center">
-                <FileCodeIcon width={16} height={16} />
-                <span>React</span>
-              </HStack>
-            </CommandItem>
-            <CommandItem value="vue">
-              <HStack gap="sm" align="center">
-                <FileCodeIcon width={16} height={16} />
-                <span>Vue</span>
-              </HStack>
-            </CommandItem>
-            <CommandItem value="svelte">
-              <HStack gap="sm" align="center">
-                <FileCodeIcon width={16} height={16} />
-                <span>Svelte</span>
-              </HStack>
-            </CommandItem>
-          </CommandGroup>
-          <CommandSeparator />
-          <CommandGroup heading="Tools">
-            <CommandItem value="vite">
-              <HStack gap="sm" align="center">
-                <SettingsIcon width={16} height={16} />
-                <span>Vite</span>
-              </HStack>
-            </CommandItem>
-            <CommandItem value="webpack">
-              <HStack gap="sm" align="center">
-                <SettingsIcon width={16} height={16} />
-                <span>Webpack</span>
-              </HStack>
-            </CommandItem>
-            <CommandItem value="turbopack">
-              <HStack gap="sm" align="center">
-                <SettingsIcon width={16} height={16} />
-                <span>Turbopack</span>
-              </HStack>
-            </CommandItem>
-          </CommandGroup>
-          <CommandSeparator />
-          <CommandGroup heading="Themes">
-            <CommandItem value="light">
-              <HStack gap="sm" align="center">
-                <PaletteIcon width={16} height={16} />
-                <span>Light</span>
-              </HStack>
-            </CommandItem>
-            <CommandItem value="dark">
-              <HStack gap="sm" align="center">
-                <PaletteIcon width={16} height={16} />
-                <span>Dark</span>
-              </HStack>
-            </CommandItem>
-          </CommandGroup>
-        </CommandList>
-      </Command>
-    </VStack>
-  );
-}
-
-export const demos = [
-  { name: "Default", component: CommandBasic },
-  { name: "With Groups", component: CommandWithGroups },
-];
-```
-
 ## Dependencies
 
 - scroll-area
@@ -1542,7 +963,7 @@ Container provides a responsive content width constraint and horizontal centerin
 
 ## Variants
 
-Wrap page content in Container with the `maxWidth` prop set to a theme breakpoint token — `sm`, `md`, `lg`, `xl`, or full width via `false`. The default is `lg` (typically 1024px). Container applies `max-width` and `margin-inline: auto` to center itself. It does not apply padding by default; add `padding` prop if you need horizontal padding between the container edge and its content. For nested layouts — such as a sidebar layout within a page — use Container for the main content area and a separate component for the sidebar. Container can be used without a max width for fluid layouts that still need centering.
+Wrap page content in Container with the `size` prop set to a theme breakpoint token — `sm`, `md`, `lg`, `xl`, or full width via `false`. The default is `lg` (typically 1024px). Container applies `max-width` and `margin-inline: auto` to center itself. Use `centered` to toggle centering and `contentCentered` to center children via `align-items`. It does not apply padding by default; pass padding props if you need horizontal spacing between the container edge and its content. For nested layouts — such as a sidebar layout within a page — use Container for the main content area and a separate component for the sidebar.
 
 ## Dependencies
 
@@ -1713,34 +1134,7 @@ Dialog is a modal overlay that presents content requiring user attention or inpu
 
 ## Variants
 
-Dialog consists of `DialogTrigger`, `DialogContent`, `DialogHeader`, `DialogBody`, `DialogFooter`, `DialogTitle`, and `DialogDescription` sub-components. Trigger the dialog via `DialogTrigger`, which can be any interactive element. `DialogContent` renders the modal surface with the backdrop. `DialogTitle` provides the accessible name for the dialog, and `DialogDescription` provides additional context. The dialog traps focus within its content when open, returns focus to the trigger on close, and dismisses on Escape or backdrop click. Control open state with `open` and `onOpenChange` for controlled usage, or use `defaultOpen` for uncontrolled. The `size` prop adjusts the dialog width — `sm`, `md`, `lg`, `xl`, and `fullscreen`.
-
-## Examples
-
-```tsx
-function DialogDemo() {
-  return (
-    <Dialog>
-      <DialogTrigger render={<Button variant="outline" />}>Open Dialog</DialogTrigger>
-      <DialogContent>
-        <DialogHeader>
-          <DialogTitle>Confirm Action</DialogTitle>
-          <DialogDescription>Are you sure you want to proceed with this action?</DialogDescription>
-        </DialogHeader>
-        <DialogPanel>
-          <Text variant="body2">This action cannot be undone. Please confirm your choice.</Text>
-        </DialogPanel>
-        <DialogFooter>
-          <HStack gap="sm" justify="end" wrap>
-            <DialogClose render={<Button variant="ghost" />}>Cancel</DialogClose>
-            <Button>Confirm</Button>
-          </HStack>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
-  );
-}
-```
+Dialog consists of `DialogTrigger`, `DialogPopup` (the modal surface with backdrop, also exported as `DialogContent`), `DialogHeader`, `DialogPanel` (scrollable content area), `DialogFooter`, `DialogTitle`, and `DialogDescription` sub-components. Trigger the dialog via `DialogTrigger`, which can be any interactive element. `DialogPopup` renders the modal surface with the backdrop. `DialogTitle` provides the accessible name for the dialog, and `DialogDescription` provides additional context. The dialog traps focus within its content when open, returns focus to the trigger on close, and dismisses on Escape or backdrop click. Control open state with `open` and `onOpenChange` for controlled usage, or use `defaultOpen` for uncontrolled.
 
 ## Dependencies
 
@@ -1809,52 +1203,7 @@ Drawer is a slide-in panel that emerges from any edge of the viewport — left, 
 
 ## Variants
 
-Set the `placement` prop to `"left"`, `"right"`, `"top"`, or `"bottom"` to control the entry direction. The `size` prop controls the drawer width for left/right placements and height for top/bottom placements. Control open state with `open` and `onOpenChange`. Drawer accepts the same sub-component structure as Dialog: `DrawerTrigger`, `DrawerContent`, `DrawerHeader`, `DrawerBody`, `DrawerFooter`, `DrawerTitle`, and `DrawerDescription`. The content area scrolls independently when overflow occurs. Drawer traps focus and dismisses on Escape or backdrop click. The `closeOnOutsideClick` prop can be disabled for workflows that require persistent attention.
-
-## Examples
-
-```tsx
-function DrawerDemo() {
-  return (
-    <VStack gap="md">
-      <Text variant="h6">Drawer</Text>
-      <Drawer position="right">
-        <DrawerTrigger
-          render={
-            <Button variant="outline">
-              <SettingsIcon /> Settings
-            </Button>
-          }
-        />
-        <DrawerPopup showCloseButton showBar>
-          <DrawerHeader>
-            <DrawerTitle>Settings</DrawerTitle>
-            <DrawerDescription>Customize your application preferences.</DrawerDescription>
-          </DrawerHeader>
-          <DrawerPanel>
-            <VStack gap="sm">
-              <Text variant="body2">Notification preferences</Text>
-              <Text variant="body2" color="secondary">
-                Choose how you receive updates and alerts.
-              </Text>
-              <Text variant="body2">Theme customization</Text>
-              <Text variant="body2" color="secondary">
-                Adjust the appearance to match your workflow.
-              </Text>
-            </VStack>
-          </DrawerPanel>
-          <DrawerFooter>
-            <HStack gap="sm" justify="end" wrap>
-              <DrawerClose render={<Button variant="ghost" />}>Cancel</DrawerClose>
-              <Button>Save</Button>
-            </HStack>
-          </DrawerFooter>
-        </DrawerPopup>
-      </Drawer>
-    </VStack>
-  );
-}
-```
+Set the `position` prop to `"left"`, `"right"`, `"top"`, or `"bottom"` to control the entry direction. Control open state with `open` and `onOpenChange`. Drawer sub-components include `DrawerTrigger`, `DrawerPopup` (the main slide-in panel surface), `DrawerHeader`, `DrawerPanel` (scrollable content area), `DrawerFooter`, `DrawerTitle`, and `DrawerDescription`. The content area scrolls independently when overflow occurs. Drawer traps focus and dismisses on Escape or backdrop click.
 
 ## Dependencies
 
@@ -1909,7 +1258,7 @@ Field wraps form controls with label, help text, and error message layout, provi
 
 ## Variants
 
-Pass the `label` prop for the visible label text and `name` for the form control's identifier. Use `helpText` for descriptive guidance that appears below the control, and `errorMessage` for validation errors. The `required` prop adds a visual indicator (typically an asterisk) to the label and sets `aria-required` on the control. Field uses `FieldLabel`, `FieldHelpText`, and `FieldError` sub-components internally but renders them automatically based on the props. The `layout` prop switches between vertical (label above control) and horizontal (label beside control) orientations. For horizontal layouts, `labelWidth` controls the label column width. Field wraps its children in a structure that maintains consistent spacing and alignment regardless of the child component.
+Field is a collection of sub-components: `Field`, `FieldLabel`, `FieldItem`, `FieldDescription`, `FieldError`, `FieldControl`, and `FieldValidity`. Wrap form controls in `Field` and use `FieldLabel` for the accessible label, `FieldItem` to wrap the control, `FieldDescription` for help text, and `FieldError` for validation messages. The `required`, `invalid`, and `valid` props are passed to `Field` directly (inherited from Base UI Field primitives), which sets `aria-required`, `aria-invalid`, and other ARIA attributes on the associated control via `FieldControl`.
 
 ## Dependencies
 
@@ -1923,7 +1272,7 @@ Pass the `label` prop for the visible label text and `name` for the form control
 
 ## Common Mistakes
 
-Field does not support inline validation with real-time error display as the user types — error messages are set externally. The component does not handle form-level validation logic or submission. Field also does not manage field grouping for radio groups or checkbox groups beyond wrapping each individual control — use a parent container with a group label for grouped controls. The horizontal layout may not be suitable for narrow viewports; responsive adjustments must be managed by the parent form layout.
+Field is a thin wrapper over Base UI Field primitives and relies on the Base UI validation system. The component does not handle form-level validation logic or submission — integrate with your form library for that. Field does not manage field grouping for radio groups or checkbox groups beyond wrapping each individual control — use a parent container with a group label for grouped controls.
 
 ## Related Components
 
@@ -2021,106 +1370,6 @@ Icon buttons provide a compact trigger for actions where visual real estate is l
 
 Icon buttons are built on the Button component with enforced square aspect ratio and default size that matches the standard button height. The variant, size, and color props map directly to Button semantics, ensuring visual consistency across the system. Unlike standard buttons, icon buttons do not accept children as text — only render an icon element. An accessible label must always be provided through `aria-label` for screen readers.
 
-## Examples
-
-```tsx
-function IconButtonDemo() {
-  return (
-    <VStack gap="md">
-      <VStack gap="sm">
-        <Text variant="h6">Variants</Text>
-        <HStack wrap>
-          <IconButton aria-label="Send" variant="solid">
-            <SendIcon />
-          </IconButton>
-          <IconButton aria-label="Send" variant="soft">
-            <SendIcon />
-          </IconButton>
-          <IconButton aria-label="Send" variant="outline">
-            <SendIcon />
-          </IconButton>
-          <IconButton aria-label="Send" variant="ghost">
-            <SendIcon />
-          </IconButton>
-          <IconButton aria-label="Send" variant="soft">
-            <SendIcon />
-          </IconButton>
-          <IconButton aria-label="Send" variant="link">
-            <SendIcon />
-          </IconButton>
-        </HStack>
-      </VStack>
-
-      <VStack gap="sm">
-        <Text variant="h6">Intents</Text>
-        <HStack wrap>
-          <IconButton aria-label="Send" intent="primary">
-            <SendIcon />
-          </IconButton>
-          <IconButton aria-label="Delete" intent="danger">
-            <Trash2Icon />
-          </IconButton>
-          <IconButton aria-label="Success" intent="success">
-            <BellIcon />
-          </IconButton>
-          <IconButton aria-label="Warning" intent="warning">
-            <BellIcon />
-          </IconButton>
-          <IconButton aria-label="Info" intent="info">
-            <BellIcon />
-          </IconButton>
-        </HStack>
-      </VStack>
-
-      <VStack gap="sm">
-        <Text variant="h6">Variant + Intent</Text>
-        <HStack wrap>
-          <IconButton aria-label="Delete" variant="ghost" intent="danger">
-            <Trash2Icon />
-          </IconButton>
-          <IconButton aria-label="Delete" variant="outline" intent="danger">
-            <Trash2Icon />
-          </IconButton>
-          <IconButton aria-label="Delete" variant="soft" intent="danger">
-            <Trash2Icon />
-          </IconButton>
-        </HStack>
-      </VStack>
-
-      <VStack gap="sm">
-        <Text variant="h6">Sizes</Text>
-        <HStack wrap align="center">
-          <IconButton aria-label="Send" variant="outline">
-            <SendIcon />
-          </IconButton>
-          <IconButton aria-label="Send" variant="outline">
-            <SendIcon />
-          </IconButton>
-          <IconButton aria-label="Send" variant="outline">
-            <SendIcon />
-          </IconButton>
-          <IconButton aria-label="Send" variant="outline">
-            <SendIcon />
-          </IconButton>
-        </HStack>
-      </VStack>
-
-      <VStack gap="sm">
-        <Text variant="h6">States</Text>
-        <HStack wrap>
-          <IconButton aria-label="Refresh" loading>
-            <RefreshCcwIcon />
-          </IconButton>
-          <IconButton aria-label="Send" disabled>
-            <SendIcon />
-          </IconButton>
-        </HStack>
-      </VStack>
-    </VStack>
-  );
-}
-```
-
 ## Dependencies
 
 - button
@@ -2186,94 +1435,6 @@ Icon is a wrapper component for Phosphor icons that provides consistent sizing, 
 
 Pass the Phosphor icon component as a child to Icon, or use the `name` prop with the icon's string identifier. Set `size` to one of the theme size tokens to match the surrounding text scale. The `color` prop accepts theme color tokens or raw CSS color values. By default, Icon inherits the current text color via `currentColor`, ensuring it matches adjacent text without explicit color configuration. The `weight` prop maps to Phosphor's built-in weight variants (regular, bold, fill, duotone, thin) for visual emphasis. Use `aria-hidden="true"` when the icon is decorative and `aria-label` when it serves as the sole identifier of an action.
 
-## Examples
-
-```tsx
-function IconDemo() {
-  return (
-    <VStack gap="md">
-      <VStack gap="sm">
-        <Text variant="h6">Sizes</Text>
-        <HStack align="center" gap="sm">
-          <Icon>
-            <UserIcon width={24} height={24} />
-          </Icon>
-          <Icon>
-            <UserIcon width={24} height={24} />
-          </Icon>
-          <Icon>
-            <UserIcon />
-          </Icon>
-          <Icon>
-            <UserIcon width={44} height={44} />
-          </Icon>
-          <Icon>
-            <UserIcon width={64} height={64} />
-          </Icon>
-        </HStack>
-      </VStack>
-
-      <VStack gap="sm">
-        <Text variant="h6">Colors</Text>
-        <HStack align="center" gap="sm">
-          <Icon color="primary">
-            <SendIcon />
-          </Icon>
-          <Icon color="secondary">
-            <SendIcon />
-          </Icon>
-          <Icon>
-            <SendIcon />
-          </Icon>
-          <Icon color="error">
-            <XIcon />
-          </Icon>
-          <Icon color="success">
-            <CheckIcon />
-          </Icon>
-          <Icon color="warning">
-            <CircleAlertIcon />
-          </Icon>
-          <Icon color="info">
-            <InfoIcon />
-          </Icon>
-        </HStack>
-      </VStack>
-
-      <VStack gap="sm">
-        <Text variant="h6">Background Colors</Text>
-        <HStack align="center" gap="sm">
-          <Icon backgroundColor="primary" color="primary" radius="sm">
-            <InfoIcon />
-          </Icon>
-          <Icon backgroundColor="error" color="error" radius="sm">
-            <XIcon />
-          </Icon>
-          <Icon backgroundColor="success" color="success" radius="sm">
-            <CheckIcon />
-          </Icon>
-          <Icon backgroundColor="warning" color="warning" radius="sm">
-            <CircleAlertIcon />
-          </Icon>
-          <Icon backgroundColor="info" color="info" radius="sm">
-            <InfoIcon />
-          </Icon>
-        </HStack>
-      </VStack>
-
-      <VStack gap="sm">
-        <Text variant="h6">Color Inherited from Parent</Text>
-        <HStack align="center" gap="sm">
-          <Icon>
-            <UserIcon />
-          </Icon>
-        </HStack>
-      </VStack>
-    </VStack>
-  );
-}
-```
-
 ## Files
 
 - `@ui/Icon/icon.tsx`
@@ -2330,64 +1491,6 @@ Input Group extends a standard Input with prefix or suffix adornments — icons,
 
 The component wraps an Input and positions adornment elements in the leading or trailing slots. Adornments are rendered inline within the input's visual container, using the same border, background, and height to create a seamless appearance. The Input Group manages focus states so that clicking an adornment does not remove focus from the input itself. When an adornment is interactive, such as a button, the interactive element must handle its own focus and click events.
 
-## Examples
-
-```tsx
-import { SearchIcon, UserIcon } from "../../icons";
-import { Button } from "../Button/button";
-import { Stack } from "../Stack/stack";
-import { Text } from "../Text/text";
-import {
-  InputGroup,
-  InputGroupAddon,
-  InputGroupInput,
-  InputGroupText,
-  InputGroupTextarea,
-} from "./input-group";
-
-export function DefaultStory() {
-  return (
-    <Stack gap="md">
-      <Text variant="h4">With icon and button</Text>
-      <InputGroup>
-        <InputGroupAddon align="inline-start">
-          <SearchIcon width={16} height={16} />
-        </InputGroupAddon>
-        <InputGroupInput placeholder="Search..." />
-        <InputGroupAddon align="inline-end">
-          <Button size="sm" variant="ghost">
-            Go
-          </Button>
-        </InputGroupAddon>
-      </InputGroup>
-      <InputGroup>
-        <InputGroupAddon align="block-start">
-          <SearchIcon width={16} height={16} />
-        </InputGroupAddon>
-        <InputGroupTextarea placeholder="Search..." />
-        <InputGroupAddon align="block-end">
-          <Button size="sm" variant="ghost">
-            Go
-          </Button>
-        </InputGroupAddon>
-      </InputGroup>
-      <Text variant="h4">With text addon</Text>
-      <InputGroup>
-        <InputGroupAddon align="inline-start">
-          <UserIcon width={16} height={16} />
-        </InputGroupAddon>
-        <InputGroupInput placeholder="Username" aria-invalid />
-        <InputGroupAddon align="inline-end">
-          <InputGroupText>@example.com</InputGroupText>
-        </InputGroupAddon>
-      </InputGroup>
-    </Stack>
-  );
-}
-
-export const demos = [{ name: "Input group", component: DefaultStory }];
-```
-
 ## Files
 
 - `@ui/InputGroup/input-group.tsx`
@@ -2439,29 +1542,6 @@ The Input component captures single-line text from users. It serves as the found
 
 Input renders a native `<input>` element underneath with consistent styling applied through the theme system. The variant prop controls the visual treatment: outlined is the default for most forms, underlined suits inline editing contexts, and filled works well in toolbars or dense layouts. Validation state is communicated through color (red for error, green for success) and an optional supporting message rendered below the input. The disabled state reduces contrast and removes interactive feedback.
 
-## Examples
-
-```tsx
-function InputDemo() {
-  return (
-    <VStack gap="md">
-      <VStack gap="md" padding="md">
-        <Text variant="h6">Size</Text>
-        <Input size="sm" placeholder="Small input" />
-        <Input placeholder="Default input" />
-        <Input size="lg" placeholder="Large input" />
-      </VStack>
-      <VStack gap="md" padding="md">
-        <Text variant="h4">States</Text>
-        <Input placeholder="Normal input" />
-        <Input placeholder="Disabled input" disabled />
-        <Input placeholder="With error" error="This field is required" />
-      </VStack>
-    </VStack>
-  );
-}
-```
-
 ## Files
 
 - `@ui/Input/input.tsx`
@@ -2512,51 +1592,6 @@ Menu provides a dropdown list of actions or options triggered by a button, link,
 ## Variants
 
 Menu is built on Base UI Menu primitives, inheriting WAI-ARIA menu pattern compliance. The trigger element receives the appropriate `aria-expanded`, `aria-haspopup`, and `aria-controls` attributes automatically. Items can be plain actions, links, or trigger nested submenus. Separators divide related groups of actions. Disabled items are rendered but excluded from keyboard navigation and receive reduced opacity. The menu positions itself relative to the trigger and flips when viewport space is insufficient.
-
-## Examples
-
-```tsx
-import { Button } from "../Button/button";
-import {
-  Menu,
-  MenuGroupLabel,
-  MenuItem,
-  MenuPopup,
-  MenuSeparator,
-  MenuShortcut,
-  MenuTrigger,
-} from "./menu";
-
-export function DefaultStory() {
-  return (
-    <Menu>
-      <MenuTrigger render={<Button variant="outline">Open Menu</Button>} />
-      <MenuPopup align="start" sideOffset={4}>
-        <MenuItem onSelect={() => {}}>Profile</MenuItem>
-        <MenuItem onSelect={() => {}}>
-          Settings
-          <MenuShortcut>⌘,</MenuShortcut>
-        </MenuItem>
-        <MenuItem onSelect={() => {}}>
-          Keyboard shortcuts
-          <MenuShortcut>⌘K</MenuShortcut>
-        </MenuItem>
-        <MenuSeparator />
-        <MenuGroupLabel>Account</MenuGroupLabel>
-        <MenuItem variant="destructive" onSelect={() => {}}>
-          Delete account
-        </MenuItem>
-      </MenuPopup>
-    </Menu>
-  );
-}
-export const demos = [
-  {
-    name: "Default",
-    component: DefaultStory,
-  },
-];
-```
 
 ## Files
 
@@ -2620,54 +1655,6 @@ OTP Field provides a dedicated input experience for one-time passwords, verifica
 
 The component renders a row of individual input slots, each accepting a single character. As the user types, focus automatically advances to the next slot. Pasting a full code fills all slots simultaneously, triggering the onChange callback with the complete value. Backspace in an empty slot returns focus to the previous slot for correction. The `length` prop controls the number of slots, and the `type` prop defaults to `number` for numeric codes but can be set to `text` for alphanumeric tokens.
 
-## Examples
-
-### OTPField
-
-```tsx
-function OTPFieldDemo() {
-  return (
-    <VStack>
-      <OTPField length={6} defaultValue="">
-        <OTPFieldInput />
-        <OTPFieldInput />
-        <OTPFieldInput />
-        <OTPFieldInput />
-        <OTPFieldInput />
-        <OTPFieldInput />
-      </OTPField>
-    </VStack>
-  );
-}
-```
-
-### OTPFieldGrouped
-
-```tsx
-function OTPFieldGroupedDemo() {
-  return (
-    <VStack>
-      <OTPField length={12} defaultValue="" validationType="alphanumeric">
-        <OTPFieldInput />
-        <OTPFieldInput />
-        <OTPFieldInput />
-        <OTPFieldInput />
-        <OTPFieldSeparator />
-        <OTPFieldInput />
-        <OTPFieldInput />
-        <OTPFieldInput />
-        <OTPFieldInput />
-        <OTPFieldSeparator />
-        <OTPFieldInput />
-        <OTPFieldInput />
-        <OTPFieldInput />
-        <OTPFieldInput />
-      </OTPField>
-    </VStack>
-  );
-}
-```
-
 ## Files
 
 - `@ui/OTPField/otp-field.tsx`
@@ -2716,45 +1703,6 @@ Popover displays floating content in relation to a trigger element, with automat
 ## Variants
 
 The Popover consists of a trigger component and a content panel. The trigger is any interactive element; clicking it toggles the popover visibility. The content panel positions itself relative to the trigger using the configured placement, which accepts `top`, `bottom`, `left`, `right`, and their `-start`/`-end` variants. The popover automatically flips to the opposite side when the preferred placement would overflow the viewport. A backdrop overlay or close button can be added for dismissible popovers.
-
-## Examples
-
-```tsx
-import { Button } from "../Button/button";
-import { Stack } from "../Stack/stack";
-import { Text } from "../Text/text";
-import {
-  Popover,
-  PopoverArrow,
-  PopoverDescription,
-  PopoverPopup,
-  PopoverTitle,
-  PopoverTrigger,
-} from "./popover";
-
-export function DefaultStory() {
-  return (
-    <Stack gap="sm" align="start">
-      <Text variant="body2">Click the button to open a popover</Text>
-      <Popover>
-        <PopoverTrigger render={<Button variant="outline">Open Popover</Button>} />
-        <PopoverPopup>
-          <PopoverArrow />
-          <Stack gap="sm" padding="md">
-            <PopoverTitle>Popover Title</PopoverTitle>
-            <PopoverDescription>This is a popover. It can contain any content.</PopoverDescription>
-            <Button size="sm" variant="solid">
-              Action
-            </Button>
-          </Stack>
-        </PopoverPopup>
-      </Popover>
-    </Stack>
-  );
-}
-
-export const demos = [{ name: "Default", component: DefaultStory }];
-```
 
 ## Files
 
@@ -3034,37 +1982,11 @@ import { Select } from "@blenx-dev/core"
 
 ## Overview
 
-Select presents a list of options from which the user chooses one value. It supports both native browser select rendering and a custom dropdown implementation with option groups, placeholder text, disabled states, and validation feedback. Use selects when the user must choose from multiple options (typically more than five) and space constraints make radio buttons or segmented controls impractical.
+Select presents a list of options from which the user chooses one value. It provides a custom dropdown implementation with option groups, placeholder text, disabled states, and validation feedback. Use selects when the user must choose from multiple options (typically more than five) and space constraints make radio buttons or segmented controls impractical.
 
 ## Variants
 
-The native variant renders a stylized `<select>` element with custom chevron icon, preferred for form compatibility and mobile experience where the OS provides a native picker. The custom variant renders a trigger button with a dropdown menu built on the Popover component, offering richer styling control. Both variants support `<optgroup>` for categorizing options with group labels. The placeholder prop displays instructional text when no option is selected, though it is not a substitute for a visible label. Validation styling mirrors the Input component's error state treatment.
-
-## Examples
-
-```tsx
-function SelectDemo() {
-  return (
-    <SelectRoot defaultValue="apple">
-      <SelectTrigger>
-        <SelectValue placeholder="Pick a fruit" />
-        <SelectIcon />
-      </SelectTrigger>
-      <SelectPortal>
-        <SelectPositioner>
-          <SelectPopup>
-            <SelectList>
-              <SelectItem value="apple">Apple</SelectItem>
-              <SelectItem value="banana">Banana</SelectItem>
-              <SelectItem value="orange">Orange</SelectItem>
-            </SelectList>
-          </SelectPopup>
-        </SelectPositioner>
-      </SelectPortal>
-    </SelectRoot>
-  );
-}
-```
+Select renders a trigger button with a dropdown menu built on Base UI Select primitives. It supports `<optgroup>` for categorizing options with group labels via `SelectGroup` and `SelectGroupLabel`. The `placeholder` displays instructional text when no option is selected. Validation styling mirrors the Input component's error state treatment. Sub-components include `SelectRoot`, `SelectLabel`, `SelectTrigger`, `SelectValue`, `SelectIcon`, `SelectPopup`, `SelectItem`, `SelectGroup`, and `SelectGroupLabel`.
 
 ## Dependencies
 
@@ -3092,7 +2014,7 @@ function SelectDemo() {
 
 ## Common Mistakes
 
-The native variant offers limited customization — chevron icon and some padding are adjustable, but the dropdown appearance is controlled by the operating system. Multi-select is not supported; for multiple selections, use a Checkbox group or a Tag-based multi-select pattern. The custom variant does not support search or filtering of options, making it unsuitable for lists exceeding 30 items without an external search mechanism.
+Multi-select is not supported; for multiple selections, use a Checkbox group or a Tag-based multi-select pattern. Select does not support search or filtering of options, making it unsuitable for lists exceeding 30 items without an external search mechanism.
 
 ## Related Components
 
@@ -3192,48 +2114,7 @@ Sheet provides a lightweight slide-in panel for secondary content that does not 
 
 ## Variants
 
-Sheet is built on Base UI Dialog primitives, inheriting focus trapping, dismiss-on-Escape, and backdrop click behavior. The `side` prop controls the slide-in direction — `left` or `right` for side panels, `top` or `bottom` for notification-style panels. The `size` prop controls the panel width for left/right sheets or height for top/bottom sheets, with preset values matching the spacing scale. The component handles body scroll locking when open, preventing background content from scrolling while the sheet is active.
-
-## Examples
-
-```tsx
-function SheetDemo() {
-  return (
-    <VStack gap="md">
-      <Text variant="h6">Sheet</Text>
-      <Sheet>
-        <SheetTrigger
-          render={
-            <Button variant="outline" size="sm">
-              Open Sheet
-            </Button>
-          }
-        />
-        <SheetPopup side="right">
-          <SheetHeader>
-            <SheetTitle>Edit Profile</SheetTitle>
-            <SheetDescription>Make changes to your profile information.</SheetDescription>
-          </SheetHeader>
-          <SheetPanel>
-            <VStack gap="sm">
-              <Text variant="body2">Name</Text>
-              <Text variant="body2" color="secondary">
-                Your display name as it appears to others.
-              </Text>
-            </VStack>
-          </SheetPanel>
-          <SheetFooter>
-            <HStack gap="sm" justify="end" wrap>
-              <SheetClose render={<Button variant="ghost" />}>Cancel</SheetClose>
-              <Button>Save</Button>
-            </HStack>
-          </SheetFooter>
-        </SheetPopup>
-      </Sheet>
-    </VStack>
-  );
-}
-```
+Sheet is built on Base UI Dialog primitives, inheriting focus trapping, dismiss-on-Escape, and backdrop click behavior. The `side` prop controls the slide-in direction — `left` or `right` for side panels, `top` or `bottom` for notification-style panels. The component handles body scroll locking when open, preventing background content from scrolling while the sheet is active. Sub-components include `Sheet`, `SheetTrigger`, `SheetPopup` (also exported as `SheetContent`), `SheetHeader`, `SheetPanel`, `SheetFooter`, `SheetTitle`, `SheetDescription`, and `SheetBackdrop` (also exported as `SheetOverlay`).
 
 ## Dependencies
 
@@ -3367,24 +2248,6 @@ Spinner communicates ongoing loading activity through a rotating indicator anima
 ## Variants
 
 The component renders an animated SVG circle that rotates continuously. The `size` prop maps to the system's spacing scale, providing consistent dimensions across the application. The optional `label` prop renders a text node that is visually hidden but available to screen readers via `aria-label` on the svg element. When no label is provided, the spinner is marked as `aria-hidden` to avoid announcing meaningless rotation to assistive technology. The animation speed is calibrated to feel calm but purposeful — approximately one rotation per second.
-
-## Examples
-
-```tsx
-import { Stack } from "../Stack/stack";
-import { Spinner } from "./spinner";
-
-export function SizesStory() {
-  return (
-    <Stack gap="md" direction="row" align="center">
-      <Spinner size={16} />
-      <Spinner size={24} />
-      <Spinner size={32} />
-      <Spinner size={48} />
-    </Stack>
-  );
-}
-```
 
 ## Files
 
@@ -3596,31 +2459,6 @@ Switch provides a binary toggle control for turning a setting on or off. It rend
 
 Switch is built on Base UI Switch primitives, inheriting full WAI-ARIA switch pattern compliance. The component renders a native `<button>` element with `role="switch"` and `aria-checked` attributes managed automatically. The `checked` and `onCheckedChange` props control the toggle state. The disabled state reduces opacity and removes interaction. The `size` prop offers standard and compact variants to match the application's density requirements. The label is provided externally and associated with the switch via `htmlFor` and `id`.
 
-## Examples
-
-```tsx
-function SwitchDemo() {
-  return (
-    <VStack gap="md">
-      <HStack gap="md" align="center">
-        <Switch defaultChecked />
-        <Text variant="body2">Airplane Mode</Text>
-      </HStack>
-      <HStack gap="md" align="center">
-        <Switch />
-        <Text variant="body2">Wi-Fi</Text>
-      </HStack>
-      <HStack gap="md" align="center">
-        <Switch disabled />
-        <Text variant="body2" color="secondary">
-          Bluetooth (disabled)
-        </Text>
-      </HStack>
-    </VStack>
-  );
-}
-```
-
 ## Dependencies
 
 - box
@@ -3685,31 +2523,6 @@ Table renders structured data in a grid of rows and columns using styled native 
 
 Table provides `<thead>`, `<tbody>`, `<tr>`, `<th>`, and `<td>` components that mirror the native HTML table structure with consistent styling. The `sortable` prop on header cells adds click-to-sort behavior with ascending and descending indicators. The `striped` variant alternates row background colors for improved scanability in dense datasets. The `stickyHeader` prop pins the header row to the top of the scrollable container when the table body overflows. The table is wrapped in a horizontal overflow container by default to prevent layout breakage on narrow viewports.
 
-## Examples
-
-```tsx
-function TableDemo() {
-  const columns = [
-    { key: "name" as keyof User, header: "Name" },
-    { key: "email" as keyof User, header: "Email" },
-    { key: "role" as keyof User, header: "Role" },
-    {
-      key: "status" as keyof User,
-      header: "Status",
-      cell: (row: User) => (
-        <Badge variant={row.status === "active" ? "primary" : "default"}>{row.status}</Badge>
-      ),
-    },
-  ];
-
-  return (
-    <VStack gap="md">
-      <Table columnData={columns} rowData={users} rowKey="id" />
-    </VStack>
-  );
-}
-```
-
 ## Files
 
 - `@ui/Table/table.tsx`
@@ -3760,38 +2573,6 @@ Tabs organizes content into separate panels where only one panel is visible at a
 ## Variants
 
 Tabs is built on Base UI Tabs primitives, implementing the WAI-ARIA tabs pattern with `tablist`, `tab`, and `tabpanel` roles. The component consists of a Tab List containing Tab triggers and a set of Tab Panels that correspond by index or value. The `value` and `onValueChange` props manage the selected tab in controlled mode. Keyboard navigation follows the roving tabindex pattern: arrow keys switch between tabs, and Tab moves focus into the active panel. The `orientation` prop toggles between horizontal and vertical tab layouts.
-
-## Examples
-
-```tsx
-function TabsDemo() {
-  return (
-    <VStack gap="md">
-      <Tabs defaultValue="tab1">
-        <TabsList>
-          <TabsTab value="tab1">Overview</TabsTab>
-          <TabsTab value="tab2">Usage</TabsTab>
-          <TabsTab value="tab3">API</TabsTab>
-        </TabsList>
-        <TabsPanel value="tab1">
-          <Text variant="body2">
-            Welcome to the component overview. Here you will find a summary of features and
-            capabilities.
-          </Text>
-        </TabsPanel>
-        <TabsPanel value="tab2">
-          <Text variant="body2">
-            Usage examples and code snippets to help you integrate the component into your project.
-          </Text>
-        </TabsPanel>
-        <TabsPanel value="tab3">
-          <Text variant="body2">Detailed API reference including props, types, and methods.</Text>
-        </TabsPanel>
-      </Tabs>
-    </VStack>
-  );
-}
-```
 
 ## Files
 
@@ -4010,35 +2791,6 @@ Toggle provides a two-state button that switches between active and inactive vis
 
 Toggle renders as a button element that maintains a pressed state through `aria-pressed`. The `pressed` and `onPressedChange` props control the toggle state in controlled mode, or the component can manage its own state internally. The visual treatment switches between a default button appearance and an active appearance that uses the brand color or a filled background, depending on the variant. The `size` prop matches the Button component's size scale for consistent spacing in toolbars. The disabled state removes interaction and reduces visual emphasis.
 
-## Examples
-
-```tsx
-import { Stack } from "../Stack/stack";
-import { Toggle } from "./toggle";
-
-export function VariantsStory() {
-  return (
-    <Stack gap="md">
-      <Stack gap="sm" direction="row" align="center">
-        <Toggle>Default</Toggle>
-        <Toggle variant="outline">Outline</Toggle>
-      </Stack>
-      <Stack gap="sm" direction="row" align="center">
-        <Toggle size="sm">Small</Toggle>
-        <Toggle size="default">Default</Toggle>
-        <Toggle size="lg">Large</Toggle>
-      </Stack>
-      <Stack gap="sm" direction="row" align="center">
-        <Toggle disabled>Disabled</Toggle>
-        <Toggle variant="outline" disabled>
-          Disabled
-        </Toggle>
-      </Stack>
-    </Stack>
-  );
-}
-```
-
 ## Files
 
 - `@ui/Toggle/toggle.tsx`
@@ -4062,13 +2814,46 @@ Toggle does not support intermediate or indeterminate states. The component does
 
 ---
 
+# AspectRatio
+
+A container that maintains a specific aspect ratio for its child content. Useful for embeds, images, and responsive media.
+
+- **Package:** `@blenx-dev/core`
+- **Category:** layout
+- **Status:** stable
+- **Keywords:** aspect ratio, ratio, responsive, embed, image
+
+## Installation
+
+```bash
+npx shadcn@latest add @blenx/aspect-ratio
+pnpm dlx shadcn@latest add @blenx/aspect-ratio
+yarn dlx shadcn@latest add @blenx/aspect-ratio
+bunx shadcn@latest add @blenx/aspect-ratio
+```
+
+## Imports
+
+```tsx
+import { AspectRatio } from "@blenx-dev/core"
+```
+
+## Related Components
+
+- Box
+- Container
+
+
+---
+
 # CloseButton
 
 Close button component using IconButton from Blenx UI.
 
 - **Package:** `@blenx-dev/core`
-- **Category:** primitives
+- **Category:** actions
 - **Status:** stable
+- **Keywords:** close, dismiss, x, icon button, modal close
 
 ## Installation
 
@@ -4093,6 +2878,24 @@ import { CloseButton } from "@blenx-dev/core"
 
 - `@ui/CloseButton/close-button.tsx`
 
+## Accessibility
+
+### Keyboard Support
+
+- `Enter`
+- `Space`
+
+### ARIA Attributes
+
+- `aria-label`
+
+## Related Components
+
+- Button
+- IconButton
+- Dialog
+- Drawer
+
 
 ---
 
@@ -4101,8 +2904,9 @@ import { CloseButton } from "@blenx-dev/core"
 Copy button component using IconButton from Blenx UI.
 
 - **Package:** `@blenx-dev/core`
-- **Category:** primitives
+- **Category:** actions
 - **Status:** stable
+- **Keywords:** copy, clipboard, copy to clipboard, icon button
 
 ## Installation
 
@@ -4126,6 +2930,24 @@ import { CopyButton } from "@blenx-dev/core"
 ## Files
 
 - `@ui/CopyButton/copy-button.tsx`
+
+## Accessibility
+
+### Keyboard Support
+
+- `Enter`
+- `Space`
+
+### ARIA Attributes
+
+- `aria-label`
+- `title`
+
+## Related Components
+
+- Button
+- IconButton
+- CloseButton
 
 
 ---

@@ -4,16 +4,19 @@ import clsx from "clsx";
 import type * as React from "react";
 import { useId } from "react";
 import { inputStyle, inputSm, inputLg, inputError, label } from "./input.css";
+import { applyBaseSprinkles } from "../../utils/ve-style.utils";
+import type { BaseSprinkles } from "../../utils/sprinkles.css";
 
 type InputSize = "sm" | "default" | "lg";
 type _BaseInputProps = Omit<InputPrimitive.Props & React.RefAttributes<HTMLInputElement>, "size">;
-export type InputProps = _BaseInputProps & {
-  size?: InputSize;
-  error?: string;
-  wrapperStyle?: React.CSSProperties;
-  className?: string;
-  style?: React.CSSProperties;
-};
+export type InputProps = _BaseInputProps &
+  BaseSprinkles & {
+    size?: InputSize;
+    error?: string;
+    wrapperStyle?: React.CSSProperties;
+    className?: string;
+    style?: React.CSSProperties;
+  };
 
 type LabelProps = useRender.ComponentProps<"label"> & {
   className?: string;
@@ -29,8 +32,9 @@ export function Label({ render, className, style, ...props }: LabelProps): React
 }
 
 export function Input({ error, className, style, size = "default", ...props }: InputProps) {
+  const [boxProps, restProps] = applyBaseSprinkles(props);
   const generatedId = useId();
-  const fieldId = props.id ?? generatedId;
+  const fieldId = (restProps.id as string | undefined) ?? generatedId;
 
   return (
     <InputPrimitive
@@ -41,10 +45,11 @@ export function Input({ error, className, style, size = "default", ...props }: I
         size === "sm" && inputSm,
         size === "lg" && inputLg,
         error ? inputError : null,
+        boxProps,
         className,
       )}
       style={style}
-      {...props}
+      {...restProps}
     />
   );
 }
