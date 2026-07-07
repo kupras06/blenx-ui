@@ -6,6 +6,12 @@
   "publishConfig": {
     "access": "public"
   },
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "types": "./src/index.ts"
+    }
+  },
   "dependencies": {
     "@blenx-dev/core": "workspace:*",
     "@blenx-dev/theme": "workspace:*",
