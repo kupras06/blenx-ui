@@ -4,7 +4,7 @@ import { Field as FieldPrimitive } from "@base-ui/react/field";
 import clsx from "clsx";
 import { FieldLabel, FieldDescription, FieldError } from "../Field/field";
 import { Input, type InputProps } from "../Input/input";
-import { fieldWrapper } from "./number-field.css";
+import { fieldWrapper } from "../Field/field-wrapper.css";
 
 export interface NumberFieldProps extends Omit<InputProps, "id" | "type"> {
   label: string;
@@ -28,15 +28,11 @@ export function NumberField({
   const fieldValid = error ? (false as const) : undefined;
 
   return (
-    <FieldPrimitive.Root
-      invalid={!fieldValid}
-      className={clsx(fieldWrapper, className)}
-      style={style}
-    >
+    <FieldPrimitive.Root valid={fieldValid} className={clsx(fieldWrapper, className)} style={style}>
       <FieldLabel>{label}</FieldLabel>
       <Input error={error} type="number" min={min} max={max} step={step} {...props} />
       {description && <FieldDescription>{description}</FieldDescription>}
-      <FieldError>{error}</FieldError>
+      {error && <FieldError>{error}</FieldError>}
     </FieldPrimitive.Root>
   );
 }

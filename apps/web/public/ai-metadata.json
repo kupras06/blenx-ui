@@ -6,12 +6,27 @@
     "package": "@blenx-dev/core",
     "category": "data-display",
     "status": "stable",
-    "keywords": ["accordion", "collapsible", "expand", "collapse"],
-    "related": ["Tabs", "Dialog"],
+    "keywords": [
+      "accordion",
+      "collapsible",
+      "expand",
+      "collapse"
+    ],
+    "related": [
+      "Tabs",
+      "Dialog"
+    ],
     "dependencies": [],
     "accessibility": {
-      "keyboard": ["Enter", "Space"],
-      "aria": ["aria-expanded", "aria-controls", "aria-labelledby"]
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "aria": [
+        "aria-expanded",
+        "aria-controls",
+        "aria-labelledby"
+      ]
     },
     "hasExamples": false,
     "hasSections": true,
@@ -24,12 +39,32 @@
     "package": "@blenx-dev/core",
     "category": "overlay",
     "status": "stable",
-    "keywords": ["dialog", "modal", "alert", "confirmation", "confirm"],
-    "related": ["Dialog", "Button", "ScrollArea"],
-    "dependencies": ["icon-button", "scroll-area"],
+    "keywords": [
+      "dialog",
+      "modal",
+      "alert",
+      "confirmation",
+      "confirm"
+    ],
+    "related": [
+      "Dialog",
+      "Button",
+      "ScrollArea"
+    ],
+    "dependencies": [
+      "icon-button",
+      "scroll-area"
+    ],
     "accessibility": {
-      "keyboard": ["Escape"],
-      "aria": ["role", "aria-modal", "aria-labelledby", "aria-describedby"]
+      "keyboard": [
+        "Escape"
+      ],
+      "aria": [
+        "role",
+        "aria-modal",
+        "aria-labelledby",
+        "aria-describedby"
+      ]
     },
     "hasExamples": false,
     "hasSections": true,
@@ -42,12 +77,25 @@
     "package": "@blenx-dev/core",
     "category": "feedback",
     "status": "stable",
-    "keywords": ["alert", "banner", "feedback", "info", "success", "warning", "error"],
-    "related": ["Text"],
+    "keywords": [
+      "alert",
+      "banner",
+      "feedback",
+      "info",
+      "success",
+      "warning",
+      "error"
+    ],
+    "related": [
+      "Text"
+    ],
     "dependencies": [],
     "accessibility": {
       "keyboard": [],
-      "aria": ["role", "aria-live"]
+      "aria": [
+        "role",
+        "aria-live"
+      ]
     },
     "hasExamples": false,
     "hasSections": true,
@@ -60,9 +108,23 @@
     "package": "@blenx-dev/core",
     "category": "forms",
     "status": "stable",
-    "keywords": ["autocomplete", "typeahead", "search", "suggestions", "filter"],
-    "related": ["Input", "ScrollArea", "Field", "Combobox"],
-    "dependencies": ["input", "scroll-area"],
+    "keywords": [
+      "autocomplete",
+      "typeahead",
+      "search",
+      "suggestions",
+      "filter"
+    ],
+    "related": [
+      "Input",
+      "ScrollArea",
+      "Field",
+      "Combobox"
+    ],
+    "dependencies": [
+      "input",
+      "scroll-area"
+    ],
     "accessibility": {
       "keyboard": [],
       "aria": []
@@ -78,8 +140,16 @@
     "package": "@blenx-dev/core",
     "category": "data-display",
     "status": "stable",
-    "keywords": ["avatar", "profile", "image", "user", "fallback"],
-    "related": ["Badge"],
+    "keywords": [
+      "avatar",
+      "profile",
+      "image",
+      "user",
+      "fallback"
+    ],
+    "related": [
+      "Badge"
+    ],
     "dependencies": [],
     "accessibility": {
       "keyboard": [],
@@ -96,8 +166,18 @@
     "package": "@blenx-dev/core",
     "category": "data-display",
     "status": "stable",
-    "keywords": ["badge", "pill", "chip", "label", "status", "count"],
-    "related": ["Text", "Avatar"],
+    "keywords": [
+      "badge",
+      "pill",
+      "chip",
+      "label",
+      "status",
+      "count"
+    ],
+    "related": [
+      "Text",
+      "Avatar"
+    ],
     "dependencies": [],
     "accessibility": {
       "keyboard": [],
@@ -114,8 +194,19 @@
     "package": "@blenx-dev/core",
     "category": "layout",
     "status": "stable",
-    "keywords": ["box", "layout", "div", "polymorphic", "primitive"],
-    "related": ["Container", "Grid", "Stack", "Surface"],
+    "keywords": [
+      "box",
+      "layout",
+      "div",
+      "polymorphic",
+      "primitive"
+    ],
+    "related": [
+      "Container",
+      "Grid",
+      "Stack",
+      "Surface"
+    ],
     "dependencies": [],
     "accessibility": {
       "keyboard": [],
@@ -132,12 +223,21 @@
     "package": "@blenx-dev/core",
     "category": "navigation",
     "status": "stable",
-    "keywords": ["breadcrumbs", "navigation", "breadcrumb", "trail", "hierarchy"],
+    "keywords": [
+      "breadcrumbs",
+      "navigation",
+      "breadcrumb",
+      "trail",
+      "hierarchy"
+    ],
     "related": [],
     "dependencies": [],
     "accessibility": {
       "keyboard": [],
-      "aria": ["aria-label", "aria-current"]
+      "aria": [
+        "aria-label",
+        "aria-current"
+      ]
     },
     "hasExamples": false,
     "hasSections": true,
@@ -150,12 +250,32 @@
     "package": "@blenx-dev/core",
     "category": "forms",
     "status": "stable",
-    "keywords": ["button", "action", "click", "submit", "loading", "variant"],
-    "related": ["Spinner", "IconButton", "Toggle"],
-    "dependencies": ["spinner"],
+    "keywords": [
+      "button",
+      "action",
+      "click",
+      "submit",
+      "loading",
+      "variant"
+    ],
+    "related": [
+      "Spinner",
+      "IconButton",
+      "Toggle"
+    ],
+    "dependencies": [
+      "spinner"
+    ],
     "accessibility": {
-      "keyboard": ["Enter", "Space"],
-      "aria": ["aria-disabled", "aria-label", "aria-describedby"]
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "aria": [
+        "aria-disabled",
+        "aria-label",
+        "aria-describedby"
+      ]
     },
     "hasExamples": false,
     "hasSections": true,
@@ -168,9 +288,20 @@
     "package": "@blenx-dev/calendar",
     "category": "forms",
     "status": "stable",
-    "keywords": ["calendar", "date", "datepicker", "day", "month"],
-    "related": ["DatePicker", "Button"],
-    "dependencies": ["button"],
+    "keywords": [
+      "calendar",
+      "date",
+      "datepicker",
+      "day",
+      "month"
+    ],
+    "related": [
+      "DatePicker",
+      "Button"
+    ],
+    "dependencies": [
+      "button"
+    ],
     "accessibility": {
       "keyboard": [],
       "aria": []
@@ -186,9 +317,20 @@
     "package": "@blenx-dev/core",
     "category": "data-display",
     "status": "stable",
-    "keywords": ["card", "container", "panel", "content", "surface"],
-    "related": ["Surface", "Box"],
-    "dependencies": ["box"],
+    "keywords": [
+      "card",
+      "container",
+      "panel",
+      "content",
+      "surface"
+    ],
+    "related": [
+      "Surface",
+      "Box"
+    ],
+    "dependencies": [
+      "box"
+    ],
     "accessibility": {
       "keyboard": [],
       "aria": []
@@ -204,12 +346,27 @@
     "package": "@blenx-dev/core",
     "category": "forms",
     "status": "stable",
-    "keywords": ["checkbox", "check", "input", "form", "selection", "indeterminate"],
-    "related": ["Field", "CheckboxGroup"],
+    "keywords": [
+      "checkbox",
+      "check",
+      "input",
+      "form",
+      "selection",
+      "indeterminate"
+    ],
+    "related": [
+      "Field",
+      "CheckboxGroup"
+    ],
     "dependencies": [],
     "accessibility": {
-      "keyboard": ["Space"],
-      "aria": ["aria-checked", "aria-labelledby"]
+      "keyboard": [
+        "Space"
+      ],
+      "aria": [
+        "aria-checked",
+        "aria-labelledby"
+      ]
     },
     "hasExamples": false,
     "hasSections": true,
@@ -222,9 +379,26 @@
     "package": "@blenx-dev/color-picker",
     "category": "forms",
     "status": "stable",
-    "keywords": ["color", "picker", "color picker", "hex", "popover"],
-    "related": ["ColorSwatch", "Popover", "Field", "Button"],
-    "dependencies": ["button", "color-swatch", "field", "popover", "stack"],
+    "keywords": [
+      "color",
+      "picker",
+      "color picker",
+      "hex",
+      "popover"
+    ],
+    "related": [
+      "ColorSwatch",
+      "Popover",
+      "Field",
+      "Button"
+    ],
+    "dependencies": [
+      "button",
+      "color-swatch",
+      "field",
+      "popover",
+      "stack"
+    ],
     "accessibility": {
       "keyboard": [],
       "aria": []
@@ -240,9 +414,18 @@
     "package": "@blenx-dev/core",
     "category": "data-display",
     "status": "stable",
-    "keywords": ["color", "swatch", "preview", "color swatch"],
-    "related": ["ColorPicker"],
-    "dependencies": ["box"],
+    "keywords": [
+      "color",
+      "swatch",
+      "preview",
+      "color swatch"
+    ],
+    "related": [
+      "ColorPicker"
+    ],
+    "dependencies": [
+      "box"
+    ],
     "accessibility": {
       "keyboard": [],
       "aria": []
@@ -258,9 +441,23 @@
     "package": "@blenx-dev/core",
     "category": "forms",
     "status": "stable",
-    "keywords": ["combobox", "select", "autocomplete", "chips", "multi-select"],
-    "related": ["Input", "ScrollArea", "Field", "Autocomplete"],
-    "dependencies": ["input", "scroll-area"],
+    "keywords": [
+      "combobox",
+      "select",
+      "autocomplete",
+      "chips",
+      "multi-select"
+    ],
+    "related": [
+      "Input",
+      "ScrollArea",
+      "Field",
+      "Autocomplete"
+    ],
+    "dependencies": [
+      "input",
+      "scroll-area"
+    ],
     "accessibility": {
       "keyboard": [],
       "aria": []
@@ -276,11 +473,30 @@
     "package": "@blenx-dev/core",
     "category": "overlay",
     "status": "experimental",
-    "keywords": ["command", "palette", "search", "filter", "kbar", "spotlight", "keyboard"],
-    "related": ["Dialog", "Select", "Menu"],
-    "dependencies": ["scroll-area"],
+    "keywords": [
+      "command",
+      "palette",
+      "search",
+      "filter",
+      "kbar",
+      "spotlight",
+      "keyboard"
+    ],
+    "related": [
+      "Dialog",
+      "Select",
+      "Menu"
+    ],
+    "dependencies": [
+      "scroll-area"
+    ],
     "accessibility": {
-      "keyboard": ["ArrowDown", "ArrowUp", "Enter", "Escape"],
+      "keyboard": [
+        "ArrowDown",
+        "ArrowUp",
+        "Enter",
+        "Escape"
+      ],
       "aria": [
         "role",
         "combobox",
@@ -302,9 +518,20 @@
     "package": "@blenx-dev/core",
     "category": "layout",
     "status": "stable",
-    "keywords": ["container", "layout", "wrapper", "center", "max-width"],
-    "related": ["Box", "Stack"],
-    "dependencies": ["box"],
+    "keywords": [
+      "container",
+      "layout",
+      "wrapper",
+      "center",
+      "max-width"
+    ],
+    "related": [
+      "Box",
+      "Stack"
+    ],
+    "dependencies": [
+      "box"
+    ],
     "accessibility": {
       "keyboard": [],
       "aria": []
@@ -345,9 +572,25 @@
     "package": "@blenx-dev/calendar",
     "category": "forms",
     "status": "stable",
-    "keywords": ["date", "date picker", "calendar", "popover", "form"],
-    "related": ["Calendar", "Popover", "Field", "Button"],
-    "dependencies": ["button", "calendar", "field", "popover"],
+    "keywords": [
+      "date",
+      "date picker",
+      "calendar",
+      "popover",
+      "form"
+    ],
+    "related": [
+      "Calendar",
+      "Popover",
+      "Field",
+      "Button"
+    ],
+    "dependencies": [
+      "button",
+      "calendar",
+      "field",
+      "popover"
+    ],
     "accessibility": {
       "keyboard": [],
       "aria": []
@@ -363,12 +606,33 @@
     "package": "@blenx-dev/core",
     "category": "overlay",
     "status": "stable",
-    "keywords": ["dialog", "modal", "popup", "overlay", "alert"],
-    "related": ["AlertDialog", "Button", "ScrollArea", "Drawer"],
-    "dependencies": ["icon-button", "scroll-area"],
+    "keywords": [
+      "dialog",
+      "modal",
+      "popup",
+      "overlay",
+      "alert"
+    ],
+    "related": [
+      "AlertDialog",
+      "Button",
+      "ScrollArea",
+      "Drawer"
+    ],
+    "dependencies": [
+      "icon-button",
+      "scroll-area"
+    ],
     "accessibility": {
-      "keyboard": ["Escape"],
-      "aria": ["role", "aria-modal", "aria-labelledby", "aria-describedby"]
+      "keyboard": [
+        "Escape"
+      ],
+      "aria": [
+        "role",
+        "aria-modal",
+        "aria-labelledby",
+        "aria-describedby"
+      ]
     },
     "hasExamples": false,
     "hasSections": true,
@@ -381,9 +645,23 @@
     "package": "@blenx-dev/core",
     "category": "overlay",
     "status": "stable",
-    "keywords": ["drawer", "panel", "slide", "swipe", "sidebar", "menu"],
-    "related": ["ScrollArea", "Dialog", "Button"],
-    "dependencies": ["icon-button", "scroll-area"],
+    "keywords": [
+      "drawer",
+      "panel",
+      "slide",
+      "swipe",
+      "sidebar",
+      "menu"
+    ],
+    "related": [
+      "ScrollArea",
+      "Dialog",
+      "Button"
+    ],
+    "dependencies": [
+      "icon-button",
+      "scroll-area"
+    ],
     "accessibility": {
       "keyboard": [],
       "aria": []
@@ -399,9 +677,25 @@
     "package": "@blenx-dev/core",
     "category": "forms",
     "status": "stable",
-    "keywords": ["field", "form", "label", "error", "validation", "input"],
-    "related": ["Input", "Select", "Textarea", "ColorPicker", "DatePicker"],
-    "dependencies": ["button", "scroll-area"],
+    "keywords": [
+      "field",
+      "form",
+      "label",
+      "error",
+      "validation",
+      "input"
+    ],
+    "related": [
+      "Input",
+      "Select",
+      "Textarea",
+      "ColorPicker",
+      "DatePicker"
+    ],
+    "dependencies": [
+      "button",
+      "scroll-area"
+    ],
     "accessibility": {
       "keyboard": [],
       "aria": []
@@ -417,9 +711,20 @@
     "package": "@blenx-dev/core",
     "category": "layout",
     "status": "experimental",
-    "keywords": ["grid", "layout", "columns", "css grid", "responsive"],
-    "related": ["Box", "Stack"],
-    "dependencies": ["box"],
+    "keywords": [
+      "grid",
+      "layout",
+      "columns",
+      "css grid",
+      "responsive"
+    ],
+    "related": [
+      "Box",
+      "Stack"
+    ],
+    "dependencies": [
+      "box"
+    ],
     "accessibility": {
       "keyboard": [],
       "aria": []
@@ -435,12 +740,30 @@
     "package": "@blenx-dev/core",
     "category": "forms",
     "status": "stable",
-    "keywords": ["icon", "button", "icon-button", "action", "toolbar"],
-    "related": ["Icon", "Button", "Spinner"],
-    "dependencies": ["button"],
+    "keywords": [
+      "icon",
+      "button",
+      "icon-button",
+      "action",
+      "toolbar"
+    ],
+    "related": [
+      "Icon",
+      "Button",
+      "Spinner"
+    ],
+    "dependencies": [
+      "button"
+    ],
     "accessibility": {
-      "keyboard": ["Enter", "Space"],
-      "aria": ["aria-label", "aria-disabled"]
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "aria": [
+        "aria-label",
+        "aria-disabled"
+      ]
     },
     "hasExamples": false,
     "hasSections": true,
@@ -453,12 +776,24 @@
     "package": "@blenx-dev/core",
     "category": "utility",
     "status": "stable",
-    "keywords": ["icon", "svg", "size", "color", "wrapper"],
-    "related": ["IconButton", "Button", "Badge"],
+    "keywords": [
+      "icon",
+      "svg",
+      "size",
+      "color",
+      "wrapper"
+    ],
+    "related": [
+      "IconButton",
+      "Button",
+      "Badge"
+    ],
     "dependencies": [],
     "accessibility": {
       "keyboard": [],
-      "aria": ["aria-hidden"]
+      "aria": [
+        "aria-hidden"
+      ]
     },
     "hasExamples": false,
     "hasSections": true,
@@ -471,8 +806,19 @@
     "package": "@blenx-dev/core",
     "category": "forms",
     "status": "stable",
-    "keywords": ["input group", "fieldset", "addon", "form", "group"],
-    "related": ["Input", "Field", "Checkbox", "Radio"],
+    "keywords": [
+      "input group",
+      "fieldset",
+      "addon",
+      "form",
+      "group"
+    ],
+    "related": [
+      "Input",
+      "Field",
+      "Checkbox",
+      "Radio"
+    ],
     "dependencies": [],
     "accessibility": {
       "keyboard": [],
@@ -489,8 +835,19 @@
     "package": "@blenx-dev/core",
     "category": "forms",
     "status": "stable",
-    "keywords": ["input", "text", "form", "field", "text input"],
-    "related": ["Field", "InputGroup", "Autocomplete", "Combobox"],
+    "keywords": [
+      "input",
+      "text",
+      "form",
+      "field",
+      "text input"
+    ],
+    "related": [
+      "Field",
+      "InputGroup",
+      "Autocomplete",
+      "Combobox"
+    ],
     "dependencies": [],
     "accessibility": {
       "keyboard": [],
@@ -507,12 +864,27 @@
     "package": "@blenx-dev/core",
     "category": "navigation",
     "status": "stable",
-    "keywords": ["menu", "dropdown", "context menu", "navigation"],
-    "related": ["Button"],
+    "keywords": [
+      "menu",
+      "dropdown",
+      "context menu",
+      "navigation"
+    ],
+    "related": [
+      "Button"
+    ],
     "dependencies": [],
     "accessibility": {
-      "keyboard": ["ArrowUp", "ArrowDown", "Enter", "Escape"],
-      "aria": ["role", "aria-orientation"]
+      "keyboard": [
+        "ArrowUp",
+        "ArrowDown",
+        "Enter",
+        "Escape"
+      ],
+      "aria": [
+        "role",
+        "aria-orientation"
+      ]
     },
     "hasExamples": false,
     "hasSections": true,
@@ -525,8 +897,18 @@
     "package": "@blenx-dev/core",
     "category": "forms",
     "status": "experimental",
-    "keywords": ["otp", "password", "code", "verification", "2fa", "input"],
-    "related": ["Input", "Field"],
+    "keywords": [
+      "otp",
+      "password",
+      "code",
+      "verification",
+      "2fa",
+      "input"
+    ],
+    "related": [
+      "Input",
+      "Field"
+    ],
     "dependencies": [],
     "accessibility": {
       "keyboard": [],
@@ -543,12 +925,28 @@
     "package": "@blenx-dev/core",
     "category": "overlay",
     "status": "stable",
-    "keywords": ["popover", "tooltip", "popup", "floating", "overlay"],
-    "related": ["Button", "ColorPicker", "DatePicker"],
+    "keywords": [
+      "popover",
+      "tooltip",
+      "popup",
+      "floating",
+      "overlay"
+    ],
+    "related": [
+      "Button",
+      "ColorPicker",
+      "DatePicker"
+    ],
     "dependencies": [],
     "accessibility": {
-      "keyboard": ["Escape"],
-      "aria": ["role", "aria-labelledby", "aria-describedby"]
+      "keyboard": [
+        "Escape"
+      ],
+      "aria": [
+        "role",
+        "aria-labelledby",
+        "aria-describedby"
+      ]
     },
     "hasExamples": false,
     "hasSections": true,
@@ -561,12 +959,25 @@
     "package": "@blenx-dev/core",
     "category": "feedback",
     "status": "stable",
-    "keywords": ["progress", "bar", "loading", "status", "indicator"],
-    "related": ["Spinner"],
+    "keywords": [
+      "progress",
+      "bar",
+      "loading",
+      "status",
+      "indicator"
+    ],
+    "related": [
+      "Spinner"
+    ],
     "dependencies": [],
     "accessibility": {
       "keyboard": [],
-      "aria": ["role", "aria-valuenow", "aria-valuemin", "aria-valuemax"]
+      "aria": [
+        "role",
+        "aria-valuenow",
+        "aria-valuemin",
+        "aria-valuemax"
+      ]
     },
     "hasExamples": false,
     "hasSections": true,
@@ -579,12 +990,27 @@
     "package": "@blenx-dev/core",
     "category": "forms",
     "status": "stable",
-    "keywords": ["radio", "radio group", "option", "select", "form"],
-    "related": ["Field", "InputGroup"],
+    "keywords": [
+      "radio",
+      "radio group",
+      "option",
+      "select",
+      "form"
+    ],
+    "related": [
+      "Field",
+      "InputGroup"
+    ],
     "dependencies": [],
     "accessibility": {
-      "keyboard": ["ArrowUp", "ArrowDown"],
-      "aria": ["aria-checked", "aria-labelledby"]
+      "keyboard": [
+        "ArrowUp",
+        "ArrowDown"
+      ],
+      "aria": [
+        "aria-checked",
+        "aria-labelledby"
+      ]
     },
     "hasExamples": false,
     "hasSections": true,
@@ -597,8 +1023,19 @@
     "package": "@blenx-dev/core",
     "category": "utility",
     "status": "stable",
-    "keywords": ["scroll", "scroll area", "scrollbar", "scroll fade"],
-    "related": ["Dialog", "AlertDialog", "Drawer", "Autocomplete", "Combobox"],
+    "keywords": [
+      "scroll",
+      "scroll area",
+      "scrollbar",
+      "scroll fade"
+    ],
+    "related": [
+      "Dialog",
+      "AlertDialog",
+      "Drawer",
+      "Autocomplete",
+      "Combobox"
+    ],
     "dependencies": [],
     "accessibility": {
       "keyboard": [],
@@ -615,9 +1052,20 @@
     "package": "@blenx-dev/core",
     "category": "forms",
     "status": "stable",
-    "keywords": ["segmented", "control", "toggle", "segment", "button group"],
-    "related": ["ToggleGroup", "Toggle"],
-    "dependencies": ["toggle"],
+    "keywords": [
+      "segmented",
+      "control",
+      "toggle",
+      "segment",
+      "button group"
+    ],
+    "related": [
+      "ToggleGroup",
+      "Toggle"
+    ],
+    "dependencies": [
+      "toggle"
+    ],
     "accessibility": {
       "keyboard": [],
       "aria": []
@@ -633,12 +1081,32 @@
     "package": "@blenx-dev/core",
     "category": "forms",
     "status": "stable",
-    "keywords": ["select", "dropdown", "combobox", "listbox", "form"],
-    "related": ["Field", "ScrollArea"],
-    "dependencies": ["field"],
+    "keywords": [
+      "select",
+      "dropdown",
+      "combobox",
+      "listbox",
+      "form"
+    ],
+    "related": [
+      "Field",
+      "ScrollArea"
+    ],
+    "dependencies": [
+      "field"
+    ],
     "accessibility": {
-      "keyboard": ["ArrowUp", "ArrowDown", "Enter", "Escape"],
-      "aria": ["role", "aria-expanded", "aria-labelledby"]
+      "keyboard": [
+        "ArrowUp",
+        "ArrowDown",
+        "Enter",
+        "Escape"
+      ],
+      "aria": [
+        "role",
+        "aria-expanded",
+        "aria-labelledby"
+      ]
     },
     "hasExamples": false,
     "hasSections": true,
@@ -651,12 +1119,26 @@
     "package": "@blenx-dev/core",
     "category": "layout",
     "status": "stable",
-    "keywords": ["separator", "divider", "line", "rule", "hr"],
-    "related": ["ToggleGroup", "Menu"],
-    "dependencies": ["field"],
+    "keywords": [
+      "separator",
+      "divider",
+      "line",
+      "rule",
+      "hr"
+    ],
+    "related": [
+      "ToggleGroup",
+      "Menu"
+    ],
+    "dependencies": [
+      "field"
+    ],
     "accessibility": {
       "keyboard": [],
-      "aria": ["role", "aria-orientation"]
+      "aria": [
+        "role",
+        "aria-orientation"
+      ]
     },
     "hasExamples": false,
     "hasSections": true,
@@ -669,12 +1151,34 @@
     "package": "@blenx-dev/core",
     "category": "overlay",
     "status": "stable",
-    "keywords": ["sheet", "panel", "slide", "sidebar", "drawer", "overlay"],
-    "related": ["Drawer", "Dialog", "Button", "ScrollArea"],
-    "dependencies": ["icon-button", "scroll-area"],
+    "keywords": [
+      "sheet",
+      "panel",
+      "slide",
+      "sidebar",
+      "drawer",
+      "overlay"
+    ],
+    "related": [
+      "Drawer",
+      "Dialog",
+      "Button",
+      "ScrollArea"
+    ],
+    "dependencies": [
+      "icon-button",
+      "scroll-area"
+    ],
     "accessibility": {
-      "keyboard": ["Escape"],
-      "aria": ["role", "aria-modal", "aria-labelledby", "aria-describedby"]
+      "keyboard": [
+        "Escape"
+      ],
+      "aria": [
+        "role",
+        "aria-modal",
+        "aria-labelledby",
+        "aria-describedby"
+      ]
     },
     "hasExamples": false,
     "hasSections": true,
@@ -687,12 +1191,30 @@
     "package": "@blenx-dev/core",
     "category": "forms",
     "status": "stable",
-    "keywords": ["slider", "range", "input", "range slider", "thumb"],
-    "related": ["Field"],
+    "keywords": [
+      "slider",
+      "range",
+      "input",
+      "range slider",
+      "thumb"
+    ],
+    "related": [
+      "Field"
+    ],
     "dependencies": [],
     "accessibility": {
-      "keyboard": ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"],
-      "aria": ["role", "aria-valuenow", "aria-valuemin", "aria-valuemax"]
+      "keyboard": [
+        "ArrowLeft",
+        "ArrowRight",
+        "ArrowUp",
+        "ArrowDown"
+      ],
+      "aria": [
+        "role",
+        "aria-valuenow",
+        "aria-valuemin",
+        "aria-valuemax"
+      ]
     },
     "hasExamples": false,
     "hasSections": true,
@@ -705,12 +1227,24 @@
     "package": "@blenx-dev/core",
     "category": "feedback",
     "status": "stable",
-    "keywords": ["spinner", "loading", "loader", "progress", "wait"],
-    "related": ["Button", "Progress"],
+    "keywords": [
+      "spinner",
+      "loading",
+      "loader",
+      "progress",
+      "wait"
+    ],
+    "related": [
+      "Button",
+      "Progress"
+    ],
     "dependencies": [],
     "accessibility": {
       "keyboard": [],
-      "aria": ["role", "aria-label"]
+      "aria": [
+        "role",
+        "aria-label"
+      ]
     },
     "hasExamples": false,
     "hasSections": true,
@@ -723,8 +1257,17 @@
     "package": "@blenx-dev/core",
     "category": "layout",
     "status": "stable",
-    "keywords": ["splitter", "resize", "panel", "layout", "split", "resizable"],
-    "related": ["Box"],
+    "keywords": [
+      "splitter",
+      "resize",
+      "panel",
+      "layout",
+      "split",
+      "resizable"
+    ],
+    "related": [
+      "Box"
+    ],
     "dependencies": [],
     "accessibility": {
       "keyboard": [],
@@ -741,9 +1284,21 @@
     "package": "@blenx-dev/core",
     "category": "layout",
     "status": "stable",
-    "keywords": ["stack", "flex", "layout", "vstack", "hstack", "flexbox"],
-    "related": ["Box", "Grid"],
-    "dependencies": ["box"],
+    "keywords": [
+      "stack",
+      "flex",
+      "layout",
+      "vstack",
+      "hstack",
+      "flexbox"
+    ],
+    "related": [
+      "Box",
+      "Grid"
+    ],
+    "dependencies": [
+      "box"
+    ],
     "accessibility": {
       "keyboard": [],
       "aria": []
@@ -759,9 +1314,20 @@
     "package": "@blenx-dev/core",
     "category": "layout",
     "status": "stable",
-    "keywords": ["surface", "background", "container", "elevation", "card"],
-    "related": ["Box", "Card"],
-    "dependencies": ["box"],
+    "keywords": [
+      "surface",
+      "background",
+      "container",
+      "elevation",
+      "card"
+    ],
+    "related": [
+      "Box",
+      "Card"
+    ],
+    "dependencies": [
+      "box"
+    ],
     "accessibility": {
       "keyboard": [],
       "aria": []
@@ -777,12 +1343,27 @@
     "package": "@blenx-dev/core",
     "category": "forms",
     "status": "stable",
-    "keywords": ["switch", "toggle", "on/off", "toggle switch"],
-    "related": ["Field"],
-    "dependencies": ["box"],
+    "keywords": [
+      "switch",
+      "toggle",
+      "on/off",
+      "toggle switch"
+    ],
+    "related": [
+      "Field"
+    ],
+    "dependencies": [
+      "box"
+    ],
     "accessibility": {
-      "keyboard": ["Enter", "Space"],
-      "aria": ["aria-checked", "aria-labelledby"]
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "aria": [
+        "aria-checked",
+        "aria-labelledby"
+      ]
     },
     "hasExamples": false,
     "hasSections": true,
@@ -795,12 +1376,21 @@
     "package": "@blenx-dev/core",
     "category": "data-display",
     "status": "stable",
-    "keywords": ["table", "data", "grid", "rows", "columns"],
+    "keywords": [
+      "table",
+      "data",
+      "grid",
+      "rows",
+      "columns"
+    ],
     "related": [],
     "dependencies": [],
     "accessibility": {
       "keyboard": [],
-      "aria": ["role", "aria-colcount"]
+      "aria": [
+        "role",
+        "aria-colcount"
+      ]
     },
     "hasExamples": false,
     "hasSections": true,
@@ -813,12 +1403,32 @@
     "package": "@blenx-dev/core",
     "category": "navigation",
     "status": "stable",
-    "keywords": ["tabs", "tab", "navigation", "panel", "tabbed"],
-    "related": ["Accordion", "SegmentedControl"],
+    "keywords": [
+      "tabs",
+      "tab",
+      "navigation",
+      "panel",
+      "tabbed"
+    ],
+    "related": [
+      "Accordion",
+      "SegmentedControl"
+    ],
     "dependencies": [],
     "accessibility": {
-      "keyboard": ["ArrowLeft", "ArrowRight", "Home", "End"],
-      "aria": ["role", "aria-orientation", "aria-selected", "aria-labelledby", "role"]
+      "keyboard": [
+        "ArrowLeft",
+        "ArrowRight",
+        "Home",
+        "End"
+      ],
+      "aria": [
+        "role",
+        "aria-orientation",
+        "aria-selected",
+        "aria-labelledby",
+        "role"
+      ]
     },
     "hasExamples": false,
     "hasSections": true,
@@ -831,8 +1441,16 @@
     "package": "@blenx-dev/core",
     "category": "typography",
     "status": "stable",
-    "keywords": ["text", "typography", "heading", "paragraph", "font"],
-    "related": ["Badge"],
+    "keywords": [
+      "text",
+      "typography",
+      "heading",
+      "paragraph",
+      "font"
+    ],
+    "related": [
+      "Badge"
+    ],
     "dependencies": [],
     "accessibility": {
       "keyboard": [],
@@ -849,8 +1467,17 @@
     "package": "@blenx-dev/core",
     "category": "forms",
     "status": "stable",
-    "keywords": ["textarea", "text", "input", "multiline", "form"],
-    "related": ["Field", "InputGroup"],
+    "keywords": [
+      "textarea",
+      "text",
+      "input",
+      "multiline",
+      "form"
+    ],
+    "related": [
+      "Field",
+      "InputGroup"
+    ],
     "dependencies": [],
     "accessibility": {
       "keyboard": [],
@@ -867,9 +1494,20 @@
     "package": "@blenx-dev/core",
     "category": "forms",
     "status": "stable",
-    "keywords": ["toggle group", "button group", "toggle", "button bar"],
-    "related": ["Toggle", "SegmentedControl", "Separator"],
-    "dependencies": ["toggle"],
+    "keywords": [
+      "toggle group",
+      "button group",
+      "toggle",
+      "button bar"
+    ],
+    "related": [
+      "Toggle",
+      "SegmentedControl",
+      "Separator"
+    ],
+    "dependencies": [
+      "toggle"
+    ],
     "accessibility": {
       "keyboard": [],
       "aria": []
@@ -885,12 +1523,23 @@
     "package": "@blenx-dev/core",
     "category": "forms",
     "status": "stable",
-    "keywords": ["toggle", "button", "on/off", "pressed", "toggle button"],
-    "related": ["ToggleGroup", "SegmentedControl"],
+    "keywords": [
+      "toggle",
+      "button",
+      "on/off",
+      "pressed",
+      "toggle button"
+    ],
+    "related": [
+      "ToggleGroup",
+      "SegmentedControl"
+    ],
     "dependencies": [],
     "accessibility": {
       "keyboard": [],
-      "aria": ["aria-pressed"]
+      "aria": [
+        "aria-pressed"
+      ]
     },
     "hasExamples": false,
     "hasSections": true,
@@ -903,8 +1552,17 @@
     "package": "@blenx-dev/core",
     "category": "layout",
     "status": "stable",
-    "keywords": ["aspect ratio", "ratio", "responsive", "embed", "image"],
-    "related": ["Box", "Container"],
+    "keywords": [
+      "aspect ratio",
+      "ratio",
+      "responsive",
+      "embed",
+      "image"
+    ],
+    "related": [
+      "Box",
+      "Container"
+    ],
     "dependencies": [],
     "accessibility": {
       "keyboard": [],
@@ -921,12 +1579,30 @@
     "package": "@blenx-dev/core",
     "category": "actions",
     "status": "stable",
-    "keywords": ["close", "dismiss", "x", "icon button", "modal close"],
-    "related": ["Button", "IconButton", "Dialog", "Drawer"],
-    "dependencies": ["icon-button"],
+    "keywords": [
+      "close",
+      "dismiss",
+      "x",
+      "icon button",
+      "modal close"
+    ],
+    "related": [
+      "Button",
+      "IconButton",
+      "Dialog",
+      "Drawer"
+    ],
+    "dependencies": [
+      "icon-button"
+    ],
     "accessibility": {
-      "keyboard": ["Enter", "Space"],
-      "aria": ["aria-label"]
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "aria": [
+        "aria-label"
+      ]
     },
     "hasExamples": false,
     "hasSections": false,
@@ -939,12 +1615,29 @@
     "package": "@blenx-dev/core",
     "category": "actions",
     "status": "stable",
-    "keywords": ["copy", "clipboard", "copy to clipboard", "icon button"],
-    "related": ["Button", "IconButton", "CloseButton"],
-    "dependencies": ["icon-button"],
+    "keywords": [
+      "copy",
+      "clipboard",
+      "copy to clipboard",
+      "icon button"
+    ],
+    "related": [
+      "Button",
+      "IconButton",
+      "CloseButton"
+    ],
+    "dependencies": [
+      "icon-button"
+    ],
     "accessibility": {
-      "keyboard": ["Enter", "Space"],
-      "aria": ["aria-label", "title"]
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "aria": [
+        "aria-label",
+        "title"
+      ]
     },
     "hasExamples": false,
     "hasSections": false,

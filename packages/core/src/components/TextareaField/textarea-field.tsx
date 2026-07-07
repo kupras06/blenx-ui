@@ -4,7 +4,7 @@ import { Field as FieldPrimitive } from "@base-ui/react/field";
 import clsx from "clsx";
 import { FieldLabel, FieldDescription, FieldError } from "../Field/field";
 import { Textarea, type TextareaProps } from "../Textarea/textarea";
-import { fieldWrapper } from "./textarea-field.css";
+import { fieldWrapper } from "../Field/field-wrapper.css";
 
 export interface TextareaFieldProps extends Omit<TextareaProps, "id"> {
   label: string;
@@ -23,11 +23,7 @@ export function TextareaField({
   const fieldValid = error ? (false as const) : undefined;
 
   return (
-    <FieldPrimitive.Root
-      invalid={!fieldValid}
-      className={clsx(fieldWrapper, className)}
-      style={style}
-    >
+    <FieldPrimitive.Root valid={fieldValid} className={clsx(fieldWrapper, className)} style={style}>
       <FieldLabel>{label}</FieldLabel>
       <Textarea {...props} />
       {description && <FieldDescription>{description}</FieldDescription>}

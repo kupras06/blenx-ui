@@ -2,10 +2,12 @@ import { recipe } from "@vanilla-extract/recipes";
 import { baseSprinkles } from "../../utils/sprinkles.css";
 import {
   dangerPalette,
+  infoPalette,
   neutralPalette,
   paletteVars,
   primaryPalette,
   successPalette,
+  warningPalette,
 } from "../../utils/pallete-styles.css";
 
 export const badgeRecipe = recipe({
@@ -36,10 +38,12 @@ export const badgeRecipe = recipe({
 
       primary: primaryPalette,
       secondary: neutralPalette,
+      neutral: neutralPalette,
 
       success: successPalette,
-
+      warning: warningPalette,
       danger: dangerPalette,
+      info: infoPalette,
     },
   },
   compoundVariants: [

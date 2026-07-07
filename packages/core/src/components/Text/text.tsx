@@ -12,17 +12,13 @@ const variantTag = {
   h4: "h4",
   h5: "h5",
   h6: "h6",
-
   body1: "p",
   body2: "p",
   body3: "p",
   body4: "p",
   p: "p",
-
   caption: "span",
-  creatorNote: "aside",
   code: "code",
-  div: "div",
 } as const satisfies Record<string, keyof React.JSX.IntrinsicElements>;
 
 export type TextProps = useRender.ComponentProps<"div"> &

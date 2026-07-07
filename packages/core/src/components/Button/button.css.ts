@@ -1,6 +1,8 @@
 import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
+import { tokenVars } from "@blenx-dev/theme/contract";
 import { baseSprinkles } from "../../utils/sprinkles";
+import { focusRing, disabled } from "../../utils/interaction-styles.css";
 import {
   dangerPalette,
   infoPalette,
@@ -14,6 +16,7 @@ import {
 
 export const variant = recipe({
   base: [
+    focusRing,
     baseSprinkles({
       display: "inline-flex",
       align: "center",
@@ -31,14 +34,9 @@ export const variant = recipe({
       textDecoration: "none",
     }),
     style({
-      transition: "all 0.2s ease",
-      selectors: {
-        "&:disabled": {
-          opacity: 0.4,
-          cursor: "not-allowed",
-        },
-      },
+      transition: `background-color ${tokenVars.duration.fast} ${tokenVars.easing.standard}, color ${tokenVars.duration.fast} ${tokenVars.easing.standard}, box-shadow ${tokenVars.duration.fast} ${tokenVars.easing.standard}`,
     }),
+    disabled,
   ],
   variants: {
     intent: {

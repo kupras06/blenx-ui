@@ -36,12 +36,12 @@ export const inputStyle = style([
         cursor: "not-allowed",
       },
       "&:focus-visible": {
-        borderColor: semanticVars.border.default,
-        boxShadow: `0 0 0 2px ${semanticVars.border.default}`,
+        borderColor: semanticVars.border.strong,
+        boxShadow: `0 0 0 2px ${semanticVars.focus.ring}`,
       },
       "&:focus-visible[aria-invalid='true']": {
         borderColor: semanticVars.color.danger.default,
-        boxShadow: `0 0 0 3px ${semanticVars.color.danger.default}`,
+        boxShadow: `0 0 0 2px ${semanticVars.color.danger.default}`,
       },
     },
   }),

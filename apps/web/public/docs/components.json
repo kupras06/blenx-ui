@@ -4,11 +4,29 @@
     "description": "A contact form page with name, email, subject select, message textarea, success state, and optional contact information sidebar.",
     "category": "Marketing",
     "status": "stable",
-    "keywords": ["contact", "form", "support", "message", "email"],
-    "related": ["Button", "Input", "Textarea", "Card"],
+    "keywords": [
+      "contact",
+      "form",
+      "support",
+      "message",
+      "email"
+    ],
+    "related": [
+      "Button",
+      "Input",
+      "Textarea",
+      "Card"
+    ],
     "accessibility": {
-      "keyboard": ["Tab", "Enter"],
-      "aria": ["form role", "aria-label", "autoComplete"]
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "aria": [
+        "form role",
+        "aria-label",
+        "autoComplete"
+      ]
     },
     "registryName": "contact-01",
     "examples": []
@@ -18,11 +36,28 @@
     "description": "A SaaS dashboard with KPI metrics grid, chart placeholders, quick actions, and a recent activity table.",
     "category": "Dashboard",
     "status": "stable",
-    "keywords": ["dashboard", "kpi", "metrics", "analytics", "table", "chart"],
-    "related": ["Button", "Card", "Table", "Badge", "Grid", "Surface"],
+    "keywords": [
+      "dashboard",
+      "kpi",
+      "metrics",
+      "analytics",
+      "table",
+      "chart"
+    ],
+    "related": [
+      "Button",
+      "Card",
+      "Table",
+      "Badge",
+      "Grid",
+      "Surface"
+    ],
     "accessibility": {
       "keyboard": [],
-      "aria": ["aria-label", "role=list"]
+      "aria": [
+        "aria-label",
+        "role=list"
+      ]
     },
     "registryName": "dashboard-01",
     "examples": []
@@ -32,11 +67,24 @@
     "description": "An empty state block for use when no data exists. Supports card and page variants with optional action buttons.",
     "category": "Application States",
     "status": "stable",
-    "keywords": ["empty", "state", "no data", "placeholder", "nothing"],
-    "related": ["Button", "Text", "Stack", "Card"],
+    "keywords": [
+      "empty",
+      "state",
+      "no data",
+      "placeholder",
+      "nothing"
+    ],
+    "related": [
+      "Button",
+      "Text",
+      "Stack",
+      "Card"
+    ],
     "accessibility": {
       "keyboard": [],
-      "aria": ["aria-label"]
+      "aria": [
+        "aria-label"
+      ]
     },
     "registryName": "empty-state-01",
     "examples": []
@@ -46,11 +94,27 @@
     "description": "An error state block for displaying errors with retry action and expandable debug details. Supports card, page, and toast variants.",
     "category": "Application States",
     "status": "stable",
-    "keywords": ["error", "state", "failure", "retry", "alert", "exception"],
-    "related": ["Button", "Text", "Stack", "Card", "Surface"],
+    "keywords": [
+      "error",
+      "state",
+      "failure",
+      "retry",
+      "alert",
+      "exception"
+    ],
+    "related": [
+      "Button",
+      "Text",
+      "Stack",
+      "Card",
+      "Surface"
+    ],
     "accessibility": {
       "keyboard": [],
-      "aria": ["role=alert", "aria-live=assertive"]
+      "aria": [
+        "role=alert",
+        "aria-live=assertive"
+      ]
     },
     "registryName": "error-state-01",
     "examples": []
@@ -60,11 +124,27 @@
     "description": "An expandable FAQ accordion with section heading, description, and optional search/filter.",
     "category": "Marketing",
     "status": "stable",
-    "keywords": ["faq", "accordion", "questions", "help", "support"],
-    "related": ["Accordion", "Text"],
+    "keywords": [
+      "faq",
+      "accordion",
+      "questions",
+      "help",
+      "support"
+    ],
+    "related": [
+      "Accordion",
+      "Text"
+    ],
     "accessibility": {
-      "keyboard": ["Enter", "Space"],
-      "aria": ["aria-expanded", "aria-controls", "aria-label"]
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "aria": [
+        "aria-expanded",
+        "aria-controls",
+        "aria-label"
+      ]
     },
     "registryName": "faq-01",
     "examples": []
@@ -74,11 +154,28 @@
     "description": "A forgot password flow with email input, validation, and success confirmation state after submission.",
     "category": "Authentication",
     "status": "stable",
-    "keywords": ["forgot password", "reset", "email", "recovery"],
-    "related": ["Button", "Input", "Card"],
+    "keywords": [
+      "forgot password",
+      "reset",
+      "email",
+      "recovery"
+    ],
+    "related": [
+      "Button",
+      "Input",
+      "Card"
+    ],
     "accessibility": {
-      "keyboard": ["Tab", "Enter"],
-      "aria": ["form role", "aria-label", "autoComplete", "aria-live"]
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "aria": [
+        "form role",
+        "aria-label",
+        "autoComplete",
+        "aria-live"
+      ]
     },
     "registryName": "forgot-password-01",
     "examples": []
@@ -88,11 +185,23 @@
     "description": "A marketing hero section with headline, supporting text, dual CTA buttons, and optional image. Supports default, muted, and accent background variants.",
     "category": "Marketing",
     "status": "stable",
-    "keywords": ["hero", "marketing", "header", "landing", "cta"],
-    "related": ["Button", "Text", "Stack"],
+    "keywords": [
+      "hero",
+      "marketing",
+      "header",
+      "landing",
+      "cta"
+    ],
+    "related": [
+      "Button",
+      "Text",
+      "Stack"
+    ],
     "accessibility": {
       "keyboard": [],
-      "aria": ["image alt text"]
+      "aria": [
+        "image alt text"
+      ]
     },
     "registryName": "hero-01",
     "examples": []
@@ -102,11 +211,24 @@
     "description": "A loading/skeleton block for use while content is being fetched. Supports text, card, table, avatar, and custom patterns.",
     "category": "Application States",
     "status": "stable",
-    "keywords": ["loading", "skeleton", "placeholder", "shimmer", "progress"],
-    "related": ["Progress", "Stack"],
+    "keywords": [
+      "loading",
+      "skeleton",
+      "placeholder",
+      "shimmer",
+      "progress"
+    ],
+    "related": [
+      "Progress",
+      "Stack"
+    ],
     "accessibility": {
       "keyboard": [],
-      "aria": ["aria-busy", "aria-label", "role=status"]
+      "aria": [
+        "aria-busy",
+        "aria-label",
+        "role=status"
+      ]
     },
     "registryName": "loading-state-01",
     "examples": []
@@ -116,11 +238,30 @@
     "description": "A complete sign-in page with email/password form, remember me, forgot password link, social login buttons, and sign-up link.",
     "category": "Authentication",
     "status": "stable",
-    "keywords": ["login", "sign in", "authentication", "form", "social login"],
-    "related": ["Button", "Input", "Checkbox", "Separator", "Card"],
+    "keywords": [
+      "login",
+      "sign in",
+      "authentication",
+      "form",
+      "social login"
+    ],
+    "related": [
+      "Button",
+      "Input",
+      "Checkbox",
+      "Separator",
+      "Card"
+    ],
     "accessibility": {
-      "keyboard": ["Tab", "Enter"],
-      "aria": ["form role", "aria-label", "autoComplete"]
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "aria": [
+        "form role",
+        "aria-label",
+        "autoComplete"
+      ]
     },
     "registryName": "login-01",
     "examples": []
@@ -130,11 +271,31 @@
     "description": "An email-first sign-in flow supporting multi-step password entry or magic-link authentication.",
     "category": "Authentication",
     "status": "stable",
-    "keywords": ["login", "sign in", "email-first", "password", "magic link", "multi-step"],
-    "related": ["Button", "Input", "Card"],
+    "keywords": [
+      "login",
+      "sign in",
+      "email-first",
+      "password",
+      "magic link",
+      "multi-step"
+    ],
+    "related": [
+      "Button",
+      "Input",
+      "Card"
+    ],
     "accessibility": {
-      "keyboard": ["Tab", "Enter"],
-      "aria": ["form role", "aria-label", "autoComplete", "aria-live", "progressbar"]
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "aria": [
+        "form role",
+        "aria-label",
+        "autoComplete",
+        "aria-live",
+        "progressbar"
+      ]
     },
     "registryName": "login-02",
     "examples": []
@@ -144,11 +305,29 @@
     "description": "A pricing section with monthly/yearly toggle, three plan tiers, feature lists, and prominent CTA for the popular plan.",
     "category": "Marketing",
     "status": "stable",
-    "keywords": ["pricing", "plans", "subscription", "billing", "tiers"],
-    "related": ["Button", "Card", "Badge", "Switch", "Separator"],
+    "keywords": [
+      "pricing",
+      "plans",
+      "subscription",
+      "billing",
+      "tiers"
+    ],
+    "related": [
+      "Button",
+      "Card",
+      "Badge",
+      "Switch",
+      "Separator"
+    ],
     "accessibility": {
-      "keyboard": ["Tab", "Enter"],
-      "aria": ["switch role", "list of features"]
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "aria": [
+        "switch role",
+        "list of features"
+      ]
     },
     "registryName": "pricing-01",
     "examples": []
@@ -158,11 +337,30 @@
     "description": "A profile page with personal information form, notification preferences toggles, account actions, and danger zone.",
     "category": "Dashboard",
     "status": "stable",
-    "keywords": ["profile", "user", "settings", "notifications", "account"],
-    "related": ["Button", "Input", "Switch", "Card", "Avatar", "Separator"],
+    "keywords": [
+      "profile",
+      "user",
+      "settings",
+      "notifications",
+      "account"
+    ],
+    "related": [
+      "Button",
+      "Input",
+      "Switch",
+      "Card",
+      "Avatar",
+      "Separator"
+    ],
     "accessibility": {
-      "keyboard": ["Tab", "Enter"],
-      "aria": ["form label", "switch role"]
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "aria": [
+        "form label",
+        "switch role"
+      ]
     },
     "registryName": "profile-01",
     "examples": []
@@ -172,11 +370,32 @@
     "description": "A full settings page with tabbed navigation covering general, security, appearance, notifications, and billing sections.",
     "category": "Dashboard",
     "status": "stable",
-    "keywords": ["settings", "preferences", "tabs", "configuration", "account"],
-    "related": ["Tabs", "Button", "Input", "Switch", "Card", "Separator"],
+    "keywords": [
+      "settings",
+      "preferences",
+      "tabs",
+      "configuration",
+      "account"
+    ],
+    "related": [
+      "Tabs",
+      "Button",
+      "Input",
+      "Switch",
+      "Card",
+      "Separator"
+    ],
     "accessibility": {
-      "keyboard": ["Tab", "Arrow Keys", "Enter"],
-      "aria": ["tablist", "tab", "tabpanel"]
+      "keyboard": [
+        "Tab",
+        "Arrow Keys",
+        "Enter"
+      ],
+      "aria": [
+        "tablist",
+        "tab",
+        "tabpanel"
+      ]
     },
     "registryName": "settings-01",
     "examples": []
@@ -186,11 +405,30 @@
     "description": "A complete sign-up/registration page with name, email, password, confirm password, terms acceptance, and social sign-up.",
     "category": "Authentication",
     "status": "stable",
-    "keywords": ["signup", "registration", "create account", "form", "social"],
-    "related": ["Button", "Input", "Checkbox", "Separator", "Card"],
+    "keywords": [
+      "signup",
+      "registration",
+      "create account",
+      "form",
+      "social"
+    ],
+    "related": [
+      "Button",
+      "Input",
+      "Checkbox",
+      "Separator",
+      "Card"
+    ],
     "accessibility": {
-      "keyboard": ["Tab", "Enter"],
-      "aria": ["form role", "aria-label", "autoComplete"]
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "aria": [
+        "form role",
+        "aria-label",
+        "autoComplete"
+      ]
     },
     "registryName": "signup-01",
     "examples": []
@@ -200,11 +438,30 @@
     "description": "A verification code page with 6 individual digit inputs supporting auto-advance, paste, and resend cooldown.",
     "category": "Authentication",
     "status": "stable",
-    "keywords": ["verify", "email", "otp", "code", "2fa", "verification"],
-    "related": ["Button", "Text", "Card"],
+    "keywords": [
+      "verify",
+      "email",
+      "otp",
+      "code",
+      "2fa",
+      "verification"
+    ],
+    "related": [
+      "Button",
+      "Text",
+      "Card"
+    ],
     "accessibility": {
-      "keyboard": ["Tab", "Enter", "Backspace"],
-      "aria": ["aria-label per digit", "role=group", "autoComplete=one-time-code"]
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Backspace"
+      ],
+      "aria": [
+        "aria-label per digit",
+        "role=group",
+        "autoComplete=one-time-code"
+      ]
     },
     "registryName": "verify-email-01",
     "examples": []

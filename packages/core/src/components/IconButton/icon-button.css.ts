@@ -1,11 +1,8 @@
 import { style } from "@vanilla-extract/css";
-import { baseSprinkles } from "../../utils/sprinkles";
+import { tokenVars } from "@blenx-dev/theme/contract";
 
-export const base = style([
-  baseSprinkles({
-    width: "fit",
-  }),
-  style({
-    maxWidth: "100px",
-  }),
-]);
+export const base = style({
+  width: tokenVars.spacing["10"],
+  height: tokenVars.spacing["10"],
+  maxWidth: tokenVars.spacing["10"],
+});

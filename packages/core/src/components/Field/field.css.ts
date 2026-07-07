@@ -18,22 +18,14 @@ export const item = baseSprinkles({
   flex: 1,
 });
 
-export const description = style([
-  baseSprinkles({
-    color: "secondary",
-  }),
-  style({
-    fontSize: "12px",
-    lineHeight: 1.4,
-  }),
-]);
+export const description = baseSprinkles({
+  color: "secondary",
+  fontSize: "xs",
+  lineHeight: "normal",
+});
 
-export const error = style([
-  baseSprinkles({
-    color: "error",
-  }),
-  style({
-    fontSize: "12px",
-    lineHeight: 1.4,
-  }),
-]);
+export const error = baseSprinkles({
+  color: "error",
+  fontSize: "xs",
+  lineHeight: "normal",
+});
