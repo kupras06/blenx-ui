@@ -1,4 +1,4 @@
-import { tokenVars } from "@blenx-dev/theme/contract";
+import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 import { defineProperties, createSprinkles } from "@vanilla-extract/sprinkles";
 import {
   backgroundColors,
@@ -54,6 +54,7 @@ const borderProperties = defineProperties({
     },
     borderBottomColor: {
       subtle: backgroundColors.subtle,
+      default: semanticVars.background.default,
     },
     cursor: ["pointer", "not-allowed", "text", "default", "col-resize", "row-resize"],
     outline: ["none"],

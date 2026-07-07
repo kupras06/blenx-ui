@@ -69,26 +69,21 @@ export const headRow = baseSprinkles({
   backgroundColor: "subtle",
 });
 
-export const th = style([
-  baseSprinkles({
-    py: "10",
-    px: "12",
-    fontWeight: "semibold",
-    color: "secondary",
-    textAlign: "left",
-    textTransform: "uppercase",
-    whiteSpace: "nowrap",
-    userSelect: "none",
-  }),
-  style({
-    fontSize: "12px",
-    letterSpacing: "0.05em",
-    borderBottomWidth: 1,
-    borderBottomStyle: "solid",
-    borderBottomColor: semanticVars.border.default,
-  }),
-]);
-
+export const th = baseSprinkles({
+  py: "10",
+  px: "12",
+  fontWeight: "semibold",
+  color: "secondary",
+  textAlign: "left",
+  textTransform: "uppercase",
+  whiteSpace: "nowrap",
+  userSelect: "none",
+  fontSize: "sm",
+  letterSpacing: "tight",
+  borderBottomWidth: "thin",
+  borderBottomStyle: "solid",
+  borderBottomColor: "default",
+});
 export const thSm = style([
   baseSprinkles({
     py: "6",
@@ -99,15 +94,11 @@ export const thSm = style([
   }),
 ]);
 
-export const thLg = style([
-  baseSprinkles({
-    py: "12",
-    px: "16",
-  }),
-  style({
-    fontSize: "13px",
-  }),
-]);
+export const thLg = baseSprinkles({
+  py: "12",
+  px: "16",
+  fontSize: "sm",
+});
 
 export const thSortable = baseSprinkles({
   cursor: "pointer",
@@ -119,21 +110,18 @@ export const thContent = baseSprinkles({
   gap: "4",
 });
 
-export const td = style([
-  baseSprinkles({
-    py: "10",
-    px: "12",
-    fontSize: "sm",
-    textOverflow: "ellipsis",
-    color: "primary",
-    whiteSpace: "nowrap",
-    overflow: "hidden",
-    borderBottomStyle: "solid",
-    borderBottomWidth: "thin",
-    borderBottomColor: "subtle",
-  }),
-]);
-
+export const td = baseSprinkles({
+  py: "10",
+  px: "12",
+  fontSize: "sm",
+  textOverflow: "ellipsis",
+  color: "primary",
+  whiteSpace: "nowrap",
+  overflow: "hidden",
+  borderBottomStyle: "solid",
+  borderBottomWidth: "thin",
+  borderBottomColor: "subtle",
+});
 export const tdSm = baseSprinkles({
   py: "6",
   px: "8",
@@ -156,13 +144,12 @@ export const trSelected = baseSprinkles({
   backgroundColor: "subtle",
 });
 
-export const emptyTd = style([
-  baseSprinkles({ padding: "0", borderBottomWidth: "thin" }),
-  style({
-    borderBottomStyle: "solid",
-    borderBottomColor: semanticVars.border.default,
-  }),
-]);
+export const emptyTd = baseSprinkles({
+  padding: "0",
+  borderBottomWidth: "thin",
+  borderBottomStyle: "solid",
+  borderBottomColor: "default",
+});
 
 // ─── Loading skeleton ────────────────────────────────────────────────────────
 
@@ -175,17 +162,13 @@ export const loadingTable = baseSprinkles({
   borderCollapse: "collapse",
 });
 
-export const headerCell = style([
-  baseSprinkles({
-    py: "12",
-    px: "16",
-  }),
-  style({
-    borderBottomColor: semanticVars.border.default,
-    borderBottomStyle: "solid",
-    borderBottomWidth: 1,
-  }),
-]);
+export const headerCell = baseSprinkles({
+  py: "12",
+  px: "16",
+  borderBottomColor: "default",
+  borderBottomStyle: "solid",
+  borderBottomWidth: "thin",
+});
 
 export const skeletonBar = style({
   borderRadius: 4,
@@ -227,23 +210,23 @@ export const itemLabel = style({
   fontSize: 14,
 });
 
-export const deselectLabel = style([baseSprinkles({ color: "secondary", fontSize: "sm" })]);
+export const deselectLabel = baseSprinkles({ color: "secondary", fontSize: "sm" });
 
 export const checkboxChecked = style([
   baseSprinkles({
     display: "inline-flex",
     align: "center",
     justify: "center",
+    borderRadius: "xxs",
+    borderWidth: "medium",
+    borderStyle: "solid",
+    borderColor: "default",
+    backgroundColor: "primary",
   }),
   style({
     marginLeft: "auto",
     width: 16,
     height: 16,
-    borderRadius: 3,
-    borderWidth: 1.5,
-    borderStyle: "solid",
-    borderColor: semanticVars.color.primary.default,
-    backgroundColor: semanticVars.color.primary.bg,
   }),
 ]);
 
@@ -252,16 +235,16 @@ export const checkboxUnchecked = style([
     display: "inline-flex",
     align: "center",
     justify: "center",
+    backgroundColor: "transparent",
+    borderRadius: "xs",
+    borderWidth: "medium",
+    borderStyle: "solid",
+    borderColor: "default",
   }),
   style({
     marginLeft: "auto",
     width: 16,
     height: 16,
-    borderRadius: 3,
-    borderWidth: 1.5,
-    borderStyle: "solid",
-    borderColor: semanticVars.border.default,
-    backgroundColor: "transparent",
   }),
 ]);
 
@@ -274,62 +257,49 @@ export const partial = style({
 
 // ─── Empty state ─────────────────────────────────────────────────────────────
 
-export const emptyContainer = style([
-  baseSprinkles({
-    display: "flex",
-    direction: "column",
-    align: "center",
-    justify: "center",
-    py: "xxxl",
-    px: "md",
-    gap: "12",
-  }),
-]);
+export const emptyContainer = baseSprinkles({
+  display: "flex",
+  direction: "column",
+  align: "center",
+  justify: "center",
+  py: "xxxl",
+  px: "md",
+  gap: "12",
+});
 
 export const iconWrap = baseSprinkles({
   opacity: "0.5",
 });
 
-export const message = style([
-  baseSprinkles({
-    color: "secondary",
-    fontSize: "sm",
-  }),
-  style({
-    lineHeight: 1.5,
-    margin: 0,
-  }),
-]);
-
+export const message = baseSprinkles({
+  color: "secondary",
+  fontSize: "sm",
+  margin: "0",
+  lineHeight: "normal",
+});
 export const actionWrap = baseSprinkles({
   marginTop: "xs",
 });
 
 // ─── Error state ─────────────────────────────────────────────────────────────
 
-export const errorContainer = style([
-  baseSprinkles({
-    display: "flex",
-    direction: "column",
-    align: "center",
-    justify: "center",
-    py: "xxxl",
-    px: "md",
-    gap: "12",
-  }),
-]);
+export const errorContainer = baseSprinkles({
+  display: "flex",
+  direction: "column",
+  align: "center",
+  justify: "center",
+  py: "xxxl",
+  px: "md",
+  gap: "12",
+});
 
-export const errorMessage = style([
-  baseSprinkles({
-    fontSize: "sm",
-    textAlign: "center",
-  }),
-  style({
-    color: semanticVars.color.danger.text,
-    lineHeight: 1.5,
-    margin: 0,
-  }),
-]);
+export const errorMessage = baseSprinkles({
+  fontSize: "sm",
+  textAlign: "center",
+  color: "error",
+  lineHeight: "normal",
+  margin: "0",
+});
 
 // ─── Infinite loader ─────────────────────────────────────────────────────────
 
