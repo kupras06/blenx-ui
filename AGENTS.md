@@ -67,25 +67,48 @@ const actions = useMyStore((s) => s.actions)
 - Always prefer `@blenx-dev/core` components for any UI (Popover, Menu, Button, HStack, VStack, Box, Text, Badge, etc.) rather than building custom elements with plain HTML/CSS.
 - Components from `@blenx-dev/core` are the source of truth for layout, interaction, and styling patterns.
 
-## Shared Intent Color Tokens
-
-A global token map lives at `packages/core/src/utils/intent.ts`:
-
-- **`intentColorTokens`** — a `Record<ColorRoleName, IntentColorTokens>` mapping each of the 7 color roles (`primary`, `secondary`, `neutral`, `success`, `warning`, `danger`, `info`) to all 10 `ColorRole` sub-keys (`default`, `hover`, `active`, `bg`, `bgHover`, `bgActive`, `fg`, `text`, `textActive`, `border`).
-- **`IntentName`** — type alias for `ColorRoleName`.
-- **`IntentColorTokens`** — record type keyed by `ColorRole` sub-key names.
-
-Use `intentColorTokens` instead of referencing `semanticVars.color.*` directly. This ensures a single source of truth for all intent→token mappings across Button, Toggle, Badge, Alert, and future components.
-
 ## Palette / Intent Color Pattern
 
-When adding theme-driven color support (e.g. `palette`, `intent`) to a component, follow the Button/Toggle pattern:
+Theme-driven color support (`palette`, `intent`) uses scoped CSS vars defined in `packages/core/src/utils/pallete-styles.css.ts`. This is the single source of truth for all palette entries.
 
-1. Declare scoped CSS vars with `createVar()` and export them as `componentVars`.
-2. Add a `palette`/`intent` variant dimension to the `recipe` that assigns tokens to the vars via `vars: { [var]: intentColorTokens.intentName.key }`.
-3. Variant-specific defaults (e.g. outline vs. default background) are also set via `vars` in their respective variant entries. `palette` variant is listed **after** `variant` in the recipe so it always overrides variant defaults.
-4. Base-level (no-palette) defaults go in the recipe's `base.vars`.
-5. Pressed/hover/active states reference the vars directly (no `var()` fallback strings needed — `createVar()` scoped names handle isolation).
-6. The component passes the palette value straight to the recipe: `recipe({ size, variant, palette })`.
+**Available palette classes** (all export from `packages/core/src/utils/pallete-styles.css.ts`):
 
-Example at `packages/core/src/components/Toggle/toggle.css.ts`:
+- `paletteVars` — scoped CSS vars (`bg`, `fg`, `border`, `hoverBg`, `hoverFg`, `activeBg`, `activeFg`, `focusRing`, `selectedBg`, `selectedFg`)
+- `primaryPalette`, `neutralPalette`, `successPalette`, `warningPalette`, `dangerPalette`, `infoPalette`, `monoPalette`, `linkPalette` — each assigns `semanticVars.color.*` tokens to `paletteVars`
+
+**Adding palette support to a component:**
+
+1. Import vars and desired palette classes from the shared file:
+
+   ```ts
+   import { paletteVars, primaryPalette } from "../../utils/pallete-styles.css";
+   ```
+
+2. In the component recipe, add a `palette` variant dimension. List it **after** `variant` so it overrides variant defaults:
+
+   ```ts
+   palette: {
+     primary: primaryPalette,
+     neutral: neutralPalette,
+     success: successPalette,
+     danger: dangerPalette,
+     warning: warningPalette,
+     info: infoPalette,
+     mono: monoPalette,
+     link: linkPalette,
+   },
+   ```
+
+3. Base-level (no-palette) defaults go in the recipe's `base.vars` if needed.
+
+4. Hover/pressed/active states reference the `paletteVars` directly (no `var()` fallback strings needed — `createVar()` scoped names handle isolation).
+
+5. The component passes the palette value to the recipe:
+
+   ```ts
+   recipe({ size, variant, palette });
+   ```
+
+6. **If a new palette color role is needed**, add it to `pallete-styles.css.ts` following the same pattern — all palette entries live there.
+
+**When palette entries differ per component** (e.g. Toggle's `bg` maps to `color.primary.bg` for a soft background while Button's `bg` maps to `color.primary.default` for a solid fill), create separate palette entries or set component-specific defaults via `variant` dimension `vars` entries.
