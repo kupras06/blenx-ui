@@ -1,6 +1,6 @@
 import { createTheme, globalStyle } from "@vanilla-extract/css";
 import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
-import { createBlenxTheme, mergeWithDefaultTokens, genPalleteFromRadix } from "@blenx-dev/theme";
+import { createBlenxTheme, mergeWithDefaultTokens, genPaletteFromRadix } from "@blenx-dev/theme";
 import {
   blue,
   blueA,
@@ -34,32 +34,32 @@ export const tokenThemeClass = createTheme(tokenVars, tokens);
 export const { themeClass: lightClass } = createBlenxTheme({
   colors: {
     primary: {
-      base: genPalleteFromRadix("blue", blue),
-      accent: genPalleteFromRadix("blueA", blueA),
+      base: genPaletteFromRadix("blue", blue),
+      accent: genPaletteFromRadix("blueA", blueA),
     },
     neutral: {
-      base: genPalleteFromRadix("gray", gray),
-      accent: genPalleteFromRadix("gray", gray),
+      base: genPaletteFromRadix("gray", gray),
+      accent: genPaletteFromRadix("gray", gray),
     },
     secondary: {
-      base: genPalleteFromRadix("gray", gray),
-      accent: genPalleteFromRadix("gray", gray),
+      base: genPaletteFromRadix("gray", gray),
+      accent: genPaletteFromRadix("gray", gray),
     },
     success: {
-      base: genPalleteFromRadix("green", green),
-      accent: genPalleteFromRadix("greenA", greenA),
+      base: genPaletteFromRadix("green", green),
+      accent: genPaletteFromRadix("greenA", greenA),
     },
     warning: {
-      base: genPalleteFromRadix("amber", amber),
-      accent: genPalleteFromRadix("amberA", amberA),
+      base: genPaletteFromRadix("amber", amber),
+      accent: genPaletteFromRadix("amberA", amberA),
     },
     danger: {
-      base: genPalleteFromRadix("red", red),
-      accent: genPalleteFromRadix("redA", redA),
+      base: genPaletteFromRadix("red", red),
+      accent: genPaletteFromRadix("redA", redA),
     },
     info: {
-      base: genPalleteFromRadix("blue", blue),
-      accent: genPalleteFromRadix("blueA", blueA),
+      base: genPaletteFromRadix("blue", blue),
+      accent: genPaletteFromRadix("blueA", blueA),
     },
   },
 });
@@ -67,32 +67,32 @@ export const { themeClass: lightClass } = createBlenxTheme({
 export const { themeClass: darkClass } = createBlenxTheme({
   colors: {
     primary: {
-      base: genPalleteFromRadix("blue", blueDark),
-      accent: genPalleteFromRadix("blueA", blueDarkA),
+      base: genPaletteFromRadix("blue", blueDark),
+      accent: genPaletteFromRadix("blueA", blueDarkA),
     },
     neutral: {
-      base: genPalleteFromRadix("gray", grayDark),
-      accent: genPalleteFromRadix("gray", grayDark),
+      base: genPaletteFromRadix("gray", grayDark),
+      accent: genPaletteFromRadix("gray", grayDark),
     },
     secondary: {
-      base: genPalleteFromRadix("gray", grayDark),
-      accent: genPalleteFromRadix("gray", grayDark),
+      base: genPaletteFromRadix("gray", grayDark),
+      accent: genPaletteFromRadix("gray", grayDark),
     },
     success: {
-      base: genPalleteFromRadix("green", greenDark),
-      accent: genPalleteFromRadix("greenA", greenDarkA),
+      base: genPaletteFromRadix("green", greenDark),
+      accent: genPaletteFromRadix("greenA", greenDarkA),
     },
     warning: {
-      base: genPalleteFromRadix("amber", amberDark),
-      accent: genPalleteFromRadix("amberA", amberDarkA),
+      base: genPaletteFromRadix("amber", amberDark),
+      accent: genPaletteFromRadix("amberA", amberDarkA),
     },
     danger: {
-      base: genPalleteFromRadix("red", redDark),
-      accent: genPalleteFromRadix("redA", redDarkA),
+      base: genPaletteFromRadix("red", redDark),
+      accent: genPaletteFromRadix("redA", redDarkA),
     },
     info: {
-      base: genPalleteFromRadix("blue", blueDark),
-      accent: genPalleteFromRadix("blueA", blueDarkA),
+      base: genPaletteFromRadix("blue", blueDark),
+      accent: genPaletteFromRadix("blueA", blueDarkA),
     },
   },
 });

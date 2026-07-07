@@ -66,3 +66,26 @@ const actions = useMyStore((s) => s.actions)
 
 - Always prefer `@blenx-dev/core` components for any UI (Popover, Menu, Button, HStack, VStack, Box, Text, Badge, etc.) rather than building custom elements with plain HTML/CSS.
 - Components from `@blenx-dev/core` are the source of truth for layout, interaction, and styling patterns.
+
+## Shared Intent Color Tokens
+
+A global token map lives at `packages/core/src/utils/intent.ts`:
+
+- **`intentColorTokens`** — a `Record<ColorRoleName, IntentColorTokens>` mapping each of the 7 color roles (`primary`, `secondary`, `neutral`, `success`, `warning`, `danger`, `info`) to all 10 `ColorRole` sub-keys (`default`, `hover`, `active`, `bg`, `bgHover`, `bgActive`, `fg`, `text`, `textActive`, `border`).
+- **`IntentName`** — type alias for `ColorRoleName`.
+- **`IntentColorTokens`** — record type keyed by `ColorRole` sub-key names.
+
+Use `intentColorTokens` instead of referencing `semanticVars.color.*` directly. This ensures a single source of truth for all intent→token mappings across Button, Toggle, Badge, Alert, and future components.
+
+## Palette / Intent Color Pattern
+
+When adding theme-driven color support (e.g. `palette`, `intent`) to a component, follow the Button/Toggle pattern:
+
+1. Declare scoped CSS vars with `createVar()` and export them as `componentVars`.
+2. Add a `palette`/`intent` variant dimension to the `recipe` that assigns tokens to the vars via `vars: { [var]: intentColorTokens.intentName.key }`.
+3. Variant-specific defaults (e.g. outline vs. default background) are also set via `vars` in their respective variant entries. `palette` variant is listed **after** `variant` in the recipe so it always overrides variant defaults.
+4. Base-level (no-palette) defaults go in the recipe's `base.vars`.
+5. Pressed/hover/active states reference the vars directly (no `var()` fallback strings needed — `createVar()` scoped names handle isolation).
+6. The component passes the palette value straight to the recipe: `recipe({ size, variant, palette })`.
+
+Example at `packages/core/src/components/Toggle/toggle.css.ts`:

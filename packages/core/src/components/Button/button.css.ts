@@ -1,18 +1,16 @@
-import { createVar, style } from "@vanilla-extract/css";
+import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
-import { semanticVars } from "@blenx-dev/theme/contract";
 import { baseSprinkles } from "../../utils/sprinkles";
-
-export const intentVars = {
-  solidBg: createVar(),
-  solidFg: createVar(),
-  solidHoverBg: createVar(),
-  softBg: createVar(),
-  softFg: createVar(),
-  softHoverBg: createVar(),
-  border: createVar(),
-  fg: createVar(),
-};
+import {
+  dangerPalette,
+  infoPalette,
+  monoPalette,
+  neutralPalette,
+  paletteVars,
+  primaryPalette,
+  successPalette,
+  warningPalette,
+} from "../../utils/pallete-styles.css";
 
 export const variant = recipe({
   base: [
@@ -44,90 +42,13 @@ export const variant = recipe({
   ],
   variants: {
     intent: {
-      primary: {
-        vars: {
-          [intentVars.solidBg]: semanticVars.color.primary.default,
-          [intentVars.solidFg]: semanticVars.color.primary.fg,
-          [intentVars.solidHoverBg]: semanticVars.color.primary.hover,
-          [intentVars.softBg]: semanticVars.color.primary.bg,
-          [intentVars.softFg]: semanticVars.color.primary.default,
-          [intentVars.softHoverBg]: semanticVars.color.primary.bgHover,
-          [intentVars.border]: semanticVars.color.primary.active,
-          [intentVars.fg]: semanticVars.color.primary.default,
-        },
-      },
-      neutral: {
-        vars: {
-          [intentVars.solidBg]: semanticVars.surface.default,
-          [intentVars.solidFg]: semanticVars.text.primary,
-          [intentVars.solidHoverBg]: semanticVars.background.subtle,
-          [intentVars.softBg]: semanticVars.background.subtle,
-          [intentVars.softFg]: semanticVars.text.primary,
-          [intentVars.softHoverBg]: semanticVars.background.subtle,
-          [intentVars.border]: semanticVars.border.default,
-          [intentVars.fg]: semanticVars.text.primary,
-        },
-      },
-      success: {
-        vars: {
-          [intentVars.solidBg]: semanticVars.color.success.default,
-          [intentVars.solidFg]: semanticVars.text.inverse,
-          [intentVars.solidHoverBg]: semanticVars.color.success.hover,
-          [intentVars.softBg]: semanticVars.color.success.bg,
-          [intentVars.softFg]: semanticVars.color.success.default,
-          [intentVars.softHoverBg]: semanticVars.color.success.bg,
-          [intentVars.border]: semanticVars.color.success.active,
-          [intentVars.fg]: semanticVars.color.success.default,
-        },
-      },
-      warning: {
-        vars: {
-          [intentVars.solidBg]: semanticVars.color.warning.default,
-          [intentVars.solidFg]: semanticVars.text.inverse,
-          [intentVars.solidHoverBg]: semanticVars.color.warning.hover,
-          [intentVars.softBg]: semanticVars.color.warning.bg,
-          [intentVars.softFg]: semanticVars.color.warning.default,
-          [intentVars.softHoverBg]: semanticVars.color.warning.bg,
-          [intentVars.border]: semanticVars.color.warning.active,
-          [intentVars.fg]: semanticVars.color.warning.default,
-        },
-      },
-      danger: {
-        vars: {
-          [intentVars.solidBg]: semanticVars.color.danger.default,
-          [intentVars.solidFg]: semanticVars.text.inverse,
-          [intentVars.solidHoverBg]: semanticVars.color.danger.hover,
-          [intentVars.softBg]: semanticVars.color.danger.bg,
-          [intentVars.softFg]: semanticVars.color.danger.default,
-          [intentVars.softHoverBg]: semanticVars.color.danger.bg,
-          [intentVars.border]: semanticVars.color.danger.active,
-          [intentVars.fg]: semanticVars.color.danger.default,
-        },
-      },
-      info: {
-        vars: {
-          [intentVars.solidBg]: semanticVars.color.info.active,
-          [intentVars.solidFg]: semanticVars.text.inverse,
-          [intentVars.solidHoverBg]: semanticVars.color.info.hover,
-          [intentVars.softBg]: semanticVars.color.info.bg,
-          [intentVars.softFg]: semanticVars.color.info.default,
-          [intentVars.softHoverBg]: semanticVars.color.info.bg,
-          [intentVars.border]: semanticVars.color.info.active,
-          [intentVars.fg]: semanticVars.color.info.default,
-        },
-      },
-      mono: {
-        vars: {
-          [intentVars.solidBg]: semanticVars.background.default,
-          [intentVars.solidFg]: semanticVars.text.primary,
-          [intentVars.solidHoverBg]: semanticVars.background.subtle,
-          [intentVars.softBg]: semanticVars.background.default,
-          [intentVars.softFg]: semanticVars.text.primary,
-          [intentVars.softHoverBg]: semanticVars.background.subtle,
-          [intentVars.border]: semanticVars.border.default,
-          [intentVars.fg]: semanticVars.text.primary,
-        },
-      },
+      primary: primaryPalette,
+      neutral: neutralPalette,
+      success: successPalette,
+      warning: warningPalette,
+      danger: dangerPalette,
+      info: infoPalette,
+      mono: monoPalette,
     },
     size: {
       xs: baseSprinkles({ fontSize: "sm", py: "xxs", px: "xs" }),
@@ -138,50 +59,50 @@ export const variant = recipe({
     },
     variant: {
       solid: {
-        backgroundColor: intentVars.solidBg,
-        borderColor: intentVars.border,
-        color: intentVars.solidFg,
+        backgroundColor: paletteVars.bg,
+        borderColor: paletteVars.border,
+        color: paletteVars.fg,
         selectors: {
           "&:hover:not(:disabled)": {
-            backgroundColor: intentVars.solidHoverBg,
+            backgroundColor: paletteVars.hoverBg,
           },
         },
       },
       soft: {
-        backgroundColor: `color-mix(in srgb, ${intentVars.softBg} 30%, transparent)`,
-        color: intentVars.solidBg,
+        backgroundColor: `color-mix(in srgb, ${paletteVars.hoverBg} 20%, transparent)`,
+        color: paletteVars.fg,
         borderColor: "transparent",
         selectors: {
           "&:hover:not(:disabled)": {
-            backgroundColor: `color-mix(in srgb, ${intentVars.solidHoverBg} 20%, transparent)`,
+            backgroundColor: `color-mix(in srgb, ${paletteVars.bg} 40%, transparent)`,
           },
         },
       },
       outline: {
         backgroundColor: "transparent",
-        borderColor: intentVars.border,
-        color: intentVars.fg,
+        borderColor: paletteVars.border,
+        color: paletteVars.fg,
         selectors: {
           "&:hover:not(:disabled)": {
-            backgroundColor: `color-mix(in srgb, ${intentVars.solidBg} 10%, transparent)`,
-            borderColor: intentVars.border,
+            backgroundColor: `color-mix(in srgb, ${paletteVars.bg} 20%, transparent)`,
+            borderColor: paletteVars.border,
           },
         },
       },
       ghost: {
         backgroundColor: "transparent",
         borderColor: "transparent",
-        color: intentVars.fg,
+        color: paletteVars.fg,
         selectors: {
           "&:hover:not(:disabled)": {
-            backgroundColor: `color-mix(in srgb, ${intentVars.solidBg} 12%, transparent)`,
+            backgroundColor: `color-mix(in srgb, ${paletteVars.bg} 20%, transparent)`,
           },
         },
       },
       link: {
         backgroundColor: "transparent",
         borderColor: "transparent",
-        color: intentVars.fg,
+        color: paletteVars.fg,
         selectors: {
           "&:hover:not(:disabled)": {
             textDecoration: "underline",

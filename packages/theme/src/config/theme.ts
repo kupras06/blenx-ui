@@ -30,7 +30,7 @@ function blendScale(
   };
 }
 
-export function genPalleteFromRadix<T extends string>(
+export function genPaletteFromRadix<T extends string>(
   prefix: T,
   colors: Record<`${T}${1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12}`, string>,
 ): PaletteScale {

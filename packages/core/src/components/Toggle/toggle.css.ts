@@ -2,6 +2,15 @@ import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
 import { semanticVars, tokenVars } from "@blenx-dev/theme/contract";
 import { baseSprinkles } from "../../utils/sprinkles";
+import {
+  dangerPalette,
+  infoPalette,
+  neutralPalette,
+  paletteVars,
+  primaryPalette,
+  successPalette,
+  warningPalette,
+} from "../../utils/pallete-styles.css";
 
 export const base = style([
   baseSprinkles({
@@ -16,11 +25,11 @@ export const base = style([
     fontSize: "sm",
     borderWidth: "thin",
     lineHeight: "tight",
+    fontWeight: "medium",
   }),
   style({
     whiteSpace: "nowrap",
     borderStyle: "solid",
-    fontWeight: tokenVars.fontWeight.medium,
     cursor: "pointer",
     userSelect: "none",
     outline: "none",
@@ -38,6 +47,7 @@ export const base = style([
 ]);
 
 export const toggleRecipes = recipe({
+  base: primaryPalette,
   variants: {
     size: {
       sm: {
@@ -60,26 +70,35 @@ export const toggleRecipes = recipe({
     },
     variant: {
       default: {
-        borderColor: "transparent",
-        color: semanticVars.text.primary,
-        backgroundColor: semanticVars.background.subtle,
+        borderColor: paletteVars.border,
+        color: paletteVars.fg,
+        backgroundColor: paletteVars.bg,
       },
       outline: {
-        borderColor: semanticVars.border.default,
-        color: semanticVars.text.primary,
-        backgroundColor: semanticVars.color.neutral.bg,
+        borderColor: paletteVars.border,
+        color: paletteVars.fg,
+        backgroundColor: paletteVars.bg,
       },
+    },
+    palette: {
+      primary: primaryPalette,
+      secondary: neutralPalette,
+      neutral: neutralPalette,
+      success: successPalette,
+      warning: warningPalette,
+      danger: dangerPalette,
+      info: infoPalette,
     },
   },
 });
 
 export const pressed = {
   default: style({
-    backgroundColor: semanticVars.color.neutral.bgActive,
+    backgroundColor: paletteVars.activeBg,
   }),
   outline: style({
     outlineWidth: tokenVars.borderWidth.thin,
-    backgroundColor: semanticVars.surface.overlay,
-    borderColor: semanticVars.border.strong,
+    backgroundColor: paletteVars.activeBg,
+    borderColor: paletteVars.border,
   }),
 };

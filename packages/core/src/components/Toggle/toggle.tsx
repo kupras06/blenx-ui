@@ -17,11 +17,13 @@ export function Toggle({
   className,
   variant = "default",
   size = "default",
+  palette,
   ...props
 }: ToggleProps) {
   return (
     <TogglePrimitive
       data-slot="toggle"
+      data-palette={palette}
       {...props}
       render={(renderProps, state) => {
         return (
@@ -29,7 +31,7 @@ export function Toggle({
             {...renderProps}
             className={clsx(
               base,
-              toggleRecipes({ size, variant }),
+              toggleRecipes({ size, variant, palette }),
               state.pressed && pressed[variant],
               className,
             )}

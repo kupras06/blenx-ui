@@ -22,4 +22,52 @@ export function ToggleDemo() {
   );
 }
 
-export const demos = [{ name: "Variants", component: ToggleDemo }];
+const palettes = [
+  "primary",
+  "secondary",
+  "neutral",
+  "success",
+  "warning",
+  "danger",
+  "info",
+] as const;
+
+export function PaletteDefaultStory() {
+  return (
+    <Stack gap="md">
+      {palettes.map((p) => (
+        <Stack key={p} gap="sm" direction="row" align="center">
+          <Toggle palette={p} style={{ minWidth: 100 }}>
+            {p}
+          </Toggle>
+          <Toggle palette={p} disabled style={{ minWidth: 100 }}>
+            {p}
+          </Toggle>
+        </Stack>
+      ))}
+    </Stack>
+  );
+}
+
+export function PaletteOutlineStory() {
+  return (
+    <Stack gap="md">
+      {palettes.map((p) => (
+        <Stack key={p} gap="sm" direction="row" align="center">
+          <Toggle palette={p} variant="outline" style={{ minWidth: 100 }}>
+            {p}
+          </Toggle>
+          <Toggle palette={p} variant="outline" disabled style={{ minWidth: 100 }}>
+            {p}
+          </Toggle>
+        </Stack>
+      ))}
+    </Stack>
+  );
+}
+
+export const demos = [
+  { name: "Variants", component: ToggleDemo },
+  { name: "Palette (default)", component: PaletteDefaultStory },
+  { name: "Palette (outline)", component: PaletteOutlineStory },
+];

@@ -1,13 +1,13 @@
-import { createVar } from "@vanilla-extract/css";
-import { semanticVars } from "@blenx-dev/theme/contract";
 import { recipe } from "@vanilla-extract/recipes";
 import { baseSprinkles } from "../../utils/sprinkles.css";
+import {
+  dangerPalette,
+  neutralPalette,
+  paletteVars,
+  primaryPalette,
+  successPalette,
+} from "../../utils/pallete-styles.css";
 
-export const badgeVars = {
-  bg: createVar(),
-  fg: createVar(),
-  borderColor: createVar(),
-};
 export const badgeRecipe = recipe({
   base: baseSprinkles({
     display: "inline-block",
@@ -21,69 +21,38 @@ export const badgeRecipe = recipe({
   variants: {
     appearance: {
       solid: {
-        backgroundColor: badgeVars.bg,
-        color: badgeVars.fg,
+        backgroundColor: paletteVars.bg,
+        color: paletteVars.fg,
       },
       soft: {
         backgroundColor: "color-mix(in srgb, var(--badge-bg) 25%, transparent)",
       },
       outline: {
         backgroundColor: "transparent",
+        border: "1px solid " + paletteVars.border,
       },
     },
 
     variant: {
-      default: {
-        vars: {
-          [badgeVars.bg]: semanticVars.color.primary.bgActive,
-          [badgeVars.fg]: semanticVars.text.primary,
-          [badgeVars.borderColor]: semanticVars.border.default,
-        },
-      },
+      default: primaryPalette,
 
-      primary: {
-        vars: {
-          [badgeVars.bg]: semanticVars.color.primary.default,
-          [badgeVars.fg]: semanticVars.color.primary.fg,
-          [badgeVars.borderColor]: semanticVars.color.primary.default,
-        },
-      },
+      primary: primaryPalette,
+      secondary: neutralPalette,
 
-      secondary: {
-        vars: {
-          [badgeVars.bg]: semanticVars.color.secondary.default,
-          [badgeVars.fg]: semanticVars.color.secondary.fg,
-          [badgeVars.borderColor]: semanticVars.color.secondary.default,
-        },
-      },
+      success: successPalette,
 
-      success: {
-        vars: {
-          [badgeVars.bg]: semanticVars.color.success.default,
-          [badgeVars.fg]: semanticVars.text.inverse,
-          [badgeVars.borderColor]: semanticVars.color.success.default,
-        },
-      },
-
-      danger: {
-        vars: {
-          [badgeVars.bg]: semanticVars.color.danger.default,
-          [badgeVars.fg]: semanticVars.text.inverse,
-          [badgeVars.borderColor]: semanticVars.color.danger.default,
-        },
-      },
+      danger: dangerPalette,
     },
   },
-
   compoundVariants: [
     {
       variants: {
         appearance: "solid",
       },
       style: {
-        backgroundColor: badgeVars.bg,
-        color: badgeVars.fg,
-        borderColor: badgeVars.borderColor,
+        backgroundColor: paletteVars.bg,
+        color: paletteVars.fg,
+        borderColor: paletteVars.border,
       },
     },
 
@@ -93,8 +62,8 @@ export const badgeRecipe = recipe({
       },
       style: {
         backgroundColor: "transparent",
-        color: badgeVars.borderColor,
-        borderColor: badgeVars.borderColor,
+        color: paletteVars.border,
+        borderColor: paletteVars.border,
       },
     },
 
@@ -103,8 +72,8 @@ export const badgeRecipe = recipe({
         appearance: "soft",
       },
       style: {
-        backgroundColor: `color-mix(in srgb, ${badgeVars.borderColor} 25%, transparent)`,
-        color: badgeVars.fg,
+        backgroundColor: `color-mix(in srgb, ${paletteVars.border} 25%, transparent)`,
+        color: paletteVars.fg,
       },
     },
   ],
