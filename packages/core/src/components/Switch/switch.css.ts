@@ -55,7 +55,6 @@ export const thumbChecked = style([
     backgroundColor: "primaryActive",
   }),
   style({
-    backgroundColor: semanticVars.color.primary.active,
     transform: `translateX(${tokenVars.spacing["lg"]})`,
   }),
 ]);

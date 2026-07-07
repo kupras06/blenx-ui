@@ -47,7 +47,6 @@ export const base = style([
 ]);
 
 export const toggleRecipes = recipe({
-  base: primaryPalette,
   variants: {
     size: {
       sm: {
