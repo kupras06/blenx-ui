@@ -94,7 +94,7 @@ export function Pricing01({
             Yearly
           </Text>
           {yearly && (
-            <Badge radius="full" variant="success">
+            <Badge radius="full" palette="success">
               Save up to 20%
             </Badge>
           )}
@@ -105,7 +105,7 @@ export function Pricing01({
         {plans.map((plan) => (
           <Card key={plan.name} maxWidth="xs" variant={plan.popular ? "raised" : "sunken"}>
             {plan.popular && (
-              <Badge variant="primary" radius="full">
+              <Badge palette="primary" radius="full">
                 Most popular
               </Badge>
             )}

@@ -54,7 +54,7 @@ export function ProfileCardDemo() {
           <VStack gap="xxs">
             <HStack gap="xs" align="center">
               <CardTitle>Alex Rivera</CardTitle>
-              <Badge variant="primary">Pro</Badge>
+              <Badge palette="primary">Pro</Badge>
             </HStack>
             <HStack gap="xxs" align="center">
               <MapPinIcon width={12} height={12} />
@@ -91,7 +91,7 @@ export function ProductCardDemo() {
           <VStack gap="xxs">
             <HStack align={"center"}>
               <CardTitle>Pro Subscription</CardTitle>
-              <Badge variant="danger">20% OFF</Badge>
+              <Badge palette="danger">20% OFF</Badge>
             </HStack>
             <CardDescription>Annual billing </CardDescription>
           </VStack>
@@ -137,7 +137,7 @@ export function StatCardDemo() {
               $48,250
             </Text>
             <HStack gap="xxs" align="center">
-              <Badge variant="success">+12.5%</Badge>
+              <Badge palette="success">+12.5%</Badge>
               <Text variant="caption" color="secondary">
                 vs last month
               </Text>

@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import type { ReactNode } from "react";
+import type { ReactNode, ThHTMLAttributes, TdHTMLAttributes, TableHTMLAttributes } from "react";
 import {
   root,
   head,
@@ -10,35 +10,56 @@ import {
   alignCenter,
   alignRight,
   colorSecondary,
+  row,
 } from "./table.css";
-import * as tableCss from "./table.css";
 import { Box } from "../Box";
 
-export interface Column<TData> {
-  key: keyof TData;
-  header: ReactNode;
-  cell?: (row: TData) => ReactNode;
-  width?: string;
-  align?: "left" | "center" | "right";
-  cellProps?: Record<string, unknown>;
+interface TableProps extends TableHTMLAttributes<HTMLTableElement> {
+  color?: "secondary";
 }
 
-export interface TableProps<TData> {
-  columnData: Column<TData>[];
-  rowData: TData[];
-  rowKey?: keyof TData & string;
-  getRowProps?: (
-    row: TData,
-    index: number,
-  ) => {
-    onMouseEnter?: () => void;
-    onMouseLeave?: () => void;
-    style?: React.CSSProperties;
-    [key: string]: unknown;
-  };
-  style?: React.CSSProperties;
+function Table({ className, color, ...props }: TableProps) {
+  return (
+    <Box className={clsx(wrapper, color && colorSecondary)}>
+      <table className={clsx(root, color && colorSecondary, className)} {...props} />
+    </Box>
+  );
+}
+
+function TableHead({ className, ...props }: { className?: string; children?: ReactNode }) {
+  return <thead className={clsx(head, className)} {...props} />;
+}
+
+function TableBody({ className, ...props }: { className?: string; children?: ReactNode }) {
+  return <tbody className={className} {...props} />;
+}
+
+interface TableRowProps {
   className?: string;
-  color?: "secondary";
+  children?: ReactNode;
+  [key: string]: unknown;
+}
+
+function TableRow({ className, ...props }: TableRowProps) {
+  return <tr className={clsx(row, className)} {...props} />;
+}
+
+interface TableHeaderCellProps extends ThHTMLAttributes<HTMLTableCellElement> {
+  align?: "left" | "center" | "right";
+}
+
+const headerCellAlignMap = {
+  left: alignLeft,
+  center: alignCenter,
+  right: alignRight,
+} as const;
+
+function TableHeaderCell({ align, className, ...props }: TableHeaderCellProps) {
+  return <th className={clsx(header, align && headerCellAlignMap[align], className)} {...props} />;
+}
+
+interface TableCellProps extends TdHTMLAttributes<HTMLTableCellElement> {
+  align?: "left" | "center" | "right";
 }
 
 const cellAlignMap = {
@@ -47,71 +68,10 @@ const cellAlignMap = {
   right: alignRight,
 } as const;
 
-function getCellValue<TData>(col: Column<TData>, row: TData): React.ReactNode {
-  if (col?.cell) {
-    return col.cell(row);
-  }
-  return row[col.key] as React.ReactNode;
+function TableCell({ align, className, ...props }: TableCellProps) {
+  return <td className={clsx(cell, align && cellAlignMap[align], className)} {...props} />;
 }
 
-export function Table<TData>({
-  columnData,
-  rowData,
-  rowKey,
-  getRowProps,
-  style,
-  className,
-  color,
-}: TableProps<TData>) {
-  return (
-    <Box className={clsx(wrapper, color && colorSecondary, className)} style={style}>
-      <table className={clsx(root, color && colorSecondary)}>
-        <thead className={head}>
-          <tr>
-            {columnData.map((col) => (
-              <th
-                key={col.key.toString()}
-                style={col.width ? { width: col.width } : undefined}
-                className={clsx(header, col.align && cellAlignMap[col.align])}
-              >
-                {col.header}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {rowData.map((dataRow, index) => {
-            const key = rowKey ? (dataRow[rowKey] as string) : index.toString();
-            const rowProps = getRowProps?.(dataRow, index);
-            return (
-              <tr
-                key={key}
-                {...rowProps}
-                className={clsx(
-                  tableCss.row,
-                  (rowProps as Record<string, unknown> | undefined)?.className as
-                    | string
-                    | undefined,
-                )}
-              >
-                {columnData.map((col) => (
-                  <td
-                    key={col.key.toString()}
-                    {...col.cellProps}
-                    className={clsx(
-                      cell,
-                      col.align && cellAlignMap[col.align],
-                      (col.cellProps?.className as string | undefined) || undefined,
-                    )}
-                  >
-                    {getCellValue(col, dataRow)}
-                  </td>
-                ))}
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-    </Box>
-  );
-}
+export { Table, TableHead, TableBody, TableRow, TableHeaderCell, TableCell };
+
+export type { TableProps, TableHeaderCellProps, TableCellProps };

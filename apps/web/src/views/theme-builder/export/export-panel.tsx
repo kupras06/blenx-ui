@@ -1,6 +1,9 @@
 import { useCallback, useState } from "react";
 import {
-  Accordion,
+  AccordionItem,
+  AccordionHeader,
+  AccordionTrigger,
+  AccordionPanel,
   AlertDialog,
   AlertDialogDescription,
   AlertDialogHeader,
@@ -80,11 +83,11 @@ ${lines.join("\n")}
   }, [resetTokens]);
 
   return (
-    <Accordion.Item value="export">
-      <Accordion.Header>
-        <Accordion.Trigger>Export</Accordion.Trigger>
-      </Accordion.Header>
-      <Accordion.Panel>
+    <AccordionItem value="export">
+      <AccordionHeader>
+        <AccordionTrigger>Export</AccordionTrigger>
+      </AccordionHeader>
+      <AccordionPanel>
         <VStack>
           <VStack gap="sm">
             <Button variant="outline" size="sm" onClick={generateJSON}>
@@ -129,7 +132,7 @@ ${lines.join("\n")}
             </AlertDialogPopup>
           </AlertDialog>
         </VStack>
-      </Accordion.Panel>
-    </Accordion.Item>
+      </AccordionPanel>
+    </AccordionItem>
   );
 }

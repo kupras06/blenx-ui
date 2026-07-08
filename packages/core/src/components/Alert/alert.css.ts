@@ -14,7 +14,7 @@ export const alertBase = style({
 
 export const alertVariants = recipe({
   variants: {
-    variant: {
+    palette: {
       info: {
         vars: {
           [alertBg]: semanticVars.color.info.bg,

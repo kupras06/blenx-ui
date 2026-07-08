@@ -124,7 +124,7 @@ export function InstallSection() {
             </HStack>
           ))}
         </VStack>
-        <Alert variant="info" icon={<FileCodeIcon size={16} />}>
+        <Alert palette="info" icon={<FileCodeIcon size={16} />}>
           <Text variant="body2">
             <strong>No bloated dependency.</strong> No vendor lock-in. No runtime styling library.
           </Text>

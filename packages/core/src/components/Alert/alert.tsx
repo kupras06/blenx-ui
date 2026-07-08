@@ -15,13 +15,13 @@ type Props = RecipeVariants<typeof alertVariants> & {
   className?: string;
 };
 
-function Alert({ variant = "info", icon, title, description, children, className }: Props) {
+function Alert({ palette = "info", icon, title, description, children, className }: Props) {
   return (
     <HStack
       align={description ? "start" : "center"}
       gap="xs"
       p="sm"
-      className={clsx(alertBase, alertVariants({ variant }), className)}
+      className={clsx(alertBase, alertVariants({ palette }), className)}
     >
       <Box p={"xxs"}>{icon}</Box>
       <VStack gap="xxs">

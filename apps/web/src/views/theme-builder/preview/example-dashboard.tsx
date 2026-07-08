@@ -9,6 +9,11 @@ import {
   CardTitle,
   Grid,
   Table,
+  TableHead,
+  TableBody,
+  TableRow,
+  TableHeaderCell,
+  TableCell,
   Text,
   VStack,
 } from "@blenx-dev/core";
@@ -113,34 +118,38 @@ export const ExampleDashboard = memo(() => (
         <CardDescription>Latest actions across your workspace</CardDescription>
       </CardHeader>
       <CardBody>
-        <Table
-          columnData={[
-            { key: "user", header: "User" },
-            {
-              key: "action",
-              header: "Action",
-            },
-            {
-              key: "status",
-              header: "Status",
-              cell: (row) => (
-                <Badge
-                  variant={
-                    row.status === "Completed"
-                      ? "primary"
-                      : row.status === "Failed"
-                        ? "secondary"
-                        : "default"
-                  }
-                >
-                  {row.status}
-                </Badge>
-              ),
-            },
-            { key: "date", header: "Date" },
-          ]}
-          rowData={activities}
-        />
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableHeaderCell>User</TableHeaderCell>
+              <TableHeaderCell>Action</TableHeaderCell>
+              <TableHeaderCell>Status</TableHeaderCell>
+              <TableHeaderCell>Date</TableHeaderCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {activities.map((row) => (
+              <TableRow key={row.user + "-" + row.action}>
+                <TableCell>{row.user}</TableCell>
+                <TableCell>{row.action}</TableCell>
+                <TableCell>
+                  <Badge
+                    palette={
+                      row.status === "Completed"
+                        ? "primary"
+                        : row.status === "Failed"
+                          ? "secondary"
+                          : "default"
+                    }
+                  >
+                    {row.status}
+                  </Badge>
+                </TableCell>
+                <TableCell>{row.date}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
       </CardBody>
     </Card>
 

@@ -1,12 +1,20 @@
-import { Accordion, Box, Text, VStack } from "@blenx-dev/core";
+import {
+  AccordionItem,
+  AccordionHeader,
+  AccordionTrigger,
+  AccordionPanel,
+  Box,
+  Text,
+  VStack,
+} from "@blenx-dev/core";
 
 export function NonColorControls() {
   return (
-    <Accordion.Item value="noncolor">
-      <Accordion.Header>
-        <Accordion.Trigger>Design Tokens</Accordion.Trigger>
-      </Accordion.Header>
-      <Accordion.Panel>
+    <AccordionItem value="noncolor">
+      <AccordionHeader>
+        <AccordionTrigger>Design Tokens</AccordionTrigger>
+      </AccordionHeader>
+      <AccordionPanel>
         <VStack>
           <Box>
             <Text variant="caption" color="secondary">
@@ -15,7 +23,7 @@ export function NonColorControls() {
             </Text>
           </Box>
         </VStack>
-      </Accordion.Panel>
-    </Accordion.Item>
+      </AccordionPanel>
+    </AccordionItem>
   );
 }

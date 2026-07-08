@@ -13,9 +13,9 @@ import {
 } from "./accordion.css";
 import { ChevronDownIcon } from "../../icons";
 
-type AccordionRootProps = AccordionPrimitive.Root.Props;
+type AccordionProps = AccordionPrimitive.Root.Props;
 
-function AccordionRoot({ children, className, ...props }: AccordionRootProps) {
+function Accordion({ children, className, ...props }: AccordionProps) {
   return (
     <AccordionPrimitive.Root
       className={(state) => clsx(root, state.orientation === "vertical" && rootVertical, className)}
@@ -70,19 +70,11 @@ function AccordionPanel({ children, className, ...props }: AccordionPanelProps) 
   );
 }
 
-export { AccordionPanel, AccordionTrigger, AccordionHeader, AccordionItem, AccordionRoot };
+export { AccordionPanel, AccordionTrigger, AccordionHeader, AccordionItem, Accordion };
 export type {
   AccordionPanelProps,
   AccordionTriggerProps,
   AccordionHeaderProps,
   AccordionItemProps,
-  AccordionRootProps,
-};
-/** @deprecated Use individual named exports (e.g. `AccordionRoot`, `AccordionItem`, `AccordionTrigger`) instead. */
-export const Accordion = {
-  Root: AccordionRoot,
-  Item: AccordionItem,
-  Header: AccordionHeader,
-  Trigger: AccordionTrigger,
-  Panel: AccordionPanel,
+  AccordionProps,
 };

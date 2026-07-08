@@ -1,5 +1,16 @@
-import type { Column } from "@blenx-dev/core";
-import { Accordion, Table, Text } from "@blenx-dev/core";
+import {
+  AccordionItem,
+  AccordionHeader,
+  AccordionTrigger,
+  AccordionPanel,
+  Table,
+  TableHead,
+  TableBody,
+  TableRow,
+  TableHeaderCell,
+  TableCell,
+  Text,
+} from "@blenx-dev/core";
 import { semanticVars } from "@blenx-dev/theme/contract";
 import { useThemeBuilder } from "../theme-builder-context";
 
@@ -29,57 +40,54 @@ export function TokenTable() {
 
   const rowData = flattenTokens(tokens);
 
-  const columns: Column<TokenRow>[] = [
-    {
-      key: "label",
-      header: "Token",
-      cell: (row) => (
-        <Text variant="body3" color="primary">
-          {row.label}
-        </Text>
-      ),
-      cellProps: { "data-token": true },
-    },
-    {
-      key: "value",
-      header: "Value",
-      cell: (row) => (
-        <Text
-          variant="body3"
-          color="secondary"
-          title={row.value.length > 30 ? row.value : undefined}
-        >
-          {row.value}
-        </Text>
-      ),
-    },
-  ];
-
   return (
-    <Accordion.Item value="variables">
-      <Accordion.Header>
-        <Accordion.Trigger>Theme Variables</Accordion.Trigger>
-      </Accordion.Header>
-      <Accordion.Panel>
-        <Table
-          columnData={columns}
-          rowData={rowData}
-          rowKey="id"
-          getRowProps={(row) => {
-            const isSelected = selectedToken === row.id;
-            return {
-              onMouseEnter: () => setSelectedToken(row.id),
-              onMouseLeave: () => setSelectedToken(null),
-              style: {
-                cursor: "pointer",
-                ...(isSelected && {
-                  backgroundColor: `${semanticVars.focus.ring}15`,
-                }),
-              },
-            };
-          }}
-        />
-      </Accordion.Panel>
-    </Accordion.Item>
+    <AccordionItem value="variables">
+      <AccordionHeader>
+        <AccordionTrigger>Theme Variables</AccordionTrigger>
+      </AccordionHeader>
+      <AccordionPanel>
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableHeaderCell data-token>Token</TableHeaderCell>
+              <TableHeaderCell>Value</TableHeaderCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {rowData.map((row) => {
+              const isSelected = selectedToken === row.id;
+              return (
+                <TableRow
+                  key={row.id}
+                  onMouseEnter={() => setSelectedToken(row.id)}
+                  onMouseLeave={() => setSelectedToken(null)}
+                  style={{
+                    cursor: "pointer",
+                    ...(isSelected && {
+                      backgroundColor: `${semanticVars.focus.ring}15`,
+                    }),
+                  }}
+                >
+                  <TableCell data-token>
+                    <Text variant="body3" color="primary">
+                      {row.label}
+                    </Text>
+                  </TableCell>
+                  <TableCell>
+                    <Text
+                      variant="body3"
+                      color="secondary"
+                      title={row.value.length > 30 ? row.value : undefined}
+                    >
+                      {row.value}
+                    </Text>
+                  </TableCell>
+                </TableRow>
+              );
+            })}
+          </TableBody>
+        </Table>
+      </AccordionPanel>
+    </AccordionItem>
   );
 }

@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import { Text } from "@blenx-dev/core/Text";
 import {
-  AccordionRoot,
+  Accordion,
   AccordionItem,
   AccordionHeader,
   AccordionTrigger,
@@ -68,7 +68,7 @@ export function Faq01({
 
         <Box fullWidth>
           {filteredItems.length > 0 ? (
-            <AccordionRoot>
+            <Accordion>
               {filteredItems.map((item) => (
                 <AccordionItem key={item.question}>
                   <AccordionHeader>
@@ -79,7 +79,7 @@ export function Faq01({
                   </AccordionPanel>
                 </AccordionItem>
               ))}
-            </AccordionRoot>
+            </Accordion>
           ) : (
             <Text variant="body1" size="lg" color="secondary">
               No questions match your search.

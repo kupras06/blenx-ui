@@ -5,43 +5,43 @@ export function BadgeDemo() {
     <VStack gap="xs">
       <Text variant="h6">Solid</Text>
       <HStack wrap>
-        <Badge variant="default">Default</Badge>
-        <Badge variant="primary">Primary</Badge>
+        <Badge palette="default">Default</Badge>
+        <Badge palette="primary">Primary</Badge>
         <Badge>Secondary</Badge>
-        <Badge variant="danger">Danger</Badge>
-        <Badge variant="success">Success</Badge>
+        <Badge palette="danger">Danger</Badge>
+        <Badge palette="success">Success</Badge>
       </HStack>
 
       <Text variant="h6">Outline</Text>
       <HStack wrap>
-        <Badge variant="default" appearance="outline">
+        <Badge palette="default" variant="outline">
           Default
         </Badge>
-        <Badge variant="primary" appearance="outline">
+        <Badge palette="primary" variant="outline">
           Primary
         </Badge>
-        <Badge appearance="outline">Secondary</Badge>
-        <Badge variant="danger" appearance="outline">
+        <Badge variant="outline">Secondary</Badge>
+        <Badge palette="danger" variant="outline">
           Danger
         </Badge>
-        <Badge variant="success" appearance="outline">
+        <Badge palette="success" variant="outline">
           Success
         </Badge>
       </HStack>
 
       <Text variant="h6">Soft</Text>
       <HStack wrap>
-        <Badge variant="default" appearance="soft">
+        <Badge palette="default" variant="soft">
           Default
         </Badge>
-        <Badge variant="primary" appearance="soft">
+        <Badge palette="primary" variant="soft">
           Primary
         </Badge>
-        <Badge appearance="soft">Secondary</Badge>
-        <Badge variant="danger" appearance="soft">
+        <Badge variant="soft">Secondary</Badge>
+        <Badge palette="danger" variant="soft">
           Danger
         </Badge>
-        <Badge variant="success" appearance="soft">
+        <Badge palette="success" variant="soft">
           Success
         </Badge>
       </HStack>
@@ -51,11 +51,11 @@ export function BadgeDemo() {
 export function BadgeDemoSolid() {
   return (
     <HStack wrap>
-      <Badge variant="default">Default</Badge>
-      <Badge variant="primary">Primary</Badge>
+      <Badge palette="default">Default</Badge>
+      <Badge palette="primary">Primary</Badge>
       <Badge>Secondary</Badge>
-      <Badge variant="danger">Danger</Badge>
-      <Badge variant="success">Success</Badge>
+      <Badge palette="danger">Danger</Badge>
+      <Badge palette="success">Success</Badge>
     </HStack>
   );
 }

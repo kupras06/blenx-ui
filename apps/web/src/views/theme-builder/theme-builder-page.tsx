@@ -36,7 +36,7 @@ import type { ThemeBuilderSearch } from "@/routes/theme-builder";
 
 function SidebarContent() {
   return (
-    <Accordion.Root defaultValue={["presets", "colors", "typography", "noncolor", "export"]}>
+    <Accordion defaultValue={["presets", "colors", "typography", "noncolor", "export"]}>
       <PresetControls />
       <ColorControls />
       <TypographyControls />
@@ -44,7 +44,7 @@ function SidebarContent() {
       <ExportPanel />
       <TokenTable />
       <HowItWorks />
-    </Accordion.Root>
+    </Accordion>
   );
 }
 
@@ -137,10 +137,10 @@ function ThemeBuilderInner() {
                   <ImpactSummary />
                   <Container size="xl">
                     <ScrollArea height={"80svh"}>
-                      <Accordion.Root>
+                      <Accordion>
                         <TokenTable />
                         <HowItWorks />
-                      </Accordion.Root>
+                      </Accordion>
                     </ScrollArea>
                   </Container>
                 </HStack>

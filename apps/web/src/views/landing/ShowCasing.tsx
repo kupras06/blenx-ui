@@ -2,7 +2,7 @@ import {
   AccordionHeader,
   AccordionItem,
   AccordionPanel,
-  AccordionRoot,
+  Accordion,
   AccordionTrigger,
   Alert,
   Avatar,
@@ -33,7 +33,7 @@ import { ArrowRightIcon, CheckIcon, FileCodeIcon, GearIcon } from "@phosphor-ico
 
 function ShowcaseAccordion() {
   return (
-    <AccordionRoot defaultValue={["item-1"]}>
+    <Accordion defaultValue={["item-1"]}>
       <AccordionItem value="item-1">
         <AccordionHeader>
           <AccordionTrigger>What is Blenx UI?</AccordionTrigger>
@@ -58,7 +58,7 @@ function ShowcaseAccordion() {
           </Box>
         </AccordionPanel>
       </AccordionItem>
-    </AccordionRoot>
+    </Accordion>
   );
 }
 function ShowcaseTabs() {
@@ -119,13 +119,13 @@ function ShowcaseInput() {
 function ShowcaseAlert() {
   return (
     <VStack gap="xs" fullWidth>
-      <Alert variant="info" icon={<FileCodeIcon size={16} />}>
+      <Alert palette="info" icon={<FileCodeIcon size={16} />}>
         <Text variant="body3">Components are copied to your project.</Text>
       </Alert>
-      <Alert variant="success" icon={<CheckIcon size={16} />}>
+      <Alert palette="success" icon={<CheckIcon size={16} />}>
         <Text variant="body3">Zero vendor lock-in guaranteed.</Text>
       </Alert>
-      <Alert variant="warning" icon={<GearIcon size={16} />}>
+      <Alert palette="warning" icon={<GearIcon size={16} />}>
         <Text variant="body3">Fully customizable source code.</Text>
       </Alert>
     </VStack>
@@ -142,7 +142,7 @@ function ShowcaseAvatar() {
         <Text variant="body2" weight="semibold">
           Blenx UI
         </Text>
-        <Badge variant="primary">Active</Badge>
+        <Badge palette="primary">Active</Badge>
       </VStack>
     </HStack>
   );

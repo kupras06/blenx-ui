@@ -21,9 +21,9 @@ type SelectSize = "sm" | "default" | "lg";
 
 type SelectItemProp = string | number | { label: React.ReactNode; value: unknown };
 
-type SelectRootProps = SelectPrimitive.Root.Props<SelectItemProp>;
+type SelectProps = SelectPrimitive.Root.Props<SelectItemProp>;
 
-export function SelectRoot({ children, ...props }: SelectRootProps) {
+export function Select({ children, ...props }: SelectProps) {
   return <SelectPrimitive.Root {...props}>{children}</SelectPrimitive.Root>;
 }
 
@@ -142,25 +142,3 @@ export function SelectWrapper({ label, error, children }: SelectWrapperProps) {
     </Field>
   );
 }
-
-// ─── Compound component namespace ─────────────────────────────────────────────
-
-/** @deprecated Use individual named exports (e.g. `SelectRoot`, `SelectTrigger`, `SelectPopup`) instead. */
-export const Select = {
-  Root: SelectRoot,
-  Label: SelectLabel,
-  Trigger: SelectTrigger,
-  Value: SelectValue,
-  Icon: SelectIcon,
-  Portal: SelectPortal,
-  Positioner: SelectPositioner,
-  Popup: SelectPopup,
-  List: SelectList,
-  Item: SelectItem,
-  Separator: SelectSeparator,
-  Group: SelectGroup,
-  GroupLabel: SelectGroupLabel,
-  ScrollUpArrow: SelectScrollUpArrow,
-  ScrollDownArrow: SelectScrollDownArrow,
-  Wrapper: SelectWrapper,
-};

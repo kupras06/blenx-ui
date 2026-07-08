@@ -1,4 +1,13 @@
-import { Badge, VStack, Table } from "@blenx-dev/core";
+import {
+  Badge,
+  VStack,
+  Table,
+  TableHead,
+  TableBody,
+  TableRow,
+  TableHeaderCell,
+  TableCell,
+} from "@blenx-dev/core";
 
 interface User {
   id: string;
@@ -33,22 +42,32 @@ const users: User[] = [
 ];
 
 export function TableDemo() {
-  const columns = [
-    { key: "name" as keyof User, header: "Name" },
-    { key: "email" as keyof User, header: "Email" },
-    { key: "role" as keyof User, header: "Role" },
-    {
-      key: "status" as keyof User,
-      header: "Status",
-      cell: (row: User) => (
-        <Badge variant={row.status === "active" ? "primary" : "default"}>{row.status}</Badge>
-      ),
-    },
-  ];
-
   return (
     <VStack gap="md">
-      <Table columnData={columns} rowData={users} rowKey="id" />
+      <Table>
+        <TableHead>
+          <TableRow>
+            <TableHeaderCell>Name</TableHeaderCell>
+            <TableHeaderCell>Email</TableHeaderCell>
+            <TableHeaderCell>Role</TableHeaderCell>
+            <TableHeaderCell>Status</TableHeaderCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {users.map((user) => (
+            <TableRow key={user.id}>
+              <TableCell>{user.name}</TableCell>
+              <TableCell>{user.email}</TableCell>
+              <TableCell>{user.role}</TableCell>
+              <TableCell>
+                <Badge palette={user.status === "active" ? "primary" : "default"}>
+                  {user.status}
+                </Badge>
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
     </VStack>
   );
 }

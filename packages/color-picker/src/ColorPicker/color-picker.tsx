@@ -8,7 +8,7 @@ import {
   FieldLabel,
   Popover,
   PopoverArrow,
-  PopoverCompound,
+  PopoverPortal,
   PopoverPopup,
   PopoverPositioner,
   PopoverTrigger,
@@ -85,7 +85,7 @@ export function ColorPicker({ value, onChange, label }: Props) {
           <Text variant="body2">{value}</Text>
           <ChevronDownIcon width={17} />
         </PopoverTrigger>
-        <PopoverCompound.Portal>
+        <PopoverPortal>
           <PopoverPositioner sideOffset={6} side="bottom" align="start">
             <PopoverPopup>
               <PopoverArrow />
@@ -117,7 +117,7 @@ export function ColorPicker({ value, onChange, label }: Props) {
               </VStack>
             </PopoverPopup>
           </PopoverPositioner>
-        </PopoverCompound.Portal>
+        </PopoverPortal>
       </Popover>
     </Field>
   );

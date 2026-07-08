@@ -7,7 +7,25 @@ import { Textarea } from "@blenx-dev/core/Textarea";
 import { Text } from "@blenx-dev/core/Text";
 import { Card, CardBody } from "@blenx-dev/core/Card";
 import type { CSSProperties } from "react";
-import { Box, Container, Field, FieldLabel, HStack, Icon, Select, VStack } from "@blenx-dev/core";
+import {
+  Box,
+  Container,
+  Field,
+  FieldLabel,
+  HStack,
+  Icon,
+  SelectWrapper,
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectIcon,
+  SelectPortal,
+  SelectPositioner,
+  SelectPopup,
+  SelectList,
+  SelectItem,
+  VStack,
+} from "@blenx-dev/core";
 import { PaperPlaneTiltIcon } from "@phosphor-icons/react";
 
 type ContactInfo = {
@@ -121,32 +139,32 @@ export function Contact01({
                   </Field>
                 </HStack>
 
-                <Select.Wrapper label="Subject">
-                  <Select.Root
+                <SelectWrapper label="Subject">
+                  <Select
                     value={subject}
                     onValueChange={(e) => {
                       setSubject(e as string);
                     }}
                   >
-                    <Select.Trigger size="sm">
-                      <Select.Value placeholder="Select font" />
-                      <Select.Icon />
-                    </Select.Trigger>
-                    <Select.Portal>
-                      <Select.Positioner>
-                        <Select.Popup>
-                          <Select.List>
+                    <SelectTrigger size="sm">
+                      <SelectValue placeholder="Select font" />
+                      <SelectIcon />
+                    </SelectTrigger>
+                    <SelectPortal>
+                      <SelectPositioner>
+                        <SelectPopup>
+                          <SelectList>
                             {subjects.map((s) => (
-                              <Select.Item key={s.value} value={s.value}>
+                              <SelectItem key={s.value} value={s.value}>
                                 {s.label}
-                              </Select.Item>
+                              </SelectItem>
                             ))}
-                          </Select.List>
-                        </Select.Popup>
-                      </Select.Positioner>
-                    </Select.Portal>
-                  </Select.Root>
-                </Select.Wrapper>
+                          </SelectList>
+                        </SelectPopup>
+                      </SelectPositioner>
+                    </SelectPortal>
+                  </Select>
+                </SelectWrapper>
 
                 <Field>
                   <FieldLabel>Message</FieldLabel>

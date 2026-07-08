@@ -1,5 +1,15 @@
 import type { SemanticTokens } from "@blenx-dev/theme";
-import { Accordion, Button, ColorSwatch, HStack, Text, VStack } from "@blenx-dev/core";
+import {
+  AccordionItem,
+  AccordionHeader,
+  AccordionTrigger,
+  AccordionPanel,
+  Button,
+  ColorSwatch,
+  HStack,
+  Text,
+  VStack,
+} from "@blenx-dev/core";
 import { useThemeBuilder } from "../theme-builder-context";
 import { presets } from "./presets-data";
 
@@ -37,11 +47,11 @@ export function PresetControls() {
   }
 
   return (
-    <Accordion.Item value="presets">
-      <Accordion.Header>
-        <Accordion.Trigger>Presets</Accordion.Trigger>
-      </Accordion.Header>
-      <Accordion.Panel>
+    <AccordionItem value="presets">
+      <AccordionHeader>
+        <AccordionTrigger>Presets</AccordionTrigger>
+      </AccordionHeader>
+      <AccordionPanel>
         <VStack gap="xs">
           {presets.map((preset) => {
             const isActive = preset.tokens.background?.default
@@ -71,7 +81,7 @@ export function PresetControls() {
             );
           })}
         </VStack>
-      </Accordion.Panel>
-    </Accordion.Item>
+      </AccordionPanel>
+    </AccordionItem>
   );
 }

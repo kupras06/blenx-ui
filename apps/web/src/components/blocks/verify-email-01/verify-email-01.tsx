@@ -94,12 +94,12 @@ export function VerifyEmail01({
               </OTPField>
 
               {error && (
-                <Alert variant="error" icon="">
+                <Alert palette="error" icon="">
                   {error}
                 </Alert>
               )}
               {verified && (
-                <Alert variant="success" icon="">
+                <Alert palette="success" icon="">
                   Email verified successfully!
                 </Alert>
               )}

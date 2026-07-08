@@ -1,5 +1,12 @@
 import { CodeBlock } from "@/views/docs/mdx-components/CodeBlock";
-import { Accordion, Box, Text } from "@blenx-dev/core";
+import {
+  AccordionItem,
+  AccordionHeader,
+  AccordionTrigger,
+  AccordionPanel,
+  Box,
+  Text,
+} from "@blenx-dev/core";
 
 const semanticCode = `// Semantic tokens (what you edit)
 export const theme = createThemeContract({
@@ -33,11 +40,11 @@ export const customTheme = createTheme(theme, {
 
 export function HowItWorks() {
   return (
-    <Accordion.Item value="howitworks">
-      <Accordion.Header>
-        <Accordion.Trigger>How It Works</Accordion.Trigger>
-      </Accordion.Header>
-      <Accordion.Panel>
+    <AccordionItem value="howitworks">
+      <AccordionHeader>
+        <AccordionTrigger>How It Works</AccordionTrigger>
+      </AccordionHeader>
+      <AccordionPanel>
         <Text variant="p">
           Blenx UI uses <Text variant="code">Vanilla Extract</Text> for its design system. Vanilla
           Extract compiles CSS at build time, enabling fast runtime performance with zero runtime
@@ -74,7 +81,7 @@ export function HowItWorks() {
           a static <Text variant="code">createTheme()</Text> call:
         </Text>
         <CodeBlock code={runtimeCode} />
-      </Accordion.Panel>
-    </Accordion.Item>
+      </AccordionPanel>
+    </AccordionItem>
   );
 }

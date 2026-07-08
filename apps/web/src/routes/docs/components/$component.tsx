@@ -49,7 +49,7 @@ function ComponentDoc() {
         <HStack gap="sm" align="center">
           <Text variant="h1">{doc.title}</Text>
           {pkgLabel && (
-            <Badge variant="default" appearance="soft" radius="default">
+            <Badge palette="default" variant="soft" radius="default">
               {pkgLabel}
             </Badge>
           )}

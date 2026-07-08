@@ -1,6 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
-import type { Column } from "@blenx-dev/core/Table";
-import { Container, HStack, Separator, Surface, Table, Text, VStack } from "@blenx-dev/core";
+import {
+  Container,
+  HStack,
+  Separator,
+  Surface,
+  Table,
+  TableHead,
+  TableBody,
+  TableRow,
+  TableHeaderCell,
+  TableCell,
+  Text,
+  VStack,
+} from "@blenx-dev/core";
 import { ShowCaseComponents } from "@/views/landing/ShowCasing";
 import { LandingHero } from "@/views/landing/LandingHero";
 import { BlenxFeatures, InstallSection } from "@/views/landing/FeaturesSection";
@@ -16,15 +28,6 @@ interface ComparisonRow {
   blenx: string;
   traditional: string;
 }
-
-const comparisonColumns: Column<ComparisonRow>[] = [
-  { key: "feature", header: "Feature" },
-  { key: "blenx", header: "Blenx" },
-  {
-    key: "traditional" as keyof ComparisonRow,
-    header: "Traditional UI Libraries",
-  },
-];
 
 const comparisonRows: ComparisonRow[] = [
   {
@@ -111,7 +114,24 @@ function HomeComponent() {
           </Container>
         </VStack>
         <Container content="center" maxWidth="xxl" overflow="auto">
-          <Table columnData={comparisonColumns} rowData={comparisonRows} rowKey="feature" />
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableHeaderCell>Feature</TableHeaderCell>
+                <TableHeaderCell>Blenx</TableHeaderCell>
+                <TableHeaderCell>Traditional UI Libraries</TableHeaderCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {comparisonRows.map((row) => (
+                <TableRow key={row.feature}>
+                  <TableCell>{row.feature}</TableCell>
+                  <TableCell>{row.blenx}</TableCell>
+                  <TableCell>{row.traditional}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
         </Container>
       </VStack>
 

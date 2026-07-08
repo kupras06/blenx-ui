@@ -5,12 +5,14 @@ import type { RecipeVariants } from "@vanilla-extract/recipes";
 
 type Props = BoxProps & RecipeVariants<typeof badgeRecipe>;
 
-export function Badge({ variant, appearance, className, style, ...props }: Props) {
+export function Badge({
+  variant = "solid",
+  palette = "default",
+  className,
+  style,
+  ...props
+}: Props) {
   return (
-    <Box
-      className={clsx(badgeRecipe({ variant, appearance }), className)}
-      style={style}
-      {...props}
-    />
+    <Box className={clsx(badgeRecipe({ variant, palette }), className)} style={style} {...props} />
   );
 }

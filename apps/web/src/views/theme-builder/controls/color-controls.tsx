@@ -1,4 +1,12 @@
-import { Accordion, Grid, VStack } from "@blenx-dev/core";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionHeader,
+  AccordionTrigger,
+  AccordionPanel,
+  Grid,
+  VStack,
+} from "@blenx-dev/core";
 import { ColorPicker } from "@blenx-dev/color-picker";
 import { useThemeBuilder } from "../theme-builder-context";
 import type { ThemeTokens } from "../theme-builder-context";
@@ -63,11 +71,11 @@ function ColorGroupControl({
   }
 
   return (
-    <Accordion.Item value={groupKey}>
-      <Accordion.Header>
-        <Accordion.Trigger>{groupKey}</Accordion.Trigger>
-      </Accordion.Header>
-      <Accordion.Panel>
+    <AccordionItem value={groupKey}>
+      <AccordionHeader>
+        <AccordionTrigger>{groupKey}</AccordionTrigger>
+      </AccordionHeader>
+      <AccordionPanel>
         <Grid columns={2}>
           {subtokens.map((sub) => (
             <ColorPicker
@@ -78,19 +86,19 @@ function ColorGroupControl({
             />
           ))}
         </Grid>
-      </Accordion.Panel>
-    </Accordion.Item>
+      </AccordionPanel>
+    </AccordionItem>
   );
 }
 
 export function ColorControls() {
   return (
-    <Accordion.Root defaultValue={["background", "text", "color"]}>
+    <Accordion defaultValue={["background", "text", "color"]}>
       <VStack gap="none">
         {tokenGroups.map((group) => (
           <ColorGroupControl key={group.key} groupKey={group.key} subtokens={group.subtokens} />
         ))}
       </VStack>
-    </Accordion.Root>
+    </Accordion>
   );
 }

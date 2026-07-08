@@ -36,7 +36,7 @@ export const ImpactSummary = memo(() => {
       </Box>
       <VStack marginTop="md" gap="xxs">
         {components.map((name) => (
-          <Badge key={name} variant="primary" appearance="soft" radius="full">
+          <Badge key={name} palette="primary" variant="soft" radius="full">
             {name}
           </Badge>
         ))}

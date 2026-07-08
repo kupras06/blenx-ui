@@ -3,6 +3,5 @@ export {
   AccordionHeader,
   AccordionItem,
   AccordionPanel,
-  AccordionRoot,
   AccordionTrigger,
 } from "./accordion";

@@ -21,7 +21,7 @@ export const badgeRecipe = recipe({
     borderColor: "transparent",
   }),
   variants: {
-    appearance: {
+    variant: {
       solid: {
         backgroundColor: paletteVars.bg,
         color: paletteVars.fg,
@@ -33,7 +33,7 @@ export const badgeRecipe = recipe({
       },
     },
 
-    variant: {
+    palette: {
       default: primaryPalette,
 
       primary: primaryPalette,
@@ -49,7 +49,7 @@ export const badgeRecipe = recipe({
   compoundVariants: [
     {
       variants: {
-        appearance: "solid",
+        variant: "solid",
       },
       style: {
         backgroundColor: paletteVars.bg,
@@ -60,7 +60,7 @@ export const badgeRecipe = recipe({
 
     {
       variants: {
-        appearance: "outline",
+        variant: "outline",
       },
       style: {
         backgroundColor: "transparent",
@@ -71,7 +71,7 @@ export const badgeRecipe = recipe({
 
     {
       variants: {
-        appearance: "soft",
+        variant: "soft",
       },
       style: {
         backgroundColor: `color-mix(in srgb, ${paletteVars.border} 25%, transparent)`,
@@ -81,7 +81,7 @@ export const badgeRecipe = recipe({
   ],
 
   defaultVariants: {
-    appearance: "solid",
-    variant: "default",
+    variant: "solid",
+    palette: "default",
   },
 });

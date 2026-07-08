@@ -1,12 +1,20 @@
-import { Accordion, Box, Text, VStack } from "@blenx-dev/core";
+import {
+  AccordionItem,
+  AccordionHeader,
+  AccordionTrigger,
+  AccordionPanel,
+  Box,
+  Text,
+  VStack,
+} from "@blenx-dev/core";
 
 export function TypographyControls() {
   return (
-    <Accordion.Item value="typography">
-      <Accordion.Header>
-        <Accordion.Trigger>Typography</Accordion.Trigger>
-      </Accordion.Header>
-      <Accordion.Panel>
+    <AccordionItem value="typography">
+      <AccordionHeader>
+        <AccordionTrigger>Typography</AccordionTrigger>
+      </AccordionHeader>
+      <AccordionPanel>
         <VStack gap="md">
           <Box>
             <Text variant="caption" color="secondary">
@@ -14,7 +22,7 @@ export function TypographyControls() {
             </Text>
           </Box>
         </VStack>
-      </Accordion.Panel>
-    </Accordion.Item>
+      </AccordionPanel>
+    </AccordionItem>
   );
 }

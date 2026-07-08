@@ -5,14 +5,14 @@ import {
   SelectPopup,
   SelectPortal,
   SelectPositioner,
-  SelectRoot,
+  Select,
   SelectTrigger,
   SelectValue,
 } from "@blenx-dev/core";
 
 export function SelectDemo() {
   return (
-    <SelectRoot defaultValue="apple">
+    <Select defaultValue="apple">
       <SelectTrigger>
         <SelectValue placeholder="Pick a fruit" />
         <SelectIcon />
@@ -28,7 +28,7 @@ export function SelectDemo() {
           </SelectPopup>
         </SelectPositioner>
       </SelectPortal>
-    </SelectRoot>
+    </Select>
   );
 }
 

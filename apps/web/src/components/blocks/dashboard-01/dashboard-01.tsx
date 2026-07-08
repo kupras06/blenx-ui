@@ -1,12 +1,21 @@
-import { Button } from "@blenx-dev/core/Button";
-import { Text } from "@blenx-dev/core/Text";
-import { Card, CardBody, CardTitle } from "@blenx-dev/core/Card";
-import { Table } from "@blenx-dev/core/Table";
 import { Badge } from "@blenx-dev/core/Badge";
+import { Button } from "@blenx-dev/core/Button";
+import { Card, CardBody, CardTitle } from "@blenx-dev/core/Card";
 import { Surface } from "@blenx-dev/core/Surface";
-import type { Column } from "@blenx-dev/core/Table";
+import { Text } from "@blenx-dev/core/Text";
 import type { CSSProperties } from "react";
-import { Container, Grid, HStack, VStack } from "@blenx-dev/core";
+import {
+  Container,
+  Grid,
+  HStack,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeaderCell,
+  TableRow,
+  VStack,
+} from "@blenx-dev/core";
 
 type Kpi = {
   label: string;
@@ -98,17 +107,6 @@ export function Dashboard01({
   chartSections = defaultCharts,
   actions = defaultActions,
 }: Props) {
-  const activityColumns: Column<Activity>[] = [
-    { key: "event", header: "Event" },
-    { key: "user", header: "User" },
-    {
-      key: "status",
-      header: "Status",
-      cell: (row) => <Badge variant={statusVariant[row.status] ?? "default"}>{row.status}</Badge>,
-    },
-    { key: "date", header: "Date" },
-  ];
-
   return (
     <Container size="full" aria-label="Dashboard">
       <VStack>
@@ -163,7 +161,28 @@ export function Dashboard01({
         <Card>
           <CardBody>
             <Text variant="h5">Recent Activity</Text>
-            <Table columnData={activityColumns} rowData={activities} rowKey="event" />
+            <Table>
+              <TableHead>
+                <TableRow>
+                  <TableHeaderCell>Event</TableHeaderCell>
+                  <TableHeaderCell>User</TableHeaderCell>
+                  <TableHeaderCell>Status</TableHeaderCell>
+                  <TableHeaderCell>Date</TableHeaderCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {activities.map((row) => (
+                  <TableRow key={row.event}>
+                    <TableCell>{row.event}</TableCell>
+                    <TableCell>{row.user}</TableCell>
+                    <TableCell>
+                      <Badge palette={statusVariant[row.status] ?? "default"}>{row.status}</Badge>
+                    </TableCell>
+                    <TableCell>{row.date}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
           </CardBody>
         </Card>
       </VStack>

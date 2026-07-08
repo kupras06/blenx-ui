@@ -62,31 +62,31 @@ export function LandingHero() {
         </HStack>
         <HStack gap="sm" wrap justify="center">
           <Badge
-            variant="secondary"
+            palette="secondary"
             // style={styles.badgePill}
           >
             Registry First
           </Badge>
           <Badge
-            variant="primary"
+            palette="primary"
             // style={styles.badgePill}
           >
             Vanilla Extract Native
           </Badge>
           <Badge
-            variant="secondary"
+            palette="secondary"
             // style={styles.badgePill}
           >
             Base UI Powered
           </Badge>
           <Badge
-            variant="primary"
+            palette="primary"
             // style={styles.badgePill}
           >
             Accessible
           </Badge>
           <Badge
-            variant="secondary"
+            palette="secondary"
             // style={styles.badgePill}
           >
             Type Safe

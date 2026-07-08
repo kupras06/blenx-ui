@@ -5,30 +5,30 @@ export function AlertDemo() {
   return (
     <VStack>
       <Alert
-        variant="info"
+        palette="info"
         icon={<InfoIcon width={20} />}
         title="Info"
         description="This is an info alert"
       />
       <Alert
-        variant="success"
+        palette="success"
         icon={<CheckIcon width={20} />}
         title="Success"
         description="This is a success alert"
       />
       <Alert
-        variant="warning"
+        palette="warning"
         icon={<CircleAlertIcon width={20} />}
         title="Warning"
         description="This is a warning alert"
       />
       <Alert
-        variant="error"
+        palette="error"
         icon={<SkullIcon width={20} />}
         title="Error"
         description="This is an error alert"
       />
-      <Alert variant="error" icon={<SkullIcon width={20} />}>
+      <Alert palette="error" icon={<SkullIcon width={20} />}>
         GOne
       </Alert>
     </VStack>
