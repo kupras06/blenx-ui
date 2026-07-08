@@ -1,5 +1,13 @@
 # @blenx-dev/color-picker
 
+## 0.3.3
+
+### Patch Changes
+
+- d994ff5: fix styles of input group
+- Updated dependencies [d994ff5]
+  - @blenx-dev/core@0.3.3
+
 ## 0.3.2
 
 ### Patch Changes

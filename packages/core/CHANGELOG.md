@@ -1,5 +1,11 @@
 # @blenx-dev/core
 
+## 0.3.3
+
+### Patch Changes
+
+- d994ff5: fix styles of input group
+
 ## 0.3.2
 
 ### Patch Changes
